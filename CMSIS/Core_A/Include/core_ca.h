@@ -5,7 +5,7 @@
  * @date     23. March 2023
  ******************************************************************************/
 /*
- * Copyright (c) 2009-2022 ARM Limited. All rights reserved.
+ * Copyright (c) 2009-2023 ARM Limited. All rights reserved.
  *
  * SPDX-License-Identifier: Apache-2.0
  *
