@@ -47,7 +47,7 @@ PROJECT_NAME           = "CMSIS-Core (Cortex-A)"
 # could be handy for archiving the generated documentation or if some version
 # control system is used.
 
-PROJECT_NUMBER         = "Version 1.2.1"
+PROJECT_NUMBER         = "Version 6.0.0"
 
 # Using the PROJECT_BRIEF tag one can provide an optional one line description
 # for a project that appears at the top of each page and should give viewer a
@@ -920,18 +920,22 @@ INPUT                  = src/Overview.txt \
                          src/Using.txt \
                          src/Template.txt \
                          src/MISRA.txt \
-                         ../../Core_A/Include/core_ca.h \
-                         ../../Core_A/Include/cmsis_armcc.h \
-                         ../../Core_A/Include/cmsis_cp15.h \
-                         ../../Core_A/Source/irq_ctrl_gic.c \
-                         ../../Core_A/Include/irq_ctrl.h \
+                         ../../Core/Include/cmsis_version.h \
+                         ../../Core/Include/a-profile/armv7a.h \
+                         ../../Core/Include/a-profile/armv7a_cp15.h \
+                         ../../Core/Include/a-profile/armv8a.h \
+                         ../../Core/Include/cmsis_clang.h \
+                         ../../Core/Include/a-profile/cmsis_clang_a.h \
+                         ../../Core/Include/a-profile/gicv2.h \
+                         ../../Core/Source/irq_ctrl_gic.c \
+                         ../../Core/Include/a-profile/irq_ctrl.h \
                          src/Ref_SystemAndClock.txt \
                          src/ref_gic.txt \
                          src/ref_core_register.txt \
                          src/ref_cache.txt \
                          src/ref_timer.txt \
                          src/ref_mmu.txt \
-                         src/core_ca.txt \
+                         src/arm7a.txt \
                          src/cmsis_armcc.txt \
                          src/irq_ctrl.txt \
 

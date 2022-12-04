@@ -31,8 +31,7 @@ For a list of all CMSIS components refer to [**Introduction - CMSIS Components**
 
 Directory            | Content
 :------------------- |:---------------------------------------------------------
-CMSIS/Core           | CMSIS-Core(M) related files (for release)
-CMSIS/Core_A         | CMSIS-Core(A) related files (for release)
+CMSIS/Core           | CMSIS-Core(A/R/M) related files (for release)
 CMSIS/CoreValidation | Validation for Core(M) and Core(A) (NOT part of release)  
 CMSIS/Driver         | CMSIS-Driver API headers and template files
 CMSIS/RTOS2          | RTOS v2 related files (for Cortex-M & Armv8-M)

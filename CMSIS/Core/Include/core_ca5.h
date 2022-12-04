@@ -1,6 +1,6 @@
 /**************************************************************************//**
- * @file     core_ca9.h
- * @brief    CMSIS Cortex-A9 Core Peripheral Access Layer Header File
+ * @file     core_ca5.h
+ * @brief    CMSIS Cortex-A5 Core Peripheral Access Layer Header File
  * @version  V1.0.0
  * @date     2. July 2023
  ******************************************************************************/
@@ -21,16 +21,21 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
- /*
-  * This file exists for compatibility reasons only
-  */
 
 
-#ifndef __CORE_CA_H
-#define __CORE_CA_H
+#ifndef __CORE_CA5_H
+#define __CORE_CA5_H
 
+#define __CORTEX_A           5U    /*!< \brief Cortex-A5 Core */
+
+#if defined __CHECK_DEVICE_DEFINES
+  #ifndef __CA5_REV
+    #define __CA5_REV              0x0000U
+    #warning "__CA5_REV not defined in device header file; using default!"
+  #endif
+#endif
 
 #include "./a-profile/armv7a.h"
 
 
-#endif /* __CORE_CA_H */
+#endif /* __CORE_CA5_H */

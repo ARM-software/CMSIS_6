@@ -1,5 +1,5 @@
 /**************************************************************************//**
- * @file     core_ca.txt
+ * @file     arm7a.txt
  * @brief    CMSIS Cortex-A Core Peripheral Access Layer Header File
  ******************************************************************************/
 
@@ -79,7 +79,7 @@ The registers in the various UARTs can now be referred in the user code as shown
 
 \section core_cmsis_pal_min_reqs Minimal Requirements
 \details
- To access the peripheral registers and related function in a device, the files <b><i>device.h</i></b> and <b>core_ca.h</b> define as a minimum:
+ To access the peripheral registers and related function in a device, the files <b><i>device.h</i></b> and <b>armv7a.h</b> define as a minimum:
 \n\n
 - The <b>Register Layout Typedef</b> for each peripheral that defines all register names.
   RESERVED is used to introduce space into the structure for adjusting the addresses of

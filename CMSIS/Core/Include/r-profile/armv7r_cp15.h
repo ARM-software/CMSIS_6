@@ -1,8 +1,8 @@
 /**************************************************************************//**
- * @file     core_ca9.h
- * @brief    CMSIS Cortex-A9 Core Peripheral Access Layer Header File
- * @version  V1.0.0
- * @date     2. July 2023
+ * @file     armv7r_cp15.h
+ * @brief    CMSIS compiler specific macros, functions, instructions
+ * @version  V1.0.2
+ * @date     19. December 2022
  ******************************************************************************/
 /*
  * Copyright (c) 2009-2023 ARM Limited. All rights reserved.
@@ -21,16 +21,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
- /*
-  * This file exists for compatibility reasons only
-  */
 
 
-#ifndef __CORE_CA_H
-#define __CORE_CA_H
-
-
-#include "./a-profile/armv7a.h"
-
-
-#endif /* __CORE_CA_H */
+// The cp15-interface is located in the profile folder for cortex-a devices
+#include "../a-profile/armv7a_cp15.h"

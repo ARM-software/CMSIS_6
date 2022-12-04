@@ -31,74 +31,34 @@
  * Arm Compiler above 6.10.1 (armclang)
  */
 #if defined (__ARMCC_VERSION) && (__ARMCC_VERSION >= 6100100)
-  #if __ARM_ARCH_PROFILE == 'A'
-    #include "./a-profile/cmsis_armclang_a.h"
-  #elif __ARM_ARCH_PROFILE == 'R'
-    #include "./r-profile/cmsis_armclang_r.h"
-  #elif __ARM_ARCH_PROFILE == 'M'
-    #include "./m-profile/cmsis_armclang_m.h"
-  #else
-    #error "Unknown Arm architecture profile"
-  #endif
+  #include "cmsis_armclang.h"
 
 /*
  * TI Arm Clang Compiler (tiarmclang)
  */
 #elif defined (__ti__)
-  #if __ARM_ARCH_PROFILE == 'A'
-    #error "Core-A is not supported for this compiler"
-  #elif __ARM_ARCH_PROFILE == 'R'
-    #error "Core-R is not supported for this compiler"
-  #elif __ARM_ARCH_PROFILE == 'M'
-    #include "m-profile/cmsis_tiarmclang_m.h"
-  #else
-    #error "Unknown Arm architecture profile"
-  #endif
+  #include "cmsis_tiarmclang.h"
 
 
 /*
  * LLVM/Clang Compiler
  */
 #elif defined ( __clang__ )
-  #if __ARM_ARCH_PROFILE == 'A'
-    #include "a-profile/cmsis_clang_a.h"
-  #elif __ARM_ARCH_PROFILE == 'R'
-    #include "r-profile/cmsis_clang_r.h"
-  #elif __ARM_ARCH_PROFILE == 'M'
-    #include "m-profile/cmsis_clang_m.h"
-  #else
-    #error "Unknown Arm architecture profile"
-  #endif
+  #include "cmsis_clang.h"
 
 
 /*
  * GNU Compiler
  */
 #elif defined ( __GNUC__ )
-  #if __ARM_ARCH_PROFILE == 'A'
-    #include "a-profile/cmsis_gcc_a.h"
-  #elif __ARM_ARCH_PROFILE == 'R'
-    #include "r-profile/cmsis_gcc_r.h"
-  #elif __ARM_ARCH_PROFILE == 'M'
-    #include "m-profile/cmsis_gcc_m.h"
-  #else
-    #error "Unknown Arm architecture profile"
-  #endif
+  #include "cmsis_gcc.h"
 
 
 /*
  * IAR Compiler
  */
 #elif defined ( __ICCARM__ )
-  #if __ARM_ARCH_PROFILE == 'A'
-    #include "a-profile/cmsis_iccarm_a.h"
-  #elif __ARM_ARCH_PROFILE == 'R'
-    #include "r-profile/cmsis_iccarm_r.h"
-  #elif __ARM_ARCH_PROFILE == 'M'
-    #include "m-profile/cmsis_iccarm_m.h"
-  #else
-    #error "Unknown Arm architecture profile"
-  #endif
+  #include "cmsis_iccarm.h"
 
 
 /*
@@ -121,6 +81,9 @@
   #endif
   #ifndef   __NO_RETURN
     #define __NO_RETURN                            __attribute__((noreturn))
+  #endif
+  #ifndef   CMSIS_DEPRECATED
+    #define CMSIS_DEPRECATED                       __attribute__((deprecated))
   #endif
   #ifndef   __USED
     #define __USED                                 __attribute__((used))
@@ -174,6 +137,7 @@
     #define __ALIAS(x)                             __attribute__ ((alias(x)))
   #endif
 
+
 /*
  * TASKING Compiler
  */
@@ -198,6 +162,9 @@
   #endif
   #ifndef   __NO_RETURN
     #define __NO_RETURN                            __attribute__((noreturn))
+  #endif
+  #ifndef   CMSIS_DEPRECATED
+    #define CMSIS_DEPRECATED                       __attribute__((deprecated))
   #endif
   #ifndef   __USED
     #define __USED                                 __attribute__((used))
@@ -252,6 +219,7 @@
     #define __ALIAS(x)                             __attribute__ ((alias(x)))
   #endif
 
+
 /*
  * COSMIC Compiler
  */
@@ -277,6 +245,10 @@
   #ifndef   __USED
     #warning No compiler specific solution for __USED. __USED is ignored.
     #define __USED
+  #endif
+  #ifndef   CMSIS_DEPRECATED
+    #warning No compiler specific solution for CMSIS_DEPRECATED. CMSIS_DEPRECATED is ignored.
+    #define CMSIS_DEPRECATED
   #endif
   #ifndef   __WEAK
     #define __WEAK                                 __weak

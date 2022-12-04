@@ -145,7 +145,7 @@ void MMU_CreateTranslationTable(void)
     MMU_TTSection (TTB_BASE, 0, 4096, DESCRIPTOR_FAULT);
 
     /*
-     * Generate descriptors. Refer to core_ca.h to get information about attributes
+     * Generate descriptors. Refer to armv7a.h to get information about attributes
      *
      */
     //Create descriptors for Vectors, RO, RW, ZI sections

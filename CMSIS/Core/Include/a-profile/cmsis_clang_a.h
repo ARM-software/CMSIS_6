@@ -1,8 +1,8 @@
 /**************************************************************************//**
- * @file     cmsis_gcc_a.h
- * @brief    CMSIS compiler GCC header file
- * @version  V6.0.0
- * @date     4. August 2023
+ * @file     cmsis_clang_a.h
+ * @brief    CMSIS compiler armclang (Arm Compiler 6) header file
+ * @version  V5.5.0
+ * @date     04. December 2022
  ******************************************************************************/
 /*
  * Copyright (c) 2009-2023 Arm Limited. All rights reserved.
@@ -22,24 +22,22 @@
  * limitations under the License.
  */
 
-#ifndef __CMSIS_GCC_A_H
-#define __CMSIS_GCC_A_H
+#ifndef __CMSIS_CLANG_COREA_H
+#define __CMSIS_CLANG_COREA_H
 
-#ifndef __CMSIS_GCC_H
+#pragma clang system_header   /* treat file as system include file */
+
+#ifndef __CMSIS_CLANG_H
   #error "This file must not be included directly"
 #endif
 
-/* ignore some GCC warnings */
-#pragma GCC diagnostic push
-#pragma GCC diagnostic ignored "-Wsign-conversion"
-#pragma GCC diagnostic ignored "-Wconversion"
-#pragma GCC diagnostic ignored "-Wunused-parameter"
 
-
-/** \defgroup CMSIS_Core_intrinsics CMSIS Core Intrinsics
-  Access to dedicated SIMD instructions
+/* ###########################  Core Function Access  ########################### */
+/** \ingroup  CMSIS_Core_FunctionInterface
+    \defgroup CMSIS_Core_RegAccFunctions CMSIS Core Register Access Functions
   @{
-*/
+ */
+
 /** \brief  Get CPSR Register
     \return               CPSR Register value
  */
@@ -97,14 +95,15 @@ __STATIC_FORCEINLINE void __set_SP(uint32_t stack)
  */
 __STATIC_FORCEINLINE uint32_t __get_SP_usr(void)
 {
-  uint32_t cpsr = __get_CPSR();
+  uint32_t cpsr;
   uint32_t result;
   __ASM volatile(
-    "CPS     #0x1F  \n"
-    "MOV     %0, sp   " : "=r"(result) : : "memory"
+    "MRS     %0, cpsr   \n"
+    "CPS     #0x1F      \n" // no effect in USR mode
+    "MOV     %1, sp     \n"
+    "MSR     cpsr_c, %0 \n" // no effect in USR mode
+    "ISB" :  "=r"(cpsr), "=r"(result) : : "memory"
    );
-  __set_CPSR(cpsr);
-  __ISB();
   return result;
 }
 
@@ -113,13 +112,14 @@ __STATIC_FORCEINLINE uint32_t __get_SP_usr(void)
  */
 __STATIC_FORCEINLINE void __set_SP_usr(uint32_t topOfProcStack)
 {
-  uint32_t cpsr = __get_CPSR();
+  uint32_t cpsr;
   __ASM volatile(
-    "CPS     #0x1F  \n"
-    "MOV     sp, %0   " : : "r" (topOfProcStack) : "memory"
+    "MRS     %0, cpsr   \n"
+    "CPS     #0x1F      \n" // no effect in USR mode
+    "MOV     sp, %1     \n"
+    "MSR     cpsr_c, %0 \n" // no effect in USR mode
+    "ISB" : "=r"(cpsr) : "r" (topOfProcStack) : "memory"
    );
-  __set_CPSR(cpsr);
-  __ISB();
 }
 
 /** \brief  Get FPEXC
@@ -146,6 +146,8 @@ __STATIC_FORCEINLINE void __set_FPEXC(uint32_t fpexc)
 #endif
 }
 
+/** @} end of CMSIS_Core_RegAccFunctions */
+
 /*
  * Include common core functions to access Coprocessor 15 registers
  */
@@ -155,9 +157,12 @@ __STATIC_FORCEINLINE void __set_FPEXC(uint32_t fpexc)
 #define __get_CP64(cp, op1, Rt, CRm)         __ASM volatile("MRRC p" # cp ", " # op1 ", %Q0, %R0, c" # CRm  : "=r" (Rt) : : "memory" )
 #define __set_CP64(cp, op1, Rt, CRm)         __ASM volatile("MCRR p" # cp ", " # op1 ", %Q0, %R0, c" # CRm  : : "r" (Rt) : "memory" )
 
+#if __CORTEX_A == 5 ||__CORTEX_A == 7 || __CORTEX_A == 9
+  #include "armv7a_cp15.h"
+#elif __CORTEX_A == 35 || __CORTEX_A == 53 || __CORTEX_A == 57
+  #include "armv8a_system_control.h"
+#else
+  #warning "Unknown or unsupported core"
+#endif
 
-/*@} end of group CMSIS_Core_intrinsics */
-
-#pragma GCC diagnostic pop
-
-#endif /* __CMSIS_GCC_A_H */
+#endif /* __CMSIS_CLANG_COREA_H */

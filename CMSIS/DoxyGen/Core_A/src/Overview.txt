@@ -26,7 +26,7 @@ Files relevant to CMSIS-Core (Cortex-A) are present in the following <b>ARM::CMS
 |File/Folder                     |Content                                                                 |
 |--------------------------------|------------------------------------------------------------------------|
 |\b CMSIS\\Documentation\\Core_A | This documentation                                                     |
-|\b CMSIS\\Core_A\\Include       | CMSIS-Core (Cortex-A) header files (for example core_ca.h, etc.)                |
+|\b CMSIS\\Core\\Include         | CMSIS-Core (Cortex-A) header files (for example core_ca5.h, etc.)      |
 |\b Device                       | \ref using_ARM_pg "Arm reference implementations" of Cortex-A devices  |
 |\b Device\\\_Template_Vendor    | \ref templates_pg for extension by silicon vendors                     |
 

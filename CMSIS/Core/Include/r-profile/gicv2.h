@@ -1,11 +1,11 @@
-/**************************************************************************//**
- * @file     core_ca9.h
- * @brief    CMSIS Cortex-A9 Core Peripheral Access Layer Header File
- * @version  V1.0.0
- * @date     2. July 2023
+/******************************************************************************
+ * @file     gic_v20.h
+ * @brief    CMSIS GIC 2.0 API for Armv7-A MPU and Armv7-R MCU
+ * @version  V6.0.0
+ * @date     8. July 2023
  ******************************************************************************/
 /*
- * Copyright (c) 2009-2023 ARM Limited. All rights reserved.
+ * Copyright (c) 2017-2022 Arm Limited. All rights reserved.
  *
  * SPDX-License-Identifier: Apache-2.0
  *
@@ -21,16 +21,6 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
- /*
-  * This file exists for compatibility reasons only
-  */
 
-
-#ifndef __CORE_CA_H
-#define __CORE_CA_H
-
-
-#include "./a-profile/armv7a.h"
-
-
-#endif /* __CORE_CA_H */
+// The gic-interface is located in the profile folder for cortex-a devices
+#include "../a-profile/gicv2.h"

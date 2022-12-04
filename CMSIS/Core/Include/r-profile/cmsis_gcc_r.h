@@ -1,5 +1,5 @@
 /**************************************************************************//**
- * @file     cmsis_gcc_a.h
+ * @file     cmsis_gcc_r.h
  * @brief    CMSIS compiler GCC header file
  * @version  V6.0.0
  * @date     4. August 2023
@@ -22,8 +22,8 @@
  * limitations under the License.
  */
 
-#ifndef __CMSIS_GCC_A_H
-#define __CMSIS_GCC_A_H
+#ifndef __CMSIS_GCC_CORER_H
+#define __CMSIS_GCC_CORER_H
 
 #ifndef __CMSIS_GCC_H
   #error "This file must not be included directly"
@@ -155,9 +155,8 @@ __STATIC_FORCEINLINE void __set_FPEXC(uint32_t fpexc)
 #define __get_CP64(cp, op1, Rt, CRm)         __ASM volatile("MRRC p" # cp ", " # op1 ", %Q0, %R0, c" # CRm  : "=r" (Rt) : : "memory" )
 #define __set_CP64(cp, op1, Rt, CRm)         __ASM volatile("MCRR p" # cp ", " # op1 ", %Q0, %R0, c" # CRm  : : "r" (Rt) : "memory" )
 
-
 /*@} end of group CMSIS_Core_intrinsics */
 
 #pragma GCC diagnostic pop
 
-#endif /* __CMSIS_GCC_A_H */
+#endif /* __CMSIS_GCC_CORER_H */
