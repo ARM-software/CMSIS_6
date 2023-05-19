@@ -13,13 +13,10 @@ across a wide range of development tools and microcontrollers. CMSIS is not a hu
 and does not define standard peripherals. The silicon industry can therefore support the wide variations of Arm Cortex
 processor-based devices with this common standard.
 
-Structure {#structure}
-=========
+CMSIS Components {#cmsis_components}
+================
 
 ![CMSIS Structure](./images/Overview.png)
-
-Software components {#software_components}
--------------------
 
 CMSIS-...                                    | Target Processors       | Software Components
 :--------------------------------------------|:------------------------|:-------------
