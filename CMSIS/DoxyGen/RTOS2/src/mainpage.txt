@@ -1,6 +1,5 @@
-﻿/*=======0=========1=========2=========3=========4=========5=========6=========7=========8=========9=========0=========1====*/
-/**
-\mainpage
+﻿/**
+\mainpage Overview
 
 The <b>CMSIS-RTOS v2 (CMSIS-RTOS2)</b> provides generic RTOS interfaces for Arm&reg; Cortex&reg; processor-based
 devices. It provides a standardized API for software components that require RTOS functionality and gives therefore serious
@@ -58,12 +57,7 @@ The following sections provide further details about CMSIS-RTOS2 and the RTX ref
  - \subpage rtx_safety provides comprehensive instructions for highly reliable applications.
 \endif
 
-
-<hr>
-
-CMSIS-RTOS2 in ARM::CMSIS Pack
-------------------------------
-\anchor directory
+\section directory CMSIS-RTOS2 in ARM::CMSIS Pack
 
 The following files relevant to CMSIS-RTOS2 are present in the <b>ARM::CMSIS</b> Pack directories:
 Directory                    | Content                                                                
