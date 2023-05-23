@@ -542,7 +542,6 @@ td.XML-Token
 {
 	azimuth: 180;
 	font-style:italic;
-	color:Maroon;
 	z-index:20;
 }
 
@@ -550,7 +549,6 @@ span.XML-Token
 {
 	azimuth: 180;
 	font-style:italic;
-	color:Maroon;
 	z-index:20;
 }
 
