@@ -18,9 +18,6 @@ var arr = [];
  arr.push( new tabElement( "CORE_M",  "Core",        "CMSIS-Core (M)"));
  arr.push( new tabElement( "DRV",     "Driver",      "CMSIS-Driver"));
  arr.push( new tabElement( "RTOS2",   "RTOS2",       "CMSIS-RTOS2"));
- arr.push( new tabElement( "DSP",     "DSP",         "CMSIS-DSP"));
- arr.push( new tabElement( "NN",      "NN",          "CMSIS-NN"));
- arr.push( new tabElement( "DAP",     "DAP",         "CMSIS-DAP"));
 
 // write tabs
 // called from the header file.

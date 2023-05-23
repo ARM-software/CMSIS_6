@@ -100,9 +100,6 @@ generate "Core_A"
 generate "Core"
 generate "Driver"
 generate "RTOS2"
-generate "DSP"
-generate "NN"
-generate "DAP"
 
 popd > /dev/null
 
