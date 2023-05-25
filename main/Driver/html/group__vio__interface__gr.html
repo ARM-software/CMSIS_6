@@ -125,7 +125,8 @@ $(document).ready(function(){initNavTree('group__vio__interface__gr.html',''); i
 
 <div class="header">
   <div class="summary">
-<a href="#groups">Content</a>  </div>
+<a href="#groups">Content</a> &#124;
+<a href="#func-members">Functions</a>  </div>
   <div class="headertitle"><div class="title">VIO</div></div>
 </div><!--header-->
 <div class="contents">
@@ -135,9 +136,30 @@ $(document).ready(function(){initNavTree('group__vio__interface__gr.html',''); i
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="groups" name="groups"></a>
 Content</h2></td></tr>
-<tr class="memitem:group__vioDefines__gr"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__vioDefines__gr.html">Defines and Structs</a></td></tr>
-<tr class="memdesc:group__vioDefines__gr"><td class="mdescLeft">&#160;</td><td class="mdescRight">Documents the defines and structs of the VIO API. <br /></td></tr>
+<tr class="memitem:group__vioSignals__gr"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__vioSignals__gr.html">Signals</a></td></tr>
+<tr class="memdesc:group__vioSignals__gr"><td class="mdescLeft">&#160;</td><td class="mdescRight">Signal related defines. <br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:group__vioValueIDs__gr"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__vioValueIDs__gr.html">Value IDs</a></td></tr>
+<tr class="memdesc:group__vioValueIDs__gr"><td class="mdescLeft">&#160;</td><td class="mdescRight">Value Identifier related defines. <br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
+Functions</h2></td></tr>
+<tr class="memitem:ga84e05ae351226f41d461dbe982b2372f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__vio__interface__gr.html#ga84e05ae351226f41d461dbe982b2372f">vioInit</a> (void)</td></tr>
+<tr class="memdesc:ga84e05ae351226f41d461dbe982b2372f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialize test input, output.  <br /></td></tr>
+<tr class="separator:ga84e05ae351226f41d461dbe982b2372f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga1ded6ad7451e43d94f00e9efaddfe621"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__vio__interface__gr.html#ga1ded6ad7451e43d94f00e9efaddfe621">vioSetSignal</a> (uint32_t mask, uint32_t signal)</td></tr>
+<tr class="memdesc:ga1ded6ad7451e43d94f00e9efaddfe621"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set signal output.  <br /></td></tr>
+<tr class="separator:ga1ded6ad7451e43d94f00e9efaddfe621"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga852f94060d9bef92b193e9992a1c2016"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__vio__interface__gr.html#ga852f94060d9bef92b193e9992a1c2016">vioGetSignal</a> (uint32_t mask)</td></tr>
+<tr class="memdesc:ga852f94060d9bef92b193e9992a1c2016"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get signal input.  <br /></td></tr>
+<tr class="separator:ga852f94060d9bef92b193e9992a1c2016"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga5d2572868a34ccfdb10d32adce8f6102"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__vio__interface__gr.html#ga5d2572868a34ccfdb10d32adce8f6102">vioSetValue</a> (uint32_t id, int32_t value)</td></tr>
+<tr class="memdesc:ga5d2572868a34ccfdb10d32adce8f6102"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set value output.  <br /></td></tr>
+<tr class="separator:ga5d2572868a34ccfdb10d32adce8f6102"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga637e596f4309323b1e4e1da6200d4717"><td class="memItemLeft" align="right" valign="top">int32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__vio__interface__gr.html#ga637e596f4309323b1e4e1da6200d4717">vioGetValue</a> (uint32_t id)</td></tr>
+<tr class="memdesc:ga637e596f4309323b1e4e1da6200d4717"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get value input.  <br /></td></tr>
+<tr class="separator:ga637e596f4309323b1e4e1da6200d4717"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Description</h2>
 <p>API for Virtual I/O (VIO) (cmsis_vio.h) </p>
@@ -158,21 +180,13 @@ Virtual I/O provides a generic API for examples and testing</div></div>
 <p><b>VIO Memory Location Structure</b></p>
 <p>For testing purposes, it is required to have fixed memory locations that are used to read/store values. In the VIO:Virtual template file (<b>vio.c</b>), an exemplary implementation is shown:</p>
 <div class="fragment"><div class="line"><span class="comment">// Input, output variables</span></div>
-<div class="line">__USED uint32_t      vioSignalIn;                                       <span class="comment">// Memory for incoming signal</span></div>
-<div class="line">__USED uint32_t      vioSignalOut;                                      <span class="comment">// Memory for outgoing signal</span></div>
-<div class="line">__USED <span class="keywordtype">char</span>          vioPrintMem[VIO_PRINTMEM_NUM][VIO_PRINT_MAX_SIZE]; <span class="comment">// Memory for the last value for each level</span></div>
-<div class="line">__USED int32_t       vioValue   [VIO_VALUE_NUM];                        <span class="comment">// Memory for value used in vioGetValue/vioSetValue</span></div>
-<div class="line">__USED <a class="code hl_struct" href="group__vioValues__gr.html#structvioValueXYZ__t">vioValueXYZ_t</a> vioValueXYZ[VIO_VALUEXYZ_NUM];                     <span class="comment">// Memory for XYZ value for 3-D vector</span></div>
-<div class="line">__USED <a class="code hl_struct" href="group__vioIPAddr__gr.html#structvioAddrIPv4__t">vioAddrIPv4_t</a> vioAddrIPv4[VIO_IPV4_ADDRESS_NUM];                 <span class="comment">// Memory for IPv4 address value used in vioSetIPv4/vioGetIPv4</span></div>
-<div class="line">__USED <a class="code hl_struct" href="group__vioIPAddr__gr.html#structvioAddrIPv6__t">vioAddrIPv6_t</a> vioAddrIPv6[VIO_IPV6_ADDRESS_NUM];                 <span class="comment">// Memory for IPv6 address value used in vioSetIPv6/vioGetIPv6</span></div>
-<div class="ttc" id="agroup__vioIPAddr__gr_html_structvioAddrIPv4__t"><div class="ttname"><a href="group__vioIPAddr__gr.html#structvioAddrIPv4__t">vioAddrIPv4_t</a></div><div class="ttdoc">IPv4 Internet Address.</div><div class="ttdef"><b>Definition:</b> cmsis_vio.h:91</div></div>
-<div class="ttc" id="agroup__vioIPAddr__gr_html_structvioAddrIPv6__t"><div class="ttname"><a href="group__vioIPAddr__gr.html#structvioAddrIPv6__t">vioAddrIPv6_t</a></div><div class="ttdoc">IPv6 Internet Address.</div><div class="ttdef"><b>Definition:</b> cmsis_vio.h:96</div></div>
-<div class="ttc" id="agroup__vioValues__gr_html_structvioValueXYZ__t"><div class="ttname"><a href="group__vioValues__gr.html#structvioValueXYZ__t">vioValueXYZ_t</a></div><div class="ttdoc">3-D vector value</div><div class="ttdef"><b>Definition:</b> cmsis_vio.h:84</div></div>
+<div class="line">__USED uint32_t vioSignalIn;                <span class="comment">// Memory for incoming signal</span></div>
+<div class="line">__USED uint32_t vioSignalOut;               <span class="comment">// Memory for outgoing signal</span></div>
+<div class="line">__USED int32_t  vioValue[VIO_VALUE_NUM];    <span class="comment">// Memory for value used in vioGetValue/vioSetValue</span></div>
 </div><!-- fragment --><p>Use these memory locations to monitor or set the variables as required in the application.</p>
 <p>Two defines are available that help to disconnect the actual peripherals and enable virtual I/Os: <code>CMSIS_VIN</code> and <code>CMSIS_VOUT</code>. They help to write code that can be used in testing environments without real hardware access. The following implementation example shows such code:</p>
 <p><b>Code Example (VIO Implementation)</b> </p><div class="fragment"><div class="line"><span class="comment">// Initialize test input, output.</span></div>
-<div class="line"><span class="keywordtype">void</span> <a class="code hl_function" href="group__vioDefines__gr.html#ga84e05ae351226f41d461dbe982b2372f">vioInit</a> (<span class="keywordtype">void</span>) {</div>
-<div class="line">  uint32_t i;</div>
+<div class="line"><span class="keywordtype">void</span> <a class="code hl_function" href="group__vio__interface__gr.html#ga84e05ae351226f41d461dbe982b2372f">vioInit</a> (<span class="keywordtype">void</span>) {</div>
 <div class="line"><span class="preprocessor">#if !defined CMSIS_VIN</span></div>
 <div class="line"><span class="comment">// Add user variables here:</span></div>
 <div class="line"> </div>
@@ -185,11 +199,7 @@ Virtual I/O provides a generic API for examples and testing</div></div>
 <div class="line">  vioSignalIn  = 0U;</div>
 <div class="line">  vioSignalOut = 0U;</div>
 <div class="line"> </div>
-<div class="line">  memset (vioPrintMem, 0, <span class="keyword">sizeof</span>(vioPrintMem));</div>
-<div class="line">  memset (vioValue,    0, <span class="keyword">sizeof</span>(vioValue));</div>
-<div class="line">  memset (vioValueXYZ, 0, <span class="keyword">sizeof</span>(vioValueXYZ));</div>
-<div class="line">  memset (vioAddrIPv4, 0, <span class="keyword">sizeof</span>(vioAddrIPv4));</div>
-<div class="line">  memset (vioAddrIPv6, 0, <span class="keyword">sizeof</span>(vioAddrIPv6));</div>
+<div class="line">  memset(vioValue, 0, <span class="keyword">sizeof</span>(vioValue));</div>
 <div class="line"> </div>
 <div class="line"><span class="preprocessor">#if !defined CMSIS_VOUT</span></div>
 <div class="line"><span class="comment">// Add user code here:</span></div>
@@ -211,13 +221,232 @@ Virtual I/O provides a generic API for examples and testing</div></div>
 <div class="line"> </div>
 <div class="line">  <span class="keywordflow">return</span>;</div>
 <div class="line">}</div>
-<div class="ttc" id="agroup__vioDefines__gr_html_ga84e05ae351226f41d461dbe982b2372f"><div class="ttname"><a href="group__vioDefines__gr.html#ga84e05ae351226f41d461dbe982b2372f">vioInit</a></div><div class="ttdeci">void vioInit(void)</div><div class="ttdoc">Initialize test input, output.</div><div class="ttdef"><b>Definition:</b> VIO.txt:221</div></div>
+<div class="ttc" id="agroup__vio__interface__gr_html_ga84e05ae351226f41d461dbe982b2372f"><div class="ttname"><a href="group__vio__interface__gr.html#ga84e05ae351226f41d461dbe982b2372f">vioInit</a></div><div class="ttdeci">void vioInit(void)</div><div class="ttdoc">Initialize test input, output.</div><div class="ttdef"><b>Definition:</b> VIO.txt:135</div></div>
 </div><!-- fragment --><p><b>Memory display in IDEs</b></p>
 <p>Arm Keil MDK uses the provided SCVD file to display the VIO signals in Component Viewer:</p>
 <div class="image">
 <img src="vioComponentViewer.png" alt=""/>
 </div>
- </div><!-- contents -->
+ <h2 class="groupheader">Function Documentation</h2>
+<a id="ga84e05ae351226f41d461dbe982b2372f" name="ga84e05ae351226f41d461dbe982b2372f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga84e05ae351226f41d461dbe982b2372f">&#9670;&#160;</a></span>vioInit()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void vioInit </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Initialize test input, output. </p>
+<p>The function <b>vioInit</b> initializes the VIO interface. Use it to initialize any connected hardware that is used to map VIO signals.</p>
+<p><b>Code</b> <b>Example:</b> </p><div class="fragment"><div class="line"><span class="preprocessor">#include &quot;<a class="code" href="cmsis__vio_8h.html">cmsis_vio.h</a>&quot;</span>                  <span class="comment">// ::CMSIS Driver:VIO</span></div>
+<div class="line"> </div>
+<div class="line"><span class="keywordtype">int</span> main (<span class="keywordtype">void</span>) {</div>
+<div class="line"> </div>
+<div class="line">  <span class="comment">// System Initialization</span></div>
+<div class="line">  SystemCoreClockUpdate();</div>
+<div class="line">  <a class="code hl_function" href="group__vio__interface__gr.html#ga84e05ae351226f41d461dbe982b2372f">vioInit</a>();</div>
+<div class="line">  <span class="comment">// ...</span></div>
+<div class="line"> </div>
+<div class="line">}</div>
+<div class="ttc" id="acmsis__vio_8h_html"><div class="ttname"><a href="cmsis__vio_8h.html">cmsis_vio.h</a></div></div>
+</div><!-- fragment --> 
+</div>
+</div>
+<a id="ga1ded6ad7451e43d94f00e9efaddfe621" name="ga1ded6ad7451e43d94f00e9efaddfe621"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga1ded6ad7451e43d94f00e9efaddfe621">&#9670;&#160;</a></span>vioSetSignal()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void vioSetSignal </td>
+          <td>(</td>
+          <td class="paramtype">uint32_t&#160;</td>
+          <td class="paramname"><em>mask</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint32_t&#160;</td>
+          <td class="paramname"><em>signal</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Set signal output. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">mask</td><td>bit mask of signals to set. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">signal</td><td>signal value to set.</td></tr>
+  </table>
+  </dd>
+</dl>
+<p>The function <b>vioSetSignal</b> set a <em>signal</em> to an output specified by <em>mask</em>. Use this function to map VIOs to actual hardware for displaying signals on a target board.</p>
+<p>Refer to <a class="el" href="group__vioSignals__gr.html">Signals</a> for information about the possible <em>mask</em> and <em>signal</em> values.</p>
+<p><b>Code</b> <b>Example:</b> </p><div class="fragment"><div class="line"><span class="preprocessor">#include &quot;<a class="code" href="cmsis__vio_8h.html">cmsis_vio.h</a>&quot;</span>                  <span class="comment">// ::CMSIS Driver:VIO</span></div>
+<div class="line"> </div>
+<div class="line"><span class="keywordtype">int</span> main (<span class="keywordtype">void</span>) {</div>
+<div class="line"> </div>
+<div class="line">  <a class="code hl_function" href="group__vio__interface__gr.html#ga84e05ae351226f41d461dbe982b2372f">vioInit</a>();</div>
+<div class="line">  <a class="code hl_function" href="group__vio__interface__gr.html#ga1ded6ad7451e43d94f00e9efaddfe621">vioSetSignal</a>(<a class="code hl_define" href="group__vioSignals__gr.html#ga026dee2deae0bea0ff4891d5f5f11c90">vioLED0</a>, <a class="code hl_define" href="group__vioSignals__gr.html#gae909aa203834183f9f10f267b1dc7dc8">vioLEDon</a>);</div>
+<div class="line">  <span class="comment">// ...</span></div>
+<div class="line">  <a class="code hl_function" href="group__vio__interface__gr.html#ga1ded6ad7451e43d94f00e9efaddfe621">vioSetSignal</a>(<a class="code hl_define" href="group__vioSignals__gr.html#ga026dee2deae0bea0ff4891d5f5f11c90">vioLED0</a>, <a class="code hl_define" href="group__vioSignals__gr.html#gac47779d89b1e40ea5254bef26accf0ee">vioLEDoff</a>);</div>
+<div class="line">}</div>
+<div class="ttc" id="agroup__vioSignals__gr_html_ga026dee2deae0bea0ff4891d5f5f11c90"><div class="ttname"><a href="group__vioSignals__gr.html#ga026dee2deae0bea0ff4891d5f5f11c90">vioLED0</a></div><div class="ttdeci">#define vioLED0</div><div class="ttdoc">vioSetSignal mask parameter: LED 0 (for 3-color: red)</div></div>
+<div class="ttc" id="agroup__vioSignals__gr_html_gac47779d89b1e40ea5254bef26accf0ee"><div class="ttname"><a href="group__vioSignals__gr.html#gac47779d89b1e40ea5254bef26accf0ee">vioLEDoff</a></div><div class="ttdeci">#define vioLEDoff</div><div class="ttdoc">vioSetSignal signal parameter: pattern to turn any LED off</div></div>
+<div class="ttc" id="agroup__vioSignals__gr_html_gae909aa203834183f9f10f267b1dc7dc8"><div class="ttname"><a href="group__vioSignals__gr.html#gae909aa203834183f9f10f267b1dc7dc8">vioLEDon</a></div><div class="ttdeci">#define vioLEDon</div><div class="ttdoc">vioSetSignal signal parameter: pattern to turn any LED on</div></div>
+<div class="ttc" id="agroup__vio__interface__gr_html_ga1ded6ad7451e43d94f00e9efaddfe621"><div class="ttname"><a href="group__vio__interface__gr.html#ga1ded6ad7451e43d94f00e9efaddfe621">vioSetSignal</a></div><div class="ttdeci">void vioSetSignal(uint32_t mask, uint32_t signal)</div><div class="ttdoc">Set signal output.</div><div class="ttdef"><b>Definition:</b> VIO.txt:157</div></div>
+</div><!-- fragment --> 
+</div>
+</div>
+<a id="ga852f94060d9bef92b193e9992a1c2016" name="ga852f94060d9bef92b193e9992a1c2016"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga852f94060d9bef92b193e9992a1c2016">&#9670;&#160;</a></span>vioGetSignal()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint32_t vioGetSignal </td>
+          <td>(</td>
+          <td class="paramtype">uint32_t&#160;</td>
+          <td class="paramname"><em>mask</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Get signal input. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">mask</td><td>bit mask of signals to read. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>signal value.</dd></dl>
+<p>The function <b>vioGetSignal</b> retrieves a signal from an input identified by <em>mask</em>. Use this function to read data from any input that is provided.</p>
+<p>Refer to <a class="el" href="group__vioSignals__gr.html">Signals</a> for information about the possible <em>mask</em> values.</p>
+<p><b>Code</b> <b>Example:</b> </p><div class="fragment"><div class="line"><span class="preprocessor">#include &quot;<a class="code" href="cmsis__vio_8h.html">cmsis_vio.h</a>&quot;</span>                  <span class="comment">// ::CMSIS Driver:VIO</span></div>
+<div class="line"> </div>
+<div class="line"><span class="keywordtype">int</span> main (<span class="keywordtype">void</span>) {</div>
+<div class="line">  uint32_t state;</div>
+<div class="line">  uint32_t last = 0U;</div>
+<div class="line"> </div>
+<div class="line">  <a class="code hl_function" href="group__vio__interface__gr.html#ga84e05ae351226f41d461dbe982b2372f">vioInit</a>();</div>
+<div class="line">  <span class="keywordflow">for</span> (;;) {</div>
+<div class="line">    state = (<a class="code hl_function" href="group__vio__interface__gr.html#ga852f94060d9bef92b193e9992a1c2016">vioGetSignal</a> (<a class="code hl_define" href="group__vioSignals__gr.html#ga642440766bc00069da04379bc1f1598d">vioBUTTON0</a>)); <span class="comment">// Get pressed button state</span></div>
+<div class="line">    <span class="keywordflow">if</span> (state != last){</div>
+<div class="line">      <span class="keywordflow">if</span> (state == <a class="code hl_define" href="group__vioSignals__gr.html#ga642440766bc00069da04379bc1f1598d">vioBUTTON0</a>){</div>
+<div class="line">        <span class="comment">// do something</span></div>
+<div class="line">      }</div>
+<div class="line">    }</div>
+<div class="line">    last = state;</div>
+<div class="line">  }</div>
+<div class="line">}</div>
+<div class="ttc" id="agroup__vioSignals__gr_html_ga642440766bc00069da04379bc1f1598d"><div class="ttname"><a href="group__vioSignals__gr.html#ga642440766bc00069da04379bc1f1598d">vioBUTTON0</a></div><div class="ttdeci">#define vioBUTTON0</div><div class="ttdoc">vioGetSignal mask parameter: Push button 0</div></div>
+<div class="ttc" id="agroup__vio__interface__gr_html_ga852f94060d9bef92b193e9992a1c2016"><div class="ttname"><a href="group__vio__interface__gr.html#ga852f94060d9bef92b193e9992a1c2016">vioGetSignal</a></div><div class="ttdeci">uint32_t vioGetSignal(uint32_t mask)</div><div class="ttdoc">Get signal input.</div><div class="ttdef"><b>Definition:</b> VIO.txt:180</div></div>
+</div><!-- fragment --> 
+</div>
+</div>
+<a id="ga5d2572868a34ccfdb10d32adce8f6102" name="ga5d2572868a34ccfdb10d32adce8f6102"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga5d2572868a34ccfdb10d32adce8f6102">&#9670;&#160;</a></span>vioSetValue()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void vioSetValue </td>
+          <td>(</td>
+          <td class="paramtype">uint32_t&#160;</td>
+          <td class="paramname"><em>id</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int32_t&#160;</td>
+          <td class="paramname"><em>value</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Set value output. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">id</td><td>output identifier. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">value</td><td>value to set.</td></tr>
+  </table>
+  </dd>
+</dl>
+<p>The function <b>vioSetValue</b> set the <em>value</em> to the output identified by <em>id</em>. Use this function to set states of I/Os for example.</p>
+<p>Refer to <a class="el" href="group__vioValueIDs__gr.html">Value IDs</a> for information about <em>id</em>.</p>
+<p><b>Code</b> <b>Example:</b> </p><div class="fragment"><div class="line"><span class="preprocessor">#include &quot;<a class="code" href="cmsis__vio_8h.html">cmsis_vio.h</a>&quot;</span>                  <span class="comment">// ::CMSIS Driver:VIO</span></div>
+<div class="line"> </div>
+<div class="line"><span class="keywordtype">int</span> main (<span class="keywordtype">void</span>) {</div>
+<div class="line"> </div>
+<div class="line">  <a class="code hl_function" href="group__vio__interface__gr.html#ga84e05ae351226f41d461dbe982b2372f">vioInit</a>();</div>
+<div class="line">  <a class="code hl_function" href="group__vio__interface__gr.html#ga5d2572868a34ccfdb10d32adce8f6102">vioSetValue</a>(<a class="code hl_define" href="group__vioValueIDs__gr.html#ga2eb17d856c43efcb7ba816822581b291">vioAOUT0</a>, 1024);</div>
+<div class="line">}</div>
+<div class="ttc" id="agroup__vioValueIDs__gr_html_ga2eb17d856c43efcb7ba816822581b291"><div class="ttname"><a href="group__vioValueIDs__gr.html#ga2eb17d856c43efcb7ba816822581b291">vioAOUT0</a></div><div class="ttdeci">#define vioAOUT0</div><div class="ttdoc">vioSetValue / vioGetValue id parameter: Analog output value 0</div></div>
+<div class="ttc" id="agroup__vio__interface__gr_html_ga5d2572868a34ccfdb10d32adce8f6102"><div class="ttname"><a href="group__vio__interface__gr.html#ga5d2572868a34ccfdb10d32adce8f6102">vioSetValue</a></div><div class="ttdeci">void vioSetValue(uint32_t id, int32_t value)</div><div class="ttdoc">Set value output.</div><div class="ttdef"><b>Definition:</b> VIO.txt:213</div></div>
+</div><!-- fragment --> 
+</div>
+</div>
+<a id="ga637e596f4309323b1e4e1da6200d4717" name="ga637e596f4309323b1e4e1da6200d4717"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga637e596f4309323b1e4e1da6200d4717">&#9670;&#160;</a></span>vioGetValue()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int32_t vioGetValue </td>
+          <td>(</td>
+          <td class="paramtype">uint32_t&#160;</td>
+          <td class="paramname"><em>id</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Get value input. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">id</td><td>input identifier. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>value retrieved from input.</dd></dl>
+<p>The function <b>vioGetValue</b> retrieves a value from the input identified by <em>id</em>. Use this function to read data from inputs.</p>
+<p>Refer to <a class="el" href="group__vioValueIDs__gr.html">Value IDs</a> for information about <em>id</em>.</p>
+<p><b>Code</b> <b>Example:</b> </p><div class="fragment"><div class="line"><span class="preprocessor">#include &quot;<a class="code" href="cmsis__vio_8h.html">cmsis_vio.h</a>&quot;</span>                  <span class="comment">// ::CMSIS Driver:VIO</span></div>
+<div class="line"> </div>
+<div class="line"><span class="keywordtype">int</span> main (<span class="keywordtype">void</span>) {</div>
+<div class="line">  uint32_t button;</div>
+<div class="line"> </div>
+<div class="line">  <a class="code hl_function" href="group__vio__interface__gr.html#ga84e05ae351226f41d461dbe982b2372f">vioInit</a>();</div>
+<div class="line">  button = <a class="code hl_function" href="group__vio__interface__gr.html#ga637e596f4309323b1e4e1da6200d4717">vioGetValue</a>(<a class="code hl_define" href="group__vioSignals__gr.html#ga642440766bc00069da04379bc1f1598d">vioBUTTON0</a>);</div>
+<div class="line">}</div>
+<div class="ttc" id="agroup__vio__interface__gr_html_ga637e596f4309323b1e4e1da6200d4717"><div class="ttname"><a href="group__vio__interface__gr.html#ga637e596f4309323b1e4e1da6200d4717">vioGetValue</a></div><div class="ttdeci">int32_t vioGetValue(uint32_t id)</div><div class="ttdoc">Get value input.</div><div class="ttdef"><b>Definition:</b> VIO.txt:234</div></div>
+</div><!-- fragment --> 
+</div>
+</div>
+</div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
