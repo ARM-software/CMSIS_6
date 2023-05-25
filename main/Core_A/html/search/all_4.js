@@ -44,8 +44,8 @@ var searchData=
   ['dfsr_5fwnr_5fpos_41',['DFSR_WnR_Pos',['../group__CMSIS__DFSR__BITS.html#ga410420633e9ba47cdd1ae2d3df146866',1,'ref_core_register.txt']]],
   ['dir_42',['DIR',['../structGICInterface__Type.html#a554bd1f88421df3189c664b9fd9c02aa',1,'GICInterface_Type']]],
   ['dodmbs_43',['DODMBS',['../unionACTLR__Type.html#acfabc61e73fb846970cd6541c5baf7d8',1,'ACTLR_Type']]],
-  ['domain_44',['Domain',['../unionDFSR__Type.html#a38982c7088a4069f8a4b347f5eb400e9',1,'DFSR_Type']]],
-  ['domain_45',['domain',['../structmmu__region__attributes__Type.html#a94158b710d212b8ca8105d78a910db39',1,'mmu_region_attributes_Type']]],
+  ['domain_44',['domain',['../structmmu__region__attributes__Type.html#a94158b710d212b8ca8105d78a910db39',1,'mmu_region_attributes_Type']]],
+  ['domain_45',['Domain',['../unionDFSR__Type.html#a38982c7088a4069f8a4b347f5eb400e9',1,'DFSR_Type']]],
   ['domain_20access_20control_20register_20_28dacr_29_46',['Domain Access Control Register (DACR)',['../group__CMSIS__DACR.html',1,'']]],
   ['dwbst_47',['DWBST',['../unionACTLR__Type.html#ad8faaa57629f258c6eba678ba8efc9da',1,'ACTLR_Type']]]
 ];
