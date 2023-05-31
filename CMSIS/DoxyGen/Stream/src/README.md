@@ -18,7 +18,7 @@ The diagram below shows a Compute Graph with four nodes:
 - A processing node (Detector) consuming 5 values with data type `q15` and producing 2 values with data type `f32` each it is run.
 - A sink consuming 10 values with data type `f32` each time it is run.
 
-![Sample Compute Graph](Compute-Graph-Sample.png)
+![Sample Compute Graph](./images/Compute-Graph-Sample.png)
 
 This Compute Graph is described with a Python script file that defines the nodes and their connections. This Python script computes a C++ implementation with static schedule and correctly sized memory buffers between each node. Nodes that are implemented in C are integrated using C++ wrappers.
 
@@ -28,6 +28,6 @@ CMSIS-Stream gives the developer a toolbox that allows to create optimized DSP p
 By optimizing signal conditioning and feature extraction, the complexity of the ML classifier.
 More DSP pre-processing helps therefore lowering the overall performance that is required for a ML application.
 
-![Example Machine Learning Stack](ML-Stack.png)
+![Example Machine Learning Stack](./images/ML-Stack.png)
 
 
