@@ -1,15 +1,23 @@
 # CMSIS-Stream
 
-**CMSIS-Stream** provides methods, interfaces, and tools to optimize data block streaming between processing steps of a DSP/ML application.  
+**CMSIS-Stream** is a Python package that provides methods, interfaces, and tools to optimize data block streaming between processing steps of a DSP/ML application.  
+
+## Benefits
+
+- **CMSIS-Stream** enables a modular design that makes it easier to develop and maintain DSP pipelines.
+- The provided tools generate at build time an optimized scheduling of the processing nodes with minimized memory overhead.
+- Creates an easy to understand representation of the design visualized with a compute graph.
+  
+## Components
 
 The components of CMSIS-Stream are:
 
-- **Compute Graph:** is the decomposition of the application in a directed acyclic graph that shows the data flow. It describes the data formats, FIFO buffers, data streams, and processing steps. The Compute Graph is described with a Python script file.
-- **Tools:** that convert the Compute Graph into processing steps at build-time with optimized schedule and memory usage.
+- **Compute Graph:** is the decomposition of the application in a directed acyclic graph that shows the data flow between processing nodes. It describes the data formats, FIFO buffers, data streams, and processing steps using a Python script file.
+- **Tools:** convert the Compute Graph with Python into processing steps at build-time with optimized schedule and memory usage.
 - **Interfaces:** header files, templates, and methods for data management (that works also on AMP systems).
-- **Usage Examples:** that help a software developer to get started (should provide also examples using various DSP and ML eco-system tools).
+- **Usage Examples:** that help a software developer to get started.
 
-**Simple Compute Graph**
+## Example Compute Graph
 
 The diagram below shows a Compute Graph with four nodes:
 
@@ -22,12 +30,15 @@ The diagram below shows a Compute Graph with four nodes:
 
 This Compute Graph is described with a Python script file that defines the nodes and their connections. This Python script computes a C++ implementation with static schedule and correctly sized memory buffers between each node. Nodes that are implemented in C are integrated using C++ wrappers.
 
-**Examples of Complex DSP Pipelines**
+## Example of Complex DSP Pipelines
 
-CMSIS-Stream gives the developer a toolbox that allows to create optimized DSP pipelines, that are for example required to optimize machine learning (ML) software stacks. With a Compute Graph complex DSP pipelines like shown in the diagram below can be described.
+**CMSIS-Stream** gives the developer a toolbox that allows to create optimized DSP pipelines, that are for example required to optimize machine learning (ML) software stacks. With a Compute Graph complex DSP pipelines like shown in the diagram below can be described.
 By optimizing signal conditioning and feature extraction, the complexity of the ML classifier.
 More DSP pre-processing helps therefore lowering the overall performance that is required for a ML application.
 
 ![Example Machine Learning Stack](./images/ML-Stack.png)
 
+## Access to CMSIS-Stream
 
+- [**GitHub Repo**](https://github.com/ARM-software/cmsis-stream) - provides templates, examples, and access to documentation.
+- [**Python package**](https://pypi.org/project/cmsis-stream/) - provides easy access to tools via standard Python delivery system.
