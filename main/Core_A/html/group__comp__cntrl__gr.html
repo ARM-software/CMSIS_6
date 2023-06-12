@@ -351,7 +351,7 @@ Macros</h2></td></tr>
 <p><b> Code Example:</b> </p><div class="fragment"><div class="line">\\ Get Interrupt Vector</div>
 <div class="line"><a class="code hl_define" href="cmsis__armcc_8h.html#ab904513442afdf77d4f8c74f23cbb040">__STATIC_FORCEINLINE</a> uint32_t NVIC_GetVector(IRQn_Type IRQn)</div>
 <div class="line">{</div>
-<div class="line">    uint32_t *vectors = (uint32_t *)SCB-&gt;VTOR;</div>
+<div class="line">    uint32_t *vectors = (uint32_t *) ((uintptr_t) SCB-&gt;VTOR);</div>
 <div class="line">    <span class="keywordflow">return</span> vectors[(int32_t)IRQn + NVIC_USER_IRQ_OFFSET];</div>
 <div class="line">}</div>
 <div class="ttc" id="acmsis__armcc_8h_html_ab904513442afdf77d4f8c74f23cbb040"><div class="ttname"><a href="cmsis__armcc_8h.html#ab904513442afdf77d4f8c74f23cbb040">__STATIC_FORCEINLINE</a></div><div class="ttdeci">#define __STATIC_FORCEINLINE</div><div class="ttdef"><b>Definition:</b> cmsis_armcc.h:52</div></div>

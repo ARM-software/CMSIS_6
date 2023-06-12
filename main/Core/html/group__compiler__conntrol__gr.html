@@ -632,7 +632,7 @@ Macros</h2></td></tr>
 <p><b>Code Example:</b> </p><div class="fragment"><div class="line">\\ Get Interrupt Vector</div>
 <div class="line"><a class="code hl_define" href="group__compiler__conntrol__gr.html#gab904513442afdf77d4f8c74f23cbb040">__STATIC_FORCEINLINE</a> uint32_t <a class="code hl_function" href="group__NVIC__gr.html#gaebee9cad6724a5bac1857f0f1fb6d6af">NVIC_GetVector</a>(<a class="code hl_enumeration" href="group__NVIC__gr.html#ga7e1129cd8a196f4284d41db3e82ad5c8">IRQn_Type</a> IRQn)</div>
 <div class="line">{</div>
-<div class="line">    uint32_t *vectors = (uint32_t *)SCB-&gt;VTOR;</div>
+<div class="line">    uint32_t *vectors = (uint32_t *) ((uintptr_t) SCB-&gt;VTOR);</div>
 <div class="line">    <span class="keywordflow">return</span> vectors[(int32_t)IRQn + NVIC_USER_IRQ_OFFSET];</div>
 <div class="line">}</div>
 <div class="ttc" id="agroup__NVIC__gr_html_ga7e1129cd8a196f4284d41db3e82ad5c8"><div class="ttname"><a href="group__NVIC__gr.html#ga7e1129cd8a196f4284d41db3e82ad5c8">IRQn_Type</a></div><div class="ttdeci">IRQn_Type</div><div class="ttdoc">Definition of IRQn numbers.</div><div class="ttdef"><b>Definition:</b> Ref_NVIC.txt:385</div></div>
@@ -658,7 +658,7 @@ Macros</h2></td></tr>
 <p><b>Code Example:</b> </p><div class="fragment"><div class="line">\\ Get Interrupt Vector</div>
 <div class="line"><a class="code hl_define" href="group__compiler__conntrol__gr.html#gaba87361bfad2ae52cfe2f40c1a1dbf9c">__STATIC_INLINE</a> uint32_t <a class="code hl_function" href="group__NVIC__gr.html#gaebee9cad6724a5bac1857f0f1fb6d6af">NVIC_GetVector</a>(<a class="code hl_enumeration" href="group__NVIC__gr.html#ga7e1129cd8a196f4284d41db3e82ad5c8">IRQn_Type</a> IRQn)</div>
 <div class="line">{</div>
-<div class="line">    uint32_t *vectors = (uint32_t *)SCB-&gt;VTOR;</div>
+<div class="line">    uint32_t *vectors = (uint32_t *) ((uintptr_t) SCB-&gt;VTOR);</div>
 <div class="line">    <span class="keywordflow">return</span> vectors[(int32_t)IRQn + NVIC_USER_IRQ_OFFSET];</div>
 <div class="line">}</div>
 </div><!-- fragment --> 
