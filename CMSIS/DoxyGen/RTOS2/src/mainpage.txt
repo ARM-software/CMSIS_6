@@ -64,7 +64,6 @@ Directory                    | Content
 :----------------------------|:-----------------------------------------------------------------------
 \b CMSIS/Documentation/RTOS2 | This documentation                                                     
 \b CMSIS/RTOS2/Include       | \ref cmsis_os2_h                                                 
-\b CMSIS/RTOS2/RTX           | CMSIS-RTOS2 reference implementation based on RTX version 5
 \b CMSIS/RTOS2/Source        | Generic <b>OS tick</b> implementations for various processors based on \ref rtos_os_tick_api
 \b CMSIS/RTOS2/Template      | Compatibility layer to <a class="el" href="../../RTOS/html/index.html">CMSIS-RTOS v1</a>
 */
