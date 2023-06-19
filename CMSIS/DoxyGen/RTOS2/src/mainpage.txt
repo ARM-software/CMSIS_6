@@ -44,16 +44,14 @@ within the same application. Over time, you may migrate to the new API as explai
 
 CMSIS-RTOS2 is not POSIX compliant, but has provisions to enable a C++11/C++14 interface.
 
-The following sections provide further details about CMSIS-RTOS2 and the RTX reference implementation.
- - \ref rtos_revisionHistory documents changes made in each version for CMSIS-RTOS v2 and RTX v5.
+The following sections provide further details about CMSIS-RTOS2.
+ - \ref rtos_revisionHistory documents changes made in each version for CMSIS-RTOS v2.
  - \ref genRTOS2IF provides an overview about the APIs available with CMSIS-RTOS v2.
  - \ref functionOverview lists the CMSIS-RTOS2 API functions and the header file %cmsis_os2.h.
 \ifnot FuSaRTS
  - \ref rtosValidation describes the validation suite that is publicly available.
  - \ref os2Migration shows how to use CMSIS-RTOS2 in existing projects and lists function differences to CMSIS-RTOS v1.
 \endif
- - \ref rtx5_impl provides general information about the operation and usage of RTX v5.
-\if FuSaRTS
  - \ref rtx_safety provides comprehensive instructions for highly reliable applications.
 \endif
 

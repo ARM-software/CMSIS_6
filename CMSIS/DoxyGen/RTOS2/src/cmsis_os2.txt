@@ -60,7 +60,7 @@ This enables portable application that works with every RTOS kernel event withou
 changed.
 
 Static object allocation requires access to RTOS object control block definitions. An implementation specific header file (<i>rtos</i>.h in 
-the picture below) provides access to such definitions. The section For RTX v5 these definitions are provided in the header file %rtx_os.h that contains this definitions for RTX v5.
+the picture below) provides access to such definitions.
 
 
 \image html "CMSIS_RTOS_Files.png" "CMSIS-RTOS File Structure"
@@ -101,6 +101,23 @@ int main (void) {
 \endcode
 */
 
+
+/*=======0=========1=========2=========3=========4=========5=========6=========7=========8=========9=========0=========1====*/
+/**
+\page functionOverview Function Overview
+
+CMSIS-RTOS2 provides following API interfaces:
+  - \subpage rtos_api2 is the C function interface that supports dynamic object creation.
+  - <a class="el" href="../../RTOS/html/functionOverview.html">CMSIS-RTOS C API v1</a> is a C function API that is backward
+    compatible with CMSIS-RTOS v1.
+
+It is possible to intermix the different API variants in the same application and even in the same C/C++ source module.
+However, the functions of the <a class="el" href="../../RTOS/html/functionOverview.html">CMSIS-RTOS C API v1</a> may be deprecated in future versions of CMSIS-RTOS.
+
+CMSIS-RTOS2 defines also a generic system timer interface that works across the supported Arm Cortex processors:
+  - \subpage rtos_os_tick_api is the interface to a kernel system timer.
+
+*/
 
 /*=======0=========1=========2=========3=========4=========5=========6=========7=========8=========9=========0=========1====*/
 /**
@@ -286,11 +303,6 @@ threads are kept alive until one explicitly calls \ref osThreadJoin.
    - \ref osMessageQueuePut : \copybrief osMessageQueuePut
    - \ref osMessageQueueReset : \copybrief osMessageQueueReset
  
-\todo restructure
- - \ref rtx5_specific
-   - \ref osRtxErrorNotify : \copybrief osRtxErrorNotify
-   - \ref osRtxIdleThread : \copybrief osRtxIdleThread
-
 The following CMSIS-RTOS C API v2 functions can be called from threads and \ref CMSIS_RTOS_ISR_Calls "Interrupt Service Routines"
 (ISR):
    - \ref osKernelGetInfo, \ref osKernelGetState,
@@ -304,16 +316,6 @@ The following CMSIS-RTOS C API v2 functions can be called from threads and \ref 
      \ref osMemoryPoolGetCapacity, \ref osMemoryPoolGetBlockSize, \ref osMemoryPoolGetCount, \ref osMemoryPoolGetSpace
    - \ref osMessageQueueGetName, \ref osMessageQueuePut, \ref osMessageQueueGet, \ref osMessageQueueGetCapacity,
      \ref osMessageQueueGetMsgSize, \ref osMessageQueueGetCount, \ref osMessageQueueGetSpace
-*/
-
-
-/*=======0=========1=========2=========3=========4=========5=========6=========7=========8=========9=========0=========1====*/
-/**
-\ifnot FuSaRTS
-\page rtos_apicpp CMSIS-RTOS C++ API
-
-A C++11/C++14 interface is planned for the future.
-\endif
 */
 
 /*=======0=========1=========2=========3=========4=========5=========6=========7=========8=========9=========0=========1====*/
@@ -333,7 +335,6 @@ It provides a generic interface to a kernel system tick timer and defines the fo
    - \ref OS_Tick_GetInterval : \copybrief OS_Tick_GetInterval
    - \ref OS_Tick_GetCount : \copybrief OS_Tick_GetCount
    - \ref OS_Tick_GetOverflow : \copybrief OS_Tick_GetOverflow
-
 */
 
 
@@ -379,8 +380,6 @@ members to assign custom control block memory, i.e. `cb_mem` and `cb_size` membe
 or `cb_mem` is `NULL`, \ref CMSIS_RTOS_MemoryMgmt_Automatic is used. Providing a pointer to user memory in `cb_mem` switches
 to \ref CMSIS_RTOS_MemoryMgmt_Manual.
 
-\note For detailed information about memory allocation strategies provided in RTX5 refer to \ref MemoryAllocation.
-
 \section CMSIS_RTOS_MemoryMgmt_Automatic Automatic Dynamic Allocation
 
 The automatic allocation is the default and viable for many use-cases. Moreover it is fully portable across different
@@ -417,8 +416,7 @@ The Mutexes in this example are created using automatic memory allocation.
 
 One can get fine grained control over memory allocation by providing user-defined memory.
 The actual requirements such user-defined memory are implementation specific. Thus one
-needs to carefully refer to the size and alignment rules of the implementation used, e.g.
-for RTX see \ref StaticObjectMemory.
+needs to carefully refer to the size and alignment rules of the implementation used.
 
 <b> Code Example:</b> 
 \code{.c}
