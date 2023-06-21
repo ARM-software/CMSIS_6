@@ -52,7 +52,7 @@
     </script>
    </span>
    </div>
-   <div id="projectbrief">Real-Time Operating System: API and RTX Reference Implementation</div>
+   <div id="projectbrief">Real-Time Operating System API</div>
   </td>
    <td>        <div id="MSearchBox" class="MSearchBoxInactive">
         <span class="left">
@@ -221,9 +221,9 @@ Functions</h2></td></tr>
 <li>start the RTOS kernel and thread switching.</li>
 <li>check the execution status of the RTOS kernel.</li>
 </ul>
-<dl class="section note"><dt>Note</dt><dd>The kernel information and control functions cannot be called from <a class="el" href="theory_of_operation.html#CMSIS_RTOS_ISR_Calls">Interrupt Service Routines</a>. </dd>
+<dl class="section note"><dt>Note</dt><dd>The kernel information and control functions cannot be called from Interrupt Service Routines. </dd>
 <dd>
-The kernel initialization for RTX5 is documented in <a class="el" href="theory_of_operation.html#SystemStartup">System Startup</a>.</dd></dl>
+The kernel initialization for RTX5 is documented in SystemStartup.</dd></dl>
 <p><b>Code Example</b> </p><div class="fragment"><div class="line"><span class="comment">/*----------------------------------------------------------------------------</span></div>
 <div class="line"><span class="comment"> * Application main thread</span></div>
 <div class="line"><span class="comment"> *---------------------------------------------------------------------------*/</span></div>
@@ -339,10 +339,10 @@ Kernel version (major.minor.rev: mmnnnrrrr dec). </td></tr>
 <p>Possible <a class="el" href="group__CMSIS__RTOS__Definitions.html#ga6c0dbe6069e4e7f47bb4cd32ae2b813e">osStatus_t</a> return values:</p><ul>
 <li><em>osOK</em> in case of success.</li>
 <li><em>osError</em> if an unspecific error occurred.</li>
-<li><em>osErrorISR</em> if called from an <a class="el" href="theory_of_operation.html#CMSIS_RTOS_ISR_Calls">Interrupt Service Routine</a>.</li>
+<li><em>osErrorISR</em> if called from an Interrupt Service Routine.</li>
 <li><em>osErrorNoMemory</em> if no memory could be reserved for the operation.</li>
 </ul>
-<dl class="section note"><dt>Note</dt><dd>This function <b>cannot</b> be called from <a class="el" href="theory_of_operation.html#CMSIS_RTOS_ISR_Calls">Interrupt Service Routines</a>.</dd></dl>
+<dl class="section note"><dt>Note</dt><dd>This function <b>cannot</b> be called from Interrupt Service Routines.</dd></dl>
 <p><b> Code Example</b> </p><div class="fragment"><div class="line"><span class="preprocessor">#include &quot;RTE_Components.h&quot;</span></div>
 <div class="line"><span class="preprocessor">#include  CMSIS_device_header</span></div>
 <div class="line"><span class="preprocessor">#include &quot;<a class="code" href="cmsis__os2_8h.html">cmsis_os2.h</a>&quot;</span></div>
@@ -416,7 +416,7 @@ Kernel version (major.minor.rev: mmnnnrrrr dec). </td></tr>
 <li><em>osOK</em> in case of success.</li>
 <li><em>osError</em> if an unspecific error occurred.</li>
 </ul>
-<dl class="section note"><dt>Note</dt><dd>This function may be called from <a class="el" href="theory_of_operation.html#CMSIS_RTOS_ISR_Calls">Interrupt Service Routines</a>.</dd></dl>
+<dl class="section note"><dt>Note</dt><dd>This function may be called from Interrupt Service Routines.</dd></dl>
 <p><b>Code Example</b> </p><div class="fragment"><div class="line"><span class="keywordtype">void</span> info (<span class="keywordtype">void</span>) {</div>
 <div class="line">  <span class="keywordtype">char</span> infobuf[100];</div>
 <div class="line">  <a class="code hl_struct" href="group__CMSIS__RTOS__KernelCtrl.html#structosVersion__t">osVersion_t</a> osv;</div>
@@ -459,7 +459,7 @@ Kernel version (major.minor.rev: mmnnnrrrr dec). </td></tr>
 <li><a class="el" href="cmsis__os2_8h.html#ga08326469274b668140ca934b168a5ad4a0545c92c18ce8e6b24e82a0d694a0b4a">osKernelError</a> if an unspecific error occurred.</li>
 <li>the actual kernel state otherwise.</li>
 </ul>
-<dl class="section note"><dt>Note</dt><dd>This function may be called from <a class="el" href="theory_of_operation.html#CMSIS_RTOS_ISR_Calls">Interrupt Service Routines</a>.</dd></dl>
+<dl class="section note"><dt>Note</dt><dd>This function may be called from Interrupt Service Routines.</dd></dl>
 <p><b>Code Example</b> </p><div class="fragment"><div class="line"><span class="keywordtype">int</span> main (<span class="keywordtype">void</span>) {</div>
 <div class="line">  <span class="comment">// System Initialization</span></div>
 <div class="line">  SystemCoreClockUpdate();</div>
@@ -494,9 +494,9 @@ Kernel version (major.minor.rev: mmnnnrrrr dec). </td></tr>
 <p>At least one initial thread should be created prior osKernelStart, see <a class="el" href="group__CMSIS__RTOS__ThreadMgmt.html#ga48d68b8666d99d28fa646ee1d2182b8f">osThreadNew</a>.</p>
 <p>Possible <a class="el" href="group__CMSIS__RTOS__Definitions.html#ga6c0dbe6069e4e7f47bb4cd32ae2b813e">osStatus_t</a> return values:</p><ul>
 <li><em>osError</em> if an unspecific error occurred.</li>
-<li><em>osErrorISR</em> if called from an <a class="el" href="theory_of_operation.html#CMSIS_RTOS_ISR_Calls">Interrupt Service Routine</a>.</li>
+<li><em>osErrorISR</em> if called from an Interrupt Service Routine.</li>
 </ul>
-<dl class="section note"><dt>Note</dt><dd>This function <b>cannot</b> be called from <a class="el" href="theory_of_operation.html#CMSIS_RTOS_ISR_Calls">Interrupt Service Routines</a>.</dd></dl>
+<dl class="section note"><dt>Note</dt><dd>This function <b>cannot</b> be called from Interrupt Service Routines.</dd></dl>
 <p><b>Code Example</b> </p><div class="fragment"><div class="line"><span class="keywordtype">int</span> main (<span class="keywordtype">void</span>) {</div>
 <div class="line">  <span class="comment">// System Initialization</span></div>
 <div class="line">  SystemCoreClockUpdate();</div>
@@ -534,10 +534,10 @@ Kernel version (major.minor.rev: mmnnnrrrr dec). </td></tr>
 <p>The function <b>osKernelLock</b> allows to lock all task switches. It returns the previous value of the lock state (<span class="XML-Token">1</span> if it was locked, <span class="XML-Token">0</span> if it was unlocked), or a negative number representing an error code otherwise (refer to <a class="el" href="group__CMSIS__RTOS__Definitions.html#ga6c0dbe6069e4e7f47bb4cd32ae2b813e">osStatus_t</a>).</p>
 <p>Possible <a class="el" href="group__CMSIS__RTOS__Definitions.html#ga6c0dbe6069e4e7f47bb4cd32ae2b813e">osStatus_t</a> return values:</p><ul>
 <li><em>osError</em> if an unspecific error occurred.</li>
-<li><em>osErrorISR</em> if called from an <a class="el" href="theory_of_operation.html#CMSIS_RTOS_ISR_Calls">Interrupt Service Routine</a>.</li>
+<li><em>osErrorISR</em> if called from an Interrupt Service Routine.</li>
 <li><em>osErrorSafetyClass</em> if the calling thread safety class is lower than the kernel protect safety class.</li>
 </ul>
-<dl class="section note"><dt>Note</dt><dd>This function <b>cannot</b> be called from <a class="el" href="theory_of_operation.html#CMSIS_RTOS_ISR_Calls">Interrupt Service Routines</a>.</dd></dl>
+<dl class="section note"><dt>Note</dt><dd>This function <b>cannot</b> be called from Interrupt Service Routines.</dd></dl>
 <p><b>Code Example</b> </p><div class="fragment"><div class="line">int32_t state = <a class="code hl_function" href="group__CMSIS__RTOS__KernelCtrl.html#ga948609ee930d9b38336b9e1c2a4dfe12">osKernelLock</a>();</div>
 <div class="line"><span class="comment">// ... critical code</span></div>
 <div class="line">osKernelRestore(state);</div>
@@ -564,9 +564,9 @@ Kernel version (major.minor.rev: mmnnnrrrr dec). </td></tr>
 <p>The function <b>osKernelUnlock</b> resumes from <a class="el" href="group__CMSIS__RTOS__KernelCtrl.html#ga948609ee930d9b38336b9e1c2a4dfe12">osKernelLock</a>. It returns the previous value of the lock state (<span class="XML-Token">1</span> if it was locked, <span class="XML-Token">0</span> if it was unlocked), or a negative number representing an error code otherwise (refer to <a class="el" href="group__CMSIS__RTOS__Definitions.html#ga6c0dbe6069e4e7f47bb4cd32ae2b813e">osStatus_t</a>).</p>
 <p>Possible <a class="el" href="group__CMSIS__RTOS__Definitions.html#ga6c0dbe6069e4e7f47bb4cd32ae2b813e">osStatus_t</a> return values:</p><ul>
 <li><em>osError</em> if an unspecific error occurred.</li>
-<li><em>osErrorISR</em> if called from an <a class="el" href="theory_of_operation.html#CMSIS_RTOS_ISR_Calls">Interrupt Service Routine</a>.</li>
+<li><em>osErrorISR</em> if called from an Interrupt Service Routine.</li>
 </ul>
-<dl class="section note"><dt>Note</dt><dd>This function <b>cannot</b> be called from <a class="el" href="theory_of_operation.html#CMSIS_RTOS_ISR_Calls">Interrupt Service Routines</a>.</dd></dl>
+<dl class="section note"><dt>Note</dt><dd>This function <b>cannot</b> be called from Interrupt Service Routines.</dd></dl>
 <p><b>Code Example</b> </p><div class="fragment"><div class="line">int32_t sl = <a class="code hl_function" href="group__CMSIS__RTOS__KernelCtrl.html#ga948609ee930d9b38336b9e1c2a4dfe12">osKernelLock</a>();</div>
 <div class="line"><span class="comment">// ... critical code</span></div>
 <div class="line">{</div>
@@ -641,7 +641,7 @@ Kernel version (major.minor.rev: mmnnnrrrr dec). </td></tr>
 <dl class="section return"><dt>Returns</dt><dd>time in ticks, for how long the system can sleep or power-down.</dd></dl>
 <p>CMSIS-RTOS provides extension for tick-less operation which is useful for applications that use extensively low-power modes where the SysTick timer is also disabled. To provide a time-tick in such power-saving modes a wake-up timer is used to derive timer intervals. The function <b>osKernelSuspend</b> suspends the RTX kernel scheduler and thus enables sleep modes.</p>
 <p>The return value can be used to determine the amount of system ticks until the next tick-based kernel event will occur, i.e. a delayed thread becomes ready again. It is recommended to set up the low power timer to generate a wake-up interrupt based on this return value.</p>
-<dl class="section note"><dt>Note</dt><dd>This function <b>cannot</b> be called from <a class="el" href="theory_of_operation.html#CMSIS_RTOS_ISR_Calls">Interrupt Service Routines</a>.</dd></dl>
+<dl class="section note"><dt>Note</dt><dd>This function <b>cannot</b> be called from Interrupt Service Routines.</dd></dl>
 <p><b>Code Example</b> </p><div class="fragment"><div class="line"><span class="keywordtype">void</span> osRtxIdleThread (<span class="keywordtype">void</span>) {</div>
 <div class="line">                                               <span class="comment">/* The idle thread is running</span></div>
 <div class="line"><span class="comment">                                                  when no other thread is ready</span></div>
@@ -697,7 +697,7 @@ Kernel version (major.minor.rev: mmnnnrrrr dec). </td></tr>
   </dd>
 </dl>
 <p>CMSIS-RTOS provides extension for tick-less operation which is useful for applications that use extensively low-power modes where the SysTick timer is also disabled. To provide a time-tick in such power-saving modes a wake-up timer is used to derive timer intervals. The function <b>osKernelResume</b> enables the RTX kernel scheduler and thus wakes up the system from sleep mode.</p>
-<dl class="section note"><dt>Note</dt><dd>This function <b>cannot</b> be called from <a class="el" href="theory_of_operation.html#CMSIS_RTOS_ISR_Calls">Interrupt Service Routines</a>.</dd></dl>
+<dl class="section note"><dt>Note</dt><dd>This function <b>cannot</b> be called from Interrupt Service Routines.</dd></dl>
 <p><b>Code Example</b> </p><div class="fragment"><div class="line"><span class="keywordtype">void</span> osRtxIdleThread (<span class="keywordtype">void</span>) {</div>
 <div class="line">                                               <span class="comment">/* The idle thread is running</span></div>
 <div class="line"><span class="comment">                                                  when no other thread is ready</span></div>
@@ -746,7 +746,7 @@ Kernel version (major.minor.rev: mmnnnrrrr dec). </td></tr>
 </div><div class="memdoc">
 <dl class="section return"><dt>Returns</dt><dd>RTOS kernel current tick count.</dd></dl>
 <p>The function <b>osKernelGetTickCount</b> returns the current RTOS kernel tick count.</p>
-<dl class="section note"><dt>Note</dt><dd>This function may be called from <a class="el" href="theory_of_operation.html#CMSIS_RTOS_ISR_Calls">Interrupt Service Routines</a>.</dd></dl>
+<dl class="section note"><dt>Note</dt><dd>This function may be called from Interrupt Service Routines.</dd></dl>
 <p><b>Code</b> <b>Example</b> </p><div class="fragment"><div class="line"><span class="preprocessor">#include &quot;<a class="code" href="cmsis__os2_8h.html">cmsis_os2.h</a>&quot;</span></div>
 <div class="line"> </div>
 <div class="line"><span class="keywordtype">void</span> Thread_1 (<span class="keywordtype">void</span> *arg)  {                <span class="comment">// Thread function</span></div>
@@ -795,7 +795,7 @@ Kernel version (major.minor.rev: mmnnnrrrr dec). </td></tr>
 </div><div class="memdoc">
 <dl class="section return"><dt>Returns</dt><dd>frequency of the kernel tick in hertz, i.e. kernel ticks per second.</dd></dl>
 <p>The function <b>osKernelGetTickFreq</b> returns the frequency of the current RTOS kernel tick.</p>
-<dl class="section note"><dt>Note</dt><dd>This function may be called from <a class="el" href="theory_of_operation.html#CMSIS_RTOS_ISR_Calls">Interrupt Service Routines</a>. </dd></dl>
+<dl class="section note"><dt>Note</dt><dd>This function may be called from Interrupt Service Routines. </dd></dl>
 
 </div>
 </div>
@@ -817,7 +817,7 @@ Kernel version (major.minor.rev: mmnnnrrrr dec). </td></tr>
 <dl class="section return"><dt>Returns</dt><dd>RTOS kernel current system timer count as 32-bit value.</dd></dl>
 <p>The function <b>osKernelGetSysTimerCount</b> returns the current RTOS kernel system timer as a 32-bit value. The value is a rolling 32-bit counter that is composed of the kernel system interrupt timer value and the counter that counts these interrupts (RTOS kernel ticks).</p>
 <p>This function allows the implementation of very short timeout checks below the RTOS tick granularity. Such checks might be required when checking for a busy status in a device or peripheral initialization routine, see code example below.</p>
-<dl class="section note"><dt>Note</dt><dd>This function may be called from <a class="el" href="theory_of_operation.html#CMSIS_RTOS_ISR_Calls">Interrupt Service Routines</a>.</dd></dl>
+<dl class="section note"><dt>Note</dt><dd>This function may be called from Interrupt Service Routines.</dd></dl>
 <p><b>Code Example</b> </p><div class="fragment"><div class="line"><span class="preprocessor">#include &quot;<a class="code" href="cmsis__os2_8h.html">cmsis_os2.h</a>&quot;</span></div>
 <div class="line"> </div>
 <div class="line"><span class="keywordtype">void</span> SetupDevice (<span class="keywordtype">void</span>)  {</div>
@@ -858,7 +858,7 @@ Kernel version (major.minor.rev: mmnnnrrrr dec). </td></tr>
 </div><div class="memdoc">
 <dl class="section return"><dt>Returns</dt><dd>frequency of the system timer in hertz, i.e. timer ticks per second.</dd></dl>
 <p>The function <b>osKernelGetSysTimerFreq</b> returns the frequency of the current RTOS kernel system timer.</p>
-<dl class="section note"><dt>Note</dt><dd>This function may be called from <a class="el" href="theory_of_operation.html#CMSIS_RTOS_ISR_Calls">Interrupt Service Routines</a>. </dd></dl>
+<dl class="section note"><dt>Note</dt><dd>This function may be called from Interrupt Service Routines. </dd></dl>
 
 </div>
 </div>
@@ -896,10 +896,10 @@ Kernel version (major.minor.rev: mmnnnrrrr dec). </td></tr>
 <li><em>osOK</em> in case of success.</li>
 <li><em>osErrorParameter</em> if <em>safety_class</em> is invalid.</li>
 <li><em>osError</em> if kernel is not in ready or running state.</li>
-<li><em>osErrorISR</em> if called from an <a class="el" href="theory_of_operation.html#CMSIS_RTOS_ISR_Calls">Interrupt Service Routine</a>.</li>
+<li><em>osErrorISR</em> if called from an Interrupt Service Routine.</li>
 <li><em>osErrorSafetyClass</em> if the calling thread safety class is lower than the kernel protect safety class.</li>
 </ul>
-<dl class="section note"><dt>Note</dt><dd>This function <b>cannot</b> be called from <a class="el" href="theory_of_operation.html#CMSIS_RTOS_ISR_Calls">Interrupt Service Routines</a>.</dd></dl>
+<dl class="section note"><dt>Note</dt><dd>This function <b>cannot</b> be called from Interrupt Service Routines.</dd></dl>
 <p><b>Code Example:</b> </p><div class="fragment"><div class="line"><span class="preprocessor">#include &quot;<a class="code" href="cmsis__os2_8h.html">cmsis_os2.h</a>&quot;</span></div>
 <div class="line"> </div>
 <div class="line"><span class="keywordtype">void</span> ProtectKernelControlFunctions (<span class="keywordtype">void</span>) {</div>

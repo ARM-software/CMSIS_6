@@ -1,9 +1,10 @@
 var searchData=
 [
-  ['safety_20classes_0',['Safety Classes',['../group__rtos__process__isolation__safety__class.html',1,'']]],
-  ['semaphores_1',['Semaphores',['../group__CMSIS__RTOS__SemaphoreMgmt.html',1,'']]],
-  ['stack_20requirements_2',['Stack Requirements',['../pStackRequirements.html',1,'technicalData5']]],
-  ['stack_5fmem_3',['stack_mem',['../group__CMSIS__RTOS__ThreadMgmt.html#ad7c9b42355a4c8b9467130ab3fb19e43',1,'osThreadAttr_t']]],
-  ['stack_5fsize_4',['stack_size',['../group__CMSIS__RTOS__ThreadMgmt.html#aacbc9a219f2d6870e9ce89bb93f975c9',1,'osThreadAttr_t']]],
-  ['supported_20toolchains_5',['Supported Toolchains',['../pToolchains.html',1,'technicalData5']]]
+  ['thread_20flags_0',['Thread Flags',['../group__CMSIS__RTOS__ThreadFlagsMgmt.html',1,'']]],
+  ['thread_20management_1',['Thread Management',['../group__CMSIS__RTOS__ThreadMgmt.html',1,'']]],
+  ['thread_20watchdogs_2',['Thread Watchdogs',['../group__rtos__process__isolation__thread__wdt.html',1,'']]],
+  ['timer_20management_3',['Timer Management',['../group__CMSIS__RTOS__TimerMgmt.html',1,'']]],
+  ['tz_5fmodule_4',['tz_module',['../group__CMSIS__RTOS__ThreadMgmt.html#a697f2aad6119d655d212ea10245ae394',1,'osThreadAttr_t']]],
+  ['tz_5fmoduleid_5ft_5',['TZ_MODULEID_T',['../cmsis__os2_8h.html#a78775dae56f0c9698cdab6e1ca74503f',1,'cmsis_os2.h']]],
+  ['tz_5fmoduleid_5ft_6',['TZ_ModuleId_t',['../cmsis__os2_8h.html#ad5ef21485fe5f60263bc0b48006202cb',1,'cmsis_os2.h']]]
 ];

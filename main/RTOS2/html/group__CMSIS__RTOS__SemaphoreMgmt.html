@@ -52,7 +52,7 @@
     </script>
    </span>
    </div>
-   <div id="projectbrief">Real-Time Operating System: API and RTX Reference Implementation</div>
+   <div id="projectbrief">Real-Time Operating System API</div>
   </td>
    <td>        <div id="MSearchBox" class="MSearchBoxInactive">
         <span class="left">
@@ -178,10 +178,10 @@ CMSIS-RTOS Semaphore</div></div>
 <img src="semaphore_states.png" alt=""/>
 <div class="caption">
 CMSIS-RTOS Semaphore States</div></div>
-<dl class="section note"><dt>Note</dt><dd>The functions <a class="el" href="group__CMSIS__RTOS__SemaphoreMgmt.html#ga7e94c8b242a0c81f2cc79ec22895c87b">osSemaphoreAcquire</a>, <a class="el" href="group__CMSIS__RTOS__SemaphoreMgmt.html#ga7559d4dff3cda9992fc5ab5de3e74c70">osSemaphoreGetCount</a>, and <a class="el" href="group__CMSIS__RTOS__SemaphoreMgmt.html#ga0abcee1b5449d7a6928fb9248c690bb6">osSemaphoreRelease</a> can be called from <a class="el" href="theory_of_operation.html#CMSIS_RTOS_ISR_Calls">Interrupt Service Routines</a>.</dd>
+<dl class="section note"><dt>Note</dt><dd>The functions <a class="el" href="group__CMSIS__RTOS__SemaphoreMgmt.html#ga7e94c8b242a0c81f2cc79ec22895c87b">osSemaphoreAcquire</a>, <a class="el" href="group__CMSIS__RTOS__SemaphoreMgmt.html#ga7559d4dff3cda9992fc5ab5de3e74c70">osSemaphoreGetCount</a>, and <a class="el" href="group__CMSIS__RTOS__SemaphoreMgmt.html#ga0abcee1b5449d7a6928fb9248c690bb6">osSemaphoreRelease</a> can be called from Interrupt Service Routines.</dd>
 <dd>
-Refer to <a class="el" href="config_rtx5.html#semaphoreConfig">Semaphore Configuration</a> for RTX5 configuration options.</dd></dl>
-<h2><a class="anchor" id="autotoc_md5"></a>
+Refer to semaphoreConfig for RTX5 configuration options.</dd></dl>
+<h2><a class="anchor" id="autotoc_md4"></a>
 Semaphore Use Cases</h2>
 <p>Due to their flexibility, semaphores cover a wide range of synchronizing applications. At the same time, they are perhaps the most challenging RTOS object to understand. The following explains a use case for semaphores, taken from the book <a href="http://www.greenteapress.com/semaphores/" target="_blank">The Little Book Of Semaphores</a> by Allen B. Downey which is available for free download.</p>
 <p><b>Non-binary Semaphore (Multiplex)</b></p>
@@ -264,7 +264,7 @@ attribute bits <p>Reserved for future use (must be set to '0' for future compati
 <td class="fieldname">
 cb_mem</td>
 <td class="fielddoc">
-memory for control block <p>Pointer to a memory for the semaphore control block object. Refer to <a class="el" href="theory_of_operation.html#StaticObjectMemory">Static Object Memory</a> for more information.</p>
+memory for control block <p>Pointer to a memory for the semaphore control block object. Refer to StaticObjectMemory for more information.</p>
 <p>Default: <span class="XML-Token">NULL</span> to use <a class="el" href="group__CMSIS__RTOS__MemoryMgmt.html#CMSIS_RTOS_MemoryMgmt_Automatic">Automatic Dynamic Allocation</a> for the semaphore control block. </p>
 </td></tr>
 <tr><td class="fieldtype">
@@ -343,7 +343,7 @@ size of provided memory for control block <p>The size (in bytes) of memory block
 <p>The parameter <em>max_count</em> specifies the maximum number of available tokens. A <em>max_count</em> value of 1 creates a binary semaphore.</p>
 <p>The parameter <em>initial_count</em> sets the initial number of available tokens.</p>
 <p>The parameter <em>attr</em> specifies additional semaphore attributes. Default attributes will be used if set to <span class="XML-Token">NULL</span>.</p>
-<dl class="section note"><dt>Note</dt><dd>This function <b>cannot</b> be called from <a class="el" href="theory_of_operation.html#CMSIS_RTOS_ISR_Calls">Interrupt Service Routines</a>.</dd></dl>
+<dl class="section note"><dt>Note</dt><dd>This function <b>cannot</b> be called from Interrupt Service Routines.</dd></dl>
 <p><b>Code Example</b> </p><div class="fragment"><div class="line"><span class="preprocessor">#include &quot;<a class="code" href="cmsis__os2_8h.html">cmsis_os2.h</a>&quot;</span>                          <span class="comment">// CMSIS RTOS header file</span></div>
 <div class="line"> </div>
 <div class="line"><a class="code hl_typedef" href="group__CMSIS__RTOS__SemaphoreMgmt.html#ga6e1c1c4b04175bb92b013c8f37249f40">osSemaphoreId_t</a> sid_Semaphore;                  <span class="comment">// semaphore id</span></div>
@@ -424,7 +424,7 @@ size of provided memory for control block <p>The size (in bytes) of memory block
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>name as null-terminated string.</dd></dl>
 <p>The function <b>osSemaphoreGetName</b> returns the pointer to the name string of the semaphore identified by parameter <em>semaphore_id</em> or <span class="XML-Token">NULL</span> in case of an error.</p>
-<dl class="section note"><dt>Note</dt><dd>This function may be called from <a class="el" href="theory_of_operation.html#CMSIS_RTOS_ISR_Calls">Interrupt Service Routines</a>. </dd></dl>
+<dl class="section note"><dt>Note</dt><dd>This function may be called from Interrupt Service Routines. </dd></dl>
 
 </div>
 </div>
@@ -456,13 +456,13 @@ size of provided memory for control block <p>The size (in bytes) of memory block
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">semaphore_id</td><td>semaphore ID obtained by <a class="el" href="group__CMSIS__RTOS__SemaphoreMgmt.html#ga2a39806ace781a0008a4374ca701b14a">osSemaphoreNew</a>. </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">timeout</td><td><a class="el" href="theory_of_operation.html#CMSIS_RTOS_TimeOutValue">Timeout Value</a> or 0 in case of no time-out. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">timeout</td><td>CMSIS_RTOS_TimeOutValue or 0 in case of no time-out. </td></tr>
   </table>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>status code that indicates the execution status of the function.</dd></dl>
 <p>The blocking function <b>osSemaphoreAcquire</b> waits until a token of the semaphore object specified by parameter <em>semaphore_id</em> becomes available. If a token is available, the function instantly returns and decrements the token count.</p>
-<p>The parameter <em>timeout</em> specifies how long the system waits to acquire the token. While the system waits, the thread that is calling this function is put into the <a class="el" href="group__CMSIS__RTOS__ThreadMgmt.html#ThreadStates">BLOCKED</a> state. The parameter <a class="el" href="theory_of_operation.html#CMSIS_RTOS_TimeOutValue">timeout</a> can have the following values:</p><ul>
+<p>The parameter <em>timeout</em> specifies how long the system waits to acquire the token. While the system waits, the thread that is calling this function is put into the <a class="el" href="group__CMSIS__RTOS__ThreadMgmt.html#ThreadStates">BLOCKED</a> state. The parameter timeout can have the following values:</p><ul>
 <li>when <em>timeout</em> is <span class="XML-Token">0</span>, the function returns instantly (i.e. try semantics).</li>
 <li>when <em>timeout</em> is set to <b>osWaitForever</b> the function will wait for an infinite time until the semaphore becomes available (i.e. wait semantics).</li>
 <li>all other values specify a time in kernel ticks for a timeout (i.e. timed-wait semantics).</li>
@@ -474,7 +474,7 @@ size of provided memory for control block <p>The size (in bytes) of memory block
 <li><em>osErrorParameter:</em> the parameter <em>semaphore_id</em> is <span class="XML-Token">NULL</span> or invalid.</li>
 <li><em>osErrorSafetyClass:</em> the calling thread safety class is lower than the safety class of the specified semaphore.</li>
 </ul>
-<dl class="section note"><dt>Note</dt><dd>May be called from <a class="el" href="theory_of_operation.html#CMSIS_RTOS_ISR_Calls">Interrupt Service Routines</a> if the parameter <em>timeout</em> is set to <span class="XML-Token">0</span>.</dd></dl>
+<dl class="section note"><dt>Note</dt><dd>May be called from Interrupt Service Routines if the parameter <em>timeout</em> is set to <span class="XML-Token">0</span>.</dd></dl>
 <p><b>Code Example</b></p>
 <p>Refer to <a class="el" href="group__CMSIS__RTOS__SemaphoreMgmt.html#ga2a39806ace781a0008a4374ca701b14a">osSemaphoreNew</a>. </p>
 
@@ -509,7 +509,7 @@ size of provided memory for control block <p>The size (in bytes) of memory block
 <li><em>osErrorParameter:</em> the parameter <em>semaphore_id</em> is <span class="XML-Token">NULL</span> or invalid.</li>
 <li><em>osErrorSafetyClass:</em> the calling thread safety class is lower than the safety class of the specified semaphore.</li>
 </ul>
-<dl class="section note"><dt>Note</dt><dd>This function may be called from <a class="el" href="theory_of_operation.html#CMSIS_RTOS_ISR_Calls">Interrupt Service Routines</a>.</dd></dl>
+<dl class="section note"><dt>Note</dt><dd>This function may be called from Interrupt Service Routines.</dd></dl>
 <p><b>Code Example</b></p>
 <p>Refer to <a class="el" href="group__CMSIS__RTOS__SemaphoreMgmt.html#ga2a39806ace781a0008a4374ca701b14a">osSemaphoreNew</a>. </p>
 
@@ -538,7 +538,7 @@ size of provided memory for control block <p>The size (in bytes) of memory block
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>number of tokens available.</dd></dl>
 <p>The function <b>osSemaphoreGetCount</b> returns the number of available tokens of the semaphore object specified by parameter <em>semaphore_id</em>. In case of an error it returns <span class="XML-Token">0</span>.</p>
-<dl class="section note"><dt>Note</dt><dd>This function may be called from <a class="el" href="theory_of_operation.html#CMSIS_RTOS_ISR_Calls">Interrupt Service Routines</a>. </dd></dl>
+<dl class="section note"><dt>Note</dt><dd>This function may be called from Interrupt Service Routines. </dd></dl>
 
 </div>
 </div>
@@ -572,7 +572,7 @@ size of provided memory for control block <p>The size (in bytes) of memory block
 <li><em>osErrorISR:</em> <b>osSemaphoreDelete</b> cannot be called from interrupt service routines.</li>
 <li><em>osErrorSafetyClass:</em> the calling thread safety class is lower than the safety class of the specified semaphore.</li>
 </ul>
-<dl class="section note"><dt>Note</dt><dd>This function <b>cannot</b> be called from <a class="el" href="theory_of_operation.html#CMSIS_RTOS_ISR_Calls">Interrupt Service Routines</a>. </dd></dl>
+<dl class="section note"><dt>Note</dt><dd>This function <b>cannot</b> be called from Interrupt Service Routines. </dd></dl>
 
 </div>
 </div>

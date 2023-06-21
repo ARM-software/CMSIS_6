@@ -52,7 +52,7 @@
     </script>
    </span>
    </div>
-   <div id="projectbrief">Real-Time Operating System: API and RTX Reference Implementation</div>
+   <div id="projectbrief">Real-Time Operating System API</div>
   </td>
    <td>        <div id="MSearchBox" class="MSearchBoxInactive">
         <span class="left">
@@ -150,7 +150,7 @@ Functions</h2></td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Description</h2>
 <p>Thread Flags are a more specialized version of the Event Flags. See <a class="el" href="group__CMSIS__RTOS__EventFlags.html">Event Flags</a>. While Event Flags can be used to globally signal a number of threads, thread flags are only send to a single specific thread. Every thread instance can receive thread flags without any additional allocation of a thread flags object.</p>
-<dl class="section note"><dt>Note</dt><dd>Thread flag management functions cannot be called from <a class="el" href="theory_of_operation.html#CMSIS_RTOS_ISR_Calls">Interrupt Service Routines</a>, except for <a class="el" href="group__CMSIS__RTOS__ThreadFlagsMgmt.html#ga6f89ef9caded1d9963c7b12b0f6412c9">osThreadFlagsSet</a>.</dd></dl>
+<dl class="section note"><dt>Note</dt><dd>Thread flag management functions cannot be called from Interrupt Service Routines, except for <a class="el" href="group__CMSIS__RTOS__ThreadFlagsMgmt.html#ga6f89ef9caded1d9963c7b12b0f6412c9">osThreadFlagsSet</a>.</dd></dl>
 <p><b>Usage Example</b></p>
 <p>The following (incomplete) code excerpt sketches the usage principals for <b>Thread Flags</b>.</p>
 <p>The behavior is the following:</p><ul>
@@ -242,7 +242,7 @@ Functions</h2></td></tr>
 <li><em>osFlagsErrorResource:</em> the thread is in invalid state.</li>
 <li><em>osFlagsErrorSafetyClass:</em> the calling thread safety class is lower than the safety class of the specified thread.</li>
 </ul>
-<dl class="section note"><dt>Note</dt><dd>This function may be called from <a class="el" href="theory_of_operation.html#CMSIS_RTOS_ISR_Calls">Interrupt Service Routines</a>.</dd></dl>
+<dl class="section note"><dt>Note</dt><dd>This function may be called from Interrupt Service Routines.</dd></dl>
 <p><b>Code</b> <b>Example</b> </p><div class="fragment"><div class="line"><span class="comment">/*----------------------------------------------------------------------------</span></div>
 <div class="line"><span class="comment"> *      Function &#39;signal_func&#39; called from multiple threads</span></div>
 <div class="line"><span class="comment"> *---------------------------------------------------------------------------*/</span></div>
@@ -295,7 +295,7 @@ Functions</h2></td></tr>
 <li><em>osFlagsErrorParameter:</em> parameter <em>flags</em> has highest bit set.</li>
 <li><em>osFlagsErrorISR:</em> the function <b>osThreadFlagsClear</b> cannot be called from interrupt service routines.</li>
 </ul>
-<dl class="section note"><dt>Note</dt><dd>This function <b>cannot</b> be called from <a class="el" href="theory_of_operation.html#CMSIS_RTOS_ISR_Calls">Interrupt Service Routines</a>. </dd></dl>
+<dl class="section note"><dt>Note</dt><dd>This function <b>cannot</b> be called from Interrupt Service Routines. </dd></dl>
 
 </div>
 </div>
@@ -316,7 +316,7 @@ Functions</h2></td></tr>
 </div><div class="memdoc">
 <dl class="section return"><dt>Returns</dt><dd>current thread flags.</dd></dl>
 <p>The function <b>osThreadFlagsGet</b> returns the flags currently set for the currently running thread. If called without a active and currently running thread <b>osThreadFlagsGet</b> return zero.</p>
-<dl class="section note"><dt>Note</dt><dd>This function <b>cannot</b> be called from <a class="el" href="theory_of_operation.html#CMSIS_RTOS_ISR_Calls">Interrupt Service Routines</a>. </dd></dl>
+<dl class="section note"><dt>Note</dt><dd>This function <b>cannot</b> be called from Interrupt Service Routines. </dd></dl>
 
 </div>
 </div>
@@ -355,7 +355,7 @@ Functions</h2></td></tr>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">flags</td><td>specifies the flags to wait for. </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">options</td><td>specifies flags options (osFlagsXxxx). </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">timeout</td><td><a class="el" href="theory_of_operation.html#CMSIS_RTOS_TimeOutValue">Timeout Value</a> or 0 in case of no time-out. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">timeout</td><td>CMSIS_RTOS_TimeOutValue or 0 in case of no time-out. </td></tr>
   </table>
   </dd>
 </dl>
@@ -372,7 +372,7 @@ Functions</h2></td></tr>
 <td class="markdownTableBodyNone"><b>osFlagsNoClear</b>   </td><td class="markdownTableBodyNone">Do not clear flags which have been specified to wait for.   </td></tr>
 </table>
 <p>If <code>osFlagsNoClear</code> is set in the options <a class="el" href="group__CMSIS__RTOS__ThreadFlagsMgmt.html#ga656abc1c862c5b9a2b13584c42cc0bfa">osThreadFlagsClear</a> can be used to clear flags manually. Otherwise <b>osThreadFlagsWait</b> automatically clears the flags waited for.</p>
-<p>The parameter <a class="el" href="theory_of_operation.html#CMSIS_RTOS_TimeOutValue">timeout</a> represents a number of timer ticks and is an upper bound. The exact time delay depends on the actual time elapsed since the last timer tick.</p>
+<p>The parameter timeout represents a number of timer ticks and is an upper bound. The exact time delay depends on the actual time elapsed since the last timer tick.</p>
 <p>The function returns the flags before clearing, or an error code if highest bit is set (refer to <a class="el" href="group__flags__error__codes.html">Flags Functions Error Codes</a>).</p>
 <p>Possible <a class="el" href="group__flags__error__codes.html">Flags Functions Error Codes</a> return values:</p><ul>
 <li><em>osFlagsErrorUnknown:</em> unspecified error, i.e. not called from a running threads context.</li>
@@ -380,7 +380,7 @@ Functions</h2></td></tr>
 <li><em>osFlagsErrorResource:</em> awaited flags have not been set when no <em>timeout</em> was specified.</li>
 <li><em>osFlagsErrorParameter:</em> Parameter <em>flags</em> has highest bit set.</li>
 </ul>
-<dl class="section note"><dt>Note</dt><dd>This function <b>cannot</b> be called from <a class="el" href="theory_of_operation.html#CMSIS_RTOS_ISR_Calls">Interrupt Service Routines</a>.</dd></dl>
+<dl class="section note"><dt>Note</dt><dd>This function <b>cannot</b> be called from Interrupt Service Routines.</dd></dl>
 <p><b>Code Example</b> </p><div class="fragment"><div class="line"><span class="preprocessor">#include &quot;<a class="code" href="cmsis__os2_8h.html">cmsis_os2.h</a>&quot;</span></div>
 <div class="line"> </div>
 <div class="line"><span class="keywordtype">void</span> Thread (<span class="keywordtype">void</span>* arg) {</div>

@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['hardware_20requirements_0',['Hardware Requirements',['../pHardwareRequirements.html',1,'technicalData5']]],
-  ['history_2etxt_1',['history.txt',['../history_8txt.html',1,'']]]
+  ['irqhandler_5ft_0',['IRQHandler_t',['../os__tick_8h.html#a27589275c894aa295615df4764404b98',1,'os_tick.h']]],
+  ['irqhandler_5ft_1',['IRQHANDLER_T',['../os__tick_8h.html#aed032df21f11e8715f5c4deeeb56cc36',1,'os_tick.h']]]
 ];

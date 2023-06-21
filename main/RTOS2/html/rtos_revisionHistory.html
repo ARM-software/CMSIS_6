@@ -52,7 +52,7 @@
     </script>
    </span>
    </div>
-   <div id="projectbrief">Real-Time Operating System: API and RTX Reference Implementation</div>
+   <div id="projectbrief">Real-Time Operating System API</div>
   </td>
    <td>        <div id="MSearchBox" class="MSearchBoxInactive">
         <span class="left">
@@ -183,7 +183,7 @@ CMSIS-RTOS API Version 2</h1>
 </td></tr>
 <tr>
 <td>V1.02 - only documentation changes </td><td>Added: Overview of the <a class="el" href="rtosValidation.html">CMSIS-RTOS Validation</a> Software Pack.<br  />
- Clarified: Behavior of <a class="el" href="theory_of_operation.html#CMSIS_RTOS_TimeOutValue">Timeout Value</a>.   </td></tr>
+ Clarified: Behavior of CMSIS_RTOS_TimeOutValue.   </td></tr>
 <tr>
 <td>V1.02 </td><td>Added: New control functions for short timeouts in microsecond resolution <b>osKernelSysTick</b>, <b>osKernelSysTickFrequency</b>, <b>osKernelSysTickMicroSec</b>.<br  />
  Removed: osSignalGet.  fv </td></tr>
@@ -201,138 +201,6 @@ CMSIS-RTOS API Version 2</h1>
  Changed: osThreadPass is renamed to <a class="el" href="group__CMSIS__RTOS__ThreadMgmt.html#gad01c7ec26535b1de6b018bb9466720e2">osThreadYield</a>.   </td></tr>
 <tr>
 <td>V0.02 </td><td>Preview Release.  </td></tr>
-</table>
-<h1><a class="anchor" id="RTX5RevisionHistory"></a>
-CMSIS-RTOS RTX Version 5</h1>
-<table class="cmtable" summary="Revision History">
-<tr>
-<th>Version </th><th>Description  </th></tr>
-<tr>
-<td>V5.7.0 </td><td><ul>
-<li>Based on CMSIS-RTOS API V2.2.0.</li>
-<li>Added support for Process Isolation: MPU Protected Zones, Safety Classes, Thread Watchdogs.</li>
-<li>Reduced component variants: Library (Library_NS replacement), Source (Source_NS replacement).   </li>
-</ul>
-</td></tr>
-<tr>
-<td>V5.5.5 </td><td><ul>
-<li>Added de-allocation of Arm C library thread data (libspace) when thread is terminated.</li>
-<li>Updated SysTick implementation for OS Tick (initial count value).</li>
-<li>Added Thread Entry wrapper (compatible with GDB stack unwind).   </li>
-</ul>
-</td></tr>
-<tr>
-<td>V5.5.4 </td><td><ul>
-<li>Fixed potential register R1 corruption when calling OS functions from threads multiple times with same arguments (when using high level compiler optimizations).</li>
-<li>Fixed timer interval when periodic timer is restarted.</li>
-<li>Added Floating-point initialization for Arm C Library.</li>
-<li>Minor code optimizations in osMessageQueuePut/Get.   </li>
-</ul>
-</td></tr>
-<tr>
-<td>V5.5.3 </td><td><ul>
-<li>CVE-2021-27431 vulnerability mitigation.</li>
-<li>Added OS Initialization for IAR.</li>
-<li>Fixed osDelay/osDelayUntil error handling.</li>
-<li>Fixed Round-Robin (timeout value is not reset when switching to higher priority threads).</li>
-<li>Fixed osThreadJoin (when terminating thread which is waiting to be joined).</li>
-<li>Fixed Message Queue Data allocation size when using object specific memory allocation.</li>
-<li>Fixed Mutex priority inversion (when mixing mutexes with and without priority inherit).</li>
-<li>Enhanced stack overrun checking.</li>
-<li>Updated osKernelResume handling (processing past sleep ticks).</li>
-<li>Updated configuration (Event Recorder).</li>
-<li>Reorganized and optimized IRQ modules.   </li>
-</ul>
-</td></tr>
-<tr>
-<td>V5.5.2 </td><td><ul>
-<li>Added support for Cortex-M55.</li>
-<li>Fixed thread priority restore on mutex acquire timeout (when priority inherit is used).</li>
-<li>Enhanced support for Armv8-M (specifying thread TrustZone module identifier is optional).</li>
-<li>Updated configuration default values (Global Dynamic Memory and Thread Stack).   </li>
-</ul>
-</td></tr>
-<tr>
-<td>V5.5.1 </td><td><ul>
-<li>Fixed osMutexRelease issue (thread owning multiple mutexes).</li>
-<li>Improved osThreadJoin robustness (user programing errors).   </li>
-</ul>
-</td></tr>
-<tr>
-<td>V5.5.0 </td><td><ul>
-<li>Updated and enhanced generated events (reorganized components).</li>
-<li>Updated configuration (Event Recorder).</li>
-<li>Updated Component Viewer (improved performance).</li>
-<li>Minor code optimizations.   </li>
-</ul>
-</td></tr>
-<tr>
-<td>V5.4.0 </td><td><ul>
-<li>Based on CMSIS-RTOS API V2.1.3.</li>
-<li>Added support for Event Recorder initialization and filter setup.</li>
-<li>Added support to use RTOS as Event Recorder Time Stamp source.</li>
-<li>Fixed osDelayUntil longest delay (limited to 2^31-1).</li>
-<li>Fixed optimization issue when using GCC optimization level 3.</li>
-<li>Fixed osMemoryPoolAlloc to avoid potential race condition.</li>
-<li>Restructured exception handling for Cortex-A devices.</li>
-<li>Minor code optimizations (removed unnecessary checks).   </li>
-</ul>
-</td></tr>
-<tr>
-<td>V5.3.0 </td><td><ul>
-<li>Added Object Memory usage counters.</li>
-<li>Added support for additional external configuration file.</li>
-<li>Added user configurable names for system threads (Idle and Timer).</li>
-<li>Added support for OS sections when using ARMCC5.</li>
-<li>Added callback for MPU integration (experimental)</li>
-<li>Increased default thread stack sizes to 256 bytes.</li>
-<li>Fixed stack context display for running thread in SCVD.</li>
-<li>Enhanced MISRA Compliance.   </li>
-</ul>
-</td></tr>
-<tr>
-<td>V5.2.3 </td><td><ul>
-<li>Based on CMSIS-RTOS API V2.1.2.</li>
-<li>Added TrustZone Module Identifier configuration for Idle and Timer Thread.</li>
-<li>Moved SVC/PendSV handler priority setup from osKernelInitialize to osKernelStart (User Priority Grouping can be updated after osKernelInitialize but before osKernelStart).</li>
-<li>Corrected SysTick and PendSV handlers for ARMv8-M Baseline.</li>
-<li>Corrected memory allocation for stack and data when "Object specific Memory allocation" configuration is used.</li>
-<li>Added support for ARMv8-M IAR compiler.   </li>
-</ul>
-</td></tr>
-<tr>
-<td>V5.2.2 </td><td><ul>
-<li>Corrected IRQ and SVC exception handlers for Cortex-A.   </li>
-</ul>
-</td></tr>
-<tr>
-<td>V5.2.1 </td><td><ul>
-<li>Corrected SysTick and SVC Interrupt Priority for Cortex-M.   </li>
-</ul>
-</td></tr>
-<tr>
-<td>V5.2.0 </td><td><ul>
-<li>Based on CMSIS-RTOS API V2.1.1.</li>
-<li>Added support for Cortex-A.</li>
-<li>Using OS Tick API for RTX Kernel Timer Tick.</li>
-<li>Fixed potential corruption of terminated threads list.</li>
-<li>Corrected MessageQueue to use actual message length (before padding).</li>
-<li>Corrected parameters for ThreadEnumerate and MessageQueueInserted events.</li>
-<li>Timer Thread creation moved to osKernelStart.   </li>
-</ul>
-</td></tr>
-<tr>
-<td>V5.1.0 </td><td><ul>
-<li>Based on CMSIS-RTOS API V2.1.0.</li>
-<li>Added support for Event recording.</li>
-<li>Added support for IAR compiler.</li>
-<li>Updated configuration files: RTX_Config.h for the configuration settings and RTX_config.c for implementing the rtx5_specific.</li>
-<li>osRtx name-space for RTX specific symbols.   </li>
-</ul>
-</td></tr>
-<tr>
-<td>V5.0.0 </td><td>Initial release compliant to CMSIS-RTOS2.<br  />
-   </td></tr>
 </table>
 </div></div><!-- contents -->
 </div><!-- PageDoc -->

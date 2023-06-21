@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['irqhandler_5ft_0',['IRQHandler_t',['../os__tick_8h.html#a27589275c894aa295615df4764404b98',1,'os_tick.h']]],
-  ['irqhandler_5ft_1',['IRQHANDLER_T',['../os__tick_8h.html#aed032df21f11e8715f5c4deeeb56cc36',1,'os_tick.h']]]
+  ['kernel_0',['kernel',['../group__CMSIS__RTOS__KernelCtrl.html#ad8075d3f42141346ae2c56389358f9e7',1,'osVersion_t']]],
+  ['kernel_20information_20and_20control_1',['Kernel Information and Control',['../group__CMSIS__RTOS__KernelCtrl.html',1,'']]]
 ];

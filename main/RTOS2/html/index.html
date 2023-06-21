@@ -52,7 +52,7 @@
     </script>
    </span>
    </div>
-   <div id="projectbrief">Real-Time Operating System: API and RTX Reference Implementation</div>
+   <div id="projectbrief">Real-Time Operating System API</div>
   </td>
    <td>        <div id="MSearchBox" class="MSearchBoxInactive">
         <span class="left">
@@ -151,13 +151,13 @@ $(document).ready(function(){initNavTree('index.html',''); initResizable(); });
 </ul>
 <p>CMSIS-RTOS2 provides an translation layer to <a href="../../RTOS/html/index.html" class="el">CMSIS-RTOS v1</a>. It is possible to intermix <a class="el" href="rtos_api2.html">CMSIS-RTOS C API v2</a> and <a href="../../RTOS/html/functionOverview.html" class="el">CMSIS-RTOS C API v1</a> within the same application. Over time, you may migrate to the new API as explained in <a class="el" href="os2Migration.html">Migration from API v1 to API v2</a>.</p>
 <p>CMSIS-RTOS2 is not POSIX compliant, but has provisions to enable a C++11/C++14 interface.</p>
-<p>The following sections provide further details about CMSIS-RTOS2 and the RTX reference implementation.</p><ul>
-<li><a class="el" href="rtos_revisionHistory.html">Revision History</a> documents changes made in each version for CMSIS-RTOS v2 and RTX v5.</li>
+<p>The following sections provide further details about CMSIS-RTOS2.</p><ul>
+<li><a class="el" href="rtos_revisionHistory.html">Revision History</a> documents changes made in each version for CMSIS-RTOS v2.</li>
 <li><a class="el" href="genRTOS2IF.html">Generic RTOS Interface</a> provides an overview about the APIs available with CMSIS-RTOS v2.</li>
 <li><a class="el" href="functionOverview.html">Function Overview</a> lists the CMSIS-RTOS2 API functions and the header file cmsis_os2.h. </li>
 <li><a class="el" href="rtosValidation.html">RTOS Validation</a> describes the validation suite that is publicly available.</li>
 <li><a class="el" href="os2Migration.html">Migration from API v1 to API v2</a> shows how to use CMSIS-RTOS2 in existing projects and lists function differences to CMSIS-RTOS v1. </li>
-<li><a class="el" href="rtx5_impl.html">RTX v5 Implementation</a> provides general information about the operation and usage of RTX v5. </li>
+<li>rtx_safety provides comprehensive instructions for highly reliable applications. </li>
 </ul>
 <h1><a class="anchor" id="directory"></a>
 CMSIS-RTOS2 in ARM::CMSIS Pack</h1>
@@ -169,10 +169,8 @@ CMSIS-RTOS2 in ARM::CMSIS Pack</h1>
 <tr class="markdownTableRowEven">
 <td class="markdownTableBodyLeft"><b>CMSIS/RTOS2/Include</b>   </td><td class="markdownTableBodyLeft"><a class="el" href="genRTOS2IF.html#cmsis_os2_h">cmsis_os2.h header file</a>    </td></tr>
 <tr class="markdownTableRowOdd">
-<td class="markdownTableBodyLeft"><b>CMSIS/RTOS2/RTX</b>   </td><td class="markdownTableBodyLeft">CMSIS-RTOS2 reference implementation based on RTX version 5    </td></tr>
-<tr class="markdownTableRowEven">
 <td class="markdownTableBodyLeft"><b>CMSIS/RTOS2/Source</b>   </td><td class="markdownTableBodyLeft">Generic <b>OS tick</b> implementations for various processors based on <a class="el" href="rtos_os_tick_api.html">OS Tick API</a>    </td></tr>
-<tr class="markdownTableRowOdd">
+<tr class="markdownTableRowEven">
 <td class="markdownTableBodyLeft"><b>CMSIS/RTOS2/Template</b>   </td><td class="markdownTableBodyLeft">Compatibility layer to <a href="../../RTOS/html/index.html" class="el">CMSIS-RTOS v1</a>   </td></tr>
 </table>
 </div></div><!-- PageDoc -->

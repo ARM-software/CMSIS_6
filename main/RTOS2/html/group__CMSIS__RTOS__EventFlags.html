@@ -52,7 +52,7 @@
     </script>
    </span>
    </div>
-   <div id="projectbrief">Real-Time Operating System: API and RTX Reference Implementation</div>
+   <div id="projectbrief">Real-Time Operating System API</div>
   </td>
    <td>        <div id="MSearchBox" class="MSearchBoxInactive">
         <span class="left">
@@ -178,10 +178,10 @@ Functions</h2></td></tr>
 <li>may clear its own signals or the signals of other threads (using <a class="el" href="group__CMSIS__RTOS__EventFlags.html#ga93bf258ca0007c6641fbe8e4f2b8a1e5">osEventFlagsClear</a>).</li>
 </ul>
 <p>When a thread wakes up and resumes execution, its signal flags are automatically cleared (unless event flags option <a class="el" href="group__CMSIS__RTOS__Definitions.html#gaade844a42237d8c37569d4d9b16b9f1c">osFlagsNoClear</a> is specified).</p>
-<dl class="section note"><dt>Note</dt><dd>The functions <a class="el" href="group__CMSIS__RTOS__EventFlags.html#ga33b71d14cecf90b4e72639dd19f23a5e">osEventFlagsSet</a>, <a class="el" href="group__CMSIS__RTOS__EventFlags.html#ga93bf258ca0007c6641fbe8e4f2b8a1e5">osEventFlagsClear</a>, <a class="el" href="group__CMSIS__RTOS__EventFlags.html#ga8bda3185f46bfd278cea8a6cf357677d">osEventFlagsGet</a>, and <a class="el" href="group__CMSIS__RTOS__EventFlags.html#ga52acb34a8322e58020227344fe662b4e">osEventFlagsWait</a> can be called from <a class="el" href="theory_of_operation.html#CMSIS_RTOS_ISR_Calls">Interrupt Service Routines</a>. </dd>
+<dl class="section note"><dt>Note</dt><dd>The functions <a class="el" href="group__CMSIS__RTOS__EventFlags.html#ga33b71d14cecf90b4e72639dd19f23a5e">osEventFlagsSet</a>, <a class="el" href="group__CMSIS__RTOS__EventFlags.html#ga93bf258ca0007c6641fbe8e4f2b8a1e5">osEventFlagsClear</a>, <a class="el" href="group__CMSIS__RTOS__EventFlags.html#ga8bda3185f46bfd278cea8a6cf357677d">osEventFlagsGet</a>, and <a class="el" href="group__CMSIS__RTOS__EventFlags.html#ga52acb34a8322e58020227344fe662b4e">osEventFlagsWait</a> can be called from Interrupt Service Routines. </dd>
 <dd>
-Refer to <a class="el" href="config_rtx5.html#eventFlagsConfig">Event Flags Configuration</a> for RTX5 configuration options.</dd></dl>
-<h2><a class="anchor" id="autotoc_md3"></a>
+Refer to eventFlagsConfig for RTX5 configuration options.</dd></dl>
+<h2><a class="anchor" id="autotoc_md2"></a>
 Working with Events</h2>
 <p>Here is a simple example that shows how two thread can communicate with each others using event flags:</p>
 <div class="image">
@@ -297,7 +297,7 @@ attribute bits <p>Reserved for future use (must be set to '0' for future compati
 <td class="fieldname">
 cb_mem</td>
 <td class="fielddoc">
-memory for control block <p>Pointer to a memory for the event flag control block object. Refer to <a class="el" href="theory_of_operation.html#StaticObjectMemory">Static Object Memory</a> for more information.</p>
+memory for control block <p>Pointer to a memory for the event flag control block object. Refer to StaticObjectMemory for more information.</p>
 <p>Default: <span class="XML-Token">NULL</span> to use <a class="el" href="group__CMSIS__RTOS__MemoryMgmt.html#CMSIS_RTOS_MemoryMgmt_Automatic">Automatic Dynamic Allocation</a> for the event flag control block. </p>
 </td></tr>
 <tr><td class="fieldtype">
@@ -356,7 +356,7 @@ size of provided memory for control block <p>The size (in bytes) of memory block
 <dl class="section return"><dt>Returns</dt><dd>event flags ID for reference by other functions or NULL in case of error.</dd></dl>
 <p>The function <b>osEventFlagsNew</b> creates a new event flags object that is used to send events across threads and returns the pointer to the event flags object identifier or <span class="XML-Token">NULL</span> in case of an error. It can be safely called before the RTOS is started (call to <a class="el" href="group__CMSIS__RTOS__KernelCtrl.html#ga9ae2cc00f0d89d7b6a307bba942b5221">osKernelStart</a>), but not before it is initialized (call to <a class="el" href="group__CMSIS__RTOS__KernelCtrl.html#gae818f6611d25ba3140bede410a52d659">osKernelInitialize</a>).</p>
 <p>The parameter <em>attr</em> sets the event flags attributes (refer to <a class="el" href="group__CMSIS__RTOS__EventFlags.html#structosEventFlagsAttr__t">osEventFlagsAttr_t</a>). Default attributes will be used if set to <span class="XML-Token">NULL</span>, i.e. kernel memory allocation is used for the event control block.</p>
-<dl class="section note"><dt>Note</dt><dd>Cannot be called from <a class="el" href="theory_of_operation.html#CMSIS_RTOS_ISR_Calls">Interrupt Service Routines</a>.</dd></dl>
+<dl class="section note"><dt>Note</dt><dd>Cannot be called from Interrupt Service Routines.</dd></dl>
 <p><b>Code Example</b> </p><div class="fragment"><div class="line"><span class="preprocessor">#include &quot;<a class="code" href="cmsis__os2_8h.html">cmsis_os2.h</a>&quot;</span>                          <span class="comment">// CMSIS RTOS header file</span></div>
 <div class="line"> </div>
 <div class="line"><a class="code hl_typedef" href="group__CMSIS__RTOS__EventFlags.html#gafdbab933146d6d81d7cca7287e267a50">osEventFlagsId_t</a> evt_id;                        <span class="comment">// message queue id</span></div>
@@ -415,7 +415,7 @@ size of provided memory for control block <p>The size (in bytes) of memory block
 <li><em>osFlagsErrorResource:</em> the event flags object is in an invalid state.</li>
 <li><em>osFlagsErrorSafetyClass:</em> the calling thread safety class is lower than the safety class of the specified event flags object.</li>
 </ul>
-<dl class="section note"><dt>Note</dt><dd>This function may be called from <a class="el" href="theory_of_operation.html#CMSIS_RTOS_ISR_Calls">Interrupt Service Routines</a>.</dd></dl>
+<dl class="section note"><dt>Note</dt><dd>This function may be called from Interrupt Service Routines.</dd></dl>
 <p><b>Code Example</b> </p><div class="fragment"><div class="line"><span class="preprocessor">#include &quot;<a class="code" href="cmsis__os2_8h.html">cmsis_os2.h</a>&quot;</span>                          <span class="comment">// CMSIS RTOS header file</span></div>
 <div class="line"> </div>
 <div class="line"><a class="code hl_typedef" href="group__CMSIS__RTOS__EventFlags.html#gafdbab933146d6d81d7cca7287e267a50">osEventFlagsId_t</a> evt_id;                        <span class="comment">// event flags id</span></div>
@@ -470,7 +470,7 @@ size of provided memory for control block <p>The size (in bytes) of memory block
 <li><em>osFlagsErrorResource:</em> the event flags object is in an invalid state.</li>
 <li><em>osFlagsErrorSafetyClass:</em> the calling thread safety class is lower than the safety class of the specified event flags object.</li>
 </ul>
-<dl class="section note"><dt>Note</dt><dd>This function may be called from <a class="el" href="theory_of_operation.html#CMSIS_RTOS_ISR_Calls">Interrupt Service Routines</a>. </dd></dl>
+<dl class="section note"><dt>Note</dt><dd>This function may be called from Interrupt Service Routines. </dd></dl>
 
 </div>
 </div>
@@ -497,7 +497,7 @@ size of provided memory for control block <p>The size (in bytes) of memory block
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>current event flags.</dd></dl>
 <p>The function <b>osEventFlagsGet</b> returns the event flags currently set in an event flags object specified by parameter <em>ef_id</em> or <span class="XML-Token">0</span> in case of an error.</p>
-<dl class="section note"><dt>Note</dt><dd>This function may be called from <a class="el" href="theory_of_operation.html#CMSIS_RTOS_ISR_Calls">Interrupt Service Routines</a>. </dd></dl>
+<dl class="section note"><dt>Note</dt><dd>This function may be called from Interrupt Service Routines. </dd></dl>
 
 </div>
 </div>
@@ -543,7 +543,7 @@ size of provided memory for control block <p>The size (in bytes) of memory block
     <tr><td class="paramdir">[in]</td><td class="paramname">ef_id</td><td>event flags ID obtained by <a class="el" href="group__CMSIS__RTOS__EventFlags.html#gab14b1caeb12ffa42cce1bfe889cd07df">osEventFlagsNew</a>. </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">flags</td><td>specifies the flags to wait for. </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">options</td><td>specifies flags options (osFlagsXxxx). </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">timeout</td><td><a class="el" href="theory_of_operation.html#CMSIS_RTOS_TimeOutValue">Timeout Value</a> or 0 in case of no time-out. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">timeout</td><td>CMSIS_RTOS_TimeOutValue or 0 in case of no time-out. </td></tr>
   </table>
   </dd>
 </dl>
@@ -560,7 +560,7 @@ size of provided memory for control block <p>The size (in bytes) of memory block
 <td class="markdownTableBodyNone"><b>osFlagsNoClear</b>   </td><td class="markdownTableBodyNone">Do not clear flags which have been specified to wait for.   </td></tr>
 </table>
 <p>If <code>osFlagsNoClear</code> is set in the options <a class="el" href="group__CMSIS__RTOS__EventFlags.html#ga93bf258ca0007c6641fbe8e4f2b8a1e5">osEventFlagsClear</a> can be used to clear flags manually.</p>
-<p>The parameter <em>timeout</em> specifies how long the system waits for event flags. While the system waits, the thread that is calling this function is put into the <a class="el" href="group__CMSIS__RTOS__ThreadMgmt.html#ThreadStates">BLOCKED</a> state. The parameter <a class="el" href="theory_of_operation.html#CMSIS_RTOS_TimeOutValue">timeout</a> can have the following values:</p><ul>
+<p>The parameter <em>timeout</em> specifies how long the system waits for event flags. While the system waits, the thread that is calling this function is put into the <a class="el" href="group__CMSIS__RTOS__ThreadMgmt.html#ThreadStates">BLOCKED</a> state. The parameter timeout can have the following values:</p><ul>
 <li>when <em>timeout</em> is <span class="XML-Token">0</span>, the function returns instantly (i.e. try semantics).</li>
 <li>when <em>timeout</em> is set to <b>osWaitForever</b> the function will wait for an infinite time until the event flags become available (i.e. wait semantics).</li>
 <li>all other values specify a time in kernel ticks for a timeout (i.e. timed-wait semantics).</li>
@@ -573,7 +573,7 @@ size of provided memory for control block <p>The size (in bytes) of memory block
 <li><em>osFlagsErrorParameter:</em> parameter <em>ef_id</em> does not identify a valid event flags object or <em>flags</em> has highest bit set.</li>
 <li><em>osFlagsErrorSafetyClass:</em> the calling thread safety class is lower than the safety class of the specified event flags object.</li>
 </ul>
-<dl class="section note"><dt>Note</dt><dd>May be called from <a class="el" href="theory_of_operation.html#CMSIS_RTOS_ISR_Calls">Interrupt Service Routines</a> if the parameter <em>timeout</em> is set to <span class="XML-Token">0</span>.</dd></dl>
+<dl class="section note"><dt>Note</dt><dd>May be called from Interrupt Service Routines if the parameter <em>timeout</em> is set to <span class="XML-Token">0</span>.</dd></dl>
 <p><b>Code</b> <b>Example</b> </p><div class="fragment"><div class="line"><span class="preprocessor">#include &quot;<a class="code" href="cmsis__os2_8h.html">cmsis_os2.h</a>&quot;</span>                          <span class="comment">// CMSIS RTOS header file</span></div>
 <div class="line"> </div>
 <div class="line"><a class="code hl_typedef" href="group__CMSIS__RTOS__EventFlags.html#gafdbab933146d6d81d7cca7287e267a50">osEventFlagsId_t</a> evt_id;                        <span class="comment">// event flags id</span></div>
@@ -619,7 +619,7 @@ size of provided memory for control block <p>The size (in bytes) of memory block
 <li><em>osErrorResource:</em> the event flags object is in an invalid state.</li>
 <li><em>osFlagsErrorSafetyClass:</em> the calling thread safety class is lower than the safety class of the specified event flags object.</li>
 </ul>
-<dl class="section note"><dt>Note</dt><dd>This function <b>cannot</b> be called from <a class="el" href="theory_of_operation.html#CMSIS_RTOS_ISR_Calls">Interrupt Service Routines</a>. </dd></dl>
+<dl class="section note"><dt>Note</dt><dd>This function <b>cannot</b> be called from Interrupt Service Routines. </dd></dl>
 
 </div>
 </div>
@@ -646,7 +646,7 @@ size of provided memory for control block <p>The size (in bytes) of memory block
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>name as null-terminated string.</dd></dl>
 <p>The function <b>osEventFlagsGetName</b> returns the pointer to the name string of the event flags object identified by parameter <em>ef_id</em> or <span class="XML-Token">NULL</span> in case of an error.</p>
-<dl class="section note"><dt>Note</dt><dd>This function may be called from <a class="el" href="theory_of_operation.html#CMSIS_RTOS_ISR_Calls">Interrupt Service Routines</a>.</dd></dl>
+<dl class="section note"><dt>Note</dt><dd>This function may be called from Interrupt Service Routines.</dd></dl>
 <p><b>Code Example</b> </p><div class="fragment"><div class="line"><span class="preprocessor">#include &quot;<a class="code" href="cmsis__os2_8h.html">cmsis_os2.h</a>&quot;</span>                          <span class="comment">// CMSIS RTOS header file</span></div>
 <div class="line"> </div>
 <div class="line"><a class="code hl_typedef" href="group__CMSIS__RTOS__EventFlags.html#gafdbab933146d6d81d7cca7287e267a50">osEventFlagsId_t</a> evt_id;                        <span class="comment">// event flasg id</span></div>

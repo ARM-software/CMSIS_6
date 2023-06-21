@@ -52,7 +52,7 @@
     </script>
    </span>
    </div>
-   <div id="projectbrief">Real-Time Operating System: API and RTX Reference Implementation</div>
+   <div id="projectbrief">Real-Time Operating System API</div>
   </td>
    <td>        <div id="MSearchBox" class="MSearchBoxInactive">
         <span class="left">
@@ -180,9 +180,9 @@ Functions</h2></td></tr>
 <div class="caption">
 CMSIS-RTOS Message Queue</div></div>
 <p>Compared to a <a class="el" href="group__CMSIS__RTOS__PoolMgmt.html">Memory Pool</a>, message queues are less efficient in general, but solve a broader range of problems. Sometimes, threads do not have a common address space or the use of shared memory raises problems, such as mutual exclusion.</p>
-<dl class="section note"><dt>Note</dt><dd>The functions <a class="el" href="group__CMSIS__RTOS__Message.html#gaa515fc8b956f721a8f72b2c505813bfc">osMessageQueuePut</a>, <a class="el" href="group__CMSIS__RTOS__Message.html#gad90d4959466a7a65105061da8256ab9e">osMessageQueueGet</a>, <a class="el" href="group__CMSIS__RTOS__Message.html#gac24f87d4f395e9e9c900c320e45ade8a">osMessageQueueGetCapacity</a>, <a class="el" href="group__CMSIS__RTOS__Message.html#ga96d3d84069b20359de48109e28a1a89e">osMessageQueueGetMsgSize</a>, <a class="el" href="group__CMSIS__RTOS__Message.html#ga6a32ac394fcff568b251c160cc3014b2">osMessageQueueGetCount</a>, <a class="el" href="group__CMSIS__RTOS__Message.html#gaddf0904427436dd3880d46263c2dc9fa">osMessageQueueGetSpace</a> can be called from <a class="el" href="theory_of_operation.html#CMSIS_RTOS_ISR_Calls">Interrupt Service Routines</a>. </dd>
+<dl class="section note"><dt>Note</dt><dd>The functions <a class="el" href="group__CMSIS__RTOS__Message.html#gaa515fc8b956f721a8f72b2c505813bfc">osMessageQueuePut</a>, <a class="el" href="group__CMSIS__RTOS__Message.html#gad90d4959466a7a65105061da8256ab9e">osMessageQueueGet</a>, <a class="el" href="group__CMSIS__RTOS__Message.html#gac24f87d4f395e9e9c900c320e45ade8a">osMessageQueueGetCapacity</a>, <a class="el" href="group__CMSIS__RTOS__Message.html#ga96d3d84069b20359de48109e28a1a89e">osMessageQueueGetMsgSize</a>, <a class="el" href="group__CMSIS__RTOS__Message.html#ga6a32ac394fcff568b251c160cc3014b2">osMessageQueueGetCount</a>, <a class="el" href="group__CMSIS__RTOS__Message.html#gaddf0904427436dd3880d46263c2dc9fa">osMessageQueueGetSpace</a> can be called from Interrupt Service Routines. </dd>
 <dd>
-Refer to <a class="el" href="config_rtx5.html#msgQueueConfig">Message Queue Configuration</a> for RTX5 configuration options. </dd></dl>
+Refer to msgQueueConfig for RTX5 configuration options. </dd></dl>
 <hr/><h2 class="groupheader">Data Structure Documentation</h2>
 <a name="structosMessageQueueAttr__t" id="structosMessageQueueAttr__t"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#structosMessageQueueAttr__t">&#9670;&#160;</a></span>osMessageQueueAttr_t</h2>
@@ -218,7 +218,7 @@ attribute bits <p>Reserved for future use (must be set to '0' for future compati
 <td class="fieldname">
 cb_mem</td>
 <td class="fielddoc">
-memory for control block <p>Pointer to a memory for the message queue control block object. Refer to <a class="el" href="theory_of_operation.html#StaticObjectMemory">Static Object Memory</a> for more information.</p>
+memory for control block <p>Pointer to a memory for the message queue control block object. Refer to StaticObjectMemory for more information.</p>
 <p>Default: <span class="XML-Token">NULL</span> to use <a class="el" href="group__CMSIS__RTOS__MemoryMgmt.html#CMSIS_RTOS_MemoryMgmt_Automatic">Automatic Dynamic Allocation</a> for the message queue control block. </p>
 </td></tr>
 <tr><td class="fieldtype">
@@ -234,7 +234,7 @@ size of provided memory for control block <p>The size (in bytes) of memory block
 <td class="fieldname">
 mq_mem</td>
 <td class="fielddoc">
-memory for data storage <p>Pointer to a memory for the message queue data. Refer to <a class="el" href="theory_of_operation.html#StaticObjectMemory">Static Object Memory</a> for more information.</p>
+memory for data storage <p>Pointer to a memory for the message queue data. Refer to StaticObjectMemory for more information.</p>
 <p>Default: <span class="XML-Token">NULL</span> to use <a class="el" href="group__CMSIS__RTOS__MemoryMgmt.html#CMSIS_RTOS_MemoryMgmt_Automatic">Automatic Dynamic Allocation</a> for the memory pool data. </p>
 </td></tr>
 <tr><td class="fieldtype">
@@ -294,7 +294,7 @@ size of provided memory for data storage <p>The size (in bytes) of memory block 
 <p>The function can be called after kernel initialization with <a class="el" href="group__CMSIS__RTOS__KernelCtrl.html#gae818f6611d25ba3140bede410a52d659">osKernelInitialize</a>. It is possible to create message queue objects before the RTOS kernel is started with <a class="el" href="group__CMSIS__RTOS__KernelCtrl.html#ga9ae2cc00f0d89d7b6a307bba942b5221">osKernelStart</a>.</p>
 <p>The total amount of memory required for the message queue data is at least <code>msg_count * msg_size</code>. The <em>msg_size</em> is rounded up to a double even number to ensure 32-bit alignment of the memory blocks.</p>
 <p>The memory blocks allocated from the message queue have a fixed size defined with the parameter <code>msg_size</code>.</p>
-<dl class="section note"><dt>Note</dt><dd>This function <b>cannot</b> be called from <a class="el" href="theory_of_operation.html#CMSIS_RTOS_ISR_Calls">Interrupt Service Routines</a>.</dd></dl>
+<dl class="section note"><dt>Note</dt><dd>This function <b>cannot</b> be called from Interrupt Service Routines.</dd></dl>
 <p><b>Code Example</b></p>
 <p>Refer to <a class="el" href="group__CMSIS__RTOS__Message.html#gaa515fc8b956f721a8f72b2c505813bfc">osMessageQueuePut</a> </p>
 
@@ -323,7 +323,7 @@ size of provided memory for data storage <p>The size (in bytes) of memory block 
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>name as null-terminated string.</dd></dl>
 <p>The function <b>osMessageQueueGetName</b> returns the pointer to the name string of the message queue identified by parameter <em>mq_id</em> or <span class="XML-Token">NULL</span> in case of an error.</p>
-<dl class="section note"><dt>Note</dt><dd>This function may be called from <a class="el" href="theory_of_operation.html#CMSIS_RTOS_ISR_Calls">Interrupt Service Routines</a>. </dd></dl>
+<dl class="section note"><dt>Note</dt><dd>This function may be called from Interrupt Service Routines. </dd></dl>
 
 </div>
 </div>
@@ -369,13 +369,13 @@ size of provided memory for data storage <p>The size (in bytes) of memory block 
     <tr><td class="paramdir">[in]</td><td class="paramname">mq_id</td><td>message queue ID obtained by <a class="el" href="group__CMSIS__RTOS__Message.html#ga24e895a00f9d484db33aaf784c57bfed">osMessageQueueNew</a>. </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">msg_ptr</td><td>pointer to buffer with message to put into a queue. </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">msg_prio</td><td>message priority. </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">timeout</td><td><a class="el" href="theory_of_operation.html#CMSIS_RTOS_TimeOutValue">Timeout Value</a> or 0 in case of no time-out. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">timeout</td><td>CMSIS_RTOS_TimeOutValue or 0 in case of no time-out. </td></tr>
   </table>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>status code that indicates the execution status of the function.</dd></dl>
 <p>The blocking function <b>osMessageQueuePut</b> puts the message pointed to by <em>msg_ptr</em> into the the message queue specified by parameter <em>mq_id</em>. The parameter <em>msg_prio</em> is used to sort message according their priority (higher numbers indicate a higher priority) on insertion.</p>
-<p>The parameter <em>timeout</em> specifies how long the system waits to put the message into the queue. While the system waits, the thread that is calling this function is put into the <a class="el" href="group__CMSIS__RTOS__ThreadMgmt.html#ThreadStates">BLOCKED</a> state. The parameter <a class="el" href="theory_of_operation.html#CMSIS_RTOS_TimeOutValue">timeout</a> can have the following values:</p><ul>
+<p>The parameter <em>timeout</em> specifies how long the system waits to put the message into the queue. While the system waits, the thread that is calling this function is put into the <a class="el" href="group__CMSIS__RTOS__ThreadMgmt.html#ThreadStates">BLOCKED</a> state. The parameter timeout can have the following values:</p><ul>
 <li>when <em>timeout</em> is <span class="XML-Token">0</span>, the function returns instantly (i.e. try semantics).</li>
 <li>when <em>timeout</em> is set to <b>osWaitForever</b> the function will wait for an infinite time until the message is delivered (i.e. wait semantics).</li>
 <li>all other values specify a time in kernel ticks for a timeout (i.e. timed-wait semantics).</li>
@@ -387,7 +387,7 @@ size of provided memory for data storage <p>The size (in bytes) of memory block 
 <li><em>osErrorParameter:</em> parameter <em>mq_id</em> is <span class="XML-Token">NULL</span> or invalid, non-zero timeout specified in an ISR.</li>
 <li><em>osErrorSafetyClass:</em> the calling thread safety class is lower than the safety class of the specified message queue.</li>
 </ul>
-<dl class="section note"><dt>Note</dt><dd>May be called from <a class="el" href="theory_of_operation.html#CMSIS_RTOS_ISR_Calls">Interrupt Service Routines</a> if the parameter <em>timeout</em> is set to <span class="XML-Token">0</span>.</dd></dl>
+<dl class="section note"><dt>Note</dt><dd>May be called from Interrupt Service Routines if the parameter <em>timeout</em> is set to <span class="XML-Token">0</span>.</dd></dl>
 <p><b>Code Example:</b> </p><div class="fragment"><div class="line"><span class="preprocessor">#include &quot;<a class="code" href="cmsis__os2_8h.html">cmsis_os2.h</a>&quot;</span>                          <span class="comment">// CMSIS RTOS header file</span></div>
 <div class="line"> </div>
 <div class="line"><span class="comment">/*----------------------------------------------------------------------------</span></div>
@@ -507,13 +507,13 @@ size of provided memory for data storage <p>The size (in bytes) of memory block 
     <tr><td class="paramdir">[in]</td><td class="paramname">mq_id</td><td>message queue ID obtained by <a class="el" href="group__CMSIS__RTOS__Message.html#ga24e895a00f9d484db33aaf784c57bfed">osMessageQueueNew</a>. </td></tr>
     <tr><td class="paramdir">[out]</td><td class="paramname">msg_ptr</td><td>pointer to buffer for message to get from a queue. </td></tr>
     <tr><td class="paramdir">[out]</td><td class="paramname">msg_prio</td><td>pointer to buffer for message priority or NULL. </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">timeout</td><td><a class="el" href="theory_of_operation.html#CMSIS_RTOS_TimeOutValue">Timeout Value</a> or 0 in case of no time-out. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">timeout</td><td>CMSIS_RTOS_TimeOutValue or 0 in case of no time-out. </td></tr>
   </table>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>status code that indicates the execution status of the function.</dd></dl>
 <p>The function <b>osMessageQueueGet</b> retrieves a message from the message queue specified by the parameter <em>mq_id</em> and saves it to the buffer pointed to by the parameter <em>msg_ptr</em>. The message priority is stored to parameter <em>msg_prio</em> if not token{NULL}.</p>
-<p>The parameter <em>timeout</em> specifies how long the system waits to retrieve the message from the queue. While the system waits, the thread that is calling this function is put into the <a class="el" href="group__CMSIS__RTOS__ThreadMgmt.html#ThreadStates">BLOCKED</a> state. The parameter <a class="el" href="theory_of_operation.html#CMSIS_RTOS_TimeOutValue">timeout</a> can have the following values:</p><ul>
+<p>The parameter <em>timeout</em> specifies how long the system waits to retrieve the message from the queue. While the system waits, the thread that is calling this function is put into the <a class="el" href="group__CMSIS__RTOS__ThreadMgmt.html#ThreadStates">BLOCKED</a> state. The parameter timeout can have the following values:</p><ul>
 <li>when <em>timeout</em> is <span class="XML-Token">0</span>, the function returns instantly (i.e. try semantics).</li>
 <li>when <em>timeout</em> is set to <b>osWaitForever</b> the function will wait for an infinite time until the message is retrieved (i.e. wait semantics).</li>
 <li>all other values specify a time in kernel ticks for a timeout (i.e. timed-wait semantics).</li>
@@ -525,7 +525,7 @@ size of provided memory for data storage <p>The size (in bytes) of memory block 
 <li><em>osErrorParameter:</em> parameter <em>mq_id</em> is <span class="XML-Token">NULL</span> or invalid, non-zero timeout specified in an ISR.</li>
 <li><em>osErrorSafetyClass:</em> the calling thread safety class is lower than the safety class of the specified message queue.</li>
 </ul>
-<dl class="section note"><dt>Note</dt><dd>May be called from <a class="el" href="theory_of_operation.html#CMSIS_RTOS_ISR_Calls">Interrupt Service Routines</a> if the parameter <em>timeout</em> is set to <span class="XML-Token">0</span>.</dd></dl>
+<dl class="section note"><dt>Note</dt><dd>May be called from Interrupt Service Routines if the parameter <em>timeout</em> is set to <span class="XML-Token">0</span>.</dd></dl>
 <p><b>Code Example</b></p>
 <p>Refer to <a class="el" href="group__CMSIS__RTOS__Message.html#gaa515fc8b956f721a8f72b2c505813bfc">osMessageQueuePut</a> </p>
 
@@ -554,7 +554,7 @@ size of provided memory for data storage <p>The size (in bytes) of memory block 
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>maximum number of messages.</dd></dl>
 <p>The function <b>osMessageQueueGetCapacity</b> returns the maximum number of messages in the message queue object specified by parameter <em>mq_id</em> or <span class="XML-Token">0</span> in case of an error.</p>
-<dl class="section note"><dt>Note</dt><dd>This function may be called from <a class="el" href="theory_of_operation.html#CMSIS_RTOS_ISR_Calls">Interrupt Service Routines</a>. </dd></dl>
+<dl class="section note"><dt>Note</dt><dd>This function may be called from Interrupt Service Routines. </dd></dl>
 
 </div>
 </div>
@@ -581,7 +581,7 @@ size of provided memory for data storage <p>The size (in bytes) of memory block 
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>maximum message size in bytes.</dd></dl>
 <p>The function <b>osMessageQueueGetMsgSize</b> returns the maximum message size in bytes for the message queue object specified by parameter <em>mq_id</em> or <span class="XML-Token">0</span> in case of an error.</p>
-<dl class="section note"><dt>Note</dt><dd>This function may be called from <a class="el" href="theory_of_operation.html#CMSIS_RTOS_ISR_Calls">Interrupt Service Routines</a>. </dd></dl>
+<dl class="section note"><dt>Note</dt><dd>This function may be called from Interrupt Service Routines. </dd></dl>
 
 </div>
 </div>
@@ -608,7 +608,7 @@ size of provided memory for data storage <p>The size (in bytes) of memory block 
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>number of queued messages.</dd></dl>
 <p>The function <b>osMessageQueueGetCount</b> returns the number of queued messages in the message queue object specified by parameter <em>mq_id</em> or <span class="XML-Token">0</span> in case of an error.</p>
-<dl class="section note"><dt>Note</dt><dd>This function may be called from <a class="el" href="theory_of_operation.html#CMSIS_RTOS_ISR_Calls">Interrupt Service Routines</a>. </dd></dl>
+<dl class="section note"><dt>Note</dt><dd>This function may be called from Interrupt Service Routines. </dd></dl>
 
 </div>
 </div>
@@ -635,7 +635,7 @@ size of provided memory for data storage <p>The size (in bytes) of memory block 
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>number of available slots for messages.</dd></dl>
 <p>The function <b>osMessageQueueGetSpace</b> returns the number available slots for messages in the message queue object specified by parameter <em>mq_id</em> or <span class="XML-Token">0</span> in case of an error.</p>
-<dl class="section note"><dt>Note</dt><dd>This function may be called from <a class="el" href="theory_of_operation.html#CMSIS_RTOS_ISR_Calls">Interrupt Service Routines</a>. </dd></dl>
+<dl class="section note"><dt>Note</dt><dd>This function may be called from Interrupt Service Routines. </dd></dl>
 
 </div>
 </div>
@@ -669,7 +669,7 @@ size of provided memory for data storage <p>The size (in bytes) of memory block 
 <li><em>osErrorISR:</em> <b>osMessageQueueReset</b> cannot be called from interrupt service routines.</li>
 <li><em>osErrorSafetyClass:</em> the calling thread safety class is lower than the safety class of the specified message queue.</li>
 </ul>
-<dl class="section note"><dt>Note</dt><dd>This function <b>cannot</b> be called from <a class="el" href="theory_of_operation.html#CMSIS_RTOS_ISR_Calls">Interrupt Service Routines</a>. </dd></dl>
+<dl class="section note"><dt>Note</dt><dd>This function <b>cannot</b> be called from Interrupt Service Routines. </dd></dl>
 
 </div>
 </div>
@@ -703,7 +703,7 @@ size of provided memory for data storage <p>The size (in bytes) of memory block 
 <li><em>osErrorISR:</em> <b>osMessageQueueDelete</b> cannot be called from interrupt service routines.</li>
 <li><em>osErrorSafetyClass:</em> the calling thread safety class is lower than the safety class of the specified message queue.</li>
 </ul>
-<dl class="section note"><dt>Note</dt><dd>This function <b>cannot</b> be called from <a class="el" href="theory_of_operation.html#CMSIS_RTOS_ISR_Calls">Interrupt Service Routines</a>. </dd></dl>
+<dl class="section note"><dt>Note</dt><dd>This function <b>cannot</b> be called from Interrupt Service Routines. </dd></dl>
 
 </div>
 </div>

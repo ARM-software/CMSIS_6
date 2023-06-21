@@ -1,4 +1,6 @@
 var searchData=
 [
-  ['event_20flags_0',['Event Flags',['../group__CMSIS__RTOS__EventFlags.html',1,'']]]
+  ['fault_20handling_0',['Fault Handling',['../group__rtos__process__isolation__faults.html',1,'']]],
+  ['flags_20functions_20error_20codes_1',['Flags Functions Error Codes',['../group__flags__error__codes.html',1,'']]],
+  ['function_20overview_2',['Function Overview',['../functionOverview.html',1,'']]]
 ];

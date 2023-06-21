@@ -52,7 +52,7 @@
     </script>
    </span>
    </div>
-   <div id="projectbrief">Real-Time Operating System: API and RTX Reference Implementation</div>
+   <div id="projectbrief">Real-Time Operating System API</div>
   </td>
    <td>        <div id="MSearchBox" class="MSearchBoxInactive">
         <span class="left">
@@ -384,9 +384,9 @@ Functions</h2></td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Description</h2>
 <p>The Thread Management function group allows defining, creating, and controlling thread functions in the system.</p>
-<dl class="section note"><dt>Note</dt><dd>Thread management functions cannot be called from <a class="el" href="theory_of_operation.html#CMSIS_RTOS_ISR_Calls">Interrupt Service Routines</a>.</dd></dl>
+<dl class="section note"><dt>Note</dt><dd>Thread management functions cannot be called from Interrupt Service Routines.</dd></dl>
 <p><a class="anchor" id="ThreadStates"></a></p>
-<h2><a class="anchor" id="autotoc_md1"></a>
+<h2><a class="anchor" id="autotoc_md0"></a>
 Thread states</h2>
 <p>Threads can be in the following states:</p>
 <ul>
@@ -406,13 +406,12 @@ Thread State and State Transitions</div></div>
 <li>The <a class="el" href="group__CMSIS__RTOS__ThreadMgmt.html#ThreadStates">RUNNING</a> thread transfers into the <a class="el" href="group__CMSIS__RTOS__ThreadMgmt.html#ThreadStates">BLOCKED</a> state when it is delayed, waiting for an event or suspended.</li>
 <li>Active threads can be terminated any time using the function <a class="el" href="group__CMSIS__RTOS__ThreadMgmt.html#ga2f8ba6dba6e9c065a6e236ffd410d74a">osThreadTerminate</a>. Threads can terminate also by just returning from the thread function. Threads that are terminated are in the <a class="el" href="group__CMSIS__RTOS__ThreadMgmt.html#ThreadStates">INACTIVE</a> state and typically do not consume any dynamic memory resources.</li>
 </ul>
-<dl class="section note"><dt>Note</dt><dd>Refer to <a class="el" href="config_rtx5.html#threadConfig">Thread Configuration</a> for RTX5 configuration options.</dd></dl>
 <p><a class="anchor" id="thread_examples"></a></p>
-<h1><a class="anchor" id="autotoc_md2"></a>
+<h1><a class="anchor" id="autotoc_md1"></a>
 Thread Examples</h1>
 <p>The following examples show various scenarios to create threads:</p>
 <p><b>Example 1 - Create a simple thread</b></p>
-<p>Create a thread out of the function thread1 using all default values for thread attributes and memory from the <a class="el" href="theory_of_operation.html#GlobalMemoryPool">Global Memory Pool</a>.</p>
+<p>Create a thread out of the function thread1 using all default values for thread attributes and memory from the GlobalMemoryPool.</p>
 <div class="fragment"><div class="line"><a class="code hl_define" href="cmsis__os2_8h.html#a153a4a31b276a9758959580538720a51">__NO_RETURN</a> <span class="keywordtype">void</span> thread1 (<span class="keywordtype">void</span> *argument) {</div>
 <div class="line">  <span class="comment">// ...</span></div>
 <div class="line">  <span class="keywordflow">for</span> (;;) {}</div>
@@ -430,7 +429,7 @@ Thread Examples</h1>
 <div class="ttc" id="agroup__CMSIS__RTOS__KernelCtrl_html_gae818f6611d25ba3140bede410a52d659"><div class="ttname"><a href="group__CMSIS__RTOS__KernelCtrl.html#gae818f6611d25ba3140bede410a52d659">osKernelInitialize</a></div><div class="ttdeci">osStatus_t osKernelInitialize(void)</div><div class="ttdoc">Initialize the RTOS Kernel.</div></div>
 <div class="ttc" id="agroup__CMSIS__RTOS__ThreadMgmt_html_ga48d68b8666d99d28fa646ee1d2182b8f"><div class="ttname"><a href="group__CMSIS__RTOS__ThreadMgmt.html#ga48d68b8666d99d28fa646ee1d2182b8f">osThreadNew</a></div><div class="ttdeci">osThreadId_t osThreadNew(osThreadFunc_t func, void *argument, const osThreadAttr_t *attr)</div><div class="ttdoc">Create a thread and add it to Active Threads.</div></div>
 </div><!-- fragment --><p><b>Example 2 - Create thread with stack non-default stack size</b></p>
-<p>Similar to the simple thread all attributes are default. The stack is dynamically allocated from the <a class="el" href="theory_of_operation.html#GlobalMemoryPool">Global Memory Pool</a></p>
+<p>Similar to the simple thread all attributes are default. The stack is dynamically allocated from the GlobalMemoryPool</p>
 <p><a class="el" href="group__CMSIS__RTOS__ThreadMgmt.html#aacbc9a219f2d6870e9ce89bb93f975c9">osThreadAttr_t::stack_size</a> is used to pass the stack size in Bytes to <a class="el" href="group__CMSIS__RTOS__ThreadMgmt.html#ga48d68b8666d99d28fa646ee1d2182b8f">osThreadNew</a>.</p>
 <div class="fragment"><div class="line"><a class="code hl_define" href="cmsis__os2_8h.html#a153a4a31b276a9758959580538720a51">__NO_RETURN</a> <span class="keywordtype">void</span> thread1 (<span class="keywordtype">void</span> *argument) {</div>
 <div class="line">  <span class="comment">// ...</span></div>
@@ -585,14 +584,14 @@ attribute bits <p>The following bit masks can be used to set options:</p><ul>
 <li><a class="el" href="group__CMSIS__RTOS__ThreadMgmt.html#gaefca370070d0b1616421bc3311acfecc">osThreadZone</a> (m) : create thread assigned to MPU zone <span class="XML-Token">m</span>.</li>
 <li><a class="el" href="group__CMSIS__RTOS__Definitions.html#ga604fce4f5205f92c347eb62fcc216861">osSafetyClass</a> (n) : create thread with safety class <span class="XML-Token">n</span> assigned to it.</li>
 </ul>
-<p>Default: <span class="XML-Token">0</span> no options set. Safety class and MPU Zone are inherited from running thread. Thread privilege mode is set based on configuration <a class="el" href="config_rtx5.html#threadConfig_procmode">Processor Mode for Thread Execution</a>. </p>
+<p>Default: <span class="XML-Token">0</span> no options set. Safety class and MPU Zone are inherited from running thread. Thread privilege mode is set based on configuration threadConfig_procmode. </p>
 </td></tr>
 <tr><td class="fieldtype">
 <a id="a1e100dc33d403841ed3c344e3397868e" name="a1e100dc33d403841ed3c344e3397868e"></a>void *</td>
 <td class="fieldname">
 cb_mem</td>
 <td class="fielddoc">
-memory for control block <p>Pointer to a memory for the thread control block object. Refer to <a class="el" href="theory_of_operation.html#StaticObjectMemory">Static Object Memory</a> for more information.</p>
+memory for control block <p>Pointer to a memory for the thread control block object. Refer to StaticObjectMemory for more information.</p>
 <p>Default: <span class="XML-Token">NULL</span> to use <a class="el" href="group__CMSIS__RTOS__MemoryMgmt.html#CMSIS_RTOS_MemoryMgmt_Automatic">Automatic Dynamic Allocation</a> for the thread control block. </p>
 </td></tr>
 <tr><td class="fieldtype">
@@ -609,7 +608,7 @@ size of provided memory for control block <p>The size (in bytes) of memory block
 stack_mem</td>
 <td class="fielddoc">
 memory for stack <p>Pointer to a memory location for the thread stack (64-bit aligned).</p>
-<p>Default: <span class="XML-Token">NULL</span> to allocate stack from a fixed-size memory pool using <a class="el" href="theory_of_operation.html#ThreadStack">Thread Stack Management</a>. </p>
+<p>Default: <span class="XML-Token">NULL</span> to allocate stack from a fixed-size memory pool using ThreadStack. </p>
 </td></tr>
 <tr><td class="fieldtype">
 <a id="aacbc9a219f2d6870e9ce89bb93f975c9" name="aacbc9a219f2d6870e9ce89bb93f975c9"></a>uint32_t</td>
@@ -1002,7 +1001,7 @@ reserved (must be 0) <p>Reserved for future use. </p>
 <p>The function <b>osThreadNew</b> starts a thread function by adding it to the list of active threads and sets it to state <a class="el" href="group__CMSIS__RTOS__ThreadMgmt.html#ThreadStates">READY</a>. Arguments for the thread function are passed using the parameter pointer <em>*argument</em>. When the priority of the created thread function is higher than the current <a class="el" href="group__CMSIS__RTOS__ThreadMgmt.html#ThreadStates">RUNNING</a> thread, the created thread function starts instantly and becomes the new <a class="el" href="group__CMSIS__RTOS__ThreadMgmt.html#ThreadStates">RUNNING</a> thread. Thread attributes are defined with the parameter pointer <em>attr</em>. Attributes include settings for thread priority, stack size, or memory allocation.</p>
 <p>The function can be safely called before the RTOS is started (call to <a class="el" href="group__CMSIS__RTOS__KernelCtrl.html#ga9ae2cc00f0d89d7b6a307bba942b5221">osKernelStart</a>), but not before it is initialized (call to <a class="el" href="group__CMSIS__RTOS__KernelCtrl.html#gae818f6611d25ba3140bede410a52d659">osKernelInitialize</a>).</p>
 <p>The function <b>osThreadNew</b> returns the pointer to the thread object identifier or <span class="XML-Token">NULL</span> in case of an error.</p>
-<dl class="section note"><dt>Note</dt><dd>Cannot be called from <a class="el" href="theory_of_operation.html#CMSIS_RTOS_ISR_Calls">Interrupt Service Routines</a>.</dd></dl>
+<dl class="section note"><dt>Note</dt><dd>Cannot be called from Interrupt Service Routines.</dd></dl>
 <p><b>Code</b> <b>Example</b> </p>
 <p>Refer to the <a class="el" href="group__CMSIS__RTOS__ThreadMgmt.html#thread_examples">Thread Examples</a> section. </p>
 
@@ -1031,7 +1030,7 @@ reserved (must be 0) <p>Reserved for future use. </p>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>name as null-terminated string.</dd></dl>
 <p>The function <b>osThreadGetName</b> returns the pointer to the name string of the thread identified by parameter <em>thread_id</em> or <span class="XML-Token">NULL</span> in case of an error.</p>
-<dl class="section note"><dt>Note</dt><dd>This function may be called from <a class="el" href="theory_of_operation.html#CMSIS_RTOS_ISR_Calls">Interrupt Service Routines</a>.</dd></dl>
+<dl class="section note"><dt>Note</dt><dd>This function may be called from Interrupt Service Routines.</dd></dl>
 <p><b>Code Example</b> </p><div class="fragment"><div class="line"><span class="keywordtype">void</span> ThreadGetName_example (<span class="keywordtype">void</span>) {</div>
 <div class="line">  <a class="code hl_typedef" href="group__CMSIS__RTOS__ThreadMgmt.html#gaa6c32fe2a3e0a2e01f212d55b02e51c7">osThreadId_t</a> thread_id = <a class="code hl_function" href="group__CMSIS__RTOS__ThreadMgmt.html#ga8df03548e89fbc56402a5cd584a505da">osThreadGetId</a>();</div>
 <div class="line">  <span class="keyword">const</span> <span class="keywordtype">char</span>* name = <a class="code hl_function" href="group__CMSIS__RTOS__ThreadMgmt.html#gac3230f3a55a297514b013ebf38f27e0a">osThreadGetName</a>(thread_id);</div>
@@ -1113,7 +1112,7 @@ reserved (must be 0) <p>Reserved for future use. </p>
 </div><div class="memdoc">
 <dl class="section return"><dt>Returns</dt><dd>thread ID for reference by other functions or NULL in case of error.</dd></dl>
 <p>The function <b>osThreadGetId</b> returns the thread object ID of the currently running thread or NULL in case of an error.</p>
-<dl class="section note"><dt>Note</dt><dd>This function may be called from <a class="el" href="theory_of_operation.html#CMSIS_RTOS_ISR_Calls">Interrupt Service Routines</a>.</dd></dl>
+<dl class="section note"><dt>Note</dt><dd>This function may be called from Interrupt Service Routines.</dd></dl>
 <p><b>Code Example</b> </p><div class="fragment"><div class="line"><span class="keywordtype">void</span> ThreadGetId_example (<span class="keywordtype">void</span>) {</div>
 <div class="line">  <a class="code hl_typedef" href="group__CMSIS__RTOS__ThreadMgmt.html#gaa6c32fe2a3e0a2e01f212d55b02e51c7">osThreadId_t</a> id;                              <span class="comment">// id for the currently running thread</span></div>
 <div class="line">   </div>
@@ -1148,7 +1147,7 @@ reserved (must be 0) <p>Reserved for future use. </p>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>current thread state of the specified thread.</dd></dl>
 <p>The function <b>osThreadGetState</b> returns the state of the thread identified by parameter <em>thread_id</em>. In case it fails or if it is called from an ISR, it will return <code>osThreadError</code>, otherwise it returns the thread state (refer to <a class="el" href="group__CMSIS__RTOS__ThreadMgmt.html#gad3dc89e942e38d9f3af858a0269a820d">osThreadState_t</a> for the list of thread states).</p>
-<dl class="section note"><dt>Note</dt><dd>This function <b>cannot</b> be called from <a class="el" href="theory_of_operation.html#CMSIS_RTOS_ISR_Calls">Interrupt Service Routines</a>. </dd></dl>
+<dl class="section note"><dt>Note</dt><dd>This function <b>cannot</b> be called from Interrupt Service Routines. </dd></dl>
 
 </div>
 </div>
@@ -1193,7 +1192,7 @@ reserved (must be 0) <p>Reserved for future use. </p>
 <li><em>osErrorISR:</em> the function <b>osThreadSetPriority</b> cannot be called from interrupt service routines.</li>
 <li><em>osErrorSafetyClass:</em> the calling thread safety class is lower than the safety class of the specified thread.</li>
 </ul>
-<dl class="section note"><dt>Note</dt><dd>This function <b>cannot</b> be called from <a class="el" href="theory_of_operation.html#CMSIS_RTOS_ISR_Calls">Interrupt Service Routines</a>.</dd></dl>
+<dl class="section note"><dt>Note</dt><dd>This function <b>cannot</b> be called from Interrupt Service Routines.</dd></dl>
 <p><b>Code Example</b> </p><div class="fragment"><div class="line"><span class="preprocessor">#include &quot;<a class="code" href="cmsis__os2_8h.html">cmsis_os2.h</a>&quot;</span></div>
 <div class="line"> </div>
 <div class="line"><span class="keywordtype">void</span> Thread_1 (<span class="keywordtype">void</span> <span class="keyword">const</span> *arg) {               <span class="comment">// Thread function</span></div>
@@ -1244,9 +1243,9 @@ reserved (must be 0) <p>Reserved for future use. </p>
 <p>The function <b>osThreadGetPriority</b> returns the priority of an active thread specified by the parameter <em>thread_id</em>.</p>
 <p>Possible <a class="el" href="group__CMSIS__RTOS__ThreadMgmt.html#gad4e3e0971b41f2d17584a8c6837342ec">osPriority_t</a> return values:</p><ul>
 <li><em>priority:</em> the priority of the specified thread.</li>
-<li><em>osPriorityError:</em> priority cannot be determined or is illegal. It is also returned when the function is called from <a class="el" href="theory_of_operation.html#CMSIS_RTOS_ISR_Calls">Interrupt Service Routines</a>.</li>
+<li><em>osPriorityError:</em> priority cannot be determined or is illegal. It is also returned when the function is called from Interrupt Service Routines.</li>
 </ul>
-<dl class="section note"><dt>Note</dt><dd>This function <b>cannot</b> be called from <a class="el" href="theory_of_operation.html#CMSIS_RTOS_ISR_Calls">Interrupt Service Routines</a>.</dd></dl>
+<dl class="section note"><dt>Note</dt><dd>This function <b>cannot</b> be called from Interrupt Service Routines.</dd></dl>
 <p><b>Code Example</b> </p><div class="fragment"><div class="line"><span class="preprocessor">#include &quot;<a class="code" href="cmsis__os2_8h.html">cmsis_os2.h</a>&quot;</span></div>
 <div class="line"> </div>
 <div class="line"><span class="keywordtype">void</span> Thread_1 (<span class="keywordtype">void</span> <span class="keyword">const</span> *arg) {               <span class="comment">// Thread function</span></div>
@@ -1283,7 +1282,7 @@ reserved (must be 0) <p>Reserved for future use. </p>
 <li><em>osError:</em> an unspecified error has occurred.</li>
 <li><em>osErrorISR:</em> the function <b>osThreadYield</b> cannot be called from interrupt service routines.</li>
 </ul>
-<dl class="section note"><dt>Note</dt><dd>This function <b>cannot</b> be called from <a class="el" href="theory_of_operation.html#CMSIS_RTOS_ISR_Calls">Interrupt Service Routines</a>. </dd>
+<dl class="section note"><dt>Note</dt><dd>This function <b>cannot</b> be called from Interrupt Service Routines. </dd>
 <dd>
 This function <b>has no impact</b> when called when the kernel is locked, see <a class="el" href="group__CMSIS__RTOS__KernelCtrl.html#ga948609ee930d9b38336b9e1c2a4dfe12">osKernelLock</a>.</dd></dl>
 <p><b>Code Example</b> </p><div class="fragment"><div class="line"><span class="preprocessor">#include &quot;<a class="code" href="cmsis__os2_8h.html">cmsis_os2.h</a>&quot;</span></div>
@@ -1333,7 +1332,7 @@ This function <b>has no impact</b> when called when the kernel is locked, see <a
 <li><em>osErrorISR:</em> the function <b>osThreadSuspend</b> cannot be called from interrupt service routines.</li>
 <li><em>osErrorSafetyClass:</em> the calling thread safety class is lower than the safety class of the specified thread.</li>
 </ul>
-<dl class="section note"><dt>Note</dt><dd>This function <b>cannot</b> be called from <a class="el" href="theory_of_operation.html#CMSIS_RTOS_ISR_Calls">Interrupt Service Routines</a>. </dd>
+<dl class="section note"><dt>Note</dt><dd>This function <b>cannot</b> be called from Interrupt Service Routines. </dd>
 <dd>
 This function <b>must not</b> be called to suspend the running thread when the kernel is locked, i.e. <a class="el" href="group__CMSIS__RTOS__KernelCtrl.html#ga948609ee930d9b38336b9e1c2a4dfe12">osKernelLock</a>. </dd></dl>
 
@@ -1371,7 +1370,7 @@ This function <b>must not</b> be called to suspend the running thread when the k
 <li><em>osErrorISR:</em> the function <b>osThreadResume</b> cannot be called from interrupt service routines.</li>
 <li><em>osErrorSafetyClass:</em> the calling thread safety class is lower than the safety class of the specified thread.</li>
 </ul>
-<dl class="section note"><dt>Note</dt><dd>This function <b>cannot</b> be called from <a class="el" href="theory_of_operation.html#CMSIS_RTOS_ISR_Calls">Interrupt Service Routines</a>. </dd>
+<dl class="section note"><dt>Note</dt><dd>This function <b>cannot</b> be called from Interrupt Service Routines. </dd>
 <dd>
 This function <b>may be</b> called when kernel is locked (<a class="el" href="group__CMSIS__RTOS__KernelCtrl.html#ga948609ee930d9b38336b9e1c2a4dfe12">osKernelLock</a>). Under this circumstances a potential context switch is delayed until the kernel gets unlocked, i.e. <a class="el" href="group__CMSIS__RTOS__KernelCtrl.html#gaf401728b4657456198c33fe75f8d6720">osKernelUnlock</a> or <a class="el" href="group__CMSIS__RTOS__KernelCtrl.html#gae7d0a71b9586cbbb49fcbdf6a04f0289">osKernelRestoreLock</a>. </dd></dl>
 
@@ -1407,7 +1406,7 @@ This function <b>may be</b> called when kernel is locked (<a class="el" href="gr
 <li><em>osErrorISR:</em> the function <b>osThreadDetach</b> cannot be called from interrupt service routines.</li>
 <li><em>osErrorSafetyClass:</em> the calling thread safety class is lower than the safety class of the specified thread.</li>
 </ul>
-<dl class="section note"><dt>Note</dt><dd>This function <b>cannot</b> be called from <a class="el" href="theory_of_operation.html#CMSIS_RTOS_ISR_Calls">Interrupt Service Routines</a>. </dd></dl>
+<dl class="section note"><dt>Note</dt><dd>This function <b>cannot</b> be called from Interrupt Service Routines. </dd></dl>
 
 </div>
 </div>
@@ -1441,7 +1440,7 @@ This function <b>may be</b> called when kernel is locked (<a class="el" href="gr
 <li><em>osErrorISR:</em> the function <b>osThreadJoin</b> cannot be called from interrupt service routines.</li>
 <li><em>osErrorSafetyClass:</em> the calling thread safety class is lower than the safety class of the specified thread.</li>
 </ul>
-<dl class="section note"><dt>Note</dt><dd>This function <b>cannot</b> be called from <a class="el" href="theory_of_operation.html#CMSIS_RTOS_ISR_Calls">Interrupt Service Routines</a>. <br  />
+<dl class="section note"><dt>Note</dt><dd>This function <b>cannot</b> be called from Interrupt Service Routines. <br  />
  </dd>
 <dd>
 Only one thread shall call <b>osThreadJoin</b> to join the target thread. If multiple threads try to join simultaneously with the same thread, the results are undefined. </dd></dl>
@@ -1464,7 +1463,7 @@ Only one thread shall call <b>osThreadJoin</b> to join the target thread. If mul
       </table>
 </div><div class="memdoc">
 <p>The function <b>osThreadExit</b> terminates the calling thread. This allows the thread to be synchronized with <a class="el" href="group__CMSIS__RTOS__ThreadMgmt.html#ga3fca90fb0679afeb968aa8c3d5874487">osThreadJoin</a>.</p>
-<dl class="section note"><dt>Note</dt><dd>This function <b>cannot</b> be called from <a class="el" href="theory_of_operation.html#CMSIS_RTOS_ISR_Calls">Interrupt Service Routines</a>.</dd></dl>
+<dl class="section note"><dt>Note</dt><dd>This function <b>cannot</b> be called from Interrupt Service Routines.</dd></dl>
 <p><b>Code</b> <b>Example</b> </p><div class="fragment"><div class="line"><a class="code hl_define" href="cmsis__os2_8h.html#a153a4a31b276a9758959580538720a51">__NO_RETURN</a> <span class="keywordtype">void</span> worker (<span class="keywordtype">void</span> *argument) {</div>
 <div class="line">  <span class="comment">// do something</span></div>
 <div class="line">  <a class="code hl_function" href="group__CMSIS__RTOS__Wait.html#gaf6055a51390ef65b6b6edc28bf47322e">osDelay</a>(1000U);</div>
@@ -1503,7 +1502,7 @@ Only one thread shall call <b>osThreadJoin</b> to join the target thread. If mul
 <li><em>osErrorISR:</em> the function <b>osThreadTerminate</b> cannot be called from interrupt service routines.</li>
 <li><em>osErrorSafetyClass:</em> the calling thread safety class is lower than the safety class of the specified thread.</li>
 </ul>
-<dl class="section note"><dt>Note</dt><dd>This function <b>cannot</b> be called from <a class="el" href="theory_of_operation.html#CMSIS_RTOS_ISR_Calls">Interrupt Service Routines</a>. </dd>
+<dl class="section note"><dt>Note</dt><dd>This function <b>cannot</b> be called from Interrupt Service Routines. </dd>
 <dd>
 Avoid calling the function with a <em>thread_id</em> that does not exist or has been terminated already. </dd>
 <dd>
@@ -1553,7 +1552,7 @@ Avoid calling the function with a <em>thread_id</em> that does not exist or has 
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>stack size in bytes.</dd></dl>
 <p>The function <b>osThreadGetStackSize</b> returns the stack size of the thread specified by parameter <em>thread_id</em>. In case of an error, it returns <span class="XML-Token">0</span>.</p>
-<dl class="section note"><dt>Note</dt><dd>This function <b>cannot</b> be called from <a class="el" href="theory_of_operation.html#CMSIS_RTOS_ISR_Calls">Interrupt Service Routines</a>. </dd></dl>
+<dl class="section note"><dt>Note</dt><dd>This function <b>cannot</b> be called from Interrupt Service Routines. </dd></dl>
 
 </div>
 </div>
@@ -1579,8 +1578,8 @@ Avoid calling the function with a <em>thread_id</em> that does not exist or has 
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>remaining stack space in bytes.</dd></dl>
-<p>The function <b>osThreadGetStackSpace</b> returns the size of unused stack space for the thread specified by parameter <em>thread_id</em>. Stack watermark recording during execution needs to be enabled (refer to <a class="el" href="config_rtx5.html#threadConfig">Thread Configuration</a>). In case of an error, it returns <span class="XML-Token">0</span>.</p>
-<dl class="section note"><dt>Note</dt><dd>This function <b>cannot</b> be called from <a class="el" href="theory_of_operation.html#CMSIS_RTOS_ISR_Calls">Interrupt Service Routines</a>. </dd></dl>
+<p>The function <b>osThreadGetStackSpace</b> returns the size of unused stack space for the thread specified by parameter <em>thread_id</em>. Stack watermark recording during execution needs to be enabled (refer to threadConfig). In case of an error, it returns <span class="XML-Token">0</span>.</p>
+<dl class="section note"><dt>Note</dt><dd>This function <b>cannot</b> be called from Interrupt Service Routines. </dd></dl>
 
 </div>
 </div>
@@ -1601,7 +1600,7 @@ Avoid calling the function with a <em>thread_id</em> that does not exist or has 
 </div><div class="memdoc">
 <dl class="section return"><dt>Returns</dt><dd>number of active threads.</dd></dl>
 <p>The function <b>osThreadGetCount</b> returns the number of active threads or <span class="XML-Token">0</span> in case of an error.</p>
-<dl class="section note"><dt>Note</dt><dd>This function <b>cannot</b> be called from <a class="el" href="theory_of_operation.html#CMSIS_RTOS_ISR_Calls">Interrupt Service Routines</a>. </dd></dl>
+<dl class="section note"><dt>Note</dt><dd>This function <b>cannot</b> be called from Interrupt Service Routines. </dd></dl>
 
 </div>
 </div>
@@ -1639,7 +1638,7 @@ Avoid calling the function with a <em>thread_id</em> that does not exist or has 
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>number of enumerated threads.</dd></dl>
 <p>The function <b>osThreadEnumerate</b> returns the number of enumerated threads or <span class="XML-Token">0</span> in case of an error.</p>
-<dl class="section note"><dt>Note</dt><dd>This function <b>cannot</b> be called from <a class="el" href="theory_of_operation.html#CMSIS_RTOS_ISR_Calls">Interrupt Service Routines</a>. </dd></dl>
+<dl class="section note"><dt>Note</dt><dd>This function <b>cannot</b> be called from Interrupt Service Routines. </dd></dl>
 
 </div>
 </div>
@@ -1660,7 +1659,7 @@ Avoid calling the function with a <em>thread_id</em> that does not exist or has 
 </div><div class="memdoc">
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">ticks</td><td><a class="el" href="theory_of_operation.html#kernelTimer">time ticks</a> value until the thread watchdog expires, or 0 to stop the watchdog </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">ticks</td><td>time ticks value until the thread watchdog expires, or 0 to stop the watchdog </td></tr>
   </table>
   </dd>
 </dl>
@@ -1671,7 +1670,7 @@ Avoid calling the function with a <em>thread_id</em> that does not exist or has 
 <li><em>osError:</em> cannot be executed (kernel not running).</li>
 <li><em>osErrorISR:</em> the function <b>osThreadFeedWatchdog</b> cannot be called from interrupt service routines.</li>
 </ul>
-<dl class="section note"><dt>Note</dt><dd>This function <b>cannot</b> be called from <a class="el" href="theory_of_operation.html#CMSIS_RTOS_ISR_Calls">Interrupt Service Routines</a>.</dd></dl>
+<dl class="section note"><dt>Note</dt><dd>This function <b>cannot</b> be called from Interrupt Service Routines.</dd></dl>
 <p><b>Code Example:</b> </p><div class="fragment"><div class="line"><span class="preprocessor">#include &quot;<a class="code" href="cmsis__os2_8h.html">cmsis_os2.h</a>&quot;</span></div>
 <div class="line"> </div>
 <div class="line"><span class="keywordtype">void</span> Thread_1 (<span class="keywordtype">void</span> <span class="keyword">const</span> *arg) {          <span class="comment">// Thread function</span></div>
@@ -1709,7 +1708,7 @@ Avoid calling the function with a <em>thread_id</em> that does not exist or has 
 <li><em>osError:</em> cannot be executed (kernel not ready).</li>
 <li><em>osErrorISR:</em> the function <b>osThreadProtectPrivileged</b> cannot be called from interrupt service routines.</li>
 </ul>
-<dl class="section note"><dt>Note</dt><dd>This function <b>cannot</b> be called from <a class="el" href="theory_of_operation.html#CMSIS_RTOS_ISR_Calls">Interrupt Service Routines</a>.</dd></dl>
+<dl class="section note"><dt>Note</dt><dd>This function <b>cannot</b> be called from Interrupt Service Routines.</dd></dl>
 <p><b>Code Example:</b> </p><div class="fragment"><div class="line"><span class="preprocessor">#include &quot;<a class="code" href="cmsis__os2_8h.html">cmsis_os2.h</a>&quot;</span></div>
 <div class="line"> </div>
 <div class="line"><span class="keywordtype">int</span> main (<span class="keywordtype">void</span>) {</div>

@@ -52,7 +52,7 @@
     </script>
    </span>
    </div>
-   <div id="projectbrief">Real-Time Operating System: API and RTX Reference Implementation</div>
+   <div id="projectbrief">Real-Time Operating System API</div>
   </td>
    <td>        <div id="MSearchBox" class="MSearchBoxInactive">
         <span class="left">
@@ -144,7 +144,7 @@ Functions</h2></td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Description</h2>
 <p>The generic wait functions provide means for a time delay.</p>
-<dl class="section note"><dt>Note</dt><dd>Generic wait functions cannot be called from <a class="el" href="theory_of_operation.html#CMSIS_RTOS_ISR_Calls">Interrupt Service Routines</a>. </dd></dl>
+<dl class="section note"><dt>Note</dt><dd>Generic wait functions cannot be called from Interrupt Service Routines. </dd></dl>
 <h2 class="groupheader">Function Documentation</h2>
 <a id="gaf6055a51390ef65b6b6edc28bf47322e" name="gaf6055a51390ef65b6b6edc28bf47322e"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#gaf6055a51390ef65b6b6edc28bf47322e">&#9670;&#160;</a></span>osDelay()</h2>
@@ -163,7 +163,7 @@ Functions</h2></td></tr>
 </div><div class="memdoc">
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">ticks</td><td><a class="el" href="theory_of_operation.html#CMSIS_RTOS_TimeOutValue">time ticks</a> value </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">ticks</td><td>time ticks value </td></tr>
   </table>
   </dd>
 </dl>
@@ -173,10 +173,10 @@ Functions</h2></td></tr>
 <p>Possible <a class="el" href="group__CMSIS__RTOS__Definitions.html#ga6c0dbe6069e4e7f47bb4cd32ae2b813e">osStatus_t</a> return values:</p><ul>
 <li><em>osOK:</em> the time delay is executed.</li>
 <li><em>osErrorParameter:</em> the time cannot be handled (zero value).</li>
-<li><em>osErrorISR:</em> <a class="el" href="group__CMSIS__RTOS__Wait.html#gaf6055a51390ef65b6b6edc28bf47322e">osDelay</a> cannot be called from <a class="el" href="theory_of_operation.html#CMSIS_RTOS_ISR_Calls">Interrupt Service Routines</a>.</li>
+<li><em>osErrorISR:</em> <a class="el" href="group__CMSIS__RTOS__Wait.html#gaf6055a51390ef65b6b6edc28bf47322e">osDelay</a> cannot be called from Interrupt Service Routines.</li>
 <li><em>osError:</em> <a class="el" href="group__CMSIS__RTOS__Wait.html#gaf6055a51390ef65b6b6edc28bf47322e">osDelay</a> cannot be executed (kernel not running or no <a class="el" href="group__CMSIS__RTOS__ThreadMgmt.html#ThreadStates">READY</a> thread exists).</li>
 </ul>
-<dl class="section note"><dt>Note</dt><dd>This function <b>cannot</b> be called from <a class="el" href="theory_of_operation.html#CMSIS_RTOS_ISR_Calls">Interrupt Service Routines</a>.</dd></dl>
+<dl class="section note"><dt>Note</dt><dd>This function <b>cannot</b> be called from Interrupt Service Routines.</dd></dl>
 <p><b>Code Example</b> </p><div class="fragment"><div class="line"><span class="preprocessor">#include &quot;<a class="code" href="cmsis__os2_8h.html">cmsis_os2.h</a>&quot;</span></div>
 <div class="line"> </div>
 <div class="line"><span class="keywordtype">void</span> Thread_1 (<span class="keywordtype">void</span> *arg) {             <span class="comment">// Thread function</span></div>
@@ -220,10 +220,10 @@ Functions</h2></td></tr>
 <p>Possible <a class="el" href="group__CMSIS__RTOS__Definitions.html#ga6c0dbe6069e4e7f47bb4cd32ae2b813e">osStatus_t</a> return values:</p><ul>
 <li><em>osOK:</em> the time delay is executed.</li>
 <li><em>osErrorParameter:</em> the time cannot be handled (out of bounds).</li>
-<li><em>osErrorISR:</em> <a class="el" href="group__CMSIS__RTOS__Wait.html#ga3c807924c2d6d43bc2ffb49da3f7f3a1">osDelayUntil</a> cannot be called from <a class="el" href="theory_of_operation.html#CMSIS_RTOS_ISR_Calls">Interrupt Service Routines</a>.</li>
+<li><em>osErrorISR:</em> <a class="el" href="group__CMSIS__RTOS__Wait.html#ga3c807924c2d6d43bc2ffb49da3f7f3a1">osDelayUntil</a> cannot be called from Interrupt Service Routines.</li>
 <li><em>osError:</em> <a class="el" href="group__CMSIS__RTOS__Wait.html#ga3c807924c2d6d43bc2ffb49da3f7f3a1">osDelayUntil</a> cannot be executed (kernel not running or no <a class="el" href="group__CMSIS__RTOS__ThreadMgmt.html#ThreadStates">READY</a> thread exists).</li>
 </ul>
-<dl class="section note"><dt>Note</dt><dd>This function <b>cannot</b> be called from <a class="el" href="theory_of_operation.html#CMSIS_RTOS_ISR_Calls">Interrupt Service Routines</a>.</dd></dl>
+<dl class="section note"><dt>Note</dt><dd>This function <b>cannot</b> be called from Interrupt Service Routines.</dd></dl>
 <p><b>Code Example</b> </p><div class="fragment"><div class="line"><span class="preprocessor">#include &quot;<a class="code" href="cmsis__os2_8h.html">cmsis_os2.h</a>&quot;</span></div>
 <div class="line"> </div>
 <div class="line"><span class="keywordtype">void</span> Thread_1 (<span class="keywordtype">void</span> *arg) {             <span class="comment">// Thread function</span></div>

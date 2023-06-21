@@ -52,7 +52,7 @@
     </script>
    </span>
    </div>
-   <div id="projectbrief">Real-Time Operating System: API and RTX Reference Implementation</div>
+   <div id="projectbrief">Real-Time Operating System API</div>
   </td>
    <td>        <div id="MSearchBox" class="MSearchBoxInactive">
         <span class="left">
@@ -185,15 +185,15 @@ Functions</h2></td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Description</h2>
 <p>In addition to the <a class="el" href="group__CMSIS__RTOS__Wait.html">Generic Wait Functions</a> CMSIS-RTOS also supports virtual timer objects. These timer objects can trigger the execution of a function (not threads). When a timer expires, a callback function is executed to run associated code with the timer. Each timer can be configured as a one-shot or a periodic timer. A periodic timer repeats its operation until it is <a class="el" href="group__CMSIS__RTOS__TimerMgmt.html#gad0001dd74721ab461789324806db2453">deleted</a> or <a class="el" href="group__CMSIS__RTOS__TimerMgmt.html#gabd7a89356da7717293eb0bc5d87b8ac9">stopped</a>. All timers can be <a class="el" href="group__CMSIS__RTOS__TimerMgmt.html#gab6ee2859ea657641b7adfac599b8121d">started, restarted</a>, or <a class="el" href="group__CMSIS__RTOS__TimerMgmt.html#gabd7a89356da7717293eb0bc5d87b8ac9">stopped</a>.</p>
-<dl class="section note"><dt>Note</dt><dd>RTX handles Timers in the thread <b>osRtxTimerThread</b>. Callback functions run under control of this thread and may use other CMSIS-RTOS API calls. The <b>osRtxTimerThread</b> is configured in <a class="el" href="config_rtx5.html#timerConfig">Timer Configuration</a>. </dd>
+<dl class="section note"><dt>Note</dt><dd>RTX handles Timers in the thread <b>osRtxTimerThread</b>. Callback functions run under control of this thread and may use other CMSIS-RTOS API calls. The <b>osRtxTimerThread</b> is configured in timerConfig. </dd>
 <dd>
-Timer management functions cannot be called from <a class="el" href="theory_of_operation.html#CMSIS_RTOS_ISR_Calls">Interrupt Service Routines</a>.</dd></dl>
+Timer management functions cannot be called from Interrupt Service Routines.</dd></dl>
 <p>The figure below shows the behavior of a periodic timer. For one-shot timers, the timer stops after execution of the callback function.</p>
 <div class="image">
 <img src="Timer.png" alt=""/>
 <div class="caption">
 Behavior of a Periodic Timer</div></div>
-<h2><a class="anchor" id="autotoc_md4"></a>
+<h2><a class="anchor" id="autotoc_md3"></a>
 Working with Timers</h2>
 <p>The following steps are required to use a software timer:</p><ol type="1">
 <li>Define the timers: <div class="fragment"><div class="line"><a class="code hl_typedef" href="group__CMSIS__RTOS__TimerMgmt.html#gaad5409379689ee27bb0a0b56ea4a4b34">osTimerId_t</a> one_shot_id, periodic_id;</div>
@@ -265,7 +265,7 @@ attribute bits <p>Reserved for future use (must be set to '0' for future compati
 <td class="fieldname">
 cb_mem</td>
 <td class="fielddoc">
-memory for control block <p>Pointer to a memory for the timer control block object. Refer to <a class="el" href="theory_of_operation.html#StaticObjectMemory">Static Object Memory</a> for more information.</p>
+memory for control block <p>Pointer to a memory for the timer control block object. Refer to StaticObjectMemory for more information.</p>
 <p>Default: <span class="XML-Token">NULL</span> to use <a class="el" href="group__CMSIS__RTOS__MemoryMgmt.html#CMSIS_RTOS_MemoryMgmt_Automatic">Automatic Dynamic Allocation</a> for the timer control block. </p>
 </td></tr>
 <tr><td class="fieldtype">
@@ -396,7 +396,7 @@ Returned by:</p><ul>
 <dl class="section return"><dt>Returns</dt><dd>timer ID for reference by other functions or NULL in case of error.</dd></dl>
 <p>The function <b>osTimerNew</b> creates an one-shot or periodic timer and associates it with a callback function with <em>argument</em>. The timer is in stopped state until it is started with <a class="el" href="group__CMSIS__RTOS__TimerMgmt.html#gab6ee2859ea657641b7adfac599b8121d">osTimerStart</a>. The function can be safely called before the RTOS is started (call to <a class="el" href="group__CMSIS__RTOS__KernelCtrl.html#ga9ae2cc00f0d89d7b6a307bba942b5221">osKernelStart</a>), but not before it is initialized (call to <a class="el" href="group__CMSIS__RTOS__KernelCtrl.html#gae818f6611d25ba3140bede410a52d659">osKernelInitialize</a>).</p>
 <p>The function <b>osTimerNew</b> returns the pointer to the timer object identifier or <span class="XML-Token">NULL</span> in case of an error.</p>
-<dl class="section note"><dt>Note</dt><dd>This function <b>cannot</b> be called from <a class="el" href="theory_of_operation.html#CMSIS_RTOS_ISR_Calls">Interrupt Service Routines</a>.</dd></dl>
+<dl class="section note"><dt>Note</dt><dd>This function <b>cannot</b> be called from Interrupt Service Routines.</dd></dl>
 <p><b>Code Example</b> </p><div class="fragment"><div class="line"><span class="preprocessor">#include &quot;<a class="code" href="cmsis__os2_8h.html">cmsis_os2.h</a>&quot;</span></div>
 <div class="line"> </div>
 <div class="line"><span class="keywordtype">void</span> Timer1_Callback (<span class="keywordtype">void</span> *arg);               <span class="comment">// prototypes for timer callback function</span></div>
@@ -451,7 +451,7 @@ Returned by:</p><ul>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>name as null-terminated string.</dd></dl>
 <p>The function <b>osTimerGetName</b> returns the pointer to the name string of the timer identified by parameter <em>timer_id</em> or <span class="XML-Token">NULL</span> in case of an error.</p>
-<dl class="section note"><dt>Note</dt><dd>This function may be called from <a class="el" href="theory_of_operation.html#CMSIS_RTOS_ISR_Calls">Interrupt Service Routines</a>. </dd></dl>
+<dl class="section note"><dt>Note</dt><dd>This function may be called from Interrupt Service Routines. </dd></dl>
 
 </div>
 </div>
@@ -483,12 +483,12 @@ Returned by:</p><ul>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">timer_id</td><td>timer ID obtained by <a class="el" href="group__CMSIS__RTOS__TimerMgmt.html#gad4e7f785c5f700a509f55a3bf6a62bec">osTimerNew</a>. </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">ticks</td><td><a class="el" href="theory_of_operation.html#CMSIS_RTOS_TimeOutValue">time ticks</a> value of the timer. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">ticks</td><td>time ticks value of the timer. </td></tr>
   </table>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>status code that indicates the execution status of the function.</dd></dl>
-<p>The function <b>osTimerStart</b> starts or restarts a timer specified by the parameter <em>timer_id</em>. The parameter <em>ticks</em> specifies the value of the timer in <a class="el" href="theory_of_operation.html#CMSIS_RTOS_TimeOutValue">time ticks</a>.</p>
+<p>The function <b>osTimerStart</b> starts or restarts a timer specified by the parameter <em>timer_id</em>. The parameter <em>ticks</em> specifies the value of the timer in time ticks.</p>
 <p>Possible <a class="el" href="group__CMSIS__RTOS__Definitions.html#ga6c0dbe6069e4e7f47bb4cd32ae2b813e">osStatus_t</a> return values:</p><ul>
 <li><em>osOK:</em> the specified timer has been started or restarted.</li>
 <li><em>osErrorISR:</em> <b>osTimerStart</b> cannot be called from interrupt service routines.</li>
@@ -496,7 +496,7 @@ Returned by:</p><ul>
 <li><em>osErrorResource:</em> the timer is in an invalid state.</li>
 <li><em>osErrorSafetyClass:</em> the calling thread safety class is lower than the safety class of the specified timer.</li>
 </ul>
-<dl class="section note"><dt>Note</dt><dd>This function <b>cannot</b> be called from <a class="el" href="theory_of_operation.html#CMSIS_RTOS_ISR_Calls">Interrupt Service Routines</a>.</dd></dl>
+<dl class="section note"><dt>Note</dt><dd>This function <b>cannot</b> be called from Interrupt Service Routines.</dd></dl>
 <p><b>Code Example</b> </p><div class="fragment"><div class="line"><span class="preprocessor">#include &quot;<a class="code" href="cmsis__os2_8h.html">cmsis_os2.h</a>&quot;</span></div>
 <div class="line"> </div>
 <div class="line"><span class="keywordtype">void</span> Timer_Callback (<span class="keywordtype">void</span> *arg) {               <span class="comment">// timer callback function</span></div>
@@ -558,7 +558,7 @@ Returned by:</p><ul>
 <li><em>osErrorResource:</em> the timer is not running (you can only stop a running timer).</li>
 <li><em>osErrorSafetyClass:</em> the calling thread safety class is lower than the safety class of the specified timer.</li>
 </ul>
-<dl class="section note"><dt>Note</dt><dd>This function <b>cannot</b> be called from <a class="el" href="theory_of_operation.html#CMSIS_RTOS_ISR_Calls">Interrupt Service Routines</a>.</dd></dl>
+<dl class="section note"><dt>Note</dt><dd>This function <b>cannot</b> be called from Interrupt Service Routines.</dd></dl>
 <p><b>Code Example</b> </p><div class="fragment"><div class="line"><span class="preprocessor">#include &quot;<a class="code" href="cmsis__os2_8h.html">cmsis_os2.h</a>&quot;</span></div>
 <div class="line"> </div>
 <div class="line"><span class="keywordtype">void</span> Timer_Callback (<span class="keywordtype">void</span> *arg);                <span class="comment">// prototype for timer callback function</span></div>
@@ -609,7 +609,7 @@ Returned by:</p><ul>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>0 not running, 1 running.</dd></dl>
 <p>The function <b>osTimerIsRunning</b> checks whether a timer specified by parameter <em>timer_id</em> is running. It returns <span class="XML-Token">1</span> if the timer is running and <span class="XML-Token">0</span> if the timer is stopped or an error occurred.</p>
-<dl class="section note"><dt>Note</dt><dd>This function <b>cannot</b> be called from <a class="el" href="theory_of_operation.html#CMSIS_RTOS_ISR_Calls">Interrupt Service Routines</a>. </dd></dl>
+<dl class="section note"><dt>Note</dt><dd>This function <b>cannot</b> be called from Interrupt Service Routines. </dd></dl>
 
 </div>
 </div>
@@ -643,7 +643,7 @@ Returned by:</p><ul>
 <li><em>osErrorResource:</em> the timer is in an invalid state.</li>
 <li><em>osErrorSafetyClass:</em> the calling thread safety class is lower than the safety class of the specified timer.</li>
 </ul>
-<dl class="section note"><dt>Note</dt><dd>This function <b>cannot</b> be called from <a class="el" href="theory_of_operation.html#CMSIS_RTOS_ISR_Calls">Interrupt Service Routines</a>.</dd></dl>
+<dl class="section note"><dt>Note</dt><dd>This function <b>cannot</b> be called from Interrupt Service Routines.</dd></dl>
 <p><b>Code Example</b> </p><div class="fragment"><div class="line"><span class="preprocessor">#include &quot;<a class="code" href="cmsis__os2_8h.html">cmsis_os2.h</a>&quot;</span></div>
 <div class="line"> </div>
 <div class="line"><span class="keywordtype">void</span> Timer_Callback (<span class="keywordtype">void</span> *arg);                <span class="comment">// prototype for timer callback function</span></div>

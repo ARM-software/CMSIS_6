@@ -52,7 +52,7 @@
     </script>
    </span>
    </div>
-   <div id="projectbrief">Real-Time Operating System: API and RTX Reference Implementation</div>
+   <div id="projectbrief">Real-Time Operating System API</div>
   </td>
    <td>        <div id="MSearchBox" class="MSearchBoxInactive">
         <span class="left">
@@ -135,7 +135,7 @@ CMSIS-RTOS API Structure</div></div>
 <p>A typical CMSIS-RTOS2 API implementation interfaces to an existing real-time kernel. The CMSIS-RTOS2 API provides the following attributes and functionalities:</p><ul>
 <li>Function names, identifiers, and parameters are descriptive and easy to understand. The functions are powerful and flexible which reduces the number of functions exposed to the user.</li>
 <li><a class="el" href="group__CMSIS__RTOS__ThreadMgmt.html">Thread Management</a> allows you to define, create, and control threads.</li>
-<li>Interrupt Service Routines (ISR) can <a class="el" href="theory_of_operation.html#CMSIS_RTOS_ISR_Calls">call some CMSIS-RTOS functions</a>. When a CMSIS-RTOS function cannot be called from an ISR context, it rejects the invocation and returns an error code.</li>
+<li>Interrupt Service Routines (ISR) can call some CMSIS-RTOS functions. When a CMSIS-RTOS function cannot be called from an ISR context, it rejects the invocation and returns an error code.</li>
 <li>Three different event types support communication between multiple threads and/or ISR:<ul>
 <li><a class="el" href="group__CMSIS__RTOS__ThreadFlagsMgmt.html">Thread Flags</a>: may be used to indicate specific conditions to a thread.</li>
 <li><a class="el" href="group__CMSIS__RTOS__EventFlags.html">Event Flags</a>: may be used to indicate events to a thread or ISR.</li>
@@ -169,7 +169,7 @@ cmsis_os2.h header file</h1>
 <h1><a class="anchor" id="usingOS2"></a>
 Using a CMSIS-RTOS2 Implementation</h1>
 <p>A CMSIS-RTOS2 component may be provided as library or source code (the picture below shows a library). A CMSIS-based application is extended with RTOS functionality by adding a CMSIS-RTOS2 component (and typically some configuration files). The <a class="el" href="genRTOS2IF.html#cmsis_os2_h">cmsis_os2.h header file</a> gives access to RTOS API functions and is the only interface header required when dynamic object allocation is used. This enables portable application that works with every RTOS kernel event without re-compilation of the source code when the kernel is changed.</p>
-<p>Static object allocation requires access to RTOS object control block definitions. An implementation specific header file (<em>rtos</em>.h in the picture below) provides access to such definitions. The section For RTX v5 these definitions are provided in the header file rtx_os.h that contains this definitions for RTX v5.</p>
+<p>Static object allocation requires access to RTOS object control block definitions. An implementation specific header file (<em>rtos</em>.h in the picture below) provides access to such definitions.</p>
 <div class="image">
 <img src="CMSIS_RTOS_Files.png" alt=""/>
 <div class="caption">

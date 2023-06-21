@@ -52,7 +52,7 @@
     </script>
    </span>
    </div>
-   <div id="projectbrief">Real-Time Operating System: API and RTX Reference Implementation</div>
+   <div id="projectbrief">Real-Time Operating System API</div>
   </td>
    <td>        <div id="MSearchBox" class="MSearchBoxInactive">
         <span class="left">
@@ -145,7 +145,7 @@ Common Design Concepts</h1>
 <p>After an object has been created successfully it can be used until it is destroyed. The actions defined for an object depends on its type. Commonly all the <code>osXxxDoSomething</code> access function require the reference to the object to work with as the first <code>xxx_id</code> parameter.</p>
 <p>The access function can be assumed to apply some sort of sanity checking on the id parameter. So that it is assured one cannot accidentally call an access function with a <span class="XML-Token">NULL</span> object reference. Furthermore the concrete object type is verified, i.e. one cannot call access functions of one object type with a reference to another object type.</p>
 <p>All further parameter checks applied are either object and action specific or may even be implementation specific. Thus one should always check action function return values for <code>osErrorParameter</code> to assure the provided arguments were accepted.</p>
-<p>As a rule of thumb only non-blocking access function can be used from <a class="el" href="theory_of_operation.html#CMSIS_RTOS_ISR_Calls">Interrupt Service Routines</a> (ISR). This incorporates <code>osXxxWait</code> functions (and similar) limited to be called with parameter <code>timeout</code> set to <span class="XML-Token">0</span>, i.e. usage of try-semantics.</p>
+<p>As a rule of thumb only non-blocking access function can be used from Interrupt Service Routines (ISR). This incorporates <code>osXxxWait</code> functions (and similar) limited to be called with parameter <code>timeout</code> set to <span class="XML-Token">0</span>, i.e. usage of try-semantics.</p>
 <p><b>Object Destruction</b></p>
 <p>Objects that are not needed anymore can be destructed on demand to free the control block memory. Objects are not destructed implicitly. Thus one can assume an object id to be valid until <code>osXxxDelete</code> is called explicitly. The delete function finally frees the control block memory. In case of user provided control block memory, see above, the memory must be freed manually as well.</p>
 <p>The only exception one has to take care of are Threads which do not have an explicit <code>osThreadDelete</code> function. Threads can either be <code>detached</code> or <code>joinable</code>. Detached threads are automatically destroyed on termination, i.e. call to <a class="el" href="group__CMSIS__RTOS__ThreadMgmt.html#ga2f8ba6dba6e9c065a6e236ffd410d74a">osThreadTerminate</a> or <a class="el" href="group__CMSIS__RTOS__ThreadMgmt.html#gaddaa452dd7610e4096647a566d3556fc">osThreadExit</a> or return from thread function. On the other hand joinable threads are kept alive until one explicitly calls <a class="el" href="group__CMSIS__RTOS__ThreadMgmt.html#ga3fca90fb0679afeb968aa8c3d5874487">osThreadJoin</a>.</p>
@@ -293,7 +293,7 @@ Function Reference</h1>
 </ul>
 </li>
 </ul>
-<p>The following CMSIS-RTOS C API v2 functions can be called from threads and <a class="el" href="theory_of_operation.html#CMSIS_RTOS_ISR_Calls">Interrupt Service Routines</a> (ISR):</p><ul>
+<p>The following CMSIS-RTOS C API v2 functions can be called from threads and Interrupt Service Routines (ISR):</p><ul>
 <li><a class="el" href="group__CMSIS__RTOS__KernelCtrl.html#ga6f7764e7250c5c5364c00c45a5d1d199">osKernelGetInfo</a>, <a class="el" href="group__CMSIS__RTOS__KernelCtrl.html#ga48b69b81012fce051f639be288b243ba">osKernelGetState</a>, <a class="el" href="group__CMSIS__RTOS__KernelCtrl.html#ga84bcdbf2fb76b10c8df4e439f0c7e11b">osKernelGetTickCount</a>, <a class="el" href="group__CMSIS__RTOS__KernelCtrl.html#ga7a8d7bd927eaaa58999f91d7d6310cee">osKernelGetTickFreq</a>, <a class="el" href="group__CMSIS__RTOS__KernelCtrl.html#gae0fcaff6cecfb4013bb556c87afcd7d2">osKernelGetSysTimerCount</a>, <a class="el" href="group__CMSIS__RTOS__KernelCtrl.html#ga4d69215a93220f72be3684cad582f16a">osKernelGetSysTimerFreq</a></li>
 <li><a class="el" href="group__CMSIS__RTOS__ThreadMgmt.html#gac3230f3a55a297514b013ebf38f27e0a">osThreadGetName</a>, <a class="el" href="group__CMSIS__RTOS__ThreadMgmt.html#ga8df03548e89fbc56402a5cd584a505da">osThreadGetId</a>, <a class="el" href="group__CMSIS__RTOS__ThreadFlagsMgmt.html#ga6f89ef9caded1d9963c7b12b0f6412c9">osThreadFlagsSet</a></li>
 <li><a class="el" href="group__CMSIS__RTOS__TimerMgmt.html#ga4f82a98eee4d9ea79507e44340d3d319">osTimerGetName</a></li>
