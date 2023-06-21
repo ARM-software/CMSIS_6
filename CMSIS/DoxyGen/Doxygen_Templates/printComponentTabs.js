@@ -14,11 +14,18 @@ var arr = [];
 
 // fill array
  arr.push( new tabElement( "GEN",     "General",     "Overview"));
- arr.push( new tabElement( "CORE_A",  "Core_A",      "CMSIS-Core (A)"));
- arr.push( new tabElement( "CORE_M",  "Core",        "CMSIS-Core (M)"));
- arr.push( new tabElement( "DRV",     "Driver",      "CMSIS-Driver"));
- arr.push( new tabElement( "RTOS2",   "RTOS2",       "CMSIS-RTOS2"));
-
+ arr.push( new tabElement( "CORE_A",  "Core_A",      "Core (A)"));
+ arr.push( new tabElement( "CORE_M",  "Core",        "Core (M)"));
+ arr.push( new tabElement( "DRV",     "Driver",      "Driver"));
+ arr.push( new tabElement( "RTOS2",   "RTOS2",       "RTOS2"));
+ arr.push( new tabElement( "DSP",     "DSP",         "DSP"));
+ arr.push( new tabElement( "NN",      "NN",          "NN"));
+ arr.push( new tabElement( "RTOS2",   "View",        "View"));
+ arr.push( new tabElement( "RTOS2",   "Compiler",    "Compiler"));
+ arr.push( new tabElement( "RTOS2",   "Toolbox",     "Toolbox"));
+ arr.push( new tabElement( "RTOS2",   "Stream",      "Stream"));
+ arr.push( new tabElement( "RTOS2",   "DAP",         "DAP"));
+ arr.push( new tabElement( "RTOS2",   "Zone",        "Zone"));
 // write tabs
 // called from the header file.
 function writeComponentTabs()  {
