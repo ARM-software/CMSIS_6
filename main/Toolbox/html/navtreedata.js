@@ -25,7 +25,11 @@
 var NAVTREE =
 [
   [ "CMSIS-Toolbox", "index.html", [
-    [ "About CMSIS-Toolbox", "index.html", "index" ]
+    [ "Project Creation", "index.html#autotoc_md0", [
+      [ "Benefits", "index.html#autotoc_md1", null ]
+    ] ],
+    [ "Software Pack Creation", "index.html#autotoc_md2", null ],
+    [ "Access to CMSIS-Toolbox", "index.html#autotoc_md3", null ]
   ] ]
 ];
 

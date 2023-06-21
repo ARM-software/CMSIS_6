@@ -5,7 +5,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>CMSIS-Toolbox: About CMSIS-Toolbox</title>
+<title>CMSIS-Toolbox: CMSIS-Toolbox</title>
 <link href="doxygen.css" rel="stylesheet" type="text/css"/>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <link href="extra_navtree.css" rel="stylesheet" type="text/css"/>
@@ -117,14 +117,75 @@ $(document).ready(function(){initNavTree('index.html',''); initResizable(); });
 </div>
 
 <div><div class="header">
-  <div class="headertitle"><div class="title">About CMSIS-Toolbox </div></div>
+  <div class="headertitle"><div class="title">CMSIS-Toolbox </div></div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><p><a class="anchor" id="mainpage"></a></p>
-<h1><a class="anchor" id="section1"></a>
-Section 1</h1>
-<h1><a class="anchor" id="section2"></a>
-Section 2</h1>
+<div class="textblock"><p><a class="anchor" id="mainpage"></a> The <b>CMSIS-Toolbox</b> provides command-line tools for:</p>
+<ul>
+<li>Project creation and build of embedded applications utilizing <a href="https://www.keil.arm.com/packs/">Software Packs</a> with support for multiple compilation tools.</li>
+<li>Software Pack creation, maintenance, and distribution utilizing the <a href="https://open-cmsis-pack.github.io/Open-CMSIS-Pack-Spec/main/html/index.html">CMSIS-Pack format</a>.</li>
+</ul>
+<h1><a class="anchor" id="autotoc_md0"></a>
+Project Creation</h1>
+<p>The following tools support the creation of build information for embedded applications:</p>
+<table class="markdownTable">
+<tr class="markdownTableHead">
+<th class="markdownTableHeadLeft">Tool   </th><th class="markdownTableHeadLeft">Description    </th></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyLeft"><b>cpackget</b>   </td><td class="markdownTableBodyLeft"><b>Pack Manager:</b> install and manage software packs in the development environment.    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyLeft"><b>csolution</b>   </td><td class="markdownTableBodyLeft"><b>Project Manager:</b> create build information for embedded applications that consist of one or more related projects.    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyLeft"><b>cbuild</b>   </td><td class="markdownTableBodyLeft"><b>Build Invocation:</b> orchestrate the build steps utilizing CMSIS tools and a CMake compilation process.   </td></tr>
+</table>
+<p>The build information is defined with <b>User Input Files</b> in YAML format. It starts with a <code>*.csolution.yml</code> file that refers related, but independent projects defined with <code>*.cproject.yml</code> files. A <code>*.cproject.yml</code> may refer one or more <code>*.clayer.yml</code> files that define re-usable project parts that may be shared across projects.</p>
+<p>The build information can refer to <b>Software Packs</b> that define Device and Board information and provide access to re-usable software components such as drivers and middleware. A <code>cdefault.yml</code> file provides a common setup for various compilers and generic translation controls enable compiler agonistic projects; compiler toolchain specific controls may be used when required.</p>
+<p>The <b>Output Files</b> contain detailed build information and manage the configuration files for software components.</p>
+<p>The diagram below provides an overview of the <b>build information</b> used by the CMSIS-Toolbox.</p>
+<div class="image">
+<img src="csolution-overview.png" alt=""/>
+<div class="caption">
+Overview of Project Definition</div></div>
+    <h2><a class="anchor" id="autotoc_md1"></a>
+Benefits</h2>
+<ul>
+<li>Flexible CLI tools that can be used stand-alone or integrated into <a href="https://marketplace.visualstudio.com/items?itemName=Arm.keil-studio-pack">VS Code</a> or DevOps systems for Continuous Integration (CI).</li>
+<li>Stand-alone tools that are available for all host platforms (Windows, Mac, Linux) and flexible deployable.</li>
+<li><a href="https://www.keil.arm.com/packs/">Software Packs</a> simplify tool setup with <code>device:</code> or <code>board:</code> selection and project creation with access to reusable software components.</li>
+<li>Organize solutions with projects that are independently managed simplifies a wide range of use cases including multi-processor applications or unit testing.</li>
+<li>Provisions for product lifecycle management (PLM) with versioned software packs that are easy to update and management for configuration files.</li>
+<li>Software layers enable code reuse across similar applications with a pre-configured set of source files and software components.</li>
+<li>Multiple hardware targets allow application deployment to different hardware (test board, production hardware, virtual hardware, etc.).</li>
+<li>Multiple build types support software testing and verification (debug build, test build, release build, ect.).</li>
+</ul>
+<h1><a class="anchor" id="autotoc_md2"></a>
+Software Pack Creation</h1>
+<p>The following tools support the creation of Software Packs in <a href="https://open-cmsis-pack.github.io/Open-CMSIS-Pack-Spec/main/html/index.html">CMSIS-Pack format</a>:</p>
+<table class="markdownTable">
+<tr class="markdownTableHead">
+<th class="markdownTableHeadLeft">Tool   </th><th class="markdownTableHeadLeft">Description    </th></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyLeft"><b>packchk</b>   </td><td class="markdownTableBodyLeft"><b>Pack Validation:</b> installs and manages software packs in the local development environment.    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyLeft"><b>svdconv</b>   </td><td class="markdownTableBodyLeft"><b>SVD Check / Convert:</b> validate and/or convert System View Description (SVD) files.   </td></tr>
+</table>
+<p>In addition several scripts are provided that simplify pack creation with desktop or cloud workflows. This is described in several hands-on tutorials:</p>
+<table class="markdownTable">
+<tr class="markdownTableHead">
+<th class="markdownTableHeadLeft">Hands-on Tutorial   </th><th class="markdownTableHeadLeft">Description    </th></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyLeft"><a href="https://github.com/Open-CMSIS-Pack/SW-Pack-HandsOn"><b>SW-Pack-HandsOn</b></a>   </td><td class="markdownTableBodyLeft">Explains the steps to create a simple software pack using the Open-CMSIS-Pack technology.    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyLeft"><a href="https://github.com/Open-CMSIS-Pack/DFP-Pack-HandsOn"><b>DFP-Pack-HandsOn</b></a>   </td><td class="markdownTableBodyLeft">Explains the structure and creation of a Device Family Pack (DFP).    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyLeft"><a href="https://github.com/Open-CMSIS-Pack/DFP-Pack-HandsOn"><b>BSP-Pack-HandsOn</b></a>   </td><td class="markdownTableBodyLeft">Explains the structure and creation of a Board Support Pack (BSP).   </td></tr>
+</table>
+<h1><a class="anchor" id="autotoc_md3"></a>
+Access to CMSIS-Toolbox</h1>
+<ul>
+<li>[<b>vcpkg</b>](todo) - uses the Arm tools artifactory for consistent installation of development tools.</li>
+<li><a href="https://github.com/Open-CMSIS-Pack/cmsis-toolbox/releases"><b>GitHub Repo</b></a> - direct access to the release versions for the tools. </li>
+</ul>
 </div></div><!-- PageDoc -->
 </div><!-- contents -->
 </div><!-- doc-content -->

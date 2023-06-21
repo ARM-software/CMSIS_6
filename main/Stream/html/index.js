@@ -1,5 +1,8 @@
 var index =
 [
-    [ "Section 1", "index.html#section1", null ],
-    [ "Section 2", "index.html#section2", null ]
+    [ "Benefits", "index.html#autotoc_md0", null ],
+    [ "Components", "index.html#autotoc_md1", null ],
+    [ "Example Compute Graph", "index.html#autotoc_md2", null ],
+    [ "Complex DSP Pipelines", "index.html#autotoc_md3", null ],
+    [ "Access to CMSIS-Stream", "index.html#autotoc_md4", null ]
 ];

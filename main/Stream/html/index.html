@@ -120,11 +120,50 @@ $(document).ready(function(){initNavTree('index.html',''); initResizable(); });
   <div class="headertitle"><div class="title">About CMSIS-Stream </div></div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><p><a class="anchor" id="mainpage"></a></p>
-<h1><a class="anchor" id="section1"></a>
-Section 1</h1>
-<h1><a class="anchor" id="section2"></a>
-Section 2</h1>
+<div class="textblock"><p><a class="anchor" id="mainpage"></a> <b>CMSIS-Stream</b> is a Python package that provides methods, interfaces, and tools to optimize data block streaming between processing steps of a DSP/ML application.  </p>
+<h1><a class="anchor" id="autotoc_md0"></a>
+Benefits</h1>
+<ul>
+<li><b>CMSIS-Stream</b> enables a modular design that makes it easier to develop and maintain DSP pipelines.</li>
+<li>The provided tools generate at build time an optimized scheduling of the processing nodes with minimized memory overhead.</li>
+<li>Creates an easy to understand representation of the design visualized with a compute graph.</li>
+</ul>
+<h1><a class="anchor" id="autotoc_md1"></a>
+Components</h1>
+<p>The components of CMSIS-Stream are:</p>
+<ul>
+<li><b>Compute Graph:</b> is the decomposition of the application in a directed graph that shows the data flow between processing nodes. It describes the data formats, FIFO buffers, data streams, and processing steps using a Python script file.</li>
+<li><b>Tools:</b> convert the Compute Graph with Python into processing steps at build-time with optimized schedule and memory usage.</li>
+<li><b>Interfaces:</b> header files, templates, and methods for data management (that works also on AMP systems).</li>
+<li>**Usage Examples:** that help a software developer to get started.</li>
+</ul>
+<h1><a class="anchor" id="autotoc_md2"></a>
+Example Compute Graph</h1>
+<p>The diagram below shows a Compute Graph with four nodes:</p>
+<ul>
+<li>A source generating 5 values in with data type <code>q15</code> each time it is run.</li>
+<li>A processing node (Filter) consuming and producing 7 values with data type <code>q15</code> each time it is run.</li>
+<li>A processing node (Detector) consuming 5 values with data type <code>q15</code> and producing 2 values with data type <code>f32</code> each it is run.</li>
+<li>A sink consuming 10 values with data type <code>f32</code> each time it is run.</li>
+</ul>
+<div class="image">
+<img src="Compute-Graph-Sample.png" alt=""/>
+<div class="caption">
+Sample Compute Graph</div></div>
+    <p>This Compute Graph is described with a Python script file that defines the nodes and their connections. This Python script computes a C++ implementation with static schedule and correctly sized memory buffers between each node. Nodes that are implemented in C are integrated using C++ wrappers.</p>
+<h1><a class="anchor" id="autotoc_md3"></a>
+Complex DSP Pipelines</h1>
+<p><b>CMSIS-Stream</b> gives the developer a toolbox that allows to create optimized DSP pipelines, that are for example required to optimize machine learning (ML) software stacks. With a Compute Graph complex DSP pipelines like shown in the diagram below can be described. By optimizing signal conditioning and feature extraction, the complexity of the ML classifier. More DSP pre-processing helps therefore lowering the overall performance that is required for a ML application.</p>
+<div class="image">
+<img src="ML-Stack.png" alt=""/>
+<div class="caption">
+Example Machine Learning Stack</div></div>
+    <h1><a class="anchor" id="autotoc_md4"></a>
+Access to CMSIS-Stream</h1>
+<ul>
+<li><a href="https://github.com/ARM-software/cmsis-stream"><b>GitHub Repo</b></a> - provides templates, usage examples, and access to documentation.</li>
+<li><a href="https://pypi.org/project/cmsis-stream/"><b>Python package</b></a> - provides easy access to tools via standard Python delivery system. </li>
+</ul>
 </div></div><!-- PageDoc -->
 </div><!-- contents -->
 </div><!-- doc-content -->
