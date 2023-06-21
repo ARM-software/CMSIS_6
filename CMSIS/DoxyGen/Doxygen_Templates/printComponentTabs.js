@@ -20,12 +20,12 @@ var arr = [];
  arr.push( new tabElement( "RTOS2",   "RTOS2",       "RTOS2"));
  arr.push( new tabElement( "DSP",     "DSP",         "DSP"));
  arr.push( new tabElement( "NN",      "NN",          "NN"));
- arr.push( new tabElement( "RTOS2",   "View",        "View"));
- arr.push( new tabElement( "RTOS2",   "Compiler",    "Compiler"));
- arr.push( new tabElement( "RTOS2",   "Toolbox",     "Toolbox"));
- arr.push( new tabElement( "RTOS2",   "Stream",      "Stream"));
- arr.push( new tabElement( "RTOS2",   "DAP",         "DAP"));
- arr.push( new tabElement( "RTOS2",   "Zone",        "Zone"));
+ arr.push( new tabElement( "View",    "View",        "View"));
+ arr.push( new tabElement( "Compiler","Compiler",    "Compiler"));
+ arr.push( new tabElement( "Toolbox", "Toolbox",     "Toolbox"));
+ arr.push( new tabElement( "Stream",  "Stream",      "Stream"));
+ arr.push( new tabElement( "DAP",     "DAP",         "DAP"));
+ arr.push( new tabElement( "Zone",    "Zone",        "Zone"));
 // write tabs
 // called from the header file.
 function writeComponentTabs()  {
