@@ -3,5 +3,5 @@ function writeHeader() {
 };
 
 function writeFooter()  {
-    document.write('Generated on Wed Jun 21 2023 13:25:58 for CMSIS-DAP PROJECT_NUMBER         = "". Copyright &copy; 2023 Arm Limited (or its affiliates). All rights reserved.');
+    document.write('Generated on Thu Jun 22 2023 07:54:50 for CMSIS-DAP PROJECT_NUMBER         = "". Copyright &copy; 2023 Arm Limited (or its affiliates). All rights reserved.');
 };
