@@ -5,7 +5,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>CMSIS-View: About CMSIS-View</title>
+<title>CMSIS-View: CMSIS-View</title>
 <link href="doxygen.css" rel="stylesheet" type="text/css"/>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <link href="extra_navtree.css" rel="stylesheet" type="text/css"/>
@@ -117,14 +117,35 @@ $(document).ready(function(){initNavTree('index.html',''); initResizable(); });
 </div>
 
 <div><div class="header">
-  <div class="headertitle"><div class="title">About CMSIS-View </div></div>
+  <div class="headertitle"><div class="title">CMSIS-View </div></div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><p><a class="anchor" id="mainpage"></a></p>
-<h1><a class="anchor" id="section1"></a>
-Section 1</h1>
-<h1><a class="anchor" id="section2"></a>
-Section 2</h1>
+<div class="textblock"><p><a class="anchor" id="mainpage"></a> <b>CMSIS-View</b> equips software developers with methodologies, software components, and utilities that help to analyze operation of embedded software programs on devices with Arm Cortex-M processors.</p>
+<p>Key elements of CMSIS-View are:</p>
+<ul>
+<li><b>Event Recorder</b> is an embedded software component that implements functions for event annotations in the code.</li>
+<li><b>Exception Fault Analysis</b> provides functions to store, record, and analyze exception fault information.</li>
+<li><b>eventlist</b> is a command line tool for processing Event Recorder log files.</li>
+</ul>
+<h1><a class="anchor" id="autotoc_md0"></a>
+Access to CMSIS-View</h1>
+<p>CMSIS-View is maintained in a GitHub repository and is also released as a standalone package in CMSIS Software Pack format.</p>
+<ul>
+<li><a href="https://github.com/Arm-Software/CMSIS-View"><b>CMSIS-View GitHub Repo</b></a> provides the full source code as well as releases in CMSIS-Pack format.</li>
+<li><a href="https://arm-software.github.io/CMSIS-View/latest/"><b>CMSIS-View Documentation</b></a> explains how to use the library and describes the implemented functions in details.</li>
+</ul>
+<h1><a class="anchor" id="autotoc_md1"></a>
+Key Features and Benefits</h1>
+<ul>
+<li>CMSIS-View enables visibility into the dynamic execution of an application with minimal memory and timing overhead.</li>
+<li>Works on all Cortex-M devices with only simple debug adapters necessary.</li>
+<li>Compiler agnostic implementation allows simple integration in application projects.</li>
+<li>Events are captured with accurate time-stamps.</li>
+<li>Event Statistic functions allow you to collect and analyze statistical data about the code execution.</li>
+<li>Enables RTOS-aware debug for CMSIS-RTX and CMSIS-FreeRTOS.</li>
+<li>Provides logging capabilities for use in regression tests on Arm Virtual Hardware FVP models (<a href="https://arm-software.github.io/CMSIS-View/latest/er_use.html#er_semihosting">via semihosting</a>).</li>
+<li>Natively supported in <a href="https://developer.arm.com/documentation/101407/0538/Debugging/Debug-Windows-and-Dialogs/Event-Recorder">Keil MDK uVision IDE</a>. </li>
+</ul>
 </div></div><!-- PageDoc -->
 </div><!-- contents -->
 </div><!-- doc-content -->

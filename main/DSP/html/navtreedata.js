@@ -25,7 +25,8 @@
 var NAVTREE =
 [
   [ "CMSIS-DSP", "index.html", [
-    [ "About CMSIS-DSP", "index.html", "index" ]
+    [ "Access to CMSIS-DSP", "index.html#autotoc_md0", null ],
+    [ "Key Features and Benefits", "index.html#autotoc_md1", null ]
   ] ]
 ];
 

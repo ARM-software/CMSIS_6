@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['about_20cmsis_2ddsp_0',['About CMSIS-DSP',['../index.html',1,'']]]
+  ['cmsis_2ddsp_0',['CMSIS-DSP',['../index.html',1,'']]]
 ];

@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['about_20cmsis_2dcompiler_0',['About CMSIS-Compiler',['../index.html',1,'']]]
+  ['cmsis_2dcompiler_0',['CMSIS-Compiler',['../index.html',1,'']]]
 ];

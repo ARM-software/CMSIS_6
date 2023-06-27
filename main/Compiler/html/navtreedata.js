@@ -25,7 +25,8 @@
 var NAVTREE =
 [
   [ "CMSIS-Compiler", "index.html", [
-    [ "About CMSIS-Compiler", "index.html", "index" ]
+    [ "Access to CMSIS-Compiler", "index.html#autotoc_md0", null ],
+    [ "Key Features and Benefits", "index.html#autotoc_md1", null ]
   ] ]
 ];
 

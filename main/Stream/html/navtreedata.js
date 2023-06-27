@@ -25,7 +25,11 @@
 var NAVTREE =
 [
   [ "CMSIS-Stream", "index.html", [
-    [ "About CMSIS-Stream", "index.html", "index" ]
+    [ "Access to CMSIS-Stream", "index.html#autotoc_md0", null ],
+    [ "Benefits", "index.html#autotoc_md1", null ],
+    [ "Components", "index.html#autotoc_md2", null ],
+    [ "Example Compute Graph", "index.html#autotoc_md3", null ],
+    [ "Complex DSP Pipelines", "index.html#autotoc_md4", null ]
   ] ]
 ];
 

@@ -5,7 +5,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>CMSIS-Zone: About CMSIS-View</title>
+<title>CMSIS-Zone: CMSIS-Zone</title>
 <link href="doxygen.css" rel="stylesheet" type="text/css"/>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <link href="extra_navtree.css" rel="stylesheet" type="text/css"/>
@@ -117,14 +117,33 @@ $(document).ready(function(){initNavTree('index.html',''); initResizable(); });
 </div>
 
 <div><div class="header">
-  <div class="headertitle"><div class="title">About CMSIS-View </div></div>
+  <div class="headertitle"><div class="title">CMSIS-Zone </div></div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><p><a class="anchor" id="mainpage"></a></p>
-<h1><a class="anchor" id="section1"></a>
-Section 1</h1>
-<h1><a class="anchor" id="section2"></a>
-Section 2</h1>
+<div class="textblock"><p><a class="anchor" id="mainpage"></a> <b>CMSIS-Zone</b> is an open source utility that helps to manage software configurations for partitions that have different access permissions to system resources in devices with Arm Cortex-M processors. It implements the infrastructure that is required for:</p><ul>
+<li>Split of a multi-processor system for single processor views</li>
+<li>TrustZone setup (SAU, Interrupt assignment to Secure/Non-Secure)</li>
+<li>Setup of Memory Protection Unit (MPU)</li>
+<li>Setup of device specific Memory Protection Controller (MPC)</li>
+<li>Setup of device specific Peripheral Protection Controller (PPC)</li>
+</ul>
+<h1><a class="anchor" id="autotoc_md0"></a>
+Acess to CMSIS-Zone</h1>
+<p>CMSIS-Zone is maintained in a GitHub repository and is released as a standalone Eclipse plugin.</p>
+<ul>
+<li><a href="https://github.com/Arm-Software/CMSIS-Zone"><b>CMSIS-Zone GitHub Repo</b></a> provides the full source code as well as releases as Eclipse Plugins.</li>
+<li><a href="https://arm-software.github.io/CMSIS-Zone/latest/"><b>CMSIS-Zone Documentation</b></a> explains in details how to use the utility.</li>
+</ul>
+<h1><a class="anchor" id="autotoc_md1"></a>
+Key Features and Benefits</h1>
+<ul>
+<li>CMSIS-Zone reduces the complexity of configuring access permissions in embedded software.</li>
+<li>Allows to setup of access permissions to memory and peripherals in secure/non-secure modes, and privilege execution levels.</li>
+<li>Provides graphical (GUI) and command line (CLI) interfaces.</li>
+<li>Generates the code for the setup of protection hardware such as SAU, MPC, PPC, MPU.</li>
+<li>Generates the linker scripts for the defined partitions.</li>
+<li>Includes multiple examples for real hardware. </li>
+</ul>
 </div></div><!-- PageDoc -->
 </div><!-- contents -->
 </div><!-- doc-content -->
