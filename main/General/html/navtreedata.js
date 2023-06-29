@@ -25,13 +25,15 @@
 var NAVTREE =
 [
   [ "CMSIS", "index.html", [
-    [ "Introduction", "index.html", "index" ]
+    [ "Introduction", "index.html", "index" ],
+    [ "CMSIS Software Pack", "cmsis_pack.html", null ],
+    [ "Revision History", "revision_history.html", null ]
   ] ]
 ];
 
 var NAVTREEINDEX =
 [
-"index.html"
+"cmsis_pack.html"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

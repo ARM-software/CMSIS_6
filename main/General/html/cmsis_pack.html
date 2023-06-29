@@ -5,7 +5,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>CMSIS-Compiler: CMSIS-Compiler</title>
+<title>CMSIS: CMSIS Software Pack</title>
 <link href="doxygen.css" rel="stylesheet" type="text/css"/>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <link href="extra_navtree.css" rel="stylesheet" type="text/css"/>
@@ -43,9 +43,16 @@
  <tr style="height: 55px;">
   <td id="projectlogo" style="padding: 1.5em;"><img alt="Logo" src="cmsis_logo_white_small.png"/></td>
   <td style="padding-left: 1em; padding-bottom: 1em;padding-top: 1em;">
-   <div id="projectname">CMSIS-Compiler
+   <div id="projectname">CMSIS
+   &#160;<span id="projectnumber"><script type="text/javascript">
+     <!--
+     writeHeader.call(this);
+     writeVersionDropdown.call(this, "CMSIS");
+     //-->
+    </script>
+   </span>
    </div>
-   <div id="projectbrief">Retarget standard C library file, I/O and OS functions</div>
+   <div id="projectbrief">Common Microcontroller Software Interface Standard</div>
   </td>
    <td>        <div id="MSearchBox" class="MSearchBoxInactive">
         <span class="left">
@@ -91,7 +98,7 @@ var searchBox = new SearchBox("searchBox", "search/",'.html');
 </div>
 <script type="text/javascript">
 /* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
-$(document).ready(function(){initNavTree('index.html',''); initResizable(); });
+$(document).ready(function(){initNavTree('cmsis_pack.html',''); initResizable(); });
 /* @license-end */
 </script>
 <div id="doc-content">
@@ -117,37 +124,33 @@ $(document).ready(function(){initNavTree('index.html',''); initResizable(); });
 </div>
 
 <div><div class="header">
-  <div class="headertitle"><div class="title">CMSIS-Compiler </div></div>
+  <div class="headertitle"><div class="title">CMSIS Software Pack </div></div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><p><a class="anchor" id="mainpage"></a> <b>CMSIS-Compiler</b> provides software components for retargeting I/O operations in standard C run-time libraries. Following interfaces are supported for retargeting:</p>
-<ul>
-<li>File interface for reading and writing files.</li>
-<li>I/O interface for standard I/O stream retargeting (stderr, stdin, stdout).</li>
-<li>OS interface for multithread safety using an arbitrary RTOS.</li>
-</ul>
-<div class="image">
-<img src="cmsis_compiler_overview.png" alt=""/>
-<div class="caption">
-Overview of CMSIS-Compiler</div></div>
-    <p>Standard C library functions are platform independent, but the implementations of the low-level I/O and multithreading support are tailored to the target compiler toolchains.</p>
-<h1><a class="anchor" id="autotoc_md0"></a>
-Access to CMSIS-Compiler</h1>
-<p>CMSIS-Compiler is maintained in a GitHub repository and is also released as a standalone package in CMSIS Pack format.</p>
-<ul>
-<li><a href="https://github.com/Arm-Software/CMSIS-Compiler"><b>CMSIS-Compiler GitHub Repo</b></a> provides the full source code as well as releases in CMSIS-Pack format.</li>
-<li><a href="https://arm-software.github.io/CMSIS-Compiler/latest/"><b>CMSIS-Compiler Documentation</b></a> explains how to use the library and describes the implemented functions in details.</li>
-</ul>
-<h1><a class="anchor" id="autotoc_md1"></a>
-Key Features and Benefits</h1>
-<ul>
-<li>CMSIS-Compiler allows individual retargeting configuration for common I/O interfaces: file, stderr, stdin, stdout.</li>
-<li>Implements several ready-to-use retarget variants: into File, Breakpoint, Event Recorder, ITM, as well as user-specific variant.</li>
-<li>Supports common standard C libraries, such as from Arm Compiler and GCC (Newlib) toolchains. IAR support is planned.</li>
-<li>Provides implementation templates and examples to get started. </li>
-</ul>
-</div></div><!-- PageDoc -->
-</div><!-- contents -->
+<div class="textblock"><p><a class="anchor" id="md_src_cmsis_sw_pack"></a> The CMSIS Base Components are maintained in the same <a href="https://github.com/ARM-software/CMSIS_6">CMSIS 6 GitHub repository</a> and released as a bundle in <a href="https://open-cmsis-pack.github.io/Open-CMSIS-Pack-Spec/main/html/index.html">CMSIS-Pack</a> format.</p>
+<p>The table below shows the high-level structure of the <b>ARM::CMSIS</b> pack. Details about component folders can be found in the referenced component documentations.</p>
+<table class="markdownTable">
+<tr class="markdownTableHead">
+<th class="markdownTableHeadLeft">File/Directory   </th><th class="markdownTableHeadLeft">Content    </th></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyLeft">📄 ARM.CMSIS.pdsc   </td><td class="markdownTableBodyLeft">Package description file in CMSIS-Pack format    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyLeft">📄 LICENSE   </td><td class="markdownTableBodyLeft">CMSIS License Agreement (Apache 2.0)    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyLeft">📂 CMSIS   </td><td class="markdownTableBodyLeft">CMSIS Base software components folder    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyLeft">┣ 📂 Core   </td><td class="markdownTableBodyLeft">Processor files for the <a href="../../Core/html/index.html">CMSIS-Core (Cortex-M)</a>    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyLeft">┣ 📂 Core_A   </td><td class="markdownTableBodyLeft">Processor files for the <a href="../../Core_A/html/index.html">CMSIS-Core (Cortex-A)</a>    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyLeft">┣ 📂 Documentation   </td><td class="markdownTableBodyLeft">A local copy of this documentation    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyLeft">┣ 📂 Driver   </td><td class="markdownTableBodyLeft">API header files and template implementations for the <a href="../../Driver/html/index.html">CMSIS-Driver</a>    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyLeft">┗ 📂 RTOS2   </td><td class="markdownTableBodyLeft">API header files and OS tick implementations for the <a href="../../RTOS2/html/index.html">CMSIS-RTOS2</a>   </td></tr>
+</table>
+</div></div><!-- contents -->
+</div><!-- PageDoc -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
