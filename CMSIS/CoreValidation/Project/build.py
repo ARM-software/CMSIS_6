@@ -261,5 +261,10 @@ def filter_clang_v8m(config):
     return config.compiler == CompilerAxis.CLANG and config.device.match('CM[2358][35]*')
 
 
+@matrix_filter
+def filter_clang_cortex_a(config):
+    return config.compiler == CompilerAxis.CLANG and config.device.match('CA*')
+
+
 if __name__ == "__main__":
     main()
