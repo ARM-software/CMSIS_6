@@ -4,7 +4,7 @@ var indexSectionsWithContent =
   1: "o",
   2: "chmov",
   3: "o",
-  4: "ackmnprst",
+  4: "ackmnpst",
   5: "iot",
   6: "o",
   7: "o",

@@ -197,7 +197,7 @@ Behavior of a Periodic Timer</div></div>
 Working with Timers</h2>
 <p>The following steps are required to use a software timer:</p><ol type="1">
 <li>Define the timers: <div class="fragment"><div class="line"><a class="code hl_typedef" href="group__CMSIS__RTOS__TimerMgmt.html#gaad5409379689ee27bb0a0b56ea4a4b34">osTimerId_t</a> one_shot_id, periodic_id;</div>
-<div class="ttc" id="agroup__CMSIS__RTOS__TimerMgmt_html_gaad5409379689ee27bb0a0b56ea4a4b34"><div class="ttname"><a href="group__CMSIS__RTOS__TimerMgmt.html#gaad5409379689ee27bb0a0b56ea4a4b34">osTimerId_t</a></div><div class="ttdeci">void * osTimerId_t</div><div class="ttdef"><b>Definition:</b> cmsis_os2.h:256</div></div>
+<div class="ttc" id="agroup__CMSIS__RTOS__TimerMgmt_html_gaad5409379689ee27bb0a0b56ea4a4b34"><div class="ttname"><a href="group__CMSIS__RTOS__TimerMgmt.html#gaad5409379689ee27bb0a0b56ea4a4b34">osTimerId_t</a></div><div class="ttdeci">void * osTimerId_t</div><div class="ttdef"><b>Definition:</b> cmsis_os2.h:263</div></div>
 </div><!-- fragment --></li>
 <li>Define callback functions: <div class="fragment"><div class="line"><span class="keyword">static</span> <span class="keywordtype">void</span> one_shot_Callback (<span class="keywordtype">void</span> *argument) {</div>
 <div class="line">  int32_t arg = (int32_t)argument; <span class="comment">// cast back argument &#39;0&#39; </span></div>
@@ -226,8 +226,8 @@ Working with Timers</h2>
 <div class="ttc" id="agroup__CMSIS__RTOS__TimerMgmt_html_gab6ee2859ea657641b7adfac599b8121d"><div class="ttname"><a href="group__CMSIS__RTOS__TimerMgmt.html#gab6ee2859ea657641b7adfac599b8121d">osTimerStart</a></div><div class="ttdeci">osStatus_t osTimerStart(osTimerId_t timer_id, uint32_t ticks)</div><div class="ttdoc">Start or restart a timer.</div></div>
 <div class="ttc" id="agroup__CMSIS__RTOS__TimerMgmt_html_gad0001dd74721ab461789324806db2453"><div class="ttname"><a href="group__CMSIS__RTOS__TimerMgmt.html#gad0001dd74721ab461789324806db2453">osTimerDelete</a></div><div class="ttdeci">osStatus_t osTimerDelete(osTimerId_t timer_id)</div><div class="ttdoc">Delete a timer.</div></div>
 <div class="ttc" id="agroup__CMSIS__RTOS__TimerMgmt_html_gad4e7f785c5f700a509f55a3bf6a62bec"><div class="ttname"><a href="group__CMSIS__RTOS__TimerMgmt.html#gad4e7f785c5f700a509f55a3bf6a62bec">osTimerNew</a></div><div class="ttdeci">osTimerId_t osTimerNew(osTimerFunc_t func, osTimerType_t type, void *argument, const osTimerAttr_t *attr)</div><div class="ttdoc">Create and Initialize a timer.</div></div>
-<div class="ttc" id="agroup__CMSIS__RTOS__TimerMgmt_html_gga7dc24a4c2b90334427081c3da7a71915a2e0e1f31c742c84b497c4d7143357bdb"><div class="ttname"><a href="group__CMSIS__RTOS__TimerMgmt.html#gga7dc24a4c2b90334427081c3da7a71915a2e0e1f31c742c84b497c4d7143357bdb">osTimerOnce</a></div><div class="ttdeci">@ osTimerOnce</div><div class="ttdoc">One-shot timer.</div><div class="ttdef"><b>Definition:</b> cmsis_os2.h:184</div></div>
-<div class="ttc" id="agroup__CMSIS__RTOS__TimerMgmt_html_gga7dc24a4c2b90334427081c3da7a71915ab3463d921dc310938094745c230f2b35"><div class="ttname"><a href="group__CMSIS__RTOS__TimerMgmt.html#gga7dc24a4c2b90334427081c3da7a71915ab3463d921dc310938094745c230f2b35">osTimerPeriodic</a></div><div class="ttdeci">@ osTimerPeriodic</div><div class="ttdoc">Repeating timer.</div><div class="ttdef"><b>Definition:</b> cmsis_os2.h:185</div></div>
+<div class="ttc" id="agroup__CMSIS__RTOS__TimerMgmt_html_gga7dc24a4c2b90334427081c3da7a71915a2e0e1f31c742c84b497c4d7143357bdb"><div class="ttname"><a href="group__CMSIS__RTOS__TimerMgmt.html#gga7dc24a4c2b90334427081c3da7a71915a2e0e1f31c742c84b497c4d7143357bdb">osTimerOnce</a></div><div class="ttdeci">@ osTimerOnce</div><div class="ttdoc">One-shot timer.</div><div class="ttdef"><b>Definition:</b> cmsis_os2.h:188</div></div>
+<div class="ttc" id="agroup__CMSIS__RTOS__TimerMgmt_html_gga7dc24a4c2b90334427081c3da7a71915ab3463d921dc310938094745c230f2b35"><div class="ttname"><a href="group__CMSIS__RTOS__TimerMgmt.html#gga7dc24a4c2b90334427081c3da7a71915ab3463d921dc310938094745c230f2b35">osTimerPeriodic</a></div><div class="ttdeci">@ osTimerPeriodic</div><div class="ttdoc">Repeating timer.</div><div class="ttdef"><b>Definition:</b> cmsis_os2.h:189</div></div>
 </div><!-- fragment --> </li>
 </ol>
 <hr/><h2 class="groupheader">Data Structure Documentation</h2>
@@ -523,8 +523,8 @@ Returned by:</p><ul>
 <div class="line">  }</div>
 <div class="line">  ;</div>
 <div class="line">}</div>
-<div class="ttc" id="acmsis__os2_8h_html_ga6c0dbe6069e4e7f47bb4cd32ae2b813ea9e1c9e2550bb4de8969a935acffc968f"><div class="ttname"><a href="cmsis__os2_8h.html#ga6c0dbe6069e4e7f47bb4cd32ae2b813ea9e1c9e2550bb4de8969a935acffc968f">osOK</a></div><div class="ttdeci">@ osOK</div><div class="ttdoc">Operation completed successfully.</div><div class="ttdef"><b>Definition:</b> cmsis_os2.h:240</div></div>
-<div class="ttc" id="agroup__CMSIS__RTOS__Definitions_html_ga6c0dbe6069e4e7f47bb4cd32ae2b813e"><div class="ttname"><a href="group__CMSIS__RTOS__Definitions.html#ga6c0dbe6069e4e7f47bb4cd32ae2b813e">osStatus_t</a></div><div class="ttdeci">osStatus_t</div><div class="ttdoc">Status code values returned by CMSIS-RTOS functions.</div><div class="ttdef"><b>Definition:</b> cmsis_os2.h:239</div></div>
+<div class="ttc" id="acmsis__os2_8h_html_ga6c0dbe6069e4e7f47bb4cd32ae2b813ea9e1c9e2550bb4de8969a935acffc968f"><div class="ttname"><a href="cmsis__os2_8h.html#ga6c0dbe6069e4e7f47bb4cd32ae2b813ea9e1c9e2550bb4de8969a935acffc968f">osOK</a></div><div class="ttdeci">@ osOK</div><div class="ttdoc">Operation completed successfully.</div><div class="ttdef"><b>Definition:</b> cmsis_os2.h:247</div></div>
+<div class="ttc" id="agroup__CMSIS__RTOS__Definitions_html_ga6c0dbe6069e4e7f47bb4cd32ae2b813e"><div class="ttname"><a href="group__CMSIS__RTOS__Definitions.html#ga6c0dbe6069e4e7f47bb4cd32ae2b813e">osStatus_t</a></div><div class="ttdeci">osStatus_t</div><div class="ttdoc">Status code values returned by CMSIS-RTOS functions.</div><div class="ttdef"><b>Definition:</b> cmsis_os2.h:246</div></div>
 </div><!-- fragment --> 
 </div>
 </div>

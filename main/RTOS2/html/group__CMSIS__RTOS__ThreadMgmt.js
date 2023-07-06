@@ -9,13 +9,14 @@ var group__CMSIS__RTOS__ThreadMgmt =
       [ "stack_size", "group__CMSIS__RTOS__ThreadMgmt.html#aacbc9a219f2d6870e9ce89bb93f975c9", null ],
       [ "priority", "group__CMSIS__RTOS__ThreadMgmt.html#a6a5183df4c54c3e28dc8dc704f2487d5", null ],
       [ "tz_module", "group__CMSIS__RTOS__ThreadMgmt.html#a697f2aad6119d655d212ea10245ae394", null ],
-      [ "reserved", "group__CMSIS__RTOS__ThreadMgmt.html#a66f538babc389986738ec70104e0562b", null ]
+      [ "affinity_mask", "group__CMSIS__RTOS__ThreadMgmt.html#aaf358099120136bf63c5e53cf5d40043", null ]
     ] ],
     [ "osThreadJoinable", "group__CMSIS__RTOS__ThreadMgmt.html#ga249499c519f3f8eef5673009ab6cfcbe", null ],
     [ "osThreadDetached", "group__CMSIS__RTOS__ThreadMgmt.html#gaa9336c1073858d6b118e2e011636246f", null ],
     [ "osThreadUnprivileged", "group__CMSIS__RTOS__ThreadMgmt.html#ga4c028e5c3f4d86d237a1e09ceaf84792", null ],
     [ "osThreadPrivileged", "group__CMSIS__RTOS__ThreadMgmt.html#ga7c2b7db42d23e4f56132e0ed739d02e5", null ],
     [ "osThreadZone", "group__CMSIS__RTOS__ThreadMgmt.html#gaefca370070d0b1616421bc3311acfecc", null ],
+    [ "osThreadProcessor", "group__CMSIS__RTOS__ThreadMgmt.html#ga4ef461379ceba9ab7764850ef2c7b0ac", null ],
     [ "osThreadFunc_t", "group__CMSIS__RTOS__ThreadMgmt.html#gadd51f99a6eb50b94eee75f27cae815eb", null ],
     [ "osThreadId_t", "group__CMSIS__RTOS__ThreadMgmt.html#gaa6c32fe2a3e0a2e01f212d55b02e51c7", null ],
     [ "osThreadState_t", "group__CMSIS__RTOS__ThreadMgmt.html#gad3dc89e942e38d9f3af858a0269a820d", [
@@ -114,6 +115,8 @@ var group__CMSIS__RTOS__ThreadMgmt =
     [ "osThreadSuspendClass", "group__CMSIS__RTOS__ThreadMgmt.html#gadadb56627094dbb07f6aeddf7d713fd9", null ],
     [ "osThreadResumeClass", "group__CMSIS__RTOS__ThreadMgmt.html#gadd0a06b459925eb5cdeab67b380a3970", null ],
     [ "osThreadTerminateZone", "group__CMSIS__RTOS__ThreadMgmt.html#ga99ce311cc620c65fbac043d04dc7d755", null ],
+    [ "osThreadSetAffinityMask", "group__CMSIS__RTOS__ThreadMgmt.html#ga60e2518df0194587a134b7e1836f2470", null ],
+    [ "osThreadGetAffinityMask", "group__CMSIS__RTOS__ThreadMgmt.html#gab0541a97b969f7f762572dcefe2f65e1", null ],
     [ "osWatchdogAlarm_Handler", "group__CMSIS__RTOS__ThreadMgmt.html#ga5a02770aaf65c7a3c7562c109884176a", null ],
     [ "osZoneSetup_Callback", "group__CMSIS__RTOS__ThreadMgmt.html#ga79d4b26de0bfcdaf142f83e585532f93", null ]
 ];

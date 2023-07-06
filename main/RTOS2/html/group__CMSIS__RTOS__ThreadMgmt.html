@@ -161,6 +161,9 @@ Macros</h2></td></tr>
 <tr class="memitem:gaefca370070d0b1616421bc3311acfecc"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CMSIS__RTOS__ThreadMgmt.html#gaefca370070d0b1616421bc3311acfecc">osThreadZone</a>(n)</td></tr>
 <tr class="memdesc:gaefca370070d0b1616421bc3311acfecc"><td class="mdescLeft">&#160;</td><td class="mdescRight">MPU zone value in attribute bit field format.  <br /></td></tr>
 <tr class="separator:gaefca370070d0b1616421bc3311acfecc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga4ef461379ceba9ab7764850ef2c7b0ac"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CMSIS__RTOS__ThreadMgmt.html#ga4ef461379ceba9ab7764850ef2c7b0ac">osThreadProcessor</a>(n)&#160;&#160;&#160;(1UL &lt;&lt; (n))</td></tr>
+<tr class="memdesc:ga4ef461379ceba9ab7764850ef2c7b0ac"><td class="mdescLeft">&#160;</td><td class="mdescRight">Thread processor affinity mask value in attribute affinity_mask format.  <br /></td></tr>
+<tr class="separator:ga4ef461379ceba9ab7764850ef2c7b0ac"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="typedef-members" name="typedef-members"></a>
 Typedefs</h2></td></tr>
@@ -375,6 +378,12 @@ Functions</h2></td></tr>
 <tr class="memitem:ga99ce311cc620c65fbac043d04dc7d755"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__CMSIS__RTOS__Definitions.html#ga6c0dbe6069e4e7f47bb4cd32ae2b813e">osStatus_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CMSIS__RTOS__ThreadMgmt.html#ga99ce311cc620c65fbac043d04dc7d755">osThreadTerminateZone</a> (uint32_t zone)</td></tr>
 <tr class="memdesc:ga99ce311cc620c65fbac043d04dc7d755"><td class="mdescLeft">&#160;</td><td class="mdescRight">Terminate execution of threads assigned to a specified MPU protected zone.  <br /></td></tr>
 <tr class="separator:ga99ce311cc620c65fbac043d04dc7d755"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga60e2518df0194587a134b7e1836f2470"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__CMSIS__RTOS__Definitions.html#ga6c0dbe6069e4e7f47bb4cd32ae2b813e">osStatus_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CMSIS__RTOS__ThreadMgmt.html#ga60e2518df0194587a134b7e1836f2470">osThreadSetAffinityMask</a> (<a class="el" href="group__CMSIS__RTOS__ThreadMgmt.html#gaa6c32fe2a3e0a2e01f212d55b02e51c7">osThreadId_t</a> thread_id, uint32_t affinity_mask)</td></tr>
+<tr class="memdesc:ga60e2518df0194587a134b7e1836f2470"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set processor affinity mask of a thread.  <br /></td></tr>
+<tr class="separator:ga60e2518df0194587a134b7e1836f2470"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gab0541a97b969f7f762572dcefe2f65e1"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CMSIS__RTOS__ThreadMgmt.html#gab0541a97b969f7f762572dcefe2f65e1">osThreadGetAffinityMask</a> (<a class="el" href="group__CMSIS__RTOS__ThreadMgmt.html#gaa6c32fe2a3e0a2e01f212d55b02e51c7">osThreadId_t</a> thread_id)</td></tr>
+<tr class="memdesc:gab0541a97b969f7f762572dcefe2f65e1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get current processor affinity mask of a thread.  <br /></td></tr>
+<tr class="separator:gab0541a97b969f7f762572dcefe2f65e1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga5a02770aaf65c7a3c7562c109884176a"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CMSIS__RTOS__ThreadMgmt.html#ga5a02770aaf65c7a3c7562c109884176a">osWatchdogAlarm_Handler</a> (<a class="el" href="group__CMSIS__RTOS__ThreadMgmt.html#gaa6c32fe2a3e0a2e01f212d55b02e51c7">osThreadId_t</a> thread_id)</td></tr>
 <tr class="memdesc:ga5a02770aaf65c7a3c7562c109884176a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Handler for expired thread watchdogs.  <br /></td></tr>
 <tr class="separator:ga5a02770aaf65c7a3c7562c109884176a"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -424,7 +433,7 @@ Thread Examples</h1>
 <div class="line">  ;</div>
 <div class="line">  <a class="code hl_function" href="group__CMSIS__RTOS__KernelCtrl.html#ga9ae2cc00f0d89d7b6a307bba942b5221">osKernelStart</a>(); </div>
 <div class="line">}</div>
-<div class="ttc" id="acmsis__os2_8h_html_a153a4a31b276a9758959580538720a51"><div class="ttname"><a href="cmsis__os2_8h.html#a153a4a31b276a9758959580538720a51">__NO_RETURN</a></div><div class="ttdeci">#define __NO_RETURN</div><div class="ttdef"><b>Definition:</b> cmsis_os2.h:76</div></div>
+<div class="ttc" id="acmsis__os2_8h_html_a153a4a31b276a9758959580538720a51"><div class="ttname"><a href="cmsis__os2_8h.html#a153a4a31b276a9758959580538720a51">__NO_RETURN</a></div><div class="ttdeci">#define __NO_RETURN</div><div class="ttdef"><b>Definition:</b> cmsis_os2.h:80</div></div>
 <div class="ttc" id="agroup__CMSIS__RTOS__KernelCtrl_html_ga9ae2cc00f0d89d7b6a307bba942b5221"><div class="ttname"><a href="group__CMSIS__RTOS__KernelCtrl.html#ga9ae2cc00f0d89d7b6a307bba942b5221">osKernelStart</a></div><div class="ttdeci">osStatus_t osKernelStart(void)</div><div class="ttdoc">Start the RTOS Kernel scheduler.</div></div>
 <div class="ttc" id="agroup__CMSIS__RTOS__KernelCtrl_html_gae818f6611d25ba3140bede410a52d659"><div class="ttname"><a href="group__CMSIS__RTOS__KernelCtrl.html#gae818f6611d25ba3140bede410a52d659">osKernelInitialize</a></div><div class="ttdeci">osStatus_t osKernelInitialize(void)</div><div class="ttdoc">Initialize the RTOS Kernel.</div></div>
 <div class="ttc" id="agroup__CMSIS__RTOS__ThreadMgmt_html_ga48d68b8666d99d28fa646ee1d2182b8f"><div class="ttname"><a href="group__CMSIS__RTOS__ThreadMgmt.html#ga48d68b8666d99d28fa646ee1d2182b8f">osThreadNew</a></div><div class="ttdeci">osThreadId_t osThreadNew(osThreadFunc_t func, void *argument, const osThreadAttr_t *attr)</div><div class="ttdoc">Create a thread and add it to Active Threads.</div></div>
@@ -445,8 +454,8 @@ Thread Examples</h1>
 <div class="line">  <a class="code hl_function" href="group__CMSIS__RTOS__ThreadMgmt.html#ga48d68b8666d99d28fa646ee1d2182b8f">osThreadNew</a>(thread1, NULL, &amp;thread1_attr);    <span class="comment">// Create thread with custom sized stack memory</span></div>
 <div class="line">  ;</div>
 <div class="line">}</div>
-<div class="ttc" id="agroup__CMSIS__RTOS__ThreadMgmt_html_aacbc9a219f2d6870e9ce89bb93f975c9"><div class="ttname"><a href="group__CMSIS__RTOS__ThreadMgmt.html#aacbc9a219f2d6870e9ce89bb93f975c9">osThreadAttr_t::stack_size</a></div><div class="ttdeci">uint32_t stack_size</div><div class="ttdoc">size of stack</div><div class="ttdef"><b>Definition:</b> cmsis_os2.h:288</div></div>
-<div class="ttc" id="agroup__CMSIS__RTOS__ThreadMgmt_html_structosThreadAttr__t"><div class="ttname"><a href="group__CMSIS__RTOS__ThreadMgmt.html#structosThreadAttr__t">osThreadAttr_t</a></div><div class="ttdoc">Attributes structure for thread.</div><div class="ttdef"><b>Definition:</b> cmsis_os2.h:282</div></div>
+<div class="ttc" id="agroup__CMSIS__RTOS__ThreadMgmt_html_aacbc9a219f2d6870e9ce89bb93f975c9"><div class="ttname"><a href="group__CMSIS__RTOS__ThreadMgmt.html#aacbc9a219f2d6870e9ce89bb93f975c9">osThreadAttr_t::stack_size</a></div><div class="ttdeci">uint32_t stack_size</div><div class="ttdoc">size of stack</div><div class="ttdef"><b>Definition:</b> cmsis_os2.h:295</div></div>
+<div class="ttc" id="agroup__CMSIS__RTOS__ThreadMgmt_html_structosThreadAttr__t"><div class="ttname"><a href="group__CMSIS__RTOS__ThreadMgmt.html#structosThreadAttr__t">osThreadAttr_t</a></div><div class="ttdoc">Attributes structure for thread.</div><div class="ttdef"><b>Definition:</b> cmsis_os2.h:289</div></div>
 </div><!-- fragment --><p><b>Example 3 - Create thread with statically allocated stack</b></p>
 <p>Similar to the simple thread all attributes are default. The stack is statically allocated using the <code>uint64_t</code> array <code>thread1_stk_1</code>. This allocates 64*8 Bytes (=512 Bytes) with an alignment of 8 Bytes (mandatory for Cortex-M stack memory).</p>
 <p><a class="el" href="group__CMSIS__RTOS__ThreadMgmt.html#ad7c9b42355a4c8b9467130ab3fb19e43">osThreadAttr_t::stack_mem</a> holds a pointer to the stacks lowest address.</p>
@@ -468,7 +477,7 @@ Thread Examples</h1>
 <div class="line">  <a class="code hl_function" href="group__CMSIS__RTOS__ThreadMgmt.html#ga48d68b8666d99d28fa646ee1d2182b8f">osThreadNew</a>(thread1, NULL, &amp;thread1_attr);    <span class="comment">// Create thread with statically allocated stack memory</span></div>
 <div class="line">  ;</div>
 <div class="line">}</div>
-<div class="ttc" id="agroup__CMSIS__RTOS__ThreadMgmt_html_ad7c9b42355a4c8b9467130ab3fb19e43"><div class="ttname"><a href="group__CMSIS__RTOS__ThreadMgmt.html#ad7c9b42355a4c8b9467130ab3fb19e43">osThreadAttr_t::stack_mem</a></div><div class="ttdeci">void * stack_mem</div><div class="ttdoc">memory for stack</div><div class="ttdef"><b>Definition:</b> cmsis_os2.h:287</div></div>
+<div class="ttc" id="agroup__CMSIS__RTOS__ThreadMgmt_html_ad7c9b42355a4c8b9467130ab3fb19e43"><div class="ttname"><a href="group__CMSIS__RTOS__ThreadMgmt.html#ad7c9b42355a4c8b9467130ab3fb19e43">osThreadAttr_t::stack_mem</a></div><div class="ttdeci">void * stack_mem</div><div class="ttdoc">memory for stack</div><div class="ttdef"><b>Definition:</b> cmsis_os2.h:294</div></div>
 </div><!-- fragment --><p><b>Example 4 - Thread with statically allocated task control block</b></p>
 <p>Typically this method is chosen together with a statically allocated stack as shown in Example 2. </p><div class="fragment"><div class="line"><span class="preprocessor">#include &quot;<a class="code" href="cmsis__os2_8h.html">cmsis_os2.h</a>&quot;</span></div>
 <div class="line"> </div>
@@ -493,7 +502,7 @@ Thread Examples</h1>
 <div class="line">  ;</div>
 <div class="line">}</div>
 <div class="ttc" id="acmsis__os2_8h_html"><div class="ttname"><a href="cmsis__os2_8h.html">cmsis_os2.h</a></div></div>
-<div class="ttc" id="agroup__CMSIS__RTOS__ThreadMgmt_html_a1e100dc33d403841ed3c344e3397868e"><div class="ttname"><a href="group__CMSIS__RTOS__ThreadMgmt.html#a1e100dc33d403841ed3c344e3397868e">osThreadAttr_t::cb_mem</a></div><div class="ttdeci">void * cb_mem</div><div class="ttdoc">memory for control block</div><div class="ttdef"><b>Definition:</b> cmsis_os2.h:285</div></div>
+<div class="ttc" id="agroup__CMSIS__RTOS__ThreadMgmt_html_a1e100dc33d403841ed3c344e3397868e"><div class="ttname"><a href="group__CMSIS__RTOS__ThreadMgmt.html#a1e100dc33d403841ed3c344e3397868e">osThreadAttr_t::cb_mem</a></div><div class="ttdeci">void * cb_mem</div><div class="ttdoc">memory for control block</div><div class="ttdef"><b>Definition:</b> cmsis_os2.h:292</div></div>
 </div><!-- fragment --><p><b>Example 5 - Create thread with a different priority</b></p>
 <p>The default priority of RTX is <a class="el" href="cmsis__os2_8h.html#gad4e3e0971b41f2d17584a8c6837342eca45a2895ad30c79fb97de18cac7cc19f1">osPriorityNormal</a>. Often you want to run a task with a higher or lower priority. Using the <a class="el" href="group__CMSIS__RTOS__ThreadMgmt.html#structosThreadAttr__t">osThreadAttr_t</a> control structure you can set any initial priority required.</p>
 <div class="fragment"><div class="line"><a class="code hl_define" href="cmsis__os2_8h.html#a153a4a31b276a9758959580538720a51">__NO_RETURN</a> <span class="keywordtype">void</span> thread1 (<span class="keywordtype">void</span> *argument) {</div>
@@ -510,8 +519,8 @@ Thread Examples</h1>
 <div class="line">  <a class="code hl_function" href="group__CMSIS__RTOS__ThreadMgmt.html#ga48d68b8666d99d28fa646ee1d2182b8f">osThreadNew</a>(thread1, NULL, &amp;thread1_attr);</div>
 <div class="line">  ;</div>
 <div class="line">}</div>
-<div class="ttc" id="acmsis__os2_8h_html_gad4e3e0971b41f2d17584a8c6837342eca914433934143a9ba767e59577c56e6c2"><div class="ttname"><a href="cmsis__os2_8h.html#gad4e3e0971b41f2d17584a8c6837342eca914433934143a9ba767e59577c56e6c2">osPriorityHigh</a></div><div class="ttdeci">@ osPriorityHigh</div><div class="ttdoc">Priority: high.</div><div class="ttdef"><b>Definition:</b> cmsis_os2.h:155</div></div>
-<div class="ttc" id="agroup__CMSIS__RTOS__ThreadMgmt_html_a6a5183df4c54c3e28dc8dc704f2487d5"><div class="ttname"><a href="group__CMSIS__RTOS__ThreadMgmt.html#a6a5183df4c54c3e28dc8dc704f2487d5">osThreadAttr_t::priority</a></div><div class="ttdeci">osPriority_t priority</div><div class="ttdoc">initial thread priority (default: osPriorityNormal)</div><div class="ttdef"><b>Definition:</b> cmsis_os2.h:289</div></div>
+<div class="ttc" id="acmsis__os2_8h_html_gad4e3e0971b41f2d17584a8c6837342eca914433934143a9ba767e59577c56e6c2"><div class="ttname"><a href="cmsis__os2_8h.html#gad4e3e0971b41f2d17584a8c6837342eca914433934143a9ba767e59577c56e6c2">osPriorityHigh</a></div><div class="ttdeci">@ osPriorityHigh</div><div class="ttdoc">Priority: high.</div><div class="ttdef"><b>Definition:</b> cmsis_os2.h:159</div></div>
+<div class="ttc" id="agroup__CMSIS__RTOS__ThreadMgmt_html_a6a5183df4c54c3e28dc8dc704f2487d5"><div class="ttname"><a href="group__CMSIS__RTOS__ThreadMgmt.html#a6a5183df4c54c3e28dc8dc704f2487d5">osThreadAttr_t::priority</a></div><div class="ttdeci">osPriority_t priority</div><div class="ttdoc">initial thread priority (default: osPriorityNormal)</div><div class="ttdef"><b>Definition:</b> cmsis_os2.h:296</div></div>
 </div><!-- fragment --><p><a class="anchor" id="joinable_threads"></a><b>Example 6 - Joinable threads</b></p>
 <p>In this example a master thread creates four threads with the <a class="el" href="group__CMSIS__RTOS__ThreadMgmt.html#ga249499c519f3f8eef5673009ab6cfcbe">osThreadJoinable</a> attribute. These will do some work and return using the <a class="el" href="group__CMSIS__RTOS__ThreadMgmt.html#gaddaa452dd7610e4096647a566d3556fc">osThreadExit</a> call after finished. <a class="el" href="group__CMSIS__RTOS__ThreadMgmt.html#ga3fca90fb0679afeb968aa8c3d5874487">osThreadJoin</a> is used to synchronize the thread termination.</p>
 <div class="fragment"><div class="line"><a class="code hl_define" href="cmsis__os2_8h.html#a153a4a31b276a9758959580538720a51">__NO_RETURN</a> <span class="keywordtype">void</span> worker (<span class="keywordtype">void</span> *argument) {</div>
@@ -540,10 +549,10 @@ Thread Examples</h1>
 <div class="line"> </div>
 <div class="line">  <a class="code hl_function" href="group__CMSIS__RTOS__ThreadMgmt.html#gaddaa452dd7610e4096647a566d3556fc">osThreadExit</a>(); </div>
 <div class="line">}</div>
-<div class="ttc" id="agroup__CMSIS__RTOS__ThreadMgmt_html_a6e93b49cb79c12f768d72580c7731f30"><div class="ttname"><a href="group__CMSIS__RTOS__ThreadMgmt.html#a6e93b49cb79c12f768d72580c7731f30">osThreadAttr_t::attr_bits</a></div><div class="ttdeci">uint32_t attr_bits</div><div class="ttdoc">attribute bits</div><div class="ttdef"><b>Definition:</b> cmsis_os2.h:284</div></div>
-<div class="ttc" id="agroup__CMSIS__RTOS__ThreadMgmt_html_ga249499c519f3f8eef5673009ab6cfcbe"><div class="ttname"><a href="group__CMSIS__RTOS__ThreadMgmt.html#ga249499c519f3f8eef5673009ab6cfcbe">osThreadJoinable</a></div><div class="ttdeci">#define osThreadJoinable</div><div class="ttdoc">Thread created in joinable mode.</div><div class="ttdef"><b>Definition:</b> cmsis_os2.h:207</div></div>
+<div class="ttc" id="agroup__CMSIS__RTOS__ThreadMgmt_html_a6e93b49cb79c12f768d72580c7731f30"><div class="ttname"><a href="group__CMSIS__RTOS__ThreadMgmt.html#a6e93b49cb79c12f768d72580c7731f30">osThreadAttr_t::attr_bits</a></div><div class="ttdeci">uint32_t attr_bits</div><div class="ttdoc">attribute bits</div><div class="ttdef"><b>Definition:</b> cmsis_os2.h:291</div></div>
+<div class="ttc" id="agroup__CMSIS__RTOS__ThreadMgmt_html_ga249499c519f3f8eef5673009ab6cfcbe"><div class="ttname"><a href="group__CMSIS__RTOS__ThreadMgmt.html#ga249499c519f3f8eef5673009ab6cfcbe">osThreadJoinable</a></div><div class="ttdeci">#define osThreadJoinable</div><div class="ttdoc">Thread created in joinable mode.</div><div class="ttdef"><b>Definition:</b> cmsis_os2.h:211</div></div>
 <div class="ttc" id="agroup__CMSIS__RTOS__ThreadMgmt_html_ga3fca90fb0679afeb968aa8c3d5874487"><div class="ttname"><a href="group__CMSIS__RTOS__ThreadMgmt.html#ga3fca90fb0679afeb968aa8c3d5874487">osThreadJoin</a></div><div class="ttdeci">osStatus_t osThreadJoin(osThreadId_t thread_id)</div><div class="ttdoc">Wait for specified thread to terminate.</div></div>
-<div class="ttc" id="agroup__CMSIS__RTOS__ThreadMgmt_html_gaa6c32fe2a3e0a2e01f212d55b02e51c7"><div class="ttname"><a href="group__CMSIS__RTOS__ThreadMgmt.html#gaa6c32fe2a3e0a2e01f212d55b02e51c7">osThreadId_t</a></div><div class="ttdeci">void * osThreadId_t</div><div class="ttdef"><b>Definition:</b> cmsis_os2.h:253</div></div>
+<div class="ttc" id="agroup__CMSIS__RTOS__ThreadMgmt_html_gaa6c32fe2a3e0a2e01f212d55b02e51c7"><div class="ttname"><a href="group__CMSIS__RTOS__ThreadMgmt.html#gaa6c32fe2a3e0a2e01f212d55b02e51c7">osThreadId_t</a></div><div class="ttdeci">void * osThreadId_t</div><div class="ttdef"><b>Definition:</b> cmsis_os2.h:260</div></div>
 <div class="ttc" id="agroup__CMSIS__RTOS__ThreadMgmt_html_gaddaa452dd7610e4096647a566d3556fc"><div class="ttname"><a href="group__CMSIS__RTOS__ThreadMgmt.html#gaddaa452dd7610e4096647a566d3556fc">osThreadExit</a></div><div class="ttdeci">__NO_RETURN void osThreadExit(void)</div><div class="ttdoc">Terminate execution of current running thread.</div></div>
 <div class="ttc" id="agroup__CMSIS__RTOS__Wait_html_gaf6055a51390ef65b6b6edc28bf47322e"><div class="ttname"><a href="group__CMSIS__RTOS__Wait.html#gaf6055a51390ef65b6b6edc28bf47322e">osDelay</a></div><div class="ttdeci">osStatus_t osDelay(uint32_t ticks)</div><div class="ttdoc">Wait for Timeout (Time Delay).</div></div>
 </div><!-- fragment --> <hr/><h2 class="groupheader">Data Structure Documentation</h2>
@@ -635,11 +644,12 @@ TrustZone module identifier. <p>TrustZone Thread Context Management Identifier t
 <p>Default: <span class="XML-Token">0</span> not thread context specified.  </p>
 </td></tr>
 <tr><td class="fieldtype">
-<a id="a66f538babc389986738ec70104e0562b" name="a66f538babc389986738ec70104e0562b"></a>uint32_t</td>
+<a id="aaf358099120136bf63c5e53cf5d40043" name="aaf358099120136bf63c5e53cf5d40043"></a>uint32_t</td>
 <td class="fieldname">
-reserved</td>
+affinity_mask</td>
 <td class="fielddoc">
-reserved (must be 0) <p>Reserved for future use. </p>
+processor affinity mask (0 when not used) <p>The affinity mask specified by <a class="el" href="group__CMSIS__RTOS__ThreadMgmt.html#ga4ef461379ceba9ab7764850ef2c7b0ac">osThreadProcessor</a> macro (multiple processors can be specified by OR-ing macros).</p>
+<p>Default: <span class="XML-Token">0</span> to run on any processor. </p>
 </td></tr>
 </table>
 
@@ -744,9 +754,35 @@ reserved (must be 0) <p>Reserved for future use. </p>
 <div class="line">  .<a class="code hl_variable" href="group__CMSIS__RTOS__ThreadMgmt.html#ab74e6bf80237ddc4109968cedc58c151">name</a>      = <span class="stringliteral">&quot;ThreadB&quot;</span>,       <span class="comment">// human readable thread name</span></div>
 <div class="line">  .attr_bits = <a class="code hl_define" href="group__CMSIS__RTOS__ThreadMgmt.html#gaefca370070d0b1616421bc3311acfecc">osThreadZone</a>(3U) <span class="comment">// assign thread to MPU zone 3</span></div>
 <div class="line">};</div>
-<div class="ttc" id="agroup__CMSIS__RTOS__ThreadMgmt_html_ab74e6bf80237ddc4109968cedc58c151"><div class="ttname"><a href="group__CMSIS__RTOS__ThreadMgmt.html#ab74e6bf80237ddc4109968cedc58c151">osThreadAttr_t::name</a></div><div class="ttdeci">const char * name</div><div class="ttdoc">name of the thread</div><div class="ttdef"><b>Definition:</b> cmsis_os2.h:283</div></div>
-<div class="ttc" id="agroup__CMSIS__RTOS__ThreadMgmt_html_gaefca370070d0b1616421bc3311acfecc"><div class="ttname"><a href="group__CMSIS__RTOS__ThreadMgmt.html#gaefca370070d0b1616421bc3311acfecc">osThreadZone</a></div><div class="ttdeci">#define osThreadZone(n)</div><div class="ttdoc">MPU zone value in attribute bit field format.</div><div class="ttdef"><b>Definition:</b> cmsis_os2.h:214</div></div>
+<div class="ttc" id="agroup__CMSIS__RTOS__ThreadMgmt_html_ab74e6bf80237ddc4109968cedc58c151"><div class="ttname"><a href="group__CMSIS__RTOS__ThreadMgmt.html#ab74e6bf80237ddc4109968cedc58c151">osThreadAttr_t::name</a></div><div class="ttdeci">const char * name</div><div class="ttdoc">name of the thread</div><div class="ttdef"><b>Definition:</b> cmsis_os2.h:290</div></div>
+<div class="ttc" id="agroup__CMSIS__RTOS__ThreadMgmt_html_gaefca370070d0b1616421bc3311acfecc"><div class="ttname"><a href="group__CMSIS__RTOS__ThreadMgmt.html#gaefca370070d0b1616421bc3311acfecc">osThreadZone</a></div><div class="ttdeci">#define osThreadZone(n)</div><div class="ttdoc">MPU zone value in attribute bit field format.</div><div class="ttdef"><b>Definition:</b> cmsis_os2.h:218</div></div>
 </div><!-- fragment --> 
+</div>
+</div>
+<a id="ga4ef461379ceba9ab7764850ef2c7b0ac" name="ga4ef461379ceba9ab7764850ef2c7b0ac"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga4ef461379ceba9ab7764850ef2c7b0ac">&#9670;&#160;</a></span>osThreadProcessor</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define osThreadProcessor</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">n</td><td>)</td>
+          <td>&#160;&#160;&#160;(1UL &lt;&lt; (n))</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Thread processor number for SMP systems.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">n</td><td>Processor number.</td></tr>
+  </table>
+  </dd>
+</dl>
+<p>The preprocessor macro <b>osThreadProcessor</b> constructs attribute affinity_mask derived from <em>n</em>. </p>
+
 </div>
 </div>
 <h2 class="groupheader">Typedef Documentation</h2>
@@ -1211,9 +1247,9 @@ reserved (must be 0) <p>Reserved for future use. </p>
 <div class="line">  }</div>
 <div class="line">  :</div>
 <div class="line">}</div>
-<div class="ttc" id="acmsis__os2_8h_html_ga6c0dbe6069e4e7f47bb4cd32ae2b813ea9e1c9e2550bb4de8969a935acffc968f"><div class="ttname"><a href="cmsis__os2_8h.html#ga6c0dbe6069e4e7f47bb4cd32ae2b813ea9e1c9e2550bb4de8969a935acffc968f">osOK</a></div><div class="ttdeci">@ osOK</div><div class="ttdoc">Operation completed successfully.</div><div class="ttdef"><b>Definition:</b> cmsis_os2.h:240</div></div>
-<div class="ttc" id="acmsis__os2_8h_html_gad4e3e0971b41f2d17584a8c6837342eca193b650117c209b4a203954542bcc3e6"><div class="ttname"><a href="cmsis__os2_8h.html#gad4e3e0971b41f2d17584a8c6837342eca193b650117c209b4a203954542bcc3e6">osPriorityBelowNormal</a></div><div class="ttdeci">@ osPriorityBelowNormal</div><div class="ttdoc">Priority: below normal.</div><div class="ttdef"><b>Definition:</b> cmsis_os2.h:131</div></div>
-<div class="ttc" id="agroup__CMSIS__RTOS__Definitions_html_ga6c0dbe6069e4e7f47bb4cd32ae2b813e"><div class="ttname"><a href="group__CMSIS__RTOS__Definitions.html#ga6c0dbe6069e4e7f47bb4cd32ae2b813e">osStatus_t</a></div><div class="ttdeci">osStatus_t</div><div class="ttdoc">Status code values returned by CMSIS-RTOS functions.</div><div class="ttdef"><b>Definition:</b> cmsis_os2.h:239</div></div>
+<div class="ttc" id="acmsis__os2_8h_html_ga6c0dbe6069e4e7f47bb4cd32ae2b813ea9e1c9e2550bb4de8969a935acffc968f"><div class="ttname"><a href="cmsis__os2_8h.html#ga6c0dbe6069e4e7f47bb4cd32ae2b813ea9e1c9e2550bb4de8969a935acffc968f">osOK</a></div><div class="ttdeci">@ osOK</div><div class="ttdoc">Operation completed successfully.</div><div class="ttdef"><b>Definition:</b> cmsis_os2.h:247</div></div>
+<div class="ttc" id="acmsis__os2_8h_html_gad4e3e0971b41f2d17584a8c6837342eca193b650117c209b4a203954542bcc3e6"><div class="ttname"><a href="cmsis__os2_8h.html#gad4e3e0971b41f2d17584a8c6837342eca193b650117c209b4a203954542bcc3e6">osPriorityBelowNormal</a></div><div class="ttdeci">@ osPriorityBelowNormal</div><div class="ttdoc">Priority: below normal.</div><div class="ttdef"><b>Definition:</b> cmsis_os2.h:135</div></div>
+<div class="ttc" id="agroup__CMSIS__RTOS__Definitions_html_ga6c0dbe6069e4e7f47bb4cd32ae2b813e"><div class="ttname"><a href="group__CMSIS__RTOS__Definitions.html#ga6c0dbe6069e4e7f47bb4cd32ae2b813e">osStatus_t</a></div><div class="ttdeci">osStatus_t</div><div class="ttdoc">Status code values returned by CMSIS-RTOS functions.</div><div class="ttdef"><b>Definition:</b> cmsis_os2.h:246</div></div>
 <div class="ttc" id="agroup__CMSIS__RTOS__ThreadMgmt_html_ga861a420fb2d643115b06622903fb3bfb"><div class="ttname"><a href="group__CMSIS__RTOS__ThreadMgmt.html#ga861a420fb2d643115b06622903fb3bfb">osThreadSetPriority</a></div><div class="ttdeci">osStatus_t osThreadSetPriority(osThreadId_t thread_id, osPriority_t priority)</div><div class="ttdoc">Change priority of a thread.</div></div>
 </div><!-- fragment --> 
 </div>
@@ -1256,7 +1292,7 @@ reserved (must be 0) <p>Reserved for future use. </p>
 <div class="line">  priority = <a class="code hl_function" href="group__CMSIS__RTOS__ThreadMgmt.html#ga0aeaf349604f456e68e78f9d3b42e44b">osThreadGetPriority</a>(<span class="keywordtype">id</span>);           <span class="comment">// Obtain the thread priority</span></div>
 <div class="line">}</div>
 <div class="ttc" id="agroup__CMSIS__RTOS__ThreadMgmt_html_ga0aeaf349604f456e68e78f9d3b42e44b"><div class="ttname"><a href="group__CMSIS__RTOS__ThreadMgmt.html#ga0aeaf349604f456e68e78f9d3b42e44b">osThreadGetPriority</a></div><div class="ttdeci">osPriority_t osThreadGetPriority(osThreadId_t thread_id)</div><div class="ttdoc">Get current priority of a thread.</div></div>
-<div class="ttc" id="agroup__CMSIS__RTOS__ThreadMgmt_html_gad4e3e0971b41f2d17584a8c6837342ec"><div class="ttname"><a href="group__CMSIS__RTOS__ThreadMgmt.html#gad4e3e0971b41f2d17584a8c6837342ec">osPriority_t</a></div><div class="ttdeci">osPriority_t</div><div class="ttdoc">Priority values.</div><div class="ttdef"><b>Definition:</b> cmsis_os2.h:120</div></div>
+<div class="ttc" id="agroup__CMSIS__RTOS__ThreadMgmt_html_gad4e3e0971b41f2d17584a8c6837342ec"><div class="ttname"><a href="group__CMSIS__RTOS__ThreadMgmt.html#gad4e3e0971b41f2d17584a8c6837342ec">osPriority_t</a></div><div class="ttdeci">osPriority_t</div><div class="ttdoc">Priority values.</div><div class="ttdef"><b>Definition:</b> cmsis_os2.h:124</div></div>
 </div><!-- fragment --> 
 </div>
 </div>
@@ -1776,8 +1812,8 @@ Avoid calling the function with a <em>thread_id</em> that does not exist or has 
 <div class="line">  status = <a class="code hl_function" href="group__CMSIS__RTOS__ThreadMgmt.html#gadadb56627094dbb07f6aeddf7d713fd9">osThreadSuspendClass</a>(4U, <a class="code hl_define" href="group__CMSIS__RTOS__Definitions.html#ga7abd2d95425d9e02672778b3464b2eaa">osSafetyWithSameClass</a> | <a class="code hl_define" href="group__CMSIS__RTOS__Definitions.html#ga8c77ee126b9215425fc004ee13cdc6de">osSafetyWithLowerClass</a>); <span class="comment">// Suspends threads with safety class 4 or lower</span></div>
 <div class="line">  <span class="comment">// verify status value here.</span></div>
 <div class="line">}</div>
-<div class="ttc" id="agroup__CMSIS__RTOS__Definitions_html_ga7abd2d95425d9e02672778b3464b2eaa"><div class="ttname"><a href="group__CMSIS__RTOS__Definitions.html#ga7abd2d95425d9e02672778b3464b2eaa">osSafetyWithSameClass</a></div><div class="ttdeci">#define osSafetyWithSameClass</div><div class="ttdoc">Objects with same safety class.</div><div class="ttdef"><b>Definition:</b> cmsis_os2.h:232</div></div>
-<div class="ttc" id="agroup__CMSIS__RTOS__Definitions_html_ga8c77ee126b9215425fc004ee13cdc6de"><div class="ttname"><a href="group__CMSIS__RTOS__Definitions.html#ga8c77ee126b9215425fc004ee13cdc6de">osSafetyWithLowerClass</a></div><div class="ttdeci">#define osSafetyWithLowerClass</div><div class="ttdoc">Objects with lower safety class.</div><div class="ttdef"><b>Definition:</b> cmsis_os2.h:233</div></div>
+<div class="ttc" id="agroup__CMSIS__RTOS__Definitions_html_ga7abd2d95425d9e02672778b3464b2eaa"><div class="ttname"><a href="group__CMSIS__RTOS__Definitions.html#ga7abd2d95425d9e02672778b3464b2eaa">osSafetyWithSameClass</a></div><div class="ttdeci">#define osSafetyWithSameClass</div><div class="ttdoc">Objects with same safety class.</div><div class="ttdef"><b>Definition:</b> cmsis_os2.h:239</div></div>
+<div class="ttc" id="agroup__CMSIS__RTOS__Definitions_html_ga8c77ee126b9215425fc004ee13cdc6de"><div class="ttname"><a href="group__CMSIS__RTOS__Definitions.html#ga8c77ee126b9215425fc004ee13cdc6de">osSafetyWithLowerClass</a></div><div class="ttdeci">#define osSafetyWithLowerClass</div><div class="ttdoc">Objects with lower safety class.</div><div class="ttdef"><b>Definition:</b> cmsis_os2.h:240</div></div>
 <div class="ttc" id="agroup__CMSIS__RTOS__ThreadMgmt_html_gadadb56627094dbb07f6aeddf7d713fd9"><div class="ttname"><a href="group__CMSIS__RTOS__ThreadMgmt.html#gadadb56627094dbb07f6aeddf7d713fd9">osThreadSuspendClass</a></div><div class="ttdeci">osStatus_t osThreadSuspendClass(uint32_t safety_class, uint32_t mode)</div><div class="ttdoc">Suspend execution of threads for specified safety classes.</div></div>
 </div><!-- fragment --> 
 </div>
@@ -1876,6 +1912,106 @@ Avoid calling the function with a <em>thread_id</em> that does not exist or has 
 <div class="line">  <span class="comment">// verify status value here.</span></div>
 <div class="line">}</div>
 <div class="ttc" id="agroup__CMSIS__RTOS__ThreadMgmt_html_ga99ce311cc620c65fbac043d04dc7d755"><div class="ttname"><a href="group__CMSIS__RTOS__ThreadMgmt.html#ga99ce311cc620c65fbac043d04dc7d755">osThreadTerminateZone</a></div><div class="ttdeci">osStatus_t osThreadTerminateZone(uint32_t zone)</div><div class="ttdoc">Terminate execution of threads assigned to a specified MPU protected zone.</div></div>
+</div><!-- fragment --> 
+</div>
+</div>
+<a id="ga60e2518df0194587a134b7e1836f2470" name="ga60e2518df0194587a134b7e1836f2470"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga60e2518df0194587a134b7e1836f2470">&#9670;&#160;</a></span>osThreadSetAffinityMask()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="group__CMSIS__RTOS__Definitions.html#ga6c0dbe6069e4e7f47bb4cd32ae2b813e">osStatus_t</a> osThreadSetAffinityMask </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="group__CMSIS__RTOS__ThreadMgmt.html#gaa6c32fe2a3e0a2e01f212d55b02e51c7">osThreadId_t</a>&#160;</td>
+          <td class="paramname"><em>thread_id</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint32_t&#160;</td>
+          <td class="paramname"><em>affinity_mask</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">thread_id</td><td>thread ID obtained by <a class="el" href="group__CMSIS__RTOS__ThreadMgmt.html#ga48d68b8666d99d28fa646ee1d2182b8f">osThreadNew</a> or <a class="el" href="group__CMSIS__RTOS__ThreadMgmt.html#ga8df03548e89fbc56402a5cd584a505da">osThreadGetId</a>. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">affinity_mask</td><td>processor affinity mask for the thread. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>status code that indicates the execution status of the function.</dd></dl>
+<p>The function <b>osThreadSetAffinityMask</b> sets the affinity mask of the thread specified by parameter <em>thread_id</em> to the mask specified by the parameter <em>affinity_mask</em>. The mask indicates on which processor(s) the thread should run (<span class="XML-Token">0</span> indicates on any processor).</p>
+<p>Possible <a class="el" href="group__CMSIS__RTOS__Definitions.html#ga6c0dbe6069e4e7f47bb4cd32ae2b813e">osStatus_t</a> return values:</p><ul>
+<li><em>osOK:</em> the affinity mask of the specified thread has been set successfully.</li>
+<li><em>osErrorParameter:</em> <em>thread_id</em> is <span class="XML-Token">NULL</span> or invalid or <em>priority</em> is incorrect.</li>
+<li><em>osErrorResource:</em> the thread is in an invalid state.</li>
+<li><em>osErrorISR:</em> the function <b>osThreadSetAffinityMask</b> cannot be called from interrupt service routines.</li>
+<li><em>osErrorSafetyClass:</em> the calling thread safety class is lower than the safety class of the specified thread.</li>
+</ul>
+<dl class="section note"><dt>Note</dt><dd>This function <b>cannot</b> be called from Interrupt Service Routines.</dd></dl>
+<p><b>Code Example</b> </p><div class="fragment"><div class="line"><span class="preprocessor">#include &quot;<a class="code" href="cmsis__os2_8h.html">cmsis_os2.h</a>&quot;</span></div>
+<div class="line"> </div>
+<div class="line"><span class="keywordtype">void</span> Thread_1 (<span class="keywordtype">void</span> <span class="keyword">const</span> *arg) {               <span class="comment">// Thread function</span></div>
+<div class="line">  <a class="code hl_typedef" href="group__CMSIS__RTOS__ThreadMgmt.html#gaa6c32fe2a3e0a2e01f212d55b02e51c7">osThreadId_t</a> id;                              <span class="comment">// id for the currently running thread</span></div>
+<div class="line">  <a class="code hl_enumeration" href="group__CMSIS__RTOS__Definitions.html#ga6c0dbe6069e4e7f47bb4cd32ae2b813e">osStatus_t</a>   status;                          <span class="comment">// status of the executed function</span></div>
+<div class="line"> </div>
+<div class="line">  <span class="keywordtype">id</span> = <a class="code hl_function" href="group__CMSIS__RTOS__ThreadMgmt.html#ga8df03548e89fbc56402a5cd584a505da">osThreadGetId</a>();                         <span class="comment">// Obtain ID of current running thread</span></div>
+<div class="line"> </div>
+<div class="line">  status = <a class="code hl_function" href="group__CMSIS__RTOS__ThreadMgmt.html#ga60e2518df0194587a134b7e1836f2470">osThreadSetAffinityMask</a>(<span class="keywordtype">id</span>, <a class="code hl_define" href="group__CMSIS__RTOS__ThreadMgmt.html#ga4ef461379ceba9ab7764850ef2c7b0ac">osThreadProcessor</a>(1));  <span class="comment">// Set thread affinity mask</span></div>
+<div class="line">  <span class="keywordflow">if</span> (status == <a class="code hl_enumvalue" href="cmsis__os2_8h.html#ga6c0dbe6069e4e7f47bb4cd32ae2b813ea9e1c9e2550bb4de8969a935acffc968f">osOK</a>) {</div>
+<div class="line">    <span class="comment">// Thread affinity mask set to processor number 1</span></div>
+<div class="line">  }</div>
+<div class="line">  <span class="keywordflow">else</span> {</div>
+<div class="line">    <span class="comment">// Failed to set the affinity mask</span></div>
+<div class="line">  }</div>
+<div class="line">}</div>
+<div class="ttc" id="agroup__CMSIS__RTOS__ThreadMgmt_html_ga4ef461379ceba9ab7764850ef2c7b0ac"><div class="ttname"><a href="group__CMSIS__RTOS__ThreadMgmt.html#ga4ef461379ceba9ab7764850ef2c7b0ac">osThreadProcessor</a></div><div class="ttdeci">#define osThreadProcessor(n)</div><div class="ttdoc">Thread processor affinity mask value in attribute affinity_mask format.</div><div class="ttdef"><b>Definition:</b> cmsis_os2.h:223</div></div>
+<div class="ttc" id="agroup__CMSIS__RTOS__ThreadMgmt_html_ga60e2518df0194587a134b7e1836f2470"><div class="ttname"><a href="group__CMSIS__RTOS__ThreadMgmt.html#ga60e2518df0194587a134b7e1836f2470">osThreadSetAffinityMask</a></div><div class="ttdeci">osStatus_t osThreadSetAffinityMask(osThreadId_t thread_id, uint32_t affinity_mask)</div><div class="ttdoc">Set processor affinity mask of a thread.</div></div>
+</div><!-- fragment --> 
+</div>
+</div>
+<a id="gab0541a97b969f7f762572dcefe2f65e1" name="gab0541a97b969f7f762572dcefe2f65e1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gab0541a97b969f7f762572dcefe2f65e1">&#9670;&#160;</a></span>osThreadGetAffinityMask()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint32_t osThreadGetAffinityMask </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="group__CMSIS__RTOS__ThreadMgmt.html#gaa6c32fe2a3e0a2e01f212d55b02e51c7">osThreadId_t</a>&#160;</td>
+          <td class="paramname"><em>thread_id</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">thread_id</td><td>thread ID obtained by <a class="el" href="group__CMSIS__RTOS__ThreadMgmt.html#ga48d68b8666d99d28fa646ee1d2182b8f">osThreadNew</a> or <a class="el" href="group__CMSIS__RTOS__ThreadMgmt.html#ga8df03548e89fbc56402a5cd584a505da">osThreadGetId</a>. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>current processor affinity mask of the specified thread.</dd></dl>
+<p>The function <b>osThreadGetAffinityMask</b> returns the affinity mask of the thread specified by parameter <em>thread_id</em>. In case of an error, it returns <span class="XML-Token">0</span>.</p>
+<dl class="section note"><dt>Note</dt><dd>This function <b>cannot</b> be called from Interrupt Service Routines.</dd></dl>
+<p><b>Code Example</b> </p><div class="fragment"><div class="line"><span class="preprocessor">#include &quot;<a class="code" href="cmsis__os2_8h.html">cmsis_os2.h</a>&quot;</span></div>
+<div class="line"> </div>
+<div class="line"><span class="keywordtype">void</span> Thread_1 (<span class="keywordtype">void</span> <span class="keyword">const</span> *arg) {               <span class="comment">// Thread function</span></div>
+<div class="line">  <a class="code hl_typedef" href="group__CMSIS__RTOS__ThreadMgmt.html#gaa6c32fe2a3e0a2e01f212d55b02e51c7">osThreadId_t</a> id;                              <span class="comment">// id for the currently running thread</span></div>
+<div class="line">  uint32_t     affinity_mask;                   <span class="comment">// thread affinity mask</span></div>
+<div class="line">   </div>
+<div class="line">  <span class="keywordtype">id</span> = <a class="code hl_function" href="group__CMSIS__RTOS__ThreadMgmt.html#ga8df03548e89fbc56402a5cd584a505da">osThreadGetId</a>();                         <span class="comment">// Obtain ID of current running thread</span></div>
+<div class="line">  affinity_mask = <a class="code hl_function" href="group__CMSIS__RTOS__ThreadMgmt.html#gab0541a97b969f7f762572dcefe2f65e1">osThreadGetAffinityMask</a>(<span class="keywordtype">id</span>);  <span class="comment">// Obtain the thread affinity mask</span></div>
+<div class="line">}</div>
+<div class="ttc" id="agroup__CMSIS__RTOS__ThreadMgmt_html_gab0541a97b969f7f762572dcefe2f65e1"><div class="ttname"><a href="group__CMSIS__RTOS__ThreadMgmt.html#gab0541a97b969f7f762572dcefe2f65e1">osThreadGetAffinityMask</a></div><div class="ttdeci">uint32_t osThreadGetAffinityMask(osThreadId_t thread_id)</div><div class="ttdoc">Get current processor affinity mask of a thread.</div></div>
 </div><!-- fragment --> 
 </div>
 </div>

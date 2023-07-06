@@ -56,7 +56,7 @@ var NAVTREE =
 var NAVTREEINDEX =
 [
 "cmsis__os2_8h.html#ga08326469274b668140ca934b168a5ad4a0545c92c18ce8e6b24e82a0d694a0b4a",
-"group__CMSIS__RTOS__ThreadMgmt.html#structosThreadAttr__t"
+"group__CMSIS__RTOS__ThreadMgmt.html#ggad4e3e0971b41f2d17584a8c6837342eca4b4fa46c3ebaf4259662a0a0a3173b7f"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

@@ -1,5 +1,8 @@
 var NAVTREEINDEX1 =
 {
+"group__CMSIS__RTOS__ThreadMgmt.html#ggad4e3e0971b41f2d17584a8c6837342eca4b4fa46c3ebaf4259662a0a0a3173b7f":[6,0,3,10,50],
+"group__CMSIS__RTOS__ThreadMgmt.html#ggad4e3e0971b41f2d17584a8c6837342ecacd5864eac01a6916a7c866bb51a6aac1":[6,0,3,17],
+"group__CMSIS__RTOS__ThreadMgmt.html#ggad4e3e0971b41f2d17584a8c6837342ecacd5864eac01a6916a7c866bb51a6aac1":[6,0,3,10,1],
 "group__CMSIS__RTOS__ThreadMgmt.html#structosThreadAttr__t":[6,0,3,0],
 "group__CMSIS__RTOS__TickAPI.html":[6,1],
 "group__CMSIS__RTOS__TickAPI.html#ga123151dc19d5a94a68f12cdbf61a9bb5":[6,1,6],
