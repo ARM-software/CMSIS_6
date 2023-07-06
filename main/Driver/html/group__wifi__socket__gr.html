@@ -616,7 +616,7 @@ Functions</h2></td></tr>
 <div class="line">      wifi-&gt;<a class="code hl_variable" href="group__wifi__interface__gr.html#a637ecce0db75764a729432a27246af1b">SocketSend</a> (sock, message, <span class="keyword">sizeof</span>(message));</div>
 <div class="line">      res = wifi-&gt;<a class="code hl_variable" href="group__wifi__interface__gr.html#a12c663a9fbc7b750c3bc2d63869b6d5f">SocketRecv</a> (sock, dbuf, <span class="keyword">sizeof</span>(dbuf));</div>
 <div class="line">      <span class="keywordflow">if</span> (res &lt; 0) {</div>
-<div class="line">        <span class="keywordflow">break</span>;               <span class="comment">// Error occured</span></div>
+<div class="line">        <span class="keywordflow">break</span>;               <span class="comment">// Error occurred</span></div>
 <div class="line">      }</div>
 <div class="line">      <span class="keywordflow">if</span> (res &gt; 0) {</div>
 <div class="line">        <span class="keywordflow">if</span> (memcmp (dbuf, message, res) != 0) {</div>

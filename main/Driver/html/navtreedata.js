@@ -61,12 +61,12 @@ var NAVTREE =
 var NAVTREEINDEX =
 [
 "Driver__CAN_8h.html#ga11c12020b81a63a73a8b53e96a7e3deaa3b6d191c99f1eba4f01bcc5fbfaf67f3",
-"group__can__interface__gr.html#gaac07b9fdf614bf439414f5417aaa376e",
-"group__i2c__interface__gr.html#a43b1d210c48f4361c5054ba69bcae702",
-"group__nand__interface__gr.html#a30afd9cb3113c037b5f1926f5ef93b59",
-"group__spi__interface__gr.html#aeaf54ec655b7a64b9e88578c5f39d4e3",
-"group__usbd__interface__gr.html#a9dc8aa3d9779ca485d984cec7f61e9f5",
-"group__wifi__sec__type.html#ga1c0904e056c3f720fe38b903230d9f89"
+"group__can__interface__gr.html#ga0dcffd362b4093043442a030eaebbcfe",
+"group__gpio__interface__gr.html#aa1e00b5d33fa1f09e96c7b8b1de1deec",
+"group__nand__data__bus__width__codes.html#ga578051cc193ae0b7125aec8007071d21",
+"group__spi__bit__order__ctrls.html#ga41c53c3b396a89ce78018467e561aaaf",
+"group__usart__misc__control.html#ga54e88b32bc7368ff9c44613eae735c44",
+"group__wifi__interface__gr.html#acfc59c1d65846b009ad2adce64568bd8"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

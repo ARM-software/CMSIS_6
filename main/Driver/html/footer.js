@@ -1,7 +1,7 @@
 function writeHeader() {
-    document.write('Version 2.8.0');
+    document.write('Version 2.9.0');
 };
 
 function writeFooter()  {
-    document.write('Generated on Tue Jul  4 2023 14:55:05 for CMSIS-Driver 2.8.0. Copyright &copy; 2023 Arm Limited (or its affiliates). All rights reserved.');
+    document.write('Generated on Thu Jul  6 2023 06:57:41 for CMSIS-Driver 2.9.0. Copyright &copy; 2023 Arm Limited (or its affiliates). All rights reserved.');
 };
