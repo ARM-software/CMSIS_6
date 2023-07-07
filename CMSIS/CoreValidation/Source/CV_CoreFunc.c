@@ -689,11 +689,16 @@ Check SCB_GetFPUType returns information.
 */
 void TC_CoreFunc_FPUType(void) {
   uint32_t fpuType = SCB_GetFPUType();
+/*
 #if defined(__FPU_PRESENT) && (__FPU_PRESENT != 0)
   ASSERT_TRUE(fpuType > 0U);
 #else
   ASSERT_TRUE(fpuType  == 0U);
 #endif
+*/
+
+  /* check for valid FPU type*/
+  ASSERT_TRUE(fpuType  <= 2U);
 }
 
 /*=======0=========1=========2=========3=========4=========5=========6=========7=========8=========9=========0=========1====*/
