@@ -130,11 +130,12 @@ $(document).ready(function(){initNavTree('index.html',''); initResizable(); });
 <div class="textblock"><p>The CMSIS-Driver specification is a software API that describes peripheral driver interfaces for middleware stacks and user applications. The CMSIS-Driver API is designed to be generic and independent of a specific RTOS making it reusable across a wide range of supported microcontroller devices. The CMSIS-Driver API covers a wide range of use cases for the supported peripheral types, but can not take every potential use-case into account. Over time, it is indented to extend the CMSIS-Driver API with further groups to cover new use-cases.</p>
 <p>The CMSIS Software Pack publishes the API Interface under the Component Class <b>CMSIS</b> <b>Driver</b> with header files and a documentation. These header files are the reference for the implementation of the standardized peripheral driver interfaces. These implementations are published typically in the Device Family Pack of a related microcontroller family under the Component Class <b>CMSIS</b> <b>Driver</b>. A Device Family Pack may contain additional interfaces in the Component Class <b>Device</b> to extend the standard Peripheral Drivers covered by this CMSIS-Driver specification with additional device specific interfaces for example for Memory BUS, GPIO, or DMA.</p>
 <p>The standard peripheral driver interfaces connect microcontroller peripherals for example with middleware that implements communication stacks, file systems, or graphic user interfaces. Each peripheral driver interface may provide multiple instances reflecting the multiple physical interfaces of the same type in a device. For example the two physical SPI interfaces are reflected with a separate <a class="el" href="theoryOperation.html#AccessStruct">Access Struct</a> for SPI1 and SPI2. The <a class="el" href="theoryOperation.html#AccessStruct">Access Struct</a> is the interface of a driver to the middleware component or the user application.</p>
+<p>The following block diagram shows an exemplary set up for various drivers:</p>
 <div class="image">
 <img src="driver.png" alt=""/>
 <div class="caption">
 Peripheral Driver Interfaces and Middleware</div></div>
-<p>The following CMSIS-Driver API groups are defined:</p><ul>
+<p>The following CMSIS-Driver APIs are defined:</p><ul>
 <li><a class="el" href="group__can__interface__gr.html">CAN</a>: Interface to CAN bus peripheral.</li>
 <li><a class="el" href="group__eth__interface__gr.html">Ethernet</a>: Interface to Ethernet MAC and PHY peripheral.</li>
 <li><a class="el" href="group__i2c__interface__gr.html">I2C</a>: Multi-master Serial Single-Ended Bus interface driver.</li>
