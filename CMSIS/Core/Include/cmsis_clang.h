@@ -359,7 +359,8 @@ __STATIC_FORCEINLINE uint8_t __CLZ(uint32_t value)
   return __builtin_clz(value);
 }
 
-#ifdef __ARM_FEATURE_SAT
+// Workaround for wrong features set by Clang for Armv8-M Baseline devices
+#if defined(__ARM_FEATURE_SAT) && (__ARM_ARCH_ISA_THUMB >= 2)
 /**
   \brief   Signed Saturate
   \details Saturates a signed value.
