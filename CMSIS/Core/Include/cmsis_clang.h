@@ -317,7 +317,7 @@ __STATIC_FORCEINLINE uint32_t __RBIT(uint32_t value)
 {
   uint32_t result;
 
-#if __ARM_ISA_THUMB >= 2
+#if __ARM_ARCH_ISA_THUMB >= 2
    __ASM ("rbit %0, %1" : "=r" (result) : "r" (value) );
 #else
   uint32_t s = (4U /*sizeof(v)*/ * 8U) - 1U; /* extra shift needed at end */
@@ -462,35 +462,7 @@ __STATIC_FORCEINLINE uint32_t __RRX(uint32_t value)
 }
 #endif /* __ARM_ARCH_ISA_THUMB >= 2 */
 
-#ifdef __ARM_FEATURE_LDREX
-/**
-  \brief   LDR Exclusive (8 bit)
-  \details Executes a exclusive LDR instruction for 8 bit value.
-  \param [in]    ptr  Pointer to data
-  \return             value of type uint8_t at (*ptr)
- */
-__STATIC_FORCEINLINE uint8_t __LDREXB(volatile uint8_t *addr)
-{
-    uint32_t result;
-   __ASM volatile ("ldrexb %0, %1" : "=r" (result) : "Q" (*addr) );
-   return ((uint8_t) result);    /* Add explicit type cast here */
-}
-
-
-/**
-  \brief   LDR Exclusive (16 bit)
-  \details Executes a exclusive LDR instruction for 16 bit values.
-  \param [in]    ptr  Pointer to data
-  \return        value of type uint16_t at (*ptr)
- */
-__STATIC_FORCEINLINE uint16_t __LDREXH(volatile uint16_t *addr)
-{
-    uint32_t result;
-   __ASM volatile ("ldrexh %0, %1" : "=r" (result) : "Q" (*addr) );
-   return ((uint16_t) result);    /* Add explicit type cast here */
-}
-
-
+#if __ARM_FEATURE_LDREX >= 4
 /**
   \brief   LDR Exclusive (32 bit)
   \details Executes a exclusive LDR instruction for 32 bit values.
@@ -504,41 +476,6 @@ __STATIC_FORCEINLINE uint32_t __LDREXW(volatile uint32_t *addr)
    __ASM volatile ("ldrex %0, %1" : "=r" (result) : "Q" (*addr) );
    return(result);
 }
-
-
-/**
-  \brief   STR Exclusive (8 bit)
-  \details Executes a exclusive STR instruction for 8 bit values.
-  \param [in]  value  Value to store
-  \param [in]    ptr  Pointer to location
-  \return          0  Function succeeded
-  \return          1  Function failed
- */
-__STATIC_FORCEINLINE uint32_t __STREXB(uint8_t value, volatile uint8_t *addr)
-{
-   uint32_t result;
-
-   __ASM volatile ("strexb %0, %2, %1" : "=&r" (result), "=Q" (*addr) : "r" ((uint32_t)value) );
-   return(result);
-}
-
-
-/**
-  \brief   STR Exclusive (16 bit)
-  \details Executes a exclusive STR instruction for 16 bit values.
-  \param [in]  value  Value to store
-  \param [in]    ptr  Pointer to location
-  \return          0  Function succeeded
-  \return          1  Function failed
- */
-__STATIC_FORCEINLINE uint32_t __STREXH(uint16_t value, volatile uint16_t *addr)
-{
-   uint32_t result;
-
-   __ASM volatile ("strexh %0, %2, %1" : "=&r" (result), "=Q" (*addr) : "r" ((uint32_t)value) );
-   return(result);
-}
-
 
 /**
   \brief   STR Exclusive (32 bit)
@@ -556,6 +493,66 @@ __STATIC_FORCEINLINE uint32_t __STREXW(uint32_t value, volatile uint32_t *addr)
    return(result);
 }
 
+#endif /* __ARM_FEATURE_LDREX => 4 */
+
+#if __ARM_FEATURE_LDREX >= 7
+/**
+  \brief   LDR Exclusive (16 bit)
+  \details Executes a exclusive LDR instruction for 16 bit values.
+  \param [in]    ptr  Pointer to data
+  \return        value of type uint16_t at (*ptr)
+ */
+__STATIC_FORCEINLINE uint16_t __LDREXH(volatile uint16_t *addr)
+{
+    uint32_t result;
+   __ASM volatile ("ldrexh %0, %1" : "=r" (result) : "Q" (*addr) );
+   return ((uint16_t) result);    /* Add explicit type cast here */
+}
+
+/**
+  \brief   STR Exclusive (16 bit)
+  \details Executes a exclusive STR instruction for 16 bit values.
+  \param [in]  value  Value to store
+  \param [in]    ptr  Pointer to location
+  \return          0  Function succeeded
+  \return          1  Function failed
+ */
+__STATIC_FORCEINLINE uint32_t __STREXH(uint16_t value, volatile uint16_t *addr)
+{
+   uint32_t result;
+
+   __ASM volatile ("strexh %0, %2, %1" : "=&r" (result), "=Q" (*addr) : "r" ((uint32_t)value) );
+   return(result);
+}
+
+/**
+  \brief   LDR Exclusive (8 bit)
+  \details Executes a exclusive LDR instruction for 8 bit value.
+  \param [in]    ptr  Pointer to data
+  \return             value of type uint8_t at (*ptr)
+ */
+__STATIC_FORCEINLINE uint8_t __LDREXB(volatile uint8_t *addr)
+{
+    uint32_t result;
+   __ASM volatile ("ldrexb %0, %1" : "=r" (result) : "Q" (*addr) );
+   return ((uint8_t) result);    /* Add explicit type cast here */
+}
+
+/**
+  \brief   STR Exclusive (8 bit)
+  \details Executes a exclusive STR instruction for 8 bit values.
+  \param [in]  value  Value to store
+  \param [in]    ptr  Pointer to location
+  \return          0  Function succeeded
+  \return          1  Function failed
+ */
+__STATIC_FORCEINLINE uint32_t __STREXB(uint8_t value, volatile uint8_t *addr)
+{
+   uint32_t result;
+
+   __ASM volatile ("strexb %0, %2, %1" : "=&r" (result), "=Q" (*addr) : "r" ((uint32_t)value) );
+   return(result);
+}
 
 /**
   \brief   Remove the exclusive lock
@@ -565,6 +562,9 @@ __STATIC_FORCEINLINE void __CLREX(void)
 {
   __ASM volatile ("clrex" ::: "memory");
 }
+#endif /* __ARM_FEATURE_LDREX */
+
+#if __ARM_ARCH_ISA_THUMB >= 2
 
 /**
   \brief   LDRT Unprivileged (8 bit)
@@ -643,7 +643,7 @@ __STATIC_FORCEINLINE void __STRT(uint32_t value, volatile uint32_t *ptr)
 {
    __ASM volatile ("strt %1, %0" : "=Q" (*ptr) : "r" (value) );
 }
-#endif /* __ARM_FEATURE_LDREX */
+#endif /* __ARM_ARCH_ISA_THUMB >= 2 */
 
 #if __ARM_ARCH >= 8
 /**
