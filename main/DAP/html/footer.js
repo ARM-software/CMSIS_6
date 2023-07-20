@@ -1,7 +1,7 @@
 function writeHeader() {
-    document.write('Version PROJECT_NUMBER         = ""');
+    document.write('Version 0b337630');
 };
 
 function writeFooter()  {
-    document.write('Generated on Thu Jul 20 2023 12:18:36 for CMSIS-DAP PROJECT_NUMBER         = "". Copyright &copy; 2023 Arm Limited (or its affiliates). All rights reserved.');
+    document.write('Generated on Thu Jul 20 2023 13:13:17 for CMSIS-DAP 0b337630. Copyright &copy; 2023 Arm Limited (or its affiliates). All rights reserved.');
 };
