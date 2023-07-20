@@ -25,6 +25,8 @@
 #ifndef __CMSIS_CLANG_H
 #define __CMSIS_CLANG_H
 
+#pragma clang system_header
+
 /* Fallback for __has_builtin */
 #ifndef __has_builtin
   #define __has_builtin(x) (0)
@@ -61,44 +63,32 @@
 #ifndef   __PACKED_UNION
   #define __PACKED_UNION                         union __attribute__((packed, aligned(1)))
 #endif
-#ifndef   __UNALIGNED_UINT32        /* deprecated */
-  #pragma GCC diagnostic push
-  #pragma GCC diagnostic ignored "-Wpacked"
-  #pragma GCC diagnostic ignored "-Wattributes"
-  struct __attribute__((packed)) T_UINT32 { uint32_t v; };
-  #pragma GCC diagnostic pop
-  #define __UNALIGNED_UINT32(x)                  (((struct T_UINT32 *)(x))->v)
-#endif
 #ifndef   __UNALIGNED_UINT16_WRITE
-  #pragma GCC diagnostic push
-  #pragma GCC diagnostic ignored "-Wpacked"
-  #pragma GCC diagnostic ignored "-Wattributes"
+  #pragma clang diagnostic push
+  #pragma clang diagnostic ignored "-Wpacked"
   __PACKED_STRUCT T_UINT16_WRITE { uint16_t v; };
-  #pragma GCC diagnostic pop
+  #pragma clang diagnostic pop
   #define __UNALIGNED_UINT16_WRITE(addr, val)    (void)((((struct T_UINT16_WRITE *)(void *)(addr))->v) = (val))
 #endif
 #ifndef   __UNALIGNED_UINT16_READ
-  #pragma GCC diagnostic push
-  #pragma GCC diagnostic ignored "-Wpacked"
-  #pragma GCC diagnostic ignored "-Wattributes"
+  #pragma clang diagnostic push
+  #pragma clang diagnostic ignored "-Wpacked"
   __PACKED_STRUCT T_UINT16_READ { uint16_t v; };
-  #pragma GCC diagnostic pop
+  #pragma clang diagnostic pop
   #define __UNALIGNED_UINT16_READ(addr)          (((const struct T_UINT16_READ *)(const void *)(addr))->v)
 #endif
 #ifndef   __UNALIGNED_UINT32_WRITE
-  #pragma GCC diagnostic push
-  #pragma GCC diagnostic ignored "-Wpacked"
-  #pragma GCC diagnostic ignored "-Wattributes"
+  #pragma clang diagnostic push
+  #pragma clang diagnostic ignored "-Wpacked"
   __PACKED_STRUCT T_UINT32_WRITE { uint32_t v; };
-  #pragma GCC diagnostic pop
+  #pragma clang diagnostic pop
   #define __UNALIGNED_UINT32_WRITE(addr, val)    (void)((((struct T_UINT32_WRITE *)(void *)(addr))->v) = (val))
 #endif
 #ifndef   __UNALIGNED_UINT32_READ
-  #pragma GCC diagnostic push
-  #pragma GCC diagnostic ignored "-Wpacked"
-  #pragma GCC diagnostic ignored "-Wattributes"
+  #pragma clang diagnostic push
+  #pragma clang diagnostic ignored "-Wpacked"
   __PACKED_STRUCT T_UINT32_READ { uint32_t v; };
-  #pragma GCC diagnostic pop
+  #pragma clang diagnostic pop
   #define __UNALIGNED_UINT32_READ(addr)          (((const struct T_UINT32_READ *)(const void *)(addr))->v)
 #endif
 #ifndef   __ALIGNED
@@ -824,7 +814,7 @@ __STATIC_FORCEINLINE uint32_t __STLEX(uint32_t value, volatile uint32_t *ptr)
 
 #endif /* __ARM_ARCH >= 8 */
 
-/*@}*/ /* end of group CMSIS_Core_InstructionInterface */
+/** @}*/ /* end of group CMSIS_Core_InstructionInterface */
 
 
 /* ###########################  Core Function Access  ########################### */
@@ -1494,7 +1484,7 @@ __STATIC_FORCEINLINE void __set_FPSCR(uint32_t fpscr)
 }
 
 
-/*@} end of CMSIS_Core_RegAccFunctions */
+/** @} end of CMSIS_Core_RegAccFunctions */
 
 
 /* ###################  Compiler specific Intrinsics  ########################### */
