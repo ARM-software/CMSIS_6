@@ -1,6 +1,20 @@
 //--- list of versions ---
 const versions = {
-    
+    General: {
+        "latest": "6.0.0-dev34"
+    },
+    Core: {
+        "latest": "5.7.0"
+    },
+    Core_A: {
+        "latest": "1.2.1"
+    },
+    Driver: {
+        "latest": "2.9.0"
+    },
+    RTOS2: {
+        "latest": "2.3.0"
+    }
 }
 //--- list of versions ---
 
@@ -21,13 +35,15 @@ if (script && script.src) {
   }
 
   function writeVersionDropdown() {
+      part = docUrl.pathname.split('/').slice(-3, -2)
       currentVersion = document.currentScript.parentNode.innerText;
       document.currentScript.parentNode.classList.add("dropdown");
       document.currentScript.parentNode.innerText = "";
       document.write('  <span onclick="myFunction()" class="dropbtn">'+currentVersion+'</span>');
       document.write('  <div id="myDropdown" class="dropdown-content">');
-      for(var version in versions) {
-          var label = versions[version];
+      part_versions = versions[part]
+      for(var version in part_versions) {
+          var label = part_versions[version];
           if (label != version) {
               label += " ("+version+")"
           }
