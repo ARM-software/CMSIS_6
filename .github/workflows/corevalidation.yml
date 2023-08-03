@@ -15,6 +15,10 @@ jobs:
     name: Build
     runs-on: ubuntu-latest
     steps:
+      - run: |
+          sudo add-apt-repository ppa:deadsnakes/ppa
+          sudo apt-get install libpython3.9
+
       - uses: actions/checkout@v3
 
       - working-directory: /home/runner
@@ -94,6 +98,9 @@ jobs:
           vcpkg x-update-registry --all
           vcpkg activate
           
+          # Fix library search for VHT
+          export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:$(dirname $(which VHT_MPS2_Cortex-M3))
+
           echo "Activate Arm tool license"
           ${AC6_TOOLCHAIN_6_20_0}/armlm activate --server https://mdk-preview.keil.arm.com --product KEMDK-COM0
 
@@ -109,7 +116,10 @@ jobs:
           cpackget add /home/runner/CMSIS-DFP/ARM.CMSIS_DFP.pdsc
 
           echo "Run build script"
-          ./build.py --verbose -m FVP -c AC6 -c GCC -c Clang build || echo "=== Something failed! ==="
+          # ./build.py --verbose -m VHT -c AC6 -c GCC -c Clang build || echo "=== Something failed! ==="
+
+          echo "Run build script"
+          ./build.py --verbose -m VHT -c AC6 -d CM3 -o none build run || echo "=== Something failed! ==="
 
           echo "Deactivate Arm tool license"
           ${AC6_TOOLCHAIN_6_20_0}/armlm deactivate --product KEMDK-COM0
