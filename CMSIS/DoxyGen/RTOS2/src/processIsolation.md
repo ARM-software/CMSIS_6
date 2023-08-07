@@ -1,59 +1,45 @@
-/**
-\addtogroup CMSIS_RTOS_ProcessIsolation Process Isolation
-\ingroup CMSIS_RTOS CMSIS_RTOSv2
-@{
+# Process Isolation {#CMSIS_RTOS_ProcessIsolation}
 
-This chapter explains mechanisms available for process isolation support in CMSIS-RTOS2 API.
-\if FuSaRTS
-See \ref fusa_process_isolation for a summary of other related pages such as RTX configuration and safety user requirements.
-\endif
+CMSIS-RTOS2 API supports a concept of **process isolation** that allows developers to protect execution of critical software tasks against potential flaws in other parts of a program.
 
-CMSIS-RTOS2 API defines a set of features to protect critical parts of an application against software flaws that may exist in other parts of an application.
+Process Isolation in CMSIS-RTOS2 is enabled by following features:
 
-\par
-- <b>\ref rtos_process_isolation_mpu</b> for memory access protection in the system.
-<br>
-RTOS threads can access only memory regions and peripherals based on their MPU Protected Zone assignment. Non-privileged thread code cannot accidentally modify critical RTOS kernel data or memory belonging to other zones.
-
-\par
-- <b>\ref rtos_process_isolation_safety_class</b> for access protection to RTOS objects.
-<br>
-The RTOS objects with a higher safety class assigned to them cannot be modified via RTOS API functions from threads that have lower safety class assigned.
-
-\par
-- <b>\ref rtos_process_isolation_thread_wdt</b> to verify execution times of threads.
-<br>
-Each thread can maintain own thread watchdog and in case of timing violations, corresponding thread watchdog alarm will be triggered.
-
-\par
-- <b>\ref rtos_process_isolation_faults</b> in case of a detected failure (for example thread watchdog alarm or MPU Fault).
-<br>
-The RTOS provides functions to block execution of malfunctioning components and with that dedicate system resources for operation of the safety critical threads.
+- \subpage rtos_process_isolation_mpu for memory access protection in the system using Memory Protection Unit (MPU).<br/>
+    RTOS threads are executed with permission to access only memory regions and peripherals required for their operation. Hence thread code cannot accidentally modify critical RTOS kernel data or memory dedicated to other tasks.
+.
+- \subpage rtos_process_isolation_safety_class for access protection to RTOS objects via RTOS APIs.<br/>
+    The RTOS objects with a higher safety class assigned to them cannot be modified via RTOS API functions from threads that have lower safety class assigned.
+.
+- \subpage rtos_process_isolation_thread_wdt to verify execution times of threads.<br/>
+    Each thread can maintain own thread watchdog and in case of timing violations, corresponding thread watchdog alarm will be triggered.
+.
+- \subpage rtos_process_isolation_faults in case of a detected failure (for example thread watchdog alarm or MPU Fault).<br/>
+    The RTOS provides functions to block execution of malfunctioning components and with that dedicate system resources for operation of the safety critical threads.
 
 \if FuSaRTS
 Section \ref fusa_process_isolation lists safety requirements for Process Isolation functions.
 \endif
 
-\addtogroup rtos_process_isolation_mpu MPU Protected Zones
-\details
-Memory Protection Unit (MPU) is available on many Cortex-M devices and allows  restricted access to memory regions and peripherals. <a href="../../Core/html/index.html#ref_man_sec"><b>The Cortex-M Reference Manuals</b></a> provide detailed information about the MPU.
+<!-- =============================================================== !-->
+\page rtos_process_isolation_mpu MPU Protected Zones
 
-An MPU Protected Zone is a set of multiple memory regions and peripherals with specified access rights. One or more RTOS threads can be assigned to an MPU Protected Zone.
+Memory Protection Unit (MPU) is available on many Cortex-M devices and allows to execute code with restricted access to memory regions and peripherals. Detailed information about the MPU can be found in [Cortex-M Reference Manuals](../../Core/html/index.html#ref_man_sec).
 
-The figure below illustrates the concept for MPU Protected Zones that isolate  various threads.
+CMSIS-RTOS2 provides a concept of **MPU Protected Zones** as a simple and flexible mechanism for using MPUs with RTOS threads. MPU Protected Zones are defined by a user as a set of memory regions and peripherals with specified access rights, and each RTOS threads gets assigned to a specific MPU Protected Zone that it is allowed to use.
 
-\image html rtos_mpu.png "Process isolation with MPU in RTX RTOS"
+The figure below illustrates the concept for MPU Protected Zones for isolating threads.
 
-Sections below explains how to use MPU Protected Zones.
-- \ref rtos_process_isolation_mpu_refs
+![System partitioning with MPU Protected Zones](./images/rtos_mpu.png)
+
+Sections below explain in details how to define and use MPU Protected Zones:
 - \ref rtos_process_isolation_mpu_def
 - \ref rtos_process_isolation_mpu_load
 - \ref rtos_process_isolation_mpu_objects
 - \ref rtos_process_isolation_mpu_fault
 
-\section rtos_process_isolation_mpu_refs Function references
+**Function references**
 
-Summary of functions that implement MPU Protected Zone functionality:
+Following functions implement and use MPU Protected Zone functionality:
 
 - \ref osThreadNew : \copybrief osThreadNew
 - \ref osThreadZone : \copybrief osThreadZone
@@ -61,38 +47,38 @@ Summary of functions that implement MPU Protected Zone functionality:
 - \ref osThreadTerminateZone : \copybrief osThreadTerminateZone
 - \ref osZoneSetup_Callback : \copybrief osZoneSetup_Callback
 
-\section rtos_process_isolation_mpu_def Define MPU Protected Zones
+## Define MPU Protected Zones {#rtos_process_isolation_mpu_def}
 
 In the architectural design phase an application is logically split into functionalities with the same integrity level (same safety requirements). They can safely operate within the same MPU Protected Zone and hence access same memory areas and peripherals. 
 
-MPU protected zones are defined in an MPU table where each row describes an individual MPU zone and each cell in the row specifies an MPU region within that zone. For details see section <a href="../../Core/html/group__mpu__functions.html"><b>MPU Functions</b></a> in CMSIS-Core(M) documentation.
-
-<a href="https://arm-software.github.io/CMSIS_5/Zone/html/index.html" target="_blank"><b>CMSIS-Zone</b></a> provides a utility that allows graphic configuration of MPU protected zones and generates MPU table in the CMSIS format.
+MPU protected zones are defined in an MPU table where each row describes an individual MPU zone and each cell in the row specifies an MPU region within that zone. For details see section [MPU Functions](../../Core/html/group__mpu__functions.html) in CMSIS-Core(M) documentation.
 
 \note
-Interrupt handlers bypass the MPU protection. For this reason, it is required that all interrupt handlers are verified according to the highest integrity level to exclude unintended memory accesses.
+Interrupt handlers bypass the MPU protection. For this reason, it is required that potential impact of all interrupt handlers is strictly analyzed to exclude unintended memory accesses.
 
-\subsection rtx_process_isolation_mpu_id Zone Identifiers
-Zone ID is used to refer to a specific MPU protected zone. Zone ID value equals to the row index (starting from 0) in the MPU table that describes corresponding MPU Protected Zone.
+**Zone Identifier** (Zone ID) is used to refer to a specific MPU protected zone. Zone ID value equals to the row index (starting from 0) in the MPU table that describes corresponding MPU Protected Zone.
+
 An MPU Protected Zone is assigned to one or more RTOS threads. This is done by providing the Zone ID value in thread attributes \ref osThreadAttr_t when creating the thread with the \ref osThreadNew function.
 
-\b Example:
+**Example:**
 
-\code
+```c
 /* ThreadA thread attributes */
 const osThreadAttr_t thread_A_attr = {
   .name       = "ThreadA",       // human readable thread name
-  .attr_bits  = osThreadZone(3U) // assign thread to MPU protected zone 3
+  .attr_bits  = osThreadZone(3U) // assign thread to MPU protected zone with Zone Id 3
 };
 osThreadNew(ThreadA, NULL, &thread_A_attr);
-\endcode
+```
 
-\section rtos_process_isolation_mpu_load Load MPU Protected Zone
+[CMSIS-Zone](https://arm-software.github.io/CMSIS_5/Zone/html/index.html) provides a utility that allows graphic configuration of MPU protected zones and generates MPU table in the CMSIS format.
 
-When switching threads the RTOS kernel compares Zone IDs of the currently running thread and the next thread to be executed. If the Zone Ids are different then a callback function \ref osZoneSetup_Callback is called. This function shall be implemented in the user application code to actually switch to the new MPU Protected Zone. In the function the user should load the MPU Protected Zone according to the Zone Id provided in the argument.
+## Load MPU Protected Zone {#rtos_process_isolation_mpu_load}
 
-\b Example:
-\code
+When switching threads the RTOS kernel compares Zone IDs of the currently running thread and the next thread to be executed. If the Zone Ids are different then a callback function \ref osZoneSetup_Callback is called. This callback function shall be implemented in the user application code to actually switch to the new MPU Protected Zone. In the function the user should load the MPU Protected Zone according to the Zone Id provided in the argument.
+
+**Example:**
+```c
 /* Update MPU settings for newly activating Zone */
 void osZoneSetup_Callback (uint32_t zone) {
 
@@ -102,61 +88,62 @@ void osZoneSetup_Callback (uint32_t zone) {
 
   ARM_MPU_Load(mpu_table[zone], MPU_REGIONS);
 }
-\endcode
+```
 
-\section rtos_process_isolation_mpu_objects RTOS Objects and MPU Protection
-To access RTOS objects from the application RTOS APIs rely on a numeric xxx_id parameter associated with the object as explained in \ref rtos_api2. For example
+## RTOS Objects and MPU Protection {#rtos_process_isolation_mpu_objects}
+To access RTOS objects from the application RTOS APIs rely on a numeric `xxx_id` parameter associated with the object as explained in \ref rtos_objects. For example as `evt_flags` in this code:
 
-\code
+```c
 osEventFlagsId_t evt_flags;
 evt_flags = osEventFlagsNew(NULL);
 osEventFlagsSet(evt_flags, 1);
-\endcode
+```
 
 The allocation of an RTOS object to the memory in a specific MPU Protected Zone does not provide access restriction. The access restriction can be bypassed if another thread calls the CMSIS-RTOS2 API with the object ID of the RTOS object as argument. The CMSIS-RTOS2 function is executed in handler mode and therefore can access and modify the RTOS object without raising a Memory Fault.
+
 To enable access control for RTOS objects the \ref rtos_process_isolation_safety_class concept is introduced in CMSIS-RTOS2.
 
-\section rtos_process_isolation_mpu_fault Handle Memory Access Faults
+## Handle Memory Access Faults {#rtos_process_isolation_mpu_fault}
 
-A memory access fault is triggered when a thread tries to access memory or peripherals outside of the MPU Protected Zone loaded while the thread is running. In such case Memory Management Interrupt (<a href="../../Core/html/group__NVIC__gr.html "><b>MemoryManagement_IRQn</b></a>) is triggered by the processor and its handling function is executed according to the exception vector table specified in the device startup file (by default \token{MemManage_Handler(void)} ).
+A memory access fault is triggered when a thread tries to access memory or peripherals outside of the MPU Protected Zone loaded while the thread is running. In such case Memory Management Interrupt [MemoryManagement_IRQn](../../Core/html/group__NVIC__gr.html) is triggered by the processor and its handling function is executed according to the exception vector table specified in the device startup file (by default \token{MemManage_Handler(void)} ).
 
 The \e MemManage_Handler() interrupt handler is application specific and needs to be implemented by the user. In the handler it is possible to identify the thread that caused the memory access fault, the corresponding zone id and the safety class. This information can be used to define actions for entering a safe state. \ref rtos_process_isolation_faults provides more details on the available system recovery possibilities.
 
-\addtogroup rtos_process_isolation_safety_class Safety Classes
+<!-- =============================================================== !-->
+\page rtos_process_isolation_safety_class Safety Classes
 
 \ref rtos_process_isolation_mpu_objects explains that MPU Protected Zones do not provide full access protection to RTOS objects accessed via CMSIS-RTOS2 API. The concept of a safety class fills this gap.
 
 Every RTOS object, including thread is assigned with a numeric safety class value. A thread cannot modify an RTOS object if its safety class value is higher than the safety class value of the thread.
 For example, it is not possible to change the priority or suspend a thread that has a higher safety class value than the thread that is currently executed.
 
-\section rtos_process_isolation_safety_class_refs Function references
+**Function references**
 
-Summary of functions and macros that implement safety classes:
+- Following functions and macros are used explicitly for managing safety classes:
+  - \ref osSafetyClass : \copybrief osSafetyClass
+  - \ref osThreadGetClass : \copybrief osThreadGetClass
+  - \ref osSafetyWithSameClass : \copybrief osSafetyWithSameClass
+  - \ref osSafetyWithLowerClass : \copybrief osSafetyWithLowerClass
+  - \ref osKernelProtect : \copybrief osKernelProtect
+  - \ref osThreadSuspendClass : \copybrief osThreadSuspendClass
+  - \ref osThreadResumeClass : \copybrief osThreadResumeClass
+  - \ref osKernelDestroyClass  : \copybrief osKernelDestroyClass
+- CMSIS-RTOS2 API functions that support safety class assignment when creating RTOS objects are listed in \ref rtos_process_isolation_safety_class_assign.
+- CMSIS-RTOS2 API functions that verify safety class assignment before execution are listed in \ref rtos_process_isolation_safety_class_error lists.
 
-- \ref osSafetyClass : \copybrief osSafetyClass
-- \ref osThreadGetClass : \copybrief osThreadGetClass
-- \ref osSafetyWithSameClass : \copybrief osSafetyWithSameClass
-- \ref osSafetyWithLowerClass : \copybrief osSafetyWithLowerClass
-- \ref osKernelProtect : \copybrief osKernelProtect
-- \ref osThreadSuspendClass : \copybrief osThreadSuspendClass
-- \ref osThreadResumeClass : \copybrief osThreadResumeClass
-- \ref osKernelDestroyClass  : \copybrief osKernelDestroyClass
-
-\ref rtos_process_isolation_safety_class_assign lists CMSIS-RTOS2 API functions that support safety class assignment when creating RTOS objects.
-\ref rtos_process_isolation_safety_class_error lists CMSIS-RTOS2 API functions that verify safety class assignment before execution.
-\section rtos_process_isolation_safety_class_assign Assign Safety Class to an RTOS Object
+## Assign Safety Class to an RTOS Object {#rtos_process_isolation_safety_class_assign}
 
 It is possible to create any objects regardless of the safety class after the kernel initialize with \ref osKernelInitialize, but before the kernel is started with \ref osKernelStart. This allows to setup a system before actually starting the RTOS kernel.
 
 Threads of a higher safety class can create RTOS objects that belong to a lower or same safety class. For the object types listed below, the \e attr_bits can have an optional safety class value that is assigned when the RTOS object is created with the \e <i>os<Object>New</i> function. The macro \ref osSafetyClass encodes the value for the \e attr_bits field in the attr struct. For example:
 
-\code
+```c
 const osEventFlagsAttr_t evt_flags_attr = {
   .attr_bits = osSafetyClass(SAFETY_CLASS_SAFE_MODE_OPERATION)
 };
 osEventFlagsId_t evt_flags;
 evt_flags = osEventFlagsNew(&evt_flags_attr);
-\endcode
+```
 
 The following object types support safety class assignment when creating an object with corresponding \e os<Object>New function:
 
@@ -170,16 +157,17 @@ The following object types support safety class assignment when creating an obje
 
 If safety class is not provided when creating the RTOS object then it inherits the safety class of the current running thread that creates the object. If the object is created before kernel is started and no safety class is provided, then it receives default safety class 0. This simplifies integration of third-party code that can be classified as non-safety critical.
 
-\section rtos_process_isolation_safety_class_error Handle Object Access Violation
+## Handle Object Access Violation {#rtos_process_isolation_safety_class_error}
 
 RTOS API call returns error code \ref osErrorSafetyClass if the requested object manipulation cannot be performed because the target object has higher safety class than the safety class of the running thread. For example:
-\code
+
+```c
 status = osEventFlagsSet(evt_flags, 1);
 if (status == osErrorSafetyClass)
 {
   //handle the safety class error
 }
-\endcode
+```
 
 Following functions compare the safety class of the running thread with the safety class of the target object.
 
@@ -243,9 +231,10 @@ In \ref CMSIS_RTOS_Message functions:
 - \ref osMessageQueueReset
 - \ref osMessageQueueDelete
 
-\addtogroup rtos_process_isolation_thread_wdt Thread Watchdogs
+<!-- =============================================================== !-->
+\page rtos_process_isolation_thread_wdt Thread Watchdogs
 
-CMSIS-RTOS defines <b>Thread Watchdogs</b> that allow to control timing constraints for thread execution (<a href="https://en.wikipedia.org/wiki/Temporal_isolation" target="_blank"><b>temporal isolation</b></a>).
+CMSIS-RTOS defines **Thread Watchdogs** that allow to control timing constraints for thread execution [temporal isolation](https://en.wikipedia.org/wiki/Temporal_isolation).
 
 Each thread has an independent watchdog timer that is started with the function \ref osThreadFeedWatchdog(uint32_t ticks). The \token{ticks} value specifies the timeout before it expires.  Within this time interval the function \ref osThreadFeedWatchdog must be called again within the thread to restart the watchdog timer.
 
@@ -253,20 +242,21 @@ If the thread watchdog is not restarted during the specified amount of ticks the
 
 Figure below explains the concept with an example:
 
-\image html thread_watchdogs.png "Example use of Thread Watchdogs"
+!["Example use of Thread Watchdogs](./images/thread_watchdogs.png)
 
 \ref rtos_process_isolation_faults provides more details on the available possibilities for system recovery.
 \note If the application suspends a thread from scheduling by calling \ref osThreadSuspend or \ref osThreadSuspendClass, the thread watchdog still continues to run, and it is expected to expire and trigger \ref osWatchdogAlarm_Handler because the thread will not be serviced as expected.
 \note Hence it may be necessary to differentiate handling of thread watchdogs that expired unexpectedly from the thread watchdog alarms of intentionally suspended threads.
 
-\section rtos_process_isolation_thread_wdt_refs Function references
+**Function references**
 
-Summary of functions that implement thread watchdog functionality
+Summary of functions that implement thread watchdog functionality:
 
 - \ref osThreadFeedWatchdog : \copybrief osThreadFeedWatchdog
 - \ref osWatchdogAlarm_Handler : \copybrief osWatchdogAlarm_Handler
 
-\addtogroup rtos_process_isolation_faults Fault Handling
+<!-- =============================================================== !-->
+\page rtos_process_isolation_faults Fault Handling
 
 When a failure, or an error is detected in a system (for example \ref rtos_process_isolation_mpu_fault "memory access fault", \ref rtos_process_isolation_thread_wdt "thread watchdog alarm", or others) CMSIS-RTOS2 API allows to stop further execution of selected RTOS threads. This can be used to block malfunctioning components or free computing resources and so enable execution of the safety critical threads. 
 
@@ -276,7 +266,7 @@ Following approaches are available:
 
 Function \ref osKernelDestroyClass fully removes RTOS objects of specific safety classes from the system. This can be useful to do before restarting operation of terminated or suspended threads.
 
-\section rtos_process_isolation_faults_refs Function references
+**Function references**
 
 Following CMSIS-RTOS2 functions and macros support fault handling:
 
@@ -290,8 +280,3 @@ Following CMSIS-RTOS2 functions and macros support fault handling:
 - \ref osKernelDestroyClass : \copybrief osKernelDestroyClass
 - \ref osFaultResume : \copybrief osFaultResume
 - \ref osWatchdogAlarm_Handler : \copybrief osFaultResume
-
-// @}
-
-*/
-// end

@@ -1,7 +1,4 @@
-/**
-\page rtos_revisionHistory Revision History
-
-\section GenRTOS2Rev CMSIS-RTOS API Version 2
+# Revision History {#rtos_revisionHistory}
 
 <table class="cmtable" summary="Revision History">
     <tr>
@@ -73,8 +70,7 @@
       <td>V2.0.0</td>
       <td>
         New API Version 2.0 available. 
-         - See \ref rtos_api2 for a detailed function reference.
-         - See \ref os2Migration for details on the migration process from API Version 1.
+         - See \ref CMSIS_RTOS for a detailed function reference.
      </td>
     </tr>
     <tr>
@@ -96,7 +92,7 @@
       <td>Added capabilities for C++, kernel initialization and object deletion.\n
       Prepared for C++ class interface. In this context to \em const attribute has been moved from osXxxxDef_t typedefs to
       the osXxxxDef macros.\n
-      Added: \ref osTimerDelete, \ref osMutexDelete, \ref osSemaphoreDelete.\n
+      Added: \ref osTimerDelete, \ref osMutexDelete, \ref osSemaphoreDelete .\n
       Added: \ref osKernelInitialize that prepares the kernel for object creation.\n
       </td>
     </tr>
@@ -115,4 +111,3 @@
       <td>Preview Release.</td>
     </tr>
 </table>
-*/

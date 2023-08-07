@@ -25,7 +25,6 @@ can be nested.
 
 \note Mutex management functions cannot be called from \ref CMSIS_RTOS_ISR_Calls "Interrupt Service Routines" (ISR), unlike a
 binary semaphore that can be released from an ISR.
-\note Refer to \ref mutexConfig for RTX5 configuration options.  
   
 @{
 */
@@ -391,14 +390,14 @@ Default: \token{0} which specifies:
 /**
 \var osMutexAttr_t::cb_mem
 \details
-Pointer to a memory for the mutex control block object. Refer to \ref StaticObjectMemory for more information.
+Pointer to a memory for the mutex control block object. Refer to \ref CMSIS_RTOS_MemoryMgmt_Manual for more information.
 
 Default: \token{NULL} to use \ref CMSIS_RTOS_MemoryMgmt_Automatic for the mutex control block.
 */
 /**
 \var osMutexAttr_t::cb_size
 \details
-The size (in bytes) of memory block passed with \ref cb_mem. For RTX, the minimum value is defined with \ref osRtxMutexCbSize (higher values are permitted).
+The size (in bytes) of memory block passed with \ref cb_mem. Required value depends on the underlying kernel implementation.
 
 Default: \token{0} as the default is no memory provided with \ref cb_mem.
 */

@@ -506,7 +506,7 @@ __NO_RETURN void osThreadExit (void);
 osStatus_t osThreadTerminate (osThreadId_t thread_id);
  
 /// Feed watchdog of the current running thread.
-/// \param[in]     ticks         \ref kernelTimer "time ticks" value until the thread watchdog expires, or 0 to stop the watchdog
+/// \param[in]     ticks         interval in kernel ticks until the thread watchdog expires, or 0 to stop the watchdog
 /// \return status code that indicates the execution status of the function.
 osStatus_t osThreadFeedWatchdog (uint32_t ticks);
  

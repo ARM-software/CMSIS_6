@@ -21,7 +21,6 @@ When a thread wakes up and resumes execution, its signal flags are automatically
 
 \note The functions \ref osEventFlagsSet, \ref osEventFlagsClear, \ref osEventFlagsGet, and \ref osEventFlagsWait can be
 called from \ref CMSIS_RTOS_ISR_Calls "Interrupt Service Routines".
-\note Refer to \ref eventFlagsConfig for RTX5 configuration options.
 
 Working with Events
 --------------------
@@ -39,9 +38,6 @@ osEventFlagsSet(sig1_id, 0x0001U);                        // set the flag 0x0001
 \code
 osEventFlagsWait(sig1_id, 0x0001U, NULL, osWaitForever);  // wait forever for any flag
 \endcode
-
-The following complete example code can be directly used with the "CMSIS-RTOS2 main template" and is also provided as a
-stand-alone template for RTX5:
 
 <b>Code Example</b>
 \code
@@ -324,13 +320,13 @@ Reserved for future use (must be set to '0' for future compatibility).
 
 \var osEventFlagsAttr_t::cb_mem
 \details
-Pointer to a memory for the event flag control block object. Refer to \ref StaticObjectMemory for more information.
+Pointer to a memory for the event flag control block object. Refer to \ref CMSIS_RTOS_MemoryMgmt_Manual for more information.
 
 Default: \token{NULL} to use \ref CMSIS_RTOS_MemoryMgmt_Automatic for the event flag control block.
 
 \var osEventFlagsAttr_t::cb_size
 \details
-The size (in bytes) of memory block passed with \ref cb_mem. For RTX, the minimum value is defined with \ref osRtxEventFlagsCbSize (higher values are permitted).
+The size (in bytes) of memory block passed with \ref cb_mem. Required value depends on the underlying kernel implementation.
 
 Default: \token{0} as the default is no memory provided with \ref cb_mem.
 

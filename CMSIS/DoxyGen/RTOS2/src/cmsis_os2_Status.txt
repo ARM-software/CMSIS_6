@@ -1,17 +1,36 @@
 /*=======0=========1=========2=========3=========4=========5=========6=========7=========8=========9=========0=========1====*/
-// ==== Definitions ====
+// ==== Generic Definitions ====
 /**
-\addtogroup CMSIS_RTOS_Definitions Definitions
+\addtogroup CMSIS_RTOS_Definitions Generic Definitions
 \ingroup CMSIS_RTOS
-\brief Constants and enumerations used by many CMSIS-RTOS functions.
-\details The following constants and enumerations are used by many CMSIS-RTOS function calls.
+\brief Constants and enumerations used by many CMSIS-RTOS2 functions.
+\details The following constants and enumerations are used by many CMSIS-RTOS2 function calls.
 @{
 */
 /*=======0=========1=========2=========3=========4=========5=========6=========7=========8=========9=========0=========1====*/
 /**
 \typedef osStatus_t
 \details
-The \b osStatus_t enumeration defines the event status and error codes that are returned by many CMSIS-RTOS functions.
+The \b osStatus_t enumeration defines the event status and error codes that are returned by many CMSIS-RTOS2 functions.
+
+\var osStatus_t::osOK
+
+\var osStatus_t::osError
+
+\var osStatus_t::osErrorTimeout
+
+\var osStatus_t::osErrorResource
+
+\var osStatus_t::osErrorParameter
+
+\var osStatus_t::osErrorNoMemory
+
+\var osStatus_t::osErrorISR
+
+\var osStatus_t::osErrorSafetyClass
+
+\var osStatus_t::osStatusReserved
+
 */
 
 /**
@@ -29,21 +48,24 @@ It applies to the following functions:
 */
 
 /*=======0=========1=========2=========3=========4=========5=========6=========7=========8=========9=========0=========1====*/
-/** \def osFlagsWaitAny
+/**
+\def osFlagsWaitAny
 
 Reference: 
  - \ref osEventFlagsWait
  - \ref osThreadFlagsWait
 */
 /*=======0=========1=========2=========3=========4=========5=========6=========7=========8=========9=========0=========1====*/
-/** \def osFlagsWaitAll
+/**
+\def osFlagsWaitAll
 
 Reference: 
  - \ref osEventFlagsWait
  - \ref osThreadFlagsWait
 */
 /*=======0=========1=========2=========3=========4=========5=========6=========7=========8=========9=========0=========1====*/
-/** \def osFlagsNoClear
+/**
+\def osFlagsNoClear
 
 Reference: 
  - \ref osEventFlagsWait
@@ -97,7 +119,8 @@ the return value is be set. You can check the exact error using the codes shown 
 @{
 */
 /*=======0=========1=========2=========3=========4=========5=========6=========7=========8=========9=========0=========1====*/
-/** \def osFlagsErrorUnknown
+/**
+\def osFlagsErrorUnknown
 \details Generic error. It is returned when no other error can be applied. 
 
 Reference: 
@@ -110,7 +133,8 @@ Reference:
 */
 
 /*=======0=========1=========2=========3=========4=========5=========6=========7=========8=========9=========0=========1====*/
-/** \def osFlagsErrorTimeout
+/**
+\def osFlagsErrorTimeout
 \details This error is returned if a timeout was specified and the specified flags were not set, when the
 timeout occurred.
 
@@ -124,7 +148,8 @@ Reference:
 */
 
 /*=======0=========1=========2=========3=========4=========5=========6=========7=========8=========9=========0=========1====*/
-/** \def osFlagsErrorResource
+/**
+\def osFlagsErrorResource
 \details This error is returned when you try to get a flag that was not set \a and timeout 0 was
 specified. Is also returned when the specified object identifier is corrupt or invalid.
 
@@ -138,7 +163,8 @@ Reference:
 */
 
 /*=======0=========1=========2=========3=========4=========5=========6=========7=========8=========9=========0=========1====*/
-/** \def osFlagsErrorParameter
+/**
+\def osFlagsErrorParameter
 \details This error is returned when a given parameter is wrong.
 
 Reference: 
@@ -151,7 +177,8 @@ Reference:
 */
 
 /*=======0=========1=========2=========3=========4=========5=========6=========7=========8=========9=========0=========1====*/
-/** \def osFlagsErrorISR
+/**
+\def osFlagsErrorISR
 \details This error is returned when a non-ISR-callable function was called from an ISR.
 
 Reference: 
@@ -163,4 +190,6 @@ Reference:
  - \ref osEventFlagsWait
 */
 
-/// @} 
+/**
+@}
+*/

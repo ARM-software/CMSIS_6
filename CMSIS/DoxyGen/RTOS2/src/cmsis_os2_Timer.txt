@@ -1,27 +1,16 @@
-
-
-/*=======0=========1=========2=========3=========4=========5=========6=========7=========8=========9=========0=========1====*/
 //  ==== Timer Management Functions ====
-/** 
+/**
 \addtogroup CMSIS_RTOS_TimerMgmt Timer Management
 \ingroup CMSIS_RTOS
 \brief Create and control timer and timer callback functions.
-\details 
-In addition to the \ref CMSIS_RTOS_Wait CMSIS-RTOS also supports virtual timer objects. These timer objects can
-trigger the execution of a function (not threads). When a timer expires, a callback function is executed to run associated
-code with the timer. Each timer can be configured as a one-shot or a  periodic timer. A periodic timer repeats its operation
-until it is \ref osTimerDelete "deleted" or \ref osTimerStop "stopped". All timers can be
-\ref osTimerStart "started, restarted", or \ref osTimerStop "stopped".
+\details
+In addition to the \ref CMSIS_RTOS_Wait CMSIS-RTOS also supports virtual timer objects. These timer objects can trigger the execution of a function (not threads). When a timer expires, a callback function is executed to run associated code with the timer. Each timer can be configured as a one-shot or a periodic timer. A periodic timer repeats its operation until it is \ref osTimerDelete "deleted" or \ref osTimerStop "stopped". All timers can be \ref osTimerStart "started, restarted", or \ref osTimerStop "stopped".
 
-\note RTX handles Timers in the thread \b osRtxTimerThread. Callback functions run under control of this thread and may use
-other CMSIS-RTOS API calls. The \b osRtxTimerThread is configured in \ref timerConfig.
 \note Timer management functions cannot be called from \ref CMSIS_RTOS_ISR_Calls "Interrupt Service Routines".
 
-The figure below shows the behavior of a periodic timer. For one-shot timers, the timer stops after execution of the
-callback function.
+The figure below shows the behavior of a periodic timer. For one-shot timers, the timer stops after execution of the callback function.
 
 \image html "Timer.png" "Behavior of a Periodic Timer"
-
 
 Working with Timers
 --------------------
@@ -59,14 +48,17 @@ osTimerStart(one_shot_id, 500U);
 osTimerDelete(one_shot_id);
 osTimerDelete(periodic_id);
 \endcode
+*/
 
+/**
+\addtogroup CMSIS_RTOS_TimerMgmt
 @{
 */
-/*=======0=========1=========2=========3=========4=========5=========6=========7=========8=========9=========0=========1====*/
+
 /**
 \typedef osTimerType_t
 \details
-The \ref osTimerType_t specifies the a repeating (periodic) or one-shot timer for the function \ref osTimerNew.
+The \b osTimerType_t specifies the timer type as repeating (periodic) or one-shot. Used in the function \ref osTimerNew.
 
 \var osTimerType_t::osTimerOnce
 \details
@@ -77,16 +69,14 @@ The timer is not automatically restarted once it has elapsed. It can be restarte
 The timer repeats automatically and triggers the callback continuously while running, see \ref osTimerStart and \ref osTimerStop.
 */
 
-/*=======0=========1=========2=========3=========4=========5=========6=========7=========8=========9=========0=========1====*/
 /**
-\typedef osTimerId_t 
+\typedef osTimerId_t
 \details
 Instances of this type hold a reference to a timer object. \n
 Returned by:
 - \ref osTimerNew
 */
 
-/*=======0=========1=========2=========3=========4=========5=========6=========7=========8=========9=========0=========1====*/
 /**
 \typedef void (*osTimerFunc_t) (void *argument)
 \details
@@ -98,15 +88,36 @@ use ISR callable functions from the timer callback.
 \param[in] argument The argument provided to \ref osTimerNew.
 */
 
-/*=======0=========1=========2=========3=========4=========5=========6=========7=========8=========9=========0=========1====*/
 /**
-\struct osTimerAttr_t 
+\struct osTimerAttr_t
 \details
 Specifies the following attributes for the \ref osTimerNew function.
+
+\var osTimerAttr_t::attr_bits
+\details
+Reserved for future use (must be set to '0' for future compatibility).
+
+\var osTimerAttr_t::cb_mem
+\details
+Pointer to a memory for the timer control block object. Refer to \ref CMSIS_RTOS_MemoryMgmt_Manual for more information.
+
+Default: \token{NULL} to use \ref CMSIS_RTOS_MemoryMgmt_Automatic for the timer control block.
+
+\var osTimerAttr_t::cb_size
+\details
+The size (in bytes) of memory block passed with \ref cb_mem. Required value depends on the underlying kernel implementation.
+
+Default: \token{0} as the default is no memory provided with \ref cb_mem.
+
+\var osTimerAttr_t::name
+\details
+Pointer to a constant string with a human readable name (displayed during debugging) of the timer object.
+
+Default: \token{NULL} no name specified.
 */
 
-/*=======0=========1=========2=========3=========4=========5=========6=========7=========8=========9=========0=========1====*/
-/** 
+
+/**
 \fn osTimerId_t osTimerNew (osTimerFunc_t func, osTimerType_t type, void *argument, const osTimerAttr_t *attr)
 \details
 The function \b osTimerNew creates an one-shot or periodic timer and associates it with a callback function with \a argument.
@@ -148,9 +159,7 @@ void TimerCreate_example (void)  {
 }
 \endcode
 */
-*/
 
-/*=======0=========1=========2=========3=========4=========5=========6=========7=========8=========9=========0=========1====*/
 /**
 \fn const char *osTimerGetName (osTimerId_t timer_id)
 \details
@@ -160,8 +169,7 @@ The function \b osTimerGetName returns the pointer to the name string of the tim
 \note This function may be called from \ref CMSIS_RTOS_ISR_Calls "Interrupt Service Routines".
 */
 
-/*=======0=========1=========2=========3=========4=========5=========6=========7=========8=========9=========0=========1====*/
-/** 
+/**
 \fn osStatus_t osTimerStart (osTimerId_t timer_id, uint32_t ticks)
 \details
 The function \b osTimerStart starts or restarts a timer specified by the parameter \a timer_id. The parameter \a ticks
@@ -207,8 +215,7 @@ void TimerStart_example (void) {
 \endcode
 */
 
-/*=======0=========1=========2=========3=========4=========5=========6=========7=========8=========9=========0=========1====*/
-/** 
+/**
 \fn osStatus_t osTimerStop (osTimerId_t timer_id)
 \details
 The function \b osTimerStop stops a timer specified by the parameter \a timer_id.
@@ -250,8 +257,7 @@ void TimerStop_example (void) {
 \endcode
 */
 
-/*=======0=========1=========2=========3=========4=========5=========6=========7=========8=========9=========0=========1====*/
-/** 
+/**
 \fn uint32_t osTimerIsRunning (osTimerId_t timer_id)
 \details
 The function \b osTimerIsRunning checks whether a timer specified by parameter \a timer_id is running. It returns \token{1}
@@ -260,8 +266,7 @@ if the timer is running and \token{0} if the timer is stopped or an error occurr
 \note This function \b cannot be called from \ref CMSIS_RTOS_ISR_Calls "Interrupt Service Routines".
 */
 
-/*=======0=========1=========2=========3=========4=========5=========6=========7=========8=========9=========0=========1====*/
-/** 
+/**
 \fn osStatus_t osTimerDelete (osTimerId_t timer_id)
 \details
 The function \b osTimerDelete deletes the timer specified by parameter \a timer_id.
@@ -300,29 +305,7 @@ void TimerDelete_example (void) {
 }
 \endcode
 */
-/// @}
 
-// these struct members must stay outside the group to avoid double entries in documentation
 /**
-\var osTimerAttr_t::attr_bits
-\details
-Reserved for future use (must be set to '0' for future compatibility).
-
-\var osTimerAttr_t::cb_mem
-\details
-Pointer to a memory for the timer control block object. Refer to \ref StaticObjectMemory for more information.
-
-Default: \token{NULL} to use \ref CMSIS_RTOS_MemoryMgmt_Automatic for the timer control block.
-
-\var osTimerAttr_t::cb_size
-\details
-The size (in bytes) of memory block passed with \ref cb_mem. For RTX, the minimum value is defined with \ref osRtxTimerCbSize (higher values are permitted).
-
-Default: \token{0} as the default is no memory provided with \ref cb_mem.
-
-\var osTimerAttr_t::name
-\details
-Pointer to a constant string with a human readable name (displayed during debugging) of the timer object.
-
-Default: \token{NULL} no name specified.
+@}
 */
