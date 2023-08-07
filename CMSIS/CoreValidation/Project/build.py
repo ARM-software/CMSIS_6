@@ -164,11 +164,11 @@ def bl_output_dir(config):
 
 
 def model_config(config):
-    return f"../layer/target/{config.device[1]}/model_config.txt"
+    return f"../Layer/Target/{config.device[1]}/model_config.txt"
 
 
 def build_dir(config):
-    return f"build/{config.device[1]}/{config.compiler}/{config.optimize}"
+    return f"build/{config.device[1]}/{config.compiler.toolchain}/{config.optimize}"
 
 
 @matrix_action

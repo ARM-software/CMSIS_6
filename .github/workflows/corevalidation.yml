@@ -1,4 +1,4 @@
-name: Build CoreValidation tests
+name: CoreValidation
 on:
   workflow_dispatch:
   pull_request:
@@ -11,8 +11,7 @@ concurrency:
   cancel-in-progress: true
 
 jobs:
-  corevalidation:
-    name: Build
+  build-and-run:
     runs-on: ubuntu-latest
     steps:
       - run: |
@@ -100,9 +99,11 @@ jobs:
           
           # Fix library search for VHT
           export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:$(dirname $(which VHT_MPS2_Cortex-M3))
+          chmod +x $(dirname $(which VHT_MPS2_Cortex-M3))/VHT_*
 
           echo "Activate Arm tool license"
-          ${AC6_TOOLCHAIN_6_20_0}/armlm activate --server https://mdk-preview.keil.arm.com --product KEMDK-COM0
+          whoami
+          ${AC6_TOOLCHAIN_6_20_0}/armlm activate --code ${{ secrets.ARM_UBL_ACTIVATION_CODE }}
 
           echo "Patch CMSIS-Toolbox"
           pushd $(dirname $(which cbuild))/../etc
@@ -115,16 +116,22 @@ jobs:
           echo "Register local CMSIS-DFP pack"
           cpackget add /home/runner/CMSIS-DFP/ARM.CMSIS_DFP.pdsc
 
-          echo "Run build script"
-          # ./build.py --verbose -m VHT -c AC6 -c GCC -c Clang build || echo "=== Something failed! ==="
+          echo "Build test projects ..."
+          ./build.py --verbose -m VHT -c AC6 -c GCC -c Clang build || echo "=== Something failed! ==="
 
-          echo "Run build script"
-          ./build.py --verbose -m VHT -c AC6 -d CM3 -o none build run || echo "=== Something failed! ==="
+          echo "Run test projects ..."
+          ./build.py --verbose -m VHT -c AC6 -c GCC -c Clang -d "CM[047]*" -d "CM3" -d "CM[23]3*" run || echo "=== Something failed! ==="
 
           echo "Deactivate Arm tool license"
-          ${AC6_TOOLCHAIN_6_20_0}/armlm deactivate --product KEMDK-COM0
+          ${AC6_TOOLCHAIN_6_20_0}/armlm deactivate --product HWSKT-EAC0
 
       - name: Perform CodeQL Analysis
-        if: always()
+        if: ${{ !cancelled() }}
         uses: github/codeql-action/analyze@v2
-    
+
+      - name: Archive Test Reports
+        if: ${{ !cancelled() }}
+        uses: actions/upload-artifact@v3
+        with:
+          name: test-results
+          path: build/*.junit

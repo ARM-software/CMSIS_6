@@ -2,7 +2,7 @@ name: Publish CoreValidation Results
 
 on:
   workflow_run:
-    workflows: ["corevalidation"]
+    workflows: ["CoreValidation"]
     # avoid running once merged on main branch, this should be run only on PRs
     branches-ignore: ["main"]
     types:
