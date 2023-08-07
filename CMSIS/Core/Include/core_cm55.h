@@ -4462,7 +4462,7 @@ __STATIC_INLINE uint32_t TZ_NVIC_GetPriority_NS(IRQn_Type IRQn)
 
 #if defined (__MPU_PRESENT) && (__MPU_PRESENT == 1U)
 
-#include "mpu_armv8.h"
+  #include "m-profile/armv8m_mpu.h"
 
 #endif
 
@@ -4470,11 +4470,11 @@ __STATIC_INLINE uint32_t TZ_NVIC_GetPriority_NS(IRQn_Type IRQn)
 
 #if defined (__PMU_PRESENT) && (__PMU_PRESENT == 1U)
 
-#include "pmu_armv8.h"
+#include "m-profile/armv8m_pmu.h"
 
 /**
   \brief   Cortex-M55 PMU events
-  \note    Architectural PMU events can be found in pmu_armv8.h
+  \note    Architectural PMU events can be found in armv8m_pmu.h
 */
 
 #define ARMCM55_PMU_ECC_ERR                          0xC000             /*!< Any ECC error */
@@ -4605,7 +4605,7 @@ __STATIC_INLINE uint32_t SCB_GetMVEType(void)
 
 #if ((defined (__ICACHE_PRESENT) && (__ICACHE_PRESENT == 1U)) || \
      (defined (__DCACHE_PRESENT) && (__DCACHE_PRESENT == 1U)))
-#include "cachel1_armv7.h"
+  #include "m-profile/armv7m_cachel1.h"
 #endif
 
 

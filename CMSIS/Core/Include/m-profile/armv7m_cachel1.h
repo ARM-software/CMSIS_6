@@ -1,5 +1,5 @@
 /******************************************************************************
- * @file     cachel1_armv7.h
+ * @file     armv7m_cachel1.h
  * @brief    CMSIS Level 1 Cache API for Armv7-M and later
  * @version  V1.0.3
  * @date     17. March 2023
@@ -28,8 +28,8 @@
   #pragma clang system_header    /* treat file as system include file */
 #endif
 
-#ifndef ARM_CACHEL1_ARMV7_H
-#define ARM_CACHEL1_ARMV7_H
+#ifndef ARM_ARMV7M_CACHEL1_H
+#define ARM_ARMV7M_CACHEL1_H
 
 /**
   \ingroup  CMSIS_Core_FunctionInterface
@@ -438,4 +438,4 @@ __STATIC_FORCEINLINE void SCB_CleanInvalidateDCache_by_Addr (volatile void *addr
 
 /*@} end of CMSIS_Core_CacheFunctions */
 
-#endif /* ARM_CACHEL1_ARMV7_H */
+#endif /* ARM_ARMV7M_CACHEL1_H */

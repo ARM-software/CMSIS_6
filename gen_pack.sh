@@ -30,7 +30,6 @@ DEFAULT_ARGS=(-c "v")
 #
 PACK_DIRS="
   CMSIS/Core
-  CMSIS/Core_A
   CMSIS/Documentation
   CMSIS/Driver
   CMSIS/RTOS2

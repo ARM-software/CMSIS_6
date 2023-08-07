@@ -427,7 +427,7 @@
     <api Cclass="Device" Cgroup="IRQ Controller" Capiversion="1.0.0" exclusive="1">
       <description>Device interrupt controller interface</description>
       <files>
-        <file category="header" name="CMSIS/Core_A/Include/irq_ctrl.h"/>
+        <file category="header" name="CMSIS/Core/Include/a-profile/irq_ctrl.h"/>
       </files>
     </api>
     <api Cclass="Device" Cgroup="OS Tick" Capiversion="1.0.1" exclusive="1">
@@ -666,7 +666,7 @@
       <files>
         <!-- CPU independent -->
         <file category="doc"     name="CMSIS/Documentation/Core_A/html/index.html"/>
-        <file category="include" name="CMSIS/Core_A/Include/"/>
+        <file category="include" name="CMSIS/Core/Include/"/>
       </files>
     </component>
 
@@ -674,7 +674,7 @@
     <component Cclass="Device" Cgroup="IRQ Controller" Csub="GIC" Capiversion="1.0.0" Cversion="1.2.0" condition="ARMv7-A Device">
       <description>IRQ Controller implementation using GIC</description>
       <files>
-        <file category="sourceC" name="CMSIS/Core_A/Source/irq_ctrl_gic.c"/>
+        <file category="sourceC" name="CMSIS/Core/Source/irq_ctrl_gic.c"/>
       </files>
     </component>
 
