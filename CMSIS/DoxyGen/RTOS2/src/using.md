@@ -7,7 +7,9 @@ This sections explains concepts for using CMSIS-RTOS2 interface. They are recomm
  - \ref SystemStartup shows the flow for kernel initialization.
  - \ref rtos_objects explains the approach to creating and using RTOS Objects.
  - \ref CMSIS_RTOS_MemoryMgmt provides information about options for memory management with CMSIS-RTOS2.
- - \subpage CMSIS_RTOS_ProcessIsolation explains the 
+ - \subpage CMSIS_RTOS_ProcessIsolation describes the CMSIS-RTOS2 concepts for protecting execution of critical software tasks against potential flaws in other parts of a program.
+
+\note For the guidance on migration from CMSIS-RTOS API v1 to CMSIS-RTOS2, see section [Detailed API Function Differences](https://arm-software.github.io/CMSIS_5/latest/RTOS2/html/os2MigrationFunctions.html) in CMSIS 5 documentation.
 
 ## Functionality overview {#rtos2_functionalities}
 
@@ -23,7 +25,7 @@ The CMSIS-RTOS2 defines APIs for common RTOS services as listed below:
  - \ref CMSIS_RTOS_MutexMgmt and \ref CMSIS_RTOS_SemaphoreMgmt are incorporated.
  - \ref CMSIS_RTOS_TimerMgmt functions are used to trigger the execution of functions.
 
-Referenced pages contain theory of operation for corresponding services as well as detailed API description with example code.
+The referenced pages contain theory of operation for corresponding services as well as detailed API description with example code.
 
 ## cmsis_os2.h API header file {#cmsis_os2_h}
 
@@ -36,6 +38,13 @@ An implementation specific header file (*rtos*.h in the picture below) provides 
 Once the files are added to a project, the user can start working with the CMSIS-RTOS functions.
 
 CMSIS-RTOS2 is especially easy use to integrate in projects that support [CMSIS-Pack format](https://open-cmsis-pack.github.io/Open-CMSIS-Pack-Spec/main/html/index.html). CMSIS-RTOS2 is provided in the [CMSIS 6 Software Pack](../../General/html/cmsis_pack.html) as a software component in form of [a central API defintion](https://open-cmsis-pack.github.io/Open-CMSIS-Pack-Spec/main/html/cp_Packs.html#cp_APIDef) It is part of component class **CMSIS** and belongs to component group **RTOS2**.
+
+## Coding Rules {#cmsis_os2_coding_rules}
+
+CMSIS-RTOS2 follows [the general CMSIS coding rules](../../General/html/index.html#coding_rules). Additionally following Namespace prefixes are used in CMSIS-RTOS2 API:
+
+- **os** for all definitions and function names. Examples: \ref osThreadPrivileged, \ref osKernelStart.
+- **os** with postfix **_t** for all typedefs. Examples: \ref osStatus_t, \ref osThreadAttr_t.
 
 ## System Startup {#SystemStartup}
 

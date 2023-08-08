@@ -33,7 +33,7 @@ Several popular RTOS kernels include support for CMSIS-RTOS2 API:
  - [CMSIS-FreeRTOS GitHub repository](https://github.com/ARM-software/CMSIS-FreeRTOS)
  - [CMSIS-FreeRTOS Documentation](https://arm-software.github.io/CMSIS-FreeRTOS/)
 
-**Zephyr RTOS**: developed under governance of Linux Foundation and includes CMSIS-RTOS2 support. See more at:
+**Zephyr RTOS**: is developed under governance of Linux Foundation and includes CMSIS-RTOS2 support. See more at:
  - [Zephyr GitHub repository](https://github.com/zephyrproject-rtos/zephyr), see folder *subsys/portability/cmsis_rtos_v2/*
  - [Zephyr documentation about CMSIS-RTOS2 support](https://docs.zephyrproject.org/latest/services/portability/cmsis_rtos_v2.html)
 
@@ -43,8 +43,8 @@ CMSIS-RTOS2 and OS Tick intefaces are actively maintained in [**CMSIS 6 GitHub r
 
 The following files relevant to CMSIS-RTOS2 are present in the **ARM::CMSIS** Pack directories:
 
-File/Directory                        | Content                                                                
-:-------------------------------------|:-----------------------------------------------------------------------
+File/Directory                        | Content
+:-------------------------------------|:----------------------------------------------------
 📂 CMSIS                              | CMSIS Base software components folder 
  ┣ 📂 Documentation/RTOS2             | A local copy of this CMSIS-RTOS2 documentation
  ┗ 📂 RTOS2                           | CMSIS-RTOS2 API header files and OS tick implementations
