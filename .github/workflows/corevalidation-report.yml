@@ -37,5 +37,5 @@ jobs:
           event_file: artifacts/EventFile/event.json
           report_individual_runs: true
           event_name: ${{ github.event.workflow_run.event }}
-          files: "artifacts/**/*.xml"
+          files: "artifacts/**/*.junit"
         
