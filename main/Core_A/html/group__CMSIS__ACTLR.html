@@ -129,8 +129,7 @@ $(document).ready(function(){initNavTree('group__CMSIS__ACTLR.html',''); initRes
 <div class="header">
   <div class="summary">
 <a href="#groups">Content</a> &#124;
-<a href="#nested-classes">Data Structures</a> &#124;
-<a href="#func-members">Functions</a>  </div>
+<a href="#nested-classes">Data Structures</a>  </div>
   <div class="headertitle"><div class="title">Auxiliary Control Register (ACTLR)<div class="ingroups"><a class="el" href="group__CMSIS__core__register.html">Core Register Access</a></div></div></div>
 </div><!--header-->
 <div class="contents">
@@ -146,18 +145,9 @@ Content</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="nested-classes" name="nested-classes"></a>
 Data Structures</h2></td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="unionACTLR__Type.html">ACTLR_Type</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Bit field declaration for ACTLR layout.  <a href="unionACTLR__Type.html#details">More...</a><br /></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structACTLR__Type.html">ACTLR_Type</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Bit field declaration for ACTLR layout.  <a href="structACTLR__Type.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
-Functions</h2></td></tr>
-<tr class="memitem:gabe7491eac1652f740050bd905baea187"><td class="memItemLeft" align="right" valign="top"><a class="el" href="cmsis__armcc_8h.html#ab904513442afdf77d4f8c74f23cbb040">__STATIC_FORCEINLINE</a> void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CMSIS__ACTLR.html#gabe7491eac1652f740050bd905baea187">__set_ACTRL</a> (uint32_t actrl)</td></tr>
-<tr class="memdesc:gabe7491eac1652f740050bd905baea187"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set ACTRL.  <br /></td></tr>
-<tr class="separator:gabe7491eac1652f740050bd905baea187"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gae75d412bfd6fe873ade00b021aefcab3"><td class="memItemLeft" align="right" valign="top"><a class="el" href="cmsis__armcc_8h.html#ab904513442afdf77d4f8c74f23cbb040">__STATIC_FORCEINLINE</a> uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CMSIS__ACTLR.html#gae75d412bfd6fe873ade00b021aefcab3">__get_ACTLR</a> (void)</td></tr>
-<tr class="memdesc:gae75d412bfd6fe873ade00b021aefcab3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get ACTLR.  <br /></td></tr>
-<tr class="separator:gae75d412bfd6fe873ade00b021aefcab3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Description</h2>
 <p>The ACTLR characteristics are differs between various Armv7-A implementations.</p>
@@ -248,53 +238,7 @@ Functions</h2></td></tr>
 <tr class="markdownTableRowEven">
 <td class="markdownTableBodyLeft">[0]   </td><td class="markdownTableBodyLeft">FW   </td><td class="markdownTableBodyLeft">Cache and TLB maintenance broadcast.   </td></tr>
 </table>
-<p>Consider using <a class="el" href="group__CMSIS__ACTLR.html#gae75d412bfd6fe873ade00b021aefcab3">__get_ACTLR</a> and <a class="el" href="group__CMSIS__ACTLR.html#gabe7491eac1652f740050bd905baea187">__set_ACTRL</a> to access ACTRL register. </p>
-<h2 class="groupheader">Function Documentation</h2>
-<a id="gae75d412bfd6fe873ade00b021aefcab3" name="gae75d412bfd6fe873ade00b021aefcab3"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#gae75d412bfd6fe873ade00b021aefcab3">&#9670;&#160;</a></span>__get_ACTLR()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="group__comp__cntrl__gr.html#gaba87361bfad2ae52cfe2f40c1a1dbf9c">__STATIC_INLINE</a> uint32_t __get_ACTLR </td>
-          <td>(</td>
-          <td class="paramtype">void&#160;</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<dl class="section return"><dt>Returns</dt><dd>Auxiliary Control register value</dd></dl>
-<p>This function returns the value of the <a class="el" href="group__CMSIS__ACTLR.html">Auxiliary Control Register (ACTLR)</a>. </p>
-
-</div>
-</div>
-<a id="gabe7491eac1652f740050bd905baea187" name="gabe7491eac1652f740050bd905baea187"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#gabe7491eac1652f740050bd905baea187">&#9670;&#160;</a></span>__set_ACTRL()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="group__comp__cntrl__gr.html#gaba87361bfad2ae52cfe2f40c1a1dbf9c">__STATIC_INLINE</a> void __set_ACTRL </td>
-          <td>(</td>
-          <td class="paramtype">uint32_t&#160;</td>
-          <td class="paramname"><em>actrl</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">actrl</td><td>Auxiliary Control Register value to set</td></tr>
-  </table>
-  </dd>
-</dl>
-<p>This function assigns the given value to the <a class="el" href="group__CMSIS__ACTLR.html">Auxiliary Control Register (ACTLR)</a>. </p>
-
-</div>
-</div>
+<p>Consider using __get_ACTLR and __set_ACTRL to access ACTRL register. </p>
 </div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->

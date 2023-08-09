@@ -127,25 +127,12 @@ $(document).ready(function(){initNavTree('group__CMSIS__TTBR.html',''); initResi
 </div>
 
 <div class="header">
-  <div class="summary">
-<a href="#func-members">Functions</a>  </div>
   <div class="headertitle"><div class="title">Translation Table Base Registers (TTBR0/TTBR1)<div class="ingroups"><a class="el" href="group__CMSIS__core__register.html">Core Register Access</a></div></div></div>
 </div><!--header-->
 <div class="contents">
 
 <p>TTBRn holds the base address of translation table n, and information about the memory it occupies.  
-<a href="#details">More...</a></p>
-<table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
-Functions</h2></td></tr>
-<tr class="memitem:ga678997bc01f6d8d48b1d407cec24809d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="cmsis__armcc_8h.html#ab904513442afdf77d4f8c74f23cbb040">__STATIC_FORCEINLINE</a> uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CMSIS__TTBR.html#ga678997bc01f6d8d48b1d407cec24809d">__get_TTBR0</a> (void)</td></tr>
-<tr class="memdesc:ga678997bc01f6d8d48b1d407cec24809d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get TTBR0.  <br /></td></tr>
-<tr class="separator:ga678997bc01f6d8d48b1d407cec24809d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gad2ccad052f77c18897c5ceaaf307711e"><td class="memItemLeft" align="right" valign="top"><a class="el" href="cmsis__armcc_8h.html#ab904513442afdf77d4f8c74f23cbb040">__STATIC_FORCEINLINE</a> void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CMSIS__TTBR.html#gad2ccad052f77c18897c5ceaaf307711e">__set_TTBR0</a> (uint32_t ttbr0)</td></tr>
-<tr class="memdesc:gad2ccad052f77c18897c5ceaaf307711e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set TTBR0.  <br /></td></tr>
-<tr class="separator:gad2ccad052f77c18897c5ceaaf307711e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table>
-<a name="details" id="details"></a><h2 class="groupheader">Description</h2>
+</p>
 <p><b>32-bit TTBR format</b> </p><table class="markdownTable">
 <tr class="markdownTableHead">
 <th class="markdownTableHeadLeft">Bits   </th><th class="markdownTableHeadLeft">Name   </th><th class="markdownTableHeadLeft">Function    </th></tr>
@@ -184,55 +171,7 @@ The width of TTBR1 BADDR field is fixed at <code>x=14</code>.</dd></dl>
 <td class="markdownTableBodyLeft">[x-1:0]   </td><td class="markdownTableBodyLeft">-   </td><td class="markdownTableBodyLeft">Reserved.   </td></tr>
 </table>
 <dl class="section note"><dt>Note</dt><dd>The width of TBBR0/TBBR1 BADDR fields depends on the settings in TTBCR T0SZ/T1SZ fields respectively, giving <code>x=14-TnSZ</code>.</dd></dl>
-<p>Consider using <a class="el" href="group__CMSIS__TTBR.html#ga678997bc01f6d8d48b1d407cec24809d">__get_TTBR0</a> and <a class="el" href="group__CMSIS__TTBR.html#gad2ccad052f77c18897c5ceaaf307711e">__set_TTBR0</a> for accessing TTBR0 register. </p>
-<h2 class="groupheader">Function Documentation</h2>
-<a id="ga678997bc01f6d8d48b1d407cec24809d" name="ga678997bc01f6d8d48b1d407cec24809d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga678997bc01f6d8d48b1d407cec24809d">&#9670;&#160;</a></span>__get_TTBR0()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="group__comp__cntrl__gr.html#gaba87361bfad2ae52cfe2f40c1a1dbf9c">__STATIC_INLINE</a> uint32_t __get_TTBR0 </td>
-          <td>(</td>
-          <td class="paramtype">void&#160;</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<p>This function returns the value of the Translation Table Base Register 0.</p>
-<dl class="section return"><dt>Returns</dt><dd>Translation Table Base Register 0 value</dd></dl>
-<p>This function returns the value of the Translation Table Base Register 0. </p>
-
-</div>
-</div>
-<a id="gad2ccad052f77c18897c5ceaaf307711e" name="gad2ccad052f77c18897c5ceaaf307711e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#gad2ccad052f77c18897c5ceaaf307711e">&#9670;&#160;</a></span>__set_TTBR0()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="group__comp__cntrl__gr.html#gaba87361bfad2ae52cfe2f40c1a1dbf9c">__STATIC_INLINE</a> void __set_TTBR0 </td>
-          <td>(</td>
-          <td class="paramtype">uint32_t&#160;</td>
-          <td class="paramname"><em>ttbr0</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<p>This function assigns the given value to the Translation Table Base Register 0.</p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">ttbr0</td><td>Translation Table Base Register 0 value to set</td></tr>
-  </table>
-  </dd>
-</dl>
-<p>This function assigns the given value to the Translation Table Base Register 0. </p>
-
-</div>
-</div>
+<p>Consider using __get_TTBR0 and __set_TTBR0 for accessing TTBR0 register. </p>
 </div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->

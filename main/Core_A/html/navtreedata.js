@@ -37,9 +37,7 @@ var NAVTREE =
 
 var NAVTREEINDEX =
 [
-"coreMISRA_Exceptions_pg.html",
-"group__CMSIS__SCTLR__BITS.html#ga2be72788d984153ded81711e20fd2d33",
-"index.html#ref_v7A"
+"coreMISRA_Exceptions_pg.html"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

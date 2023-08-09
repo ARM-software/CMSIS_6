@@ -139,8 +139,8 @@ $(document).ready(function(){initNavTree('using_pg.html',''); initResizable(); }
 </ul>
 <dl class="section note"><dt>Note</dt><dd>The files <a class="el" href="startup_c_pg.html">Startup File startup_&lt;device&gt;.c</a>, <a class="el" href="system_c_pg.html">System Configuration Files system_&lt;device&gt;.c and system_&lt;device&gt;.h</a>, <a class="el" href="mem_h_pg.html">Memory Configuration Files mem_&lt;device&gt;.h</a>, and <a class="el" href="mmu_c_pg.html">Memory Management Unit Files mmu_&lt;device&gt;.c</a> may require application specific adaptations and therefore should be copied into the application project folder prior configuration. The <a class="el" href="device_h_pg.html">Device Header File &lt;device.h&gt;</a> is included in all source files that need device access and can be stored on a central include folder that is generic for all projects.</dd></dl>
 <p>The Reset_Handler defined in <a class="el" href="startup_c_pg.html">Startup File startup_&lt;device&gt;.c</a> is executed after reset. The default initialization sequence is</p><ul>
-<li>set the vector base address register (<a class="el" href="group__CMSIS__VBAR.html#ga582f9a60f7b090ae5a4e8f60ef3b79f8">__set_VBAR</a>),</li>
-<li>set stacks for each exception mode (<a class="el" href="cmsis__armcc_8h.html#a306b0a932918f2243a40d4e855503be2">__set_mode</a>, <a class="el" href="group__CMSIS__SP.html#ga6af63cb939bd108aef1c0f12622350cb">__set_SP</a>),</li>
+<li>set the vector base address register (__set_VBAR),</li>
+<li>set stacks for each exception mode (__set_mode, __set_SP),</li>
 <li>call <a class="el" href="group__system__init__gr.html#ga93f514700ccf00d08dbdcff7f1224eb2">SystemInit</a>.</li>
 </ul>
 <p>After the system initialization control is transferred to the C/C++ run-time library which performs initialization and calls the <b>main</b> function in the user code. In addition the <a class="el" href="startup_c_pg.html">Startup File startup_&lt;device&gt;.c</a> contains a weak default handler implementation for every exception. It may also contain stack and heap configurations for the user application.</p>

@@ -129,8 +129,7 @@ $(document).ready(function(){initNavTree('group__CMSIS__DFSR.html',''); initResi
 <div class="header">
   <div class="summary">
 <a href="#groups">Content</a> &#124;
-<a href="#nested-classes">Data Structures</a> &#124;
-<a href="#func-members">Functions</a>  </div>
+<a href="#nested-classes">Data Structures</a>  </div>
   <div class="headertitle"><div class="title">Data Fault Status Register (DFSR)<div class="ingroups"><a class="el" href="group__CMSIS__core__register.html">Core Register Access</a></div></div></div>
 </div><!--header-->
 <div class="contents">
@@ -146,18 +145,9 @@ Content</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="nested-classes" name="nested-classes"></a>
 Data Structures</h2></td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="unionDFSR__Type.html">DFSR_Type</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Bit field declaration for DFSR layout.  <a href="unionDFSR__Type.html#details">More...</a><br /></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structDFSR__Type.html">DFSR_Type</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Bit field declaration for DFSR layout.  <a href="structDFSR__Type.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
-Functions</h2></td></tr>
-<tr class="memitem:ga9897e96a6ccb50199d4968fd45ab7962"><td class="memItemLeft" align="right" valign="top"><a class="el" href="cmsis__armcc_8h.html#ab904513442afdf77d4f8c74f23cbb040">__STATIC_FORCEINLINE</a> uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CMSIS__DFSR.html#ga9897e96a6ccb50199d4968fd45ab7962">__get_DFSR</a> (void)</td></tr>
-<tr class="memdesc:ga9897e96a6ccb50199d4968fd45ab7962"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get DFSR.  <br /></td></tr>
-<tr class="separator:ga9897e96a6ccb50199d4968fd45ab7962"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga824a3e4ae371ef38641375f9fa4cc29c"><td class="memItemLeft" align="right" valign="top"><a class="el" href="cmsis__armcc_8h.html#ab904513442afdf77d4f8c74f23cbb040">__STATIC_FORCEINLINE</a> void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CMSIS__DFSR.html#ga824a3e4ae371ef38641375f9fa4cc29c">__set_DFSR</a> (uint32_t dfsr)</td></tr>
-<tr class="memdesc:ga824a3e4ae371ef38641375f9fa4cc29c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set DFSR.  <br /></td></tr>
-<tr class="separator:ga824a3e4ae371ef38641375f9fa4cc29c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Description</h2>
 <p><b>DFSR format when using the Short-descriptor translation table format</b></p>
@@ -204,53 +194,7 @@ Functions</h2></td></tr>
 <tr class="markdownTableRowEven">
 <td class="markdownTableBodyLeft">[5:0]   </td><td class="markdownTableBodyLeft">STATUS   </td><td class="markdownTableBodyLeft">Fault status bits.   </td></tr>
 </table>
-<p>Consider <a class="el" href="group__CMSIS__DFSR.html#ga9897e96a6ccb50199d4968fd45ab7962">__get_DFSR</a> and <a class="el" href="group__CMSIS__DFSR.html#ga824a3e4ae371ef38641375f9fa4cc29c">__set_DFSR</a> to access this register. </p>
-<h2 class="groupheader">Function Documentation</h2>
-<a id="ga9897e96a6ccb50199d4968fd45ab7962" name="ga9897e96a6ccb50199d4968fd45ab7962"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga9897e96a6ccb50199d4968fd45ab7962">&#9670;&#160;</a></span>__get_DFSR()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="group__comp__cntrl__gr.html#gaba87361bfad2ae52cfe2f40c1a1dbf9c">__STATIC_INLINE</a> uint32_t __get_DFSR </td>
-          <td>(</td>
-          <td class="paramtype">void&#160;</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<dl class="section return"><dt>Returns</dt><dd>Data Fault Status Register value</dd></dl>
-<p>This function returns the current value of the <a class="el" href="group__CMSIS__DFSR.html">Data Fault Status Register (DFSR)</a>. </p>
-
-</div>
-</div>
-<a id="ga824a3e4ae371ef38641375f9fa4cc29c" name="ga824a3e4ae371ef38641375f9fa4cc29c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga824a3e4ae371ef38641375f9fa4cc29c">&#9670;&#160;</a></span>__set_DFSR()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="group__comp__cntrl__gr.html#gaba87361bfad2ae52cfe2f40c1a1dbf9c">__STATIC_INLINE</a> void __set_DFSR </td>
-          <td>(</td>
-          <td class="paramtype">uint32_t&#160;</td>
-          <td class="paramname"><em>dfsr</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">dfsr</td><td>Data Fault Status value to set</td></tr>
-  </table>
-  </dd>
-</dl>
-<p>This function assigns the given value to the <a class="el" href="group__CMSIS__DFSR.html">Data Fault Status Register (DFSR)</a>. </p>
-
-</div>
-</div>
+<p>Consider __get_DFSR and __set_DFSR to access this register. </p>
 </div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->

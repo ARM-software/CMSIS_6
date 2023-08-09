@@ -127,57 +127,15 @@ $(document).ready(function(){initNavTree('group__irq__priority__defs.html',''); 
 </div>
 
 <div class="header">
-  <div class="summary">
-<a href="#define-members">Macros</a>  </div>
   <div class="headertitle"><div class="title">IRQ Priority Bit-Masks<div class="ingroups"><a class="el" href="group__irq__ctrl__gr.html">Interrupts and Exceptions</a></div></div></div>
 </div><!--header-->
 <div class="contents">
 
 <p>Definitions used by interrupt priority functions.  
-<a href="#details">More...</a></p>
-<table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="define-members" name="define-members"></a>
-Macros</h2></td></tr>
-<tr class="memitem:gabaa4e91ab84dbe5f669080af6d0d81fa"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__irq__priority__defs.html#gabaa4e91ab84dbe5f669080af6d0d81fa">IRQ_PRIORITY_Msk</a>&#160;&#160;&#160;(0x0000FFFFUL)</td></tr>
-<tr class="memdesc:gabaa4e91ab84dbe5f669080af6d0d81fa"><td class="mdescLeft">&#160;</td><td class="mdescRight">Interrupt priority value bit-mask.  <br /></td></tr>
-<tr class="separator:gabaa4e91ab84dbe5f669080af6d0d81fa"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga47b19866dc05c58c6923c313b371f881"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__irq__priority__defs.html#ga47b19866dc05c58c6923c313b371f881">IRQ_PRIORITY_ERROR</a>&#160;&#160;&#160;(0x80000000UL)</td></tr>
-<tr class="memdesc:ga47b19866dc05c58c6923c313b371f881"><td class="mdescLeft">&#160;</td><td class="mdescRight">Bit indicating priority value error.  <br /></td></tr>
-<tr class="separator:ga47b19866dc05c58c6923c313b371f881"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table>
-<a name="details" id="details"></a><h2 class="groupheader">Description</h2>
+</p>
 <p>The following values are used by the interrupt priority functions.</p>
-<p>The value of <b>IRQ_PRIORITY_Msk</b> specifies maximum interrupt priority value and can be used as parameter for the functions <a class="el" href="group__irq__ctrl__gr.html#ga0a6a18c8fa2bc3183598439b56c507c3">IRQ_GetPriority</a> and <a class="el" href="group__irq__ctrl__gr.html#gabaa4074988ea9e30523f7ed5a86953c2">IRQ_SetPriorityGroupBits</a> to retrieve implementation specific priority values.</p>
-<p>The value of <b>IRQ_PRIORITY_ERROR</b> is used by functions <a class="el" href="group__irq__ctrl__gr.html#ga0a6a18c8fa2bc3183598439b56c507c3">IRQ_GetPriority</a>, IRQ_GetPriorityMask and <a class="el" href="group__irq__ctrl__gr.html#ga061da812739bdba1e32765ed6501b83c">IRQ_GetPriorityGroupBits</a> to signal function execution error. </p>
-<h2 class="groupheader">Macro Definition Documentation</h2>
-<a id="ga47b19866dc05c58c6923c313b371f881" name="ga47b19866dc05c58c6923c313b371f881"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga47b19866dc05c58c6923c313b371f881">&#9670;&#160;</a></span>IRQ_PRIORITY_ERROR</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define IRQ_PRIORITY_ERROR&#160;&#160;&#160;(0x80000000UL)</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="gabaa4e91ab84dbe5f669080af6d0d81fa" name="gabaa4e91ab84dbe5f669080af6d0d81fa"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#gabaa4e91ab84dbe5f669080af6d0d81fa">&#9670;&#160;</a></span>IRQ_PRIORITY_Msk</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define IRQ_PRIORITY_Msk&#160;&#160;&#160;(0x0000FFFFUL)</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
+<p>The value of <b>IRQ_PRIORITY_Msk</b> specifies maximum interrupt priority value and can be used as parameter for the functions IRQ_GetPriority and IRQ_SetPriorityGroupBits to retrieve implementation specific priority values.</p>
+<p>The value of <b>IRQ_PRIORITY_ERROR</b> is used by functions IRQ_GetPriority, IRQ_GetPriorityMask and IRQ_GetPriorityGroupBits to signal function execution error. </p>
 </div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->

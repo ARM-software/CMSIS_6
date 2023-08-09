@@ -127,25 +127,12 @@ $(document).ready(function(){initNavTree('group__CMSIS__CNTP__CTL.html',''); ini
 </div>
 
 <div class="header">
-  <div class="summary">
-<a href="#func-members">Functions</a>  </div>
   <div class="headertitle"><div class="title">PL1 Physical Timer Control register (CNTP_CTL)<div class="ingroups"><a class="el" href="group__CMSIS__core__register.html">Core Register Access</a></div></div></div>
 </div><!--header-->
 <div class="contents">
 
 <p>The control register for the physical timer.  
-<a href="#details">More...</a></p>
-<table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
-Functions</h2></td></tr>
-<tr class="memitem:ga96a537cd4e121d58aa9f7d2bfccaa66d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="cmsis__armcc_8h.html#ab904513442afdf77d4f8c74f23cbb040">__STATIC_FORCEINLINE</a> void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CMSIS__CNTP__CTL.html#ga96a537cd4e121d58aa9f7d2bfccaa66d">__set_CNTP_CTL</a> (uint32_t value)</td></tr>
-<tr class="memdesc:ga96a537cd4e121d58aa9f7d2bfccaa66d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set CNTP_CTL.  <br /></td></tr>
-<tr class="separator:ga96a537cd4e121d58aa9f7d2bfccaa66d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gaca4b93d7543b49c1d7e6b4e1c1ff3768"><td class="memItemLeft" align="right" valign="top"><a class="el" href="cmsis__armcc_8h.html#ab904513442afdf77d4f8c74f23cbb040">__STATIC_FORCEINLINE</a> uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CMSIS__CNTP__CTL.html#gaca4b93d7543b49c1d7e6b4e1c1ff3768">__get_CNTP_CTL</a> (void)</td></tr>
-<tr class="memdesc:gaca4b93d7543b49c1d7e6b4e1c1ff3768"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get CNTP_CTL register.  <br /></td></tr>
-<tr class="separator:gaca4b93d7543b49c1d7e6b4e1c1ff3768"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table>
-<a name="details" id="details"></a><h2 class="groupheader">Description</h2>
+</p>
 <table class="markdownTable">
 <tr class="markdownTableHead">
 <th class="markdownTableHeadLeft">Bits   </th><th class="markdownTableHeadLeft">Name   </th><th class="markdownTableHeadLeft">Function    </th></tr>
@@ -158,55 +145,8 @@ Functions</h2></td></tr>
 <tr class="markdownTableRowEven">
 <td class="markdownTableBodyLeft">[0]   </td><td class="markdownTableBodyLeft">ENABLE   </td><td class="markdownTableBodyLeft">Enables the timer.   </td></tr>
 </table>
-<p>Consider <a class="el" href="group__CMSIS__CNTP__CTL.html#gaca4b93d7543b49c1d7e6b4e1c1ff3768">__get_CNTP_CTL</a> and <a class="el" href="group__CMSIS__CNTP__CTL.html#ga96a537cd4e121d58aa9f7d2bfccaa66d">__set_CNTP_CTL</a> to access this register.</p>
+<p>Consider __get_CNTP_CTL and __set_CNTP_CTL to access this register.</p>
 <p>Consider using <a class="el" href="group__PL1__timer__functions.html">Generic Physical Timer Functions</a> for controlling the PL1 Timer instead. </p>
-<h2 class="groupheader">Function Documentation</h2>
-<a id="gaca4b93d7543b49c1d7e6b4e1c1ff3768" name="gaca4b93d7543b49c1d7e6b4e1c1ff3768"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#gaca4b93d7543b49c1d7e6b4e1c1ff3768">&#9670;&#160;</a></span>__get_CNTP_CTL()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="group__comp__cntrl__gr.html#gaba87361bfad2ae52cfe2f40c1a1dbf9c">__STATIC_INLINE</a> uint32_t __get_CNTP_CTL </td>
-          <td>(</td>
-          <td class="paramtype">void&#160;</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<dl class="section return"><dt>Returns</dt><dd>CNTP_CTL Register value</dd></dl>
-<p>This function returns the value of the PL1 Physical Timer Control Register. (CNTP_CTL). </p>
-
-</div>
-</div>
-<a id="ga96a537cd4e121d58aa9f7d2bfccaa66d" name="ga96a537cd4e121d58aa9f7d2bfccaa66d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga96a537cd4e121d58aa9f7d2bfccaa66d">&#9670;&#160;</a></span>__set_CNTP_CTL()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="group__comp__cntrl__gr.html#gaba87361bfad2ae52cfe2f40c1a1dbf9c">__STATIC_INLINE</a> void __set_CNTP_CTL </td>
-          <td>(</td>
-          <td class="paramtype">uint32_t&#160;</td>
-          <td class="paramname"><em>value</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<p>This function assigns the given value to PL1 Physical Timer Control Register (CNTP_CTL).</p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">value</td><td>CNTP_CTL Register value to set</td></tr>
-  </table>
-  </dd>
-</dl>
-<p>This function assigns the given value to PL1 Physical Timer Control Register (CNTP_CTL). </p>
-
-</div>
-</div>
 </div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
