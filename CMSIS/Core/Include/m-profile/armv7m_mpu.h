@@ -1,5 +1,5 @@
 /******************************************************************************
- * @file     mpu_armv7.h
+ * @file     armv7m_mpu.h
  * @brief    CMSIS MPU API for Armv7-M MPU
  * @version  V5.1.2
  * @date     25. May 2020

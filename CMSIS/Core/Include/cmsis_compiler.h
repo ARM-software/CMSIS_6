@@ -31,34 +31,74 @@
  * Arm Compiler above 6.10.1 (armclang)
  */
 #if defined (__ARMCC_VERSION) && (__ARMCC_VERSION >= 6100100)
-  #include "cmsis_armclang.h"
+  #if defined __CORTEX_A
+    #include "./a-profile/cmsis_armclang_a.h"
+  #elif defined __CORTEX_R
+    #include "./r-profile/cmsis_armclang_r.h"
+  #elif defined __CORTEX_M
+    #include "./m-profile/cmsis_armclang_m.h"
+  #else
+    #error "Unknown architecture"
+  #endif
 
 /*
  * TI Arm Clang Compiler (tiarmclang)
  */
 #elif defined (__ti__)
-  #include "cmsis_tiarmclang.h"
+  #if defined __CORTEX_A
+    #error "Core-A is not supported for this compiler"
+  #elif defined __CORTEX_R
+    #error "Core-R is not supported for this compiler"
+  #elif defined __CORTEX_M
+    #include "m-profile/cmsis_tiarmclang_m.h"
+  #else
+    #error "Unknown architecture"
+  #endif
 
 
 /*
  * LLVM/Clang Compiler
  */
 #elif defined ( __clang__ )
-  #include "cmsis_clang.h"
+  #if defined __CORTEX_A
+    #include "a-profile/cmsis_clang_a.h"
+  #elif defined __CORTEX_R
+    #include "r-profile/cmsis_clang_r.h"
+  #elif defined __CORTEX_M
+    #include "m-profile/cmsis_clang_m.h"
+  #else
+    #error "Unknown architecture"
+  #endif
 
 
 /*
  * GNU Compiler
  */
 #elif defined ( __GNUC__ )
-  #include "cmsis_gcc.h"
+  #if defined __CORTEX_A
+    #include "a-profile/cmsis_gcc_a.h"
+  #elif defined __CORTEX_R
+    #include "r-profile/cmsis_gcc_r.h"
+  #elif defined __CORTEX_M
+    #include "m-profile/cmsis_gcc_m.h"
+  #else
+    #error "Unknown architecture"
+  #endif
 
 
 /*
  * IAR Compiler
  */
 #elif defined ( __ICCARM__ )
-  #include <cmsis_iccarm.h>
+  #if defined __CORTEX_A
+    #include "a-profile/cmsis_iccarm_a.h"
+  #elif defined __CORTEX_R
+    #include "r-profile/cmsis_iccarm_r.h"
+  #elif defined __CORTEX_M
+    #include "m-profile/cmsis_iccarm_m.h"
+  #else
+    #error "Unknown architecture"
+  #endif
 
 
 /*
@@ -195,7 +235,7 @@
     #define __UNALIGNED_UINT32_READ(addr)          (((const struct T_UINT32_READ *)(const void *)(addr))->v)
   #endif
   #ifndef   __ALIGNED
-    #define __ALIGNED(x)              __align(x)
+    #define __ALIGNED(x)                           __align(x)
   #endif
   #ifndef   __RESTRICT
     #warning No compiler specific solution for __RESTRICT. __RESTRICT is ignored.
