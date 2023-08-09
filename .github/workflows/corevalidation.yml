@@ -2,7 +2,6 @@ name: CoreValidation
 on:
   workflow_dispatch:
   pull_request:
-    branches: [main]
   push:
     branches: [main]
   
@@ -12,11 +11,17 @@ concurrency:
 
 jobs:
   build-and-run:
+    
     strategy:
       fail-fast: true
       matrix:
         compiler: [AC6, GCC, Clang]
+    
     runs-on: ubuntu-latest
+
+    env:
+      ARM_UBL_ACTIVATION_CODE: ${{ secrets.ARM_UBL_ACTIVATION_CODE }}
+
     steps:
       - run: |
           sudo add-apt-repository ppa:deadsnakes/ppa
@@ -108,7 +113,11 @@ jobs:
         run: |
           . /home/runner/.vcpkg/vcpkg-init
           vcpkg activate
-          armlm activate --code ${{ secrets.ARM_UBL_ACTIVATION_CODE }}
+          if [[ -n "${{ env.ARM_UBL_ACTIVATION_CODE }}" ]]; then
+            armlm activate --code ${{ env.ARM_UBL_ACTIVATION_CODE }}
+          else
+            armlm activate --server https://mdk-preview.keil.arm.com --product KEMDK-COM0
+          fi
         
       - name: Initialize CodeQL
         if: matrix.compiler == 'GCC'
@@ -130,20 +139,21 @@ jobs:
           cpackget add /home/runner/CMSIS-DFP/ARM.CMSIS_DFP.pdsc
 
           echo "Build test projects ..."
-          ./build.py --verbose -m VHT -c ${{ matrix.compiler }} build || echo "=== Something failed! ==="
+          ./build.py --verbose -m VHT -c ${{ matrix.compiler }} build || echo "::warning::=== Some configurations failed to build! ==="
 
       - name: Perform CodeQL Analysis
         if: ${{ !cancelled() && matrix.compiler == 'GCC' }}
         uses: github/codeql-action/analyze@v2
 
       - name: Execute
+        if: ${{ env.ARM_UBL_ACTIVATION_CODE }}
         working-directory: ./CMSIS/CoreValidation/Project
         run: |
           . /home/runner/.vcpkg/vcpkg-init
           vcpkg activate
       
           echo "Run test projects ..."
-          ./build.py --verbose -m VHT -c ${{ matrix.compiler }} -d "CM[047]*" -d "CM3" -d "CM[23]3*" run || echo "=== Something failed! ==="
+          ./build.py --verbose -m VHT -c ${{ matrix.compiler }} -d "CM[047]*" -d "CM3" -d "CM[23]3*" run || echo "::warning::==== Some configurations failed to run! ==="
 
       - name: Deactivate Arm tool license
         if: always()
@@ -151,10 +161,14 @@ jobs:
         run: |
           . /home/runner/.vcpkg/vcpkg-init
           vcpkg activate
-          armlm deactivate --product HWSKT-EAC0
+          if [[ -n "${{ env.ARM_UBL_ACTIVATION_CODE }}" ]]; then
+            armlm deactivate --code ${{ env.ARM_UBL_ACTIVATION_CODE }}
+          else
+            armlm deactivate --product KEMDK-COM0
+          fi
 
       - name: Archive Test Reports
-        if: ${{ !cancelled() }}
+        if: ${{ !cancelled() && env.ARM_UBL_ACTIVATION_CODE }}
         uses: actions/upload-artifact@v3
         with:
           name: test-results-${{ matrix.compiler }}
