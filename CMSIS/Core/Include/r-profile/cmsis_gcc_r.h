@@ -1,5 +1,11 @@
+/**************************************************************************//**
+ * @file     cmsis_gcc_r.h
+ * @brief    CMSIS compiler GCC header file
+ * @version  V6.0.0
+ * @date     4. August 2024
+ ******************************************************************************/
 /*
- * Copyright (c) 2009-2024 Arm Limited. All rights reserved.
+ * Copyright (c) 2009-2023 Arm Limited. All rights reserved.
  *
  * SPDX-License-Identifier: Apache-2.0
  *
@@ -16,8 +22,8 @@
  * limitations under the License.
  */
 
-#ifndef __CMSIS_GCC_A_H
-#define __CMSIS_GCC_A_H
+#ifndef __CMSIS_GCC_R_H
+#define __CMSIS_GCC_R_H
 
 #ifndef __CMSIS_GCC_H
   #error "This file must not be included directly"
@@ -150,74 +156,8 @@ __STATIC_FORCEINLINE void __set_FPEXC(uint32_t fpexc)
 #define __get_CP64(cp, op1, Rt, CRm)         __ASM volatile("MRRC p" # cp ", " # op1 ", %Q0, %R0, c" # CRm  : "=r" (Rt) : : "memory" )
 #define __set_CP64(cp, op1, Rt, CRm)         __ASM volatile("MCRR p" # cp ", " # op1 ", %Q0, %R0, c" # CRm  : : "r" (Rt) : "memory" )
 
-#include "cmsis_cp15.h"
-
-/** \brief  Enable Floating Point Unit
-
-  Critical section, called from undef handler, so systick is disabled
- */
-__STATIC_INLINE void __FPU_Enable(void)
-{
-  // Permit access to VFP/NEON, registers by modifying CPACR
-  const uint32_t cpacr = __get_CPACR();
-  __set_CPACR(cpacr | 0x00F00000ul);
-  __ISB();
-
-  // Enable VFP/NEON
-  const uint32_t fpexc = __get_FPEXC();
-  __set_FPEXC(fpexc | 0x40000000ul);
-
-  __ASM volatile(
-    // Initialise VFP/NEON registers to 0
-    "        MOV     R2,#0             \n"
-
-    // Initialise D16 registers to 0
-    "        VMOV    D0, R2,R2         \n"
-    "        VMOV    D1, R2,R2         \n"
-    "        VMOV    D2, R2,R2         \n"
-    "        VMOV    D3, R2,R2         \n"
-    "        VMOV    D4, R2,R2         \n"
-    "        VMOV    D5, R2,R2         \n"
-    "        VMOV    D6, R2,R2         \n"
-    "        VMOV    D7, R2,R2         \n"
-    "        VMOV    D8, R2,R2         \n"
-    "        VMOV    D9, R2,R2         \n"
-    "        VMOV    D10,R2,R2         \n"
-    "        VMOV    D11,R2,R2         \n"
-    "        VMOV    D12,R2,R2         \n"
-    "        VMOV    D13,R2,R2         \n"
-    "        VMOV    D14,R2,R2         \n"
-    "        VMOV    D15,R2,R2         \n"
-
-#if (defined(__ARM_NEON) && (__ARM_NEON == 1))
-    // Initialise D32 registers to 0
-    "        VMOV    D16,R2,R2         \n"
-    "        VMOV    D17,R2,R2         \n"
-    "        VMOV    D18,R2,R2         \n"
-    "        VMOV    D19,R2,R2         \n"
-    "        VMOV    D20,R2,R2         \n"
-    "        VMOV    D21,R2,R2         \n"
-    "        VMOV    D22,R2,R2         \n"
-    "        VMOV    D23,R2,R2         \n"
-    "        VMOV    D24,R2,R2         \n"
-    "        VMOV    D25,R2,R2         \n"
-    "        VMOV    D26,R2,R2         \n"
-    "        VMOV    D27,R2,R2         \n"
-    "        VMOV    D28,R2,R2         \n"
-    "        VMOV    D29,R2,R2         \n"
-    "        VMOV    D30,R2,R2         \n"
-    "        VMOV    D31,R2,R2         \n"
-#endif
-    : : : "cc", "r2"
-  );
-
-  // Initialise FPSCR to a known state
-  const uint32_t fpscr = __get_FPSCR();
-  __set_FPSCR(fpscr & 0x00086060ul);
-}
-
 /*@} end of group CMSIS_Core_intrinsics */
 
 #pragma GCC diagnostic pop
 
-#endif /* __CMSIS_GCC_A_H */
+#endif /* __CMSIS_GCC_R_H */
