@@ -29,59 +29,27 @@
  * Arm Compiler above 6.10.1 (armclang)
  */
 #if defined (__ARMCC_VERSION) && (__ARMCC_VERSION >= 6100100)
-  #if __ARM_ARCH_PROFILE == 'A'
-    #include "./a-profile/cmsis_armclang_a.h"
-  #elif __ARM_ARCH_PROFILE == 'R'
-    #include "./r-profile/cmsis_armclang_r.h"
-  #elif __ARM_ARCH_PROFILE == 'M'
-    #include "./m-profile/cmsis_armclang_m.h"
-  #else
-    #error "Unknown Arm architecture profile"
-  #endif
+  #include "cmsis_armclang.h"
 
 /*
  * TI Arm Clang Compiler (tiarmclang)
  */
 #elif defined (__ti__)
-  #if __ARM_ARCH_PROFILE == 'A'
-    #error "Core-A is not supported for this compiler"
-  #elif __ARM_ARCH_PROFILE == 'R'
-    #error "Core-R is not supported for this compiler"
-  #elif __ARM_ARCH_PROFILE == 'M'
-    #include "m-profile/cmsis_tiarmclang_m.h"
-  #else
-    #error "Unknown Arm architecture profile"
-  #endif
+  #include "cmsis_tiarmclang.h"
 
 
 /*
  * LLVM/Clang Compiler
  */
 #elif defined ( __clang__ )
-  #if __ARM_ARCH_PROFILE == 'A'
-    #include "a-profile/cmsis_clang_a.h"
-  #elif __ARM_ARCH_PROFILE == 'R'
-    #include "r-profile/cmsis_clang_r.h"
-  #elif __ARM_ARCH_PROFILE == 'M'
-    #include "m-profile/cmsis_clang_m.h"
-  #else
-    #error "Unknown Arm architecture profile"
-  #endif
+  #include "cmsis_clang.h"
 
 
 /*
  * GNU Compiler
  */
 #elif defined ( __GNUC__ )
-  #if __ARM_ARCH_PROFILE == 'A'
-    #include "a-profile/cmsis_gcc_a.h"
-  #elif __ARM_ARCH_PROFILE == 'R'
-    #include "r-profile/cmsis_gcc_r.h"
-  #elif __ARM_ARCH_PROFILE == 'M'
-    #include "m-profile/cmsis_gcc_m.h"
-  #else
-    #error "Unknown Arm architecture profile"
-  #endif
+  #include "cmsis_gcc.h"
 
 
 /*
