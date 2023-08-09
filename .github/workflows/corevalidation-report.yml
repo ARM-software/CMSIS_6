@@ -2,7 +2,7 @@ name: Publish CoreValidation Results
 
 on:
   workflow_run:
-    workflows: ["corevalidation"]
+    workflows: ["CoreValidation"]
     # avoid running once merged on main branch, this should be run only on PRs
     branches-ignore: ["main"]
     types:
@@ -37,5 +37,5 @@ jobs:
           event_file: artifacts/EventFile/event.json
           report_individual_runs: true
           event_name: ${{ github.event.workflow_run.event }}
-          files: "artifacts/**/*.xml"
+          files: "artifacts/**/*.junit"
         

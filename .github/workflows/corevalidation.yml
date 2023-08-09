@@ -1,4 +1,4 @@
-name: Build CoreValidation tests
+name: CoreValidation
 on:
   workflow_dispatch:
   pull_request:
@@ -11,10 +11,17 @@ concurrency:
   cancel-in-progress: true
 
 jobs:
-  corevalidation:
-    name: Build
+  build-and-run:
+    strategy:
+      fail-fast: true
+      matrix:
+        compiler: [AC6, GCC, Clang]
     runs-on: ubuntu-latest
     steps:
+      - run: |
+          sudo add-apt-repository ppa:deadsnakes/ppa
+          sudo apt-get install libpython3.9
+
       - uses: actions/checkout@v3
 
       - working-directory: /home/runner
@@ -34,22 +41,30 @@ jobs:
           python-version: '3.10'    
           cache: 'pip'
 
+      - name: Python requirements
+        run: |
+          pip install -r ./CMSIS/CoreValidation/Project/requirements.txt
+
       - name: Cache vcpkg
         uses: actions/cache@v3
         with:
-          key: vcpkg-${{ runner.os }}-${{ runner.arch }}-${{ github.run_id }}
+          key: vcpkg-${{ runner.os }}-${{ runner.arch }}-${{ github.run_id }}-${{ matrix.compiler }}
           restore-keys: |
             vcpkg-${{ runner.os }}-${{ runner.arch }}-
-            vcpkg
           path: /home/runner/.vcpkg
 
       - name: Cache Arm Compiler 6
+        if: matrix.compiler == 'AC6'
         uses: actions/cache@v3
         with:
-          key: armcompiler-6.20.0
+          key: armcompiler-6.20.0-${{ runner.os }}-${{ runner.arch }}-${{ github.run_id }}-${{ matrix.compiler }}
+          restore-keys: |
+            armcompiler-6.20.0-${{ runner.os }}-${{ runner.arch }}-
+            armcompiler-6.20.0
           path: /home/runner/standalone-linux-x86_64-rel.tgz
 
       - name: Install Arm Compiler 6
+        if: matrix.compiler == 'AC6'
         working-directory: /home/runner
         run: |
           test -f standalone-linux-x86_64-rel.tgz || \
@@ -57,14 +72,19 @@ jobs:
           mkdir -p arm-compiler-6.20.0
           tar xf standalone-linux-x86_64-rel.tgz -C arm-compiler-6.20.0
           echo "AC6_TOOLCHAIN_6_20_0=$(pwd)/arm-compiler-6.20.0/bin" >> $GITHUB_ENV
-          
+
       - name: Cache LLVM/Clang
+        if: matrix.compiler == 'Clang'
         uses: actions/cache@v3
         with:
-          key: clang-17.0.0-devdrop0
+          key: clang-17.0.0-devdrop0-${{ runner.os }}-${{ runner.arch }}-${{ github.run_id }}-${{ matrix.compiler }}
+          restore-keys: |
+            clang-17.0.0-devdrop0-${{ runner.os }}-${{ runner.arch }}-
+            clang-17.0.0-devdrop0
           path: /home/runner/LLVMEmbeddedToolchainForArm-17.0.0-Linux-x86_64.tar.gz
 
       - name: Install LLVM/Clang
+        if: matrix.compiler == 'Clang'
         working-directory: /home/runner
         run: |
           sudo apt-get update
@@ -74,28 +94,17 @@ jobs:
           tar -xf LLVMEmbeddedToolchainForArm-17.0.0-Linux-x86_64.tar.xz
           ./LLVMEmbeddedToolchainForArm-17.0.0-Linux-x86_64/bin/clang --version
           echo "CLANG_TOOLCHAIN_17_0_0=$(pwd)/LLVMEmbeddedToolchainForArm-17.0.0-Linux-x86_64/bin" >> $GITHUB_ENV
-        
-      - name: Initialize CodeQL
-        uses: github/codeql-action/init@v2
-        with:
-          languages: cpp
-          queries: security-and-quality
-
-      - uses: ammaraskar/gcc-problem-matcher@master
-
-      - name: Execute build
+    
+      - name: Prepare vcpkg env
         working-directory: ./CMSIS/CoreValidation/Project
         run: |
-          echo "Install Python requirements"
-          pip install -r requirements.txt
-
-          echo "Activate vcpkg environment"
           . <(curl https://aka.ms/vcpkg-init.sh -L)
           vcpkg x-update-registry --all
           vcpkg activate
           
-          echo "Activate Arm tool license"
-          ${AC6_TOOLCHAIN_6_20_0}/armlm activate --server https://mdk-preview.keil.arm.com --product KEMDK-COM0
+          # Fix library search for VHT
+          echo "LD_LIBRARY_PATH=$LD_LIBRARY_PATH:$(dirname $(which VHT_MPS2_Cortex-M3))" >> $GITHUB_ENV
+          chmod +x $(dirname $(which VHT_MPS2_Cortex-M3))/VHT_*
 
           echo "Patch CMSIS-Toolbox"
           pushd $(dirname $(which cbuild))/../etc
@@ -105,16 +114,70 @@ jobs:
           curl -O https://raw.githubusercontent.com/Open-CMSIS-Pack/devtools/main/tools/projmgr/templates/clang_linker_script.ld
           popd
 
+      - name: Activate Arm tool license
+        working-directory: ./CMSIS/CoreValidation/Project
+        run: |
+          . /home/runner/.vcpkg/vcpkg-init
+          vcpkg activate
+          armlm activate --code ${{ secrets.ARM_UBL_ACTIVATION_CODE }}
+        
+      - name: Initialize CodeQL
+        if: matrix.compiler == 'GCC'
+        uses: github/codeql-action/init@v2
+        with:
+          languages: cpp
+          queries: security-and-quality
+
+      - uses: ammaraskar/gcc-problem-matcher@master
+        if: matrix.compiler == 'Clang' || matrix.compiler == 'GCC'
+
+      - name: Build
+        working-directory: ./CMSIS/CoreValidation/Project
+        run: |
+          . /home/runner/.vcpkg/vcpkg-init
+          vcpkg activate
+
           echo "Register local CMSIS-DFP pack"
           cpackget add /home/runner/CMSIS-DFP/ARM.CMSIS_DFP.pdsc
 
-          echo "Run build script"
-          ./build.py --verbose -m FVP -c AC6 -c GCC -c Clang build || echo "=== Something failed! ==="
-
-          echo "Deactivate Arm tool license"
-          ${AC6_TOOLCHAIN_6_20_0}/armlm deactivate --product KEMDK-COM0
+          echo "Build test projects ..."
+          ./build.py --verbose -m VHT -c ${{ matrix.compiler }} build || echo "=== Something failed! ==="
 
       - name: Perform CodeQL Analysis
-        if: always()
+        if: ${{ !cancelled() && matrix.compiler == 'GCC' }}
         uses: github/codeql-action/analyze@v2
-    
+
+      - name: Execute
+        working-directory: ./CMSIS/CoreValidation/Project
+        run: |
+          . /home/runner/.vcpkg/vcpkg-init
+          vcpkg activate
+      
+          echo "Run test projects ..."
+          ./build.py --verbose -m VHT -c ${{ matrix.compiler }} -d "CM[047]*" -d "CM3" -d "CM[23]3*" run || echo "=== Something failed! ==="
+
+      - name: Deactivate Arm tool license
+        if: always()
+        working-directory: ./CMSIS/CoreValidation/Project
+        run: |
+          . /home/runner/.vcpkg/vcpkg-init
+          vcpkg activate
+          armlm deactivate --product HWSKT-EAC0
+
+      - name: Archive Test Reports
+        if: ${{ !cancelled() }}
+        uses: actions/upload-artifact@v3
+        with:
+          name: test-results-${{ matrix.compiler }}
+          path: ./CMSIS/CoreValidation/Project/build/*.junit
+
+  event-file:
+    needs: [build-and-run]
+    runs-on: ubuntu-latest
+    steps:
+      - name: Archive event file
+        if: ${{ !cancelled() }}
+        uses: actions/upload-artifact@v3
+        with:
+          name: EventFile
+          path: ${{ github.event_path }}
