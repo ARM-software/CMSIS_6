@@ -31,28 +31,28 @@
  * Arm Compiler above 6.10.1 (armclang)
  */
 #if defined (__ARMCC_VERSION) && (__ARMCC_VERSION >= 6100100)
-  #if defined __CORTEX_A
+  #if __ARM_ARCH_PROFILE == 'A'
     #include "./a-profile/cmsis_armclang_a.h"
-  #elif defined __CORTEX_R
+  #elif __ARM_ARCH_PROFILE == 'R'
     #include "./r-profile/cmsis_armclang_r.h"
-  #elif defined __CORTEX_M
+  #elif __ARM_ARCH_PROFILE == 'M'
     #include "./m-profile/cmsis_armclang_m.h"
   #else
-    #error "Unknown architecture"
+    #error "Unknown Arm architecture profile"
   #endif
 
 /*
  * TI Arm Clang Compiler (tiarmclang)
  */
 #elif defined (__ti__)
-  #if defined __CORTEX_A
+  #if __ARM_ARCH_PROFILE == 'A'
     #error "Core-A is not supported for this compiler"
-  #elif defined __CORTEX_R
+  #elif __ARM_ARCH_PROFILE == 'R'
     #error "Core-R is not supported for this compiler"
-  #elif defined __CORTEX_M
+  #elif __ARM_ARCH_PROFILE == 'M'
     #include "m-profile/cmsis_tiarmclang_m.h"
   #else
-    #error "Unknown architecture"
+    #error "Unknown Arm architecture profile"
   #endif
 
 
@@ -60,14 +60,14 @@
  * LLVM/Clang Compiler
  */
 #elif defined ( __clang__ )
-  #if defined __CORTEX_A
+  #if __ARM_ARCH_PROFILE == 'A'
     #include "a-profile/cmsis_clang_a.h"
-  #elif defined __CORTEX_R
+  #elif __ARM_ARCH_PROFILE == 'R'
     #include "r-profile/cmsis_clang_r.h"
-  #elif defined __CORTEX_M
+  #elif __ARM_ARCH_PROFILE == 'M'
     #include "m-profile/cmsis_clang_m.h"
   #else
-    #error "Unknown architecture"
+    #error "Unknown Arm architecture profile"
   #endif
 
 
@@ -75,14 +75,14 @@
  * GNU Compiler
  */
 #elif defined ( __GNUC__ )
-  #if defined __CORTEX_A
+  #if __ARM_ARCH_PROFILE == 'A'
     #include "a-profile/cmsis_gcc_a.h"
-  #elif defined __CORTEX_R
+  #elif __ARM_ARCH_PROFILE == 'R'
     #include "r-profile/cmsis_gcc_r.h"
-  #elif defined __CORTEX_M
+  #elif __ARM_ARCH_PROFILE == 'M'
     #include "m-profile/cmsis_gcc_m.h"
   #else
-    #error "Unknown architecture"
+    #error "Unknown Arm architecture profile"
   #endif
 
 
@@ -90,14 +90,14 @@
  * IAR Compiler
  */
 #elif defined ( __ICCARM__ )
-  #if defined __CORTEX_A
+  #if __ARM_ARCH_PROFILE == 'A'
     #include "a-profile/cmsis_iccarm_a.h"
-  #elif defined __CORTEX_R
+  #elif __ARM_ARCH_PROFILE == 'R'
     #include "r-profile/cmsis_iccarm_r.h"
-  #elif defined __CORTEX_M
+  #elif __ARM_ARCH_PROFILE == 'M'
     #include "m-profile/cmsis_iccarm_m.h"
   #else
-    #error "Unknown architecture"
+    #error "Unknown Arm architecture profile"
   #endif
 
 

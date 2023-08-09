@@ -69,7 +69,6 @@ class DeviceAxis(Enum):
 @matrix_axis("compiler", "c", "Compiler(s) to be considered.")
 class CompilerAxis(Enum):
     AC6 = ('AC6')
-    AC6LTM = ('AC6LTM')
     GCC = ('GCC')
     IAR = ('IAR')
     CLANG = ('Clang')
@@ -78,7 +77,6 @@ class CompilerAxis(Enum):
     def image_ext(self):
         ext = {
             CompilerAxis.AC6: 'axf',
-            CompilerAxis.AC6LTM: 'axf',
             CompilerAxis.GCC: 'elf',
             CompilerAxis.IAR: 'elf',
             CompilerAxis.CLANG: 'elf',
@@ -89,7 +87,6 @@ class CompilerAxis(Enum):
     def toolchain(self):
         ext = {
             CompilerAxis.AC6: 'AC6',
-            CompilerAxis.AC6LTM: 'AC6@6.16.2',
             CompilerAxis.GCC: 'GCC',
             CompilerAxis.IAR: 'IAR',
             CompilerAxis.CLANG: 'CLANG'

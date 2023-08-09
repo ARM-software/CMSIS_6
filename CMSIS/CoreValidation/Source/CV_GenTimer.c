@@ -5,6 +5,8 @@
  *      Copyright (c) 2017 ARM Limited. All rights reserved.
  *----------------------------------------------------------------------------*/
 
+#include "cmsis_compiler.h"
+
 #include "CV_Framework.h"
 #include "cmsis_cv.h"
 
