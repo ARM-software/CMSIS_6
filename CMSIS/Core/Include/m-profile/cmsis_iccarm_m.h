@@ -1,5 +1,5 @@
 /**************************************************************************//**
- * @file     cmsis_iccarm.h
+ * @file     cmsis_iccarm_m.h
  * @brief    CMSIS compiler ICCARM (IAR Compiler for Arm) header file
  * @version  V5.4.0
  * @date     20. January 2023
@@ -26,8 +26,8 @@
 //------------------------------------------------------------------------------
 
 
-#ifndef __CMSIS_ICCARM_H__
-#define __CMSIS_ICCARM_H__
+#ifndef __CMSIS_ICCARM_M_H__
+#define __CMSIS_ICCARM_M_H__
 
 #ifndef __ICCARM__
   #error This file should only be compiled by ICCARM
@@ -1005,4 +1005,4 @@ __STATIC_FORCEINLINE void __TZ_set_CONTROL_NS(uint32_t control)
 
 #define __SXTAB16_RORn(ARG1, ARG2, ARG3) __SXTAB16(ARG1, __ROR(ARG2, ARG3))
 
-#endif /* __CMSIS_ICCARM_H__ */
+#endif /* __CMSIS_ICCARM_M_H__ */

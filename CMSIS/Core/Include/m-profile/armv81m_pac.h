@@ -1,5 +1,5 @@
 /******************************************************************************
- * @file     pac_armv81.h
+ * @file     armv81m_pac.h
  * @brief    CMSIS PAC key functions for Armv8.1-M PAC extension
  * @version  V1.0.0
  * @date     23. March 2022

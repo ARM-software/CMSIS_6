@@ -2894,7 +2894,7 @@ __STATIC_INLINE uint32_t TZ_NVIC_GetPriority_NS(IRQn_Type IRQn)
 
 #if defined (__MPU_PRESENT) && (__MPU_PRESENT == 1U)
 
-#include "mpu_armv8.h"
+  #include "m-profile/armv8m_mpu.h"
 
 #endif
 

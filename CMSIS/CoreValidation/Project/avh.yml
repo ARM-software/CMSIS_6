@@ -7,7 +7,6 @@ backend:
 upload:
   - ARM.CMSIS.pdsc
   - CMSIS/Core/**/*
-  - CMSIS/Core_A/**/*
   - CMSIS/CoreValidation/**/*
   - -:CMSIS/CoreValidation/Project/Core_Validation-*.zip
   - -:CMSIS/CoreValidation/Project/Core_Validation-*.junit

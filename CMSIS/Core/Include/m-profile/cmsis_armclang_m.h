@@ -1,7 +1,7 @@
 /**************************************************************************//**
- * @file     cmsis_clang.h
- * @brief    CMSIS compiler LLVM/Clang header file
- * @version  V1.1.0
+ * @file     cmsis_armclang_m.h
+ * @brief    CMSIS compiler armclang (Arm Compiler 6) header file
+ * @version  V6.0.0
  * @date     27. July 2023
  ******************************************************************************/
 /*
@@ -22,8 +22,8 @@
  * limitations under the License.
  */
 
-#ifndef __CMSIS_CLANG_H
-#define __CMSIS_CLANG_H
+#ifndef __CMSIS_ARMCLANG_M_H
+#define __CMSIS_ARMCLANG_M_H
 
 #pragma clang system_header   /* treat file as system include file */
 
@@ -33,23 +33,18 @@
   #error Compiler must support ACLE V2.0
 #endif /* (__ARM_ACLE >= 200) */
 
-/* Fallback for __has_builtin */
-#ifndef __has_builtin
-  #define __has_builtin(x) (0)
-#endif
-
 /* CMSIS compiler specific defines */
 #ifndef   __ASM
   #define __ASM                                  __asm
 #endif
 #ifndef   __INLINE
-  #define __INLINE                               inline
+  #define __INLINE                               __inline
 #endif
 #ifndef   __STATIC_INLINE
-  #define __STATIC_INLINE                        static inline
+  #define __STATIC_INLINE                        static __inline
 #endif
 #ifndef   __STATIC_FORCEINLINE
-  #define __STATIC_FORCEINLINE                   __attribute__((always_inline)) static inline
+  #define __STATIC_FORCEINLINE                   __attribute__((always_inline)) static __inline
 #endif
 #ifndef   __NO_RETURN
   #define __NO_RETURN                            __attribute__((__noreturn__))
@@ -115,15 +110,15 @@
 
 /* #########################  Startup and Lowlevel Init  ######################## */
 #ifndef __PROGRAM_START
-#define __PROGRAM_START           _start
+#define __PROGRAM_START           __main
 #endif
 
 #ifndef __INITIAL_SP
-#define __INITIAL_SP              __stack
+#define __INITIAL_SP              Image$$ARM_LIB_STACK$$ZI$$Limit
 #endif
 
 #ifndef __STACK_LIMIT
-#define __STACK_LIMIT             __stack_limit
+#define __STACK_LIMIT             Image$$ARM_LIB_STACK$$ZI$$Base
 #endif
 
 #ifndef __VECTOR_TABLE
@@ -131,12 +126,12 @@
 #endif
 
 #ifndef __VECTOR_TABLE_ATTRIBUTE
-#define __VECTOR_TABLE_ATTRIBUTE  __attribute__((used, section(".vectors")))
+#define __VECTOR_TABLE_ATTRIBUTE  __attribute__((used, section("RESET")))
 #endif
 
 #if (__ARM_FEATURE_CMSE == 3)
 #ifndef __STACK_SEAL
-#define __STACK_SEAL              __stack_seal
+#define __STACK_SEAL              Image$$STACKSEAL$$ZI$$Base
 #endif
 
 #ifndef __TZ_STACK_SEAL_SIZE
@@ -696,10 +691,12 @@ __STATIC_FORCEINLINE void __STL(uint32_t value, volatile uint32_t *ptr)
   \details Enables IRQ interrupts by clearing special-purpose register PRIMASK.
            Can only be executed in Privileged modes.
  */
+#ifndef __ARM_COMPAT_H
 __STATIC_FORCEINLINE void __enable_irq(void)
 {
   __ASM volatile ("cpsie i" : : : "memory");
 }
+#endif
 
 
 /**
@@ -707,10 +704,12 @@ __STATIC_FORCEINLINE void __enable_irq(void)
   \details Disables IRQ interrupts by setting special-purpose register PRIMASK.
            Can only be executed in Privileged modes.
  */
+#ifndef __ARM_COMPAT_H
 __STATIC_FORCEINLINE void __disable_irq(void)
 {
   __ASM volatile ("cpsid i" : : : "memory");
 }
+#endif
 
 
 /**
@@ -1464,4 +1463,4 @@ __STATIC_FORCEINLINE int32_t __SMMLA (int32_t op1, int32_t op2, int32_t op3)
 /** @} end of group CMSIS_SIMD_intrinsics */
 
 
-#endif /* __CMSIS_CLANG_H */
+#endif /* __CMSIS_ARMCLANG_M_H */
