@@ -5,6 +5,8 @@
  *      Copyright (c) 2018 Arm Limited. All rights reserved.
  *----------------------------------------------------------------------------*/
 
+#include "cmsis_compiler.h"
+
 #include "CV_Framework.h"
 #include "cmsis_cv.h"
 
