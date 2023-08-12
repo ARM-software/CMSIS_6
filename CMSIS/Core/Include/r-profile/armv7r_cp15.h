@@ -17,11 +17,5 @@
  */
 
 
-#ifndef __CORE_CA_H
-#define __CORE_CA_H
-
-
-#include "./a-profile/armv7a.h"
-
-
-#endif /* __CORE_CA_H */
+// The cp15-interface is located in the profile folder for cortex-a devices
+#include "../a-profile/armv7a_cp15.h"
