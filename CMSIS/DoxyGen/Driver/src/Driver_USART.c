@@ -100,8 +100,8 @@ Provides the typedef for the callback function \ref ARM_USART_SignalEvent.
 
 
 /**
-\defgroup usart_execution_status Status Error Codes
-\ingroup common_drv_gr
+\defgroup usart_execution_status USART Status Error Codes
+\ingroup usart_interface_gr
 \brief Negative values indicate errors (USART has specific codes in addition to common \ref execution_status). 
 \details 
 The USART driver has additional status error codes that are listed below.

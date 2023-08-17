@@ -99,8 +99,8 @@ Provides the typedef for the callback function \ref ARM_SPI_SignalEvent.
 *******************************************************************************************************************/
 
 /**
-\defgroup spi_execution_status Status Error Codes
-\ingroup common_drv_gr
+\defgroup spi_execution_status SPI Status Error Codes
+\ingroup spi_interface_gr
 \brief Negative values indicate errors (SPI has specific codes in addition to common \ref execution_status). 
 \details 
 The SPI driver has additional status error codes that are listed below.
@@ -716,6 +716,19 @@ responding). Software enables/disables transfers by calling \ref ARM_SPI_Control
 @} 
 */
 // end group SPI_control 
+
+/**
+\defgroup spi_ss_signals SPI Slave Select Signal definitions
+\ingroup spi_interface_gr
+\brief Specifies SPI Slave Select Signal definitions.
+\details
+@{
+\def ARM_SPI_SS_INACTIVE
+\sa ARM_SPI_Control
+\def ARM_SPI_SS_ACTIVE
+\sa ARM_SPI_Control
+@}
+*/
 
 /**
 @}

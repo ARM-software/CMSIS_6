@@ -98,8 +98,8 @@ Provides the typedef for the callback function \ref ARM_GPIO_SignalEvent.
 *******************************************************************************************************************/
 
 /**
-\defgroup gpio_execution_status Status Error Codes
-\ingroup common_drv_gr
+\defgroup gpio_execution_status GPIO Status Error Codes
+\ingroup gpio_interface_gr
 \brief Negative values indicate errors (GPIO has specific codes in addition to common \ref execution_status). 
 \details 
 The GPIO driver has additional status error codes that are listed below.
