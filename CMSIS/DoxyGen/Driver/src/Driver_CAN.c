@@ -386,7 +386,7 @@ Provides the typedef for the callback function \ref ARM_CAN_SignalObjectEvent.
 *******************************************************************************************************************/
 
 /**
-\defgroup can_status_code_ctrls Status Error Codes
+\defgroup can_status_code_ctrls CAN Status Error Codes
 \ingroup can_interface_gr
 \brief Status codes of the CAN driver.
 \details

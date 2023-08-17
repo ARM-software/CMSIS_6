@@ -240,8 +240,8 @@ Provides the typedef for the callback function \ref ARM_SAI_SignalEvent.
 
 /****** SAI specific error codes *****/
 /**
-\defgroup sai_execution_status Status Error Codes
-\ingroup common_drv_gr
+\defgroup sai_execution_status SAI Status Error Codes
+\ingroup sai_interface_gr
 \brief Negative values indicate errors (SAI has specific codes in addition to common \ref execution_status). 
 \details 
 The SAI driver has additional status error codes that are listed below.

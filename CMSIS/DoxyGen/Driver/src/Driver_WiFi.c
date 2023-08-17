@@ -27,6 +27,10 @@ The CMSIS-Driver WiFi provides access to the following interfaces:
    on the WiFi module. This IP stack handles data communication.
  - \ref wifi_bypass_gr "Bypass interface": is an optional interface and enables the transmission of
    Ethernet frames with the WiFi module. Using this interface requires the IP stack running on the microcontroller.
+   \note Often, WiFi chips and modules have their own networking stack incorporated. This means that payload data is sent via
+a serial interface (SPI or USART) to the WiFi chip/module and the Ethernet frames are assembled inside. If you intend to use
+a separate TCP/IP stack on the microcontroller, make sure that the WiFi driver has a \ref wifi_bypass_gr.
+This allows to send the Ethernet frames assembled by the TCP/IP component transparently through the WiFi chip/module.
 
 The WiFi interface usually requires CMSIS-RTOS features (i.e. mutex) and is often implemented
 with a peripheral device that is connected to the system using the SPI or UART interface. However,
@@ -35,14 +39,10 @@ there are also some microcontroller devices with WiFi interface on the chip.
 The implementation of the WiFi CMSIS-Driver is therefore generally provided as a separate software pack.
 It is often implemented as wrapper to the SDK (Software Development Kit) of the WiFi chipset.
 
-
 <b>Driver Functions</b>
 
 The driver functions are published in the access struct as explained in \ref DriverFunctions
   - \ref ARM_DRIVER_WIFI : access struct for WiFi driver functions
-
-
-<b>Example Code</b>
 
 @{
 */

@@ -42,8 +42,8 @@ The driver functions are published in the access struct as explained in \ref Dri
 
 
 /**
-\defgroup nand_execution_status Status Error Codes
-\ingroup common_drv_gr
+\defgroup nand_execution_status NAND Status Error Codes
+\ingroup nand_interface_gr
 \brief Negative values indicate errors (NAND has specific codes in addition to common \ref execution_status). 
 \details 
 The NAND driver has additional status error codes that are listed below.

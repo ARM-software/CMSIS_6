@@ -918,7 +918,11 @@ WARN_LOGFILE           =
 # spaces. See also FILE_PATTERNS and EXTENSION_MAPPING
 # Note: If this tag is empty the current directory is searched.
 
-INPUT                  = . \
+INPUT                  = ./src/mainpage.md \
+                         ./src/history.md \
+                         ./src/implementations.md \
+                         ./src/operation.md \
+                         ./src/validation.md \
                          ../../Driver/Include/Driver_Common.h \
                          src/Driver_Common.c \
                          ../../Driver/Include/Driver_CAN.h \
@@ -956,8 +960,7 @@ INPUT                  = . \
                          ../../Driver/VIO/Include/cmsis_vio.h \
                          src/VIO.txt \
                          ../../Driver/Include/Driver_WiFi.h \
-                         src/Driver_WiFi.c \
-                         src/General.txt
+                         src/Driver_WiFi.c
 
 # This tag can be used to specify the character encoding of the source files
 # that doxygen parses. Internally doxygen uses the UTF-8 encoding. Doxygen uses
