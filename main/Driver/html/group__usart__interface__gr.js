@@ -1,6 +1,6 @@
 var group__usart__interface__gr =
 [
-    [ "Status Error Codes", "group__usart__execution__status.html", "group__usart__execution__status" ],
+    [ "USART Status Error Codes", "group__usart__execution__status.html", "group__usart__execution__status" ],
     [ "USART Events", "group__USART__events.html", "group__USART__events" ],
     [ "USART Control Codes", "group__USART__control.html", "group__USART__control" ],
     [ "ARM_DRIVER_USART", "group__usart__interface__gr.html#structARM__DRIVER__USART", [

@@ -9,6 +9,7 @@ var searchData=
   ['can_20object_20configuration_20codes_6',['CAN Object Configuration Codes',['../group__can__obj__config__ctrls.html',1,'']]],
   ['can_20object_20events_7',['CAN Object Events',['../group__CAN__events.html',1,'']]],
   ['can_20operation_20codes_8',['CAN Operation Codes',['../group__can__mode__ctrls.html',1,'']]],
-  ['can_20unit_20events_9',['CAN Unit Events',['../group__CAN__unit__events.html',1,'']]],
-  ['common_20driver_20definitions_10',['Common Driver Definitions',['../group__common__drv__gr.html',1,'']]]
+  ['can_20status_20error_20codes_9',['CAN Status Error Codes',['../group__can__status__code__ctrls.html',1,'']]],
+  ['can_20unit_20events_10',['CAN Unit Events',['../group__CAN__unit__events.html',1,'']]],
+  ['common_20driver_20definitions_11',['Common Driver Definitions',['../group__common__drv__gr.html',1,'']]]
 ];

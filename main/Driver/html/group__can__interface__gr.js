@@ -1,6 +1,6 @@
 var group__can__interface__gr =
 [
-    [ "Status Error Codes", "group__can__status__code__ctrls.html", "group__can__status__code__ctrls" ],
+    [ "CAN Status Error Codes", "group__can__status__code__ctrls.html", "group__can__status__code__ctrls" ],
     [ "CAN Unit Events", "group__CAN__unit__events.html", "group__CAN__unit__events" ],
     [ "CAN Object Events", "group__CAN__events.html", "group__CAN__events" ],
     [ "CAN Control Codes", "group__can__control.html", "group__can__control" ],

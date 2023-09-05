@@ -1,8 +1,9 @@
 var group__spi__interface__gr =
 [
-    [ "Status Error Codes", "group__spi__execution__status.html", "group__spi__execution__status" ],
+    [ "SPI Status Error Codes", "group__spi__execution__status.html", "group__spi__execution__status" ],
     [ "SPI Events", "group__SPI__events.html", "group__SPI__events" ],
     [ "SPI Control Codes", "group__SPI__control.html", "group__SPI__control" ],
+    [ "SPI Slave Select Signal definitions", "group__spi__ss__signals.html", "group__spi__ss__signals" ],
     [ "ARM_DRIVER_SPI", "group__spi__interface__gr.html#structARM__DRIVER__SPI", [
       [ "GetVersion", "group__spi__interface__gr.html#a30afd9cb3113c037b5f1926f5ef93b59", null ],
       [ "GetCapabilities", "group__spi__interface__gr.html#a806a8a77ab11c714b769a754501c6062", null ],

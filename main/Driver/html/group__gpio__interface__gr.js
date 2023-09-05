@@ -1,6 +1,6 @@
 var group__gpio__interface__gr =
 [
-    [ "Status Error Codes", "group__gpio__execution__status.html", "group__gpio__execution__status" ],
+    [ "GPIO Status Error Codes", "group__gpio__execution__status.html", "group__gpio__execution__status" ],
     [ "GPIO Events", "group__GPIO__events.html", "group__GPIO__events" ],
     [ "ARM_DRIVER_GPIO", "group__gpio__interface__gr.html#structARM__DRIVER__GPIO", [
       [ "Setup", "group__gpio__interface__gr.html#a1752c368ad90bf9d0f520de9b94b726c", null ],

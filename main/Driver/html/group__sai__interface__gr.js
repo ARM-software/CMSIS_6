@@ -1,6 +1,6 @@
 var group__sai__interface__gr =
 [
-    [ "Status Error Codes", "group__sai__execution__status.html", "group__sai__execution__status" ],
+    [ "SAI Status Error Codes", "group__sai__execution__status.html", "group__sai__execution__status" ],
     [ "SAI Events", "group__SAI__events.html", "group__SAI__events" ],
     [ "SAI Control Codes", "group__sai__control.html", "group__sai__control" ],
     [ "ARM_DRIVER_SAI", "group__sai__interface__gr.html#structARM__DRIVER__SAI", [

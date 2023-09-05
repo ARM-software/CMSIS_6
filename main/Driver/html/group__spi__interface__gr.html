@@ -141,7 +141,7 @@ $(document).ready(function(){initNavTree('group__spi__interface__gr.html',''); i
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="groups" name="groups"></a>
 Content</h2></td></tr>
-<tr class="memitem:group__spi__execution__status"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__spi__execution__status.html">Status Error Codes</a></td></tr>
+<tr class="memitem:group__spi__execution__status"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__spi__execution__status.html">SPI Status Error Codes</a></td></tr>
 <tr class="memdesc:group__spi__execution__status"><td class="mdescLeft">&#160;</td><td class="mdescRight">Negative values indicate errors (SPI has specific codes in addition to common <a class="el" href="group__execution__status.html">Status Error Codes</a>). <br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:group__SPI__events"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__SPI__events.html">SPI Events</a></td></tr>
@@ -149,6 +149,9 @@ Content</h2></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:group__SPI__control"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__SPI__control.html">SPI Control Codes</a></td></tr>
 <tr class="memdesc:group__SPI__control"><td class="mdescLeft">&#160;</td><td class="mdescRight">Many parameters of the SPI driver are configured using the <a class="el" href="group__spi__interface__gr.html#gad18d229992598d6677bec250015e5d1a">ARM_SPI_Control</a> function. <br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:group__spi__ss__signals"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__spi__ss__signals.html">SPI Slave Select Signal definitions</a></td></tr>
+<tr class="memdesc:group__spi__ss__signals"><td class="mdescLeft">&#160;</td><td class="mdescRight">Specifies SPI Slave Select Signal definitions. <br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="nested-classes" name="nested-classes"></a>
@@ -315,13 +318,13 @@ SPI Master connected to 3 slaves</div></div>
 <div class="line">    SPIdrv-&gt;<a class="code hl_variable" href="group__spi__interface__gr.html#a5e96d73d3a3c366aba50bf5304edb029">Control</a>(<a class="code hl_define" href="group__spi__mode__ctrls.html#ga3143ef07c1607b9bc57e29df35cf2fa8">ARM_SPI_MODE_MASTER</a> | <a class="code hl_define" href="group__spi__frame__format__ctrls.html#ga7fab572b2fec303e979e47eb2d13ca74">ARM_SPI_CPOL1_CPHA1</a> | <a class="code hl_define" href="group__spi__bit__order__ctrls.html#ga98228a708cbab6e214c7ac696f77dab6">ARM_SPI_MSB_LSB</a> | <a class="code hl_define" href="group__spi__slave__select__mode__ctrls.html#gab5e319aa3f9d4d8c9ed92f0fe865f624">ARM_SPI_SS_MASTER_SW</a> | <a class="code hl_define" href="group__spi__data__bits__ctrls.html#gaf6c099a1d67256a32010120c66c55250">ARM_SPI_DATA_BITS</a>(8), 10000000);</div>
 <div class="line"> </div>
 <div class="line">    <span class="comment">/* SS line = INACTIVE = HIGH */</span></div>
-<div class="line">    SPIdrv-&gt;<a class="code hl_variable" href="group__spi__interface__gr.html#a5e96d73d3a3c366aba50bf5304edb029">Control</a>(<a class="code hl_define" href="group__spi__misc__ctrls.html#ga5776272b82decff92da003568540c92f">ARM_SPI_CONTROL_SS</a>, <a class="code hl_define" href="Driver__SPI_8h.html#a335b448e07422e9c25616a693ec581cc">ARM_SPI_SS_INACTIVE</a>);</div>
+<div class="line">    SPIdrv-&gt;<a class="code hl_variable" href="group__spi__interface__gr.html#a5e96d73d3a3c366aba50bf5304edb029">Control</a>(<a class="code hl_define" href="group__spi__misc__ctrls.html#ga5776272b82decff92da003568540c92f">ARM_SPI_CONTROL_SS</a>, <a class="code hl_define" href="group__spi__ss__signals.html#ga335b448e07422e9c25616a693ec581cc">ARM_SPI_SS_INACTIVE</a>);</div>
 <div class="line"> </div>
 <div class="line">    <span class="comment">/* thread loop */</span></div>
 <div class="line">    <span class="keywordflow">while</span> (1)</div>
 <div class="line">    {</div>
 <div class="line">        <span class="comment">/* SS line = ACTIVE = LOW */</span></div>
-<div class="line">        SPIdrv-&gt;<a class="code hl_variable" href="group__spi__interface__gr.html#a5e96d73d3a3c366aba50bf5304edb029">Control</a>(<a class="code hl_define" href="group__spi__misc__ctrls.html#ga5776272b82decff92da003568540c92f">ARM_SPI_CONTROL_SS</a>, <a class="code hl_define" href="Driver__SPI_8h.html#a3f465cdbd1238ddd74f78e14457076c4">ARM_SPI_SS_ACTIVE</a>);</div>
+<div class="line">        SPIdrv-&gt;<a class="code hl_variable" href="group__spi__interface__gr.html#a5e96d73d3a3c366aba50bf5304edb029">Control</a>(<a class="code hl_define" href="group__spi__misc__ctrls.html#ga5776272b82decff92da003568540c92f">ARM_SPI_CONTROL_SS</a>, <a class="code hl_define" href="group__spi__ss__signals.html#ga3f465cdbd1238ddd74f78e14457076c4">ARM_SPI_SS_ACTIVE</a>);</div>
 <div class="line">        <span class="comment">/* Transmit some data */</span></div>
 <div class="line">        SPIdrv-&gt;<a class="code hl_variable" href="group__spi__interface__gr.html#a6e880dae8e9733a3c0f152a131076ca4">Send</a>(testdata_out, <span class="keyword">sizeof</span>(testdata_out));</div>
 <div class="line">        <span class="comment">/* Wait for completion */</span></div>
@@ -330,10 +333,10 @@ SPI Master connected to 3 slaves</div></div>
 <div class="line">            __breakpoint(0); <span class="comment">/* Timeout error: Call debugger */</span></div>
 <div class="line">        }</div>
 <div class="line">        <span class="comment">/* SS line = INACTIVE = HIGH */</span></div>
-<div class="line">        SPIdrv-&gt;<a class="code hl_variable" href="group__spi__interface__gr.html#a5e96d73d3a3c366aba50bf5304edb029">Control</a>(<a class="code hl_define" href="group__spi__misc__ctrls.html#ga5776272b82decff92da003568540c92f">ARM_SPI_CONTROL_SS</a>, <a class="code hl_define" href="Driver__SPI_8h.html#a335b448e07422e9c25616a693ec581cc">ARM_SPI_SS_INACTIVE</a>);</div>
+<div class="line">        SPIdrv-&gt;<a class="code hl_variable" href="group__spi__interface__gr.html#a5e96d73d3a3c366aba50bf5304edb029">Control</a>(<a class="code hl_define" href="group__spi__misc__ctrls.html#ga5776272b82decff92da003568540c92f">ARM_SPI_CONTROL_SS</a>, <a class="code hl_define" href="group__spi__ss__signals.html#ga335b448e07422e9c25616a693ec581cc">ARM_SPI_SS_INACTIVE</a>);</div>
 <div class="line"> </div>
 <div class="line">        <span class="comment">/* SS line = ACTIVE = LOW */</span></div>
-<div class="line">        SPIdrv-&gt;<a class="code hl_variable" href="group__spi__interface__gr.html#a5e96d73d3a3c366aba50bf5304edb029">Control</a>(<a class="code hl_define" href="group__spi__misc__ctrls.html#ga5776272b82decff92da003568540c92f">ARM_SPI_CONTROL_SS</a>, <a class="code hl_define" href="Driver__SPI_8h.html#a3f465cdbd1238ddd74f78e14457076c4">ARM_SPI_SS_ACTIVE</a>);</div>
+<div class="line">        SPIdrv-&gt;<a class="code hl_variable" href="group__spi__interface__gr.html#a5e96d73d3a3c366aba50bf5304edb029">Control</a>(<a class="code hl_define" href="group__spi__misc__ctrls.html#ga5776272b82decff92da003568540c92f">ARM_SPI_CONTROL_SS</a>, <a class="code hl_define" href="group__spi__ss__signals.html#ga3f465cdbd1238ddd74f78e14457076c4">ARM_SPI_SS_ACTIVE</a>);</div>
 <div class="line">        <span class="comment">/* Receive 8 bytes of reply */</span></div>
 <div class="line">        SPIdrv-&gt;<a class="code hl_variable" href="group__spi__interface__gr.html#a784cafe08ad8f9052dca8cd8071d2a9b">Receive</a>(testdata_in, 8);</div>
 <div class="line">        evt = osSignalWait(0x01, 100);</div>
@@ -341,13 +344,11 @@ SPI Master connected to 3 slaves</div></div>
 <div class="line">            __breakpoint(0); <span class="comment">/* Timeout error: Call debugger */</span></div>
 <div class="line">        }</div>
 <div class="line">        <span class="comment">/* SS line = INACTIVE = HIGH */</span></div>
-<div class="line">        SPIdrv-&gt;<a class="code hl_variable" href="group__spi__interface__gr.html#a5e96d73d3a3c366aba50bf5304edb029">Control</a>(<a class="code hl_define" href="group__spi__misc__ctrls.html#ga5776272b82decff92da003568540c92f">ARM_SPI_CONTROL_SS</a>, <a class="code hl_define" href="Driver__SPI_8h.html#a335b448e07422e9c25616a693ec581cc">ARM_SPI_SS_INACTIVE</a>);</div>
+<div class="line">        SPIdrv-&gt;<a class="code hl_variable" href="group__spi__interface__gr.html#a5e96d73d3a3c366aba50bf5304edb029">Control</a>(<a class="code hl_define" href="group__spi__misc__ctrls.html#ga5776272b82decff92da003568540c92f">ARM_SPI_CONTROL_SS</a>, <a class="code hl_define" href="group__spi__ss__signals.html#ga335b448e07422e9c25616a693ec581cc">ARM_SPI_SS_INACTIVE</a>);</div>
 <div class="line">    }</div>
 <div class="line">}</div>
 <div class="ttc" id="aDriver__Common_8h_html_ga47d6d7c31f88f3b8ae4aaf9d8444afa5abed52b77a9ce4775570e44a842b1295e"><div class="ttname"><a href="Driver__Common_8h.html#ga47d6d7c31f88f3b8ae4aaf9d8444afa5abed52b77a9ce4775570e44a842b1295e">ARM_POWER_FULL</a></div><div class="ttdeci">@ ARM_POWER_FULL</div><div class="ttdoc">Power on: full operation at maximum performance.</div><div class="ttdef"><b>Definition:</b> Driver_Common.h:66</div></div>
 <div class="ttc" id="aDriver__SPI_8h_html"><div class="ttname"><a href="Driver__SPI_8h.html">Driver_SPI.h</a></div></div>
-<div class="ttc" id="aDriver__SPI_8h_html_a335b448e07422e9c25616a693ec581cc"><div class="ttname"><a href="Driver__SPI_8h.html#a335b448e07422e9c25616a693ec581cc">ARM_SPI_SS_INACTIVE</a></div><div class="ttdeci">#define ARM_SPI_SS_INACTIVE</div><div class="ttdoc">SPI Slave Select Signal Inactive.</div><div class="ttdef"><b>Definition:</b> Driver_SPI.h:122</div></div>
-<div class="ttc" id="aDriver__SPI_8h_html_a3f465cdbd1238ddd74f78e14457076c4"><div class="ttname"><a href="Driver__SPI_8h.html#a3f465cdbd1238ddd74f78e14457076c4">ARM_SPI_SS_ACTIVE</a></div><div class="ttdeci">#define ARM_SPI_SS_ACTIVE</div><div class="ttdoc">SPI Slave Select Signal Active.</div><div class="ttdef"><b>Definition:</b> Driver_SPI.h:123</div></div>
 <div class="ttc" id="agroup__SPI__events_html_ga7eaa229003689aa18598273490b3e630"><div class="ttname"><a href="group__SPI__events.html#ga7eaa229003689aa18598273490b3e630">ARM_SPI_EVENT_MODE_FAULT</a></div><div class="ttdeci">#define ARM_SPI_EVENT_MODE_FAULT</div><div class="ttdoc">Master Mode Fault (SS deactivated when Master)</div></div>
 <div class="ttc" id="agroup__SPI__events_html_ga8e63d99c80ea56de596a8d0a51fd8244"><div class="ttname"><a href="group__SPI__events.html#ga8e63d99c80ea56de596a8d0a51fd8244">ARM_SPI_EVENT_DATA_LOST</a></div><div class="ttdeci">#define ARM_SPI_EVENT_DATA_LOST</div><div class="ttdoc">Data lost: Receive overflow / Transmit underflow.</div></div>
 <div class="ttc" id="agroup__SPI__events_html_gaabdfc9e17641144cd50d36d15511a1b8"><div class="ttname"><a href="group__SPI__events.html#gaabdfc9e17641144cd50d36d15511a1b8">ARM_SPI_EVENT_TRANSFER_COMPLETE</a></div><div class="ttdeci">#define ARM_SPI_EVENT_TRANSFER_COMPLETE</div><div class="ttdoc">Data Transfer completed.</div></div>
@@ -369,6 +370,8 @@ SPI Master connected to 3 slaves</div></div>
 <div class="ttc" id="agroup__spi__misc__ctrls_html_ga5776272b82decff92da003568540c92f"><div class="ttname"><a href="group__spi__misc__ctrls.html#ga5776272b82decff92da003568540c92f">ARM_SPI_CONTROL_SS</a></div><div class="ttdeci">#define ARM_SPI_CONTROL_SS</div><div class="ttdoc">Control Slave Select; arg: 0=inactive, 1=active.</div></div>
 <div class="ttc" id="agroup__spi__mode__ctrls_html_ga3143ef07c1607b9bc57e29df35cf2fa8"><div class="ttname"><a href="group__spi__mode__ctrls.html#ga3143ef07c1607b9bc57e29df35cf2fa8">ARM_SPI_MODE_MASTER</a></div><div class="ttdeci">#define ARM_SPI_MODE_MASTER</div><div class="ttdoc">SPI Master (Output on MOSI, Input on MISO); arg = Bus Speed in bps.</div></div>
 <div class="ttc" id="agroup__spi__slave__select__mode__ctrls_html_gab5e319aa3f9d4d8c9ed92f0fe865f624"><div class="ttname"><a href="group__spi__slave__select__mode__ctrls.html#gab5e319aa3f9d4d8c9ed92f0fe865f624">ARM_SPI_SS_MASTER_SW</a></div><div class="ttdeci">#define ARM_SPI_SS_MASTER_SW</div><div class="ttdoc">SPI Slave Select when Master: Software controlled.</div></div>
+<div class="ttc" id="agroup__spi__ss__signals_html_ga335b448e07422e9c25616a693ec581cc"><div class="ttname"><a href="group__spi__ss__signals.html#ga335b448e07422e9c25616a693ec581cc">ARM_SPI_SS_INACTIVE</a></div><div class="ttdeci">#define ARM_SPI_SS_INACTIVE</div><div class="ttdoc">SPI Slave Select Signal Inactive.</div></div>
+<div class="ttc" id="agroup__spi__ss__signals_html_ga3f465cdbd1238ddd74f78e14457076c4"><div class="ttname"><a href="group__spi__ss__signals.html#ga3f465cdbd1238ddd74f78e14457076c4">ARM_SPI_SS_ACTIVE</a></div><div class="ttdeci">#define ARM_SPI_SS_ACTIVE</div><div class="ttdoc">SPI Slave Select Signal Active.</div></div>
 </div><!-- fragment --> <hr/><h2 class="groupheader">Data Structure Documentation</h2>
 <a name="structARM__DRIVER__SPI" id="structARM__DRIVER__SPI"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#structARM__DRIVER__SPI">&#9670;&#160;</a></span>ARM_DRIVER_SPI</h2>
@@ -1110,7 +1113,7 @@ The item size is defined by the data type which depends on the configured number
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>common <a class="el" href="group__execution__status.html">Status Error Codes</a> and driver specific <a class="el" href="group__spi__execution__status.html">Status Error Codes</a></dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>common <a class="el" href="group__execution__status.html">Status Error Codes</a> and driver specific <a class="el" href="group__spi__execution__status.html">SPI Status Error Codes</a></dd></dl>
 <p>The function <b>ARM_SPI_Control</b> controls the SPI interface settings and executes various operations.</p>
 <p>The parameter <em>control</em> is a bit mask that specifies various operations.</p><ul>
 <li>Controls form different categories can be ORed.</li>
@@ -1176,7 +1179,7 @@ when Slave  </td><td>Set the Slave Select mode for the master to <b>Not used</b>
 <td><a class="el" href="group__spi__misc__ctrls.html#ga5ef3d114979f3fd6010d0df16c2bf5c1">ARM_SPI_SET_BUS_SPEED</a>  </td><td rowspan="5" style="text-align:right">0..21  </td><td rowspan="5">Miscellaneous Controls <br  />
 (cannot be ORed) </td><td>Set the bus speed; <em>arg=</em> Bus Speed in <span class="XML-Token">bps</span>  </td></tr>
 <tr>
-<td><a class="el" href="group__spi__misc__ctrls.html#gafc00fe35bb4c89b076d014b43168b2b3">ARM_SPI_GET_BUS_SPEED</a>  </td><td>Get the bus speed; Return values &gt;= <span class="XML-Token">0</span> represent the bus speed in <span class="XML-Token">bps</span>. Negative values are <a class="el" href="group__spi__execution__status.html">Status Error Codes</a>.  </td></tr>
+<td><a class="el" href="group__spi__misc__ctrls.html#gafc00fe35bb4c89b076d014b43168b2b3">ARM_SPI_GET_BUS_SPEED</a>  </td><td>Get the bus speed; Return values &gt;= <span class="XML-Token">0</span> represent the bus speed in <span class="XML-Token">bps</span>. Negative values are <a class="el" href="group__spi__execution__status.html">SPI Status Error Codes</a>.  </td></tr>
 <tr>
 <td><a class="el" href="group__spi__misc__ctrls.html#gae9861221dee78d52bd1522b7846535ce">ARM_SPI_SET_DEFAULT_TX_VALUE</a>  </td><td>Set the default transmission value; the parameter <em>arg</em> sets the value  </td></tr>
 <tr>

@@ -25,13 +25,12 @@
 var NAVTREE =
 [
   [ "CMSIS-Driver", "index.html", [
-    [ "Overview", "index.html", null ],
-    [ "Revision History of CMSIS-Driver", "driver_revisionHistory.html", null ],
+    [ "Overview", "index.html", "index" ],
+    [ "Revision History", "driver_revisionHistory.html", null ],
     [ "CMSIS-Driver Implementation List", "listOfImplementations.html", null ],
     [ "Theory of Operation", "theoryOperation.html", [
-      [ "Common Driver Functions", "theoryOperation.html#DriverFunctions", [
-        [ "Cortex-M Processor Mode", "theoryOperation.html#ProcessorMode", null ]
-      ] ],
+      [ "Common Driver Functions", "theoryOperation.html#DriverFunctions", null ],
+      [ "Cortex-M Processor Mode", "theoryOperation.html#ProcessorMode", null ],
       [ "Function Call Sequence", "theoryOperation.html#CallSequence", [
         [ "Start Sequence", "theoryOperation.html#CS_start", null ],
         [ "Stop Sequence", "theoryOperation.html#CS_stop", null ]
@@ -41,13 +40,9 @@ var NAVTREE =
       [ "Access Struct", "theoryOperation.html#AccessStruct", [
         [ "Driver Instances", "theoryOperation.html#DriverInstances", null ]
       ] ],
+      [ "CMSIS-Driver Files", "theoryOperation.html#cmsis_driver_files", null ],
       [ "Driver Configuration", "theoryOperation.html#DriverConfiguration", null ],
       [ "Code Example", "theoryOperation.html#CodeExample", null ]
-    ] ],
-    [ "Reference Implementation", "referenceImplementation.html", [
-      [ "Driver Header Files", "referenceImplementation.html#DriverHeaderFiles", null ],
-      [ "Driver Template Files", "referenceImplementation.html#DriverTemplates", null ],
-      [ "Driver Examples", "referenceImplementation.html#DriverExamples", null ]
     ] ],
     [ "Driver Validation", "driverValidation.html", [
       [ "Sample Test Output", "driverValidation.html#test_output", null ],
@@ -62,11 +57,11 @@ var NAVTREEINDEX =
 [
 "Driver__CAN_8h.html#ga11c12020b81a63a73a8b53e96a7e3deaa3b6d191c99f1eba4f01bcc5fbfaf67f3",
 "group__can__interface__gr.html#ga0dcffd362b4093043442a030eaebbcfe",
-"group__gpio__interface__gr.html#aa1e00b5d33fa1f09e96c7b8b1de1deec",
-"group__nand__data__bus__width__codes.html#ga578051cc193ae0b7125aec8007071d21",
-"group__spi__bit__order__ctrls.html#ga41c53c3b396a89ce78018467e561aaaf",
-"group__usart__misc__control.html#ga54e88b32bc7368ff9c44613eae735c44",
-"group__wifi__interface__gr.html#acfc59c1d65846b009ad2adce64568bd8"
+"group__gpio__interface__gr.html#ae3f787c2130ea5b9fd0246c08054e28a",
+"group__nand__driver__ecc__codes.html#ga15c79a12200c16f953936635f930df1d",
+"group__spi__interface__gr.html#a50c88f3c1d787773e2ac1b59533f034a",
+"group__usbd__interface__gr.html#a5ce2b3d7a3a07099bf07d1eb253e92e3",
+"group__wifi__management__gr.html#structARM__WIFI__CONFIG__t"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

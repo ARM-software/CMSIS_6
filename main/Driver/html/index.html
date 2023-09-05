@@ -130,15 +130,28 @@ $(document).ready(function(){initNavTree('index.html',''); initResizable(); });
   <div class="headertitle"><div class="title">Overview </div></div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><p>The CMSIS-Driver specification is a software API that describes peripheral driver interfaces for middleware stacks and user applications. The CMSIS-Driver API is designed to be generic and independent of a specific RTOS making it reusable across a wide range of supported microcontroller devices. The CMSIS-Driver API covers a wide range of use cases for the supported peripheral types, but can not take every potential use-case into account. Over time, it is indented to extend the CMSIS-Driver API with further groups to cover new use-cases.</p>
-<p>The CMSIS Software Pack publishes the API Interface under the Component Class <b>CMSIS</b> <b>Driver</b> with header files and a documentation. These header files are the reference for the implementation of the standardized peripheral driver interfaces. These implementations are published typically in the Device Family Pack of a related microcontroller family under the Component Class <b>CMSIS</b> <b>Driver</b>. A Device Family Pack may contain additional interfaces in the Component Class <b>Device</b> to extend the standard Peripheral Drivers covered by this CMSIS-Driver specification with additional device specific interfaces for example for Memory BUS, GPIO, or DMA.</p>
-<p>The standard peripheral driver interfaces connect microcontroller peripherals for example with middleware that implements communication stacks, file systems, or graphic user interfaces. Each peripheral driver interface may provide multiple instances reflecting the multiple physical interfaces of the same type in a device. For example the two physical SPI interfaces are reflected with a separate <a class="el" href="theoryOperation.html#AccessStruct">Access Struct</a> for SPI1 and SPI2. The <a class="el" href="theoryOperation.html#AccessStruct">Access Struct</a> is the interface of a driver to the middleware component or the user application.</p>
-<p>The following block diagram shows an exemplary set up for various drivers:</p>
+<div class="textblock"><p><a class="anchor" id="mainpage"></a> The <b>CMSIS-Driver</b> specifies generic driver interfaces for peripherals commonly used in embedded systems with Arm® Cortex® processors.</p>
+<p>User applications and middleware components can control such peripherals using the <a href="modules.html">CMSIS-Driver API</a> and so achieve better code reuse and simpler integration in various ecosystems. The API is designed to be generic and independent of a specific RTOS making it reusable across a wide range of supported microcontroller devices.</p>
+<p>The following block diagram shows an exemplary set up for various drivers.</p>
 <div class="image">
 <img src="driver.png" alt=""/>
 <div class="caption">
-Peripheral Driver Interfaces and Middleware</div></div>
-<p>The following CMSIS-Driver APIs are defined:</p><ul>
+Example use of CMSIS-Drivers with Middleware</div></div>
+    <p>The standard CMSIS-Driver interfaces connect microcontroller peripherals with middleware that implements communication stacks, file system and graphic user interfaces.</p>
+<h1><a class="anchor" id="cmsis_drv_benefits"></a>
+Benefits</h1>
+<p>Using CMSIS-Driver provides great benefits to the embedded developers and software vendors:</p>
+<ul>
+<li>The CMSIS-Driver API covers <a class="el" href="index.html#cmsis_drv_interfaces">many common peripherals</a> present in modern embedded systems for sensor interaction, data storage, communication and graphics.</li>
+<li>The unified API follows the similar design principles across all peripherals. This reduces learning efforts and increases developers' productivity. See <a class="el" href="theoryOperation.html">Theory of Operation</a> for details.</li>
+<li>Driver templates files provide code sceletons that help to get started with implementations for specific peripherals. See <a class="el" href="theoryOperation.html#cmsis_driver_files">CMSIS-Driver Files</a>.</li>
+<li>Support for multiple driver instances with <a class="el" href="theoryOperation.html#AccessStruct">Access Struct</a>.</li>
+<li><a class="el" href="driverValidation.html">Driver-Validation Suite</a> provides a set of tests to verify compatibility to CMSIS-Driver API definitions.</li>
+</ul>
+<h1><a class="anchor" id="cmsis_drv_interfaces"></a>
+Covered Interfaces</h1>
+<p>CMSIS-Driver APIs are defined for the following driver interfaces:</p>
+<ul>
 <li><a class="el" href="group__can__interface__gr.html">CAN</a>: Interface to CAN bus peripheral.</li>
 <li><a class="el" href="group__eth__interface__gr.html">Ethernet</a>: Interface to Ethernet MAC and PHY peripheral.</li>
 <li><a class="el" href="group__i2c__interface__gr.html">I2C</a>: Multi-master Serial Single-Ended Bus interface driver.</li>
@@ -155,22 +168,29 @@ Peripheral Driver Interfaces and Middleware</div></div>
 <li><a class="el" href="group__wifi__interface__gr.html">WiFi</a>: Interface driver for wireless communication.</li>
 </ul>
 <p>A list of current CMSIS-Driver implementations is available <a class="el" href="listOfImplementations.html">here</a>.</p>
-<dl class="section note"><dt>Note</dt><dd>Usually, WiFi chips and modules have their own networking stack incorporated. This means that payload data is sent via a serial interface (SPI or USART) to the WiFi chip/module and the Ethernet frames are assembled inside. If you intend to use a TCP/IP stack from a middleware component with a WiFi chip/module, make sure that the WiFi driver has a <a class="el" href="group__wifi__bypass__gr.html">WiFi Bypass Mode</a>. This allows to send the Ethernet frames assembled by the TCP/IP component transparently through the WiFi chip/module.</dd></dl>
-<hr  />
-<h2><a class="anchor" id="autotoc_md1"></a>
-CMSIS-Driver in ARM::CMSIS Pack</h2>
-<p>The following files relevant to CMSIS-Driver are present in the <b>ARM::CMSIS</b> Pack directories: </p><table class="markdownTable">
+<h1><a class="anchor" id="cmsis_driver_pack"></a>
+Access to CMSIS-Driver</h1>
+<p>CMSIS-Driver intefaces are actively maintained in <a href="https://github.com/ARM-software/CMSIS_6">CMSIS 6 GitHub repository</a> and released as part of the <a href="../../General/html/cmsis_pack.html">CMSIS Software Pack</a>.</p>
+<p>The CMSIS Software Pack publishes the API Interface under the Component Class <b>CMSIS Driver</b> with header files and a documentation. These header files are the reference for the implementation of the standardized peripheral driver interfaces.</p>
+<p>These implementations are published typically in the Device Family Pack of a related microcontroller family under the Component Class <b>CMSIS Driver</b>. A Device Family Pack may contain additional interfaces in the Component Class <b>Device</b> to extend the standard Peripheral Drivers covered by this CMSIS-Driver specification with additional device specific interfaces for example for Memory BUS, GPIO, or DMA.</p>
+<p>The following directories and files relevant to CMSIS-Driver are present in the <b>ARM::CMSIS</b> Pack:</p>
+<table class="markdownTable">
 <tr class="markdownTableHead">
-<th class="markdownTableHeadNone">Directory   </th><th class="markdownTableHeadNone">Content    </th></tr>
+<th class="markdownTableHeadLeft">Directory   </th><th class="markdownTableHeadLeft">Content    </th></tr>
 <tr class="markdownTableRowOdd">
-<td class="markdownTableBodyNone"><b>CMSIS/Documentation/Driver</b>   </td><td class="markdownTableBodyNone">This documentation    </td></tr>
+<td class="markdownTableBodyLeft">📂 CMSIS   </td><td class="markdownTableBodyLeft">CMSIS Base software components folder    </td></tr>
 <tr class="markdownTableRowEven">
-<td class="markdownTableBodyNone"><b>CMSIS/Driver/Include</b>   </td><td class="markdownTableBodyNone">Driver header files (Driver_<em>interface</em>.h, <a class="el" href="Driver__Common_8h.html">Driver_Common.h</a>)    </td></tr>
+<td class="markdownTableBodyLeft">┣ 📂 Documentation/Driver   </td><td class="markdownTableBodyLeft">A local copy of this CMSIS-Driver documentation    </td></tr>
 <tr class="markdownTableRowOdd">
-<td class="markdownTableBodyNone"><b>CMSIS/Driver/DriverTemplates</b>   </td><td class="markdownTableBodyNone">Driver implementation template files (Driver_<em>interface</em>.c)   </td></tr>
+<td class="markdownTableBodyLeft">┣ 📂 Driver   </td><td class="markdownTableBodyLeft">Directory with CMSIS-Driver component, see <a class="el" href="theoryOperation.html#cmsis_driver_files">CMSIS-Driver Files</a>    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyLeft">&emsp;&#160; ┣ 📂 DriverTemplates   </td><td class="markdownTableBodyLeft">Driver Template files (Driver_<em>interface</em>.c)    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyLeft">&emsp;&#160; ┣ 📂 Include   </td><td class="markdownTableBodyLeft">API header files (Driver_<em>interface</em>.h, Driver_Common.h)    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyLeft">&emsp;&#160; ┗ 📂 VIO   </td><td class="markdownTableBodyLeft">Implementation of virtual Input/Output interface (<a class="el" href="group__vio__interface__gr.html">VIO</a>)   </td></tr>
 </table>
-<hr  />
- </div></div><!-- PageDoc -->
+</div></div><!-- PageDoc -->
 </div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->

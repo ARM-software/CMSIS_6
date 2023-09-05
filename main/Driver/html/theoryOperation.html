@@ -131,9 +131,8 @@ $(document).ready(function(){initNavTree('theoryOperation.html',''); initResizab
 </div><!--header-->
 <div class="contents">
 <div class="toc"><h3>Table of Contents</h3>
-<ul><li class="level1"><a href="#DriverFunctions">Common Driver Functions</a><ul><li class="level2"><a href="#ProcessorMode">Cortex-M Processor Mode</a></li>
-</ul>
-</li>
+<ul><li class="level1"><a href="#DriverFunctions">Common Driver Functions</a></li>
+<li class="level1"><a href="#ProcessorMode">Cortex-M Processor Mode</a></li>
 <li class="level1"><a href="#CallSequence">Function Call Sequence</a><ul><li class="level2"><a href="#CS_start">Start Sequence</a></li>
 <li class="level2"><a href="#CS_stop">Stop Sequence</a></li>
 </ul>
@@ -143,61 +142,63 @@ $(document).ready(function(){initNavTree('theoryOperation.html',''); initResizab
 <li class="level1"><a href="#AccessStruct">Access Struct</a><ul><li class="level2"><a href="#DriverInstances">Driver Instances</a></li>
 </ul>
 </li>
+<li class="level1"><a href="#cmsis_driver_files">CMSIS-Driver Files</a></li>
 <li class="level1"><a href="#DriverConfiguration">Driver Configuration</a></li>
 <li class="level1"><a href="#CodeExample">Code Example</a></li>
 </ul>
 </div>
-<div class="textblock"><p>This section gives an overview of the general operation of CMSIS-Drivers. It explains the <a class="el" href="theoryOperation.html#DriverFunctions">Common Driver Functions</a> that are common in all CMSIS-Drivers along with the <a class="el" href="theoryOperation.html#CallSequence">Function Call Sequence</a>. The topic <a class="el" href="theoryOperation.html#Data_Xfer_Functions">Data Transfer Functions</a> describes how data read/write operations to the peripheral are implemented.</p>
+<div class="textblock"><p><a class="anchor" id="md_src_operation"></a></p>
+<p>This section gives an overview of the general operation of CMSIS-Drivers. It explains the <a class="el" href="theoryOperation.html#DriverFunctions">Common Driver Functions</a> that are common in all CMSIS-Drivers along with the <a class="el" href="theoryOperation.html#CallSequence">Function Call Sequence</a>. The topic <a class="el" href="theoryOperation.html#Data_Xfer_Functions">Data Transfer Functions</a> describes how data read/write operations to the peripheral are implemented.</p>
 <p>Each CMSIS-Driver defines an <a class="el" href="theoryOperation.html#AccessStruct">Access Struct</a> for calling the various driver functions and each peripheral (that is accessed via a CMSIS-Driver) has one <a class="el" href="theoryOperation.html#DriverInstances">Driver Instance</a>.</p>
 <h1><a class="anchor" id="DriverFunctions"></a>
 Common Driver Functions</h1>
 <p>Each CMSIS-Driver contains these functions:</p>
 <ul>
-<li><b>GetVersion:</b> can be called at any time to obtain version information of the driver interface.</li>
-<li><b>GetCapabilities:</b> can be called at any time to obtain capabilities of the driver interface.</li>
-<li><b>Initialize:</b> must be called before powering the peripheral using <b>PowerControl</b>. This function performs the following:<ul>
+<li><code>GetVersion</code>: can be called at any time to obtain version information of the driver interface.</li>
+<li><code>GetCapabilities</code>: can be called at any time to obtain capabilities of the driver interface.</li>
+<li><code>Initialize</code>: must be called before powering the peripheral using <code>PowerControl</code>. This function performs the following:<ul>
 <li>allocate I/O resources.</li>
-<li>register an optional <b>SignalEvent</b> callback function.</li>
+<li>register an optional <code>SignalEvent</code> callback function.</li>
 </ul>
 </li>
-<li><b>SignalEvent:</b> is an optional callback function that is registered with the <b>Initialize</b> function. This callback function is initiated from interrupt service routines and indicates hardware events or the completion of a data block transfer operation.</li>
-<li><b>PowerControl:</b> Controls the power profile of the peripheral and needs to be called after <b>Initialize</b>. Typically, three power options are available:<ul>
-<li><code>ARM_POWER_FULL:</code> Peripheral is turned on and fully operational. The driver initializes the peripheral registers, interrupts, and (optionally) DMA.</li>
-<li><code>ARM_POWER_LOW:</code> (optional) Peripheral is in low power mode and partially operational; usually, it can detect external events and wake-up.</li>
-<li><code>ARM_POWER_OFF:</code> Peripheral is turned off and not operational (pending operations are terminated). This is the state after device reset.</li>
+<li><code>SignalEvent</code>: is an optional callback function that is registered with the <code>Initialize</code> function. This callback function is initiated from interrupt service routines and indicates hardware events or the completion of a data block transfer operation.</li>
+<li><code>PowerControl</code>: Controls the power profile of the peripheral and needs to be called after <code>Initialize</code>. Typically, three power options are available (see <a class="el" href="group__common__drv__gr.html#ga47d6d7c31f88f3b8ae4aaf9d8444afa5">ARM_POWER_STATE</a>):<ul>
+<li><code>ARM_POWER_FULL</code>: Peripheral is turned on and fully operational. The driver initializes the peripheral registers, interrupts, and (optionally) DMA.</li>
+<li><code>ARM_POWER_LOW</code> : (optional) Peripheral is in low power mode and partially operational; usually, it can detect external events and wake-up.</li>
+<li><code>ARM_POWER_OFF</code>: Peripheral is turned off and not operational (pending operations are terminated). This is the state after device reset.</li>
 </ul>
 </li>
-<li><b>Uninitialize:</b> Complementary function to Initialize. Releases the I/O pin resources used by the interface.</li>
-<li><b>Control:</b> Several drivers provide a control function to configure communication parameters or execute miscellaneous control functions.</li>
+<li><code>Uninitialize</code>: Complementary function to Initialize. Releases the I/O pin resources used by the interface.</li>
+<li><code>Control</code>: Several drivers provide a control function to configure communication parameters or execute miscellaneous control functions.</li>
 </ul>
 <p>The section <a class="el" href="theoryOperation.html#CallSequence">Function Call Sequence</a> contains more information on the operation of each function. Additional functions are specific to each driver interface and are described in the individual sections of each driver.</p>
-<h2><a class="anchor" id="ProcessorMode"></a>
-Cortex-M Processor Mode</h2>
+<h1><a class="anchor" id="ProcessorMode"></a>
+Cortex-M Processor Mode</h1>
 <p>The CMSIS-Driver functions access peripherals and interrupts and are designed to execute in <b>Privileged</b> mode. When calling CMSIS-Driver functions from RTOS threads, it should be ensure that these threads execute in <b>Privileged</b> mode.</p>
 <h1><a class="anchor" id="CallSequence"></a>
 Function Call Sequence</h1>
-<p>For normal operation of the driver, the API functions <b>GetVersion</b>, <b>GetCapabilities</b>, <b>Initialize</b>, <b>PowerControl</b>, <b>Uninitialize</b> are called in the following order:</p>
+<p>For normal operation of the driver, the API functions <code>GetVersion</code>, <code>GetCapabilities</code>, <code>Initialize</code>, <code>PowerControl</code>, <code>Uninitialize</code> are called in the following order:</p>
 <div class="mscgraph">
 <img src="msc_inline_mscgraph_1.png" alt="msc_inline_mscgraph_1" border="0"/>
 </div>
-<p>The functions <b>GetVersion</b> and <b>GetCapabilities</b> can be called any time to obtain the required information from the driver. These functions return always the same information.</p>
+<p>The functions <code>GetVersion</code> and <code>GetCapabilities</code> can be called any time to obtain the required information from the driver. These functions return always the same information.</p>
 <h2><a class="anchor" id="CS_start"></a>
 Start Sequence</h2>
-<p>To start working with a peripheral the functions <b>Initialize</b> and <b>PowerControl</b> need to be called in this order: </p><div class="fragment"><div class="line">drv-&gt;Initialize (...);                 <span class="comment">// Allocate I/O pins</span></div>
+<p>To start working with a peripheral the functions <code>Initialize</code> and <code>PowerControl</code> need to be called in this order: </p><div class="fragment"><div class="line">drv-&gt;Initialize (...);                 <span class="comment">// Allocate I/O pins</span></div>
 <div class="line">drv-&gt;PowerControl (<a class="code hl_enumvalue" href="Driver__Common_8h.html#ga47d6d7c31f88f3b8ae4aaf9d8444afa5abed52b77a9ce4775570e44a842b1295e">ARM_POWER_FULL</a>);    <span class="comment">// Power up peripheral, setup IRQ/DMA</span></div>
 <div class="ttc" id="aDriver__Common_8h_html_ga47d6d7c31f88f3b8ae4aaf9d8444afa5abed52b77a9ce4775570e44a842b1295e"><div class="ttname"><a href="Driver__Common_8h.html#ga47d6d7c31f88f3b8ae4aaf9d8444afa5abed52b77a9ce4775570e44a842b1295e">ARM_POWER_FULL</a></div><div class="ttdeci">@ ARM_POWER_FULL</div><div class="ttdoc">Power on: full operation at maximum performance.</div><div class="ttdef"><b>Definition:</b> Driver_Common.h:66</div></div>
 </div><!-- fragment --><ul>
-<li><b>Initialize</b> typically allocates the I/O resources (pins) for the peripheral. The function can be called multiple times; if the I/O resources are already initialized it performs no operation and just returns with <a class="el" href="group__execution__status.html#ga85752c5de59e8adeb001e35ff5be6be7">ARM_DRIVER_OK</a>.</li>
-<li><b>PowerControl</b> (<code>ARM_POWER_FULL</code>) sets the peripheral registers including interrupt (NVIC) and optionally DMA. The function can be called multiple times; if the registers are already set it performs no operation and just returns with <a class="el" href="group__execution__status.html#ga85752c5de59e8adeb001e35ff5be6be7">ARM_DRIVER_OK</a>.</li>
+<li><code>Initialize</code> typically allocates the I/O resources (pins) for the peripheral. The function can be called multiple times; if the I/O resources are already initialized it performs no operation and just returns with <a class="el" href="group__execution__status.html#ga85752c5de59e8adeb001e35ff5be6be7">ARM_DRIVER_OK</a>.</li>
+<li><code>PowerControl</code> (<code>ARM_POWER_FULL</code>) sets the peripheral registers including interrupt (NVIC) and optionally DMA. The function can be called multiple times; if the registers are already set it performs no operation and just returns with <a class="el" href="group__execution__status.html#ga85752c5de59e8adeb001e35ff5be6be7">ARM_DRIVER_OK</a>.</li>
 </ul>
 <h2><a class="anchor" id="CS_stop"></a>
 Stop Sequence</h2>
-<p>To stop working with a peripheral the functions <b>PowerControl</b> and <b>Uninitialize</b> need to be called in this order: </p><div class="fragment"><div class="line">drv-&gt;PowerControl (<a class="code hl_enumvalue" href="Driver__Common_8h.html#ga47d6d7c31f88f3b8ae4aaf9d8444afa5ab6f5becc85ebd51c3dd2524a95d2ca35">ARM_POWER_OFF</a>);     <span class="comment">// Terminate any pending transfers, reset IRQ/DMA, power off peripheral</span></div>
+<p>To stop working with a peripheral the functions <code>PowerControl</code> and <code>Uninitialize</code> need to be called in this order: </p><div class="fragment"><div class="line">drv-&gt;PowerControl (<a class="code hl_enumvalue" href="Driver__Common_8h.html#ga47d6d7c31f88f3b8ae4aaf9d8444afa5ab6f5becc85ebd51c3dd2524a95d2ca35">ARM_POWER_OFF</a>);     <span class="comment">// Terminate any pending transfers, reset IRQ/DMA, power off peripheral</span></div>
 <div class="line">drv-&gt;Uninitialize (...);               <span class="comment">// Release I/O pins</span></div>
 <div class="ttc" id="aDriver__Common_8h_html_ga47d6d7c31f88f3b8ae4aaf9d8444afa5ab6f5becc85ebd51c3dd2524a95d2ca35"><div class="ttname"><a href="Driver__Common_8h.html#ga47d6d7c31f88f3b8ae4aaf9d8444afa5ab6f5becc85ebd51c3dd2524a95d2ca35">ARM_POWER_OFF</a></div><div class="ttdeci">@ ARM_POWER_OFF</div><div class="ttdoc">Power off: no operation possible.</div><div class="ttdef"><b>Definition:</b> Driver_Common.h:64</div></div>
-</div><!-- fragment --><p> The functions <b>PowerControl</b> and <b>Uninitialize</b> always execute and can be used to put the peripheral into a <b>Safe State</b>, for example after any data transmission errors. To restart the peripheral in a error condition, you should first execute the <a class="el" href="theoryOperation.html#CS_stop">Stop Sequence</a> and then the <a class="el" href="theoryOperation.html#CS_start">Start Sequence</a>.</p>
+</div><!-- fragment --><p>The functions <code>PowerControl</code> and <code>Uninitialize</code> always execute and can be used to put the peripheral into a <b>Safe State</b>, for example after any data transmission errors. To restart the peripheral in a error condition, you should first execute the <a class="el" href="theoryOperation.html#CS_stop">Stop Sequence</a> and then the <a class="el" href="theoryOperation.html#CS_start">Start Sequence</a>.</p>
 <ul>
-<li><b>PowerControl</b> (<code>ARM_POWER_OFF</code>) terminates any pending data transfers with the peripheral, disables the peripheral and leaves it in a defined mode (typically the reset state).<ul>
+<li><code>PowerControl</code> (<code>ARM_POWER_OFF</code>) terminates any pending data transfers with the peripheral, disables the peripheral and leaves it in a defined mode (typically the reset state).<ul>
 <li>when DMA is used it is disabled (including the interrupts)</li>
 <li>peripheral interrupts are disabled on NVIC level</li>
 <li>the peripheral is reset using a dedicated reset mechanism (if available) or by clearing the peripheral registers</li>
@@ -205,7 +206,7 @@ Stop Sequence</h2>
 <li>driver variables are cleared</li>
 </ul>
 </li>
-<li><b>Uninitialize</b> always releases I/O pin resources.</li>
+<li><code>Uninitialize</code> always releases I/O pin resources.</li>
 </ul>
 <h1><a class="anchor" id="Share_IO"></a>
 Shared I/O Pins</h1>
@@ -224,9 +225,9 @@ Shared I/O Pins</h1>
 </div><!-- fragment --><h1><a class="anchor" id="Data_Xfer_Functions"></a>
 Data Transfer Functions</h1>
 <p>A CMSIS-Driver implements non-blocking functions to transfer data to a peripheral. This means that the driver configures the read or write access to the peripheral and instantly returns to the calling application. The function names for data transfer end with:</p><ul>
-<li><b>Send</b> to write data to a peripheral.</li>
-<li><b>Receive</b> to read data from a peripheral.</li>
-<li><b>Transfer</b> to indicate combined read/write operations to a peripheral.</li>
+<li><code>Send</code> to write data to a peripheral.</li>
+<li><code>Receive</code> to read data from a peripheral.</li>
+<li><code>Transfer</code> to indicate combined read/write operations to a peripheral.</li>
 </ul>
 <p>During a data transfer, the application can query the number of transferred data items using functions named <b>Get<em>xxx</em>Count</b>. On completion of a data transfer, the driver calls a callback function with a specific event code.</p>
 <p>During the data exchange with the peripheral, the application can decide to:</p><ul>
@@ -234,15 +235,15 @@ Data Transfer Functions</h1>
 <li>Use polling functions that return the number of transferred data items to show progress information or partly read or fill data transfer buffers.</li>
 <li>Prepare another data transfer buffer for the next data transfer.</li>
 </ul>
-<p>The following diagram shows the basic communication flow when using the <b>_Send</b> function in an application.</p>
+<p>The following diagram shows the basic communication flow when using the <code>_Send</code> function in an application.</p>
 <div class="image">
 <img src="Non_blocking_transmit_small.png" alt=""/>
 <div class="caption">
 Non-blocking Send Function</div></div>
-<h1><a class="anchor" id="AccessStruct"></a>
+    <h1><a class="anchor" id="AccessStruct"></a>
 Access Struct</h1>
-<p>A CMSIS-Driver publishes an <a class="el" href="theoryOperation.html#AccessStruct">Access Struct</a> with the data type name ARM_DRIVER_xxxx that gives to access the driver functions.</p>
-<p><b>Code</b> <b>Example:</b> <b>Function</b> <b>Access</b> <b>of</b> <b>the</b> <b>SPI</b> <b>driver</b> </p><div class="fragment"><div class="line"><span class="keyword">typedef</span> <span class="keyword">struct </span>_ARM_DRIVER_SPI {</div>
+<p>A CMSIS-Driver publishes an <a class="el" href="theoryOperation.html#AccessStruct">Access Struct</a> with the data type name <code>ARM_DRIVER_xxxx</code> that gives to access the driver functions.</p>
+<p><b>Code Example:</b> Function Access of the SPI driver </p><div class="fragment"><div class="line"><span class="keyword">typedef</span> <span class="keyword">struct </span>_ARM_DRIVER_SPI {</div>
 <div class="line">  <a class="code hl_struct" href="group__common__drv__gr.html#structARM__DRIVER__VERSION">ARM_DRIVER_VERSION</a>   (*GetVersion)      (void);</div>
 <div class="line">  <a class="code hl_struct" href="group__spi__interface__gr.html#structARM__SPI__CAPABILITIES">ARM_SPI_CAPABILITIES</a> (*GetCapabilities) (void);</div>
 <div class="line">  int32_t              (*Initialize)      (<a class="code hl_typedef" href="group__spi__interface__gr.html#gafde9205364241ee81290adc0481c6640">ARM_SPI_SignalEvent_t</a> cb_event);</div>
@@ -264,12 +265,12 @@ Access Struct</h1>
 </div><!-- fragment --><h2><a class="anchor" id="DriverInstances"></a>
 Driver Instances</h2>
 <p>A device may offer several peripherals of the same type. For such devices, the CMSIS-Driver publishes multiple instances of the <a class="el" href="theoryOperation.html#AccessStruct">Access Struct</a>. The name of each driver instance reflects the names of the peripheral available in the device.</p>
-<p><b>Code</b> <b>Example:</b> <a class="el" href="theoryOperation.html#AccessStruct">Access Struct</a> <b>for</b> <b>three</b> <b>SPIs</b> <b>in</b> <b>a</b> <b>microcontroller</b> <b>device</b>. </p><div class="fragment"><div class="line"><a class="code hl_struct" href="group__spi__interface__gr.html#structARM__DRIVER__SPI">ARM_DRIVER_SPI</a> Driver_SPI1;     <span class="comment">// access functions for SPI1 interface</span></div>
+<p><b>Code Example:</b> <a class="el" href="theoryOperation.html#AccessStruct">Access Struct</a> for three SPIs in a microcontroller device. </p><div class="fragment"><div class="line"><a class="code hl_struct" href="group__spi__interface__gr.html#structARM__DRIVER__SPI">ARM_DRIVER_SPI</a> Driver_SPI1;     <span class="comment">// access functions for SPI1 interface</span></div>
 <div class="line"><a class="code hl_struct" href="group__spi__interface__gr.html#structARM__DRIVER__SPI">ARM_DRIVER_SPI</a> Driver_SPI2;     <span class="comment">// access functions for SPI2 interface</span></div>
 <div class="line"><a class="code hl_struct" href="group__spi__interface__gr.html#structARM__DRIVER__SPI">ARM_DRIVER_SPI</a> Driver_SPI3;     <span class="comment">// access functions for SPI3 interface</span></div>
 </div><!-- fragment --><p>The access functions can be passed to middleware to specify the driver instance that the middleware should use for communication.</p>
-<p><b>Naming</b> <b>Convention</b> </p>
-<p>The access structs need to follow this naming convention: the keyword "Driver" followed by an underscore "_", the interface name "IFNAME" (usually in upper case letters), and the instance number "n". Here's the full list of access struct names for all drivers (n to be replaced with the actual instance number): </p><div class="fragment"><div class="line">Driver_CANn</div>
+<p><b>Naming Convention</b></p>
+<p>The access structs need to follow this naming convention: the keyword <code>Driver</code> followed by an underscore <code>_</code>, the interface name <code>IFNAME</code> (usually in upper case letters), and the instance number <code>n</code>. Here's the full list of access struct names for all drivers (n to be replaced with the actual instance number): </p><div class="fragment"><div class="line">Driver_CANn</div>
 <div class="line">Driver_ETH_MACn</div>
 <div class="line">Driver_ETH_PHYn</div>
 <div class="line">Driver_Flashn</div>
@@ -291,9 +292,54 @@ Driver Instances</h2>
 <div class="line">init_middleware (&amp;Driver_SPI1);      <span class="comment">// connect middleware to SPI1 interface</span></div>
 <div class="line">  :</div>
 <div class="line">init_middleware (&amp;Driver_SPI2);      <span class="comment">// connect middleware to SPI2 interface</span></div>
-</div><!-- fragment --><h1><a class="anchor" id="DriverConfiguration"></a>
+</div><!-- fragment --><h1><a class="anchor" id="cmsis_driver_files"></a>
+CMSIS-Driver Files</h1>
+<p>The API of each CMSIS-Driver peripheral is published in a corresponding header file in the directory <code>.\CMSIS\Driver\Include\</code> It is recommended to include such header file in the implementation file of the CMSIS-Driver.</p>
+<p>Template files are available to simplify the development of a CMSIS-Driver. These are code skeletons that provide the structure of a CMSIS-Driver. They are available in the directory<code>.\CMSIS\Driver\DriverTemplates\</code>. You can also refer to working <a class="el" href="listOfImplementations.html">CMSIS-Driver Implementations</a> to see how CMSIS-Drivers get implemented on real devices.</p>
+<p>The table below summarizes the API header and template files for CMSIS-Driver interfaces, with links to GitHub and API references.</p>
+<table class="markdownTable">
+<tr class="markdownTableHead">
+<th class="markdownTableHeadLeft">Header File   </th><th class="markdownTableHeadLeft">Template File   </th><th class="markdownTableHeadLeft">API Reference    </th></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyLeft"><a href="https://github.com/ARM-software/CMSIS_6/blob/main/CMSIS/Driver/Include/Driver_Common.h">Driver_Common.h</a>   </td><td class="markdownTableBodyLeft">Not applicable   </td><td class="markdownTableBodyLeft"><a class="el" href="group__common__drv__gr.html">Common Driver Definitions</a>    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyLeft"><a href="https://github.com/ARM-software/CMSIS_6/blob/main/CMSIS/Driver/Include/Driver_CAN.h">Driver_CAN.h</a>   </td><td class="markdownTableBodyLeft"><a href="https://github.com/ARM-software/CMSIS_6/blob/main/CMSIS/Driver/DriverTemplates/Driver_CAN.c">Driver_CAN.c</a>   </td><td class="markdownTableBodyLeft"><a class="el" href="group__can__interface__gr.html">CAN Interface</a>    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyLeft"><a href="https://github.com/ARM-software/CMSIS_6/blob/main/CMSIS/Driver/Include/Driver_ETH.h">Driver_ETH.h</a>   </td><td class="markdownTableBodyLeft">-   </td><td class="markdownTableBodyLeft"><a class="el" href="group__eth__interface__gr.html">Ethernet Interface</a>    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyLeft"><a href="https://github.com/ARM-software/CMSIS_6/blob/main/CMSIS/Driver/Include/Driver_ETH_MAC.h">Driver_ETH_MAC.h</a>   </td><td class="markdownTableBodyLeft"><a href="https://github.com/ARM-software/CMSIS_6/blob/main/CMSIS/Driver/DriverTemplates/Driver_ETH_MAC.c">Driver_ETH_MAC.c</a>   </td><td class="markdownTableBodyLeft"><a class="el" href="group__eth__mac__interface__gr.html">Ethernet MAC Interface</a>    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyLeft"><a href="https://github.com/ARM-software/CMSIS_6/blob/main/CMSIS/Driver/Include/Driver_ETH_MAC.h">Driver_ETH_PHY.h</a>   </td><td class="markdownTableBodyLeft"><a href="https://github.com/ARM-software/CMSIS_6/blob/main/CMSIS/Driver/DriverTemplates/Driver_ETH_PHY.c">Driver_ETH_PHY.c</a>   </td><td class="markdownTableBodyLeft"><a class="el" href="group__eth__phy__interface__gr.html">Ethernet PHY Interface</a>    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyLeft"><a href="https://github.com/ARM-software/CMSIS_6/blob/main/CMSIS/Driver/Include/Driver_Flash.h">Driver_Flash.h</a>   </td><td class="markdownTableBodyLeft"><a href="https://github.com/ARM-software/CMSIS_6/blob/main/CMSIS/Driver/DriverTemplates/Driver_Flash.c">Driver_Flash.c</a>   </td><td class="markdownTableBodyLeft"><a class="el" href="group__flash__interface__gr.html">Flash Interface</a>    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyLeft"><a href="https://github.com/ARM-software/CMSIS_6/blob/main/CMSIS/Driver/Include/Driver_GPIO.h">Driver_GPIO.h</a>   </td><td class="markdownTableBodyLeft"><a href="https://github.com/ARM-software/CMSIS_6/blob/main/CMSIS/Driver/DriverTemplates/Driver_GPIO.c">Driver_GPIO.c</a>   </td><td class="markdownTableBodyLeft"><a class="el" href="group__gpio__interface__gr.html">GPIO Interface</a>    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyLeft"><a href="https://github.com/ARM-software/CMSIS_6/blob/main/CMSIS/Driver/Include/Driver_I2C.h">Driver_I2C.h</a>   </td><td class="markdownTableBodyLeft"><a href="https://github.com/ARM-software/CMSIS_6/blob/main/CMSIS/Driver/DriverTemplates/Driver_I2C.c">Driver_I2C.c</a>   </td><td class="markdownTableBodyLeft"><a class="el" href="group__i2c__interface__gr.html">I2C Interface</a>    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyLeft"><a href="https://github.com/ARM-software/CMSIS_6/blob/main/CMSIS/Driver/Include/Driver_MCI.h">Driver_MCI.h</a>   </td><td class="markdownTableBodyLeft"><a href="https://github.com/ARM-software/CMSIS_6/blob/main/CMSIS/Driver/DriverTemplates/Driver_MCI.c">Driver_MCI.c</a>   </td><td class="markdownTableBodyLeft"><a class="el" href="group__mci__interface__gr.html">MCI Interface</a>    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyLeft"><a href="https://github.com/ARM-software/CMSIS_6/blob/main/CMSIS/Driver/Include/Driver_NAND.h">Driver_NAND.h</a>   </td><td class="markdownTableBodyLeft"><a href="https://github.com/ARM-software/CMSIS_6/blob/main/CMSIS/Driver/DriverTemplates/Driver_NAND.c">Driver_NAND.c</a>   </td><td class="markdownTableBodyLeft"><a class="el" href="group__nand__interface__gr.html">NAND Interface</a>    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyLeft"><a href="https://github.com/ARM-software/CMSIS_6/blob/main/CMSIS/Driver/Include/Driver_SAI.h">Driver_SAI.h</a>   </td><td class="markdownTableBodyLeft"><a href="https://github.com/ARM-software/CMSIS_6/blob/main/CMSIS/Driver/DriverTemplates/Driver_SAI.c">Driver_SAI.c</a>   </td><td class="markdownTableBodyLeft"><a class="el" href="group__sai__interface__gr.html">SAI Interface</a>    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyLeft"><a href="https://github.com/ARM-software/CMSIS_6/blob/main/CMSIS/Driver/Include/Driver_SPI.h">Driver_SPI.h</a>   </td><td class="markdownTableBodyLeft"><a href="https://github.com/ARM-software/CMSIS_6/blob/main/CMSIS/Driver/DriverTemplates/Driver_SPI.c">Driver_SPI.c</a>   </td><td class="markdownTableBodyLeft"><a class="el" href="group__spi__interface__gr.html">SPI Interface</a>    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyLeft"><a href="https://github.com/ARM-software/CMSIS_6/blob/main/CMSIS/Driver/Include/Driver_Storage.h">Driver_Storage.h</a>   </td><td class="markdownTableBodyLeft"><a href="https://github.com/ARM-software/CMSIS_6/blob/main/CMSIS/Driver/DriverTemplates/Driver_Storage.c">Driver_Storage.c</a>   </td><td class="markdownTableBodyLeft"><a class="el" href="group__storage__interface__gr.html">Storage Interface</a>    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyLeft"><a href="https://github.com/ARM-software/CMSIS_6/blob/main/CMSIS/Driver/Include/Driver_USART.h">Driver_USART.h</a>   </td><td class="markdownTableBodyLeft"><a href="https://github.com/ARM-software/CMSIS_6/blob/main/CMSIS/Driver/DriverTemplates/Driver_USART.c">Driver_USART.c</a>   </td><td class="markdownTableBodyLeft"><a class="el" href="group__usart__interface__gr.html">USART Interface</a>    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyLeft"><a href="https://github.com/ARM-software/CMSIS_6/blob/main/CMSIS/Driver/Include/Driver_USB.h">Driver_USB.h</a>   </td><td class="markdownTableBodyLeft">-   </td><td class="markdownTableBodyLeft"><a class="el" href="group__usb__interface__gr.html">USB Interface</a>    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyLeft"><a href="https://github.com/ARM-software/CMSIS_6/blob/main/CMSIS/Driver/Include/Driver_USBD.h">Driver_USBD.h</a>   </td><td class="markdownTableBodyLeft"><a href="https://github.com/ARM-software/CMSIS_6/blob/main/CMSIS/Driver/DriverTemplates/Driver_USBD.c">Driver_USBD.c</a>   </td><td class="markdownTableBodyLeft"><a class="el" href="group__usbd__interface__gr.html">USB Device Interface</a>    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyLeft"><a href="https://github.com/ARM-software/CMSIS_6/blob/main/CMSIS/Driver/Include/Driver_USBH.h">Driver_USBH.h</a>   </td><td class="markdownTableBodyLeft"><a href="https://github.com/ARM-software/CMSIS_6/blob/main/CMSIS/Driver/DriverTemplates/Driver_USBH.c">Driver_USBH.c</a>   </td><td class="markdownTableBodyLeft"><a class="el" href="group__usbh__interface__gr.html">USB Host Interface</a>    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyLeft"><a href="https://github.com/ARM-software/CMSIS_6/blob/main/CMSIS/Driver/Include/Driver_WiFi.h">Driver_WiFi.h</a>   </td><td class="markdownTableBodyLeft"><a href="https://github.com/ARM-software/CMSIS_6/blob/main/CMSIS/Driver/DriverTemplates/Driver_WiFi.c">Driver_WiFi.c</a>   </td><td class="markdownTableBodyLeft"><a class="el" href="group__wifi__interface__gr.html">WiFi Interface</a>   </td></tr>
+</table>
+<h1><a class="anchor" id="DriverConfiguration"></a>
 Driver Configuration</h1>
-<p>For a device family, the drivers may be configurable. The <a class="el" href="referenceImplementation.html">Reference Implementation</a> stores configuration options in a central file with the name <b>RTE_Device.h</b>. However, the configuration of the drivers itself is not part of the CMSIS-Driver specification.</p>
+<p>For a device family, the drivers may be configurable, but the configuration of the drivers itself is not part of the CMSIS-Driver specification.</p>
 <h1><a class="anchor" id="CodeExample"></a>
 Code Example</h1>
 <p>The following example code shows the usage of the SPI interface.</p>
@@ -366,13 +412,13 @@ Code Example</h1>
 <div class="line">    SPIdrv-&gt;<a class="code hl_variable" href="group__spi__interface__gr.html#a5e96d73d3a3c366aba50bf5304edb029">Control</a>(<a class="code hl_define" href="group__spi__mode__ctrls.html#ga3143ef07c1607b9bc57e29df35cf2fa8">ARM_SPI_MODE_MASTER</a> | <a class="code hl_define" href="group__spi__frame__format__ctrls.html#ga7fab572b2fec303e979e47eb2d13ca74">ARM_SPI_CPOL1_CPHA1</a> | <a class="code hl_define" href="group__spi__bit__order__ctrls.html#ga98228a708cbab6e214c7ac696f77dab6">ARM_SPI_MSB_LSB</a> | <a class="code hl_define" href="group__spi__slave__select__mode__ctrls.html#gab5e319aa3f9d4d8c9ed92f0fe865f624">ARM_SPI_SS_MASTER_SW</a> | <a class="code hl_define" href="group__spi__data__bits__ctrls.html#gaf6c099a1d67256a32010120c66c55250">ARM_SPI_DATA_BITS</a>(8), 10000000);</div>
 <div class="line"> </div>
 <div class="line">    <span class="comment">/* SS line = INACTIVE = HIGH */</span></div>
-<div class="line">    SPIdrv-&gt;<a class="code hl_variable" href="group__spi__interface__gr.html#a5e96d73d3a3c366aba50bf5304edb029">Control</a>(<a class="code hl_define" href="group__spi__misc__ctrls.html#ga5776272b82decff92da003568540c92f">ARM_SPI_CONTROL_SS</a>, <a class="code hl_define" href="Driver__SPI_8h.html#a335b448e07422e9c25616a693ec581cc">ARM_SPI_SS_INACTIVE</a>);</div>
+<div class="line">    SPIdrv-&gt;<a class="code hl_variable" href="group__spi__interface__gr.html#a5e96d73d3a3c366aba50bf5304edb029">Control</a>(<a class="code hl_define" href="group__spi__misc__ctrls.html#ga5776272b82decff92da003568540c92f">ARM_SPI_CONTROL_SS</a>, <a class="code hl_define" href="group__spi__ss__signals.html#ga335b448e07422e9c25616a693ec581cc">ARM_SPI_SS_INACTIVE</a>);</div>
 <div class="line"> </div>
 <div class="line">    <span class="comment">/* thread loop */</span></div>
 <div class="line">    <span class="keywordflow">while</span> (1)</div>
 <div class="line">    {</div>
 <div class="line">        <span class="comment">/* SS line = ACTIVE = LOW */</span></div>
-<div class="line">        SPIdrv-&gt;<a class="code hl_variable" href="group__spi__interface__gr.html#a5e96d73d3a3c366aba50bf5304edb029">Control</a>(<a class="code hl_define" href="group__spi__misc__ctrls.html#ga5776272b82decff92da003568540c92f">ARM_SPI_CONTROL_SS</a>, <a class="code hl_define" href="Driver__SPI_8h.html#a3f465cdbd1238ddd74f78e14457076c4">ARM_SPI_SS_ACTIVE</a>);</div>
+<div class="line">        SPIdrv-&gt;<a class="code hl_variable" href="group__spi__interface__gr.html#a5e96d73d3a3c366aba50bf5304edb029">Control</a>(<a class="code hl_define" href="group__spi__misc__ctrls.html#ga5776272b82decff92da003568540c92f">ARM_SPI_CONTROL_SS</a>, <a class="code hl_define" href="group__spi__ss__signals.html#ga3f465cdbd1238ddd74f78e14457076c4">ARM_SPI_SS_ACTIVE</a>);</div>
 <div class="line">        <span class="comment">/* Transmit some data */</span></div>
 <div class="line">        SPIdrv-&gt;<a class="code hl_variable" href="group__spi__interface__gr.html#a6e880dae8e9733a3c0f152a131076ca4">Send</a>(testdata_out, <span class="keyword">sizeof</span>(testdata_out));</div>
 <div class="line">        <span class="comment">/* Wait for completion */</span></div>
@@ -381,10 +427,10 @@ Code Example</h1>
 <div class="line">            __breakpoint(0); <span class="comment">/* Timeout error: Call debugger */</span></div>
 <div class="line">        }</div>
 <div class="line">        <span class="comment">/* SS line = INACTIVE = HIGH */</span></div>
-<div class="line">        SPIdrv-&gt;<a class="code hl_variable" href="group__spi__interface__gr.html#a5e96d73d3a3c366aba50bf5304edb029">Control</a>(<a class="code hl_define" href="group__spi__misc__ctrls.html#ga5776272b82decff92da003568540c92f">ARM_SPI_CONTROL_SS</a>, <a class="code hl_define" href="Driver__SPI_8h.html#a335b448e07422e9c25616a693ec581cc">ARM_SPI_SS_INACTIVE</a>);</div>
+<div class="line">        SPIdrv-&gt;<a class="code hl_variable" href="group__spi__interface__gr.html#a5e96d73d3a3c366aba50bf5304edb029">Control</a>(<a class="code hl_define" href="group__spi__misc__ctrls.html#ga5776272b82decff92da003568540c92f">ARM_SPI_CONTROL_SS</a>, <a class="code hl_define" href="group__spi__ss__signals.html#ga335b448e07422e9c25616a693ec581cc">ARM_SPI_SS_INACTIVE</a>);</div>
 <div class="line"> </div>
 <div class="line">        <span class="comment">/* SS line = ACTIVE = LOW */</span></div>
-<div class="line">        SPIdrv-&gt;<a class="code hl_variable" href="group__spi__interface__gr.html#a5e96d73d3a3c366aba50bf5304edb029">Control</a>(<a class="code hl_define" href="group__spi__misc__ctrls.html#ga5776272b82decff92da003568540c92f">ARM_SPI_CONTROL_SS</a>, <a class="code hl_define" href="Driver__SPI_8h.html#a3f465cdbd1238ddd74f78e14457076c4">ARM_SPI_SS_ACTIVE</a>);</div>
+<div class="line">        SPIdrv-&gt;<a class="code hl_variable" href="group__spi__interface__gr.html#a5e96d73d3a3c366aba50bf5304edb029">Control</a>(<a class="code hl_define" href="group__spi__misc__ctrls.html#ga5776272b82decff92da003568540c92f">ARM_SPI_CONTROL_SS</a>, <a class="code hl_define" href="group__spi__ss__signals.html#ga3f465cdbd1238ddd74f78e14457076c4">ARM_SPI_SS_ACTIVE</a>);</div>
 <div class="line">        <span class="comment">/* Receive 8 bytes of reply */</span></div>
 <div class="line">        SPIdrv-&gt;<a class="code hl_variable" href="group__spi__interface__gr.html#a784cafe08ad8f9052dca8cd8071d2a9b">Receive</a>(testdata_in, 8);</div>
 <div class="line">        evt = osSignalWait(0x01, 100);</div>
@@ -392,12 +438,10 @@ Code Example</h1>
 <div class="line">            __breakpoint(0); <span class="comment">/* Timeout error: Call debugger */</span></div>
 <div class="line">        }</div>
 <div class="line">        <span class="comment">/* SS line = INACTIVE = HIGH */</span></div>
-<div class="line">        SPIdrv-&gt;<a class="code hl_variable" href="group__spi__interface__gr.html#a5e96d73d3a3c366aba50bf5304edb029">Control</a>(<a class="code hl_define" href="group__spi__misc__ctrls.html#ga5776272b82decff92da003568540c92f">ARM_SPI_CONTROL_SS</a>, <a class="code hl_define" href="Driver__SPI_8h.html#a335b448e07422e9c25616a693ec581cc">ARM_SPI_SS_INACTIVE</a>);</div>
+<div class="line">        SPIdrv-&gt;<a class="code hl_variable" href="group__spi__interface__gr.html#a5e96d73d3a3c366aba50bf5304edb029">Control</a>(<a class="code hl_define" href="group__spi__misc__ctrls.html#ga5776272b82decff92da003568540c92f">ARM_SPI_CONTROL_SS</a>, <a class="code hl_define" href="group__spi__ss__signals.html#ga335b448e07422e9c25616a693ec581cc">ARM_SPI_SS_INACTIVE</a>);</div>
 <div class="line">    }</div>
 <div class="line">}</div>
 <div class="ttc" id="aDriver__SPI_8h_html"><div class="ttname"><a href="Driver__SPI_8h.html">Driver_SPI.h</a></div></div>
-<div class="ttc" id="aDriver__SPI_8h_html_a335b448e07422e9c25616a693ec581cc"><div class="ttname"><a href="Driver__SPI_8h.html#a335b448e07422e9c25616a693ec581cc">ARM_SPI_SS_INACTIVE</a></div><div class="ttdeci">#define ARM_SPI_SS_INACTIVE</div><div class="ttdoc">SPI Slave Select Signal Inactive.</div><div class="ttdef"><b>Definition:</b> Driver_SPI.h:122</div></div>
-<div class="ttc" id="aDriver__SPI_8h_html_a3f465cdbd1238ddd74f78e14457076c4"><div class="ttname"><a href="Driver__SPI_8h.html#a3f465cdbd1238ddd74f78e14457076c4">ARM_SPI_SS_ACTIVE</a></div><div class="ttdeci">#define ARM_SPI_SS_ACTIVE</div><div class="ttdoc">SPI Slave Select Signal Active.</div><div class="ttdef"><b>Definition:</b> Driver_SPI.h:123</div></div>
 <div class="ttc" id="agroup__SPI__events_html_ga7eaa229003689aa18598273490b3e630"><div class="ttname"><a href="group__SPI__events.html#ga7eaa229003689aa18598273490b3e630">ARM_SPI_EVENT_MODE_FAULT</a></div><div class="ttdeci">#define ARM_SPI_EVENT_MODE_FAULT</div><div class="ttdoc">Master Mode Fault (SS deactivated when Master)</div></div>
 <div class="ttc" id="agroup__SPI__events_html_ga8e63d99c80ea56de596a8d0a51fd8244"><div class="ttname"><a href="group__SPI__events.html#ga8e63d99c80ea56de596a8d0a51fd8244">ARM_SPI_EVENT_DATA_LOST</a></div><div class="ttdeci">#define ARM_SPI_EVENT_DATA_LOST</div><div class="ttdoc">Data lost: Receive overflow / Transmit underflow.</div></div>
 <div class="ttc" id="agroup__SPI__events_html_gaabdfc9e17641144cd50d36d15511a1b8"><div class="ttname"><a href="group__SPI__events.html#gaabdfc9e17641144cd50d36d15511a1b8">ARM_SPI_EVENT_TRANSFER_COMPLETE</a></div><div class="ttdeci">#define ARM_SPI_EVENT_TRANSFER_COMPLETE</div><div class="ttdoc">Data Transfer completed.</div></div>
@@ -416,6 +460,8 @@ Code Example</h1>
 <div class="ttc" id="agroup__spi__misc__ctrls_html_ga5776272b82decff92da003568540c92f"><div class="ttname"><a href="group__spi__misc__ctrls.html#ga5776272b82decff92da003568540c92f">ARM_SPI_CONTROL_SS</a></div><div class="ttdeci">#define ARM_SPI_CONTROL_SS</div><div class="ttdoc">Control Slave Select; arg: 0=inactive, 1=active.</div></div>
 <div class="ttc" id="agroup__spi__mode__ctrls_html_ga3143ef07c1607b9bc57e29df35cf2fa8"><div class="ttname"><a href="group__spi__mode__ctrls.html#ga3143ef07c1607b9bc57e29df35cf2fa8">ARM_SPI_MODE_MASTER</a></div><div class="ttdeci">#define ARM_SPI_MODE_MASTER</div><div class="ttdoc">SPI Master (Output on MOSI, Input on MISO); arg = Bus Speed in bps.</div></div>
 <div class="ttc" id="agroup__spi__slave__select__mode__ctrls_html_gab5e319aa3f9d4d8c9ed92f0fe865f624"><div class="ttname"><a href="group__spi__slave__select__mode__ctrls.html#gab5e319aa3f9d4d8c9ed92f0fe865f624">ARM_SPI_SS_MASTER_SW</a></div><div class="ttdeci">#define ARM_SPI_SS_MASTER_SW</div><div class="ttdoc">SPI Slave Select when Master: Software controlled.</div></div>
+<div class="ttc" id="agroup__spi__ss__signals_html_ga335b448e07422e9c25616a693ec581cc"><div class="ttname"><a href="group__spi__ss__signals.html#ga335b448e07422e9c25616a693ec581cc">ARM_SPI_SS_INACTIVE</a></div><div class="ttdeci">#define ARM_SPI_SS_INACTIVE</div><div class="ttdoc">SPI Slave Select Signal Inactive.</div></div>
+<div class="ttc" id="agroup__spi__ss__signals_html_ga3f465cdbd1238ddd74f78e14457076c4"><div class="ttname"><a href="group__spi__ss__signals.html#ga3f465cdbd1238ddd74f78e14457076c4">ARM_SPI_SS_ACTIVE</a></div><div class="ttdeci">#define ARM_SPI_SS_ACTIVE</div><div class="ttdoc">SPI Slave Select Signal Active.</div></div>
 </div><!-- fragment --> </div></div><!-- contents -->
 </div><!-- PageDoc -->
 </div><!-- doc-content -->

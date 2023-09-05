@@ -1,6 +1,6 @@
 var group__nand__interface__gr =
 [
-    [ "Status Error Codes", "group__nand__execution__status.html", "group__nand__execution__status" ],
+    [ "NAND Status Error Codes", "group__nand__execution__status.html", "group__nand__execution__status" ],
     [ "NAND Events", "group__NAND__events.html", "group__NAND__events" ],
     [ "NAND Flags", "group__nand__driver__flag__codes.html", null ],
     [ "NAND Control Codes", "group__nand__control__gr.html", "group__nand__control__gr" ],

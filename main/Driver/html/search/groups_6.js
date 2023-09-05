@@ -9,5 +9,6 @@ var searchData=
   ['nand_20flags_6',['NAND Flags',['../group__nand__driver__flag__codes.html',1,'']]],
   ['nand_20interface_7',['NAND Interface',['../group__nand__interface__gr.html',1,'']]],
   ['nand_20mode_20controls_8',['NAND Mode Controls',['../group__nand__control__codes.html',1,'']]],
-  ['nand_20sequence_20execution_20codes_9',['NAND Sequence Execution Codes',['../group__nand__driver__seq__exec__codes.html',1,'']]]
+  ['nand_20sequence_20execution_20codes_9',['NAND Sequence Execution Codes',['../group__nand__driver__seq__exec__codes.html',1,'']]],
+  ['nand_20status_20error_20codes_10',['NAND Status Error Codes',['../group__nand__execution__status.html',1,'']]]
 ];
