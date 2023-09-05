@@ -131,7 +131,7 @@ $(document).ready(function(){initNavTree('group__CMSIS__RTOS__SemaphoreMgmt.html
 <a href="#nested-classes">Data Structures</a> &#124;
 <a href="#typedef-members">Typedefs</a> &#124;
 <a href="#func-members">Functions</a>  </div>
-  <div class="headertitle"><div class="title">Semaphores<div class="ingroups"><a class="el" href="group__CMSIS__RTOS.html">CMSIS-RTOS API v2</a></div></div></div>
+  <div class="headertitle"><div class="title">Semaphores<div class="ingroups"><a class="el" href="group__CMSIS__RTOS.html">CMSIS-RTOS2 API</a></div></div></div>
 </div><!--header-->
 <div class="contents">
 
@@ -171,6 +171,7 @@ Functions</h2></td></tr>
 <tr class="separator:ga81258ce9c67fa89f07cc49d2e136cd88"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Description</h2>
+<p>Access shared resources simultaneously from different threads. </p>
 <p>Semaphores are used to manage and protect access to shared resources. Semaphores are very similar to <a class="el" href="group__CMSIS__RTOS__MutexMgmt.html">Mutexes</a>. Whereas a Mutex permits just one thread to access a shared resource at a time, a semaphore can be used to permit a fixed number of threads/ISRs to access a pool of shared resources. Using semaphores, access to a group of identical peripherals can be managed (for example multiple DMA channels).</p>
 <div class="image">
 <img src="Semaphore.png" alt=""/>
@@ -181,10 +182,8 @@ CMSIS-RTOS Semaphore</div></div>
 <img src="semaphore_states.png" alt=""/>
 <div class="caption">
 CMSIS-RTOS Semaphore States</div></div>
-<dl class="section note"><dt>Note</dt><dd>The functions <a class="el" href="group__CMSIS__RTOS__SemaphoreMgmt.html#ga7e94c8b242a0c81f2cc79ec22895c87b">osSemaphoreAcquire</a>, <a class="el" href="group__CMSIS__RTOS__SemaphoreMgmt.html#ga7559d4dff3cda9992fc5ab5de3e74c70">osSemaphoreGetCount</a>, and <a class="el" href="group__CMSIS__RTOS__SemaphoreMgmt.html#ga0abcee1b5449d7a6928fb9248c690bb6">osSemaphoreRelease</a> can be called from Interrupt Service Routines.</dd>
-<dd>
-Refer to semaphoreConfig for RTX5 configuration options.</dd></dl>
-<h2><a class="anchor" id="autotoc_md4"></a>
+<dl class="section note"><dt>Note</dt><dd>The functions <a class="el" href="group__CMSIS__RTOS__SemaphoreMgmt.html#ga7e94c8b242a0c81f2cc79ec22895c87b">osSemaphoreAcquire</a>, <a class="el" href="group__CMSIS__RTOS__SemaphoreMgmt.html#ga7559d4dff3cda9992fc5ab5de3e74c70">osSemaphoreGetCount</a>, and <a class="el" href="group__CMSIS__RTOS__SemaphoreMgmt.html#ga0abcee1b5449d7a6928fb9248c690bb6">osSemaphoreRelease</a> can be called from <a class="el" href="usingOS2.html#CMSIS_RTOS_ISR_Calls">Interrupt Service Routines</a>.</dd></dl>
+<h2><a class="anchor" id="autotoc_md5"></a>
 Semaphore Use Cases</h2>
 <p>Due to their flexibility, semaphores cover a wide range of synchronizing applications. At the same time, they are perhaps the most challenging RTOS object to understand. The following explains a use case for semaphores, taken from the book <a href="http://www.greenteapress.com/semaphores/" target="_blank">The Little Book Of Semaphores</a> by Allen B. Downey which is available for free download.</p>
 <p><b>Non-binary Semaphore (Multiplex)</b></p>
@@ -194,18 +193,13 @@ Semaphore Use Cases</h2>
 <div class="line"> </div>
 <div class="line"><span class="keywordtype">void</span> thread_n (<span class="keywordtype">void</span>) {</div>
 <div class="line"> </div>
-<div class="line">  multiplex_id = <a class="code hl_function" href="group__CMSIS__RTOS__SemaphoreMgmt.html#ga2a39806ace781a0008a4374ca701b14a">osSemaphoreNew</a>(3U, 3U, NULL);</div>
+<div class="line">  multiplex_id = <a class="code hl_function" href="group__CMSIS__RTOS__SemaphoreMgmt.html#ga2a39806ace781a0008a4374ca701b14a" title="Create and Initialize a Semaphore object.">osSemaphoreNew</a>(3U, 3U, NULL);</div>
 <div class="line">  <span class="keywordflow">while</span>(1) {</div>
-<div class="line">    <a class="code hl_function" href="group__CMSIS__RTOS__SemaphoreMgmt.html#ga7e94c8b242a0c81f2cc79ec22895c87b">osSemaphoreAcquire</a>(multiplex_id, <a class="code hl_define" href="group__CMSIS__RTOS__Definitions.html#ga9eb9a7a797a42e4b55eb171ecc609ddb">osWaitForever</a>);</div>
+<div class="line">    <a class="code hl_function" href="group__CMSIS__RTOS__SemaphoreMgmt.html#ga7e94c8b242a0c81f2cc79ec22895c87b" title="Acquire a Semaphore token or timeout if no tokens are available.">osSemaphoreAcquire</a>(multiplex_id, <a class="code hl_define" href="group__CMSIS__RTOS__Definitions.html#ga9eb9a7a797a42e4b55eb171ecc609ddb" title="Wait forever timeout value.">osWaitForever</a>);</div>
 <div class="line">    <span class="comment">// do something</span></div>
-<div class="line">    <a class="code hl_function" href="group__CMSIS__RTOS__SemaphoreMgmt.html#ga0abcee1b5449d7a6928fb9248c690bb6">osSemaphoreRelease</a>(multiplex_id);</div>
+<div class="line">    <a class="code hl_function" href="group__CMSIS__RTOS__SemaphoreMgmt.html#ga0abcee1b5449d7a6928fb9248c690bb6" title="Release a Semaphore token up to the initial maximum count.">osSemaphoreRelease</a>(multiplex_id);</div>
 <div class="line">  }</div>
 <div class="line">}</div>
-<div class="ttc" id="agroup__CMSIS__RTOS__Definitions_html_ga9eb9a7a797a42e4b55eb171ecc609ddb"><div class="ttname"><a href="group__CMSIS__RTOS__Definitions.html#ga9eb9a7a797a42e4b55eb171ecc609ddb">osWaitForever</a></div><div class="ttdeci">#define osWaitForever</div><div class="ttdoc">Wait forever timeout value.</div><div class="ttdef"><b>Definition:</b> cmsis_os2.h:193</div></div>
-<div class="ttc" id="agroup__CMSIS__RTOS__SemaphoreMgmt_html_ga0abcee1b5449d7a6928fb9248c690bb6"><div class="ttname"><a href="group__CMSIS__RTOS__SemaphoreMgmt.html#ga0abcee1b5449d7a6928fb9248c690bb6">osSemaphoreRelease</a></div><div class="ttdeci">osStatus_t osSemaphoreRelease(osSemaphoreId_t semaphore_id)</div><div class="ttdoc">Release a Semaphore token up to the initial maximum count.</div></div>
-<div class="ttc" id="agroup__CMSIS__RTOS__SemaphoreMgmt_html_ga2a39806ace781a0008a4374ca701b14a"><div class="ttname"><a href="group__CMSIS__RTOS__SemaphoreMgmt.html#ga2a39806ace781a0008a4374ca701b14a">osSemaphoreNew</a></div><div class="ttdeci">osSemaphoreId_t osSemaphoreNew(uint32_t max_count, uint32_t initial_count, const osSemaphoreAttr_t *attr)</div><div class="ttdoc">Create and Initialize a Semaphore object.</div></div>
-<div class="ttc" id="agroup__CMSIS__RTOS__SemaphoreMgmt_html_ga6e1c1c4b04175bb92b013c8f37249f40"><div class="ttname"><a href="group__CMSIS__RTOS__SemaphoreMgmt.html#ga6e1c1c4b04175bb92b013c8f37249f40">osSemaphoreId_t</a></div><div class="ttdeci">void * osSemaphoreId_t</div><div class="ttdef"><b>Definition:</b> cmsis_os2.h:272</div></div>
-<div class="ttc" id="agroup__CMSIS__RTOS__SemaphoreMgmt_html_ga7e94c8b242a0c81f2cc79ec22895c87b"><div class="ttname"><a href="group__CMSIS__RTOS__SemaphoreMgmt.html#ga7e94c8b242a0c81f2cc79ec22895c87b">osSemaphoreAcquire</a></div><div class="ttdeci">osStatus_t osSemaphoreAcquire(osSemaphoreId_t semaphore_id, uint32_t timeout)</div><div class="ttdoc">Acquire a Semaphore token or timeout if no tokens are available.</div></div>
 </div><!-- fragment --><p><b>Producer/Consumer Semaphore</b></p>
 <p>The producer-consumer problem can be solved using two semaphores.</p>
 <p>A first semaphore (<span class="XML-Token">empty_id</span>) counts down the available (empty) buffers, i.e. the producer thread can wait for available buffer slots by acquiring from this one.</p>
@@ -213,23 +207,23 @@ Semaphore Use Cases</h2>
 <p>It is crucial for the correct behaviour that the threads acquire and release on both semaphores in the given sequence. According to this example one can have multiple producer and/or consumer threads running concurrently.</p>
 <div class="fragment"><div class="line"><span class="preprocessor">#define BUFFER_SIZE 10U</span></div>
 <div class="line"> </div>
-<div class="line"><a class="code hl_typedef" href="group__CMSIS__RTOS__SemaphoreMgmt.html#ga6e1c1c4b04175bb92b013c8f37249f40">osSemaphoreId_t</a> empty_id = <a class="code hl_function" href="group__CMSIS__RTOS__SemaphoreMgmt.html#ga2a39806ace781a0008a4374ca701b14a">osSemaphoreNew</a>(BUFFER_SIZE, BUFFER_SIZE, NULL);</div>
-<div class="line"><a class="code hl_typedef" href="group__CMSIS__RTOS__SemaphoreMgmt.html#ga6e1c1c4b04175bb92b013c8f37249f40">osSemaphoreId_t</a> filled_id = <a class="code hl_function" href="group__CMSIS__RTOS__SemaphoreMgmt.html#ga2a39806ace781a0008a4374ca701b14a">osSemaphoreNew</a>(BUFFER_SIZE, 0U, NULL);</div>
+<div class="line"><a class="code hl_typedef" href="group__CMSIS__RTOS__SemaphoreMgmt.html#ga6e1c1c4b04175bb92b013c8f37249f40">osSemaphoreId_t</a> empty_id = <a class="code hl_function" href="group__CMSIS__RTOS__SemaphoreMgmt.html#ga2a39806ace781a0008a4374ca701b14a" title="Create and Initialize a Semaphore object.">osSemaphoreNew</a>(BUFFER_SIZE, BUFFER_SIZE, NULL);</div>
+<div class="line"><a class="code hl_typedef" href="group__CMSIS__RTOS__SemaphoreMgmt.html#ga6e1c1c4b04175bb92b013c8f37249f40">osSemaphoreId_t</a> filled_id = <a class="code hl_function" href="group__CMSIS__RTOS__SemaphoreMgmt.html#ga2a39806ace781a0008a4374ca701b14a" title="Create and Initialize a Semaphore object.">osSemaphoreNew</a>(BUFFER_SIZE, 0U, NULL);</div>
 <div class="line"> </div>
 <div class="line"><span class="keywordtype">void</span> producer_thread (<span class="keywordtype">void</span>) {</div>
 <div class="line">  <span class="keywordflow">while</span>(1) {</div>
-<div class="line">    <a class="code hl_function" href="group__CMSIS__RTOS__SemaphoreMgmt.html#ga7e94c8b242a0c81f2cc79ec22895c87b">osSemaphoreAcquire</a>(empty_id, <a class="code hl_define" href="group__CMSIS__RTOS__Definitions.html#ga9eb9a7a797a42e4b55eb171ecc609ddb">osWaitForever</a>);</div>
+<div class="line">    <a class="code hl_function" href="group__CMSIS__RTOS__SemaphoreMgmt.html#ga7e94c8b242a0c81f2cc79ec22895c87b" title="Acquire a Semaphore token or timeout if no tokens are available.">osSemaphoreAcquire</a>(empty_id, <a class="code hl_define" href="group__CMSIS__RTOS__Definitions.html#ga9eb9a7a797a42e4b55eb171ecc609ddb" title="Wait forever timeout value.">osWaitForever</a>);</div>
 <div class="line">    <span class="comment">// produce data</span></div>
-<div class="line">    <a class="code hl_function" href="group__CMSIS__RTOS__SemaphoreMgmt.html#ga0abcee1b5449d7a6928fb9248c690bb6">osSemaphoreRelease</a>(filled_id);</div>
+<div class="line">    <a class="code hl_function" href="group__CMSIS__RTOS__SemaphoreMgmt.html#ga0abcee1b5449d7a6928fb9248c690bb6" title="Release a Semaphore token up to the initial maximum count.">osSemaphoreRelease</a>(filled_id);</div>
 <div class="line">  }</div>
 <div class="line">}</div>
 <div class="line"> </div>
 <div class="line"><span class="keywordtype">void</span> consumer_thread (<span class="keywordtype">void</span>) {</div>
 <div class="line"> </div>
 <div class="line">  <span class="keywordflow">while</span>(1){</div>
-<div class="line">    <a class="code hl_function" href="group__CMSIS__RTOS__SemaphoreMgmt.html#ga7e94c8b242a0c81f2cc79ec22895c87b">osSemaphoreAcquire</a>(filled_id, <a class="code hl_define" href="group__CMSIS__RTOS__Definitions.html#ga9eb9a7a797a42e4b55eb171ecc609ddb">osWaitForever</a>);</div>
+<div class="line">    <a class="code hl_function" href="group__CMSIS__RTOS__SemaphoreMgmt.html#ga7e94c8b242a0c81f2cc79ec22895c87b" title="Acquire a Semaphore token or timeout if no tokens are available.">osSemaphoreAcquire</a>(filled_id, <a class="code hl_define" href="group__CMSIS__RTOS__Definitions.html#ga9eb9a7a797a42e4b55eb171ecc609ddb" title="Wait forever timeout value.">osWaitForever</a>);</div>
 <div class="line">    <span class="comment">// consume data</span></div>
-<div class="line">    <a class="code hl_function" href="group__CMSIS__RTOS__SemaphoreMgmt.html#ga0abcee1b5449d7a6928fb9248c690bb6">osSemaphoreRelease</a>(empty_id);</div>
+<div class="line">    <a class="code hl_function" href="group__CMSIS__RTOS__SemaphoreMgmt.html#ga0abcee1b5449d7a6928fb9248c690bb6" title="Release a Semaphore token up to the initial maximum count.">osSemaphoreRelease</a>(empty_id);</div>
 <div class="line">  }</div>
 <div class="line">}</div>
 </div><!-- fragment --> <hr/><h2 class="groupheader">Data Structure Documentation</h2>
@@ -244,7 +238,8 @@ Semaphore Use Cases</h2>
         </tr>
       </table>
 </div><div class="memdoc">
-<div class="textblock"><p>Specifies the following attributes for the <a class="el" href="group__CMSIS__RTOS__SemaphoreMgmt.html#ga2a39806ace781a0008a4374ca701b14a">osSemaphoreNew</a> function. </p>
+<div class="textblock"><p>Attributes structure for semaphore. </p>
+<p>Specifies the following attributes for the <a class="el" href="group__CMSIS__RTOS__SemaphoreMgmt.html#ga2a39806ace781a0008a4374ca701b14a">osSemaphoreNew</a> function. </p>
 </div><table class="fieldtable">
 <tr><th colspan="3">Data Fields</th></tr>
 <tr><td class="fieldtype">
@@ -267,15 +262,15 @@ attribute bits <p>Reserved for future use (must be set to '0' for future compati
 <td class="fieldname">
 cb_mem</td>
 <td class="fielddoc">
-memory for control block <p>Pointer to a memory for the semaphore control block object. Refer to StaticObjectMemory for more information.</p>
-<p>Default: <span class="XML-Token">NULL</span> to use <a class="el" href="group__CMSIS__RTOS__MemoryMgmt.html#CMSIS_RTOS_MemoryMgmt_Automatic">Automatic Dynamic Allocation</a> for the semaphore control block. </p>
+memory for control block <p>Pointer to a memory for the semaphore control block object. Refer to <a class="el" href="usingOS2.html#CMSIS_RTOS_MemoryMgmt_Manual">Manual User-defined Allocation</a> for more information.</p>
+<p>Default: <span class="XML-Token">NULL</span> to use <a class="el" href="usingOS2.html#CMSIS_RTOS_MemoryMgmt_Automatic">Automatic Dynamic Allocation</a> for the semaphore control block. </p>
 </td></tr>
 <tr><td class="fieldtype">
 <a id="aa55a4335d12dc2785dc00fdc292d1159" name="aa55a4335d12dc2785dc00fdc292d1159"></a>uint32_t</td>
 <td class="fieldname">
 cb_size</td>
 <td class="fielddoc">
-size of provided memory for control block <p>The size (in bytes) of memory block passed with <a class="el" href="group__CMSIS__RTOS__SemaphoreMgmt.html#a1e100dc33d403841ed3c344e3397868e">cb_mem</a>. For RTX, the minimum value is defined with osRtxSemaphoreCbSize (higher values are permitted).</p>
+size of provided memory for control block <p>The size (in bytes) of memory block passed with <a class="el" href="group__CMSIS__RTOS__SemaphoreMgmt.html#a1e100dc33d403841ed3c344e3397868e">cb_mem</a>. Required value depends on the underlying kernel implementation.</p>
 <p>Default: <span class="XML-Token">0</span> as the default is no memory provided with <a class="el" href="group__CMSIS__RTOS__SemaphoreMgmt.html#a1e100dc33d403841ed3c344e3397868e">cb_mem</a>. </p>
 </td></tr>
 </table>
@@ -333,6 +328,8 @@ size of provided memory for control block <p>The size (in bytes) of memory block
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Create and Initialize a Semaphore object. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">max_count</td><td>maximum number of available tokens. </td></tr>
@@ -346,8 +343,8 @@ size of provided memory for control block <p>The size (in bytes) of memory block
 <p>The parameter <em>max_count</em> specifies the maximum number of available tokens. A <em>max_count</em> value of 1 creates a binary semaphore.</p>
 <p>The parameter <em>initial_count</em> sets the initial number of available tokens.</p>
 <p>The parameter <em>attr</em> specifies additional semaphore attributes. Default attributes will be used if set to <span class="XML-Token">NULL</span>.</p>
-<dl class="section note"><dt>Note</dt><dd>This function <b>cannot</b> be called from Interrupt Service Routines.</dd></dl>
-<p><b>Code Example</b> </p><div class="fragment"><div class="line"><span class="preprocessor">#include &quot;<a class="code" href="cmsis__os2_8h.html">cmsis_os2.h</a>&quot;</span>                          <span class="comment">// CMSIS RTOS header file</span></div>
+<dl class="section note"><dt>Note</dt><dd>This function <b>cannot</b> be called from <a class="el" href="usingOS2.html#CMSIS_RTOS_ISR_Calls">Interrupt Service Routines</a>.</dd></dl>
+<p><b>Code Example</b> </p><div class="fragment"><div class="line"><span class="preprocessor">#include &quot;cmsis_os2.h&quot;</span>                          <span class="comment">// CMSIS RTOS header file</span></div>
 <div class="line"> </div>
 <div class="line"><a class="code hl_typedef" href="group__CMSIS__RTOS__SemaphoreMgmt.html#ga6e1c1c4b04175bb92b013c8f37249f40">osSemaphoreId_t</a> sid_Semaphore;                  <span class="comment">// semaphore id</span></div>
 <div class="line"> </div>
@@ -357,12 +354,12 @@ size of provided memory for control block <p>The size (in bytes) of memory block
 <div class="line"> </div>
 <div class="line"><span class="keywordtype">int</span> Init_Semaphore (<span class="keywordtype">void</span>) {</div>
 <div class="line"> </div>
-<div class="line">  sid_Semaphore = <a class="code hl_function" href="group__CMSIS__RTOS__SemaphoreMgmt.html#ga2a39806ace781a0008a4374ca701b14a">osSemaphoreNew</a>(2U, 2U, NULL);</div>
+<div class="line">  sid_Semaphore = <a class="code hl_function" href="group__CMSIS__RTOS__SemaphoreMgmt.html#ga2a39806ace781a0008a4374ca701b14a" title="Create and Initialize a Semaphore object.">osSemaphoreNew</a>(2U, 2U, NULL);</div>
 <div class="line">  <span class="keywordflow">if</span> (sid_Semaphore == NULL) {</div>
 <div class="line">    ; <span class="comment">// Semaphore object not created, handle failure</span></div>
 <div class="line">  }</div>
 <div class="line"> </div>
-<div class="line">  tid_Thread_Semaphore = <a class="code hl_function" href="group__CMSIS__RTOS__ThreadMgmt.html#ga48d68b8666d99d28fa646ee1d2182b8f">osThreadNew</a>(Thread_Semaphore, NULL, NULL);</div>
+<div class="line">  tid_Thread_Semaphore = <a class="code hl_function" href="group__CMSIS__RTOS__ThreadMgmt.html#ga48d68b8666d99d28fa646ee1d2182b8f" title="Create a thread and add it to Active Threads.">osThreadNew</a>(Thread_Semaphore, NULL, NULL);</div>
 <div class="line">  <span class="keywordflow">if</span> (tid_Thread_Semaphore == NULL) {</div>
 <div class="line">    <span class="keywordflow">return</span>(-1);</div>
 <div class="line">  }</div>
@@ -371,36 +368,28 @@ size of provided memory for control block <p>The size (in bytes) of memory block
 <div class="line">}</div>
 <div class="line"> </div>
 <div class="line"><span class="keywordtype">void</span> Thread_Semaphore (<span class="keywordtype">void</span> *argument) {</div>
-<div class="line">  <a class="code hl_enumeration" href="group__CMSIS__RTOS__Definitions.html#ga6c0dbe6069e4e7f47bb4cd32ae2b813e">osStatus_t</a> val;</div>
+<div class="line">  <a class="code hl_enumeration" href="group__CMSIS__RTOS__Definitions.html#ga6c0dbe6069e4e7f47bb4cd32ae2b813e" title="Status code values returned by CMSIS-RTOS functions.">osStatus_t</a> val;</div>
 <div class="line"> </div>
 <div class="line">  <span class="keywordflow">while</span> (1) {</div>
 <div class="line">    ; <span class="comment">// Insert thread code here...</span></div>
 <div class="line"> </div>
-<div class="line">    val = <a class="code hl_function" href="group__CMSIS__RTOS__SemaphoreMgmt.html#ga7e94c8b242a0c81f2cc79ec22895c87b">osSemaphoreAcquire</a>(sid_Semaphore, 10U);       <span class="comment">// wait for max. 10 ticks for semaphore token to get available</span></div>
+<div class="line">    val = <a class="code hl_function" href="group__CMSIS__RTOS__SemaphoreMgmt.html#ga7e94c8b242a0c81f2cc79ec22895c87b" title="Acquire a Semaphore token or timeout if no tokens are available.">osSemaphoreAcquire</a>(sid_Semaphore, 10U);       <span class="comment">// wait for max. 10 ticks for semaphore token to get available</span></div>
 <div class="line">    <span class="keywordflow">switch</span> (val) {</div>
-<div class="line">      <span class="keywordflow">case</span> <a class="code hl_enumvalue" href="cmsis__os2_8h.html#ga6c0dbe6069e4e7f47bb4cd32ae2b813ea9e1c9e2550bb4de8969a935acffc968f">osOK</a>:</div>
+<div class="line">      <span class="keywordflow">case</span> <a class="code hl_enumvalue" href="group__CMSIS__RTOS__Definitions.html#gga6c0dbe6069e4e7f47bb4cd32ae2b813eab17c65ad8b5bae759882b41c5bf35cda" title="Operation completed successfully.">osOK</a>:</div>
 <div class="line">        ; <span class="comment">// Use protected code here...</span></div>
-<div class="line">        <a class="code hl_function" href="group__CMSIS__RTOS__SemaphoreMgmt.html#ga0abcee1b5449d7a6928fb9248c690bb6">osSemaphoreRelease</a>(sid_Semaphore);              <span class="comment">// return a token back to a semaphore</span></div>
+<div class="line">        <a class="code hl_function" href="group__CMSIS__RTOS__SemaphoreMgmt.html#ga0abcee1b5449d7a6928fb9248c690bb6" title="Release a Semaphore token up to the initial maximum count.">osSemaphoreRelease</a>(sid_Semaphore);              <span class="comment">// return a token back to a semaphore</span></div>
 <div class="line">        <span class="keywordflow">break</span>;</div>
-<div class="line">      <span class="keywordflow">case</span> <a class="code hl_enumvalue" href="cmsis__os2_8h.html#ga6c0dbe6069e4e7f47bb4cd32ae2b813ea8fc5801e8b0482bdf22ad63a77f0155d">osErrorResource</a>:</div>
+<div class="line">      <span class="keywordflow">case</span> <a class="code hl_enumvalue" href="group__CMSIS__RTOS__Definitions.html#gga6c0dbe6069e4e7f47bb4cd32ae2b813ea75ed7d9f50a54adb727f61486ff2cc02" title="Resource not available.">osErrorResource</a>:</div>
 <div class="line">        <span class="keywordflow">break</span>;</div>
-<div class="line">      <span class="keywordflow">case</span> <a class="code hl_enumvalue" href="cmsis__os2_8h.html#ga6c0dbe6069e4e7f47bb4cd32ae2b813eac24adca6a5d072c9f01c32178ba0d109">osErrorParameter</a>:</div>
+<div class="line">      <span class="keywordflow">case</span> <a class="code hl_enumvalue" href="group__CMSIS__RTOS__Definitions.html#gga6c0dbe6069e4e7f47bb4cd32ae2b813ea146cdcbc5c2b6f43e196294dbc59e12c" title="Parameter error.">osErrorParameter</a>:</div>
 <div class="line">        <span class="keywordflow">break</span>;</div>
 <div class="line">      <span class="keywordflow">default</span>:</div>
 <div class="line">        <span class="keywordflow">break</span>;</div>
 <div class="line">    }</div>
 <div class="line"> </div>
-<div class="line">    <a class="code hl_function" href="group__CMSIS__RTOS__ThreadMgmt.html#gad01c7ec26535b1de6b018bb9466720e2">osThreadYield</a>();                                    <span class="comment">// suspend thread</span></div>
+<div class="line">    <a class="code hl_function" href="group__CMSIS__RTOS__ThreadMgmt.html#gad01c7ec26535b1de6b018bb9466720e2" title="Pass control to next thread that is in state READY.">osThreadYield</a>();                                    <span class="comment">// suspend thread</span></div>
 <div class="line">  }</div>
 <div class="line">}</div>
-<div class="ttc" id="acmsis__os2_8h_html"><div class="ttname"><a href="cmsis__os2_8h.html">cmsis_os2.h</a></div></div>
-<div class="ttc" id="acmsis__os2_8h_html_ga6c0dbe6069e4e7f47bb4cd32ae2b813ea8fc5801e8b0482bdf22ad63a77f0155d"><div class="ttname"><a href="cmsis__os2_8h.html#ga6c0dbe6069e4e7f47bb4cd32ae2b813ea8fc5801e8b0482bdf22ad63a77f0155d">osErrorResource</a></div><div class="ttdeci">@ osErrorResource</div><div class="ttdoc">Resource not available.</div><div class="ttdef"><b>Definition:</b> cmsis_os2.h:250</div></div>
-<div class="ttc" id="acmsis__os2_8h_html_ga6c0dbe6069e4e7f47bb4cd32ae2b813ea9e1c9e2550bb4de8969a935acffc968f"><div class="ttname"><a href="cmsis__os2_8h.html#ga6c0dbe6069e4e7f47bb4cd32ae2b813ea9e1c9e2550bb4de8969a935acffc968f">osOK</a></div><div class="ttdeci">@ osOK</div><div class="ttdoc">Operation completed successfully.</div><div class="ttdef"><b>Definition:</b> cmsis_os2.h:247</div></div>
-<div class="ttc" id="acmsis__os2_8h_html_ga6c0dbe6069e4e7f47bb4cd32ae2b813eac24adca6a5d072c9f01c32178ba0d109"><div class="ttname"><a href="cmsis__os2_8h.html#ga6c0dbe6069e4e7f47bb4cd32ae2b813eac24adca6a5d072c9f01c32178ba0d109">osErrorParameter</a></div><div class="ttdeci">@ osErrorParameter</div><div class="ttdoc">Parameter error.</div><div class="ttdef"><b>Definition:</b> cmsis_os2.h:251</div></div>
-<div class="ttc" id="agroup__CMSIS__RTOS__Definitions_html_ga6c0dbe6069e4e7f47bb4cd32ae2b813e"><div class="ttname"><a href="group__CMSIS__RTOS__Definitions.html#ga6c0dbe6069e4e7f47bb4cd32ae2b813e">osStatus_t</a></div><div class="ttdeci">osStatus_t</div><div class="ttdoc">Status code values returned by CMSIS-RTOS functions.</div><div class="ttdef"><b>Definition:</b> cmsis_os2.h:246</div></div>
-<div class="ttc" id="agroup__CMSIS__RTOS__ThreadMgmt_html_ga48d68b8666d99d28fa646ee1d2182b8f"><div class="ttname"><a href="group__CMSIS__RTOS__ThreadMgmt.html#ga48d68b8666d99d28fa646ee1d2182b8f">osThreadNew</a></div><div class="ttdeci">osThreadId_t osThreadNew(osThreadFunc_t func, void *argument, const osThreadAttr_t *attr)</div><div class="ttdoc">Create a thread and add it to Active Threads.</div></div>
-<div class="ttc" id="agroup__CMSIS__RTOS__ThreadMgmt_html_gaa6c32fe2a3e0a2e01f212d55b02e51c7"><div class="ttname"><a href="group__CMSIS__RTOS__ThreadMgmt.html#gaa6c32fe2a3e0a2e01f212d55b02e51c7">osThreadId_t</a></div><div class="ttdeci">void * osThreadId_t</div><div class="ttdef"><b>Definition:</b> cmsis_os2.h:260</div></div>
-<div class="ttc" id="agroup__CMSIS__RTOS__ThreadMgmt_html_gad01c7ec26535b1de6b018bb9466720e2"><div class="ttname"><a href="group__CMSIS__RTOS__ThreadMgmt.html#gad01c7ec26535b1de6b018bb9466720e2">osThreadYield</a></div><div class="ttdeci">osStatus_t osThreadYield(void)</div><div class="ttdoc">Pass control to next thread that is in state READY.</div></div>
 </div><!-- fragment --> 
 </div>
 </div>
@@ -419,6 +408,8 @@ size of provided memory for control block <p>The size (in bytes) of memory block
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Get name of a Semaphore object. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">semaphore_id</td><td>semaphore ID obtained by <a class="el" href="group__CMSIS__RTOS__SemaphoreMgmt.html#ga2a39806ace781a0008a4374ca701b14a">osSemaphoreNew</a>. </td></tr>
@@ -427,7 +418,7 @@ size of provided memory for control block <p>The size (in bytes) of memory block
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>name as null-terminated string.</dd></dl>
 <p>The function <b>osSemaphoreGetName</b> returns the pointer to the name string of the semaphore identified by parameter <em>semaphore_id</em> or <span class="XML-Token">NULL</span> in case of an error.</p>
-<dl class="section note"><dt>Note</dt><dd>This function may be called from Interrupt Service Routines. </dd></dl>
+<dl class="section note"><dt>Note</dt><dd>This function may be called from <a class="el" href="usingOS2.html#CMSIS_RTOS_ISR_Calls">Interrupt Service Routines</a>. </dd></dl>
 
 </div>
 </div>
@@ -456,16 +447,18 @@ size of provided memory for control block <p>The size (in bytes) of memory block
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Acquire a Semaphore token or timeout if no tokens are available. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">semaphore_id</td><td>semaphore ID obtained by <a class="el" href="group__CMSIS__RTOS__SemaphoreMgmt.html#ga2a39806ace781a0008a4374ca701b14a">osSemaphoreNew</a>. </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">timeout</td><td>CMSIS_RTOS_TimeOutValue or 0 in case of no time-out. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">timeout</td><td><a class="el" href="usingOS2.html#CMSIS_RTOS_TimeOutValue">Timeout Values</a> or 0 in case of no time-out. </td></tr>
   </table>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>status code that indicates the execution status of the function.</dd></dl>
 <p>The blocking function <b>osSemaphoreAcquire</b> waits until a token of the semaphore object specified by parameter <em>semaphore_id</em> becomes available. If a token is available, the function instantly returns and decrements the token count.</p>
-<p>The parameter <em>timeout</em> specifies how long the system waits to acquire the token. While the system waits, the thread that is calling this function is put into the <a class="el" href="group__CMSIS__RTOS__ThreadMgmt.html#ThreadStates">BLOCKED</a> state. The parameter timeout can have the following values:</p><ul>
+<p>The parameter <em>timeout</em> specifies how long the system waits to acquire the token. While the system waits, the thread that is calling this function is put into the <a class="el" href="group__CMSIS__RTOS__ThreadMgmt.html#ThreadStates">BLOCKED</a> state. The parameter <a class="el" href="usingOS2.html#CMSIS_RTOS_TimeOutValue">timeout</a> can have the following values:</p><ul>
 <li>when <em>timeout</em> is <span class="XML-Token">0</span>, the function returns instantly (i.e. try semantics).</li>
 <li>when <em>timeout</em> is set to <b>osWaitForever</b> the function will wait for an infinite time until the semaphore becomes available (i.e. wait semantics).</li>
 <li>all other values specify a time in kernel ticks for a timeout (i.e. timed-wait semantics).</li>
@@ -477,7 +470,7 @@ size of provided memory for control block <p>The size (in bytes) of memory block
 <li><em>osErrorParameter:</em> the parameter <em>semaphore_id</em> is <span class="XML-Token">NULL</span> or invalid.</li>
 <li><em>osErrorSafetyClass:</em> the calling thread safety class is lower than the safety class of the specified semaphore.</li>
 </ul>
-<dl class="section note"><dt>Note</dt><dd>May be called from Interrupt Service Routines if the parameter <em>timeout</em> is set to <span class="XML-Token">0</span>.</dd></dl>
+<dl class="section note"><dt>Note</dt><dd>May be called from <a class="el" href="usingOS2.html#CMSIS_RTOS_ISR_Calls">Interrupt Service Routines</a> if the parameter <em>timeout</em> is set to <span class="XML-Token">0</span>.</dd></dl>
 <p><b>Code Example</b></p>
 <p>Refer to <a class="el" href="group__CMSIS__RTOS__SemaphoreMgmt.html#ga2a39806ace781a0008a4374ca701b14a">osSemaphoreNew</a>. </p>
 
@@ -498,6 +491,8 @@ size of provided memory for control block <p>The size (in bytes) of memory block
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Release a Semaphore token up to the initial maximum count. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">semaphore_id</td><td>semaphore ID obtained by <a class="el" href="group__CMSIS__RTOS__SemaphoreMgmt.html#ga2a39806ace781a0008a4374ca701b14a">osSemaphoreNew</a>. </td></tr>
@@ -512,7 +507,7 @@ size of provided memory for control block <p>The size (in bytes) of memory block
 <li><em>osErrorParameter:</em> the parameter <em>semaphore_id</em> is <span class="XML-Token">NULL</span> or invalid.</li>
 <li><em>osErrorSafetyClass:</em> the calling thread safety class is lower than the safety class of the specified semaphore.</li>
 </ul>
-<dl class="section note"><dt>Note</dt><dd>This function may be called from Interrupt Service Routines.</dd></dl>
+<dl class="section note"><dt>Note</dt><dd>This function may be called from <a class="el" href="usingOS2.html#CMSIS_RTOS_ISR_Calls">Interrupt Service Routines</a>.</dd></dl>
 <p><b>Code Example</b></p>
 <p>Refer to <a class="el" href="group__CMSIS__RTOS__SemaphoreMgmt.html#ga2a39806ace781a0008a4374ca701b14a">osSemaphoreNew</a>. </p>
 
@@ -533,6 +528,8 @@ size of provided memory for control block <p>The size (in bytes) of memory block
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Get current Semaphore token count. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">semaphore_id</td><td>semaphore ID obtained by <a class="el" href="group__CMSIS__RTOS__SemaphoreMgmt.html#ga2a39806ace781a0008a4374ca701b14a">osSemaphoreNew</a>. </td></tr>
@@ -541,7 +538,7 @@ size of provided memory for control block <p>The size (in bytes) of memory block
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>number of tokens available.</dd></dl>
 <p>The function <b>osSemaphoreGetCount</b> returns the number of available tokens of the semaphore object specified by parameter <em>semaphore_id</em>. In case of an error it returns <span class="XML-Token">0</span>.</p>
-<dl class="section note"><dt>Note</dt><dd>This function may be called from Interrupt Service Routines. </dd></dl>
+<dl class="section note"><dt>Note</dt><dd>This function may be called from <a class="el" href="usingOS2.html#CMSIS_RTOS_ISR_Calls">Interrupt Service Routines</a>. </dd></dl>
 
 </div>
 </div>
@@ -560,6 +557,8 @@ size of provided memory for control block <p>The size (in bytes) of memory block
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Delete a Semaphore object. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">semaphore_id</td><td>semaphore ID obtained by <a class="el" href="group__CMSIS__RTOS__SemaphoreMgmt.html#ga2a39806ace781a0008a4374ca701b14a">osSemaphoreNew</a>. </td></tr>
@@ -575,7 +574,7 @@ size of provided memory for control block <p>The size (in bytes) of memory block
 <li><em>osErrorISR:</em> <b>osSemaphoreDelete</b> cannot be called from interrupt service routines.</li>
 <li><em>osErrorSafetyClass:</em> the calling thread safety class is lower than the safety class of the specified semaphore.</li>
 </ul>
-<dl class="section note"><dt>Note</dt><dd>This function <b>cannot</b> be called from Interrupt Service Routines. </dd></dl>
+<dl class="section note"><dt>Note</dt><dd>This function <b>cannot</b> be called from <a class="el" href="usingOS2.html#CMSIS_RTOS_ISR_Calls">Interrupt Service Routines</a>. </dd></dl>
 
 </div>
 </div>

@@ -129,7 +129,7 @@ $(document).ready(function(){initNavTree('group__flags__error__codes.html',''); 
 <div class="header">
   <div class="summary">
 <a href="#define-members">Macros</a>  </div>
-  <div class="headertitle"><div class="title">Flags Functions Error Codes<div class="ingroups"><a class="el" href="group__CMSIS__RTOS.html">CMSIS-RTOS API v2</a> &raquo; <a class="el" href="group__CMSIS__RTOS__Definitions.html">Definitions</a></div></div></div>
+  <div class="headertitle"><div class="title">Flags Functions Error Codes<div class="ingroups"><a class="el" href="group__CMSIS__RTOS.html">CMSIS-RTOS2 API</a> &raquo; <a class="el" href="group__CMSIS__RTOS__Definitions.html">Generic Definitions</a></div></div></div>
 </div><!--header-->
 <div class="contents">
 
@@ -155,6 +155,7 @@ Macros</h2></td></tr>
 <tr class="separator:gaea3abd186643f539877e894b62b63448"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Description</h2>
+<p>Constants used by <a class="el" href="group__CMSIS__RTOS__ThreadFlagsMgmt.html">Thread Flags</a> and <a class="el" href="group__CMSIS__RTOS__EventFlags.html">Event Flags</a> to return error codes. </p>
 <p>In case of an error, flags functions (<a class="el" href="group__CMSIS__RTOS__ThreadFlagsMgmt.html">Thread Flags</a> and <a class="el" href="group__CMSIS__RTOS__EventFlags.html">Event Flags</a>) return error codes. To indicate that an error has occurred, the highest bit of the return value is be set. You can check the exact error using the codes shown below. </p>
 <h2 class="groupheader">Macro Definition Documentation</h2>
 <a id="ga3b1d9fbb83d64eedb62f831c9be647c3" name="ga3b1d9fbb83d64eedb62f831c9be647c3"></a>
@@ -168,6 +169,8 @@ Macros</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>osError (-1). </p>
 <p>Generic error. It is returned when no other error can be applied.</p>
 <p>Reference:</p><ul>
 <li><a class="el" href="group__CMSIS__RTOS__ThreadFlagsMgmt.html#ga6f89ef9caded1d9963c7b12b0f6412c9">osThreadFlagsSet</a></li>
@@ -191,6 +194,8 @@ Macros</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>osErrorTimeout (-2). </p>
 <p>This error is returned if a timeout was specified and the specified flags were not set, when the timeout occurred.</p>
 <p>Reference:</p><ul>
 <li><a class="el" href="group__CMSIS__RTOS__ThreadFlagsMgmt.html#ga6f89ef9caded1d9963c7b12b0f6412c9">osThreadFlagsSet</a></li>
@@ -214,6 +219,8 @@ Macros</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>osErrorResource (-3). </p>
 <p>This error is returned when you try to get a flag that was not set <em>and</em> timeout 0 was specified. Is also returned when the specified object identifier is corrupt or invalid.</p>
 <p>Reference:</p><ul>
 <li><a class="el" href="group__CMSIS__RTOS__ThreadFlagsMgmt.html#ga6f89ef9caded1d9963c7b12b0f6412c9">osThreadFlagsSet</a></li>
@@ -237,6 +244,8 @@ Macros</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>osErrorParameter (-4). </p>
 <p>This error is returned when a given parameter is wrong.</p>
 <p>Reference:</p><ul>
 <li><a class="el" href="group__CMSIS__RTOS__ThreadFlagsMgmt.html#ga6f89ef9caded1d9963c7b12b0f6412c9">osThreadFlagsSet</a></li>
@@ -260,6 +269,8 @@ Macros</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>osErrorISR (-6). </p>
 <p>This error is returned when a non-ISR-callable function was called from an ISR.</p>
 <p>Reference:</p><ul>
 <li><a class="el" href="group__CMSIS__RTOS__ThreadFlagsMgmt.html#ga6f89ef9caded1d9963c7b12b0f6412c9">osThreadFlagsSet</a></li>

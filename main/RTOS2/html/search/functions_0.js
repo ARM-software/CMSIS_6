@@ -96,7 +96,7 @@ var searchData=
   ['osthreadterminatezone_93',['osThreadTerminateZone',['../group__CMSIS__RTOS__ThreadMgmt.html#ga99ce311cc620c65fbac043d04dc7d755',1,'cmsis_os2.h']]],
   ['osthreadyield_94',['osThreadYield',['../group__CMSIS__RTOS__ThreadMgmt.html#gad01c7ec26535b1de6b018bb9466720e2',1,'cmsis_os2.h']]],
   ['ostimerdelete_95',['osTimerDelete',['../group__CMSIS__RTOS__TimerMgmt.html#gad0001dd74721ab461789324806db2453',1,'cmsis_os2.h']]],
-  ['ostimergetname_96',['osTimerGetName',['../group__CMSIS__RTOS__TimerMgmt.html#ga4f82a98eee4d9ea79507e44340d3d319',1,'cmsis_os2.h']]],
+  ['ostimergetname_96',['osTimerGetName',['../group__CMSIS__RTOS__TimerMgmt.html#ga7938dde88ada1a01b60f41cf120069c0',1,'cmsis_os2.h']]],
   ['ostimerisrunning_97',['osTimerIsRunning',['../group__CMSIS__RTOS__TimerMgmt.html#ga69d3589f54194022c30dd01e45ec6741',1,'cmsis_os2.h']]],
   ['ostimernew_98',['osTimerNew',['../group__CMSIS__RTOS__TimerMgmt.html#gad4e7f785c5f700a509f55a3bf6a62bec',1,'cmsis_os2.h']]],
   ['ostimerstart_99',['osTimerStart',['../group__CMSIS__RTOS__TimerMgmt.html#gab6ee2859ea657641b7adfac599b8121d',1,'cmsis_os2.h']]],

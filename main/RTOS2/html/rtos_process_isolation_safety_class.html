@@ -101,7 +101,7 @@ var searchBox = new SearchBox("searchBox", "search/",'.html');
 </div>
 <script type="text/javascript">
 /* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
-$(document).ready(function(){initNavTree('group__rtos__process__isolation__safety__class.html',''); initResizable(); });
+$(document).ready(function(){initNavTree('rtos_process_isolation_safety_class.html',''); initResizable(); });
 /* @license-end */
 </script>
 <div id="doc-content">
@@ -126,16 +126,15 @@ $(document).ready(function(){initNavTree('group__rtos__process__isolation__safet
 </div>
 </div>
 
-<div class="header">
-  <div class="headertitle"><div class="title">Safety Classes<div class="ingroups"><a class="el" href="group__CMSIS__RTOS.html">CMSIS-RTOS API v2</a> &raquo; <a class="el" href="group__CMSIS__RTOS__ProcessIsolation.html">Process Isolation</a></div></div></div>
+<div><div class="header">
+  <div class="headertitle"><div class="title">Safety Classes </div></div>
 </div><!--header-->
 <div class="contents">
-<p><a class="el" href="group__rtos__process__isolation__mpu.html#rtos_process_isolation_mpu_objects">RTOS Objects and MPU Protection</a> explains that MPU Protected Zones do not provide full access protection to RTOS objects accessed via CMSIS-RTOS2 API. The concept of a safety class fills this gap.</p>
+<div class="textblock"><p><a class="el" href="rtos_process_isolation_mpu.html#rtos_process_isolation_mpu_objects">RTOS Objects and MPU Protection</a> explains that MPU Protected Zones do not provide full access protection to RTOS objects accessed via CMSIS-RTOS2 API. The concept of a safety class fills this gap.</p>
 <p>Every RTOS object, including thread is assigned with a numeric safety class value. A thread cannot modify an RTOS object if its safety class value is higher than the safety class value of the thread. For example, it is not possible to change the priority or suspend a thread that has a higher safety class value than the thread that is currently executed.</p>
-<h1><a class="anchor" id="rtos_process_isolation_safety_class_refs"></a>
-Function references</h1>
-<p>Summary of functions and macros that implement safety classes:</p>
+<p><b>Function references</b></p>
 <ul>
+<li>Following functions and macros are used explicitly for managing safety classes:<ul>
 <li><a class="el" href="group__CMSIS__RTOS__Definitions.html#ga604fce4f5205f92c347eb62fcc216861">osSafetyClass</a> :  Safety class value in attribute bit field format.  </li>
 <li><a class="el" href="group__CMSIS__RTOS__ThreadMgmt.html#ga1bfbef7da94ed4147d231e8d6eeb5f3e">osThreadGetClass</a> :  Get safety class of a thread.  </li>
 <li><a class="el" href="group__CMSIS__RTOS__Definitions.html#ga7abd2d95425d9e02672778b3464b2eaa">osSafetyWithSameClass</a> :  Objects with same safety class.  </li>
@@ -145,21 +144,19 @@ Function references</h1>
 <li><a class="el" href="group__CMSIS__RTOS__ThreadMgmt.html#gadd0a06b459925eb5cdeab67b380a3970">osThreadResumeClass</a> :  Resume execution of threads for specified safety classes.  </li>
 <li><a class="el" href="group__CMSIS__RTOS__KernelCtrl.html#ga2065364d1bc805a40e749430377df1e1">osKernelDestroyClass</a> :  Destroy objects for specified safety classes.  </li>
 </ul>
-<p><a class="el" href="group__rtos__process__isolation__safety__class.html#rtos_process_isolation_safety_class_assign">Assign Safety Class to an RTOS Object</a> lists CMSIS-RTOS2 API functions that support safety class assignment when creating RTOS objects. <a class="el" href="group__rtos__process__isolation__safety__class.html#rtos_process_isolation_safety_class_error">Handle Object Access Violation</a> lists CMSIS-RTOS2 API functions that verify safety class assignment before execution. </p>
+</li>
+<li>CMSIS-RTOS2 API functions that support safety class assignment when creating RTOS objects are listed in <a class="el" href="rtos_process_isolation_safety_class.html#rtos_process_isolation_safety_class_assign">Assign Safety Class to an RTOS Object</a>.</li>
+<li>CMSIS-RTOS2 API functions that verify safety class assignment before execution are listed in <a class="el" href="rtos_process_isolation_safety_class.html#rtos_process_isolation_safety_class_error">Handle Object Access Violation</a> lists.</li>
+</ul>
 <h1><a class="anchor" id="rtos_process_isolation_safety_class_assign"></a>
 Assign Safety Class to an RTOS Object</h1>
 <p>It is possible to create any objects regardless of the safety class after the kernel initialize with <a class="el" href="group__CMSIS__RTOS__KernelCtrl.html#gae818f6611d25ba3140bede410a52d659">osKernelInitialize</a>, but before the kernel is started with <a class="el" href="group__CMSIS__RTOS__KernelCtrl.html#ga9ae2cc00f0d89d7b6a307bba942b5221">osKernelStart</a>. This allows to setup a system before actually starting the RTOS kernel.</p>
 <p>Threads of a higher safety class can create RTOS objects that belong to a lower or same safety class. For the object types listed below, the <em>attr_bits</em> can have an optional safety class value that is assigned when the RTOS object is created with the <em><em>os&lt;Object&gt;New</em></em> function. The macro <a class="el" href="group__CMSIS__RTOS__Definitions.html#ga604fce4f5205f92c347eb62fcc216861">osSafetyClass</a> encodes the value for the <em>attr_bits</em> field in the attr struct. For example:</p>
-<div class="fragment"><div class="line"><span class="keyword">const</span> <a class="code hl_struct" href="group__CMSIS__RTOS__EventFlags.html#structosEventFlagsAttr__t">osEventFlagsAttr_t</a> evt_flags_attr = {</div>
-<div class="line">  .<a class="code hl_variable" href="group__CMSIS__RTOS__EventFlags.html#a6e93b49cb79c12f768d72580c7731f30">attr_bits</a> = <a class="code hl_define" href="group__CMSIS__RTOS__Definitions.html#ga604fce4f5205f92c347eb62fcc216861">osSafetyClass</a>(SAFETY_CLASS_SAFE_MODE_OPERATION)</div>
+<div class="fragment"><div class="line"><span class="keyword">const</span> <a class="code hl_struct" href="group__CMSIS__RTOS__EventFlags.html#structosEventFlagsAttr__t" title="Attributes structure for event flags.">osEventFlagsAttr_t</a> evt_flags_attr = {</div>
+<div class="line">  .<a class="code hl_variable" href="group__CMSIS__RTOS__EventFlags.html#a6e93b49cb79c12f768d72580c7731f30" title="attribute bits">attr_bits</a> = <a class="code hl_define" href="group__CMSIS__RTOS__Definitions.html#ga604fce4f5205f92c347eb62fcc216861" title="Safety class value in attribute bit field format.">osSafetyClass</a>(SAFETY_CLASS_SAFE_MODE_OPERATION)</div>
 <div class="line">};</div>
 <div class="line"><a class="code hl_typedef" href="group__CMSIS__RTOS__EventFlags.html#gafdbab933146d6d81d7cca7287e267a50">osEventFlagsId_t</a> evt_flags;</div>
-<div class="line">evt_flags = <a class="code hl_function" href="group__CMSIS__RTOS__EventFlags.html#gab14b1caeb12ffa42cce1bfe889cd07df">osEventFlagsNew</a>(&amp;evt_flags_attr);</div>
-<div class="ttc" id="agroup__CMSIS__RTOS__Definitions_html_ga604fce4f5205f92c347eb62fcc216861"><div class="ttname"><a href="group__CMSIS__RTOS__Definitions.html#ga604fce4f5205f92c347eb62fcc216861">osSafetyClass</a></div><div class="ttdeci">#define osSafetyClass(n)</div><div class="ttdoc">Safety class value in attribute bit field format.</div><div class="ttdef"><b>Definition:</b> cmsis_os2.h:234</div></div>
-<div class="ttc" id="agroup__CMSIS__RTOS__EventFlags_html_a6e93b49cb79c12f768d72580c7731f30"><div class="ttname"><a href="group__CMSIS__RTOS__EventFlags.html#a6e93b49cb79c12f768d72580c7731f30">osEventFlagsAttr_t::attr_bits</a></div><div class="ttdeci">uint32_t attr_bits</div><div class="ttdoc">attribute bits</div><div class="ttdef"><b>Definition:</b> cmsis_os2.h:312</div></div>
-<div class="ttc" id="agroup__CMSIS__RTOS__EventFlags_html_gab14b1caeb12ffa42cce1bfe889cd07df"><div class="ttname"><a href="group__CMSIS__RTOS__EventFlags.html#gab14b1caeb12ffa42cce1bfe889cd07df">osEventFlagsNew</a></div><div class="ttdeci">osEventFlagsId_t osEventFlagsNew(const osEventFlagsAttr_t *attr)</div><div class="ttdoc">Create and Initialize an Event Flags object.</div></div>
-<div class="ttc" id="agroup__CMSIS__RTOS__EventFlags_html_gafdbab933146d6d81d7cca7287e267a50"><div class="ttname"><a href="group__CMSIS__RTOS__EventFlags.html#gafdbab933146d6d81d7cca7287e267a50">osEventFlagsId_t</a></div><div class="ttdeci">void * osEventFlagsId_t</div><div class="ttdef"><b>Definition:</b> cmsis_os2.h:266</div></div>
-<div class="ttc" id="agroup__CMSIS__RTOS__EventFlags_html_structosEventFlagsAttr__t"><div class="ttname"><a href="group__CMSIS__RTOS__EventFlags.html#structosEventFlagsAttr__t">osEventFlagsAttr_t</a></div><div class="ttdoc">Attributes structure for event flags.</div><div class="ttdef"><b>Definition:</b> cmsis_os2.h:310</div></div>
+<div class="line">evt_flags = <a class="code hl_function" href="group__CMSIS__RTOS__EventFlags.html#gab14b1caeb12ffa42cce1bfe889cd07df" title="Create and Initialize an Event Flags object.">osEventFlagsNew</a>(&amp;evt_flags_attr);</div>
 </div><!-- fragment --><p>The following object types support safety class assignment when creating an object with corresponding <em>os&lt;Object&gt;New</em> function:</p>
 <ul>
 <li><a class="el" href="group__CMSIS__RTOS__ThreadMgmt.html#structosThreadAttr__t">osThreadAttr_t</a>  Attributes structure for thread.   Used in the <a class="el" href="group__CMSIS__RTOS__ThreadMgmt.html#ga48d68b8666d99d28fa646ee1d2182b8f">osThreadNew</a> function.</li>
@@ -173,13 +170,12 @@ Assign Safety Class to an RTOS Object</h1>
 <p>If safety class is not provided when creating the RTOS object then it inherits the safety class of the current running thread that creates the object. If the object is created before kernel is started and no safety class is provided, then it receives default safety class 0. This simplifies integration of third-party code that can be classified as non-safety critical.</p>
 <h1><a class="anchor" id="rtos_process_isolation_safety_class_error"></a>
 Handle Object Access Violation</h1>
-<p>RTOS API call returns error code <a class="el" href="cmsis__os2_8h.html#ga6c0dbe6069e4e7f47bb4cd32ae2b813eafe45a75293a0a97dcabb8bdd193145c5">osErrorSafetyClass</a> if the requested object manipulation cannot be performed because the target object has higher safety class than the safety class of the running thread. For example: </p><div class="fragment"><div class="line">status = <a class="code hl_function" href="group__CMSIS__RTOS__EventFlags.html#ga33b71d14cecf90b4e72639dd19f23a5e">osEventFlagsSet</a>(evt_flags, 1);</div>
-<div class="line"><span class="keywordflow">if</span> (status == <a class="code hl_enumvalue" href="cmsis__os2_8h.html#ga6c0dbe6069e4e7f47bb4cd32ae2b813eafe45a75293a0a97dcabb8bdd193145c5">osErrorSafetyClass</a>)</div>
+<p>RTOS API call returns error code <a class="el" href="group__CMSIS__RTOS__Definitions.html#gga6c0dbe6069e4e7f47bb4cd32ae2b813ea7379a8ce2e513723390bb01d2efeb981">osErrorSafetyClass</a> if the requested object manipulation cannot be performed because the target object has higher safety class than the safety class of the running thread. For example:</p>
+<div class="fragment"><div class="line">status = <a class="code hl_function" href="group__CMSIS__RTOS__EventFlags.html#ga33b71d14cecf90b4e72639dd19f23a5e" title="Set the specified Event Flags.">osEventFlagsSet</a>(evt_flags, 1);</div>
+<div class="line"><span class="keywordflow">if</span> (status == <a class="code hl_enumvalue" href="group__CMSIS__RTOS__Definitions.html#gga6c0dbe6069e4e7f47bb4cd32ae2b813ea7379a8ce2e513723390bb01d2efeb981" title="Operation denied because of safety class violation.">osErrorSafetyClass</a>)</div>
 <div class="line">{</div>
 <div class="line">  <span class="comment">//handle the safety class error</span></div>
 <div class="line">}</div>
-<div class="ttc" id="acmsis__os2_8h_html_ga6c0dbe6069e4e7f47bb4cd32ae2b813eafe45a75293a0a97dcabb8bdd193145c5"><div class="ttname"><a href="cmsis__os2_8h.html#ga6c0dbe6069e4e7f47bb4cd32ae2b813eafe45a75293a0a97dcabb8bdd193145c5">osErrorSafetyClass</a></div><div class="ttdeci">@ osErrorSafetyClass</div><div class="ttdoc">Operation denied because of safety class violation.</div><div class="ttdef"><b>Definition:</b> cmsis_os2.h:254</div></div>
-<div class="ttc" id="agroup__CMSIS__RTOS__EventFlags_html_ga33b71d14cecf90b4e72639dd19f23a5e"><div class="ttname"><a href="group__CMSIS__RTOS__EventFlags.html#ga33b71d14cecf90b4e72639dd19f23a5e">osEventFlagsSet</a></div><div class="ttdeci">uint32_t osEventFlagsSet(osEventFlagsId_t ef_id, uint32_t flags)</div><div class="ttdoc">Set the specified Event Flags.</div></div>
 </div><!-- fragment --><p>Following functions compare the safety class of the running thread with the safety class of the target object.</p>
 <p>In <a class="el" href="group__CMSIS__RTOS__KernelCtrl.html">Kernel Information and Control</a> functions:</p>
 <p>Comparison is done with safety class configured with <a class="el" href="group__CMSIS__RTOS__KernelCtrl.html#gac7e3b012c15c55bda68e0dd96ad9cd72">osKernelProtect</a></p><ul>
@@ -240,7 +236,8 @@ Handle Object Access Violation</h1>
 <li><a class="el" href="group__CMSIS__RTOS__Message.html#gac6dce7f9ad132d266292c2e979d861b4">osMessageQueueReset</a></li>
 <li><a class="el" href="group__CMSIS__RTOS__Message.html#gaba987f665444e0d83fa6a3a68bc72abe">osMessageQueueDelete</a> </li>
 </ul>
-</div><!-- contents -->
+</div></div><!-- contents -->
+</div><!-- PageDoc -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->

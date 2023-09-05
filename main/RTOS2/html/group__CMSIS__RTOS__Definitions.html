@@ -5,7 +5,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>CMSIS-RTOS2: Definitions</title>
+<title>CMSIS-RTOS2: Generic Definitions</title>
 <link href="doxygen.css" rel="stylesheet" type="text/css"/>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <link href="extra_navtree.css" rel="stylesheet" type="text/css"/>
@@ -131,11 +131,11 @@ $(document).ready(function(){initNavTree('group__CMSIS__RTOS__Definitions.html',
 <a href="#groups">Content</a> &#124;
 <a href="#define-members">Macros</a> &#124;
 <a href="#enum-members">Enumerations</a>  </div>
-  <div class="headertitle"><div class="title">Definitions<div class="ingroups"><a class="el" href="group__CMSIS__RTOS.html">CMSIS-RTOS API v2</a></div></div></div>
+  <div class="headertitle"><div class="title">Generic Definitions<div class="ingroups"><a class="el" href="group__CMSIS__RTOS.html">CMSIS-RTOS2 API</a></div></div></div>
 </div><!--header-->
 <div class="contents">
 
-<p>Constants and enumerations used by many CMSIS-RTOS functions.  
+<p>Constants and enumerations used by many CMSIS-RTOS2 functions.  
 <a href="#details">More...</a></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="groups" name="groups"></a>
@@ -171,30 +171,31 @@ Macros</h2></td></tr>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="enum-members" name="enum-members"></a>
 Enumerations</h2></td></tr>
 <tr class="memitem:ga6c0dbe6069e4e7f47bb4cd32ae2b813e"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CMSIS__RTOS__Definitions.html#ga6c0dbe6069e4e7f47bb4cd32ae2b813e">osStatus_t</a> { <br />
-&#160;&#160;<a class="el" href="group__CMSIS__RTOS__Definitions.html#ga6c0dbe6069e4e7f47bb4cd32ae2b813ea9e1c9e2550bb4de8969a935acffc968f">osOK</a> = 0
+&#160;&#160;<a class="el" href="group__CMSIS__RTOS__Definitions.html#gga6c0dbe6069e4e7f47bb4cd32ae2b813eab17c65ad8b5bae759882b41c5bf35cda">osOK</a> = 0
 , <br />
-&#160;&#160;<a class="el" href="group__CMSIS__RTOS__Definitions.html#ga6c0dbe6069e4e7f47bb4cd32ae2b813eabb7b2d2c4efa66df42f1c10635467b09">osError</a> = -1
+&#160;&#160;<a class="el" href="group__CMSIS__RTOS__Definitions.html#gga6c0dbe6069e4e7f47bb4cd32ae2b813eacb77fd6a5f0f177b06847a629f6054e8">osError</a> = -1
 , <br />
-&#160;&#160;<a class="el" href="group__CMSIS__RTOS__Definitions.html#ga6c0dbe6069e4e7f47bb4cd32ae2b813ea913eb5df15ad85f8557eb3a456b56879">osErrorTimeout</a> = -2
+&#160;&#160;<a class="el" href="group__CMSIS__RTOS__Definitions.html#gga6c0dbe6069e4e7f47bb4cd32ae2b813ea809f56df47a0269cdd4501e0d03eb603">osErrorTimeout</a> = -2
 , <br />
-&#160;&#160;<a class="el" href="group__CMSIS__RTOS__Definitions.html#ga6c0dbe6069e4e7f47bb4cd32ae2b813ea8fc5801e8b0482bdf22ad63a77f0155d">osErrorResource</a> = -3
+&#160;&#160;<a class="el" href="group__CMSIS__RTOS__Definitions.html#gga6c0dbe6069e4e7f47bb4cd32ae2b813ea75ed7d9f50a54adb727f61486ff2cc02">osErrorResource</a> = -3
 , <br />
-&#160;&#160;<a class="el" href="group__CMSIS__RTOS__Definitions.html#ga6c0dbe6069e4e7f47bb4cd32ae2b813eac24adca6a5d072c9f01c32178ba0d109">osErrorParameter</a> = -4
+&#160;&#160;<a class="el" href="group__CMSIS__RTOS__Definitions.html#gga6c0dbe6069e4e7f47bb4cd32ae2b813ea146cdcbc5c2b6f43e196294dbc59e12c">osErrorParameter</a> = -4
 , <br />
-&#160;&#160;<a class="el" href="group__CMSIS__RTOS__Definitions.html#ga6c0dbe6069e4e7f47bb4cd32ae2b813eaf1fac0240218e51eb30a13da2f8aae81">osErrorNoMemory</a> = -5
+&#160;&#160;<a class="el" href="group__CMSIS__RTOS__Definitions.html#gga6c0dbe6069e4e7f47bb4cd32ae2b813ea1bccee013c5725778b750a54c4f9e57d">osErrorNoMemory</a> = -5
 , <br />
-&#160;&#160;<a class="el" href="group__CMSIS__RTOS__Definitions.html#ga6c0dbe6069e4e7f47bb4cd32ae2b813ea21635bdc492d3094fe83027fa4a30e2f">osErrorISR</a> = -6
+&#160;&#160;<a class="el" href="group__CMSIS__RTOS__Definitions.html#gga6c0dbe6069e4e7f47bb4cd32ae2b813ea91c2ea9c9cd03401ff7d396c636d1864">osErrorISR</a> = -6
 , <br />
-&#160;&#160;<a class="el" href="group__CMSIS__RTOS__Definitions.html#ga6c0dbe6069e4e7f47bb4cd32ae2b813eafe45a75293a0a97dcabb8bdd193145c5">osErrorSafetyClass</a> = -7
+&#160;&#160;<a class="el" href="group__CMSIS__RTOS__Definitions.html#gga6c0dbe6069e4e7f47bb4cd32ae2b813ea7379a8ce2e513723390bb01d2efeb981">osErrorSafetyClass</a> = -7
 , <br />
-&#160;&#160;<a class="el" href="group__CMSIS__RTOS__Definitions.html#ga6c0dbe6069e4e7f47bb4cd32ae2b813ea66cc9ce9106b508df0e4a733a55a439d">osStatusReserved</a> = 0x7FFFFFFF
+&#160;&#160;<a class="el" href="group__CMSIS__RTOS__Definitions.html#gga6c0dbe6069e4e7f47bb4cd32ae2b813ea59d1c52ddb4ba7a7738039756e79d982">osStatusReserved</a> = 0x7FFFFFFF
 <br />
  }</td></tr>
 <tr class="memdesc:ga6c0dbe6069e4e7f47bb4cd32ae2b813e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Status code values returned by CMSIS-RTOS functions.  <a href="group__CMSIS__RTOS__Definitions.html#ga6c0dbe6069e4e7f47bb4cd32ae2b813e">More...</a><br /></td></tr>
 <tr class="separator:ga6c0dbe6069e4e7f47bb4cd32ae2b813e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Description</h2>
-<p>The following constants and enumerations are used by many CMSIS-RTOS function calls. </p>
+<p>Constants and enumerations used by many CMSIS-RTOS2 functions. </p>
+<p>The following constants and enumerations are used by many CMSIS-RTOS2 function calls. </p>
 <h2 class="groupheader">Macro Definition Documentation</h2>
 <a id="ga9eb9a7a797a42e4b55eb171ecc609ddb" name="ga9eb9a7a797a42e4b55eb171ecc609ddb"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ga9eb9a7a797a42e4b55eb171ecc609ddb">&#9670;&#160;</a></span>osWaitForever</h2>
@@ -207,7 +208,9 @@ Enumerations</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>A special CMSIS_RTOS_TimeOutValue that informs the RTOS to wait infinite until a resource becomes available. It applies to the following functions:</p><ul>
+
+<p>Wait forever timeout value. </p>
+<p>A special <a class="el" href="usingOS2.html#CMSIS_RTOS_TimeOutValue">Timeout Values</a> that informs the RTOS to wait infinite until a resource becomes available. It applies to the following functions:</p><ul>
 <li><a class="el" href="group__CMSIS__RTOS__Wait.html#gaf6055a51390ef65b6b6edc28bf47322e">osDelay</a> :  Wait for Timeout (Time Delay).  </li>
 <li><a class="el" href="group__CMSIS__RTOS__ThreadFlagsMgmt.html#gac11542ad6300b600f872fc96e340ec2b">osThreadFlagsWait</a> :  Wait for one or more Thread Flags of the current running thread to become signaled.  </li>
 <li><a class="el" href="group__CMSIS__RTOS__EventFlags.html#ga52acb34a8322e58020227344fe662b4e">osEventFlagsWait</a> :  Wait for one or more Event Flags to become signaled.  </li>
@@ -231,6 +234,8 @@ Enumerations</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Wait for any flag (default). </p>
 <p>Reference:</p><ul>
 <li><a class="el" href="group__CMSIS__RTOS__EventFlags.html#ga52acb34a8322e58020227344fe662b4e">osEventFlagsWait</a></li>
 <li><a class="el" href="group__CMSIS__RTOS__ThreadFlagsMgmt.html#gac11542ad6300b600f872fc96e340ec2b">osThreadFlagsWait</a> </li>
@@ -249,6 +254,8 @@ Enumerations</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Wait for all flags. </p>
 <p>Reference:</p><ul>
 <li><a class="el" href="group__CMSIS__RTOS__EventFlags.html#ga52acb34a8322e58020227344fe662b4e">osEventFlagsWait</a></li>
 <li><a class="el" href="group__CMSIS__RTOS__ThreadFlagsMgmt.html#gac11542ad6300b600f872fc96e340ec2b">osThreadFlagsWait</a> </li>
@@ -267,6 +274,8 @@ Enumerations</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Do not clear flags which have been specified to wait for. </p>
 <p>Reference:</p><ul>
 <li><a class="el" href="group__CMSIS__RTOS__EventFlags.html#ga52acb34a8322e58020227344fe662b4e">osEventFlagsWait</a></li>
 <li><a class="el" href="group__CMSIS__RTOS__ThreadFlagsMgmt.html#gac11542ad6300b600f872fc96e340ec2b">osThreadFlagsWait</a> </li>
@@ -289,6 +298,8 @@ Enumerations</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Safety class value in attribute bit field format. </p>
 <p>Safety class.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
@@ -298,13 +309,10 @@ Enumerations</h2></td></tr>
 </dl>
 <p>The preprocessor macro <b>osSafetyClass</b> constructs attribute bitmask with safety class bits set to <em>n</em>.</p>
 <p><b>Code Example:</b> </p><div class="fragment"><div class="line"><span class="comment">/* Event Flags object attributes */</span></div>
-<div class="line"><span class="keyword">const</span> <a class="code hl_struct" href="group__CMSIS__RTOS__EventFlags.html#structosEventFlagsAttr__t">osEventFlagsAttr_t</a> ef_attr = {</div>
-<div class="line">  .<a class="code hl_variable" href="group__CMSIS__RTOS__EventFlags.html#ab74e6bf80237ddc4109968cedc58c151">name</a>       = <span class="stringliteral">&quot;EventFlags1&quot;</span>,    <span class="comment">// human readable object name</span></div>
-<div class="line">  .attr_bits  = <a class="code hl_define" href="group__CMSIS__RTOS__Definitions.html#ga604fce4f5205f92c347eb62fcc216861">osSafetyClass</a>(2U) <span class="comment">// assign object to safety class 2</span></div>
+<div class="line"><span class="keyword">const</span> <a class="code hl_struct" href="group__CMSIS__RTOS__EventFlags.html#structosEventFlagsAttr__t" title="Attributes structure for event flags.">osEventFlagsAttr_t</a> ef_attr = {</div>
+<div class="line">  .<a class="code hl_variable" href="group__CMSIS__RTOS__EventFlags.html#ab74e6bf80237ddc4109968cedc58c151" title="name of the event flags">name</a>       = <span class="stringliteral">&quot;EventFlags1&quot;</span>,    <span class="comment">// human readable object name</span></div>
+<div class="line">  .attr_bits  = <a class="code hl_define" href="group__CMSIS__RTOS__Definitions.html#ga604fce4f5205f92c347eb62fcc216861" title="Safety class value in attribute bit field format.">osSafetyClass</a>(2U) <span class="comment">// assign object to safety class 2</span></div>
 <div class="line">};</div>
-<div class="ttc" id="agroup__CMSIS__RTOS__Definitions_html_ga604fce4f5205f92c347eb62fcc216861"><div class="ttname"><a href="group__CMSIS__RTOS__Definitions.html#ga604fce4f5205f92c347eb62fcc216861">osSafetyClass</a></div><div class="ttdeci">#define osSafetyClass(n)</div><div class="ttdoc">Safety class value in attribute bit field format.</div><div class="ttdef"><b>Definition:</b> cmsis_os2.h:234</div></div>
-<div class="ttc" id="agroup__CMSIS__RTOS__EventFlags_html_ab74e6bf80237ddc4109968cedc58c151"><div class="ttname"><a href="group__CMSIS__RTOS__EventFlags.html#ab74e6bf80237ddc4109968cedc58c151">osEventFlagsAttr_t::name</a></div><div class="ttdeci">const char * name</div><div class="ttdoc">name of the event flags</div><div class="ttdef"><b>Definition:</b> cmsis_os2.h:311</div></div>
-<div class="ttc" id="agroup__CMSIS__RTOS__EventFlags_html_structosEventFlagsAttr__t"><div class="ttname"><a href="group__CMSIS__RTOS__EventFlags.html#structosEventFlagsAttr__t">osEventFlagsAttr_t</a></div><div class="ttdoc">Attributes structure for event flags.</div><div class="ttdef"><b>Definition:</b> cmsis_os2.h:310</div></div>
 </div><!-- fragment --> 
 </div>
 </div>
@@ -319,6 +327,8 @@ Enumerations</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Objects with same safety class. </p>
 <p>Definition for RTOS objects with the same safety class. Can be used as mode argument in the following functions:</p><ul>
 <li><a class="el" href="group__CMSIS__RTOS__ThreadMgmt.html#gadadb56627094dbb07f6aeddf7d713fd9">osThreadSuspendClass</a> :  Suspend execution of threads for specified safety classes.  </li>
 <li><a class="el" href="group__CMSIS__RTOS__ThreadMgmt.html#gadd0a06b459925eb5cdeab67b380a3970">osThreadResumeClass</a> :  Resume execution of threads for specified safety classes.  </li>
@@ -338,6 +348,8 @@ Enumerations</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Objects with lower safety class. </p>
 <p>Definition for RTOS objects with lower safety class. Can be used as mode argument in the following functions:</p><ul>
 <li><a class="el" href="group__CMSIS__RTOS__ThreadMgmt.html#gadadb56627094dbb07f6aeddf7d713fd9">osThreadSuspendClass</a> :  Suspend execution of threads for specified safety classes.  </li>
 <li><a class="el" href="group__CMSIS__RTOS__ThreadMgmt.html#gadd0a06b459925eb5cdeab67b380a3970">osThreadResumeClass</a> :  Resume execution of threads for specified safety classes.  </li>
@@ -358,25 +370,27 @@ Enumerations</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>The <b>osStatus_t</b> enumeration defines the event status and error codes that are returned by many CMSIS-RTOS functions. </p>
+
+<p>Status code values returned by CMSIS-RTOS functions. </p>
+<p>The <b>osStatus_t</b> enumeration defines the event status and error codes that are returned by many CMSIS-RTOS2 functions. </p>
 <table class="fieldtable">
-<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="ga6c0dbe6069e4e7f47bb4cd32ae2b813ea9e1c9e2550bb4de8969a935acffc968f" name="ga6c0dbe6069e4e7f47bb4cd32ae2b813ea9e1c9e2550bb4de8969a935acffc968f"></a>osOK&#160;</td><td class="fielddoc"><p>Operation completed successfully. </p>
+<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="gga6c0dbe6069e4e7f47bb4cd32ae2b813eab17c65ad8b5bae759882b41c5bf35cda" name="gga6c0dbe6069e4e7f47bb4cd32ae2b813eab17c65ad8b5bae759882b41c5bf35cda"></a>osOK&#160;</td><td class="fielddoc"><p>Operation completed successfully. </p>
 </td></tr>
-<tr><td class="fieldname"><a id="ga6c0dbe6069e4e7f47bb4cd32ae2b813eabb7b2d2c4efa66df42f1c10635467b09" name="ga6c0dbe6069e4e7f47bb4cd32ae2b813eabb7b2d2c4efa66df42f1c10635467b09"></a>osError&#160;</td><td class="fielddoc"><p>Unspecified RTOS error: run-time error but no other error message fits. </p>
+<tr><td class="fieldname"><a id="gga6c0dbe6069e4e7f47bb4cd32ae2b813eacb77fd6a5f0f177b06847a629f6054e8" name="gga6c0dbe6069e4e7f47bb4cd32ae2b813eacb77fd6a5f0f177b06847a629f6054e8"></a>osError&#160;</td><td class="fielddoc"><p>Unspecified RTOS error: run-time error but no other error message fits. </p>
 </td></tr>
-<tr><td class="fieldname"><a id="ga6c0dbe6069e4e7f47bb4cd32ae2b813ea913eb5df15ad85f8557eb3a456b56879" name="ga6c0dbe6069e4e7f47bb4cd32ae2b813ea913eb5df15ad85f8557eb3a456b56879"></a>osErrorTimeout&#160;</td><td class="fielddoc"><p>Operation not completed within the timeout period. </p>
+<tr><td class="fieldname"><a id="gga6c0dbe6069e4e7f47bb4cd32ae2b813ea809f56df47a0269cdd4501e0d03eb603" name="gga6c0dbe6069e4e7f47bb4cd32ae2b813ea809f56df47a0269cdd4501e0d03eb603"></a>osErrorTimeout&#160;</td><td class="fielddoc"><p>Operation not completed within the timeout period. </p>
 </td></tr>
-<tr><td class="fieldname"><a id="ga6c0dbe6069e4e7f47bb4cd32ae2b813ea8fc5801e8b0482bdf22ad63a77f0155d" name="ga6c0dbe6069e4e7f47bb4cd32ae2b813ea8fc5801e8b0482bdf22ad63a77f0155d"></a>osErrorResource&#160;</td><td class="fielddoc"><p>Resource not available. </p>
+<tr><td class="fieldname"><a id="gga6c0dbe6069e4e7f47bb4cd32ae2b813ea75ed7d9f50a54adb727f61486ff2cc02" name="gga6c0dbe6069e4e7f47bb4cd32ae2b813ea75ed7d9f50a54adb727f61486ff2cc02"></a>osErrorResource&#160;</td><td class="fielddoc"><p>Resource not available. </p>
 </td></tr>
-<tr><td class="fieldname"><a id="ga6c0dbe6069e4e7f47bb4cd32ae2b813eac24adca6a5d072c9f01c32178ba0d109" name="ga6c0dbe6069e4e7f47bb4cd32ae2b813eac24adca6a5d072c9f01c32178ba0d109"></a>osErrorParameter&#160;</td><td class="fielddoc"><p>Parameter error. </p>
+<tr><td class="fieldname"><a id="gga6c0dbe6069e4e7f47bb4cd32ae2b813ea146cdcbc5c2b6f43e196294dbc59e12c" name="gga6c0dbe6069e4e7f47bb4cd32ae2b813ea146cdcbc5c2b6f43e196294dbc59e12c"></a>osErrorParameter&#160;</td><td class="fielddoc"><p>Parameter error. </p>
 </td></tr>
-<tr><td class="fieldname"><a id="ga6c0dbe6069e4e7f47bb4cd32ae2b813eaf1fac0240218e51eb30a13da2f8aae81" name="ga6c0dbe6069e4e7f47bb4cd32ae2b813eaf1fac0240218e51eb30a13da2f8aae81"></a>osErrorNoMemory&#160;</td><td class="fielddoc"><p>System is out of memory: it was impossible to allocate or reserve memory for the operation. </p>
+<tr><td class="fieldname"><a id="gga6c0dbe6069e4e7f47bb4cd32ae2b813ea1bccee013c5725778b750a54c4f9e57d" name="gga6c0dbe6069e4e7f47bb4cd32ae2b813ea1bccee013c5725778b750a54c4f9e57d"></a>osErrorNoMemory&#160;</td><td class="fielddoc"><p>System is out of memory: it was impossible to allocate or reserve memory for the operation. </p>
 </td></tr>
-<tr><td class="fieldname"><a id="ga6c0dbe6069e4e7f47bb4cd32ae2b813ea21635bdc492d3094fe83027fa4a30e2f" name="ga6c0dbe6069e4e7f47bb4cd32ae2b813ea21635bdc492d3094fe83027fa4a30e2f"></a>osErrorISR&#160;</td><td class="fielddoc"><p>Not allowed in ISR context: the function cannot be called from interrupt service routines. </p>
+<tr><td class="fieldname"><a id="gga6c0dbe6069e4e7f47bb4cd32ae2b813ea91c2ea9c9cd03401ff7d396c636d1864" name="gga6c0dbe6069e4e7f47bb4cd32ae2b813ea91c2ea9c9cd03401ff7d396c636d1864"></a>osErrorISR&#160;</td><td class="fielddoc"><p>Not allowed in ISR context: the function cannot be called from interrupt service routines. </p>
 </td></tr>
-<tr><td class="fieldname"><a id="ga6c0dbe6069e4e7f47bb4cd32ae2b813eafe45a75293a0a97dcabb8bdd193145c5" name="ga6c0dbe6069e4e7f47bb4cd32ae2b813eafe45a75293a0a97dcabb8bdd193145c5"></a>osErrorSafetyClass&#160;</td><td class="fielddoc"><p>Operation denied because of safety class violation. </p>
+<tr><td class="fieldname"><a id="gga6c0dbe6069e4e7f47bb4cd32ae2b813ea7379a8ce2e513723390bb01d2efeb981" name="gga6c0dbe6069e4e7f47bb4cd32ae2b813ea7379a8ce2e513723390bb01d2efeb981"></a>osErrorSafetyClass&#160;</td><td class="fielddoc"><p>Operation denied because of safety class violation. </p>
 </td></tr>
-<tr><td class="fieldname"><a id="ga6c0dbe6069e4e7f47bb4cd32ae2b813ea66cc9ce9106b508df0e4a733a55a439d" name="ga6c0dbe6069e4e7f47bb4cd32ae2b813ea66cc9ce9106b508df0e4a733a55a439d"></a>osStatusReserved&#160;</td><td class="fielddoc"><p>Prevents enum down-size compiler optimization. </p>
+<tr><td class="fieldname"><a id="gga6c0dbe6069e4e7f47bb4cd32ae2b813ea59d1c52ddb4ba7a7738039756e79d982" name="gga6c0dbe6069e4e7f47bb4cd32ae2b813ea59d1c52ddb4ba7a7738039756e79d982"></a>osStatusReserved&#160;</td><td class="fielddoc"><p>Prevents enum down-size compiler optimization. </p>
 </td></tr>
 </table>
 

@@ -5,7 +5,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>CMSIS-RTOS2: Process Isolation</title>
+<title>CMSIS-RTOS2: Thread Watchdogs</title>
 <link href="doxygen.css" rel="stylesheet" type="text/css"/>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <link href="extra_navtree.css" rel="stylesheet" type="text/css"/>
@@ -101,7 +101,7 @@ var searchBox = new SearchBox("searchBox", "search/",'.html');
 </div>
 <script type="text/javascript">
 /* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
-$(document).ready(function(){initNavTree('group__CMSIS__RTOS__ProcessIsolation.html',''); initResizable(); });
+$(document).ready(function(){initNavTree('rtos_process_isolation_thread_wdt.html',''); initResizable(); });
 /* @license-end */
 </script>
 <div id="doc-content">
@@ -126,48 +126,29 @@ $(document).ready(function(){initNavTree('group__CMSIS__RTOS__ProcessIsolation.h
 </div>
 </div>
 
-<div class="header">
-  <div class="summary">
-<a href="#groups">Content</a>  </div>
-  <div class="headertitle"><div class="title">Process Isolation<div class="ingroups"><a class="el" href="group__CMSIS__RTOS.html">CMSIS-RTOS API v2</a></div></div></div>
+<div><div class="header">
+  <div class="headertitle"><div class="title">Thread Watchdogs </div></div>
 </div><!--header-->
 <div class="contents">
-<table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="groups" name="groups"></a>
-Content</h2></td></tr>
-<tr class="memitem:group__rtos__process__isolation__mpu"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__rtos__process__isolation__mpu.html">MPU Protected Zones</a></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:group__rtos__process__isolation__safety__class"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__rtos__process__isolation__safety__class.html">Safety Classes</a></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:group__rtos__process__isolation__thread__wdt"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__rtos__process__isolation__thread__wdt.html">Thread Watchdogs</a></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:group__rtos__process__isolation__faults"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__rtos__process__isolation__faults.html">Fault Handling</a></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table>
-<a name="details" id="details"></a><h2 class="groupheader">Description</h2>
-<p>This chapter explains mechanisms available for process isolation support in CMSIS-RTOS2 API. </p>
-<p>CMSIS-RTOS2 API defines a set of features to protect critical parts of an application against software flaws that may exist in other parts of an application.</p>
-<dl class="section user"><dt></dt><dd><ul>
-<li><b><a class="el" href="group__rtos__process__isolation__mpu.html">MPU Protected Zones</a></b> for memory access protection in the system. <br  />
- RTOS threads can access only memory regions and peripherals based on their MPU Protected Zone assignment. Non-privileged thread code cannot accidentally modify critical RTOS kernel data or memory belonging to other zones.</li>
+<div class="textblock"><p>CMSIS-RTOS defines <b>Thread Watchdogs</b> that allow to control timing constraints for thread execution <a href="https://en.wikipedia.org/wiki/Temporal_isolation">temporal isolation</a>.</p>
+<p>Each thread has an independent watchdog timer that is started with the function <a class="el" href="group__CMSIS__RTOS__ThreadMgmt.html#ga8f4455b06afb95c1915f15266818a8c6">osThreadFeedWatchdog(uint32_t ticks)</a>. The <span class="XML-Token">ticks</span> value specifies the timeout before it expires. Within this time interval the function <a class="el" href="group__CMSIS__RTOS__ThreadMgmt.html#ga8f4455b06afb95c1915f15266818a8c6">osThreadFeedWatchdog</a> must be called again within the thread to restart the watchdog timer.</p>
+<p>If the thread watchdog is not restarted during the specified amount of ticks the Watchdog Alarm callback <a class="el" href="group__CMSIS__RTOS__ThreadMgmt.html#ga5a02770aaf65c7a3c7562c109884176a">osWatchdogAlarm_Handler(osThreadId_t thread_id)</a> is triggered and can be used to recover the system or proceed to the system shutdown.</p>
+<p>Figure below explains the concept with an example:</p>
+<div class="image">
+<img src="thread_watchdogs.png" alt=""/>
+<div class="caption">
+"Example use of Thread Watchdogs</div></div>
+    <p><a class="el" href="rtos_process_isolation_faults.html">Fault Handling</a> provides more details on the available possibilities for system recovery. </p><dl class="section note"><dt>Note</dt><dd>If the application suspends a thread from scheduling by calling <a class="el" href="group__CMSIS__RTOS__ThreadMgmt.html#gaa9de419d0152bf77e9bbcd1f369fb990">osThreadSuspend</a> or <a class="el" href="group__CMSIS__RTOS__ThreadMgmt.html#gadadb56627094dbb07f6aeddf7d713fd9">osThreadSuspendClass</a>, the thread watchdog still continues to run, and it is expected to expire and trigger <a class="el" href="group__CMSIS__RTOS__ThreadMgmt.html#ga5a02770aaf65c7a3c7562c109884176a">osWatchdogAlarm_Handler</a> because the thread will not be serviced as expected. </dd>
+<dd>
+Hence it may be necessary to differentiate handling of thread watchdogs that expired unexpectedly from the thread watchdog alarms of intentionally suspended threads.</dd></dl>
+<p><b>Function references</b></p>
+<p>Summary of functions that implement thread watchdog functionality:</p>
+<ul>
+<li><a class="el" href="group__CMSIS__RTOS__ThreadMgmt.html#ga8f4455b06afb95c1915f15266818a8c6">osThreadFeedWatchdog</a> :  Feed watchdog of the current running thread.  </li>
+<li><a class="el" href="group__CMSIS__RTOS__ThreadMgmt.html#ga5a02770aaf65c7a3c7562c109884176a">osWatchdogAlarm_Handler</a> :  Handler for expired thread watchdogs.   </li>
 </ul>
-</dd></dl>
-<dl class="section user"><dt></dt><dd><ul>
-<li><b><a class="el" href="group__rtos__process__isolation__safety__class.html">Safety Classes</a></b> for access protection to RTOS objects. <br  />
- The RTOS objects with a higher safety class assigned to them cannot be modified via RTOS API functions from threads that have lower safety class assigned.</li>
-</ul>
-</dd></dl>
-<dl class="section user"><dt></dt><dd><ul>
-<li><b><a class="el" href="group__rtos__process__isolation__thread__wdt.html">Thread Watchdogs</a></b> to verify execution times of threads. <br  />
- Each thread can maintain own thread watchdog and in case of timing violations, corresponding thread watchdog alarm will be triggered.</li>
-</ul>
-</dd></dl>
-<dl class="section user"><dt></dt><dd><ul>
-<li><b><a class="el" href="group__rtos__process__isolation__faults.html">Fault Handling</a></b> in case of a detected failure (for example thread watchdog alarm or MPU Fault). <br  />
- The RTOS provides functions to block execution of malfunctioning components and with that dedicate system resources for operation of the safety critical threads.</li>
-</ul>
-</dd></dl>
-</div><!-- contents -->
+</div></div><!-- contents -->
+</div><!-- PageDoc -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->

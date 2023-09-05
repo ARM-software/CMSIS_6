@@ -129,7 +129,7 @@ $(document).ready(function(){initNavTree('group__CMSIS__RTOS__Wait.html',''); in
 <div class="header">
   <div class="summary">
 <a href="#func-members">Functions</a>  </div>
-  <div class="headertitle"><div class="title">Generic Wait Functions<div class="ingroups"><a class="el" href="group__CMSIS__RTOS.html">CMSIS-RTOS API v2</a></div></div></div>
+  <div class="headertitle"><div class="title">Generic Wait Functions<div class="ingroups"><a class="el" href="group__CMSIS__RTOS.html">CMSIS-RTOS2 API</a></div></div></div>
 </div><!--header-->
 <div class="contents">
 
@@ -146,8 +146,9 @@ Functions</h2></td></tr>
 <tr class="separator:ga3c807924c2d6d43bc2ffb49da3f7f3a1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Description</h2>
+<p>Wait for a certain period of time. </p>
 <p>The generic wait functions provide means for a time delay.</p>
-<dl class="section note"><dt>Note</dt><dd>Generic wait functions cannot be called from Interrupt Service Routines. </dd></dl>
+<dl class="section note"><dt>Note</dt><dd>Generic wait functions cannot be called from <a class="el" href="usingOS2.html#CMSIS_RTOS_ISR_Calls">Interrupt Service Routines</a>. </dd></dl>
 <h2 class="groupheader">Function Documentation</h2>
 <a id="gaf6055a51390ef65b6b6edc28bf47322e" name="gaf6055a51390ef65b6b6edc28bf47322e"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#gaf6055a51390ef65b6b6edc28bf47322e">&#9670;&#160;</a></span>osDelay()</h2>
@@ -164,9 +165,11 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Wait for Timeout (Time Delay). </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">ticks</td><td>time ticks value </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">ticks</td><td><a class="el" href="usingOS2.html#CMSIS_RTOS_TimeOutValue">time ticks</a> value </td></tr>
   </table>
   </dd>
 </dl>
@@ -176,22 +179,19 @@ Functions</h2></td></tr>
 <p>Possible <a class="el" href="group__CMSIS__RTOS__Definitions.html#ga6c0dbe6069e4e7f47bb4cd32ae2b813e">osStatus_t</a> return values:</p><ul>
 <li><em>osOK:</em> the time delay is executed.</li>
 <li><em>osErrorParameter:</em> the time cannot be handled (zero value).</li>
-<li><em>osErrorISR:</em> <a class="el" href="group__CMSIS__RTOS__Wait.html#gaf6055a51390ef65b6b6edc28bf47322e">osDelay</a> cannot be called from Interrupt Service Routines.</li>
+<li><em>osErrorISR:</em> <a class="el" href="group__CMSIS__RTOS__Wait.html#gaf6055a51390ef65b6b6edc28bf47322e">osDelay</a> cannot be called from <a class="el" href="usingOS2.html#CMSIS_RTOS_ISR_Calls">Interrupt Service Routines</a>.</li>
 <li><em>osError:</em> <a class="el" href="group__CMSIS__RTOS__Wait.html#gaf6055a51390ef65b6b6edc28bf47322e">osDelay</a> cannot be executed (kernel not running or no <a class="el" href="group__CMSIS__RTOS__ThreadMgmt.html#ThreadStates">READY</a> thread exists).</li>
 </ul>
-<dl class="section note"><dt>Note</dt><dd>This function <b>cannot</b> be called from Interrupt Service Routines.</dd></dl>
-<p><b>Code Example</b> </p><div class="fragment"><div class="line"><span class="preprocessor">#include &quot;<a class="code" href="cmsis__os2_8h.html">cmsis_os2.h</a>&quot;</span></div>
+<dl class="section note"><dt>Note</dt><dd>This function <b>cannot</b> be called from <a class="el" href="usingOS2.html#CMSIS_RTOS_ISR_Calls">Interrupt Service Routines</a>.</dd></dl>
+<p><b>Code Example</b> </p><div class="fragment"><div class="line"><span class="preprocessor">#include &quot;cmsis_os2.h&quot;</span></div>
 <div class="line"> </div>
 <div class="line"><span class="keywordtype">void</span> Thread_1 (<span class="keywordtype">void</span> *arg) {             <span class="comment">// Thread function</span></div>
-<div class="line">  <a class="code hl_enumeration" href="group__CMSIS__RTOS__Definitions.html#ga6c0dbe6069e4e7f47bb4cd32ae2b813e">osStatus_t</a> status;                    <span class="comment">// capture the return status</span></div>
+<div class="line">  <a class="code hl_enumeration" href="group__CMSIS__RTOS__Definitions.html#ga6c0dbe6069e4e7f47bb4cd32ae2b813e" title="Status code values returned by CMSIS-RTOS functions.">osStatus_t</a> status;                    <span class="comment">// capture the return status</span></div>
 <div class="line">  uint32_t   delayTime;                 <span class="comment">// delay time in milliseconds</span></div>
 <div class="line"> </div>
 <div class="line">  delayTime = 1000U;                    <span class="comment">// delay 1 second</span></div>
-<div class="line">  status = <a class="code hl_function" href="group__CMSIS__RTOS__Wait.html#gaf6055a51390ef65b6b6edc28bf47322e">osDelay</a>(delayTime);          <span class="comment">// suspend thread execution</span></div>
+<div class="line">  status = <a class="code hl_function" href="group__CMSIS__RTOS__Wait.html#gaf6055a51390ef65b6b6edc28bf47322e" title="Wait for Timeout (Time Delay).">osDelay</a>(delayTime);          <span class="comment">// suspend thread execution</span></div>
 <div class="line">}</div>
-<div class="ttc" id="acmsis__os2_8h_html"><div class="ttname"><a href="cmsis__os2_8h.html">cmsis_os2.h</a></div></div>
-<div class="ttc" id="agroup__CMSIS__RTOS__Definitions_html_ga6c0dbe6069e4e7f47bb4cd32ae2b813e"><div class="ttname"><a href="group__CMSIS__RTOS__Definitions.html#ga6c0dbe6069e4e7f47bb4cd32ae2b813e">osStatus_t</a></div><div class="ttdeci">osStatus_t</div><div class="ttdoc">Status code values returned by CMSIS-RTOS functions.</div><div class="ttdef"><b>Definition:</b> cmsis_os2.h:246</div></div>
-<div class="ttc" id="agroup__CMSIS__RTOS__Wait_html_gaf6055a51390ef65b6b6edc28bf47322e"><div class="ttname"><a href="group__CMSIS__RTOS__Wait.html#gaf6055a51390ef65b6b6edc28bf47322e">osDelay</a></div><div class="ttdeci">osStatus_t osDelay(uint32_t ticks)</div><div class="ttdoc">Wait for Timeout (Time Delay).</div></div>
 </div><!-- fragment --> 
 </div>
 </div>
@@ -210,6 +210,8 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Wait until specified time. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">ticks</td><td>absolute time in ticks </td></tr>
@@ -223,24 +225,22 @@ Functions</h2></td></tr>
 <p>Possible <a class="el" href="group__CMSIS__RTOS__Definitions.html#ga6c0dbe6069e4e7f47bb4cd32ae2b813e">osStatus_t</a> return values:</p><ul>
 <li><em>osOK:</em> the time delay is executed.</li>
 <li><em>osErrorParameter:</em> the time cannot be handled (out of bounds).</li>
-<li><em>osErrorISR:</em> <a class="el" href="group__CMSIS__RTOS__Wait.html#ga3c807924c2d6d43bc2ffb49da3f7f3a1">osDelayUntil</a> cannot be called from Interrupt Service Routines.</li>
+<li><em>osErrorISR:</em> <a class="el" href="group__CMSIS__RTOS__Wait.html#ga3c807924c2d6d43bc2ffb49da3f7f3a1">osDelayUntil</a> cannot be called from <a class="el" href="usingOS2.html#CMSIS_RTOS_ISR_Calls">Interrupt Service Routines</a>.</li>
 <li><em>osError:</em> <a class="el" href="group__CMSIS__RTOS__Wait.html#ga3c807924c2d6d43bc2ffb49da3f7f3a1">osDelayUntil</a> cannot be executed (kernel not running or no <a class="el" href="group__CMSIS__RTOS__ThreadMgmt.html#ThreadStates">READY</a> thread exists).</li>
 </ul>
-<dl class="section note"><dt>Note</dt><dd>This function <b>cannot</b> be called from Interrupt Service Routines.</dd></dl>
-<p><b>Code Example</b> </p><div class="fragment"><div class="line"><span class="preprocessor">#include &quot;<a class="code" href="cmsis__os2_8h.html">cmsis_os2.h</a>&quot;</span></div>
+<dl class="section note"><dt>Note</dt><dd>This function <b>cannot</b> be called from <a class="el" href="usingOS2.html#CMSIS_RTOS_ISR_Calls">Interrupt Service Routines</a>.</dd></dl>
+<p><b>Code Example</b> </p><div class="fragment"><div class="line"><span class="preprocessor">#include &quot;cmsis_os2.h&quot;</span></div>
 <div class="line"> </div>
 <div class="line"><span class="keywordtype">void</span> Thread_1 (<span class="keywordtype">void</span> *arg) {             <span class="comment">// Thread function</span></div>
 <div class="line">  uint32_t tick;</div>
 <div class="line"> </div>
-<div class="line">  tick = <a class="code hl_function" href="group__CMSIS__RTOS__KernelCtrl.html#ga84bcdbf2fb76b10c8df4e439f0c7e11b">osKernelGetTickCount</a>();        <span class="comment">// retrieve the number of system ticks</span></div>
+<div class="line">  tick = <a class="code hl_function" href="group__CMSIS__RTOS__KernelCtrl.html#ga84bcdbf2fb76b10c8df4e439f0c7e11b" title="Get the RTOS kernel tick count.">osKernelGetTickCount</a>();        <span class="comment">// retrieve the number of system ticks</span></div>
 <div class="line">  <span class="keywordflow">for</span> (;;) {</div>
 <div class="line">    tick += 1000U;                      <span class="comment">// delay 1000 ticks periodically</span></div>
-<div class="line">    <a class="code hl_function" href="group__CMSIS__RTOS__Wait.html#ga3c807924c2d6d43bc2ffb49da3f7f3a1">osDelayUntil</a>(tick);</div>
+<div class="line">    <a class="code hl_function" href="group__CMSIS__RTOS__Wait.html#ga3c807924c2d6d43bc2ffb49da3f7f3a1" title="Wait until specified time.">osDelayUntil</a>(tick);</div>
 <div class="line">    <span class="comment">// ...</span></div>
 <div class="line">  }</div>
 <div class="line">}</div>
-<div class="ttc" id="agroup__CMSIS__RTOS__KernelCtrl_html_ga84bcdbf2fb76b10c8df4e439f0c7e11b"><div class="ttname"><a href="group__CMSIS__RTOS__KernelCtrl.html#ga84bcdbf2fb76b10c8df4e439f0c7e11b">osKernelGetTickCount</a></div><div class="ttdeci">uint32_t osKernelGetTickCount(void)</div><div class="ttdoc">Get the RTOS kernel tick count.</div></div>
-<div class="ttc" id="agroup__CMSIS__RTOS__Wait_html_ga3c807924c2d6d43bc2ffb49da3f7f3a1"><div class="ttname"><a href="group__CMSIS__RTOS__Wait.html#ga3c807924c2d6d43bc2ffb49da3f7f3a1">osDelayUntil</a></div><div class="ttdeci">osStatus_t osDelayUntil(uint32_t ticks)</div><div class="ttdoc">Wait until specified time.</div></div>
 </div><!-- fragment --> 
 </div>
 </div>

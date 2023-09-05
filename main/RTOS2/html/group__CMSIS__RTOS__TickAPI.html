@@ -138,7 +138,7 @@ $(document).ready(function(){initNavTree('group__CMSIS__RTOS__TickAPI.html','');
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:ga5eeffb4d9dc6c6802fee8898096d9a59"><td class="memItemLeft" align="right" valign="top">int32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CMSIS__RTOS__TickAPI.html#ga5eeffb4d9dc6c6802fee8898096d9a59">OS_Tick_Setup</a> (uint32_t freq, <a class="el" href="os__tick_8h.html#a27589275c894aa295615df4764404b98">IRQHandler_t</a> handler)</td></tr>
+<tr class="memitem:ga5eeffb4d9dc6c6802fee8898096d9a59"><td class="memItemLeft" align="right" valign="top">int32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CMSIS__RTOS__TickAPI.html#ga5eeffb4d9dc6c6802fee8898096d9a59">OS_Tick_Setup</a> (uint32_t freq, IRQHandler_t handler)</td></tr>
 <tr class="memdesc:ga5eeffb4d9dc6c6802fee8898096d9a59"><td class="mdescLeft">&#160;</td><td class="mdescRight">Setup OS Tick timer to generate periodic RTOS Kernel Ticks.  <br /></td></tr>
 <tr class="separator:ga5eeffb4d9dc6c6802fee8898096d9a59"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:gaaa0d6ddef6816e8e5650fde3daf191e7"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CMSIS__RTOS__TickAPI.html#gaaa0d6ddef6816e8e5650fde3daf191e7">OS_Tick_Enable</a> (void)</td></tr>
@@ -167,10 +167,11 @@ Functions</h2></td></tr>
 <tr class="separator:ga1f9a593126b7f0b66fc526c2cebd6192"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Description</h2>
+<p>System tick timer interface for periodic RTOS Kernel Ticks defined in <b>os_tick.h</b> </p>
 <p>The <b>OS Tick API</b> is an interface to a system timer that generates the Kernel Ticks.</p>
 <p>All Cortex-M processors provide an unified System Tick Timer that is typically used to generate the RTOS Kernel Tick.</p>
 <p>The Cortex-A processors do not implement an unified system timer and required a device specific implementation. </p>
-<p>CMSIS-RTOS2 provides in the directory <a class="el" href="index.html#directory">CMSIS/RTOS2/Source</a> several OS Tick implementations that can be used by any RTOS kernel.</p>
+<p>CMSIS-RTOS2 provides in the directory <a class="el" href="index.html#rtos2_access">CMSIS/RTOS2/Source</a> several OS Tick implementations that can be used by any RTOS kernel.</p>
 <table class="markdownTable">
 <tr class="markdownTableHead">
 <th class="markdownTableHeadLeft">Filename   </th><th class="markdownTableHeadLeft">OS Tick Implementation for...    </th></tr>
@@ -195,7 +196,7 @@ Functions</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="os__tick_8h.html#a27589275c894aa295615df4764404b98">IRQHandler_t</a>&#160;</td>
+          <td class="paramtype">IRQHandler_t&#160;</td>
           <td class="paramname"><em>handler</em>&#160;</td>
         </tr>
         <tr>
@@ -205,6 +206,8 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Setup OS Tick timer to generate periodic RTOS Kernel Ticks. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">freq</td><td>tick frequency in Hz </td></tr>
@@ -222,7 +225,7 @@ Functions</h2></td></tr>
 <div class="line"> </div>
 <div class="line"><span class="keyword">static</span> uint8_t PendST;</div>
 <div class="line"> </div>
-<div class="line">int32_t  <a class="code hl_function" href="group__CMSIS__RTOS__TickAPI.html#ga5eeffb4d9dc6c6802fee8898096d9a59">OS_Tick_Setup</a> (uint32_t freq, <a class="code hl_typedef" href="os__tick_8h.html#a27589275c894aa295615df4764404b98">IRQHandler_t</a> handler) {</div>
+<div class="line">int32_t  <a class="code hl_function" href="group__CMSIS__RTOS__TickAPI.html#ga5eeffb4d9dc6c6802fee8898096d9a59" title="Setup OS Tick timer to generate periodic RTOS Kernel Ticks.">OS_Tick_Setup</a> (uint32_t freq, IRQHandler_t handler) {</div>
 <div class="line">  (void)handler;</div>
 <div class="line">  uint32_t load;</div>
 <div class="line"> </div>
@@ -245,8 +248,6 @@ Functions</h2></td></tr>
 <div class="line"> </div>
 <div class="line">  <span class="keywordflow">return</span> (0);</div>
 <div class="line">}</div>
-<div class="ttc" id="agroup__CMSIS__RTOS__TickAPI_html_ga5eeffb4d9dc6c6802fee8898096d9a59"><div class="ttname"><a href="group__CMSIS__RTOS__TickAPI.html#ga5eeffb4d9dc6c6802fee8898096d9a59">OS_Tick_Setup</a></div><div class="ttdeci">int32_t OS_Tick_Setup(uint32_t freq, IRQHandler_t handler)</div><div class="ttdoc">Setup OS Tick timer to generate periodic RTOS Kernel Ticks.</div></div>
-<div class="ttc" id="aos__tick_8h_html_a27589275c894aa295615df4764404b98"><div class="ttname"><a href="os__tick_8h.html#a27589275c894aa295615df4764404b98">IRQHandler_t</a></div><div class="ttdeci">void(* IRQHandler_t)(void)</div><div class="ttdef"><b>Definition:</b> os_tick.h:38</div></div>
 </div><!-- fragment --> 
 </div>
 </div>
@@ -265,9 +266,11 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Enable OS Tick timer interrupt. </p>
 <p>Enable OS Tick timer interrupt.</p>
 <p>Enable and start the OS Tick timer to generate periodic RTOS Kernel Tick interrupts.</p>
-<p><b>Cortex-M SysTick implementation:</b> </p><div class="fragment"><div class="line"><span class="keywordtype">void</span>  <a class="code hl_function" href="group__CMSIS__RTOS__TickAPI.html#gaaa0d6ddef6816e8e5650fde3daf191e7">OS_Tick_Enable</a> (<span class="keywordtype">void</span>) {</div>
+<p><b>Cortex-M SysTick implementation:</b> </p><div class="fragment"><div class="line"><span class="keywordtype">void</span>  <a class="code hl_function" href="group__CMSIS__RTOS__TickAPI.html#gaaa0d6ddef6816e8e5650fde3daf191e7" title="Enable OS Tick timer interrupt.">OS_Tick_Enable</a> (<span class="keywordtype">void</span>) {</div>
 <div class="line"> </div>
 <div class="line">  <span class="keywordflow">if</span> (PendST != 0U) {</div>
 <div class="line">    PendST = 0U;</div>
@@ -277,7 +280,6 @@ Functions</h2></td></tr>
 <div class="line">  SysTick-&gt;CTRL |=  SysTick_CTRL_ENABLE_Msk;</div>
 <div class="line"> </div>
 <div class="line">}</div>
-<div class="ttc" id="agroup__CMSIS__RTOS__TickAPI_html_gaaa0d6ddef6816e8e5650fde3daf191e7"><div class="ttname"><a href="group__CMSIS__RTOS__TickAPI.html#gaaa0d6ddef6816e8e5650fde3daf191e7">OS_Tick_Enable</a></div><div class="ttdeci">void OS_Tick_Enable(void)</div><div class="ttdoc">Enable OS Tick timer interrupt.</div></div>
 </div><!-- fragment --> 
 </div>
 </div>
@@ -296,9 +298,11 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Disable OS Tick timer interrupt. </p>
 <p>Disable OS Tick timer interrupt.</p>
 <p>Stop the OS Tick timer and disable generation of RTOS Kernel Tick interrupts.</p>
-<p><b>Cortex-M SysTick implementation:</b> </p><div class="fragment"><div class="line"><span class="keywordtype">void</span>  <a class="code hl_function" href="group__CMSIS__RTOS__TickAPI.html#ga50fc040b66fabd1945d2bd1d0d05661d">OS_Tick_Disable</a> (<span class="keywordtype">void</span>) {</div>
+<p><b>Cortex-M SysTick implementation:</b> </p><div class="fragment"><div class="line"><span class="keywordtype">void</span>  <a class="code hl_function" href="group__CMSIS__RTOS__TickAPI.html#ga50fc040b66fabd1945d2bd1d0d05661d" title="Disable OS Tick timer interrupt.">OS_Tick_Disable</a> (<span class="keywordtype">void</span>) {</div>
 <div class="line"> </div>
 <div class="line">  SysTick-&gt;CTRL &amp;= ~SysTick_CTRL_ENABLE_Msk;</div>
 <div class="line"> </div>
@@ -308,7 +312,6 @@ Functions</h2></td></tr>
 <div class="line">  }</div>
 <div class="line"> </div>
 <div class="line">}</div>
-<div class="ttc" id="agroup__CMSIS__RTOS__TickAPI_html_ga50fc040b66fabd1945d2bd1d0d05661d"><div class="ttname"><a href="group__CMSIS__RTOS__TickAPI.html#ga50fc040b66fabd1945d2bd1d0d05661d">OS_Tick_Disable</a></div><div class="ttdeci">void OS_Tick_Disable(void)</div><div class="ttdoc">Disable OS Tick timer interrupt.</div></div>
 </div><!-- fragment --> 
 </div>
 </div>
@@ -327,15 +330,16 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Acknowledge execution of OS Tick timer interrupt. </p>
 <p>Acknowledge execution of OS Tick timer interrupt.</p>
 <p>Acknowledge the execution of the OS Tick timer interrupt function, for example clear the pending flag.</p>
 <p><b>Cortex-M SysTick implementation:</b></p>
-<div class="fragment"><div class="line"><span class="keywordtype">void</span>  <a class="code hl_function" href="group__CMSIS__RTOS__TickAPI.html#ga14c430d2b363ebd9f904b0822a9314e7">OS_Tick_AcknowledgeIRQ</a> (<span class="keywordtype">void</span>) {</div>
+<div class="fragment"><div class="line"><span class="keywordtype">void</span>  <a class="code hl_function" href="group__CMSIS__RTOS__TickAPI.html#ga14c430d2b363ebd9f904b0822a9314e7" title="Acknowledge execution of OS Tick timer interrupt.">OS_Tick_AcknowledgeIRQ</a> (<span class="keywordtype">void</span>) {</div>
 <div class="line"> </div>
 <div class="line">  (void)SysTick-&gt;CTRL;</div>
 <div class="line"> </div>
 <div class="line">}</div>
-<div class="ttc" id="agroup__CMSIS__RTOS__TickAPI_html_ga14c430d2b363ebd9f904b0822a9314e7"><div class="ttname"><a href="group__CMSIS__RTOS__TickAPI.html#ga14c430d2b363ebd9f904b0822a9314e7">OS_Tick_AcknowledgeIRQ</a></div><div class="ttdeci">void OS_Tick_AcknowledgeIRQ(void)</div><div class="ttdoc">Acknowledge execution of OS Tick timer interrupt.</div></div>
 </div><!-- fragment --> 
 </div>
 </div>
@@ -354,14 +358,15 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Get OS Tick timer IRQ number. </p>
 <dl class="section return"><dt>Returns</dt><dd>OS Tick IRQ number</dd></dl>
 <p>Get OS Tick timer IRQ number.</p>
 <p>Return the numeric value that identifies the interrupt called by the OS Tick timer.</p>
 <p><b>Cortex-M SysTick implementation:</b></p>
-<div class="fragment"><div class="line">int32_t  <a class="code hl_function" href="group__CMSIS__RTOS__TickAPI.html#gaa8b4eca23e3ffe2df403291958cdc905">OS_Tick_GetIRQn</a> (<span class="keywordtype">void</span>) {</div>
+<div class="fragment"><div class="line">int32_t  <a class="code hl_function" href="group__CMSIS__RTOS__TickAPI.html#gaa8b4eca23e3ffe2df403291958cdc905" title="Get OS Tick timer IRQ number.">OS_Tick_GetIRQn</a> (<span class="keywordtype">void</span>) {</div>
 <div class="line">  <span class="keywordflow">return</span> ((int32_t)SysTick_IRQn);</div>
 <div class="line">}</div>
-<div class="ttc" id="agroup__CMSIS__RTOS__TickAPI_html_gaa8b4eca23e3ffe2df403291958cdc905"><div class="ttname"><a href="group__CMSIS__RTOS__TickAPI.html#gaa8b4eca23e3ffe2df403291958cdc905">OS_Tick_GetIRQn</a></div><div class="ttdeci">int32_t OS_Tick_GetIRQn(void)</div><div class="ttdoc">Get OS Tick timer IRQ number.</div></div>
 </div><!-- fragment --> 
 </div>
 </div>
@@ -380,14 +385,15 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Get OS Tick timer clock frequency. </p>
 <dl class="section return"><dt>Returns</dt><dd>OS Tick timer clock frequency in Hz</dd></dl>
 <p>Get OS Tick timer clock frequency.</p>
 <p>Return the input clock frequency of the OS Tick timer. This is the increment rate of the counter value returned by the function <a class="el" href="group__CMSIS__RTOS__TickAPI.html#gaa64a145a554f1e5077848938d7f39c92">OS_Tick_GetCount</a>. This function is used to by the function <a class="el" href="group__CMSIS__RTOS__KernelCtrl.html#ga4d69215a93220f72be3684cad582f16a">osKernelGetSysTimerFreq</a>.</p>
 <p><b>Cortex-M SysTick implementation:</b></p>
-<div class="fragment"><div class="line">uint32_t <a class="code hl_function" href="group__CMSIS__RTOS__TickAPI.html#ga936217ea28236fb57648973e0d8f627a">OS_Tick_GetClock</a> (<span class="keywordtype">void</span>) {</div>
+<div class="fragment"><div class="line">uint32_t <a class="code hl_function" href="group__CMSIS__RTOS__TickAPI.html#ga936217ea28236fb57648973e0d8f627a" title="Get OS Tick timer clock frequency.">OS_Tick_GetClock</a> (<span class="keywordtype">void</span>) {</div>
 <div class="line">  <span class="keywordflow">return</span> (SystemCoreClock);</div>
 <div class="line">}</div>
-<div class="ttc" id="agroup__CMSIS__RTOS__TickAPI_html_ga936217ea28236fb57648973e0d8f627a"><div class="ttname"><a href="group__CMSIS__RTOS__TickAPI.html#ga936217ea28236fb57648973e0d8f627a">OS_Tick_GetClock</a></div><div class="ttdeci">uint32_t OS_Tick_GetClock(void)</div><div class="ttdoc">Get OS Tick timer clock frequency.</div></div>
 </div><!-- fragment --> 
 </div>
 </div>
@@ -406,14 +412,15 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Get OS Tick timer interval reload value. </p>
 <dl class="section return"><dt>Returns</dt><dd>OS Tick timer interval reload value</dd></dl>
 <p>Get OS Tick timer interval reload value.</p>
 <p>Return the number of counter ticks between to periodic OS Tick timer interrupts.</p>
 <p><b>Cortex-M SysTick implementation:</b></p>
-<div class="fragment"><div class="line">uint32_t <a class="code hl_function" href="group__CMSIS__RTOS__TickAPI.html#ga123151dc19d5a94a68f12cdbf61a9bb5">OS_Tick_GetInterval</a> (<span class="keywordtype">void</span>) {</div>
+<div class="fragment"><div class="line">uint32_t <a class="code hl_function" href="group__CMSIS__RTOS__TickAPI.html#ga123151dc19d5a94a68f12cdbf61a9bb5" title="Get OS Tick timer interval reload value.">OS_Tick_GetInterval</a> (<span class="keywordtype">void</span>) {</div>
 <div class="line">  <span class="keywordflow">return</span> (SysTick-&gt;LOAD + 1U);</div>
 <div class="line">}</div>
-<div class="ttc" id="agroup__CMSIS__RTOS__TickAPI_html_ga123151dc19d5a94a68f12cdbf61a9bb5"><div class="ttname"><a href="group__CMSIS__RTOS__TickAPI.html#ga123151dc19d5a94a68f12cdbf61a9bb5">OS_Tick_GetInterval</a></div><div class="ttdeci">uint32_t OS_Tick_GetInterval(void)</div><div class="ttdoc">Get OS Tick timer interval reload value.</div></div>
 </div><!-- fragment --> 
 </div>
 </div>
@@ -432,11 +439,13 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Get OS Tick timer counter value. </p>
 <dl class="section return"><dt>Returns</dt><dd>OS Tick timer counter value</dd></dl>
 <p>Get OS Tick timer counter value.</p>
 <p>Return the current value of the OS Tick counter: 0 ... (reload value -1). The reload value is returned by the function <a class="el" href="group__CMSIS__RTOS__TickAPI.html#ga123151dc19d5a94a68f12cdbf61a9bb5">OS_Tick_GetInterval</a>. The OS Tick timer counter value is used to by the function <a class="el" href="group__CMSIS__RTOS__KernelCtrl.html#gae0fcaff6cecfb4013bb556c87afcd7d2">osKernelGetSysTimerCount</a>.</p>
 <p><b>Cortex-M SysTick implementation:</b></p>
-<div class="fragment"><div class="line">uint32_t <a class="code hl_function" href="group__CMSIS__RTOS__TickAPI.html#gaa64a145a554f1e5077848938d7f39c92">OS_Tick_GetCount</a> (<span class="keywordtype">void</span>) {</div>
+<div class="fragment"><div class="line">uint32_t <a class="code hl_function" href="group__CMSIS__RTOS__TickAPI.html#gaa64a145a554f1e5077848938d7f39c92" title="Get OS Tick timer counter value.">OS_Tick_GetCount</a> (<span class="keywordtype">void</span>) {</div>
 <div class="line">  uint32_t val;</div>
 <div class="line">  uint32_t count;</div>
 <div class="line"> </div>
@@ -449,7 +458,6 @@ Functions</h2></td></tr>
 <div class="line"> </div>
 <div class="line">  <span class="keywordflow">return</span> (count);</div>
 <div class="line">}</div>
-<div class="ttc" id="agroup__CMSIS__RTOS__TickAPI_html_gaa64a145a554f1e5077848938d7f39c92"><div class="ttname"><a href="group__CMSIS__RTOS__TickAPI.html#gaa64a145a554f1e5077848938d7f39c92">OS_Tick_GetCount</a></div><div class="ttdeci">uint32_t OS_Tick_GetCount(void)</div><div class="ttdoc">Get OS Tick timer counter value.</div></div>
 </div><!-- fragment --> 
 </div>
 </div>
@@ -468,14 +476,15 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Get OS Tick timer overflow status. </p>
 <dl class="section return"><dt>Returns</dt><dd>OS Tick overflow status (1 - overflow, 0 - no overflow).</dd></dl>
 <p>Get OS Tick timer overflow status.</p>
 <p>Return the state of OS Tick timer interrupt pending bit that indicates timer overflows to adjust SysTimer calculations.</p>
 <p><b>Cortex-M SysTick implementation:</b></p>
-<div class="fragment"><div class="line">uint32_t <a class="code hl_function" href="group__CMSIS__RTOS__TickAPI.html#ga1f9a593126b7f0b66fc526c2cebd6192">OS_Tick_GetOverflow</a> (<span class="keywordtype">void</span>) {</div>
+<div class="fragment"><div class="line">uint32_t <a class="code hl_function" href="group__CMSIS__RTOS__TickAPI.html#ga1f9a593126b7f0b66fc526c2cebd6192" title="Get OS Tick timer overflow status.">OS_Tick_GetOverflow</a> (<span class="keywordtype">void</span>) {</div>
 <div class="line">  <span class="keywordflow">return</span> ((SCB-&gt;ICSR &amp; SCB_ICSR_PENDSTSET_Msk) &gt;&gt; SCB_ICSR_PENDSTSET_Pos);</div>
 <div class="line">}</div>
-<div class="ttc" id="agroup__CMSIS__RTOS__TickAPI_html_ga1f9a593126b7f0b66fc526c2cebd6192"><div class="ttname"><a href="group__CMSIS__RTOS__TickAPI.html#ga1f9a593126b7f0b66fc526c2cebd6192">OS_Tick_GetOverflow</a></div><div class="ttdeci">uint32_t OS_Tick_GetOverflow(void)</div><div class="ttdoc">Get OS Tick timer overflow status.</div></div>
 </div><!-- fragment --> 
 </div>
 </div>

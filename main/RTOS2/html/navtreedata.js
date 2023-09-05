@@ -26,28 +26,8 @@ var NAVTREE =
 [
   [ "CMSIS-RTOS2", "index.html", [
     [ "Overview", "index.html", "index" ],
-    [ "Revision History", "rtos_revisionHistory.html", [
-      [ "CMSIS-RTOS API Version 2", "rtos_revisionHistory.html#GenRTOS2Rev", null ]
-    ] ],
-    [ "Generic RTOS Interface", "genRTOS2IF.html", [
-      [ "cmsis_os2.h header file", "genRTOS2IF.html#cmsis_os2_h", null ],
-      [ "Using a CMSIS-RTOS2 Implementation", "genRTOS2IF.html#usingOS2", null ]
-    ] ],
-    [ "Function Overview", "functionOverview.html", "functionOverview" ],
-    [ "Migration from API v1 to API v2", "os2Migration.html", [
-      [ "Kernel Information and Control", "os2Migration.html#mig_kernel", null ],
-      [ "Thread Management", "os2Migration.html#mig_threadMgmt", null ],
-      [ "Thread Flags", "os2Migration.html#mig_threadFlags", null ],
-      [ "Event Flags", "os2Migration.html#mig_eventFlags", null ],
-      [ "Generic Wait Functions", "os2Migration.html#mig_wait", null ],
-      [ "Timer Management", "os2Migration.html#mig_timer", null ],
-      [ "Mutexes", "os2Migration.html#mig_mutex", null ],
-      [ "Semaphores", "os2Migration.html#mig_sem", null ],
-      [ "Memory Pool", "os2Migration.html#mig_memPool", null ],
-      [ "Message Queue", "os2Migration.html#mig_msgQueue", null ],
-      [ "Mail Queue", "os2Migration.html#mig_mailQueue", null ],
-      [ "Signal Events", "os2Migration.html#mig_signalEvents", null ]
-    ] ],
+    [ "Revision History", "rtos_revisionHistory.html", null ],
+    [ "Using CMSIS-RTOS2 Interface", "usingOS2.html", "usingOS2" ],
     [ "RTOS Validation", "rtosValidation.html", null ],
     [ "API Reference", "modules.html", "modules" ]
   ] ]
@@ -55,8 +35,8 @@ var NAVTREE =
 
 var NAVTREEINDEX =
 [
-"cmsis__os2_8h.html#ga08326469274b668140ca934b168a5ad4a0545c92c18ce8e6b24e82a0d694a0b4a",
-"group__CMSIS__RTOS__ThreadMgmt.html#ggad4e3e0971b41f2d17584a8c6837342eca4b4fa46c3ebaf4259662a0a0a3173b7f"
+"CMSIS_RTOS_ProcessIsolation.html",
+"usingOS2.html#CMSIS_RTOS_TimeOutValue"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

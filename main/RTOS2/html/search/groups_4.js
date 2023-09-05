@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['generic_20wait_20functions_0',['Generic Wait Functions',['../group__CMSIS__RTOS__Wait.html',1,'']]]
+  ['kernel_20information_20and_20control_0',['Kernel Information and Control',['../group__CMSIS__RTOS__KernelCtrl.html',1,'']]]
 ];

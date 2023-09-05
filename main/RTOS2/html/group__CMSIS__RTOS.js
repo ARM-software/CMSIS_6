@@ -1,7 +1,5 @@
 var group__CMSIS__RTOS =
 [
-    [ "Memory Management", "group__CMSIS__RTOS__MemoryMgmt.html", null ],
-    [ "Process Isolation", "group__CMSIS__RTOS__ProcessIsolation.html", "group__CMSIS__RTOS__ProcessIsolation" ],
     [ "Kernel Information and Control", "group__CMSIS__RTOS__KernelCtrl.html", "group__CMSIS__RTOS__KernelCtrl" ],
     [ "Thread Management", "group__CMSIS__RTOS__ThreadMgmt.html", "group__CMSIS__RTOS__ThreadMgmt" ],
     [ "Thread Flags", "group__CMSIS__RTOS__ThreadFlagsMgmt.html", "group__CMSIS__RTOS__ThreadFlagsMgmt" ],
@@ -12,5 +10,5 @@ var group__CMSIS__RTOS =
     [ "Semaphores", "group__CMSIS__RTOS__SemaphoreMgmt.html", "group__CMSIS__RTOS__SemaphoreMgmt" ],
     [ "Memory Pool", "group__CMSIS__RTOS__PoolMgmt.html", "group__CMSIS__RTOS__PoolMgmt" ],
     [ "Message Queue", "group__CMSIS__RTOS__Message.html", "group__CMSIS__RTOS__Message" ],
-    [ "Definitions", "group__CMSIS__RTOS__Definitions.html", "group__CMSIS__RTOS__Definitions" ]
+    [ "Generic Definitions", "group__CMSIS__RTOS__Definitions.html", "group__CMSIS__RTOS__Definitions" ]
 ];

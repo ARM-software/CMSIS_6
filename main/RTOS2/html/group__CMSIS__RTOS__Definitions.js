@@ -9,14 +9,14 @@ var group__CMSIS__RTOS__Definitions =
     [ "osSafetyWithSameClass", "group__CMSIS__RTOS__Definitions.html#ga7abd2d95425d9e02672778b3464b2eaa", null ],
     [ "osSafetyWithLowerClass", "group__CMSIS__RTOS__Definitions.html#ga8c77ee126b9215425fc004ee13cdc6de", null ],
     [ "osStatus_t", "group__CMSIS__RTOS__Definitions.html#ga6c0dbe6069e4e7f47bb4cd32ae2b813e", [
-      [ "osOK", "cmsis__os2_8h.html#ga6c0dbe6069e4e7f47bb4cd32ae2b813ea9e1c9e2550bb4de8969a935acffc968f", null ],
-      [ "osError", "cmsis__os2_8h.html#ga6c0dbe6069e4e7f47bb4cd32ae2b813eabb7b2d2c4efa66df42f1c10635467b09", null ],
-      [ "osErrorTimeout", "cmsis__os2_8h.html#ga6c0dbe6069e4e7f47bb4cd32ae2b813ea913eb5df15ad85f8557eb3a456b56879", null ],
-      [ "osErrorResource", "cmsis__os2_8h.html#ga6c0dbe6069e4e7f47bb4cd32ae2b813ea8fc5801e8b0482bdf22ad63a77f0155d", null ],
-      [ "osErrorParameter", "cmsis__os2_8h.html#ga6c0dbe6069e4e7f47bb4cd32ae2b813eac24adca6a5d072c9f01c32178ba0d109", null ],
-      [ "osErrorNoMemory", "cmsis__os2_8h.html#ga6c0dbe6069e4e7f47bb4cd32ae2b813eaf1fac0240218e51eb30a13da2f8aae81", null ],
-      [ "osErrorISR", "cmsis__os2_8h.html#ga6c0dbe6069e4e7f47bb4cd32ae2b813ea21635bdc492d3094fe83027fa4a30e2f", null ],
-      [ "osErrorSafetyClass", "cmsis__os2_8h.html#ga6c0dbe6069e4e7f47bb4cd32ae2b813eafe45a75293a0a97dcabb8bdd193145c5", null ],
-      [ "osStatusReserved", "cmsis__os2_8h.html#ga6c0dbe6069e4e7f47bb4cd32ae2b813ea66cc9ce9106b508df0e4a733a55a439d", null ]
+      [ "osOK", "group__CMSIS__RTOS__Definitions.html#gga6c0dbe6069e4e7f47bb4cd32ae2b813eab17c65ad8b5bae759882b41c5bf35cda", null ],
+      [ "osError", "group__CMSIS__RTOS__Definitions.html#gga6c0dbe6069e4e7f47bb4cd32ae2b813eacb77fd6a5f0f177b06847a629f6054e8", null ],
+      [ "osErrorTimeout", "group__CMSIS__RTOS__Definitions.html#gga6c0dbe6069e4e7f47bb4cd32ae2b813ea809f56df47a0269cdd4501e0d03eb603", null ],
+      [ "osErrorResource", "group__CMSIS__RTOS__Definitions.html#gga6c0dbe6069e4e7f47bb4cd32ae2b813ea75ed7d9f50a54adb727f61486ff2cc02", null ],
+      [ "osErrorParameter", "group__CMSIS__RTOS__Definitions.html#gga6c0dbe6069e4e7f47bb4cd32ae2b813ea146cdcbc5c2b6f43e196294dbc59e12c", null ],
+      [ "osErrorNoMemory", "group__CMSIS__RTOS__Definitions.html#gga6c0dbe6069e4e7f47bb4cd32ae2b813ea1bccee013c5725778b750a54c4f9e57d", null ],
+      [ "osErrorISR", "group__CMSIS__RTOS__Definitions.html#gga6c0dbe6069e4e7f47bb4cd32ae2b813ea91c2ea9c9cd03401ff7d396c636d1864", null ],
+      [ "osErrorSafetyClass", "group__CMSIS__RTOS__Definitions.html#gga6c0dbe6069e4e7f47bb4cd32ae2b813ea7379a8ce2e513723390bb01d2efeb981", null ],
+      [ "osStatusReserved", "group__CMSIS__RTOS__Definitions.html#gga6c0dbe6069e4e7f47bb4cd32ae2b813ea59d1c52ddb4ba7a7738039756e79d982", null ]
     ] ]
 ];

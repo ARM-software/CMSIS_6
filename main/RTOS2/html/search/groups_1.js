@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['definitions_0',['Definitions',['../group__CMSIS__RTOS__Definitions.html',1,'']]]
+  ['event_20flags_0',['Event Flags',['../group__CMSIS__RTOS__EventFlags.html',1,'']]]
 ];

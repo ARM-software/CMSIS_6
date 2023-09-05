@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['fault_20handling_0',['Fault Handling',['../group__rtos__process__isolation__faults.html',1,'']]],
-  ['flags_20functions_20error_20codes_1',['Flags Functions Error Codes',['../group__flags__error__codes.html',1,'']]]
+  ['generic_20definitions_0',['Generic Definitions',['../group__CMSIS__RTOS__Definitions.html',1,'']]],
+  ['generic_20wait_20functions_1',['Generic Wait Functions',['../group__CMSIS__RTOS__Wait.html',1,'']]]
 ];

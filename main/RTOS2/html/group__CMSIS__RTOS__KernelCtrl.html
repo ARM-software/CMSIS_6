@@ -131,7 +131,7 @@ $(document).ready(function(){initNavTree('group__CMSIS__RTOS__KernelCtrl.html','
 <a href="#nested-classes">Data Structures</a> &#124;
 <a href="#enum-members">Enumerations</a> &#124;
 <a href="#func-members">Functions</a>  </div>
-  <div class="headertitle"><div class="title">Kernel Information and Control<div class="ingroups"><a class="el" href="group__CMSIS__RTOS.html">CMSIS-RTOS API v2</a></div></div></div>
+  <div class="headertitle"><div class="title">Kernel Information and Control<div class="ingroups"><a class="el" href="group__CMSIS__RTOS.html">CMSIS-RTOS2 API</a></div></div></div>
 </div><!--header-->
 <div class="contents">
 
@@ -147,19 +147,19 @@ Data Structures</h2></td></tr>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="enum-members" name="enum-members"></a>
 Enumerations</h2></td></tr>
 <tr class="memitem:ga08326469274b668140ca934b168a5ad4"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CMSIS__RTOS__KernelCtrl.html#ga08326469274b668140ca934b168a5ad4">osKernelState_t</a> { <br />
-&#160;&#160;<a class="el" href="group__CMSIS__RTOS__KernelCtrl.html#ga08326469274b668140ca934b168a5ad4a2ad3e5912db47b497529d036c89e7995">osKernelInactive</a> = 0
+&#160;&#160;<a class="el" href="group__CMSIS__RTOS__KernelCtrl.html#gga08326469274b668140ca934b168a5ad4a2ad3e5912db47b497529d036c89e7995">osKernelInactive</a> = 0
 , <br />
-&#160;&#160;<a class="el" href="group__CMSIS__RTOS__KernelCtrl.html#ga08326469274b668140ca934b168a5ad4a0596c6e14113447604753656417c9a24">osKernelReady</a> = 1
+&#160;&#160;<a class="el" href="group__CMSIS__RTOS__KernelCtrl.html#gga08326469274b668140ca934b168a5ad4a0596c6e14113447604753656417c9a24">osKernelReady</a> = 1
 , <br />
-&#160;&#160;<a class="el" href="group__CMSIS__RTOS__KernelCtrl.html#ga08326469274b668140ca934b168a5ad4a8e0b699fbe1c8bb66fefadd5911cb6ce">osKernelRunning</a> = 2
+&#160;&#160;<a class="el" href="group__CMSIS__RTOS__KernelCtrl.html#gga08326469274b668140ca934b168a5ad4a8e0b699fbe1c8bb66fefadd5911cb6ce">osKernelRunning</a> = 2
 , <br />
-&#160;&#160;<a class="el" href="group__CMSIS__RTOS__KernelCtrl.html#ga08326469274b668140ca934b168a5ad4a2fe382ad5ebab2257b35740414b28b01">osKernelLocked</a> = 3
+&#160;&#160;<a class="el" href="group__CMSIS__RTOS__KernelCtrl.html#gga08326469274b668140ca934b168a5ad4a2fe382ad5ebab2257b35740414b28b01">osKernelLocked</a> = 3
 , <br />
-&#160;&#160;<a class="el" href="group__CMSIS__RTOS__KernelCtrl.html#ga08326469274b668140ca934b168a5ad4ad364464ad84d63b1413a9ac8a962390c">osKernelSuspended</a> = 4
+&#160;&#160;<a class="el" href="group__CMSIS__RTOS__KernelCtrl.html#gga08326469274b668140ca934b168a5ad4ad364464ad84d63b1413a9ac8a962390c">osKernelSuspended</a> = 4
 , <br />
-&#160;&#160;<a class="el" href="group__CMSIS__RTOS__KernelCtrl.html#ga08326469274b668140ca934b168a5ad4a0545c92c18ce8e6b24e82a0d694a0b4a">osKernelError</a> = -1
+&#160;&#160;<a class="el" href="group__CMSIS__RTOS__KernelCtrl.html#gga08326469274b668140ca934b168a5ad4a0545c92c18ce8e6b24e82a0d694a0b4a">osKernelError</a> = -1
 , <br />
-&#160;&#160;<a class="el" href="group__CMSIS__RTOS__KernelCtrl.html#ga08326469274b668140ca934b168a5ad4ab0a47576defa29396a649d9173d4bc4b">osKernelReserved</a> = 0x7FFFFFFF
+&#160;&#160;<a class="el" href="group__CMSIS__RTOS__KernelCtrl.html#gga08326469274b668140ca934b168a5ad4ab0a47576defa29396a649d9173d4bc4b">osKernelReserved</a> = 0x7FFFFFFF
 <br />
  }</td></tr>
 <tr class="memdesc:ga08326469274b668140ca934b168a5ad4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Kernel state.  <a href="group__CMSIS__RTOS__KernelCtrl.html#ga08326469274b668140ca934b168a5ad4">More...</a><br /></td></tr>
@@ -217,6 +217,7 @@ Functions</h2></td></tr>
 <tr class="separator:ga91b400b21a9093f7751fc45613c12110"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Description</h2>
+<p>Provides version/system information and starts/controls the RTOS Kernel. </p>
 <p>The kernel Information and Control function group allows to:</p><ul>
 <li>obtain information about the system and the underlying kernel.</li>
 <li>obtain version information about the CMSIS-RTOS API.</li>
@@ -224,9 +225,9 @@ Functions</h2></td></tr>
 <li>start the RTOS kernel and thread switching.</li>
 <li>check the execution status of the RTOS kernel.</li>
 </ul>
-<dl class="section note"><dt>Note</dt><dd>The kernel information and control functions cannot be called from Interrupt Service Routines. </dd>
+<dl class="section note"><dt>Note</dt><dd>The kernel information and control functions cannot be called from <a class="el" href="usingOS2.html#CMSIS_RTOS_ISR_Calls">Interrupt Service Routines</a>. </dd>
 <dd>
-The kernel initialization for RTX5 is documented in SystemStartup.</dd></dl>
+The kernel initialization is documented in <a class="el" href="usingOS2.html#SystemStartup">System Startup</a>.</dd></dl>
 <p><b>Code Example</b> </p><div class="fragment"><div class="line"><span class="comment">/*----------------------------------------------------------------------------</span></div>
 <div class="line"><span class="comment"> * Application main thread</span></div>
 <div class="line"><span class="comment"> *---------------------------------------------------------------------------*/</span></div>
@@ -242,14 +243,11 @@ The kernel initialization for RTX5 is documented in SystemStartup.</dd></dl>
 <div class="line">  SystemCoreClockUpdate();</div>
 <div class="line">  <span class="comment">// ...</span></div>
 <div class="line"> </div>
-<div class="line">  <a class="code hl_function" href="group__CMSIS__RTOS__KernelCtrl.html#gae818f6611d25ba3140bede410a52d659">osKernelInitialize</a>();                 <span class="comment">// Initialize CMSIS-RTOS</span></div>
-<div class="line">  <a class="code hl_function" href="group__CMSIS__RTOS__ThreadMgmt.html#ga48d68b8666d99d28fa646ee1d2182b8f">osThreadNew</a>(app_main, NULL, NULL);    <span class="comment">// Create application main thread</span></div>
-<div class="line">  <a class="code hl_function" href="group__CMSIS__RTOS__KernelCtrl.html#ga9ae2cc00f0d89d7b6a307bba942b5221">osKernelStart</a>();                      <span class="comment">// Start thread execution</span></div>
+<div class="line">  <a class="code hl_function" href="group__CMSIS__RTOS__KernelCtrl.html#gae818f6611d25ba3140bede410a52d659" title="Initialize the RTOS Kernel.">osKernelInitialize</a>();                 <span class="comment">// Initialize CMSIS-RTOS</span></div>
+<div class="line">  <a class="code hl_function" href="group__CMSIS__RTOS__ThreadMgmt.html#ga48d68b8666d99d28fa646ee1d2182b8f" title="Create a thread and add it to Active Threads.">osThreadNew</a>(app_main, NULL, NULL);    <span class="comment">// Create application main thread</span></div>
+<div class="line">  <a class="code hl_function" href="group__CMSIS__RTOS__KernelCtrl.html#ga9ae2cc00f0d89d7b6a307bba942b5221" title="Start the RTOS Kernel scheduler.">osKernelStart</a>();                      <span class="comment">// Start thread execution</span></div>
 <div class="line">  <span class="keywordflow">for</span> (;;) {}</div>
 <div class="line">}</div>
-<div class="ttc" id="agroup__CMSIS__RTOS__KernelCtrl_html_ga9ae2cc00f0d89d7b6a307bba942b5221"><div class="ttname"><a href="group__CMSIS__RTOS__KernelCtrl.html#ga9ae2cc00f0d89d7b6a307bba942b5221">osKernelStart</a></div><div class="ttdeci">osStatus_t osKernelStart(void)</div><div class="ttdoc">Start the RTOS Kernel scheduler.</div></div>
-<div class="ttc" id="agroup__CMSIS__RTOS__KernelCtrl_html_gae818f6611d25ba3140bede410a52d659"><div class="ttname"><a href="group__CMSIS__RTOS__KernelCtrl.html#gae818f6611d25ba3140bede410a52d659">osKernelInitialize</a></div><div class="ttdeci">osStatus_t osKernelInitialize(void)</div><div class="ttdoc">Initialize the RTOS Kernel.</div></div>
-<div class="ttc" id="agroup__CMSIS__RTOS__ThreadMgmt_html_ga48d68b8666d99d28fa646ee1d2182b8f"><div class="ttname"><a href="group__CMSIS__RTOS__ThreadMgmt.html#ga48d68b8666d99d28fa646ee1d2182b8f">osThreadNew</a></div><div class="ttdeci">osThreadId_t osThreadNew(osThreadFunc_t func, void *argument, const osThreadAttr_t *attr)</div><div class="ttdoc">Create a thread and add it to Active Threads.</div></div>
 </div><!-- fragment --> <hr/><h2 class="groupheader">Data Structure Documentation</h2>
 <a name="structosVersion__t" id="structosVersion__t"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#structosVersion__t">&#9670;&#160;</a></span>osVersion_t</h2>
@@ -262,7 +260,8 @@ The kernel initialization for RTX5 is documented in SystemStartup.</dd></dl>
         </tr>
       </table>
 </div><div class="memdoc">
-<div class="textblock"><p>Identifies the underlying RTOS kernel and API version number. The version is represented in a combined decimal number in the format: major.minor.rev: mmnnnrrrr</p>
+<div class="textblock"><p>Version information. </p>
+<p>Identifies the underlying RTOS kernel and API version number. The version is represented in a combined decimal number in the format: major.minor.rev: mmnnnrrrr</p>
 <p>Use <a class="el" href="group__CMSIS__RTOS__KernelCtrl.html#ga6f7764e7250c5c5364c00c45a5d1d199">osKernelGetInfo</a> to retrieve the version numbers. </p>
 </div><table class="fieldtable">
 <tr><th colspan="3">Data Fields</th></tr>
@@ -294,27 +293,29 @@ Kernel version (major.minor.rev: mmnnnrrrr dec). </td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Kernel state. </p>
 <p>State of the kernel as retrieved by <a class="el" href="group__CMSIS__RTOS__KernelCtrl.html#ga48b69b81012fce051f639be288b243ba">osKernelGetState</a>. In case <b>osKernelGetState</b> fails or if it is called from an ISR, it will return <code>osKernelError</code>, otherwise it returns the kernel state. </p>
 <table class="fieldtable">
-<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="ga08326469274b668140ca934b168a5ad4a2ad3e5912db47b497529d036c89e7995" name="ga08326469274b668140ca934b168a5ad4a2ad3e5912db47b497529d036c89e7995"></a>osKernelInactive&#160;</td><td class="fielddoc"><p>Inactive. </p>
+<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="gga08326469274b668140ca934b168a5ad4a2ad3e5912db47b497529d036c89e7995" name="gga08326469274b668140ca934b168a5ad4a2ad3e5912db47b497529d036c89e7995"></a>osKernelInactive&#160;</td><td class="fielddoc"><p>Inactive. </p>
 <p>The kernel is not ready yet. <a class="el" href="group__CMSIS__RTOS__KernelCtrl.html#gae818f6611d25ba3140bede410a52d659">osKernelInitialize</a> needs to be executed successfully. </p>
 </td></tr>
-<tr><td class="fieldname"><a id="ga08326469274b668140ca934b168a5ad4a0596c6e14113447604753656417c9a24" name="ga08326469274b668140ca934b168a5ad4a0596c6e14113447604753656417c9a24"></a>osKernelReady&#160;</td><td class="fielddoc"><p>Ready. </p>
+<tr><td class="fieldname"><a id="gga08326469274b668140ca934b168a5ad4a0596c6e14113447604753656417c9a24" name="gga08326469274b668140ca934b168a5ad4a0596c6e14113447604753656417c9a24"></a>osKernelReady&#160;</td><td class="fielddoc"><p>Ready. </p>
 <p>The kernel is not yet running. <a class="el" href="group__CMSIS__RTOS__KernelCtrl.html#ga9ae2cc00f0d89d7b6a307bba942b5221">osKernelStart</a> transfers the kernel to the running state. </p>
 </td></tr>
-<tr><td class="fieldname"><a id="ga08326469274b668140ca934b168a5ad4a8e0b699fbe1c8bb66fefadd5911cb6ce" name="ga08326469274b668140ca934b168a5ad4a8e0b699fbe1c8bb66fefadd5911cb6ce"></a>osKernelRunning&#160;</td><td class="fielddoc"><p>Running. </p>
+<tr><td class="fieldname"><a id="gga08326469274b668140ca934b168a5ad4a8e0b699fbe1c8bb66fefadd5911cb6ce" name="gga08326469274b668140ca934b168a5ad4a8e0b699fbe1c8bb66fefadd5911cb6ce"></a>osKernelRunning&#160;</td><td class="fielddoc"><p>Running. </p>
 <p>The kernel is initialized and running. </p>
 </td></tr>
-<tr><td class="fieldname"><a id="ga08326469274b668140ca934b168a5ad4a2fe382ad5ebab2257b35740414b28b01" name="ga08326469274b668140ca934b168a5ad4a2fe382ad5ebab2257b35740414b28b01"></a>osKernelLocked&#160;</td><td class="fielddoc"><p>Locked. </p>
+<tr><td class="fieldname"><a id="gga08326469274b668140ca934b168a5ad4a2fe382ad5ebab2257b35740414b28b01" name="gga08326469274b668140ca934b168a5ad4a2fe382ad5ebab2257b35740414b28b01"></a>osKernelLocked&#160;</td><td class="fielddoc"><p>Locked. </p>
 <p>The kernel was locked with <a class="el" href="group__CMSIS__RTOS__KernelCtrl.html#ga948609ee930d9b38336b9e1c2a4dfe12">osKernelLock</a>. The functions <a class="el" href="group__CMSIS__RTOS__KernelCtrl.html#gaf401728b4657456198c33fe75f8d6720">osKernelUnlock</a> or <a class="el" href="group__CMSIS__RTOS__KernelCtrl.html#gae7d0a71b9586cbbb49fcbdf6a04f0289">osKernelRestoreLock</a> unlocks it. </p>
 </td></tr>
-<tr><td class="fieldname"><a id="ga08326469274b668140ca934b168a5ad4ad364464ad84d63b1413a9ac8a962390c" name="ga08326469274b668140ca934b168a5ad4ad364464ad84d63b1413a9ac8a962390c"></a>osKernelSuspended&#160;</td><td class="fielddoc"><p>Suspended. </p>
+<tr><td class="fieldname"><a id="gga08326469274b668140ca934b168a5ad4ad364464ad84d63b1413a9ac8a962390c" name="gga08326469274b668140ca934b168a5ad4ad364464ad84d63b1413a9ac8a962390c"></a>osKernelSuspended&#160;</td><td class="fielddoc"><p>Suspended. </p>
 <p>The kernel was suspended using <a class="el" href="group__CMSIS__RTOS__KernelCtrl.html#gae26683e1606ec633354a2876c68f0c1f">osKernelSuspend</a>. The function <a class="el" href="group__CMSIS__RTOS__KernelCtrl.html#ga8c4b4d7ed34cab73c001665d9176aced">osKernelResume</a> returns to normal operation. </p>
 </td></tr>
-<tr><td class="fieldname"><a id="ga08326469274b668140ca934b168a5ad4a0545c92c18ce8e6b24e82a0d694a0b4a" name="ga08326469274b668140ca934b168a5ad4a0545c92c18ce8e6b24e82a0d694a0b4a"></a>osKernelError&#160;</td><td class="fielddoc"><p>Error. </p>
+<tr><td class="fieldname"><a id="gga08326469274b668140ca934b168a5ad4a0545c92c18ce8e6b24e82a0d694a0b4a" name="gga08326469274b668140ca934b168a5ad4a0545c92c18ce8e6b24e82a0d694a0b4a"></a>osKernelError&#160;</td><td class="fielddoc"><p>Error. </p>
 <p>An error occurred. </p>
 </td></tr>
-<tr><td class="fieldname"><a id="ga08326469274b668140ca934b168a5ad4ab0a47576defa29396a649d9173d4bc4b" name="ga08326469274b668140ca934b168a5ad4ab0a47576defa29396a649d9173d4bc4b"></a>osKernelReserved&#160;</td><td class="fielddoc"><p>Prevents enum down-size compiler optimization. </p>
+<tr><td class="fieldname"><a id="gga08326469274b668140ca934b168a5ad4ab0a47576defa29396a649d9173d4bc4b" name="gga08326469274b668140ca934b168a5ad4ab0a47576defa29396a649d9173d4bc4b"></a>osKernelReserved&#160;</td><td class="fielddoc"><p>Prevents enum down-size compiler optimization. </p>
 <p>Reserved. </p>
 </td></tr>
 </table>
@@ -337,18 +338,20 @@ Kernel version (major.minor.rev: mmnnnrrrr dec). </td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Initialize the RTOS Kernel. </p>
 <dl class="section return"><dt>Returns</dt><dd>status code that indicates the execution status of the function.</dd></dl>
 <p>The function <b>osKernelInitialize</b> initializes the RTOS Kernel. Before it is successfully executed, only the functions <a class="el" href="group__CMSIS__RTOS__KernelCtrl.html#ga6f7764e7250c5c5364c00c45a5d1d199">osKernelGetInfo</a> and <a class="el" href="group__CMSIS__RTOS__KernelCtrl.html#ga48b69b81012fce051f639be288b243ba">osKernelGetState</a> may be called.</p>
 <p>Possible <a class="el" href="group__CMSIS__RTOS__Definitions.html#ga6c0dbe6069e4e7f47bb4cd32ae2b813e">osStatus_t</a> return values:</p><ul>
 <li><em>osOK</em> in case of success.</li>
 <li><em>osError</em> if an unspecific error occurred.</li>
-<li><em>osErrorISR</em> if called from an Interrupt Service Routine.</li>
+<li><em>osErrorISR</em> if called from an <a class="el" href="usingOS2.html#CMSIS_RTOS_ISR_Calls">Interrupt Service Routine</a>.</li>
 <li><em>osErrorNoMemory</em> if no memory could be reserved for the operation.</li>
 </ul>
-<dl class="section note"><dt>Note</dt><dd>This function <b>cannot</b> be called from Interrupt Service Routines.</dd></dl>
+<dl class="section note"><dt>Note</dt><dd>This function <b>cannot</b> be called from <a class="el" href="usingOS2.html#CMSIS_RTOS_ISR_Calls">Interrupt Service Routines</a>.</dd></dl>
 <p><b> Code Example</b> </p><div class="fragment"><div class="line"><span class="preprocessor">#include &quot;RTE_Components.h&quot;</span></div>
 <div class="line"><span class="preprocessor">#include  CMSIS_device_header</span></div>
-<div class="line"><span class="preprocessor">#include &quot;<a class="code" href="cmsis__os2_8h.html">cmsis_os2.h</a>&quot;</span></div>
+<div class="line"><span class="preprocessor">#include &quot;cmsis_os2.h&quot;</span></div>
 <div class="line"> </div>
 <div class="line"><span class="comment">/*----------------------------------------------------------------------------</span></div>
 <div class="line"><span class="comment"> * Application main thread</span></div>
@@ -365,12 +368,11 @@ Kernel version (major.minor.rev: mmnnnrrrr dec). </td></tr>
 <div class="line">  SystemCoreClockUpdate();</div>
 <div class="line">  <span class="comment">// ...</span></div>
 <div class="line"> </div>
-<div class="line">  <a class="code hl_function" href="group__CMSIS__RTOS__KernelCtrl.html#gae818f6611d25ba3140bede410a52d659">osKernelInitialize</a>();                 <span class="comment">// Initialize CMSIS-RTOS</span></div>
-<div class="line">  <a class="code hl_function" href="group__CMSIS__RTOS__ThreadMgmt.html#ga48d68b8666d99d28fa646ee1d2182b8f">osThreadNew</a>(app_main, NULL, NULL);    <span class="comment">// Create application main thread</span></div>
-<div class="line">  <a class="code hl_function" href="group__CMSIS__RTOS__KernelCtrl.html#ga9ae2cc00f0d89d7b6a307bba942b5221">osKernelStart</a>();                      <span class="comment">// Start thread execution</span></div>
+<div class="line">  <a class="code hl_function" href="group__CMSIS__RTOS__KernelCtrl.html#gae818f6611d25ba3140bede410a52d659" title="Initialize the RTOS Kernel.">osKernelInitialize</a>();                 <span class="comment">// Initialize CMSIS-RTOS</span></div>
+<div class="line">  <a class="code hl_function" href="group__CMSIS__RTOS__ThreadMgmt.html#ga48d68b8666d99d28fa646ee1d2182b8f" title="Create a thread and add it to Active Threads.">osThreadNew</a>(app_main, NULL, NULL);    <span class="comment">// Create application main thread</span></div>
+<div class="line">  <a class="code hl_function" href="group__CMSIS__RTOS__KernelCtrl.html#ga9ae2cc00f0d89d7b6a307bba942b5221" title="Start the RTOS Kernel scheduler.">osKernelStart</a>();                      <span class="comment">// Start thread execution</span></div>
 <div class="line">  <span class="keywordflow">for</span> (;;) {}</div>
 <div class="line">}</div>
-<div class="ttc" id="acmsis__os2_8h_html"><div class="ttname"><a href="cmsis__os2_8h.html">cmsis_os2.h</a></div></div>
 </div><!-- fragment --> 
 </div>
 </div>
@@ -405,6 +407,8 @@ Kernel version (major.minor.rev: mmnnnrrrr dec). </td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Get RTOS Kernel Information. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramdir">[out]</td><td class="paramname">version</td><td>pointer to buffer for retrieving version information. </td></tr>
@@ -419,25 +423,19 @@ Kernel version (major.minor.rev: mmnnnrrrr dec). </td></tr>
 <li><em>osOK</em> in case of success.</li>
 <li><em>osError</em> if an unspecific error occurred.</li>
 </ul>
-<dl class="section note"><dt>Note</dt><dd>This function may be called from Interrupt Service Routines.</dd></dl>
+<dl class="section note"><dt>Note</dt><dd>This function may be called from <a class="el" href="usingOS2.html#CMSIS_RTOS_ISR_Calls">Interrupt Service Routines</a>.</dd></dl>
 <p><b>Code Example</b> </p><div class="fragment"><div class="line"><span class="keywordtype">void</span> info (<span class="keywordtype">void</span>) {</div>
 <div class="line">  <span class="keywordtype">char</span> infobuf[100];</div>
-<div class="line">  <a class="code hl_struct" href="group__CMSIS__RTOS__KernelCtrl.html#structosVersion__t">osVersion_t</a> osv;</div>
-<div class="line">  <a class="code hl_enumeration" href="group__CMSIS__RTOS__Definitions.html#ga6c0dbe6069e4e7f47bb4cd32ae2b813e">osStatus_t</a> status;</div>
+<div class="line">  <a class="code hl_struct" href="group__CMSIS__RTOS__KernelCtrl.html#structosVersion__t" title="Version information.">osVersion_t</a> osv;</div>
+<div class="line">  <a class="code hl_enumeration" href="group__CMSIS__RTOS__Definitions.html#ga6c0dbe6069e4e7f47bb4cd32ae2b813e" title="Status code values returned by CMSIS-RTOS functions.">osStatus_t</a> status;</div>
 <div class="line"> </div>
-<div class="line">  status = <a class="code hl_function" href="group__CMSIS__RTOS__KernelCtrl.html#ga6f7764e7250c5c5364c00c45a5d1d199">osKernelGetInfo</a>(&amp;osv, infobuf, <span class="keyword">sizeof</span>(infobuf));</div>
-<div class="line">  <span class="keywordflow">if</span>(status == <a class="code hl_enumvalue" href="cmsis__os2_8h.html#ga6c0dbe6069e4e7f47bb4cd32ae2b813ea9e1c9e2550bb4de8969a935acffc968f">osOK</a>) {</div>
+<div class="line">  status = <a class="code hl_function" href="group__CMSIS__RTOS__KernelCtrl.html#ga6f7764e7250c5c5364c00c45a5d1d199" title="Get RTOS Kernel Information.">osKernelGetInfo</a>(&amp;osv, infobuf, <span class="keyword">sizeof</span>(infobuf));</div>
+<div class="line">  <span class="keywordflow">if</span>(status == <a class="code hl_enumvalue" href="group__CMSIS__RTOS__Definitions.html#gga6c0dbe6069e4e7f47bb4cd32ae2b813eab17c65ad8b5bae759882b41c5bf35cda" title="Operation completed successfully.">osOK</a>) {</div>
 <div class="line">    printf(<span class="stringliteral">&quot;Kernel Information: %s\r\n&quot;</span>, infobuf);</div>
-<div class="line">    printf(<span class="stringliteral">&quot;Kernel Version    : %d\r\n&quot;</span>, osv.<a class="code hl_variable" href="group__CMSIS__RTOS__KernelCtrl.html#ad8075d3f42141346ae2c56389358f9e7">kernel</a>);</div>
-<div class="line">    printf(<span class="stringliteral">&quot;Kernel API Version: %d\r\n&quot;</span>, osv.<a class="code hl_variable" href="group__CMSIS__RTOS__KernelCtrl.html#a76a1ef1a4d3d9bd3e70783051f22a6d3">api</a>);</div>
+<div class="line">    printf(<span class="stringliteral">&quot;Kernel Version    : %d\r\n&quot;</span>, osv.<a class="code hl_variable" href="group__CMSIS__RTOS__KernelCtrl.html#ad8075d3f42141346ae2c56389358f9e7" title="Kernel version (major.minor.rev: mmnnnrrrr dec).">kernel</a>);</div>
+<div class="line">    printf(<span class="stringliteral">&quot;Kernel API Version: %d\r\n&quot;</span>, osv.<a class="code hl_variable" href="group__CMSIS__RTOS__KernelCtrl.html#a76a1ef1a4d3d9bd3e70783051f22a6d3" title="API version (major.minor.rev: mmnnnrrrr dec).">api</a>);</div>
 <div class="line">  }</div>
 <div class="line">}</div>
-<div class="ttc" id="acmsis__os2_8h_html_ga6c0dbe6069e4e7f47bb4cd32ae2b813ea9e1c9e2550bb4de8969a935acffc968f"><div class="ttname"><a href="cmsis__os2_8h.html#ga6c0dbe6069e4e7f47bb4cd32ae2b813ea9e1c9e2550bb4de8969a935acffc968f">osOK</a></div><div class="ttdeci">@ osOK</div><div class="ttdoc">Operation completed successfully.</div><div class="ttdef"><b>Definition:</b> cmsis_os2.h:247</div></div>
-<div class="ttc" id="agroup__CMSIS__RTOS__Definitions_html_ga6c0dbe6069e4e7f47bb4cd32ae2b813e"><div class="ttname"><a href="group__CMSIS__RTOS__Definitions.html#ga6c0dbe6069e4e7f47bb4cd32ae2b813e">osStatus_t</a></div><div class="ttdeci">osStatus_t</div><div class="ttdoc">Status code values returned by CMSIS-RTOS functions.</div><div class="ttdef"><b>Definition:</b> cmsis_os2.h:246</div></div>
-<div class="ttc" id="agroup__CMSIS__RTOS__KernelCtrl_html_a76a1ef1a4d3d9bd3e70783051f22a6d3"><div class="ttname"><a href="group__CMSIS__RTOS__KernelCtrl.html#a76a1ef1a4d3d9bd3e70783051f22a6d3">osVersion_t::api</a></div><div class="ttdeci">uint32_t api</div><div class="ttdoc">API version (major.minor.rev: mmnnnrrrr dec).</div><div class="ttdef"><b>Definition:</b> cmsis_os2.h:97</div></div>
-<div class="ttc" id="agroup__CMSIS__RTOS__KernelCtrl_html_ad8075d3f42141346ae2c56389358f9e7"><div class="ttname"><a href="group__CMSIS__RTOS__KernelCtrl.html#ad8075d3f42141346ae2c56389358f9e7">osVersion_t::kernel</a></div><div class="ttdeci">uint32_t kernel</div><div class="ttdoc">Kernel version (major.minor.rev: mmnnnrrrr dec).</div><div class="ttdef"><b>Definition:</b> cmsis_os2.h:98</div></div>
-<div class="ttc" id="agroup__CMSIS__RTOS__KernelCtrl_html_ga6f7764e7250c5c5364c00c45a5d1d199"><div class="ttname"><a href="group__CMSIS__RTOS__KernelCtrl.html#ga6f7764e7250c5c5364c00c45a5d1d199">osKernelGetInfo</a></div><div class="ttdeci">osStatus_t osKernelGetInfo(osVersion_t *version, char *id_buf, uint32_t id_size)</div><div class="ttdoc">Get RTOS Kernel Information.</div></div>
-<div class="ttc" id="agroup__CMSIS__RTOS__KernelCtrl_html_structosVersion__t"><div class="ttname"><a href="group__CMSIS__RTOS__KernelCtrl.html#structosVersion__t">osVersion_t</a></div><div class="ttdoc">Version information.</div><div class="ttdef"><b>Definition:</b> cmsis_os2.h:96</div></div>
 </div><!-- fragment --> 
 </div>
 </div>
@@ -456,24 +454,24 @@ Kernel version (major.minor.rev: mmnnnrrrr dec). </td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Get the current RTOS Kernel state. </p>
 <dl class="section return"><dt>Returns</dt><dd>current RTOS Kernel state.</dd></dl>
 <p>The function <b>osKernelGetState</b> returns the current state of the kernel and can be safely called before the RTOS is initialized or started (call to <a class="el" href="group__CMSIS__RTOS__KernelCtrl.html#gae818f6611d25ba3140bede410a52d659">osKernelInitialize</a> or <a class="el" href="group__CMSIS__RTOS__KernelCtrl.html#ga9ae2cc00f0d89d7b6a307bba942b5221">osKernelStart</a>). In case it fails it will return <code>osKernelError</code>, otherwise it returns the kernel state (refer to <a class="el" href="group__CMSIS__RTOS__KernelCtrl.html#ga08326469274b668140ca934b168a5ad4">osKernelState_t</a> for the list of kernel states).</p>
 <p>Possible <a class="el" href="group__CMSIS__RTOS__KernelCtrl.html#ga08326469274b668140ca934b168a5ad4">osKernelState_t</a> return values:</p><ul>
-<li><a class="el" href="cmsis__os2_8h.html#ga08326469274b668140ca934b168a5ad4a0545c92c18ce8e6b24e82a0d694a0b4a">osKernelError</a> if an unspecific error occurred.</li>
+<li><a class="el" href="group__CMSIS__RTOS__KernelCtrl.html#gga08326469274b668140ca934b168a5ad4a0545c92c18ce8e6b24e82a0d694a0b4a">osKernelError</a> if an unspecific error occurred.</li>
 <li>the actual kernel state otherwise.</li>
 </ul>
-<dl class="section note"><dt>Note</dt><dd>This function may be called from Interrupt Service Routines.</dd></dl>
+<dl class="section note"><dt>Note</dt><dd>This function may be called from <a class="el" href="usingOS2.html#CMSIS_RTOS_ISR_Calls">Interrupt Service Routines</a>.</dd></dl>
 <p><b>Code Example</b> </p><div class="fragment"><div class="line"><span class="keywordtype">int</span> main (<span class="keywordtype">void</span>) {</div>
 <div class="line">  <span class="comment">// System Initialization</span></div>
 <div class="line">  SystemCoreClockUpdate();</div>
 <div class="line">  <span class="comment">// ...</span></div>
-<div class="line">  <span class="keywordflow">if</span>(<a class="code hl_function" href="group__CMSIS__RTOS__KernelCtrl.html#ga48b69b81012fce051f639be288b243ba">osKernelGetState</a>() == <a class="code hl_enumvalue" href="cmsis__os2_8h.html#ga08326469274b668140ca934b168a5ad4a2ad3e5912db47b497529d036c89e7995">osKernelInactive</a>) {     <span class="comment">// Is the kernel initialized?</span></div>
-<div class="line">     <a class="code hl_function" href="group__CMSIS__RTOS__KernelCtrl.html#gae818f6611d25ba3140bede410a52d659">osKernelInitialize</a>();                         <span class="comment">// Initialize CMSIS-RTOS kernel</span></div>
+<div class="line">  <span class="keywordflow">if</span>(<a class="code hl_function" href="group__CMSIS__RTOS__KernelCtrl.html#ga48b69b81012fce051f639be288b243ba" title="Get the current RTOS Kernel state.">osKernelGetState</a>() == <a class="code hl_enumvalue" href="group__CMSIS__RTOS__KernelCtrl.html#gga08326469274b668140ca934b168a5ad4a2ad3e5912db47b497529d036c89e7995" title="Inactive.">osKernelInactive</a>) {     <span class="comment">// Is the kernel initialized?</span></div>
+<div class="line">     <a class="code hl_function" href="group__CMSIS__RTOS__KernelCtrl.html#gae818f6611d25ba3140bede410a52d659" title="Initialize the RTOS Kernel.">osKernelInitialize</a>();                         <span class="comment">// Initialize CMSIS-RTOS kernel</span></div>
 <div class="line">  }</div>
 <div class="line">  ;</div>
 <div class="line">}</div>
-<div class="ttc" id="acmsis__os2_8h_html_ga08326469274b668140ca934b168a5ad4a2ad3e5912db47b497529d036c89e7995"><div class="ttname"><a href="cmsis__os2_8h.html#ga08326469274b668140ca934b168a5ad4a2ad3e5912db47b497529d036c89e7995">osKernelInactive</a></div><div class="ttdeci">@ osKernelInactive</div><div class="ttdoc">Inactive.</div><div class="ttdef"><b>Definition:</b> cmsis_os2.h:103</div></div>
-<div class="ttc" id="agroup__CMSIS__RTOS__KernelCtrl_html_ga48b69b81012fce051f639be288b243ba"><div class="ttname"><a href="group__CMSIS__RTOS__KernelCtrl.html#ga48b69b81012fce051f639be288b243ba">osKernelGetState</a></div><div class="ttdeci">osKernelState_t osKernelGetState(void)</div><div class="ttdoc">Get the current RTOS Kernel state.</div></div>
 </div><!-- fragment --> 
 </div>
 </div>
@@ -492,29 +490,30 @@ Kernel version (major.minor.rev: mmnnnrrrr dec). </td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Start the RTOS Kernel scheduler. </p>
 <dl class="section return"><dt>Returns</dt><dd>status code that indicates the execution status of the function.</dd></dl>
 <p>The function <b>osKernelStart</b> starts the RTOS kernel and begins thread switching. It will not return to its calling function in case of success. Before it is successfully executed, only the functions <a class="el" href="group__CMSIS__RTOS__KernelCtrl.html#ga6f7764e7250c5c5364c00c45a5d1d199">osKernelGetInfo</a>, <a class="el" href="group__CMSIS__RTOS__KernelCtrl.html#ga48b69b81012fce051f639be288b243ba">osKernelGetState</a>, and object creation functions (<b>osXxxNew</b>) may be called.</p>
 <p>At least one initial thread should be created prior osKernelStart, see <a class="el" href="group__CMSIS__RTOS__ThreadMgmt.html#ga48d68b8666d99d28fa646ee1d2182b8f">osThreadNew</a>.</p>
 <p>Possible <a class="el" href="group__CMSIS__RTOS__Definitions.html#ga6c0dbe6069e4e7f47bb4cd32ae2b813e">osStatus_t</a> return values:</p><ul>
 <li><em>osError</em> if an unspecific error occurred.</li>
-<li><em>osErrorISR</em> if called from an Interrupt Service Routine.</li>
+<li><em>osErrorISR</em> if called from an <a class="el" href="usingOS2.html#CMSIS_RTOS_ISR_Calls">Interrupt Service Routine</a>.</li>
 </ul>
-<dl class="section note"><dt>Note</dt><dd>This function <b>cannot</b> be called from Interrupt Service Routines.</dd></dl>
+<dl class="section note"><dt>Note</dt><dd>This function <b>cannot</b> be called from <a class="el" href="usingOS2.html#CMSIS_RTOS_ISR_Calls">Interrupt Service Routines</a>.</dd></dl>
 <p><b>Code Example</b> </p><div class="fragment"><div class="line"><span class="keywordtype">int</span> main (<span class="keywordtype">void</span>) {</div>
 <div class="line">  <span class="comment">// System Initialization</span></div>
 <div class="line">  SystemCoreClockUpdate();</div>
 <div class="line">  <span class="comment">// ...</span></div>
-<div class="line">  <span class="keywordflow">if</span>(<a class="code hl_function" href="group__CMSIS__RTOS__KernelCtrl.html#ga48b69b81012fce051f639be288b243ba">osKernelGetState</a>() == <a class="code hl_enumvalue" href="cmsis__os2_8h.html#ga08326469274b668140ca934b168a5ad4a2ad3e5912db47b497529d036c89e7995">osKernelInactive</a>) {</div>
-<div class="line">    <a class="code hl_function" href="group__CMSIS__RTOS__KernelCtrl.html#gae818f6611d25ba3140bede410a52d659">osKernelInitialize</a>();</div>
+<div class="line">  <span class="keywordflow">if</span>(<a class="code hl_function" href="group__CMSIS__RTOS__KernelCtrl.html#ga48b69b81012fce051f639be288b243ba" title="Get the current RTOS Kernel state.">osKernelGetState</a>() == <a class="code hl_enumvalue" href="group__CMSIS__RTOS__KernelCtrl.html#gga08326469274b668140ca934b168a5ad4a2ad3e5912db47b497529d036c89e7995" title="Inactive.">osKernelInactive</a>) {</div>
+<div class="line">    <a class="code hl_function" href="group__CMSIS__RTOS__KernelCtrl.html#gae818f6611d25ba3140bede410a52d659" title="Initialize the RTOS Kernel.">osKernelInitialize</a>();</div>
 <div class="line">  }</div>
 <div class="line">  ; <span class="comment">// ... Start Threads</span></div>
-<div class="line">  <span class="keywordflow">if</span> (<a class="code hl_function" href="group__CMSIS__RTOS__KernelCtrl.html#ga48b69b81012fce051f639be288b243ba">osKernelGetState</a>() == <a class="code hl_enumvalue" href="cmsis__os2_8h.html#ga08326469274b668140ca934b168a5ad4a0596c6e14113447604753656417c9a24">osKernelReady</a>) {        <span class="comment">// If kernel is ready to run...</span></div>
-<div class="line">    <a class="code hl_function" href="group__CMSIS__RTOS__KernelCtrl.html#ga9ae2cc00f0d89d7b6a307bba942b5221">osKernelStart</a>();                                <span class="comment">// ... start thread execution</span></div>
+<div class="line">  <span class="keywordflow">if</span> (<a class="code hl_function" href="group__CMSIS__RTOS__KernelCtrl.html#ga48b69b81012fce051f639be288b243ba" title="Get the current RTOS Kernel state.">osKernelGetState</a>() == <a class="code hl_enumvalue" href="group__CMSIS__RTOS__KernelCtrl.html#gga08326469274b668140ca934b168a5ad4a0596c6e14113447604753656417c9a24" title="Ready.">osKernelReady</a>) {        <span class="comment">// If kernel is ready to run...</span></div>
+<div class="line">    <a class="code hl_function" href="group__CMSIS__RTOS__KernelCtrl.html#ga9ae2cc00f0d89d7b6a307bba942b5221" title="Start the RTOS Kernel scheduler.">osKernelStart</a>();                                <span class="comment">// ... start thread execution</span></div>
 <div class="line">    }</div>
 <div class="line">  </div>
 <div class="line">  <span class="keywordflow">while</span>(1);                                         <span class="comment">// only reached in case of error</span></div>
 <div class="line">}</div>
-<div class="ttc" id="acmsis__os2_8h_html_ga08326469274b668140ca934b168a5ad4a0596c6e14113447604753656417c9a24"><div class="ttname"><a href="cmsis__os2_8h.html#ga08326469274b668140ca934b168a5ad4a0596c6e14113447604753656417c9a24">osKernelReady</a></div><div class="ttdeci">@ osKernelReady</div><div class="ttdoc">Ready.</div><div class="ttdef"><b>Definition:</b> cmsis_os2.h:104</div></div>
 </div><!-- fragment --> 
 </div>
 </div>
@@ -533,18 +532,19 @@ Kernel version (major.minor.rev: mmnnnrrrr dec). </td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Lock the RTOS Kernel scheduler. </p>
 <dl class="section return"><dt>Returns</dt><dd>previous lock state (1 - locked, 0 - not locked, error code if negative).</dd></dl>
 <p>The function <b>osKernelLock</b> allows to lock all task switches. It returns the previous value of the lock state (<span class="XML-Token">1</span> if it was locked, <span class="XML-Token">0</span> if it was unlocked), or a negative number representing an error code otherwise (refer to <a class="el" href="group__CMSIS__RTOS__Definitions.html#ga6c0dbe6069e4e7f47bb4cd32ae2b813e">osStatus_t</a>).</p>
 <p>Possible <a class="el" href="group__CMSIS__RTOS__Definitions.html#ga6c0dbe6069e4e7f47bb4cd32ae2b813e">osStatus_t</a> return values:</p><ul>
 <li><em>osError</em> if an unspecific error occurred.</li>
-<li><em>osErrorISR</em> if called from an Interrupt Service Routine.</li>
+<li><em>osErrorISR</em> if called from an <a class="el" href="usingOS2.html#CMSIS_RTOS_ISR_Calls">Interrupt Service Routine</a>.</li>
 <li><em>osErrorSafetyClass</em> if the calling thread safety class is lower than the kernel protect safety class.</li>
 </ul>
-<dl class="section note"><dt>Note</dt><dd>This function <b>cannot</b> be called from Interrupt Service Routines.</dd></dl>
-<p><b>Code Example</b> </p><div class="fragment"><div class="line">int32_t state = <a class="code hl_function" href="group__CMSIS__RTOS__KernelCtrl.html#ga948609ee930d9b38336b9e1c2a4dfe12">osKernelLock</a>();</div>
+<dl class="section note"><dt>Note</dt><dd>This function <b>cannot</b> be called from <a class="el" href="usingOS2.html#CMSIS_RTOS_ISR_Calls">Interrupt Service Routines</a>.</dd></dl>
+<p><b>Code Example</b> </p><div class="fragment"><div class="line">int32_t state = <a class="code hl_function" href="group__CMSIS__RTOS__KernelCtrl.html#ga948609ee930d9b38336b9e1c2a4dfe12" title="Lock the RTOS Kernel scheduler.">osKernelLock</a>();</div>
 <div class="line"><span class="comment">// ... critical code</span></div>
 <div class="line">osKernelRestore(state);</div>
-<div class="ttc" id="agroup__CMSIS__RTOS__KernelCtrl_html_ga948609ee930d9b38336b9e1c2a4dfe12"><div class="ttname"><a href="group__CMSIS__RTOS__KernelCtrl.html#ga948609ee930d9b38336b9e1c2a4dfe12">osKernelLock</a></div><div class="ttdeci">int32_t osKernelLock(void)</div><div class="ttdoc">Lock the RTOS Kernel scheduler.</div></div>
 </div><!-- fragment --> 
 </div>
 </div>
@@ -563,24 +563,24 @@ Kernel version (major.minor.rev: mmnnnrrrr dec). </td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Unlock the RTOS Kernel scheduler. </p>
 <dl class="section return"><dt>Returns</dt><dd>previous lock state (1 - locked, 0 - not locked, error code if negative).</dd></dl>
 <p>The function <b>osKernelUnlock</b> resumes from <a class="el" href="group__CMSIS__RTOS__KernelCtrl.html#ga948609ee930d9b38336b9e1c2a4dfe12">osKernelLock</a>. It returns the previous value of the lock state (<span class="XML-Token">1</span> if it was locked, <span class="XML-Token">0</span> if it was unlocked), or a negative number representing an error code otherwise (refer to <a class="el" href="group__CMSIS__RTOS__Definitions.html#ga6c0dbe6069e4e7f47bb4cd32ae2b813e">osStatus_t</a>).</p>
 <p>Possible <a class="el" href="group__CMSIS__RTOS__Definitions.html#ga6c0dbe6069e4e7f47bb4cd32ae2b813e">osStatus_t</a> return values:</p><ul>
 <li><em>osError</em> if an unspecific error occurred.</li>
-<li><em>osErrorISR</em> if called from an Interrupt Service Routine.</li>
+<li><em>osErrorISR</em> if called from an <a class="el" href="usingOS2.html#CMSIS_RTOS_ISR_Calls">Interrupt Service Routine</a>.</li>
 </ul>
-<dl class="section note"><dt>Note</dt><dd>This function <b>cannot</b> be called from Interrupt Service Routines.</dd></dl>
-<p><b>Code Example</b> </p><div class="fragment"><div class="line">int32_t sl = <a class="code hl_function" href="group__CMSIS__RTOS__KernelCtrl.html#ga948609ee930d9b38336b9e1c2a4dfe12">osKernelLock</a>();</div>
+<dl class="section note"><dt>Note</dt><dd>This function <b>cannot</b> be called from <a class="el" href="usingOS2.html#CMSIS_RTOS_ISR_Calls">Interrupt Service Routines</a>.</dd></dl>
+<p><b>Code Example</b> </p><div class="fragment"><div class="line">int32_t sl = <a class="code hl_function" href="group__CMSIS__RTOS__KernelCtrl.html#ga948609ee930d9b38336b9e1c2a4dfe12" title="Lock the RTOS Kernel scheduler.">osKernelLock</a>();</div>
 <div class="line"><span class="comment">// ... critical code</span></div>
 <div class="line">{</div>
-<div class="line">  int32_t su = <a class="code hl_function" href="group__CMSIS__RTOS__KernelCtrl.html#gaf401728b4657456198c33fe75f8d6720">osKernelUnlock</a>();</div>
+<div class="line">  int32_t su = <a class="code hl_function" href="group__CMSIS__RTOS__KernelCtrl.html#gaf401728b4657456198c33fe75f8d6720" title="Unlock the RTOS Kernel scheduler.">osKernelUnlock</a>();</div>
 <div class="line">  <span class="comment">// ... uncritical code</span></div>
-<div class="line">  <a class="code hl_function" href="group__CMSIS__RTOS__KernelCtrl.html#gae7d0a71b9586cbbb49fcbdf6a04f0289">osKernelRestoreLock</a>(su);</div>
+<div class="line">  <a class="code hl_function" href="group__CMSIS__RTOS__KernelCtrl.html#gae7d0a71b9586cbbb49fcbdf6a04f0289" title="Restore the RTOS Kernel scheduler lock state.">osKernelRestoreLock</a>(su);</div>
 <div class="line">}</div>
 <div class="line"><span class="comment">// ... critical code</span></div>
-<div class="line"><a class="code hl_function" href="group__CMSIS__RTOS__KernelCtrl.html#gae7d0a71b9586cbbb49fcbdf6a04f0289">osKernelRestoreLock</a>(sl);</div>
-<div class="ttc" id="agroup__CMSIS__RTOS__KernelCtrl_html_gae7d0a71b9586cbbb49fcbdf6a04f0289"><div class="ttname"><a href="group__CMSIS__RTOS__KernelCtrl.html#gae7d0a71b9586cbbb49fcbdf6a04f0289">osKernelRestoreLock</a></div><div class="ttdeci">int32_t osKernelRestoreLock(int32_t lock)</div><div class="ttdoc">Restore the RTOS Kernel scheduler lock state.</div></div>
-<div class="ttc" id="agroup__CMSIS__RTOS__KernelCtrl_html_gaf401728b4657456198c33fe75f8d6720"><div class="ttname"><a href="group__CMSIS__RTOS__KernelCtrl.html#gaf401728b4657456198c33fe75f8d6720">osKernelUnlock</a></div><div class="ttdeci">int32_t osKernelUnlock(void)</div><div class="ttdoc">Unlock the RTOS Kernel scheduler.</div></div>
+<div class="line"><a class="code hl_function" href="group__CMSIS__RTOS__KernelCtrl.html#gae7d0a71b9586cbbb49fcbdf6a04f0289" title="Restore the RTOS Kernel scheduler lock state.">osKernelRestoreLock</a>(sl);</div>
 </div><!-- fragment --> 
 </div>
 </div>
@@ -599,6 +599,8 @@ Kernel version (major.minor.rev: mmnnnrrrr dec). </td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Restore the RTOS Kernel scheduler lock state. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">lock</td><td>lock state obtained by <a class="el" href="group__CMSIS__RTOS__KernelCtrl.html#ga948609ee930d9b38336b9e1c2a4dfe12">osKernelLock</a> or <a class="el" href="group__CMSIS__RTOS__KernelCtrl.html#gaf401728b4657456198c33fe75f8d6720">osKernelUnlock</a>. </td></tr>
@@ -614,15 +616,15 @@ Kernel version (major.minor.rev: mmnnnrrrr dec). </td></tr>
 <li><em>osErrorISR</em> if called from interrupt other than fault or <a class="el" href="group__CMSIS__RTOS__ThreadMgmt.html#ga5a02770aaf65c7a3c7562c109884176a">osWatchdogAlarm_Handler</a>.</li>
 <li><em>osErrorSafetyClass</em> if the calling thread safety class is lower than the kernel protect safety class.</li>
 </ul>
-<p><b>Code Example</b> </p><div class="fragment"><div class="line">int32_t sl = <a class="code hl_function" href="group__CMSIS__RTOS__KernelCtrl.html#ga948609ee930d9b38336b9e1c2a4dfe12">osKernelLock</a>();</div>
+<p><b>Code Example</b> </p><div class="fragment"><div class="line">int32_t sl = <a class="code hl_function" href="group__CMSIS__RTOS__KernelCtrl.html#ga948609ee930d9b38336b9e1c2a4dfe12" title="Lock the RTOS Kernel scheduler.">osKernelLock</a>();</div>
 <div class="line"><span class="comment">// ... critical code</span></div>
 <div class="line">{</div>
-<div class="line">  int32_t su = <a class="code hl_function" href="group__CMSIS__RTOS__KernelCtrl.html#gaf401728b4657456198c33fe75f8d6720">osKernelUnlock</a>();</div>
+<div class="line">  int32_t su = <a class="code hl_function" href="group__CMSIS__RTOS__KernelCtrl.html#gaf401728b4657456198c33fe75f8d6720" title="Unlock the RTOS Kernel scheduler.">osKernelUnlock</a>();</div>
 <div class="line">  <span class="comment">// ... uncritical code</span></div>
-<div class="line">  <a class="code hl_function" href="group__CMSIS__RTOS__KernelCtrl.html#gae7d0a71b9586cbbb49fcbdf6a04f0289">osKernelRestoreLock</a>(su);</div>
+<div class="line">  <a class="code hl_function" href="group__CMSIS__RTOS__KernelCtrl.html#gae7d0a71b9586cbbb49fcbdf6a04f0289" title="Restore the RTOS Kernel scheduler lock state.">osKernelRestoreLock</a>(su);</div>
 <div class="line">}</div>
 <div class="line"><span class="comment">// ... critical code</span></div>
-<div class="line"><a class="code hl_function" href="group__CMSIS__RTOS__KernelCtrl.html#gae7d0a71b9586cbbb49fcbdf6a04f0289">osKernelRestoreLock</a>(sl);</div>
+<div class="line"><a class="code hl_function" href="group__CMSIS__RTOS__KernelCtrl.html#gae7d0a71b9586cbbb49fcbdf6a04f0289" title="Restore the RTOS Kernel scheduler lock state.">osKernelRestoreLock</a>(sl);</div>
 </div><!-- fragment --> 
 </div>
 </div>
@@ -641,10 +643,13 @@ Kernel version (major.minor.rev: mmnnnrrrr dec). </td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Suspend the RTOS Kernel scheduler. </p>
 <dl class="section return"><dt>Returns</dt><dd>time in ticks, for how long the system can sleep or power-down.</dd></dl>
-<p>CMSIS-RTOS provides extension for tick-less operation which is useful for applications that use extensively low-power modes where the SysTick timer is also disabled. To provide a time-tick in such power-saving modes a wake-up timer is used to derive timer intervals. The function <b>osKernelSuspend</b> suspends the RTX kernel scheduler and thus enables sleep modes.</p>
+<p>CMSIS-RTOS2 provides extension for tick-less operation which is useful for applications that use extensively low-power modes where the SysTick timer is also disabled.</p>
+<p>To provide a time-tick in such power-saving modes a wake-up timer is used to derive timer intervals. The function <b>osKernelSuspend</b> suspends the RTOS kernel scheduler and thus enables sleep modes.</p>
 <p>The return value can be used to determine the amount of system ticks until the next tick-based kernel event will occur, i.e. a delayed thread becomes ready again. It is recommended to set up the low power timer to generate a wake-up interrupt based on this return value.</p>
-<dl class="section note"><dt>Note</dt><dd>This function <b>cannot</b> be called from Interrupt Service Routines.</dd></dl>
+<dl class="section note"><dt>Note</dt><dd>This function <b>cannot</b> be called from <a class="el" href="usingOS2.html#CMSIS_RTOS_ISR_Calls">Interrupt Service Routines</a>.</dd></dl>
 <p><b>Code Example</b> </p><div class="fragment"><div class="line"><span class="keywordtype">void</span> osRtxIdleThread (<span class="keywordtype">void</span>) {</div>
 <div class="line">                                               <span class="comment">/* The idle thread is running</span></div>
 <div class="line"><span class="comment">                                                  when no other thread is ready</span></div>
@@ -655,10 +660,10 @@ Kernel version (major.minor.rev: mmnnnrrrr dec). </td></tr>
 <div class="line">                                               <span class="comment">/* HERE: include optional user</span></div>
 <div class="line"><span class="comment">                                                  code to be executed when no</span></div>
 <div class="line"><span class="comment">                                                  task runs.                   */</span></div>
-<div class="line">    sleep = <a class="code hl_function" href="group__CMSIS__RTOS__KernelCtrl.html#gae26683e1606ec633354a2876c68f0c1f">osKernelSuspend</a>();                 <span class="comment">/* Suspend RTX thread scheduler */</span></div>
+<div class="line">    sleep = <a class="code hl_function" href="group__CMSIS__RTOS__KernelCtrl.html#gae26683e1606ec633354a2876c68f0c1f" title="Suspend the RTOS Kernel scheduler.">osKernelSuspend</a>();                 <span class="comment">/* Suspend RTOS kernel scheduler */</span></div>
 <div class="line"> </div>
 <div class="line">    <span class="keywordflow">if</span> (sleep) {                               <span class="comment">/* How long can we sleep?       */</span></div>
-<div class="line">                                               <span class="comment">/* &quot;sleep&quot; is in RTX Timer Ticks</span></div>
+<div class="line">                                               <span class="comment">/* &quot;sleep&quot; is in kernel Timer Ticks</span></div>
 <div class="line"><span class="comment">                                                  which is 1ms in this</span></div>
 <div class="line"><span class="comment">                                                  configuration                */</span></div>
 <div class="line">       </div>
@@ -670,11 +675,9 @@ Kernel version (major.minor.rev: mmnnnrrrr dec). </td></tr>
 <div class="line">      sleep = tc;                              <span class="comment">/* Adjust with cycles slept     */</span>  </div>
 <div class="line">    }</div>
 <div class="line"> </div>
-<div class="line">    <a class="code hl_function" href="group__CMSIS__RTOS__KernelCtrl.html#ga8c4b4d7ed34cab73c001665d9176aced">osKernelResume</a>(sleep);                     <span class="comment">/* Resume thread scheduler      */</span></div>
+<div class="line">    <a class="code hl_function" href="group__CMSIS__RTOS__KernelCtrl.html#ga8c4b4d7ed34cab73c001665d9176aced" title="Resume the RTOS Kernel scheduler.">osKernelResume</a>(sleep);                     <span class="comment">/* Resume thread scheduler      */</span></div>
 <div class="line">  }</div>
 <div class="line">}</div>
-<div class="ttc" id="agroup__CMSIS__RTOS__KernelCtrl_html_ga8c4b4d7ed34cab73c001665d9176aced"><div class="ttname"><a href="group__CMSIS__RTOS__KernelCtrl.html#ga8c4b4d7ed34cab73c001665d9176aced">osKernelResume</a></div><div class="ttdeci">void osKernelResume(uint32_t sleep_ticks)</div><div class="ttdoc">Resume the RTOS Kernel scheduler.</div></div>
-<div class="ttc" id="agroup__CMSIS__RTOS__KernelCtrl_html_gae26683e1606ec633354a2876c68f0c1f"><div class="ttname"><a href="group__CMSIS__RTOS__KernelCtrl.html#gae26683e1606ec633354a2876c68f0c1f">osKernelSuspend</a></div><div class="ttdeci">uint32_t osKernelSuspend(void)</div><div class="ttdoc">Suspend the RTOS Kernel scheduler.</div></div>
 </div><!-- fragment --> 
 </div>
 </div>
@@ -693,14 +696,17 @@ Kernel version (major.minor.rev: mmnnnrrrr dec). </td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Resume the RTOS Kernel scheduler. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">sleep_ticks</td><td>time in ticks for how long the system was in sleep or power-down mode.</td></tr>
   </table>
   </dd>
 </dl>
-<p>CMSIS-RTOS provides extension for tick-less operation which is useful for applications that use extensively low-power modes where the SysTick timer is also disabled. To provide a time-tick in such power-saving modes a wake-up timer is used to derive timer intervals. The function <b>osKernelResume</b> enables the RTX kernel scheduler and thus wakes up the system from sleep mode.</p>
-<dl class="section note"><dt>Note</dt><dd>This function <b>cannot</b> be called from Interrupt Service Routines.</dd></dl>
+<p>CMSIS-RTOS provides extension for tick-less operation which is useful for applications that use extensively low-power modes where the SysTick timer is also disabled.</p>
+<p>To provide a time-tick in such power-saving modes a wake-up timer is used to derive timer intervals. The function <b>osKernelResume</b> enables the RTOS kernel scheduler and thus wakes up the system from sleep mode.</p>
+<dl class="section note"><dt>Note</dt><dd>This function <b>cannot</b> be called from <a class="el" href="usingOS2.html#CMSIS_RTOS_ISR_Calls">Interrupt Service Routines</a>.</dd></dl>
 <p><b>Code Example</b> </p><div class="fragment"><div class="line"><span class="keywordtype">void</span> osRtxIdleThread (<span class="keywordtype">void</span>) {</div>
 <div class="line">                                               <span class="comment">/* The idle thread is running</span></div>
 <div class="line"><span class="comment">                                                  when no other thread is ready</span></div>
@@ -711,10 +717,10 @@ Kernel version (major.minor.rev: mmnnnrrrr dec). </td></tr>
 <div class="line">                                               <span class="comment">/* HERE: include optional user</span></div>
 <div class="line"><span class="comment">                                                  code to be executed when no</span></div>
 <div class="line"><span class="comment">                                                  task runs.                   */</span></div>
-<div class="line">    sleep = <a class="code hl_function" href="group__CMSIS__RTOS__KernelCtrl.html#gae26683e1606ec633354a2876c68f0c1f">osKernelSuspend</a>();                 <span class="comment">/* Suspend RTX thread scheduler */</span></div>
+<div class="line">    sleep = <a class="code hl_function" href="group__CMSIS__RTOS__KernelCtrl.html#gae26683e1606ec633354a2876c68f0c1f" title="Suspend the RTOS Kernel scheduler.">osKernelSuspend</a>();                 <span class="comment">/* Suspend RTOS kernel scheduler */</span></div>
 <div class="line"> </div>
 <div class="line">    <span class="keywordflow">if</span> (sleep) {                               <span class="comment">/* How long can we sleep?       */</span></div>
-<div class="line">                                               <span class="comment">/* &quot;sleep&quot; is in RTX Timer Ticks</span></div>
+<div class="line">                                               <span class="comment">/* &quot;sleep&quot; is in Kernel Timer Ticks</span></div>
 <div class="line"><span class="comment">                                                  which is 1ms in this</span></div>
 <div class="line"><span class="comment">                                                  configuration                */</span></div>
 <div class="line">       </div>
@@ -726,7 +732,7 @@ Kernel version (major.minor.rev: mmnnnrrrr dec). </td></tr>
 <div class="line">      sleep = tc;                              <span class="comment">/* Adjust with cycles slept     */</span>  </div>
 <div class="line">    }</div>
 <div class="line"> </div>
-<div class="line">    <a class="code hl_function" href="group__CMSIS__RTOS__KernelCtrl.html#ga8c4b4d7ed34cab73c001665d9176aced">osKernelResume</a>(sleep);                     <span class="comment">/* Resume thread scheduler      */</span></div>
+<div class="line">    <a class="code hl_function" href="group__CMSIS__RTOS__KernelCtrl.html#ga8c4b4d7ed34cab73c001665d9176aced" title="Resume the RTOS Kernel scheduler.">osKernelResume</a>(sleep);                     <span class="comment">/* Resume thread scheduler      */</span></div>
 <div class="line">  }</div>
 <div class="line">}</div>
 </div><!-- fragment --> 
@@ -747,30 +753,30 @@ Kernel version (major.minor.rev: mmnnnrrrr dec). </td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Get the RTOS kernel tick count. </p>
 <dl class="section return"><dt>Returns</dt><dd>RTOS kernel current tick count.</dd></dl>
 <p>The function <b>osKernelGetTickCount</b> returns the current RTOS kernel tick count.</p>
-<dl class="section note"><dt>Note</dt><dd>This function may be called from Interrupt Service Routines.</dd></dl>
-<p><b>Code</b> <b>Example</b> </p><div class="fragment"><div class="line"><span class="preprocessor">#include &quot;<a class="code" href="cmsis__os2_8h.html">cmsis_os2.h</a>&quot;</span></div>
+<dl class="section note"><dt>Note</dt><dd>This function may be called from <a class="el" href="usingOS2.html#CMSIS_RTOS_ISR_Calls">Interrupt Service Routines</a>.</dd></dl>
+<p><b>Code</b> <b>Example</b> </p><div class="fragment"><div class="line"><span class="preprocessor">#include &quot;cmsis_os2.h&quot;</span></div>
 <div class="line"> </div>
 <div class="line"><span class="keywordtype">void</span> Thread_1 (<span class="keywordtype">void</span> *arg)  {                <span class="comment">// Thread function</span></div>
 <div class="line">  uint32_t tick;</div>
 <div class="line"> </div>
-<div class="line">  tick = <a class="code hl_function" href="group__CMSIS__RTOS__KernelCtrl.html#ga84bcdbf2fb76b10c8df4e439f0c7e11b">osKernelGetTickCount</a>();            <span class="comment">// retrieve the number of system ticks</span></div>
+<div class="line">  tick = <a class="code hl_function" href="group__CMSIS__RTOS__KernelCtrl.html#ga84bcdbf2fb76b10c8df4e439f0c7e11b" title="Get the RTOS kernel tick count.">osKernelGetTickCount</a>();            <span class="comment">// retrieve the number of system ticks</span></div>
 <div class="line">  <span class="keywordflow">for</span> (;;) {</div>
 <div class="line">    tick += 1000;                           <span class="comment">// delay 1000 ticks periodically</span></div>
-<div class="line">    <a class="code hl_function" href="group__CMSIS__RTOS__Wait.html#ga3c807924c2d6d43bc2ffb49da3f7f3a1">osDelayUntil</a>(tick);</div>
+<div class="line">    <a class="code hl_function" href="group__CMSIS__RTOS__Wait.html#ga3c807924c2d6d43bc2ffb49da3f7f3a1" title="Wait until specified time.">osDelayUntil</a>(tick);</div>
 <div class="line">    <span class="comment">// ...</span></div>
 <div class="line">  }</div>
 <div class="line">}</div>
-<div class="ttc" id="agroup__CMSIS__RTOS__KernelCtrl_html_ga84bcdbf2fb76b10c8df4e439f0c7e11b"><div class="ttname"><a href="group__CMSIS__RTOS__KernelCtrl.html#ga84bcdbf2fb76b10c8df4e439f0c7e11b">osKernelGetTickCount</a></div><div class="ttdeci">uint32_t osKernelGetTickCount(void)</div><div class="ttdoc">Get the RTOS kernel tick count.</div></div>
-<div class="ttc" id="agroup__CMSIS__RTOS__Wait_html_ga3c807924c2d6d43bc2ffb49da3f7f3a1"><div class="ttname"><a href="group__CMSIS__RTOS__Wait.html#ga3c807924c2d6d43bc2ffb49da3f7f3a1">osDelayUntil</a></div><div class="ttdeci">osStatus_t osDelayUntil(uint32_t ticks)</div><div class="ttdoc">Wait until specified time.</div></div>
 </div><!-- fragment --><p>Due to the limited value range used for the tick count it may overflow during runtime, i.e. after 2<sup>32</sup> ticks which are roughly 49days @ 1ms. Typically one has not to take special care of this unless a monotonic counter is needed. For such a case an additional 64bit tick counter can be implemented as follows. The given example needs GetTick() called at least twice per tick overflow to work properly.</p>
 <p><b>Code</b> <b>Example</b> </p><div class="fragment"><div class="line">uint64_t GetTick(<span class="keywordtype">void</span>) {</div>
 <div class="line">  <span class="keyword">static</span> uint32_t tick_h = 0U;</div>
 <div class="line">  <span class="keyword">static</span> uint32_t tick_l = 0U;</div>
 <div class="line">         uint32_t tick;</div>
 <div class="line"> </div>
-<div class="line">  tick = <a class="code hl_function" href="group__CMSIS__RTOS__KernelCtrl.html#ga84bcdbf2fb76b10c8df4e439f0c7e11b">osKernelGetTickCount</a>();</div>
+<div class="line">  tick = <a class="code hl_function" href="group__CMSIS__RTOS__KernelCtrl.html#ga84bcdbf2fb76b10c8df4e439f0c7e11b" title="Get the RTOS kernel tick count.">osKernelGetTickCount</a>();</div>
 <div class="line">  <span class="keywordflow">if</span> (tick &lt; tick_l) {</div>
 <div class="line">    tick_h++;</div>
 <div class="line">  }</div>
@@ -796,9 +802,11 @@ Kernel version (major.minor.rev: mmnnnrrrr dec). </td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Get the RTOS kernel tick frequency. </p>
 <dl class="section return"><dt>Returns</dt><dd>frequency of the kernel tick in hertz, i.e. kernel ticks per second.</dd></dl>
 <p>The function <b>osKernelGetTickFreq</b> returns the frequency of the current RTOS kernel tick.</p>
-<dl class="section note"><dt>Note</dt><dd>This function may be called from Interrupt Service Routines. </dd></dl>
+<dl class="section note"><dt>Note</dt><dd>This function may be called from <a class="el" href="usingOS2.html#CMSIS_RTOS_ISR_Calls">Interrupt Service Routines</a>. </dd></dl>
 
 </div>
 </div>
@@ -817,30 +825,30 @@ Kernel version (major.minor.rev: mmnnnrrrr dec). </td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Get the RTOS kernel system timer count. </p>
 <dl class="section return"><dt>Returns</dt><dd>RTOS kernel current system timer count as 32-bit value.</dd></dl>
 <p>The function <b>osKernelGetSysTimerCount</b> returns the current RTOS kernel system timer as a 32-bit value. The value is a rolling 32-bit counter that is composed of the kernel system interrupt timer value and the counter that counts these interrupts (RTOS kernel ticks).</p>
 <p>This function allows the implementation of very short timeout checks below the RTOS tick granularity. Such checks might be required when checking for a busy status in a device or peripheral initialization routine, see code example below.</p>
-<dl class="section note"><dt>Note</dt><dd>This function may be called from Interrupt Service Routines.</dd></dl>
-<p><b>Code Example</b> </p><div class="fragment"><div class="line"><span class="preprocessor">#include &quot;<a class="code" href="cmsis__os2_8h.html">cmsis_os2.h</a>&quot;</span></div>
+<dl class="section note"><dt>Note</dt><dd>This function may be called from <a class="el" href="usingOS2.html#CMSIS_RTOS_ISR_Calls">Interrupt Service Routines</a>.</dd></dl>
+<p><b>Code Example</b> </p><div class="fragment"><div class="line"><span class="preprocessor">#include &quot;cmsis_os2.h&quot;</span></div>
 <div class="line"> </div>
 <div class="line"><span class="keywordtype">void</span> SetupDevice (<span class="keywordtype">void</span>)  {</div>
 <div class="line">  uint32_t tick;</div>
 <div class="line">  </div>
 <div class="line">  <span class="comment">// Calculating 100us timeout in system timer ticks</span></div>
-<div class="line">  <span class="keyword">const</span> uint32_t timeout = 100U * <a class="code hl_function" href="group__CMSIS__RTOS__KernelCtrl.html#ga4d69215a93220f72be3684cad582f16a">osKernelGetSysTimerFreq</a>() / 1000000u;</div>
+<div class="line">  <span class="keyword">const</span> uint32_t timeout = 100U * <a class="code hl_function" href="group__CMSIS__RTOS__KernelCtrl.html#ga4d69215a93220f72be3684cad582f16a" title="Get the RTOS kernel system timer frequency.">osKernelGetSysTimerFreq</a>() / 1000000u;</div>
 <div class="line">  </div>
-<div class="line">  tick = <a class="code hl_function" href="group__CMSIS__RTOS__KernelCtrl.html#gae0fcaff6cecfb4013bb556c87afcd7d2">osKernelGetSysTimerCount</a>();             <span class="comment">// get start value of the Kernel system tick</span></div>
+<div class="line">  tick = <a class="code hl_function" href="group__CMSIS__RTOS__KernelCtrl.html#gae0fcaff6cecfb4013bb556c87afcd7d2" title="Get the RTOS kernel system timer count.">osKernelGetSysTimerCount</a>();             <span class="comment">// get start value of the Kernel system tick</span></div>
 <div class="line">  Device.Setup ();                               <span class="comment">// initialize a device or peripheral</span></div>
 <div class="line">  <span class="keywordflow">do</span> {                                           <span class="comment">// poll device busy status for 100 microseconds</span></div>
 <div class="line">    <span class="keywordflow">if</span> (!Device.Busy) <span class="keywordflow">break</span>;                     <span class="comment">// check if device is correctly initialized</span></div>
-<div class="line">  } <span class="keywordflow">while</span> ((<a class="code hl_function" href="group__CMSIS__RTOS__KernelCtrl.html#gae0fcaff6cecfb4013bb556c87afcd7d2">osKernelGetSysTimerCount</a>() - tick) &lt; timeout));</div>
+<div class="line">  } <span class="keywordflow">while</span> ((<a class="code hl_function" href="group__CMSIS__RTOS__KernelCtrl.html#gae0fcaff6cecfb4013bb556c87afcd7d2" title="Get the RTOS kernel system timer count.">osKernelGetSysTimerCount</a>() - tick) &lt; timeout));</div>
 <div class="line">  <span class="keywordflow">if</span> (Device.Busy)  {              </div>
 <div class="line">    ;                                            <span class="comment">// in case device still busy, signal error</span></div>
 <div class="line">  }</div>
 <div class="line">                                                 <span class="comment">// start interacting with device</span></div>
 <div class="line">}</div>
-<div class="ttc" id="agroup__CMSIS__RTOS__KernelCtrl_html_ga4d69215a93220f72be3684cad582f16a"><div class="ttname"><a href="group__CMSIS__RTOS__KernelCtrl.html#ga4d69215a93220f72be3684cad582f16a">osKernelGetSysTimerFreq</a></div><div class="ttdeci">uint32_t osKernelGetSysTimerFreq(void)</div><div class="ttdoc">Get the RTOS kernel system timer frequency.</div></div>
-<div class="ttc" id="agroup__CMSIS__RTOS__KernelCtrl_html_gae0fcaff6cecfb4013bb556c87afcd7d2"><div class="ttname"><a href="group__CMSIS__RTOS__KernelCtrl.html#gae0fcaff6cecfb4013bb556c87afcd7d2">osKernelGetSysTimerCount</a></div><div class="ttdeci">uint32_t osKernelGetSysTimerCount(void)</div><div class="ttdoc">Get the RTOS kernel system timer count.</div></div>
 </div><!-- fragment --> 
 </div>
 </div>
@@ -859,9 +867,11 @@ Kernel version (major.minor.rev: mmnnnrrrr dec). </td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Get the RTOS kernel system timer frequency. </p>
 <dl class="section return"><dt>Returns</dt><dd>frequency of the system timer in hertz, i.e. timer ticks per second.</dd></dl>
 <p>The function <b>osKernelGetSysTimerFreq</b> returns the frequency of the current RTOS kernel system timer.</p>
-<dl class="section note"><dt>Note</dt><dd>This function may be called from Interrupt Service Routines. </dd></dl>
+<dl class="section note"><dt>Note</dt><dd>This function may be called from <a class="el" href="usingOS2.html#CMSIS_RTOS_ISR_Calls">Interrupt Service Routines</a>. </dd></dl>
 
 </div>
 </div>
@@ -880,6 +890,8 @@ Kernel version (major.minor.rev: mmnnnrrrr dec). </td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Protect the RTOS Kernel scheduler access. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">safety_class</td><td>safety class. </td></tr>
@@ -899,19 +911,18 @@ Kernel version (major.minor.rev: mmnnnrrrr dec). </td></tr>
 <li><em>osOK</em> in case of success.</li>
 <li><em>osErrorParameter</em> if <em>safety_class</em> is invalid.</li>
 <li><em>osError</em> if kernel is not in ready or running state.</li>
-<li><em>osErrorISR</em> if called from an Interrupt Service Routine.</li>
+<li><em>osErrorISR</em> if called from an <a class="el" href="usingOS2.html#CMSIS_RTOS_ISR_Calls">Interrupt Service Routine</a>.</li>
 <li><em>osErrorSafetyClass</em> if the calling thread safety class is lower than the kernel protect safety class.</li>
 </ul>
-<dl class="section note"><dt>Note</dt><dd>This function <b>cannot</b> be called from Interrupt Service Routines.</dd></dl>
-<p><b>Code Example:</b> </p><div class="fragment"><div class="line"><span class="preprocessor">#include &quot;<a class="code" href="cmsis__os2_8h.html">cmsis_os2.h</a>&quot;</span></div>
+<dl class="section note"><dt>Note</dt><dd>This function <b>cannot</b> be called from <a class="el" href="usingOS2.html#CMSIS_RTOS_ISR_Calls">Interrupt Service Routines</a>.</dd></dl>
+<p><b>Code Example:</b> </p><div class="fragment"><div class="line"><span class="preprocessor">#include &quot;cmsis_os2.h&quot;</span></div>
 <div class="line"> </div>
 <div class="line"><span class="keywordtype">void</span> ProtectKernelControlFunctions (<span class="keywordtype">void</span>) {</div>
-<div class="line">  <a class="code hl_enumeration" href="group__CMSIS__RTOS__Definitions.html#ga6c0dbe6069e4e7f47bb4cd32ae2b813e">osStatus_t</a> status;</div>
+<div class="line">  <a class="code hl_enumeration" href="group__CMSIS__RTOS__Definitions.html#ga6c0dbe6069e4e7f47bb4cd32ae2b813e" title="Status code values returned by CMSIS-RTOS functions.">osStatus_t</a> status;</div>
 <div class="line"> </div>
-<div class="line">  status = <a class="code hl_function" href="group__CMSIS__RTOS__KernelCtrl.html#gac7e3b012c15c55bda68e0dd96ad9cd72">osKernelProtect</a>(4U); <span class="comment">// Enable Kernel Control for threads with safety class 4 or higher</span></div>
+<div class="line">  status = <a class="code hl_function" href="group__CMSIS__RTOS__KernelCtrl.html#gac7e3b012c15c55bda68e0dd96ad9cd72" title="Protect the RTOS Kernel scheduler access.">osKernelProtect</a>(4U); <span class="comment">// Enable Kernel Control for threads with safety class 4 or higher</span></div>
 <div class="line">  <span class="comment">// verify status value here.</span></div>
 <div class="line">}</div>
-<div class="ttc" id="agroup__CMSIS__RTOS__KernelCtrl_html_gac7e3b012c15c55bda68e0dd96ad9cd72"><div class="ttname"><a href="group__CMSIS__RTOS__KernelCtrl.html#gac7e3b012c15c55bda68e0dd96ad9cd72">osKernelProtect</a></div><div class="ttdeci">osStatus_t osKernelProtect(uint32_t safety_class)</div><div class="ttdoc">Protect the RTOS Kernel scheduler access.</div></div>
 </div><!-- fragment --> 
 </div>
 </div>
@@ -940,6 +951,8 @@ Kernel version (major.minor.rev: mmnnnrrrr dec). </td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Destroy objects for specified safety classes. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">safety_class</td><td>safety class. </td></tr>
@@ -958,17 +971,14 @@ Kernel version (major.minor.rev: mmnnnrrrr dec). </td></tr>
 <li><em>osErrorISR</em> if called from interrupt other than <a class="el" href="group__CMSIS__RTOS__ThreadMgmt.html#ga5a02770aaf65c7a3c7562c109884176a">osWatchdogAlarm_Handler</a>.</li>
 <li><em>osErrorSafetyClass</em> if the calling thread safety class is lower than the kernel protect safety class.</li>
 </ul>
-<p><b>Code Example:</b> </p><div class="fragment"><div class="line"><span class="preprocessor">#include &quot;<a class="code" href="cmsis__os2_8h.html">cmsis_os2.h</a>&quot;</span></div>
+<p><b>Code Example:</b> </p><div class="fragment"><div class="line"><span class="preprocessor">#include &quot;cmsis_os2.h&quot;</span></div>
 <div class="line"> </div>
 <div class="line"><span class="keywordtype">void</span> DestroyNonCriticalClasses (<span class="keywordtype">void</span>) {</div>
-<div class="line">  <a class="code hl_enumeration" href="group__CMSIS__RTOS__Definitions.html#ga6c0dbe6069e4e7f47bb4cd32ae2b813e">osStatus_t</a> status;</div>
+<div class="line">  <a class="code hl_enumeration" href="group__CMSIS__RTOS__Definitions.html#ga6c0dbe6069e4e7f47bb4cd32ae2b813e" title="Status code values returned by CMSIS-RTOS functions.">osStatus_t</a> status;</div>
 <div class="line"> </div>
-<div class="line">  status = <a class="code hl_function" href="group__CMSIS__RTOS__KernelCtrl.html#ga2065364d1bc805a40e749430377df1e1">osKernelDestroyClass</a>(4U, <a class="code hl_define" href="group__CMSIS__RTOS__Definitions.html#ga7abd2d95425d9e02672778b3464b2eaa">osSafetyWithSameClass</a> | <a class="code hl_define" href="group__CMSIS__RTOS__Definitions.html#ga8c77ee126b9215425fc004ee13cdc6de">osSafetyWithLowerClass</a>); <span class="comment">// Destroy objects with safety class 4 or lower</span></div>
+<div class="line">  status = <a class="code hl_function" href="group__CMSIS__RTOS__KernelCtrl.html#ga2065364d1bc805a40e749430377df1e1" title="Destroy objects for specified safety classes.">osKernelDestroyClass</a>(4U, <a class="code hl_define" href="group__CMSIS__RTOS__Definitions.html#ga7abd2d95425d9e02672778b3464b2eaa" title="Objects with same safety class.">osSafetyWithSameClass</a> | <a class="code hl_define" href="group__CMSIS__RTOS__Definitions.html#ga8c77ee126b9215425fc004ee13cdc6de" title="Objects with lower safety class.">osSafetyWithLowerClass</a>); <span class="comment">// Destroy objects with safety class 4 or lower</span></div>
 <div class="line">  <span class="comment">// verify status value here.</span></div>
 <div class="line">}</div>
-<div class="ttc" id="agroup__CMSIS__RTOS__Definitions_html_ga7abd2d95425d9e02672778b3464b2eaa"><div class="ttname"><a href="group__CMSIS__RTOS__Definitions.html#ga7abd2d95425d9e02672778b3464b2eaa">osSafetyWithSameClass</a></div><div class="ttdeci">#define osSafetyWithSameClass</div><div class="ttdoc">Objects with same safety class.</div><div class="ttdef"><b>Definition:</b> cmsis_os2.h:239</div></div>
-<div class="ttc" id="agroup__CMSIS__RTOS__Definitions_html_ga8c77ee126b9215425fc004ee13cdc6de"><div class="ttname"><a href="group__CMSIS__RTOS__Definitions.html#ga8c77ee126b9215425fc004ee13cdc6de">osSafetyWithLowerClass</a></div><div class="ttdeci">#define osSafetyWithLowerClass</div><div class="ttdoc">Objects with lower safety class.</div><div class="ttdef"><b>Definition:</b> cmsis_os2.h:240</div></div>
-<div class="ttc" id="agroup__CMSIS__RTOS__KernelCtrl_html_ga2065364d1bc805a40e749430377df1e1"><div class="ttname"><a href="group__CMSIS__RTOS__KernelCtrl.html#ga2065364d1bc805a40e749430377df1e1">osKernelDestroyClass</a></div><div class="ttdeci">osStatus_t osKernelDestroyClass(uint32_t safety_class, uint32_t mode)</div><div class="ttdoc">Destroy objects for specified safety classes.</div></div>
 </div><!-- fragment --> 
 </div>
 </div>
@@ -987,6 +997,8 @@ Kernel version (major.minor.rev: mmnnnrrrr dec). </td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Resume normal operation when exiting exception faults. </p>
 <p>Resume normal RTOS operation when exiting exception faults.</p>
 <p><b>Code Example:</b> </p><div class="fragment"><div class="line"><span class="keywordtype">void</span> HardFault_Handler (<span class="keywordtype">void</span>) {</div>
 <div class="line">  __ASM <span class="keyword">volatile</span> (</div>

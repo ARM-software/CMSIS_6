@@ -5,13 +5,13 @@ var group__CMSIS__RTOS__KernelCtrl =
       [ "kernel", "group__CMSIS__RTOS__KernelCtrl.html#ad8075d3f42141346ae2c56389358f9e7", null ]
     ] ],
     [ "osKernelState_t", "group__CMSIS__RTOS__KernelCtrl.html#ga08326469274b668140ca934b168a5ad4", [
-      [ "osKernelInactive", "cmsis__os2_8h.html#ga08326469274b668140ca934b168a5ad4a2ad3e5912db47b497529d036c89e7995", null ],
-      [ "osKernelReady", "cmsis__os2_8h.html#ga08326469274b668140ca934b168a5ad4a0596c6e14113447604753656417c9a24", null ],
-      [ "osKernelRunning", "cmsis__os2_8h.html#ga08326469274b668140ca934b168a5ad4a8e0b699fbe1c8bb66fefadd5911cb6ce", null ],
-      [ "osKernelLocked", "cmsis__os2_8h.html#ga08326469274b668140ca934b168a5ad4a2fe382ad5ebab2257b35740414b28b01", null ],
-      [ "osKernelSuspended", "cmsis__os2_8h.html#ga08326469274b668140ca934b168a5ad4ad364464ad84d63b1413a9ac8a962390c", null ],
-      [ "osKernelError", "cmsis__os2_8h.html#ga08326469274b668140ca934b168a5ad4a0545c92c18ce8e6b24e82a0d694a0b4a", null ],
-      [ "osKernelReserved", "cmsis__os2_8h.html#ga08326469274b668140ca934b168a5ad4ab0a47576defa29396a649d9173d4bc4b", null ]
+      [ "osKernelInactive", "group__CMSIS__RTOS__KernelCtrl.html#gga08326469274b668140ca934b168a5ad4a2ad3e5912db47b497529d036c89e7995", null ],
+      [ "osKernelReady", "group__CMSIS__RTOS__KernelCtrl.html#gga08326469274b668140ca934b168a5ad4a0596c6e14113447604753656417c9a24", null ],
+      [ "osKernelRunning", "group__CMSIS__RTOS__KernelCtrl.html#gga08326469274b668140ca934b168a5ad4a8e0b699fbe1c8bb66fefadd5911cb6ce", null ],
+      [ "osKernelLocked", "group__CMSIS__RTOS__KernelCtrl.html#gga08326469274b668140ca934b168a5ad4a2fe382ad5ebab2257b35740414b28b01", null ],
+      [ "osKernelSuspended", "group__CMSIS__RTOS__KernelCtrl.html#gga08326469274b668140ca934b168a5ad4ad364464ad84d63b1413a9ac8a962390c", null ],
+      [ "osKernelError", "group__CMSIS__RTOS__KernelCtrl.html#gga08326469274b668140ca934b168a5ad4a0545c92c18ce8e6b24e82a0d694a0b4a", null ],
+      [ "osKernelReserved", "group__CMSIS__RTOS__KernelCtrl.html#gga08326469274b668140ca934b168a5ad4ab0a47576defa29396a649d9173d4bc4b", null ]
     ] ],
     [ "osKernelInitialize", "group__CMSIS__RTOS__KernelCtrl.html#gae818f6611d25ba3140bede410a52d659", null ],
     [ "osKernelGetInfo", "group__CMSIS__RTOS__KernelCtrl.html#ga6f7764e7250c5c5364c00c45a5d1d199", null ],

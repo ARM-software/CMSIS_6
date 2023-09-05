@@ -130,9 +130,7 @@ $(document).ready(function(){initNavTree('rtos_revisionHistory.html',''); initRe
   <div class="headertitle"><div class="title">Revision History </div></div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><h1><a class="anchor" id="GenRTOS2Rev"></a>
-CMSIS-RTOS API Version 2</h1>
-<table class="cmtable" summary="Revision History">
+<div class="textblock"><p><a class="anchor" id="md_src_history"></a> </p><table class="cmtable" summary="Revision History">
 <tr>
 <th>Version </th><th>Description  </th></tr>
 <tr>
@@ -154,7 +152,7 @@ CMSIS-RTOS API Version 2</h1>
 <li>Exception Faults: <a class="el" href="group__CMSIS__RTOS__KernelCtrl.html#ga91b400b21a9093f7751fc45613c12110">osFaultResume</a></li>
 </ul>
 <p class="endtd">Additional functions allowed to be called from Interrupt Service Routines:</p><ul>
-<li><a class="el" href="group__CMSIS__RTOS__ThreadMgmt.html#gac3230f3a55a297514b013ebf38f27e0a">osThreadGetName</a>, <a class="el" href="group__CMSIS__RTOS__EventFlags.html#ga59f4ddf0ee8c395b1672bb978d1cfc88">osEventFlagsGetName</a>, <a class="el" href="group__CMSIS__RTOS__TimerMgmt.html#ga4f82a98eee4d9ea79507e44340d3d319">osTimerGetName</a>, <a class="el" href="group__CMSIS__RTOS__MutexMgmt.html#ga00b5e58cd247a412d1afd18732d8b752">osMutexGetName</a>, <a class="el" href="group__CMSIS__RTOS__SemaphoreMgmt.html#ga9586952051f00285f1482dbe6695bbc4">osSemaphoreGetName</a>, <a class="el" href="group__CMSIS__RTOS__PoolMgmt.html#gab414a1e138205a55820acfa277c8f386">osMemoryPoolGetName</a>, <a class="el" href="group__CMSIS__RTOS__Message.html#gae7cf7bf2b97a5ae481fb60fcce99247a">osMessageQueueGetName</a>   </li>
+<li><a class="el" href="group__CMSIS__RTOS__ThreadMgmt.html#gac3230f3a55a297514b013ebf38f27e0a">osThreadGetName</a>, <a class="el" href="group__CMSIS__RTOS__EventFlags.html#ga59f4ddf0ee8c395b1672bb978d1cfc88">osEventFlagsGetName</a>, <a class="el" href="group__CMSIS__RTOS__TimerMgmt.html#ga7938dde88ada1a01b60f41cf120069c0">osTimerGetName</a>, <a class="el" href="group__CMSIS__RTOS__MutexMgmt.html#ga00b5e58cd247a412d1afd18732d8b752">osMutexGetName</a>, <a class="el" href="group__CMSIS__RTOS__SemaphoreMgmt.html#ga9586952051f00285f1482dbe6695bbc4">osSemaphoreGetName</a>, <a class="el" href="group__CMSIS__RTOS__PoolMgmt.html#gab414a1e138205a55820acfa277c8f386">osMemoryPoolGetName</a>, <a class="el" href="group__CMSIS__RTOS__Message.html#gae7cf7bf2b97a5ae481fb60fcce99247a">osMessageQueueGetName</a>   </li>
 </ul>
 </td></tr>
 <tr>
@@ -186,20 +184,19 @@ CMSIS-RTOS API Version 2</h1>
 </td></tr>
 <tr>
 <td>V2.0.0 </td><td>New API Version 2.0 available.<ul>
-<li>See <a class="el" href="rtos_api2.html">CMSIS-RTOS C API v2</a> for a detailed function reference.</li>
-<li>See <a class="el" href="os2Migration.html">Migration from API v1 to API v2</a> for details on the migration process from API Version 1.   </li>
+<li>See <a class="el" href="group__CMSIS__RTOS.html">CMSIS-RTOS2 API</a> for a detailed function reference.   </li>
 </ul>
 </td></tr>
 <tr>
 <td>V1.02 - only documentation changes </td><td>Added: Overview of the <a class="el" href="rtosValidation.html">CMSIS-RTOS Validation</a> Software Pack.<br  />
- Clarified: Behavior of CMSIS_RTOS_TimeOutValue.   </td></tr>
+ Clarified: Behavior of <a class="el" href="usingOS2.html#CMSIS_RTOS_TimeOutValue">Timeout Values</a>.   </td></tr>
 <tr>
 <td>V1.02 </td><td>Added: New control functions for short timeouts in microsecond resolution <b>osKernelSysTick</b>, <b>osKernelSysTickFrequency</b>, <b>osKernelSysTickMicroSec</b>.<br  />
  Removed: osSignalGet.  fv </td></tr>
 <tr>
 <td>V1.01 </td><td>Added capabilities for C++, kernel initialization and object deletion.<br  />
  Prepared for C++ class interface. In this context to <em>const</em> attribute has been moved from osXxxxDef_t typedefs to the osXxxxDef macros.<br  />
- Added: <a class="el" href="group__CMSIS__RTOS__TimerMgmt.html#gad0001dd74721ab461789324806db2453">osTimerDelete</a>, <a class="el" href="group__CMSIS__RTOS__MutexMgmt.html#gabee73ad227ba4587d3db12ef9bd582bc">osMutexDelete</a>, osSemaphoreDelete.<br  />
+ Added: <a class="el" href="group__CMSIS__RTOS__TimerMgmt.html#gad0001dd74721ab461789324806db2453">osTimerDelete</a>, <a class="el" href="group__CMSIS__RTOS__MutexMgmt.html#gabee73ad227ba4587d3db12ef9bd582bc">osMutexDelete</a>, <a class="el" href="group__CMSIS__RTOS__SemaphoreMgmt.html#ga81258ce9c67fa89f07cc49d2e136cd88">osSemaphoreDelete</a> .<br  />
  Added: <a class="el" href="group__CMSIS__RTOS__KernelCtrl.html#gae818f6611d25ba3140bede410a52d659">osKernelInitialize</a> that prepares the kernel for object creation.<br  />
    </td></tr>
 <tr>

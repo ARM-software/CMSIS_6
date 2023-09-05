@@ -131,9 +131,9 @@ $(document).ready(function(){initNavTree('group__CMSIS__RTOS__TimerMgmt.html',''
 <a href="#nested-classes">Data Structures</a> &#124;
 <a href="#typedef-members">Typedefs</a> &#124;
 <a href="#enum-members">Enumerations</a> &#124;
-<a href="#enumval-members">Enumerator</a> &#124;
-<a href="#func-members">Functions</a>  </div>
-  <div class="headertitle"><div class="title">Timer Management<div class="ingroups"><a class="el" href="group__CMSIS__RTOS.html">CMSIS-RTOS API v2</a></div></div></div>
+<a href="#func-members">Functions</a> &#124;
+<a href="#var-members">Variables</a>  </div>
+  <div class="headertitle"><div class="title">Timer Management<div class="ingroups"><a class="el" href="group__CMSIS__RTOS.html">CMSIS-RTOS2 API</a></div></div></div>
 </div><!--header-->
 <div class="contents">
 
@@ -170,9 +170,9 @@ Functions</h2></td></tr>
 <tr class="memitem:gad4e7f785c5f700a509f55a3bf6a62bec"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__CMSIS__RTOS__TimerMgmt.html#gaad5409379689ee27bb0a0b56ea4a4b34">osTimerId_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CMSIS__RTOS__TimerMgmt.html#gad4e7f785c5f700a509f55a3bf6a62bec">osTimerNew</a> (<a class="el" href="group__CMSIS__RTOS__TimerMgmt.html#gaacf768c1ec64b020598afb985d7b30be">osTimerFunc_t</a> func, <a class="el" href="group__CMSIS__RTOS__TimerMgmt.html#ga7dc24a4c2b90334427081c3da7a71915">osTimerType_t</a> type, void *argument, const <a class="el" href="group__CMSIS__RTOS__TimerMgmt.html#structosTimerAttr__t">osTimerAttr_t</a> *attr)</td></tr>
 <tr class="memdesc:gad4e7f785c5f700a509f55a3bf6a62bec"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create and Initialize a timer.  <br /></td></tr>
 <tr class="separator:gad4e7f785c5f700a509f55a3bf6a62bec"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga4f82a98eee4d9ea79507e44340d3d319"><td class="memItemLeft" align="right" valign="top">const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CMSIS__RTOS__TimerMgmt.html#ga4f82a98eee4d9ea79507e44340d3d319">osTimerGetName</a> (<a class="el" href="group__CMSIS__RTOS__TimerMgmt.html#gaad5409379689ee27bb0a0b56ea4a4b34">osTimerId_t</a> timer_id)</td></tr>
-<tr class="memdesc:ga4f82a98eee4d9ea79507e44340d3d319"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get name of a timer.  <br /></td></tr>
-<tr class="separator:ga4f82a98eee4d9ea79507e44340d3d319"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga7938dde88ada1a01b60f41cf120069c0"><td class="memItemLeft" align="right" valign="top">const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CMSIS__RTOS__TimerMgmt.html#ga7938dde88ada1a01b60f41cf120069c0">osTimerGetName</a> (<a class="el" href="group__CMSIS__RTOS__TimerMgmt.html#gaad5409379689ee27bb0a0b56ea4a4b34">osTimerId_t</a> timer_id)</td></tr>
+<tr class="memdesc:ga7938dde88ada1a01b60f41cf120069c0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get name of a timer.  <br /></td></tr>
+<tr class="separator:ga7938dde88ada1a01b60f41cf120069c0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:gab6ee2859ea657641b7adfac599b8121d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__CMSIS__RTOS__Definitions.html#ga6c0dbe6069e4e7f47bb4cd32ae2b813e">osStatus_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CMSIS__RTOS__TimerMgmt.html#gab6ee2859ea657641b7adfac599b8121d">osTimerStart</a> (<a class="el" href="group__CMSIS__RTOS__TimerMgmt.html#gaad5409379689ee27bb0a0b56ea4a4b34">osTimerId_t</a> timer_id, uint32_t ticks)</td></tr>
 <tr class="memdesc:gab6ee2859ea657641b7adfac599b8121d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Start or restart a timer.  <br /></td></tr>
 <tr class="separator:gab6ee2859ea657641b7adfac599b8121d"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -185,22 +185,35 @@ Functions</h2></td></tr>
 <tr class="memitem:gad0001dd74721ab461789324806db2453"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__CMSIS__RTOS__Definitions.html#ga6c0dbe6069e4e7f47bb4cd32ae2b813e">osStatus_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CMSIS__RTOS__TimerMgmt.html#gad0001dd74721ab461789324806db2453">osTimerDelete</a> (<a class="el" href="group__CMSIS__RTOS__TimerMgmt.html#gaad5409379689ee27bb0a0b56ea4a4b34">osTimerId_t</a> timer_id)</td></tr>
 <tr class="memdesc:gad0001dd74721ab461789324806db2453"><td class="mdescLeft">&#160;</td><td class="mdescRight">Delete a timer.  <br /></td></tr>
 <tr class="separator:gad0001dd74721ab461789324806db2453"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="var-members" name="var-members"></a>
+Variables</h2></td></tr>
+<tr class="memitem:ga6e93b49cb79c12f768d72580c7731f30"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CMSIS__RTOS__TimerMgmt.html#ga6e93b49cb79c12f768d72580c7731f30">attr_bits</a></td></tr>
+<tr class="memdesc:ga6e93b49cb79c12f768d72580c7731f30"><td class="mdescLeft">&#160;</td><td class="mdescRight">attribute bits  <br /></td></tr>
+<tr class="separator:ga6e93b49cb79c12f768d72580c7731f30"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga1e100dc33d403841ed3c344e3397868e"><td class="memItemLeft" align="right" valign="top">void *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CMSIS__RTOS__TimerMgmt.html#ga1e100dc33d403841ed3c344e3397868e">cb_mem</a></td></tr>
+<tr class="memdesc:ga1e100dc33d403841ed3c344e3397868e"><td class="mdescLeft">&#160;</td><td class="mdescRight">memory for control block  <br /></td></tr>
+<tr class="separator:ga1e100dc33d403841ed3c344e3397868e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaa55a4335d12dc2785dc00fdc292d1159"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CMSIS__RTOS__TimerMgmt.html#gaa55a4335d12dc2785dc00fdc292d1159">cb_size</a></td></tr>
+<tr class="memdesc:gaa55a4335d12dc2785dc00fdc292d1159"><td class="mdescLeft">&#160;</td><td class="mdescRight">size of provided memory for control block  <br /></td></tr>
+<tr class="separator:gaa55a4335d12dc2785dc00fdc292d1159"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gab74e6bf80237ddc4109968cedc58c151"><td class="memItemLeft" align="right" valign="top">const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CMSIS__RTOS__TimerMgmt.html#gab74e6bf80237ddc4109968cedc58c151">name</a></td></tr>
+<tr class="memdesc:gab74e6bf80237ddc4109968cedc58c151"><td class="mdescLeft">&#160;</td><td class="mdescRight">name of the timer  <br /></td></tr>
+<tr class="separator:gab74e6bf80237ddc4109968cedc58c151"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Description</h2>
+<p>Create and control timer and timer callback functions. </p>
 <p>In addition to the <a class="el" href="group__CMSIS__RTOS__Wait.html">Generic Wait Functions</a> CMSIS-RTOS also supports virtual timer objects. These timer objects can trigger the execution of a function (not threads). When a timer expires, a callback function is executed to run associated code with the timer. Each timer can be configured as a one-shot or a periodic timer. A periodic timer repeats its operation until it is <a class="el" href="group__CMSIS__RTOS__TimerMgmt.html#gad0001dd74721ab461789324806db2453">deleted</a> or <a class="el" href="group__CMSIS__RTOS__TimerMgmt.html#gabd7a89356da7717293eb0bc5d87b8ac9">stopped</a>. All timers can be <a class="el" href="group__CMSIS__RTOS__TimerMgmt.html#gab6ee2859ea657641b7adfac599b8121d">started, restarted</a>, or <a class="el" href="group__CMSIS__RTOS__TimerMgmt.html#gabd7a89356da7717293eb0bc5d87b8ac9">stopped</a>.</p>
-<dl class="section note"><dt>Note</dt><dd>RTX handles Timers in the thread <b>osRtxTimerThread</b>. Callback functions run under control of this thread and may use other CMSIS-RTOS API calls. The <b>osRtxTimerThread</b> is configured in timerConfig. </dd>
-<dd>
-Timer management functions cannot be called from Interrupt Service Routines.</dd></dl>
+<dl class="section note"><dt>Note</dt><dd>Timer management functions cannot be called from <a class="el" href="usingOS2.html#CMSIS_RTOS_ISR_Calls">Interrupt Service Routines</a>.</dd></dl>
 <p>The figure below shows the behavior of a periodic timer. For one-shot timers, the timer stops after execution of the callback function.</p>
 <div class="image">
 <img src="Timer.png" alt=""/>
 <div class="caption">
 Behavior of a Periodic Timer</div></div>
-<h2><a class="anchor" id="autotoc_md3"></a>
+<h2><a class="anchor" id="autotoc_md4"></a>
 Working with Timers</h2>
 <p>The following steps are required to use a software timer:</p><ol type="1">
 <li>Define the timers: <div class="fragment"><div class="line"><a class="code hl_typedef" href="group__CMSIS__RTOS__TimerMgmt.html#gaad5409379689ee27bb0a0b56ea4a4b34">osTimerId_t</a> one_shot_id, periodic_id;</div>
-<div class="ttc" id="agroup__CMSIS__RTOS__TimerMgmt_html_gaad5409379689ee27bb0a0b56ea4a4b34"><div class="ttname"><a href="group__CMSIS__RTOS__TimerMgmt.html#gaad5409379689ee27bb0a0b56ea4a4b34">osTimerId_t</a></div><div class="ttdeci">void * osTimerId_t</div><div class="ttdef"><b>Definition:</b> cmsis_os2.h:263</div></div>
 </div><!-- fragment --></li>
 <li>Define callback functions: <div class="fragment"><div class="line"><span class="keyword">static</span> <span class="keywordtype">void</span> one_shot_Callback (<span class="keywordtype">void</span> *argument) {</div>
 <div class="line">  int32_t arg = (int32_t)argument; <span class="comment">// cast back argument &#39;0&#39; </span></div>
@@ -212,25 +225,20 @@ Working with Timers</h2>
 <div class="line">}</div>
 </div><!-- fragment --></li>
 <li>Instantiate and start the timers: <div class="fragment"><div class="line"><span class="comment">// creates a one-shot timer:</span></div>
-<div class="line">one_shot_id = <a class="code hl_function" href="group__CMSIS__RTOS__TimerMgmt.html#gad4e7f785c5f700a509f55a3bf6a62bec">osTimerNew</a>(one_shot_Callback, <a class="code hl_enumvalue" href="group__CMSIS__RTOS__TimerMgmt.html#gga7dc24a4c2b90334427081c3da7a71915a2e0e1f31c742c84b497c4d7143357bdb">osTimerOnce</a>, (<span class="keywordtype">void</span> *)0, NULL);     <span class="comment">// (void*)0 is passed as an argument</span></div>
+<div class="line">one_shot_id = <a class="code hl_function" href="group__CMSIS__RTOS__TimerMgmt.html#gad4e7f785c5f700a509f55a3bf6a62bec" title="Create and Initialize a timer.">osTimerNew</a>(one_shot_Callback, <a class="code hl_enumvalue" href="group__CMSIS__RTOS__TimerMgmt.html#gga7dc24a4c2b90334427081c3da7a71915a2e0e1f31c742c84b497c4d7143357bdb" title="One-shot timer.">osTimerOnce</a>, (<span class="keywordtype">void</span> *)0, NULL);     <span class="comment">// (void*)0 is passed as an argument</span></div>
 <div class="line">                                                                               <span class="comment">// to the callback function</span></div>
 <div class="line"><span class="comment">// creates a periodic timer:</span></div>
-<div class="line">periodic_id = <a class="code hl_function" href="group__CMSIS__RTOS__TimerMgmt.html#gad4e7f785c5f700a509f55a3bf6a62bec">osTimerNew</a>(periodic_Callback, <a class="code hl_enumvalue" href="group__CMSIS__RTOS__TimerMgmt.html#gga7dc24a4c2b90334427081c3da7a71915ab3463d921dc310938094745c230f2b35">osTimerPeriodic</a>, (<span class="keywordtype">void</span> *)5, NULL); <span class="comment">// (void*)5 is passed as an argument</span></div>
+<div class="line">periodic_id = <a class="code hl_function" href="group__CMSIS__RTOS__TimerMgmt.html#gad4e7f785c5f700a509f55a3bf6a62bec" title="Create and Initialize a timer.">osTimerNew</a>(periodic_Callback, <a class="code hl_enumvalue" href="group__CMSIS__RTOS__TimerMgmt.html#gga7dc24a4c2b90334427081c3da7a71915ab3463d921dc310938094745c230f2b35" title="Repeating timer.">osTimerPeriodic</a>, (<span class="keywordtype">void</span> *)5, NULL); <span class="comment">// (void*)5 is passed as an argument</span></div>
 <div class="line">                                                                               <span class="comment">// to the callback function</span></div>
-<div class="line"><a class="code hl_function" href="group__CMSIS__RTOS__TimerMgmt.html#gab6ee2859ea657641b7adfac599b8121d">osTimerStart</a>(one_shot_id, 500U);</div>
-<div class="line"><a class="code hl_function" href="group__CMSIS__RTOS__TimerMgmt.html#gab6ee2859ea657641b7adfac599b8121d">osTimerStart</a>(periodic_id, 1500U);</div>
+<div class="line"><a class="code hl_function" href="group__CMSIS__RTOS__TimerMgmt.html#gab6ee2859ea657641b7adfac599b8121d" title="Start or restart a timer.">osTimerStart</a>(one_shot_id, 500U);</div>
+<div class="line"><a class="code hl_function" href="group__CMSIS__RTOS__TimerMgmt.html#gab6ee2859ea657641b7adfac599b8121d" title="Start or restart a timer.">osTimerStart</a>(periodic_id, 1500U);</div>
 <div class="line"> </div>
 <div class="line"><span class="comment">// start the one-shot timer again after it has triggered the first time:</span></div>
-<div class="line"><a class="code hl_function" href="group__CMSIS__RTOS__TimerMgmt.html#gab6ee2859ea657641b7adfac599b8121d">osTimerStart</a>(one_shot_id, 500U);</div>
+<div class="line"><a class="code hl_function" href="group__CMSIS__RTOS__TimerMgmt.html#gab6ee2859ea657641b7adfac599b8121d" title="Start or restart a timer.">osTimerStart</a>(one_shot_id, 500U);</div>
 <div class="line"> </div>
 <div class="line"><span class="comment">// when timers are not needed any longer free the resources:</span></div>
-<div class="line"><a class="code hl_function" href="group__CMSIS__RTOS__TimerMgmt.html#gad0001dd74721ab461789324806db2453">osTimerDelete</a>(one_shot_id);</div>
-<div class="line"><a class="code hl_function" href="group__CMSIS__RTOS__TimerMgmt.html#gad0001dd74721ab461789324806db2453">osTimerDelete</a>(periodic_id);</div>
-<div class="ttc" id="agroup__CMSIS__RTOS__TimerMgmt_html_gab6ee2859ea657641b7adfac599b8121d"><div class="ttname"><a href="group__CMSIS__RTOS__TimerMgmt.html#gab6ee2859ea657641b7adfac599b8121d">osTimerStart</a></div><div class="ttdeci">osStatus_t osTimerStart(osTimerId_t timer_id, uint32_t ticks)</div><div class="ttdoc">Start or restart a timer.</div></div>
-<div class="ttc" id="agroup__CMSIS__RTOS__TimerMgmt_html_gad0001dd74721ab461789324806db2453"><div class="ttname"><a href="group__CMSIS__RTOS__TimerMgmt.html#gad0001dd74721ab461789324806db2453">osTimerDelete</a></div><div class="ttdeci">osStatus_t osTimerDelete(osTimerId_t timer_id)</div><div class="ttdoc">Delete a timer.</div></div>
-<div class="ttc" id="agroup__CMSIS__RTOS__TimerMgmt_html_gad4e7f785c5f700a509f55a3bf6a62bec"><div class="ttname"><a href="group__CMSIS__RTOS__TimerMgmt.html#gad4e7f785c5f700a509f55a3bf6a62bec">osTimerNew</a></div><div class="ttdeci">osTimerId_t osTimerNew(osTimerFunc_t func, osTimerType_t type, void *argument, const osTimerAttr_t *attr)</div><div class="ttdoc">Create and Initialize a timer.</div></div>
-<div class="ttc" id="agroup__CMSIS__RTOS__TimerMgmt_html_gga7dc24a4c2b90334427081c3da7a71915a2e0e1f31c742c84b497c4d7143357bdb"><div class="ttname"><a href="group__CMSIS__RTOS__TimerMgmt.html#gga7dc24a4c2b90334427081c3da7a71915a2e0e1f31c742c84b497c4d7143357bdb">osTimerOnce</a></div><div class="ttdeci">@ osTimerOnce</div><div class="ttdoc">One-shot timer.</div><div class="ttdef"><b>Definition:</b> cmsis_os2.h:188</div></div>
-<div class="ttc" id="agroup__CMSIS__RTOS__TimerMgmt_html_gga7dc24a4c2b90334427081c3da7a71915ab3463d921dc310938094745c230f2b35"><div class="ttname"><a href="group__CMSIS__RTOS__TimerMgmt.html#gga7dc24a4c2b90334427081c3da7a71915ab3463d921dc310938094745c230f2b35">osTimerPeriodic</a></div><div class="ttdeci">@ osTimerPeriodic</div><div class="ttdoc">Repeating timer.</div><div class="ttdef"><b>Definition:</b> cmsis_os2.h:189</div></div>
+<div class="line"><a class="code hl_function" href="group__CMSIS__RTOS__TimerMgmt.html#gad0001dd74721ab461789324806db2453" title="Delete a timer.">osTimerDelete</a>(one_shot_id);</div>
+<div class="line"><a class="code hl_function" href="group__CMSIS__RTOS__TimerMgmt.html#gad0001dd74721ab461789324806db2453" title="Delete a timer.">osTimerDelete</a>(periodic_id);</div>
 </div><!-- fragment --> </li>
 </ol>
 <hr/><h2 class="groupheader">Data Structure Documentation</h2>
@@ -245,11 +253,12 @@ Working with Timers</h2>
         </tr>
       </table>
 </div><div class="memdoc">
-<div class="textblock"><p>Specifies the following attributes for the <a class="el" href="group__CMSIS__RTOS__TimerMgmt.html#gad4e7f785c5f700a509f55a3bf6a62bec">osTimerNew</a> function. </p>
+<div class="textblock"><p>Attributes structure for timer. </p>
+<p>Specifies the following attributes for the <a class="el" href="group__CMSIS__RTOS__TimerMgmt.html#gad4e7f785c5f700a509f55a3bf6a62bec">osTimerNew</a> function. </p>
 </div><table class="fieldtable">
 <tr><th colspan="3">Data Fields</th></tr>
 <tr><td class="fieldtype">
-<a id="ab74e6bf80237ddc4109968cedc58c151" name="ab74e6bf80237ddc4109968cedc58c151"></a>const char *</td>
+<a id="gab74e6bf80237ddc4109968cedc58c151" name="gab74e6bf80237ddc4109968cedc58c151"></a>const char *</td>
 <td class="fieldname">
 name</td>
 <td class="fielddoc">
@@ -257,27 +266,27 @@ name of the timer <p>Pointer to a constant string with a human readable name (di
 <p>Default: <span class="XML-Token">NULL</span> no name specified. </p>
 </td></tr>
 <tr><td class="fieldtype">
-<a id="a6e93b49cb79c12f768d72580c7731f30" name="a6e93b49cb79c12f768d72580c7731f30"></a>uint32_t</td>
+<a id="ga6e93b49cb79c12f768d72580c7731f30" name="ga6e93b49cb79c12f768d72580c7731f30"></a>uint32_t</td>
 <td class="fieldname">
 attr_bits</td>
 <td class="fielddoc">
 attribute bits <p>Reserved for future use (must be set to '0' for future compatibility). </p>
 </td></tr>
 <tr><td class="fieldtype">
-<a id="a1e100dc33d403841ed3c344e3397868e" name="a1e100dc33d403841ed3c344e3397868e"></a>void *</td>
+<a id="ga1e100dc33d403841ed3c344e3397868e" name="ga1e100dc33d403841ed3c344e3397868e"></a>void *</td>
 <td class="fieldname">
 cb_mem</td>
 <td class="fielddoc">
-memory for control block <p>Pointer to a memory for the timer control block object. Refer to StaticObjectMemory for more information.</p>
-<p>Default: <span class="XML-Token">NULL</span> to use <a class="el" href="group__CMSIS__RTOS__MemoryMgmt.html#CMSIS_RTOS_MemoryMgmt_Automatic">Automatic Dynamic Allocation</a> for the timer control block. </p>
+memory for control block <p>Pointer to a memory for the timer control block object. Refer to <a class="el" href="usingOS2.html#CMSIS_RTOS_MemoryMgmt_Manual">Manual User-defined Allocation</a> for more information.</p>
+<p>Default: <span class="XML-Token">NULL</span> to use <a class="el" href="usingOS2.html#CMSIS_RTOS_MemoryMgmt_Automatic">Automatic Dynamic Allocation</a> for the timer control block. </p>
 </td></tr>
 <tr><td class="fieldtype">
-<a id="aa55a4335d12dc2785dc00fdc292d1159" name="aa55a4335d12dc2785dc00fdc292d1159"></a>uint32_t</td>
+<a id="gaa55a4335d12dc2785dc00fdc292d1159" name="gaa55a4335d12dc2785dc00fdc292d1159"></a>uint32_t</td>
 <td class="fieldname">
 cb_size</td>
 <td class="fielddoc">
-size of provided memory for control block <p>The size (in bytes) of memory block passed with <a class="el" href="group__CMSIS__RTOS__TimerMgmt.html#a1e100dc33d403841ed3c344e3397868e">cb_mem</a>. For RTX, the minimum value is defined with osRtxTimerCbSize (higher values are permitted).</p>
-<p>Default: <span class="XML-Token">0</span> as the default is no memory provided with <a class="el" href="group__CMSIS__RTOS__TimerMgmt.html#a1e100dc33d403841ed3c344e3397868e">cb_mem</a>. </p>
+size of provided memory for control block <p>The size (in bytes) of memory block passed with <a class="el" href="group__CMSIS__RTOS__TimerMgmt.html#ga1e100dc33d403841ed3c344e3397868e">cb_mem</a>. Required value depends on the underlying kernel implementation.</p>
+<p>Default: <span class="XML-Token">0</span> as the default is no memory provided with <a class="el" href="group__CMSIS__RTOS__TimerMgmt.html#ga1e100dc33d403841ed3c344e3397868e">cb_mem</a>. </p>
 </td></tr>
 </table>
 
@@ -314,6 +323,8 @@ Returned by:</p><ul>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Timer callback function. </p>
 <p>The timer callback function is called every time the timer elapses.</p>
 <p>The callback might be executed either in a dedicated timer thread or in interrupt context. Thus it is recommended to only use ISR callable functions from the timer callback.</p>
 <dl class="params"><dt>Parameters</dt><dd>
@@ -337,7 +348,9 @@ Returned by:</p><ul>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>The <a class="el" href="group__CMSIS__RTOS__TimerMgmt.html#ga7dc24a4c2b90334427081c3da7a71915">osTimerType_t</a> specifies the a repeating (periodic) or one-shot timer for the function <a class="el" href="group__CMSIS__RTOS__TimerMgmt.html#gad4e7f785c5f700a509f55a3bf6a62bec">osTimerNew</a>. </p>
+
+<p>Timer type. </p>
+<p>The <b>osTimerType_t</b> specifies the timer type as repeating (periodic) or one-shot. Used in the function <a class="el" href="group__CMSIS__RTOS__TimerMgmt.html#gad4e7f785c5f700a509f55a3bf6a62bec">osTimerNew</a>. </p>
 <table class="fieldtable">
 <tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="gga7dc24a4c2b90334427081c3da7a71915a2e0e1f31c742c84b497c4d7143357bdb" name="gga7dc24a4c2b90334427081c3da7a71915a2e0e1f31c742c84b497c4d7143357bdb"></a>osTimerOnce&#160;</td><td class="fielddoc"><p>One-shot timer. </p>
 <p>The timer is not automatically restarted once it has elapsed. It can be restarted manually using <a class="el" href="group__CMSIS__RTOS__TimerMgmt.html#gab6ee2859ea657641b7adfac599b8121d">osTimerStart</a> as needed. </p>
@@ -387,6 +400,8 @@ Returned by:</p><ul>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Create and Initialize a timer. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">func</td><td>function pointer to callback function. </td></tr>
@@ -399,8 +414,8 @@ Returned by:</p><ul>
 <dl class="section return"><dt>Returns</dt><dd>timer ID for reference by other functions or NULL in case of error.</dd></dl>
 <p>The function <b>osTimerNew</b> creates an one-shot or periodic timer and associates it with a callback function with <em>argument</em>. The timer is in stopped state until it is started with <a class="el" href="group__CMSIS__RTOS__TimerMgmt.html#gab6ee2859ea657641b7adfac599b8121d">osTimerStart</a>. The function can be safely called before the RTOS is started (call to <a class="el" href="group__CMSIS__RTOS__KernelCtrl.html#ga9ae2cc00f0d89d7b6a307bba942b5221">osKernelStart</a>), but not before it is initialized (call to <a class="el" href="group__CMSIS__RTOS__KernelCtrl.html#gae818f6611d25ba3140bede410a52d659">osKernelInitialize</a>).</p>
 <p>The function <b>osTimerNew</b> returns the pointer to the timer object identifier or <span class="XML-Token">NULL</span> in case of an error.</p>
-<dl class="section note"><dt>Note</dt><dd>This function <b>cannot</b> be called from Interrupt Service Routines.</dd></dl>
-<p><b>Code Example</b> </p><div class="fragment"><div class="line"><span class="preprocessor">#include &quot;<a class="code" href="cmsis__os2_8h.html">cmsis_os2.h</a>&quot;</span></div>
+<dl class="section note"><dt>Note</dt><dd>This function <b>cannot</b> be called from <a class="el" href="usingOS2.html#CMSIS_RTOS_ISR_Calls">Interrupt Service Routines</a>.</dd></dl>
+<p><b>Code Example</b> </p><div class="fragment"><div class="line"><span class="preprocessor">#include &quot;cmsis_os2.h&quot;</span></div>
 <div class="line"> </div>
 <div class="line"><span class="keywordtype">void</span> Timer1_Callback (<span class="keywordtype">void</span> *arg);               <span class="comment">// prototypes for timer callback function</span></div>
 <div class="line"><span class="keywordtype">void</span> Timer2_Callback (<span class="keywordtype">void</span> *arg);               <span class="comment">// prototypes for timer callback function</span></div>
@@ -414,31 +429,30 @@ Returned by:</p><ul>
 <div class="line"> </div>
 <div class="line">  <span class="comment">// Create one-shoot timer</span></div>
 <div class="line">  exec1 = 1U;</div>
-<div class="line">  id1 = <a class="code hl_function" href="group__CMSIS__RTOS__TimerMgmt.html#gad4e7f785c5f700a509f55a3bf6a62bec">osTimerNew</a>(Timer1_Callback, <a class="code hl_enumvalue" href="group__CMSIS__RTOS__TimerMgmt.html#gga7dc24a4c2b90334427081c3da7a71915a2e0e1f31c742c84b497c4d7143357bdb">osTimerOnce</a>, &amp;exec1, NULL);</div>
+<div class="line">  id1 = <a class="code hl_function" href="group__CMSIS__RTOS__TimerMgmt.html#gad4e7f785c5f700a509f55a3bf6a62bec" title="Create and Initialize a timer.">osTimerNew</a>(Timer1_Callback, <a class="code hl_enumvalue" href="group__CMSIS__RTOS__TimerMgmt.html#gga7dc24a4c2b90334427081c3da7a71915a2e0e1f31c742c84b497c4d7143357bdb" title="One-shot timer.">osTimerOnce</a>, &amp;exec1, NULL);</div>
 <div class="line">  <span class="keywordflow">if</span> (id1 != NULL) {</div>
 <div class="line">    <span class="comment">// One-shoot timer created</span></div>
 <div class="line">  }</div>
 <div class="line"> </div>
 <div class="line">  <span class="comment">// Create periodic timer</span></div>
 <div class="line">  exec2 = 2U;</div>
-<div class="line">  id2 = <a class="code hl_function" href="group__CMSIS__RTOS__TimerMgmt.html#gad4e7f785c5f700a509f55a3bf6a62bec">osTimerNew</a>(Timer2_Callback, <a class="code hl_enumvalue" href="group__CMSIS__RTOS__TimerMgmt.html#gga7dc24a4c2b90334427081c3da7a71915ab3463d921dc310938094745c230f2b35">osTimerPeriodic</a>, &amp;exec2, NULL);</div>
+<div class="line">  id2 = <a class="code hl_function" href="group__CMSIS__RTOS__TimerMgmt.html#gad4e7f785c5f700a509f55a3bf6a62bec" title="Create and Initialize a timer.">osTimerNew</a>(Timer2_Callback, <a class="code hl_enumvalue" href="group__CMSIS__RTOS__TimerMgmt.html#gga7dc24a4c2b90334427081c3da7a71915ab3463d921dc310938094745c230f2b35" title="Repeating timer.">osTimerPeriodic</a>, &amp;exec2, NULL);</div>
 <div class="line">  <span class="keywordflow">if</span> (id2 != NULL) {</div>
 <div class="line">    <span class="comment">// Periodic timer created</span></div>
 <div class="line">  }</div>
 <div class="line">  :</div>
 <div class="line">}</div>
-<div class="ttc" id="acmsis__os2_8h_html"><div class="ttname"><a href="cmsis__os2_8h.html">cmsis_os2.h</a></div></div>
 </div><!-- fragment --> 
 </div>
 </div>
-<a id="ga4f82a98eee4d9ea79507e44340d3d319" name="ga4f82a98eee4d9ea79507e44340d3d319"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga4f82a98eee4d9ea79507e44340d3d319">&#9670;&#160;</a></span>osTimerGetName()</h2>
+<a id="ga7938dde88ada1a01b60f41cf120069c0" name="ga7938dde88ada1a01b60f41cf120069c0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga7938dde88ada1a01b60f41cf120069c0">&#9670;&#160;</a></span>osTimerGetName()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">*const char * osTimerGetName </td>
+          <td class="memname">const char * osTimerGetName </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="group__CMSIS__RTOS__TimerMgmt.html#gaad5409379689ee27bb0a0b56ea4a4b34">osTimerId_t</a>&#160;</td>
           <td class="paramname"><em>timer_id</em></td><td>)</td>
@@ -446,6 +460,8 @@ Returned by:</p><ul>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Get name of a timer. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">timer_id</td><td>timer ID obtained by <a class="el" href="group__CMSIS__RTOS__TimerMgmt.html#gad4e7f785c5f700a509f55a3bf6a62bec">osTimerNew</a>. </td></tr>
@@ -454,7 +470,7 @@ Returned by:</p><ul>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>name as null-terminated string.</dd></dl>
 <p>The function <b>osTimerGetName</b> returns the pointer to the name string of the timer identified by parameter <em>timer_id</em> or <span class="XML-Token">NULL</span> in case of an error.</p>
-<dl class="section note"><dt>Note</dt><dd>This function may be called from Interrupt Service Routines. </dd></dl>
+<dl class="section note"><dt>Note</dt><dd>This function may be called from <a class="el" href="usingOS2.html#CMSIS_RTOS_ISR_Calls">Interrupt Service Routines</a>. </dd></dl>
 
 </div>
 </div>
@@ -483,15 +499,17 @@ Returned by:</p><ul>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Start or restart a timer. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">timer_id</td><td>timer ID obtained by <a class="el" href="group__CMSIS__RTOS__TimerMgmt.html#gad4e7f785c5f700a509f55a3bf6a62bec">osTimerNew</a>. </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">ticks</td><td>time ticks value of the timer. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">ticks</td><td><a class="el" href="usingOS2.html#CMSIS_RTOS_TimeOutValue">time ticks</a> value of the timer. </td></tr>
   </table>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>status code that indicates the execution status of the function.</dd></dl>
-<p>The function <b>osTimerStart</b> starts or restarts a timer specified by the parameter <em>timer_id</em>. The parameter <em>ticks</em> specifies the value of the timer in time ticks.</p>
+<p>The function <b>osTimerStart</b> starts or restarts a timer specified by the parameter <em>timer_id</em>. The parameter <em>ticks</em> specifies the value of the timer in <a class="el" href="usingOS2.html#CMSIS_RTOS_TimeOutValue">time ticks</a>.</p>
 <p>Possible <a class="el" href="group__CMSIS__RTOS__Definitions.html#ga6c0dbe6069e4e7f47bb4cd32ae2b813e">osStatus_t</a> return values:</p><ul>
 <li><em>osOK:</em> the specified timer has been started or restarted.</li>
 <li><em>osErrorISR:</em> <b>osTimerStart</b> cannot be called from interrupt service routines.</li>
@@ -499,8 +517,8 @@ Returned by:</p><ul>
 <li><em>osErrorResource:</em> the timer is in an invalid state.</li>
 <li><em>osErrorSafetyClass:</em> the calling thread safety class is lower than the safety class of the specified timer.</li>
 </ul>
-<dl class="section note"><dt>Note</dt><dd>This function <b>cannot</b> be called from Interrupt Service Routines.</dd></dl>
-<p><b>Code Example</b> </p><div class="fragment"><div class="line"><span class="preprocessor">#include &quot;<a class="code" href="cmsis__os2_8h.html">cmsis_os2.h</a>&quot;</span></div>
+<dl class="section note"><dt>Note</dt><dd>This function <b>cannot</b> be called from <a class="el" href="usingOS2.html#CMSIS_RTOS_ISR_Calls">Interrupt Service Routines</a>.</dd></dl>
+<p><b>Code Example</b> </p><div class="fragment"><div class="line"><span class="preprocessor">#include &quot;cmsis_os2.h&quot;</span></div>
 <div class="line"> </div>
 <div class="line"><span class="keywordtype">void</span> Timer_Callback (<span class="keywordtype">void</span> *arg) {               <span class="comment">// timer callback function</span></div>
 <div class="line">                                                <span class="comment">// arg contains &amp;exec</span></div>
@@ -512,22 +530,20 @@ Returned by:</p><ul>
 <div class="line"><span class="keywordtype">void</span> TimerStart_example (<span class="keywordtype">void</span>) {</div>
 <div class="line">  <a class="code hl_typedef" href="group__CMSIS__RTOS__TimerMgmt.html#gaad5409379689ee27bb0a0b56ea4a4b34">osTimerId_t</a> id;                               <span class="comment">// timer id</span></div>
 <div class="line">  uint32_t    timerDelay;                       <span class="comment">// timer value</span></div>
-<div class="line">  <a class="code hl_enumeration" href="group__CMSIS__RTOS__Definitions.html#ga6c0dbe6069e4e7f47bb4cd32ae2b813e">osStatus_t</a>  status;                           <span class="comment">// function return status</span></div>
+<div class="line">  <a class="code hl_enumeration" href="group__CMSIS__RTOS__Definitions.html#ga6c0dbe6069e4e7f47bb4cd32ae2b813e" title="Status code values returned by CMSIS-RTOS functions.">osStatus_t</a>  status;                           <span class="comment">// function return status</span></div>
 <div class="line"> </div>
 <div class="line">  <span class="comment">// Create periodic timer</span></div>
 <div class="line">  exec = 1U;</div>
-<div class="line">  <span class="keywordtype">id</span> = <a class="code hl_function" href="group__CMSIS__RTOS__TimerMgmt.html#gad4e7f785c5f700a509f55a3bf6a62bec">osTimerNew</a>(Timer_Callback, <a class="code hl_enumvalue" href="group__CMSIS__RTOS__TimerMgmt.html#gga7dc24a4c2b90334427081c3da7a71915ab3463d921dc310938094745c230f2b35">osTimerPeriodic</a>, &amp;exec, NULL);</div>
+<div class="line">  <span class="keywordtype">id</span> = <a class="code hl_function" href="group__CMSIS__RTOS__TimerMgmt.html#gad4e7f785c5f700a509f55a3bf6a62bec" title="Create and Initialize a timer.">osTimerNew</a>(Timer_Callback, <a class="code hl_enumvalue" href="group__CMSIS__RTOS__TimerMgmt.html#gga7dc24a4c2b90334427081c3da7a71915ab3463d921dc310938094745c230f2b35" title="Repeating timer.">osTimerPeriodic</a>, &amp;exec, NULL);</div>
 <div class="line">  <span class="keywordflow">if</span> (<span class="keywordtype">id</span> != NULL)  {</div>
 <div class="line">    timerDelay = 1000U;</div>
-<div class="line">    status = <a class="code hl_function" href="group__CMSIS__RTOS__TimerMgmt.html#gab6ee2859ea657641b7adfac599b8121d">osTimerStart</a>(<span class="keywordtype">id</span>, timerDelay);       <span class="comment">// start timer</span></div>
-<div class="line">    <span class="keywordflow">if</span> (status != <a class="code hl_enumvalue" href="cmsis__os2_8h.html#ga6c0dbe6069e4e7f47bb4cd32ae2b813ea9e1c9e2550bb4de8969a935acffc968f">osOK</a>) {</div>
+<div class="line">    status = <a class="code hl_function" href="group__CMSIS__RTOS__TimerMgmt.html#gab6ee2859ea657641b7adfac599b8121d" title="Start or restart a timer.">osTimerStart</a>(<span class="keywordtype">id</span>, timerDelay);       <span class="comment">// start timer</span></div>
+<div class="line">    <span class="keywordflow">if</span> (status != <a class="code hl_enumvalue" href="group__CMSIS__RTOS__Definitions.html#gga6c0dbe6069e4e7f47bb4cd32ae2b813eab17c65ad8b5bae759882b41c5bf35cda" title="Operation completed successfully.">osOK</a>) {</div>
 <div class="line">      <span class="comment">// Timer could not be started</span></div>
 <div class="line">    }</div>
 <div class="line">  }</div>
 <div class="line">  ;</div>
 <div class="line">}</div>
-<div class="ttc" id="acmsis__os2_8h_html_ga6c0dbe6069e4e7f47bb4cd32ae2b813ea9e1c9e2550bb4de8969a935acffc968f"><div class="ttname"><a href="cmsis__os2_8h.html#ga6c0dbe6069e4e7f47bb4cd32ae2b813ea9e1c9e2550bb4de8969a935acffc968f">osOK</a></div><div class="ttdeci">@ osOK</div><div class="ttdoc">Operation completed successfully.</div><div class="ttdef"><b>Definition:</b> cmsis_os2.h:247</div></div>
-<div class="ttc" id="agroup__CMSIS__RTOS__Definitions_html_ga6c0dbe6069e4e7f47bb4cd32ae2b813e"><div class="ttname"><a href="group__CMSIS__RTOS__Definitions.html#ga6c0dbe6069e4e7f47bb4cd32ae2b813e">osStatus_t</a></div><div class="ttdeci">osStatus_t</div><div class="ttdoc">Status code values returned by CMSIS-RTOS functions.</div><div class="ttdef"><b>Definition:</b> cmsis_os2.h:246</div></div>
 </div><!-- fragment --> 
 </div>
 </div>
@@ -546,6 +562,8 @@ Returned by:</p><ul>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Stop a timer. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">timer_id</td><td>timer ID obtained by <a class="el" href="group__CMSIS__RTOS__TimerMgmt.html#gad4e7f785c5f700a509f55a3bf6a62bec">osTimerNew</a>. </td></tr>
@@ -561,8 +579,8 @@ Returned by:</p><ul>
 <li><em>osErrorResource:</em> the timer is not running (you can only stop a running timer).</li>
 <li><em>osErrorSafetyClass:</em> the calling thread safety class is lower than the safety class of the specified timer.</li>
 </ul>
-<dl class="section note"><dt>Note</dt><dd>This function <b>cannot</b> be called from Interrupt Service Routines.</dd></dl>
-<p><b>Code Example</b> </p><div class="fragment"><div class="line"><span class="preprocessor">#include &quot;<a class="code" href="cmsis__os2_8h.html">cmsis_os2.h</a>&quot;</span></div>
+<dl class="section note"><dt>Note</dt><dd>This function <b>cannot</b> be called from <a class="el" href="usingOS2.html#CMSIS_RTOS_ISR_Calls">Interrupt Service Routines</a>.</dd></dl>
+<p><b>Code Example</b> </p><div class="fragment"><div class="line"><span class="preprocessor">#include &quot;cmsis_os2.h&quot;</span></div>
 <div class="line"> </div>
 <div class="line"><span class="keywordtype">void</span> Timer_Callback (<span class="keywordtype">void</span> *arg);                <span class="comment">// prototype for timer callback function</span></div>
 <div class="line"> </div>
@@ -570,22 +588,21 @@ Returned by:</p><ul>
 <div class="line"> </div>
 <div class="line"><span class="keywordtype">void</span> TimerStop_example (<span class="keywordtype">void</span>) {</div>
 <div class="line">  <a class="code hl_typedef" href="group__CMSIS__RTOS__TimerMgmt.html#gaad5409379689ee27bb0a0b56ea4a4b34">osTimerId_t</a> id;                               <span class="comment">// timer id</span></div>
-<div class="line">  <a class="code hl_enumeration" href="group__CMSIS__RTOS__Definitions.html#ga6c0dbe6069e4e7f47bb4cd32ae2b813e">osStatus_t</a>  status;                           <span class="comment">// function return status</span></div>
+<div class="line">  <a class="code hl_enumeration" href="group__CMSIS__RTOS__Definitions.html#ga6c0dbe6069e4e7f47bb4cd32ae2b813e" title="Status code values returned by CMSIS-RTOS functions.">osStatus_t</a>  status;                           <span class="comment">// function return status</span></div>
 <div class="line"> </div>
 <div class="line">  <span class="comment">// Create periodic timer</span></div>
 <div class="line">  exec = 1U;</div>
-<div class="line">  <span class="keywordtype">id</span> = <a class="code hl_function" href="group__CMSIS__RTOS__TimerMgmt.html#gad4e7f785c5f700a509f55a3bf6a62bec">osTimerNew</a>(Timer_Callback, <a class="code hl_enumvalue" href="group__CMSIS__RTOS__TimerMgmt.html#gga7dc24a4c2b90334427081c3da7a71915ab3463d921dc310938094745c230f2b35">osTimerPeriodic</a>, &amp;exec, NULL);</div>
-<div class="line">  <a class="code hl_function" href="group__CMSIS__RTOS__TimerMgmt.html#gab6ee2859ea657641b7adfac599b8121d">osTimerStart</a>(<span class="keywordtype">id</span>, 1000U);                      <span class="comment">// start timer</span></div>
+<div class="line">  <span class="keywordtype">id</span> = <a class="code hl_function" href="group__CMSIS__RTOS__TimerMgmt.html#gad4e7f785c5f700a509f55a3bf6a62bec" title="Create and Initialize a timer.">osTimerNew</a>(Timer_Callback, <a class="code hl_enumvalue" href="group__CMSIS__RTOS__TimerMgmt.html#gga7dc24a4c2b90334427081c3da7a71915ab3463d921dc310938094745c230f2b35" title="Repeating timer.">osTimerPeriodic</a>, &amp;exec, NULL);</div>
+<div class="line">  <a class="code hl_function" href="group__CMSIS__RTOS__TimerMgmt.html#gab6ee2859ea657641b7adfac599b8121d" title="Start or restart a timer.">osTimerStart</a>(<span class="keywordtype">id</span>, 1000U);                      <span class="comment">// start timer</span></div>
 <div class="line">  :</div>
-<div class="line">  status = <a class="code hl_function" href="group__CMSIS__RTOS__TimerMgmt.html#gabd7a89356da7717293eb0bc5d87b8ac9">osTimerStop</a>(<span class="keywordtype">id</span>);                     <span class="comment">// stop timer</span></div>
-<div class="line">  <span class="keywordflow">if</span> (status != <a class="code hl_enumvalue" href="cmsis__os2_8h.html#ga6c0dbe6069e4e7f47bb4cd32ae2b813ea9e1c9e2550bb4de8969a935acffc968f">osOK</a>) {</div>
+<div class="line">  status = <a class="code hl_function" href="group__CMSIS__RTOS__TimerMgmt.html#gabd7a89356da7717293eb0bc5d87b8ac9" title="Stop a timer.">osTimerStop</a>(<span class="keywordtype">id</span>);                     <span class="comment">// stop timer</span></div>
+<div class="line">  <span class="keywordflow">if</span> (status != <a class="code hl_enumvalue" href="group__CMSIS__RTOS__Definitions.html#gga6c0dbe6069e4e7f47bb4cd32ae2b813eab17c65ad8b5bae759882b41c5bf35cda" title="Operation completed successfully.">osOK</a>) {</div>
 <div class="line">    <span class="comment">// Timer could not be stopped</span></div>
 <div class="line">  }</div>
 <div class="line">  ;</div>
-<div class="line">  <a class="code hl_function" href="group__CMSIS__RTOS__TimerMgmt.html#gab6ee2859ea657641b7adfac599b8121d">osTimerStart</a>(<span class="keywordtype">id</span>, 1000U);                      <span class="comment">// start timer again</span></div>
+<div class="line">  <a class="code hl_function" href="group__CMSIS__RTOS__TimerMgmt.html#gab6ee2859ea657641b7adfac599b8121d" title="Start or restart a timer.">osTimerStart</a>(<span class="keywordtype">id</span>, 1000U);                      <span class="comment">// start timer again</span></div>
 <div class="line">  ;</div>
 <div class="line">}</div>
-<div class="ttc" id="agroup__CMSIS__RTOS__TimerMgmt_html_gabd7a89356da7717293eb0bc5d87b8ac9"><div class="ttname"><a href="group__CMSIS__RTOS__TimerMgmt.html#gabd7a89356da7717293eb0bc5d87b8ac9">osTimerStop</a></div><div class="ttdeci">osStatus_t osTimerStop(osTimerId_t timer_id)</div><div class="ttdoc">Stop a timer.</div></div>
 </div><!-- fragment --> 
 </div>
 </div>
@@ -604,6 +621,8 @@ Returned by:</p><ul>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Check if a timer is running. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">timer_id</td><td>timer ID obtained by <a class="el" href="group__CMSIS__RTOS__TimerMgmt.html#gad4e7f785c5f700a509f55a3bf6a62bec">osTimerNew</a>. </td></tr>
@@ -612,7 +631,7 @@ Returned by:</p><ul>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>0 not running, 1 running.</dd></dl>
 <p>The function <b>osTimerIsRunning</b> checks whether a timer specified by parameter <em>timer_id</em> is running. It returns <span class="XML-Token">1</span> if the timer is running and <span class="XML-Token">0</span> if the timer is stopped or an error occurred.</p>
-<dl class="section note"><dt>Note</dt><dd>This function <b>cannot</b> be called from Interrupt Service Routines. </dd></dl>
+<dl class="section note"><dt>Note</dt><dd>This function <b>cannot</b> be called from <a class="el" href="usingOS2.html#CMSIS_RTOS_ISR_Calls">Interrupt Service Routines</a>. </dd></dl>
 
 </div>
 </div>
@@ -631,6 +650,8 @@ Returned by:</p><ul>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Delete a timer. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">timer_id</td><td>timer ID obtained by <a class="el" href="group__CMSIS__RTOS__TimerMgmt.html#gad4e7f785c5f700a509f55a3bf6a62bec">osTimerNew</a>. </td></tr>
@@ -646,8 +667,8 @@ Returned by:</p><ul>
 <li><em>osErrorResource:</em> the timer is in an invalid state.</li>
 <li><em>osErrorSafetyClass:</em> the calling thread safety class is lower than the safety class of the specified timer.</li>
 </ul>
-<dl class="section note"><dt>Note</dt><dd>This function <b>cannot</b> be called from Interrupt Service Routines.</dd></dl>
-<p><b>Code Example</b> </p><div class="fragment"><div class="line"><span class="preprocessor">#include &quot;<a class="code" href="cmsis__os2_8h.html">cmsis_os2.h</a>&quot;</span></div>
+<dl class="section note"><dt>Note</dt><dd>This function <b>cannot</b> be called from <a class="el" href="usingOS2.html#CMSIS_RTOS_ISR_Calls">Interrupt Service Routines</a>.</dd></dl>
+<p><b>Code Example</b> </p><div class="fragment"><div class="line"><span class="preprocessor">#include &quot;cmsis_os2.h&quot;</span></div>
 <div class="line"> </div>
 <div class="line"><span class="keywordtype">void</span> Timer_Callback (<span class="keywordtype">void</span> *arg);                <span class="comment">// prototype for timer callback function</span></div>
 <div class="line"> </div>
@@ -655,20 +676,92 @@ Returned by:</p><ul>
 <div class="line"> </div>
 <div class="line"><span class="keywordtype">void</span> TimerDelete_example (<span class="keywordtype">void</span>) {</div>
 <div class="line">  <a class="code hl_typedef" href="group__CMSIS__RTOS__TimerMgmt.html#gaad5409379689ee27bb0a0b56ea4a4b34">osTimerId_t</a> id;                               <span class="comment">// timer id</span></div>
-<div class="line">  <a class="code hl_enumeration" href="group__CMSIS__RTOS__Definitions.html#ga6c0dbe6069e4e7f47bb4cd32ae2b813e">osStatus_t</a>  status;                           <span class="comment">// function return status  </span></div>
+<div class="line">  <a class="code hl_enumeration" href="group__CMSIS__RTOS__Definitions.html#ga6c0dbe6069e4e7f47bb4cd32ae2b813e" title="Status code values returned by CMSIS-RTOS functions.">osStatus_t</a>  status;                           <span class="comment">// function return status  </span></div>
 <div class="line"> </div>
 <div class="line">  <span class="comment">// Create periodic timer</span></div>
 <div class="line">  exec = 1U;</div>
-<div class="line">  <span class="keywordtype">id</span> = <a class="code hl_function" href="group__CMSIS__RTOS__TimerMgmt.html#gad4e7f785c5f700a509f55a3bf6a62bec">osTimerNew</a>(Timer_Callback, <a class="code hl_enumvalue" href="group__CMSIS__RTOS__TimerMgmt.html#gga7dc24a4c2b90334427081c3da7a71915ab3463d921dc310938094745c230f2b35">osTimerPeriodic</a>, &amp;exec, NULL);</div>
-<div class="line">  <a class="code hl_function" href="group__CMSIS__RTOS__TimerMgmt.html#gab6ee2859ea657641b7adfac599b8121d">osTimerStart</a>(<span class="keywordtype">id</span>, 1000U);                      <span class="comment">// start timer</span></div>
+<div class="line">  <span class="keywordtype">id</span> = <a class="code hl_function" href="group__CMSIS__RTOS__TimerMgmt.html#gad4e7f785c5f700a509f55a3bf6a62bec" title="Create and Initialize a timer.">osTimerNew</a>(Timer_Callback, <a class="code hl_enumvalue" href="group__CMSIS__RTOS__TimerMgmt.html#gga7dc24a4c2b90334427081c3da7a71915ab3463d921dc310938094745c230f2b35" title="Repeating timer.">osTimerPeriodic</a>, &amp;exec, NULL);</div>
+<div class="line">  <a class="code hl_function" href="group__CMSIS__RTOS__TimerMgmt.html#gab6ee2859ea657641b7adfac599b8121d" title="Start or restart a timer.">osTimerStart</a>(<span class="keywordtype">id</span>, 1000U);                      <span class="comment">// start timer</span></div>
 <div class="line">  ;</div>
-<div class="line">  status = <a class="code hl_function" href="group__CMSIS__RTOS__TimerMgmt.html#gad0001dd74721ab461789324806db2453">osTimerDelete</a>(<span class="keywordtype">id</span>);                   <span class="comment">// stop and delete timer</span></div>
-<div class="line">  <span class="keywordflow">if</span> (status != <a class="code hl_enumvalue" href="cmsis__os2_8h.html#ga6c0dbe6069e4e7f47bb4cd32ae2b813ea9e1c9e2550bb4de8969a935acffc968f">osOK</a>) {</div>
+<div class="line">  status = <a class="code hl_function" href="group__CMSIS__RTOS__TimerMgmt.html#gad0001dd74721ab461789324806db2453" title="Delete a timer.">osTimerDelete</a>(<span class="keywordtype">id</span>);                   <span class="comment">// stop and delete timer</span></div>
+<div class="line">  <span class="keywordflow">if</span> (status != <a class="code hl_enumvalue" href="group__CMSIS__RTOS__Definitions.html#gga6c0dbe6069e4e7f47bb4cd32ae2b813eab17c65ad8b5bae759882b41c5bf35cda" title="Operation completed successfully.">osOK</a>) {</div>
 <div class="line">    <span class="comment">// Timer could not be deleted</span></div>
 <div class="line">  } </div>
 <div class="line">  ;</div>
 <div class="line">}</div>
 </div><!-- fragment --> 
+</div>
+</div>
+<h2 class="groupheader">Variable Documentation</h2>
+<a id="ga6e93b49cb79c12f768d72580c7731f30" name="ga6e93b49cb79c12f768d72580c7731f30"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga6e93b49cb79c12f768d72580c7731f30">&#9670;&#160;</a></span>attr_bits</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">attr_bits</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>attribute bits </p>
+<p>Reserved for future use (must be set to '0' for future compatibility). </p>
+
+</div>
+</div>
+<a id="ga1e100dc33d403841ed3c344e3397868e" name="ga1e100dc33d403841ed3c344e3397868e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga1e100dc33d403841ed3c344e3397868e">&#9670;&#160;</a></span>cb_mem</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">cb_mem</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>memory for control block </p>
+<p>Pointer to a memory for the timer control block object. Refer to <a class="el" href="usingOS2.html#CMSIS_RTOS_MemoryMgmt_Manual">Manual User-defined Allocation</a> for more information.</p>
+<p>Default: <span class="XML-Token">NULL</span> to use <a class="el" href="usingOS2.html#CMSIS_RTOS_MemoryMgmt_Automatic">Automatic Dynamic Allocation</a> for the timer control block. </p>
+
+</div>
+</div>
+<a id="gaa55a4335d12dc2785dc00fdc292d1159" name="gaa55a4335d12dc2785dc00fdc292d1159"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gaa55a4335d12dc2785dc00fdc292d1159">&#9670;&#160;</a></span>cb_size</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">cb_size</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>size of provided memory for control block </p>
+<p>The size (in bytes) of memory block passed with <a class="el" href="group__CMSIS__RTOS__TimerMgmt.html#ga1e100dc33d403841ed3c344e3397868e">cb_mem</a>. Required value depends on the underlying kernel implementation.</p>
+<p>Default: <span class="XML-Token">0</span> as the default is no memory provided with <a class="el" href="group__CMSIS__RTOS__TimerMgmt.html#ga1e100dc33d403841ed3c344e3397868e">cb_mem</a>. </p>
+
+</div>
+</div>
+<a id="gab74e6bf80237ddc4109968cedc58c151" name="gab74e6bf80237ddc4109968cedc58c151"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gab74e6bf80237ddc4109968cedc58c151">&#9670;&#160;</a></span>name</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">name</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>name of the timer </p>
+<p>Pointer to a constant string with a human readable name (displayed during debugging) of the timer object.</p>
+<p>Default: <span class="XML-Token">NULL</span> no name specified. </p>
+
 </div>
 </div>
 </div><!-- contents -->

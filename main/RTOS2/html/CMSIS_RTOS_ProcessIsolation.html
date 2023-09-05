@@ -5,7 +5,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>CMSIS-RTOS2: cmsis_os2_Timer.txt File Reference</title>
+<title>CMSIS-RTOS2: Process Isolation</title>
 <link href="doxygen.css" rel="stylesheet" type="text/css"/>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <link href="extra_navtree.css" rel="stylesheet" type="text/css"/>
@@ -101,7 +101,7 @@ var searchBox = new SearchBox("searchBox", "search/",'.html');
 </div>
 <script type="text/javascript">
 /* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
-$(document).ready(function(){initNavTree('cmsis__os2__Timer_8txt.html',''); initResizable(); });
+$(document).ready(function(){initNavTree('CMSIS_RTOS_ProcessIsolation.html',''); initResizable(); });
 /* @license-end */
 </script>
 <div id="doc-content">
@@ -126,16 +126,34 @@ $(document).ready(function(){initNavTree('cmsis__os2__Timer_8txt.html',''); init
 </div>
 </div>
 
-<div class="header">
-  <div class="headertitle"><div class="title">cmsis_os2_Timer.txt File Reference</div></div>
+<div><div class="header">
+  <div class="headertitle"><div class="title">Process Isolation </div></div>
 </div><!--header-->
 <div class="contents">
-</div><!-- contents -->
+<div class="textblock"><p><a class="anchor" id="md_src_processIsolation"></a> CMSIS-RTOS2 API supports a concept of <b>process isolation</b> that allows developers to protect execution of critical software tasks against potential flaws in other parts of a program.</p>
+<p>Process Isolation in CMSIS-RTOS2 is enabled by following features:</p>
+<ul>
+<li><a class="el" href="rtos_process_isolation_mpu.html">MPU Protected Zones</a> for memory access protection in the system using Memory Protection Unit (MPU).<br  />
+ RTOS threads are executed with permission to access only memory regions and peripherals required for their operation. Hence thread code cannot accidentally modify critical RTOS kernel data or memory dedicated to other tasks.</li>
+</ul>
+<ul>
+<li><a class="el" href="rtos_process_isolation_safety_class.html">Safety Classes</a> for access protection to RTOS objects via RTOS APIs.<br  />
+ The RTOS objects with a higher safety class assigned to them cannot be modified via RTOS API functions from threads that have lower safety class assigned.</li>
+</ul>
+<ul>
+<li><a class="el" href="rtos_process_isolation_thread_wdt.html">Thread Watchdogs</a> to verify execution times of threads.<br  />
+ Each thread can maintain own thread watchdog and in case of timing violations, corresponding thread watchdog alarm will be triggered.</li>
+</ul>
+<ul>
+<li><a class="el" href="rtos_process_isolation_faults.html">Fault Handling</a> in case of a detected failure (for example thread watchdog alarm or MPU Fault).<br  />
+ The RTOS provides functions to block execution of malfunctioning components and with that dedicate system resources for operation of the safety critical threads.</li>
+</ul>
+</div></div><!-- contents -->
+</div><!-- PageDoc -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="cmsis__os2__Timer_8txt.html">cmsis_os2_Timer.txt</a></li>
     <li class="footer">
       <script type="text/javascript">
         <!--

@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['kernel_0',['kernel',['../group__CMSIS__RTOS__KernelCtrl.html#ad8075d3f42141346ae2c56389358f9e7',1,'osVersion_t']]],
-  ['kernel_20information_20and_20control_1',['Kernel Information and Control',['../group__CMSIS__RTOS__KernelCtrl.html',1,'']]]
+  ['priority_0',['priority',['../group__CMSIS__RTOS__ThreadMgmt.html#a6a5183df4c54c3e28dc8dc704f2487d5',1,'osThreadAttr_t']]],
+  ['process_20isolation_1',['Process Isolation',['../CMSIS_RTOS_ProcessIsolation.html',1,'usingOS2']]]
 ];

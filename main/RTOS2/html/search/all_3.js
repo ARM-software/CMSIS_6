@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['definitions_0',['Definitions',['../group__CMSIS__RTOS__Definitions.html',1,'']]]
+  ['fault_20handling_0',['Fault Handling',['../rtos_process_isolation_faults.html',1,'CMSIS_RTOS_ProcessIsolation']]],
+  ['flags_20functions_20error_20codes_1',['Flags Functions Error Codes',['../group__flags__error__codes.html',1,'']]]
 ];

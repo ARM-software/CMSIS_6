@@ -131,7 +131,7 @@ $(document).ready(function(){initNavTree('group__CMSIS__RTOS__EventFlags.html','
 <a href="#nested-classes">Data Structures</a> &#124;
 <a href="#typedef-members">Typedefs</a> &#124;
 <a href="#func-members">Functions</a>  </div>
-  <div class="headertitle"><div class="title">Event Flags<div class="ingroups"><a class="el" href="group__CMSIS__RTOS.html">CMSIS-RTOS API v2</a></div></div></div>
+  <div class="headertitle"><div class="title">Event Flags<div class="ingroups"><a class="el" href="group__CMSIS__RTOS.html">CMSIS-RTOS2 API</a></div></div></div>
 </div><!--header-->
 <div class="contents">
 
@@ -174,6 +174,7 @@ Functions</h2></td></tr>
 <tr class="separator:ga59f4ddf0ee8c395b1672bb978d1cfc88"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Description</h2>
+<p>Synchronize threads using event flags. </p>
 <p>The event flags management functions in CMSIS-RTOS allow you to control or wait for event flags. Each signal has up to 31 event flags.</p>
 <p>A thread</p><ul>
 <li>can wait for event flags to be set (using <a class="el" href="group__CMSIS__RTOS__EventFlags.html#ga52acb34a8322e58020227344fe662b4e">osEventFlagsWait</a>). Using this function, it enters the <a class="el" href="group__CMSIS__RTOS__ThreadMgmt.html#ThreadStates">BLOCKED</a> state.</li>
@@ -181,10 +182,8 @@ Functions</h2></td></tr>
 <li>may clear its own signals or the signals of other threads (using <a class="el" href="group__CMSIS__RTOS__EventFlags.html#ga93bf258ca0007c6641fbe8e4f2b8a1e5">osEventFlagsClear</a>).</li>
 </ul>
 <p>When a thread wakes up and resumes execution, its signal flags are automatically cleared (unless event flags option <a class="el" href="group__CMSIS__RTOS__Definitions.html#gaade844a42237d8c37569d4d9b16b9f1c">osFlagsNoClear</a> is specified).</p>
-<dl class="section note"><dt>Note</dt><dd>The functions <a class="el" href="group__CMSIS__RTOS__EventFlags.html#ga33b71d14cecf90b4e72639dd19f23a5e">osEventFlagsSet</a>, <a class="el" href="group__CMSIS__RTOS__EventFlags.html#ga93bf258ca0007c6641fbe8e4f2b8a1e5">osEventFlagsClear</a>, <a class="el" href="group__CMSIS__RTOS__EventFlags.html#ga8bda3185f46bfd278cea8a6cf357677d">osEventFlagsGet</a>, and <a class="el" href="group__CMSIS__RTOS__EventFlags.html#ga52acb34a8322e58020227344fe662b4e">osEventFlagsWait</a> can be called from Interrupt Service Routines. </dd>
-<dd>
-Refer to eventFlagsConfig for RTX5 configuration options.</dd></dl>
-<h2><a class="anchor" id="autotoc_md2"></a>
+<dl class="section note"><dt>Note</dt><dd>The functions <a class="el" href="group__CMSIS__RTOS__EventFlags.html#ga33b71d14cecf90b4e72639dd19f23a5e">osEventFlagsSet</a>, <a class="el" href="group__CMSIS__RTOS__EventFlags.html#ga93bf258ca0007c6641fbe8e4f2b8a1e5">osEventFlagsClear</a>, <a class="el" href="group__CMSIS__RTOS__EventFlags.html#ga8bda3185f46bfd278cea8a6cf357677d">osEventFlagsGet</a>, and <a class="el" href="group__CMSIS__RTOS__EventFlags.html#ga52acb34a8322e58020227344fe662b4e">osEventFlagsWait</a> can be called from <a class="el" href="usingOS2.html#CMSIS_RTOS_ISR_Calls">Interrupt Service Routines</a>.</dd></dl>
+<h2><a class="anchor" id="autotoc_md3"></a>
 Working with Events</h2>
 <p>Here is a simple example that shows how two thread can communicate with each others using event flags:</p>
 <div class="image">
@@ -192,18 +191,13 @@ Working with Events</h2>
 <div class="caption">
 Simple event communication</div></div>
 <p>The following steps are required to use event flags:</p><ol type="1">
-<li>In the thread that is supposed to send a event with id sig1_id, call the set function: <div class="fragment"><div class="line"><a class="code hl_function" href="group__CMSIS__RTOS__Wait.html#gaf6055a51390ef65b6b6edc28bf47322e">osDelay</a>(1000U);                                           <span class="comment">// wait for 1 second</span></div>
-<div class="line"><a class="code hl_function" href="group__CMSIS__RTOS__EventFlags.html#ga33b71d14cecf90b4e72639dd19f23a5e">osEventFlagsSet</a>(sig1_id, 0x0001U);                        <span class="comment">// set the flag 0x0001U for event sig1_id</span></div>
-<div class="ttc" id="agroup__CMSIS__RTOS__EventFlags_html_ga33b71d14cecf90b4e72639dd19f23a5e"><div class="ttname"><a href="group__CMSIS__RTOS__EventFlags.html#ga33b71d14cecf90b4e72639dd19f23a5e">osEventFlagsSet</a></div><div class="ttdeci">uint32_t osEventFlagsSet(osEventFlagsId_t ef_id, uint32_t flags)</div><div class="ttdoc">Set the specified Event Flags.</div></div>
-<div class="ttc" id="agroup__CMSIS__RTOS__Wait_html_gaf6055a51390ef65b6b6edc28bf47322e"><div class="ttname"><a href="group__CMSIS__RTOS__Wait.html#gaf6055a51390ef65b6b6edc28bf47322e">osDelay</a></div><div class="ttdeci">osStatus_t osDelay(uint32_t ticks)</div><div class="ttdoc">Wait for Timeout (Time Delay).</div></div>
+<li>In the thread that is supposed to send a event with id sig1_id, call the set function: <div class="fragment"><div class="line"><a class="code hl_function" href="group__CMSIS__RTOS__Wait.html#gaf6055a51390ef65b6b6edc28bf47322e" title="Wait for Timeout (Time Delay).">osDelay</a>(1000U);                                           <span class="comment">// wait for 1 second</span></div>
+<div class="line"><a class="code hl_function" href="group__CMSIS__RTOS__EventFlags.html#ga33b71d14cecf90b4e72639dd19f23a5e" title="Set the specified Event Flags.">osEventFlagsSet</a>(sig1_id, 0x0001U);                        <span class="comment">// set the flag 0x0001U for event sig1_id</span></div>
 </div><!-- fragment --></li>
-<li>In another thread (or threads) that are supposed to wait for the event, call the wait function: <div class="fragment"><div class="line"><a class="code hl_function" href="group__CMSIS__RTOS__EventFlags.html#ga52acb34a8322e58020227344fe662b4e">osEventFlagsWait</a>(sig1_id, 0x0001U, NULL, <a class="code hl_define" href="group__CMSIS__RTOS__Definitions.html#ga9eb9a7a797a42e4b55eb171ecc609ddb">osWaitForever</a>);  <span class="comment">// wait forever for any flag</span></div>
-<div class="ttc" id="agroup__CMSIS__RTOS__Definitions_html_ga9eb9a7a797a42e4b55eb171ecc609ddb"><div class="ttname"><a href="group__CMSIS__RTOS__Definitions.html#ga9eb9a7a797a42e4b55eb171ecc609ddb">osWaitForever</a></div><div class="ttdeci">#define osWaitForever</div><div class="ttdoc">Wait forever timeout value.</div><div class="ttdef"><b>Definition:</b> cmsis_os2.h:193</div></div>
-<div class="ttc" id="agroup__CMSIS__RTOS__EventFlags_html_ga52acb34a8322e58020227344fe662b4e"><div class="ttname"><a href="group__CMSIS__RTOS__EventFlags.html#ga52acb34a8322e58020227344fe662b4e">osEventFlagsWait</a></div><div class="ttdeci">uint32_t osEventFlagsWait(osEventFlagsId_t ef_id, uint32_t flags, uint32_t options, uint32_t timeout)</div><div class="ttdoc">Wait for one or more Event Flags to become signaled.</div></div>
+<li>In another thread (or threads) that are supposed to wait for the event, call the wait function: <div class="fragment"><div class="line"><a class="code hl_function" href="group__CMSIS__RTOS__EventFlags.html#ga52acb34a8322e58020227344fe662b4e" title="Wait for one or more Event Flags to become signaled.">osEventFlagsWait</a>(sig1_id, 0x0001U, NULL, <a class="code hl_define" href="group__CMSIS__RTOS__Definitions.html#ga9eb9a7a797a42e4b55eb171ecc609ddb" title="Wait forever timeout value.">osWaitForever</a>);  <span class="comment">// wait forever for any flag</span></div>
 </div><!-- fragment --></li>
 </ol>
-<p>The following complete example code can be directly used with the "CMSIS-RTOS2 main template" and is also provided as a stand-alone template for RTX5:</p>
-<p><b>Code Example</b> </p><div class="fragment"><div class="line"><span class="preprocessor">#include &quot;<a class="code" href="cmsis__os2_8h.html">cmsis_os2.h</a>&quot;</span>                          <span class="comment">// CMSIS RTOS header file</span></div>
+<p><b>Code Example</b> </p><div class="fragment"><div class="line"><span class="preprocessor">#include &quot;cmsis_os2.h&quot;</span>                          <span class="comment">// CMSIS RTOS header file</span></div>
 <div class="line"> </div>
 <div class="line"><span class="comment">/*----------------------------------------------------------------------------</span></div>
 <div class="line"><span class="comment"> *  Event Flags creation &amp; usage</span></div>
@@ -221,16 +215,16 @@ Simple event communication</div></div>
 <div class="line"> </div>
 <div class="line"><span class="keywordtype">int</span> Init_Events (<span class="keywordtype">void</span>) {</div>
 <div class="line"> </div>
-<div class="line">  evt_id = <a class="code hl_function" href="group__CMSIS__RTOS__EventFlags.html#gab14b1caeb12ffa42cce1bfe889cd07df">osEventFlagsNew</a>(NULL);</div>
+<div class="line">  evt_id = <a class="code hl_function" href="group__CMSIS__RTOS__EventFlags.html#gab14b1caeb12ffa42cce1bfe889cd07df" title="Create and Initialize an Event Flags object.">osEventFlagsNew</a>(NULL);</div>
 <div class="line">  <span class="keywordflow">if</span> (evt_id == NULL) {</div>
 <div class="line">    ; <span class="comment">// Event Flags object not created, handle failure</span></div>
 <div class="line">  }</div>
 <div class="line"> </div>
-<div class="line">  tid_Thread_EventSender = <a class="code hl_function" href="group__CMSIS__RTOS__ThreadMgmt.html#ga48d68b8666d99d28fa646ee1d2182b8f">osThreadNew</a>(Thread_EventSender, NULL, NULL);</div>
+<div class="line">  tid_Thread_EventSender = <a class="code hl_function" href="group__CMSIS__RTOS__ThreadMgmt.html#ga48d68b8666d99d28fa646ee1d2182b8f" title="Create a thread and add it to Active Threads.">osThreadNew</a>(Thread_EventSender, NULL, NULL);</div>
 <div class="line">  <span class="keywordflow">if</span> (tid_Thread_EventSender == NULL) {</div>
 <div class="line">    <span class="keywordflow">return</span>(-1);</div>
 <div class="line">  }</div>
-<div class="line">  tid_Thread_EventReceiver = <a class="code hl_function" href="group__CMSIS__RTOS__ThreadMgmt.html#ga48d68b8666d99d28fa646ee1d2182b8f">osThreadNew</a>(Thread_EventReceiver, NULL, NULL);</div>
+<div class="line">  tid_Thread_EventReceiver = <a class="code hl_function" href="group__CMSIS__RTOS__ThreadMgmt.html#ga48d68b8666d99d28fa646ee1d2182b8f" title="Create a thread and add it to Active Threads.">osThreadNew</a>(Thread_EventReceiver, NULL, NULL);</div>
 <div class="line">  <span class="keywordflow">if</span> (tid_Thread_EventReceiver == NULL) {</div>
 <div class="line">    <span class="keywordflow">return</span>(-1);</div>
 <div class="line">  }</div>
@@ -241,8 +235,8 @@ Simple event communication</div></div>
 <div class="line"><span class="keywordtype">void</span> Thread_EventSender (<span class="keywordtype">void</span> *argument) {</div>
 <div class="line"> </div>
 <div class="line">  <span class="keywordflow">while</span> (1) {    </div>
-<div class="line">    <a class="code hl_function" href="group__CMSIS__RTOS__EventFlags.html#ga33b71d14cecf90b4e72639dd19f23a5e">osEventFlagsSet</a>(evt_id, FLAGS_MSK1);</div>
-<div class="line">    <a class="code hl_function" href="group__CMSIS__RTOS__ThreadMgmt.html#gad01c7ec26535b1de6b018bb9466720e2">osThreadYield</a>();                            <span class="comment">// suspend thread</span></div>
+<div class="line">    <a class="code hl_function" href="group__CMSIS__RTOS__EventFlags.html#ga33b71d14cecf90b4e72639dd19f23a5e" title="Set the specified Event Flags.">osEventFlagsSet</a>(evt_id, FLAGS_MSK1);</div>
+<div class="line">    <a class="code hl_function" href="group__CMSIS__RTOS__ThreadMgmt.html#gad01c7ec26535b1de6b018bb9466720e2" title="Pass control to next thread that is in state READY.">osThreadYield</a>();                            <span class="comment">// suspend thread</span></div>
 <div class="line">  }</div>
 <div class="line">}</div>
 <div class="line"> </div>
@@ -250,17 +244,10 @@ Simple event communication</div></div>
 <div class="line">  uint32_t flags;</div>
 <div class="line"> </div>
 <div class="line">  <span class="keywordflow">while</span> (1) {</div>
-<div class="line">    flags = <a class="code hl_function" href="group__CMSIS__RTOS__EventFlags.html#ga52acb34a8322e58020227344fe662b4e">osEventFlagsWait</a>(evt_id, FLAGS_MSK1, <a class="code hl_define" href="group__CMSIS__RTOS__Definitions.html#ga18e63587b8450d5b8798b6f6ec04e012">osFlagsWaitAny</a>, <a class="code hl_define" href="group__CMSIS__RTOS__Definitions.html#ga9eb9a7a797a42e4b55eb171ecc609ddb">osWaitForever</a>);</div>
+<div class="line">    flags = <a class="code hl_function" href="group__CMSIS__RTOS__EventFlags.html#ga52acb34a8322e58020227344fe662b4e" title="Wait for one or more Event Flags to become signaled.">osEventFlagsWait</a>(evt_id, FLAGS_MSK1, <a class="code hl_define" href="group__CMSIS__RTOS__Definitions.html#ga18e63587b8450d5b8798b6f6ec04e012" title="Wait for any flag (default).">osFlagsWaitAny</a>, <a class="code hl_define" href="group__CMSIS__RTOS__Definitions.html#ga9eb9a7a797a42e4b55eb171ecc609ddb" title="Wait forever timeout value.">osWaitForever</a>);</div>
 <div class="line">    <span class="comment">//handle event</span></div>
 <div class="line">  }</div>
 <div class="line">}</div>
-<div class="ttc" id="acmsis__os2_8h_html"><div class="ttname"><a href="cmsis__os2_8h.html">cmsis_os2.h</a></div></div>
-<div class="ttc" id="agroup__CMSIS__RTOS__Definitions_html_ga18e63587b8450d5b8798b6f6ec04e012"><div class="ttname"><a href="group__CMSIS__RTOS__Definitions.html#ga18e63587b8450d5b8798b6f6ec04e012">osFlagsWaitAny</a></div><div class="ttdeci">#define osFlagsWaitAny</div><div class="ttdoc">Wait for any flag (default).</div><div class="ttdef"><b>Definition:</b> cmsis_os2.h:196</div></div>
-<div class="ttc" id="agroup__CMSIS__RTOS__EventFlags_html_gab14b1caeb12ffa42cce1bfe889cd07df"><div class="ttname"><a href="group__CMSIS__RTOS__EventFlags.html#gab14b1caeb12ffa42cce1bfe889cd07df">osEventFlagsNew</a></div><div class="ttdeci">osEventFlagsId_t osEventFlagsNew(const osEventFlagsAttr_t *attr)</div><div class="ttdoc">Create and Initialize an Event Flags object.</div></div>
-<div class="ttc" id="agroup__CMSIS__RTOS__EventFlags_html_gafdbab933146d6d81d7cca7287e267a50"><div class="ttname"><a href="group__CMSIS__RTOS__EventFlags.html#gafdbab933146d6d81d7cca7287e267a50">osEventFlagsId_t</a></div><div class="ttdeci">void * osEventFlagsId_t</div><div class="ttdef"><b>Definition:</b> cmsis_os2.h:266</div></div>
-<div class="ttc" id="agroup__CMSIS__RTOS__ThreadMgmt_html_ga48d68b8666d99d28fa646ee1d2182b8f"><div class="ttname"><a href="group__CMSIS__RTOS__ThreadMgmt.html#ga48d68b8666d99d28fa646ee1d2182b8f">osThreadNew</a></div><div class="ttdeci">osThreadId_t osThreadNew(osThreadFunc_t func, void *argument, const osThreadAttr_t *attr)</div><div class="ttdoc">Create a thread and add it to Active Threads.</div></div>
-<div class="ttc" id="agroup__CMSIS__RTOS__ThreadMgmt_html_gaa6c32fe2a3e0a2e01f212d55b02e51c7"><div class="ttname"><a href="group__CMSIS__RTOS__ThreadMgmt.html#gaa6c32fe2a3e0a2e01f212d55b02e51c7">osThreadId_t</a></div><div class="ttdeci">void * osThreadId_t</div><div class="ttdef"><b>Definition:</b> cmsis_os2.h:260</div></div>
-<div class="ttc" id="agroup__CMSIS__RTOS__ThreadMgmt_html_gad01c7ec26535b1de6b018bb9466720e2"><div class="ttname"><a href="group__CMSIS__RTOS__ThreadMgmt.html#gad01c7ec26535b1de6b018bb9466720e2">osThreadYield</a></div><div class="ttdeci">osStatus_t osThreadYield(void)</div><div class="ttdoc">Pass control to next thread that is in state READY.</div></div>
 </div><!-- fragment --> <hr/><h2 class="groupheader">Data Structure Documentation</h2>
 <a name="structosEventFlagsAttr__t" id="structosEventFlagsAttr__t"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#structosEventFlagsAttr__t">&#9670;&#160;</a></span>osEventFlagsAttr_t</h2>
@@ -273,8 +260,9 @@ Simple event communication</div></div>
         </tr>
       </table>
 </div><div class="memdoc">
-<div class="textblock"><p>Attributes to configure an event flag set.</p>
-<p>Refer to <a class="el" href="group__CMSIS__RTOS__MemoryMgmt.html">Memory Management</a> for details about usage of</p><ul>
+<div class="textblock"><p>Attributes structure for event flags. </p>
+<p>Attributes to configure an event flag set.</p>
+<p>Refer to <a class="el" href="usingOS2.html#CMSIS_RTOS_MemoryMgmt">Memory Management</a> for details about usage of</p><ul>
 <li><a class="el" href="group__CMSIS__RTOS__EventFlags.html#a1e100dc33d403841ed3c344e3397868e" title="memory for control block">osEventFlagsAttr_t::cb_mem</a></li>
 <li><a class="el" href="group__CMSIS__RTOS__EventFlags.html#aa55a4335d12dc2785dc00fdc292d1159" title="size of provided memory for control block">osEventFlagsAttr_t::cb_size</a> </li>
 </ul>
@@ -300,15 +288,15 @@ attribute bits <p>Reserved for future use (must be set to '0' for future compati
 <td class="fieldname">
 cb_mem</td>
 <td class="fielddoc">
-memory for control block <p>Pointer to a memory for the event flag control block object. Refer to StaticObjectMemory for more information.</p>
-<p>Default: <span class="XML-Token">NULL</span> to use <a class="el" href="group__CMSIS__RTOS__MemoryMgmt.html#CMSIS_RTOS_MemoryMgmt_Automatic">Automatic Dynamic Allocation</a> for the event flag control block. </p>
+memory for control block <p>Pointer to a memory for the event flag control block object. Refer to <a class="el" href="usingOS2.html#CMSIS_RTOS_MemoryMgmt_Manual">Manual User-defined Allocation</a> for more information.</p>
+<p>Default: <span class="XML-Token">NULL</span> to use <a class="el" href="usingOS2.html#CMSIS_RTOS_MemoryMgmt_Automatic">Automatic Dynamic Allocation</a> for the event flag control block. </p>
 </td></tr>
 <tr><td class="fieldtype">
 <a id="aa55a4335d12dc2785dc00fdc292d1159" name="aa55a4335d12dc2785dc00fdc292d1159"></a>uint32_t</td>
 <td class="fieldname">
 cb_size</td>
 <td class="fielddoc">
-size of provided memory for control block <p>The size (in bytes) of memory block passed with <a class="el" href="group__CMSIS__RTOS__EventFlags.html#a1e100dc33d403841ed3c344e3397868e">cb_mem</a>. For RTX, the minimum value is defined with osRtxEventFlagsCbSize (higher values are permitted).</p>
+size of provided memory for control block <p>The size (in bytes) of memory block passed with <a class="el" href="group__CMSIS__RTOS__EventFlags.html#a1e100dc33d403841ed3c344e3397868e">cb_mem</a>. Required value depends on the underlying kernel implementation.</p>
 <p>Default: <span class="XML-Token">0</span> as the default is no memory provided with <a class="el" href="group__CMSIS__RTOS__EventFlags.html#a1e100dc33d403841ed3c344e3397868e">cb_mem</a>. </p>
 </td></tr>
 </table>
@@ -350,6 +338,8 @@ size of provided memory for control block <p>The size (in bytes) of memory block
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Create and Initialize an Event Flags object. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">attr</td><td>event flags attributes; NULL: default values. </td></tr>
@@ -359,14 +349,14 @@ size of provided memory for control block <p>The size (in bytes) of memory block
 <dl class="section return"><dt>Returns</dt><dd>event flags ID for reference by other functions or NULL in case of error.</dd></dl>
 <p>The function <b>osEventFlagsNew</b> creates a new event flags object that is used to send events across threads and returns the pointer to the event flags object identifier or <span class="XML-Token">NULL</span> in case of an error. It can be safely called before the RTOS is started (call to <a class="el" href="group__CMSIS__RTOS__KernelCtrl.html#ga9ae2cc00f0d89d7b6a307bba942b5221">osKernelStart</a>), but not before it is initialized (call to <a class="el" href="group__CMSIS__RTOS__KernelCtrl.html#gae818f6611d25ba3140bede410a52d659">osKernelInitialize</a>).</p>
 <p>The parameter <em>attr</em> sets the event flags attributes (refer to <a class="el" href="group__CMSIS__RTOS__EventFlags.html#structosEventFlagsAttr__t">osEventFlagsAttr_t</a>). Default attributes will be used if set to <span class="XML-Token">NULL</span>, i.e. kernel memory allocation is used for the event control block.</p>
-<dl class="section note"><dt>Note</dt><dd>Cannot be called from Interrupt Service Routines.</dd></dl>
-<p><b>Code Example</b> </p><div class="fragment"><div class="line"><span class="preprocessor">#include &quot;<a class="code" href="cmsis__os2_8h.html">cmsis_os2.h</a>&quot;</span>                          <span class="comment">// CMSIS RTOS header file</span></div>
+<dl class="section note"><dt>Note</dt><dd>Cannot be called from <a class="el" href="usingOS2.html#CMSIS_RTOS_ISR_Calls">Interrupt Service Routines</a>.</dd></dl>
+<p><b>Code Example</b> </p><div class="fragment"><div class="line"><span class="preprocessor">#include &quot;cmsis_os2.h&quot;</span>                          <span class="comment">// CMSIS RTOS header file</span></div>
 <div class="line"> </div>
 <div class="line"><a class="code hl_typedef" href="group__CMSIS__RTOS__EventFlags.html#gafdbab933146d6d81d7cca7287e267a50">osEventFlagsId_t</a> evt_id;                        <span class="comment">// message queue id</span></div>
 <div class="line"> </div>
 <div class="line"><span class="keywordtype">int</span> Init_Events (<span class="keywordtype">void</span>) {</div>
 <div class="line"> </div>
-<div class="line">  evt_id = <a class="code hl_function" href="group__CMSIS__RTOS__EventFlags.html#gab14b1caeb12ffa42cce1bfe889cd07df">osEventFlagsNew</a>(NULL);</div>
+<div class="line">  evt_id = <a class="code hl_function" href="group__CMSIS__RTOS__EventFlags.html#gab14b1caeb12ffa42cce1bfe889cd07df" title="Create and Initialize an Event Flags object.">osEventFlagsNew</a>(NULL);</div>
 <div class="line">  <span class="keywordflow">if</span> (evt_id == NULL) {</div>
 <div class="line">    ; <span class="comment">// Event Flags object not created, handle failure</span></div>
 <div class="line">    <span class="keywordflow">return</span>(-1);</div>
@@ -402,6 +392,8 @@ size of provided memory for control block <p>The size (in bytes) of memory block
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Set the specified Event Flags. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">ef_id</td><td>event flags ID obtained by <a class="el" href="group__CMSIS__RTOS__EventFlags.html#gab14b1caeb12ffa42cce1bfe889cd07df">osEventFlagsNew</a>. </td></tr>
@@ -418,16 +410,16 @@ size of provided memory for control block <p>The size (in bytes) of memory block
 <li><em>osFlagsErrorResource:</em> the event flags object is in an invalid state.</li>
 <li><em>osFlagsErrorSafetyClass:</em> the calling thread safety class is lower than the safety class of the specified event flags object.</li>
 </ul>
-<dl class="section note"><dt>Note</dt><dd>This function may be called from Interrupt Service Routines.</dd></dl>
-<p><b>Code Example</b> </p><div class="fragment"><div class="line"><span class="preprocessor">#include &quot;<a class="code" href="cmsis__os2_8h.html">cmsis_os2.h</a>&quot;</span>                          <span class="comment">// CMSIS RTOS header file</span></div>
+<dl class="section note"><dt>Note</dt><dd>This function may be called from <a class="el" href="usingOS2.html#CMSIS_RTOS_ISR_Calls">Interrupt Service Routines</a>.</dd></dl>
+<p><b>Code Example</b> </p><div class="fragment"><div class="line"><span class="preprocessor">#include &quot;cmsis_os2.h&quot;</span>                          <span class="comment">// CMSIS RTOS header file</span></div>
 <div class="line"> </div>
 <div class="line"><a class="code hl_typedef" href="group__CMSIS__RTOS__EventFlags.html#gafdbab933146d6d81d7cca7287e267a50">osEventFlagsId_t</a> evt_id;                        <span class="comment">// event flags id</span></div>
 <div class="line"> </div>
 <div class="line"><span class="keywordtype">void</span> Thread_EventSender (<span class="keywordtype">void</span> *argument) {</div>
 <div class="line"> </div>
 <div class="line">  <span class="keywordflow">while</span> (1) {    </div>
-<div class="line">    <a class="code hl_function" href="group__CMSIS__RTOS__EventFlags.html#ga33b71d14cecf90b4e72639dd19f23a5e">osEventFlagsSet</a>(evt_id, 0x00000001U);</div>
-<div class="line">    <a class="code hl_function" href="group__CMSIS__RTOS__ThreadMgmt.html#gad01c7ec26535b1de6b018bb9466720e2">osThreadYield</a>();                            <span class="comment">// suspend thread</span></div>
+<div class="line">    <a class="code hl_function" href="group__CMSIS__RTOS__EventFlags.html#ga33b71d14cecf90b4e72639dd19f23a5e" title="Set the specified Event Flags.">osEventFlagsSet</a>(evt_id, 0x00000001U);</div>
+<div class="line">    <a class="code hl_function" href="group__CMSIS__RTOS__ThreadMgmt.html#gad01c7ec26535b1de6b018bb9466720e2" title="Pass control to next thread that is in state READY.">osThreadYield</a>();                            <span class="comment">// suspend thread</span></div>
 <div class="line">  }</div>
 <div class="line">}</div>
 </div><!-- fragment --> 
@@ -458,6 +450,8 @@ size of provided memory for control block <p>The size (in bytes) of memory block
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Clear the specified Event Flags. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">ef_id</td><td>event flags ID obtained by <a class="el" href="group__CMSIS__RTOS__EventFlags.html#gab14b1caeb12ffa42cce1bfe889cd07df">osEventFlagsNew</a>. </td></tr>
@@ -473,7 +467,7 @@ size of provided memory for control block <p>The size (in bytes) of memory block
 <li><em>osFlagsErrorResource:</em> the event flags object is in an invalid state.</li>
 <li><em>osFlagsErrorSafetyClass:</em> the calling thread safety class is lower than the safety class of the specified event flags object.</li>
 </ul>
-<dl class="section note"><dt>Note</dt><dd>This function may be called from Interrupt Service Routines. </dd></dl>
+<dl class="section note"><dt>Note</dt><dd>This function may be called from <a class="el" href="usingOS2.html#CMSIS_RTOS_ISR_Calls">Interrupt Service Routines</a>. </dd></dl>
 
 </div>
 </div>
@@ -492,6 +486,8 @@ size of provided memory for control block <p>The size (in bytes) of memory block
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Get the current Event Flags. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">ef_id</td><td>event flags ID obtained by <a class="el" href="group__CMSIS__RTOS__EventFlags.html#gab14b1caeb12ffa42cce1bfe889cd07df">osEventFlagsNew</a>. </td></tr>
@@ -500,7 +496,7 @@ size of provided memory for control block <p>The size (in bytes) of memory block
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>current event flags.</dd></dl>
 <p>The function <b>osEventFlagsGet</b> returns the event flags currently set in an event flags object specified by parameter <em>ef_id</em> or <span class="XML-Token">0</span> in case of an error.</p>
-<dl class="section note"><dt>Note</dt><dd>This function may be called from Interrupt Service Routines. </dd></dl>
+<dl class="section note"><dt>Note</dt><dd>This function may be called from <a class="el" href="usingOS2.html#CMSIS_RTOS_ISR_Calls">Interrupt Service Routines</a>. </dd></dl>
 
 </div>
 </div>
@@ -541,12 +537,14 @@ size of provided memory for control block <p>The size (in bytes) of memory block
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Wait for one or more Event Flags to become signaled. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">ef_id</td><td>event flags ID obtained by <a class="el" href="group__CMSIS__RTOS__EventFlags.html#gab14b1caeb12ffa42cce1bfe889cd07df">osEventFlagsNew</a>. </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">flags</td><td>specifies the flags to wait for. </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">options</td><td>specifies flags options (osFlagsXxxx). </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">timeout</td><td>CMSIS_RTOS_TimeOutValue or 0 in case of no time-out. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">timeout</td><td><a class="el" href="usingOS2.html#CMSIS_RTOS_TimeOutValue">Timeout Values</a> or 0 in case of no time-out. </td></tr>
   </table>
   </dd>
 </dl>
@@ -563,7 +561,7 @@ size of provided memory for control block <p>The size (in bytes) of memory block
 <td class="markdownTableBodyNone"><b>osFlagsNoClear</b>   </td><td class="markdownTableBodyNone">Do not clear flags which have been specified to wait for.   </td></tr>
 </table>
 <p>If <code>osFlagsNoClear</code> is set in the options <a class="el" href="group__CMSIS__RTOS__EventFlags.html#ga93bf258ca0007c6641fbe8e4f2b8a1e5">osEventFlagsClear</a> can be used to clear flags manually.</p>
-<p>The parameter <em>timeout</em> specifies how long the system waits for event flags. While the system waits, the thread that is calling this function is put into the <a class="el" href="group__CMSIS__RTOS__ThreadMgmt.html#ThreadStates">BLOCKED</a> state. The parameter timeout can have the following values:</p><ul>
+<p>The parameter <em>timeout</em> specifies how long the system waits for event flags. While the system waits, the thread that is calling this function is put into the <a class="el" href="group__CMSIS__RTOS__ThreadMgmt.html#ThreadStates">BLOCKED</a> state. The parameter <a class="el" href="usingOS2.html#CMSIS_RTOS_TimeOutValue">timeout</a> can have the following values:</p><ul>
 <li>when <em>timeout</em> is <span class="XML-Token">0</span>, the function returns instantly (i.e. try semantics).</li>
 <li>when <em>timeout</em> is set to <b>osWaitForever</b> the function will wait for an infinite time until the event flags become available (i.e. wait semantics).</li>
 <li>all other values specify a time in kernel ticks for a timeout (i.e. timed-wait semantics).</li>
@@ -576,8 +574,8 @@ size of provided memory for control block <p>The size (in bytes) of memory block
 <li><em>osFlagsErrorParameter:</em> parameter <em>ef_id</em> does not identify a valid event flags object or <em>flags</em> has highest bit set.</li>
 <li><em>osFlagsErrorSafetyClass:</em> the calling thread safety class is lower than the safety class of the specified event flags object.</li>
 </ul>
-<dl class="section note"><dt>Note</dt><dd>May be called from Interrupt Service Routines if the parameter <em>timeout</em> is set to <span class="XML-Token">0</span>.</dd></dl>
-<p><b>Code</b> <b>Example</b> </p><div class="fragment"><div class="line"><span class="preprocessor">#include &quot;<a class="code" href="cmsis__os2_8h.html">cmsis_os2.h</a>&quot;</span>                          <span class="comment">// CMSIS RTOS header file</span></div>
+<dl class="section note"><dt>Note</dt><dd>May be called from <a class="el" href="usingOS2.html#CMSIS_RTOS_ISR_Calls">Interrupt Service Routines</a> if the parameter <em>timeout</em> is set to <span class="XML-Token">0</span>.</dd></dl>
+<p><b>Code</b> <b>Example</b> </p><div class="fragment"><div class="line"><span class="preprocessor">#include &quot;cmsis_os2.h&quot;</span>                          <span class="comment">// CMSIS RTOS header file</span></div>
 <div class="line"> </div>
 <div class="line"><a class="code hl_typedef" href="group__CMSIS__RTOS__EventFlags.html#gafdbab933146d6d81d7cca7287e267a50">osEventFlagsId_t</a> evt_id;                        <span class="comment">// event flags id</span></div>
 <div class="line"> </div>
@@ -585,7 +583,7 @@ size of provided memory for control block <p>The size (in bytes) of memory block
 <div class="line">  uint32_t flags;</div>
 <div class="line"> </div>
 <div class="line">  <span class="keywordflow">while</span> (1) {</div>
-<div class="line">    flags = <a class="code hl_function" href="group__CMSIS__RTOS__EventFlags.html#ga52acb34a8322e58020227344fe662b4e">osEventFlagsWait</a>(evt_id, 0x00000001U, <a class="code hl_define" href="group__CMSIS__RTOS__Definitions.html#ga18e63587b8450d5b8798b6f6ec04e012">osFlagsWaitAny</a>, <a class="code hl_define" href="group__CMSIS__RTOS__Definitions.html#ga9eb9a7a797a42e4b55eb171ecc609ddb">osWaitForever</a>);</div>
+<div class="line">    flags = <a class="code hl_function" href="group__CMSIS__RTOS__EventFlags.html#ga52acb34a8322e58020227344fe662b4e" title="Wait for one or more Event Flags to become signaled.">osEventFlagsWait</a>(evt_id, 0x00000001U, <a class="code hl_define" href="group__CMSIS__RTOS__Definitions.html#ga18e63587b8450d5b8798b6f6ec04e012" title="Wait for any flag (default).">osFlagsWaitAny</a>, <a class="code hl_define" href="group__CMSIS__RTOS__Definitions.html#ga9eb9a7a797a42e4b55eb171ecc609ddb" title="Wait forever timeout value.">osWaitForever</a>);</div>
 <div class="line">    <span class="comment">//handle event</span></div>
 <div class="line">  }</div>
 <div class="line">}</div>
@@ -607,6 +605,8 @@ size of provided memory for control block <p>The size (in bytes) of memory block
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Delete an Event Flags object. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">ef_id</td><td>event flags ID obtained by <a class="el" href="group__CMSIS__RTOS__EventFlags.html#gab14b1caeb12ffa42cce1bfe889cd07df">osEventFlagsNew</a>. </td></tr>
@@ -622,7 +622,7 @@ size of provided memory for control block <p>The size (in bytes) of memory block
 <li><em>osErrorResource:</em> the event flags object is in an invalid state.</li>
 <li><em>osFlagsErrorSafetyClass:</em> the calling thread safety class is lower than the safety class of the specified event flags object.</li>
 </ul>
-<dl class="section note"><dt>Note</dt><dd>This function <b>cannot</b> be called from Interrupt Service Routines. </dd></dl>
+<dl class="section note"><dt>Note</dt><dd>This function <b>cannot</b> be called from <a class="el" href="usingOS2.html#CMSIS_RTOS_ISR_Calls">Interrupt Service Routines</a>. </dd></dl>
 
 </div>
 </div>
@@ -641,6 +641,8 @@ size of provided memory for control block <p>The size (in bytes) of memory block
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Get name of an Event Flags object. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">ef_id</td><td>event flags ID obtained by <a class="el" href="group__CMSIS__RTOS__EventFlags.html#gab14b1caeb12ffa42cce1bfe889cd07df">osEventFlagsNew</a>. </td></tr>
@@ -649,20 +651,19 @@ size of provided memory for control block <p>The size (in bytes) of memory block
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>name as null-terminated string.</dd></dl>
 <p>The function <b>osEventFlagsGetName</b> returns the pointer to the name string of the event flags object identified by parameter <em>ef_id</em> or <span class="XML-Token">NULL</span> in case of an error.</p>
-<dl class="section note"><dt>Note</dt><dd>This function may be called from Interrupt Service Routines.</dd></dl>
-<p><b>Code Example</b> </p><div class="fragment"><div class="line"><span class="preprocessor">#include &quot;<a class="code" href="cmsis__os2_8h.html">cmsis_os2.h</a>&quot;</span>                          <span class="comment">// CMSIS RTOS header file</span></div>
+<dl class="section note"><dt>Note</dt><dd>This function may be called from <a class="el" href="usingOS2.html#CMSIS_RTOS_ISR_Calls">Interrupt Service Routines</a>.</dd></dl>
+<p><b>Code Example</b> </p><div class="fragment"><div class="line"><span class="preprocessor">#include &quot;cmsis_os2.h&quot;</span>                          <span class="comment">// CMSIS RTOS header file</span></div>
 <div class="line"> </div>
 <div class="line"><a class="code hl_typedef" href="group__CMSIS__RTOS__EventFlags.html#gafdbab933146d6d81d7cca7287e267a50">osEventFlagsId_t</a> evt_id;                        <span class="comment">// event flasg id</span></div>
 <div class="line"> </div>
 <div class="line"><span class="keywordtype">void</span> EvtFlagsGetName_example (<span class="keywordtype">void</span>)  {</div>
 <div class="line">  <span class="keywordtype">char</span> *name;</div>
 <div class="line">   </div>
-<div class="line">  name = <a class="code hl_function" href="group__CMSIS__RTOS__EventFlags.html#ga59f4ddf0ee8c395b1672bb978d1cfc88">osEventFlagsGetName</a>(evt_id);</div>
+<div class="line">  name = <a class="code hl_function" href="group__CMSIS__RTOS__EventFlags.html#ga59f4ddf0ee8c395b1672bb978d1cfc88" title="Get name of an Event Flags object.">osEventFlagsGetName</a>(evt_id);</div>
 <div class="line">  <span class="keywordflow">if</span> (name == NULL) {</div>
 <div class="line">    <span class="comment">// Failed to get the event flags object name</span></div>
 <div class="line">  }</div>
 <div class="line">}</div>
-<div class="ttc" id="agroup__CMSIS__RTOS__EventFlags_html_ga59f4ddf0ee8c395b1672bb978d1cfc88"><div class="ttname"><a href="group__CMSIS__RTOS__EventFlags.html#ga59f4ddf0ee8c395b1672bb978d1cfc88">osEventFlagsGetName</a></div><div class="ttdeci">const char * osEventFlagsGetName(osEventFlagsId_t ef_id)</div><div class="ttdoc">Get name of an Event Flags object.</div></div>
 </div><!-- fragment --> 
 </div>
 </div>

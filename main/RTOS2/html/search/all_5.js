@@ -1,6 +1,5 @@
 var searchData=
 [
-  ['fault_20handling_0',['Fault Handling',['../group__rtos__process__isolation__faults.html',1,'']]],
-  ['flags_20functions_20error_20codes_1',['Flags Functions Error Codes',['../group__flags__error__codes.html',1,'']]],
-  ['function_20overview_2',['Function Overview',['../functionOverview.html',1,'']]]
+  ['kernel_0',['kernel',['../group__CMSIS__RTOS__KernelCtrl.html#ad8075d3f42141346ae2c56389358f9e7',1,'osVersion_t']]],
+  ['kernel_20information_20and_20control_1',['Kernel Information and Control',['../group__CMSIS__RTOS__KernelCtrl.html',1,'']]]
 ];
