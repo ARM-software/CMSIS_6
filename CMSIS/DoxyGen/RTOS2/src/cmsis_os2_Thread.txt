@@ -38,6 +38,22 @@ states change as follows:
    returning from the thread function. Threads that are terminated are in the \ref ThreadStates "INACTIVE" state and typically do not consume
    any dynamic memory resources. 
 
+\anchor threadConfig_procmode
+Processor Mode for Thread Execution
+-------------
+
+When creating user threads with \ref osThreadNew it is possible to specify for each thread whether it shall be executed in privileged or unprivileged mode. For that the thread attributes argument shall have in its osThreadAttr_t::attr_bits flags either \ref osThreadPrivileged or \ref osThreadUnprivileged set respectively.
+If not set then the default operation mode will be used according to kernel configuration.
+
+For detailed differences between privileged and unprivileged mode, please refer to the User's Guide of the target processor. But typically following differences are specified:
+
+In **unprivileged processor mode**, the thread :
+ - has limited access to the MSR and MRS instructions, and cannot use the CPS instruction.
+ - cannot access the system timer, NVIC, or system control block.
+ - might have restricted access to memory or peripherals.
+
+In **privileged processor mode**, the application software can use all the instructions and has access to all resources.
+
 \anchor thread_examples
 Thread Examples
 ===============
@@ -45,8 +61,7 @@ The following examples show various scenarios to create threads:
  
 <b>Example 1 - Create a simple thread</b> 
 
-Create a thread out of the function thread1 using all default values for thread attributes and memory from the
-\ref GlobalMemoryPool.
+Create a thread out of the function thread1 using all default values for thread attributes and memory allocated by the system.
  
 \code
 __NO_RETURN void thread1 (void *argument) {
@@ -64,10 +79,8 @@ int main (void) {
 \endcode
 
 <b>Example 2 - Create thread with stack non-default stack size</b>
- 
-Similar to the simple thread all attributes are default. The stack is dynamically allocated from the \ref GlobalMemoryPool
- 
-\ref osThreadAttr_t.stack_size is used to pass the stack size in Bytes to \ref osThreadNew.
+
+Similar to the simple thread all attributes are default. The stack size is requested of size 1024 Bytes with with corresponding value passed as \ref osThreadAttr_t.stack_size to \ref osThreadNew. The memory for the stack is then allocated by the system.
 
 \code
 __NO_RETURN void thread1 (void *argument) {
@@ -121,7 +134,7 @@ Typically this method is chosen together with a statically allocated stack as sh
 \code 
 #include "cmsis_os2.h"
  
-//include rtx_os.h for types of RTX objects
+//include rtx_os.h for control blocks of CMSIS-RTX objects
 #include "rtx_os.h"
 
 __NO_RETURN void thread1 (void *argument) {
@@ -145,8 +158,7 @@ int main (void) {
 
 <b>Example 5 - Create thread with a different priority</b> 
  
-The default priority of RTX is \ref osPriorityNormal. Often you want to run a task with a higher or lower priority. Using the
-\ref osThreadAttr_t control structure you can set any initial priority required.
+The default priority of RTX kernel is \token{osPriorityNormal}. Often you want to run a task with a higher or lower priority. Using the \ref osThreadAttr_t::priority field you can assign any initial priority required.
 
 \code
 __NO_RETURN void thread1 (void *argument) {
@@ -276,11 +288,16 @@ or for runtime parameters.
 /*=======0=========1=========2=========3=========4=========5=========6=========7=========8=========9=========0=========1====*/
 /**
 \struct osThreadAttr_t
-\details
-Specifies the following attributes for the \ref osThreadNew function.
+\details Specifies the following attributes for the \ref osThreadNew function.
 */
-
 /*=======0=========1=========2=========3=========4=========5=========6=========7=========8=========9=========0=========1====*/
+
+/**
+\def osErrorId
+\details Error return code from \ref osThreadGetClass and \ref osThreadGetZone.
+*/
+/*=======0=========1=========2=========3=========4=========5=========6=========7=========8=========9=========0=========1====*/
+
 /**
 \def osThreadJoinable
 \details
@@ -289,6 +306,7 @@ Intended for use in \e attr_bits of \ref osThreadAttr_t type argument for \ref o
 
 A thread in this state can be joined using \ref osThreadJoin.
 */
+/*=======0=========1=========2=========3=========4=========5=========6=========7=========8=========9=========0=========1====*/
 
 /**
 \def osThreadDetached
@@ -714,9 +732,7 @@ error, it returns \token{0}.
 /**
 \fn uint32_t osThreadGetStackSpace (osThreadId_t thread_id); 
 \details
-The function \b osThreadGetStackSpace returns the size of unused stack space for the thread specified by parameter
-\a thread_id. Stack watermark recording during execution needs to be enabled (refer to \ref threadConfig). In case of an
-error, it returns \token{0}.
+The function \b osThreadGetStackSpace returns the size of unused stack space for the thread specified by parameter \a thread_id. In case of an error, it returns \token{0}.
 
 \note This function \b cannot be called from \ref CMSIS_RTOS_ISR_Calls "Interrupt Service Routines".
 */
@@ -743,8 +759,7 @@ The function \b osThreadEnumerate returns the number of enumerated threads or \t
 /**
 \fn osStatus_t osThreadFeedWatchdog (uint32_t ticks);
 \details
-The function \b osThreadFeedWatchdog restarts watchdog of the current running thread. If the thread watchdog is not fed again within the \a ticks interval
-\ref osWatchdogAlarm_Handler will be called.
+The function \b osThreadFeedWatchdog restarts watchdog of the current running thread. If the thread watchdog is not fed again within the \a ticks interval \ref osWatchdogAlarm_Handler will be called.
 
 Possible \ref osStatus_t return values:
     - \em osOK: the watchdog timer was restarted successfully.
@@ -1032,13 +1047,13 @@ Default: \token{0} no options set. Safety class and MPU Zone are inherited from 
 
 \var osThreadAttr_t::cb_mem
 \details
-Pointer to a memory for the thread control block object. Refer to \ref StaticObjectMemory for more information.
+Pointer to a memory for the thread control block object. Refer to \ref CMSIS_RTOS_MemoryMgmt_Manual for more information.
 
 Default: \token{NULL} to use \ref CMSIS_RTOS_MemoryMgmt_Automatic for the thread control block.
 
 \var osThreadAttr_t::cb_size
 \details
-The size (in bytes) of memory block passed with \ref cb_mem. For RTX, the minimum value is defined with \ref osRtxThreadCbSize (higher values are permitted).
+The size (in bytes) of memory block passed with \ref cb_mem. Required value depends on the underlying kernel implementation.
 
 Default: \token{0} as the default is no memory provided with \ref cb_mem.
 
@@ -1054,15 +1069,11 @@ Specifies the initial thread priority with a value from #osPriority_t.
 
 Default: \token{osPriorityNormal}.
 
-\var osThreadAttr_t::reserved
-\details
-Reserved for future use.
-
 \var osThreadAttr_t::stack_mem
 \details
 Pointer to a memory location for the thread stack (64-bit aligned). 
 
-Default: \token{NULL} to allocate stack from a fixed-size memory pool using \ref ThreadStack.
+Default: \token{NULL} - the memory for the stack is provided by the system based on the configuration of underlying RTOS kernel .
 
 \var osThreadAttr_t::stack_size
 \details

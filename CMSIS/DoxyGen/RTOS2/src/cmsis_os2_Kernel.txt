@@ -14,7 +14,7 @@ The kernel Information and Control function group allows to:
 
 \note The kernel information and control functions cannot be called from
 \ref CMSIS_RTOS_ISR_Calls "Interrupt Service Routines".
-\note The kernel initialization for RTX5 is documented in \ref SystemStartup.
+\note The kernel initialization is documented in \ref SystemStartup.
 
 <b>Code Example</b>
 \code
@@ -57,6 +57,35 @@ Use \ref osKernelGetInfo to retrieve the version numbers.
 \details
 State of the kernel as retrieved by \ref osKernelGetState. In case \b osKernelGetState fails or if it is called from an ISR,
 it will return \c osKernelError, otherwise it returns the kernel state.
+
+\var osKernelState_t::osKernelInactive
+\details
+The kernel is not ready yet. \ref osKernelInitialize needs to be executed successfully.
+
+\var osKernelState_t::osKernelReady
+\details
+The kernel is not yet running. \ref osKernelStart transfers the kernel to the running state.
+
+\var osKernelState_t::osKernelRunning
+\details
+The kernel is initialized and running.
+
+\var osKernelState_t::osKernelLocked
+\details
+The kernel was locked with \ref osKernelLock. The functions \ref osKernelUnlock or \ref osKernelRestoreLock unlocks it.
+
+\var osKernelState_t::osKernelSuspended
+\details
+The kernel was suspended using \ref osKernelSuspend. The function \ref osKernelResume returns to normal operation.
+
+\var osKernelState_t::osKernelError
+\details
+An error occurred.
+
+\var osKernelState_t::osKernelReserved
+\details
+Reserved.
+
 */
 
 /*=======0=========1=========2=========3=========4=========5=========6=========7=========8=========9=========0=========1====*/
@@ -282,13 +311,11 @@ Possible \ref osStatus_t return values:
 /**
 \fn uint32_t osKernelSuspend (void)
 \details
-CMSIS-RTOS provides extension for tick-less operation which is useful for applications that use extensively low-power modes
-where the SysTick timer is also disabled. To provide a time-tick in such power-saving modes a wake-up timer is used to derive
-timer intervals. The function \b osKernelSuspend suspends the RTX kernel scheduler and thus enables sleep modes.
+CMSIS-RTOS2 provides extension for tick-less operation which is useful for applications that use extensively low-power modes where the SysTick timer is also disabled.
 
-The return value can be used to determine the amount of system ticks until the next tick-based kernel event will occur, i.e.
-a delayed thread becomes ready again. It is recommended to set up the low power timer to generate a wake-up interrupt based
-on this return value.
+To provide a time-tick in such power-saving modes a wake-up timer is used to derive timer intervals. The function \b osKernelSuspend suspends the RTOS kernel scheduler and thus enables sleep modes.
+
+The return value can be used to determine the amount of system ticks until the next tick-based kernel event will occur, i.e. a delayed thread becomes ready again. It is recommended to set up the low power timer to generate a wake-up interrupt based on this return value.
 
 \note This function \b cannot be called from \ref CMSIS_RTOS_ISR_Calls "Interrupt Service Routines".
 
@@ -304,10 +331,10 @@ void osRtxIdleThread (void) {
                                                /* HERE: include optional user
                                                   code to be executed when no
                                                   task runs.                   */
-    sleep = osKernelSuspend();                 /* Suspend RTX thread scheduler */
+    sleep = osKernelSuspend();                 /* Suspend RTOS kernel scheduler */
  
     if (sleep) {                               /* How long can we sleep?       */
-                                               /* "sleep" is in RTX Timer Ticks
+                                               /* "sleep" is in kernel Timer Ticks
                                                   which is 1ms in this
                                                   configuration                */
        
@@ -329,9 +356,9 @@ void osRtxIdleThread (void) {
 /**
 \fn void osKernelResume (uint32_t sleep_ticks)
 \details
-CMSIS-RTOS provides extension for tick-less operation which is useful for applications that use extensively low-power modes
-where the SysTick timer is also disabled. To provide a time-tick in such power-saving modes a wake-up timer is used to derive
-timer intervals. The function \b osKernelResume enables the RTX kernel scheduler and thus wakes up the system from sleep
+CMSIS-RTOS provides extension for tick-less operation which is useful for applications that use extensively low-power modes where the SysTick timer is also disabled. 
+
+To provide a time-tick in such power-saving modes a wake-up timer is used to derive timer intervals. The function \b osKernelResume enables the RTOS kernel scheduler and thus wakes up the system from sleep
 mode.
 
 \note This function \b cannot be called from \ref CMSIS_RTOS_ISR_Calls "Interrupt Service Routines".
@@ -348,10 +375,10 @@ void osRtxIdleThread (void) {
                                                /* HERE: include optional user
                                                   code to be executed when no
                                                   task runs.                   */
-    sleep = osKernelSuspend();                 /* Suspend RTX thread scheduler */
+    sleep = osKernelSuspend();                 /* Suspend RTOS kernel scheduler */
  
     if (sleep) {                               /* How long can we sleep?       */
-                                               /* "sleep" is in RTX Timer Ticks
+                                               /* "sleep" is in Kernel Timer Ticks
                                                   which is 1ms in this
                                                   configuration                */
        
@@ -557,35 +584,3 @@ void HardFault_Handler (void) {
 */
 
 /// @}
-
-// these struct members must stay outside the group to avoid double entries in documentation
-/**
-\var osKernelState_t::osKernelInactive
-\details
-The kernel is not ready yet. \ref osKernelInitialize needs to be executed successfully.
-
-\var osKernelState_t::osKernelReady
-\details
-The kernel is not yet running. \ref osKernelStart transfers the kernel to the running state.
-
-\var osKernelState_t::osKernelRunning
-\details
-The kernel is initialized and running.
-
-\var osKernelState_t::osKernelLocked
-\details
-The kernel was locked with \ref osKernelLock. The functions \ref osKernelUnlock or \ref osKernelRestoreLock unlocks it.
-
-\var osKernelState_t::osKernelSuspended
-\details
-The kernel was suspended using \ref osKernelSuspend. The function \ref osKernelResume returns to normal operation.
-
-\var osKernelState_t::osKernelError
-\details
-An error occurred.
-
-\var osKernelState_t::osKernelReserved
-\details
-Reserved. 
-*/
-

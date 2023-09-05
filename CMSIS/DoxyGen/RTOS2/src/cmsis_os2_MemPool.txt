@@ -24,7 +24,6 @@ functions are used to define and manage such fixed-sized memory pools.
 \note The functions \ref osMemoryPoolAlloc, \ref osMemoryPoolFree, \ref osMemoryPoolGetCapacity,
 \ref osMemoryPoolGetBlockSize, \ref osMemoryPoolGetCount, \ref osMemoryPoolGetSpace can be called from
 \ref CMSIS_RTOS_ISR_Calls "Interrupt Service Routines".
-\note Refer to \ref memPoolConfig for RTX5 configuration options.
 
 @{
 */

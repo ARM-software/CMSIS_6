@@ -19,7 +19,7 @@ Sometimes, threads do not have a common address space or the use of shared memor
 \note The functions \ref osMessageQueuePut, \ref osMessageQueueGet, \ref osMessageQueueGetCapacity,
 \ref osMessageQueueGetMsgSize, \ref osMessageQueueGetCount, \ref osMessageQueueGetSpace can be called from
 \ref CMSIS_RTOS_ISR_Calls "Interrupt Service Routines".
-\note Refer to \ref msgQueueConfig for RTX5 configuration options.
+
 @{
 */
 /*=======0=========1=========2=========3=========4=========5=========6=========7=========8=========9=========0=========1====*/
@@ -275,13 +275,13 @@ Reserved for future use (must be set to '0' for future compatibility).
 
 \var osMessageQueueAttr_t::cb_mem
 \details
-Pointer to a memory for the message queue control block object. Refer to \ref StaticObjectMemory for more information.
+Pointer to a memory for the message queue control block object. Refer to \ref CMSIS_RTOS_MemoryMgmt_Manual for more information.
 
 Default: \token{NULL} to use \ref CMSIS_RTOS_MemoryMgmt_Automatic for the message queue control block.
 
 \var osMessageQueueAttr_t::cb_size
 \details
-The size (in bytes) of memory block passed with \ref cb_mem. For RTX, the minimum value is defined with \ref osRtxMessageQueueCbSize (higher values are permitted).
+The size (in bytes) of memory block passed with \ref cb_mem. Required value depends on the underlying kernel implementation.
 
 Default: \token{0} as the default is no memory provided with \ref cb_mem.
 
@@ -293,7 +293,7 @@ Default: \token{NULL} no name specified.
 
 \var osMessageQueueAttr_t::mq_mem
 \details
-Pointer to a memory for the message queue data. Refer to \ref StaticObjectMemory for more information.
+Pointer to a memory for the message queue data. Refer to \ref CMSIS_RTOS_MemoryMgmt_Manual for more information.
 
 Default: \token{NULL} to use \ref CMSIS_RTOS_MemoryMgmt_Automatic for the memory pool data.
 

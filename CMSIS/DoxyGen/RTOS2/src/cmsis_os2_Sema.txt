@@ -23,8 +23,6 @@ token is free. Semaphores are released with \ref osSemaphoreRelease incrementing
 \note The functions \ref osSemaphoreAcquire, \ref osSemaphoreGetCount, and \ref osSemaphoreRelease can be called from
 \ref CMSIS_RTOS_ISR_Calls "Interrupt Service Routines".
 
-\note Refer to \ref semaphoreConfig for RTX5 configuration options.
-
 Semaphore Use Cases
 -------------------
 Due to their flexibility, semaphores cover a wide range of synchronizing applications. At the same time, they are perhaps the
@@ -278,13 +276,13 @@ Reserved for future use (must be set to '0' for future compatibility).
 
 \var osSemaphoreAttr_t::cb_mem
 \details
-Pointer to a memory for the semaphore control block object. Refer to \ref StaticObjectMemory for more information.
+Pointer to a memory for the semaphore control block object. Refer to \ref CMSIS_RTOS_MemoryMgmt_Manual for more information.
 
 Default: \token{NULL} to use \ref CMSIS_RTOS_MemoryMgmt_Automatic for the semaphore control block.
 
 \var osSemaphoreAttr_t::cb_size
 \details
-The size (in bytes) of memory block passed with \ref cb_mem. For RTX, the minimum value is defined with \ref osRtxSemaphoreCbSize (higher values are permitted).
+The size (in bytes) of memory block passed with \ref cb_mem. Required value depends on the underlying kernel implementation.
 
 Default: \token{0} as the default is no memory provided with \ref cb_mem.
 
