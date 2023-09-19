@@ -1,88 +1,50 @@
-/**
-\page templates_pg CMSIS-Core Device Templates
+# CMSIS-Core Device Templates {#templates_pg}
 
-\details
-
-Arm supplies CMSIS-Core device template files for the all supported Cortex-A processors and various compiler vendors.
-Refer to the list of \ref tested_tools_sec for compliance.
+Arm supplies CMSIS-Core device template files for the all supported Cortex-A processors and various compiler vendors. Refer to the list of \ref tested_tools_sec for compliance.
 
 These CMSIS-Core device template files include the following:
  - Register names of the Core Peripherals and names of the Core Exception Vectors.
  - Functions to access core peripherals, cache, MMU and special CPU instructions 
  - Generic startup code and system configuration code.
 
-The detailed file structure of the CMSIS-Core device templates is shown in the following picture.
+## CMSIS-Core Processor Files {#CMSIS_Processor_files}
 
-<!-- \image html "CMSIS_CORE_Files.png" "CMSIS-Core File Structure" -->
+The CMSIS-Core processor files provided by Arm are in the directory .\\CMSIS\\Core\\Include. These header files define all processor specific attributes do not need any modifications.
 
-\section CMSIS_Processor_files CMSIS-Core Processor Files 
+The `core_<cpu>.h` defines the core peripherals and provides helper functions that access the core registers.
 
-The CMSIS-Core processor files provided by Arm are in the directory .\\CMSIS\\Core_A\\Include. These header files define all processor specific attributes do not need any modifications.
-The <b>core_&lt;cpu&gt;.h</b> defines the core peripherals and provides helper functions that access the core registers. One file is available for each supported Cortex-A processor:
+Header File            | Target Processor Core
+:----------------------|:-------------------------------
+📂 CMSIS/Core/Include  | CMSIS-Core include folder ([See on GitHub](https://github.com/ARM-software/CMSIS_6/blob/main/CMSIS/Core/Include/))
+ ┗ 📄 core_ca.h        | Generics for all supported Cortex-A processors
 
-Header File      | Processor
-:----------------|:------------------------------
-core_ca.h        | generics for all supported Cortex-A processors
+## Device Examples {#device_examples}
 
-\section device_examples Device Examples
+The [CMSIS-DFP pack](https://github.com/ARM-software/CMSIS-DFP) provides generic device definitions for supported Arm Cortex-A cores and contains corresponding CMSIS-Core device files.
 
-The CMSIS Software Pack defines several devices that are based on the various processors. The device related CMSIS-Core files are in the directory .\\Device\\ARM
-and include CMSIS-Core processor file explained before. The following sample devices are defined in the CMSIS-Pack description file <b>ARM.CMSIS.pdsc</b>:
-
-Family             | Device            | Description
-:------------------|:------------------|:---------------------------------
-ARM Cortex-A5      | ARMCA5            | Cortex-A5 based device
-ARM Cortex-A7      | ARMCA7            | Cortex-A7 based device
-ARM Cortex-A9      | ARMCA9            | Cortex-A9 based device
-
-
-
-\section template_files_sec Template Files
+## Template Files {#template_files_sec}
 
 To simplify the creation of CMSIS-Core device files, the following template files are provided that should be extended by the silicon vendor to reflect the actual device and device peripherals.
 Silicon vendors add to these template files the following information:
- - <b>Device Peripheral Access Layer</b> that provides definitions for device-specific peripherals.
- - <b>Access Functions for Peripherals</b> (optional) that provides additional helper functions to access device-specific peripherals.
- - <b>Interrupt vectors</b> in the startup file that are device specific.
+ - **Device Peripheral Access Layer** that provides definitions for device-specific peripherals.
+ - **Access Functions for Peripherals** (optional) that provides additional helper functions to access device-specific peripherals.
+ - **Interrupt vectors** in the startup file that are device specific.
 
-<table class="cmtable">
-    <tr>
-      <th>Template File</th>
-      <th>Description</th>
-    </tr>
-    <tr>
-      <td>.\\Device\\\_Template_Vendor\\Vendor\\Device_A\\Source\\ARM\\startup_Device.c</td>
-      <td>Startup file template for Arm C/C++ Compiler.</td>
-    </tr>   
-    <tr>
-      <td>.\\Device\\\_Template_Vendor\\Vendor\\Device_A\\Source\\ARM\\Device.sct</td>
-      <td>Linker scatter file template for Arm C/C++ Compiler.</td>
-    </tr>
-    <tr>
-      <td>.\\Device\\\_Template_Vendor\\Vendor\\Device_A\\Source\\system_Device.c</td>
-      <td>Generic system_Device.c file for system configuration (i.e. processor clock and memory bus system).</td>
-    </tr>
-    <tr>
-      <td>.\\Device\\\_Template_Vendor\\Vendor\\Device_A\\Source\\mmu_Device.c</td>
-      <td>Sample mmu_Device.c file with memory map description for Memory Management Unit (MMU) configuration.</td>
-    </tr>
-    <tr>
-      <td>.\\Device\\\_Template_Vendor\\Vendor\\Device_A\\Include\\Device.h</td>
-      <td>Generic device header file. Needs to be extended with the device-specific peripheral registers. Optionally functions that access the peripherals
-      can be part of that file.</td>
-    </tr>
-    <tr>
-      <td>.\\Device\\\_Template_Vendor\\Vendor\\Device_A\\Include\\system_Device.h</td>
-      <td>Generic system device configuration include file.</td>
-    </tr>
-    <tr>
-      <td>.\\Device\\\_Template_Vendor\\Vendor\\Device_A\\Include\\mem_Device.h</td>
-      <td>Generic memory base address and size definitions used in scatter file. Settable via Configuration Wizard.</td>
-    </tr>
-</table>
+Template File                       | Description
+:-----------------------------------|:----------------------------------------
+📂 CMSIS/Core/Template/Device_A     | Folder with CMSIS-Core device file templates ([See on GitHub](https://github.com/ARM-software/CMSIS_6/blob/main/CMSIS/Core/Template/Device_A/))
+ ┣ 📂 Config                        | Template configuration files
+ &emsp;&nbsp; ┣ 📄 Device_ac6.sct   | Linker scatter file template for Arm C/C++ Compiler
+ &emsp;&nbsp; ┗ 📄 mem_Device.h     |\ref mem_h_pg template
+ ┣ 📂 Include                       | Template header files
+ &emsp;&nbsp; ┣ 📄 Device.h         | \ref device_h_pg template
+ &emsp;&nbsp; ┗ 📄 system_Device.h  | \ref system_Device_h_sec
+ ┗ 📂 Source                        | Template C files
+ &emsp;&nbsp; ┣ 📄 mmu_Device.c     | \ref mmu_c_pg template
+ &emsp;&nbsp; ┣ 📄 startup_Device.c | \ref startup_c_pg template
+ &emsp;&nbsp; ┗ 📄 system_Device.c  | \ref system_Device_sec
 
-
-<b>Adapt Template Files to a Device</b>
+**Adapt Template Files to a Device**
 
 The following steps describe how to adopt the template files to a specific device or device family.
 Copy the complete all files in the template directory and replace:
@@ -93,40 +55,21 @@ Copy the complete all files in the template directory and replace:
 Each template file contains comments that start with \b ToDo: that describe a required modification.
 The template files contain place holders:
 
-<table class="cmtable">
-    <tr>
-      <th>Placeholder</th>
-      <th>Replaced with</th>
-    </tr>
-    <tr>
-      <td>&lt;Device&gt;</td>
-      <td>the specific device name or device family name; i.e. LPC17xx.</td>
-    </tr>
-    <tr>
-      <td>&lt;DeviceInterrupt&gt;</td>
-      <td>a specific interrupt name of the device; i.e. TIM1 for Timer 1.</td>
-    <tr>
-      <td>&lt;DeviceAbbreviation&gt;</td>
-      <td>short name or abbreviation of the device family; i.e. LPC.</td>
-    </tr>
-    <tr>
-      <td>Cortex-M#</td>
-      <td>the specific Cortex-M processor name; i.e. Cortex-M3.</td>
-    </tr>
-</table>
-
+Placeholder                | To be replaced with
+:--------------------------|:----------------------------------------
+`<Device>`                 | The specific device name or device family name, for example `LPC17xx`
+`<DeviceInterrupt>`        | The specific interrupt name of the device, for example `TIM1` for Timer 1 interrupt
+`<DeviceAbbreviation>`     | Short name or abbreviation of the device family, for example `LPC`
+`Cortex-A#`                | The specific Cortex-A processor name, for example `Cortex-A9`
 
 The device configuration of the template files is described in detail on the following pages:
-  - \subpage startup_c_pg
-  - \subpage system_c_pg
-  - \subpage device_h_pg
-  - \subpage mem_h_pg
-  - \subpage mmu_c_pg
-*/
+ - \subpage startup_c_pg
+ - \subpage system_c_pg
+ - \subpage device_h_pg
+ - \subpage mem_h_pg
+ - \subpage mmu_c_pg
 
-/*=======0=========1=========2=========3=========4=========5=========6=========7=========8=========9=========0=========1====*/
-/**
-\page startup_c_pg Startup File startup_<device>.c
+\page startup_c_pg Startup File startup_<Device>.c
 
 The \ref startup_c_pg contains:
  - Exception vectors of the Cortex-A Processor with weak functions that implement default routines.
@@ -140,63 +83,57 @@ The file exists for each supported toolchain and is the only tool-chain specific
 An Arm Compiler specific startup file for an Armv7-A processor like Cortex-A9 is shown below.
 The files for other compiler vendors differ slightly in the syntax, but not in the overall structure.
 
-\verbinclude "Source/ARM/startup_Device.c"
-*/
+\verbinclude "Source/startup_Device.c"
 
-/*=======0=========1=========2=========3=========4=========5=========6=========7=========8=========9=========0=========1====*/
-/**
-\page system_c_pg System Configuration Files system_<device>.c and system_<device>.h
+
+\page system_c_pg System Configuration Files system_<Device>.c and system_<Device>.h
 
 The \ref system_c_pg provides as a minimum the functions described under \ref system_init_gr.
 These functions are device specific and need adaptations. In addition, the file might have
 configuration settings for the device such as XTAL frequency or PLL prescaler settings.
 
-For devices with external memory BUS the system_<device>.c also configures the BUS system.
+For devices with external memory BUS the system_<Device>.c also configures the BUS system.
 
-The silicon vendor might expose other functions (i.e. for power configuration) in the system_<device>.c file.
-In case of additional features the function prototypes need to be added to the system_<device>.h header file.
+The silicon vendor might expose other functions (i.e. for power configuration) in the system_<Device>.c file.
+
+In case of additional features the function prototypes need to be added to the system_<Device>.h header file.
 
 \section system_Device_sec system_Device.c Template File
 
-The \ref system_Device_sec for the Cortex-M3 is shown below.
+The \ref system_Device_sec is shown below.
 
 \verbinclude "Source/system_Device.c"
 
 \section system_Device_h_sec system_Device.h Template File
 
-The system_<device>.h header file contains prototypes to access the public functions in the system_<device>.c file.
-The \ref system_Device_h_sec is shown below.
+The system_<Device>.h header file contains prototypes to access the public functions in the system_<device>.c file. The \ref system_Device_h_sec is shown below.
 
 \verbinclude "Include/system_Device.h"
 
-*/
-
-/*=======0=========1=========2=========3=========4=========5=========6=========7=========8=========9=========0=========1====*/
-/**
-\page device_h_pg Device Header File \<device.h>
+\page device_h_pg Device Header File \<Device.h>
 
 The \ref device_h_pg contains the following sections that are device specific:
- - \ref irqn_defs provides interrupt numbers (IRQn) for all exceptions and interrupts of the device.
- - \ref config_perifs reflect the features of the device.
- - \ref access_perifs definitions for the \ref peripheral_gr to all device peripherals. It contains all data structures and the address mapping for device-specific peripherals.
+ - \ref interrupt_number_sec provides interrupt numbers (IRQn) for all exceptions and interrupts of the device.
+ - \ref core_config_sect reflect the features of the device.
+ - \ref device_access definitions for the \ref peripheral_gr to all device peripherals. It contains all data structures and the address mapping for device-specific peripherals.
  - <b>Access Functions for Peripherals (optional)</b> provide additional helper functions for peripherals that are useful for programming of these peripherals. Access Functions may be provided as inline functions or can be extern references to a device-specific library provided by the silicon vendor.
 
 <a href="modules.html">\b Reference </a> describes the standard features and functions of the \ref device_h_pg in detail.
 
 \section interrupt_number_sec Interrupt Number Definition
 
-\ref device_h_pg contains the enumeration \ref IRQn_Type that defines all exceptions and interrupts of the device.
+\ref device_h_pg contains the enumeration \ref IRQn_ID_t that defines all exceptions and interrupts of the device.
 For devices implementing an Arm GIC these are defined as:
   - IRQn 0-15 represents software generated interrupts (SGI), local to each processor core.
   - IRQn 16-31 represents private peripheral interrupts (PPI), local to each processor core.
   - IRQn 32-1019 represents shared peripheral interrupts (SPI), routable to all processor cores.
   - IRQn 1020-1023 represents special interrupts, refer to the GIC Architecture Specification.
   
-\b Example:
+**Example:**
 
 The following example shows the extension of the interrupt vector table for Cortex-A9 class device.
 
-\code
+```c
 typedef enum IRQn
 {
 /******  SGI Interrupts Numbers                 ****************************************/
@@ -220,7 +157,7 @@ typedef enum IRQn
        :                  :
        :                  :
 } IRQn_Type;
-\endcode
+```
 
 \section core_config_sect Configuration of the Processor and Core Peripherals
 
@@ -275,11 +212,11 @@ If these <i>\#defines</i> are missing default values are used.
     </tr>
 </table>
 
-\b Example
+**Example**
 
 The following code exemplifies the configuration of the Cortex-A9 Processor and Core Peripherals.
 
-\code
+```c
 #define __CA_REV        0x0000U    /*!< Core revision r0p0                          */
 #define __CORTEX_A           9U    /*!< Cortex-A9 Core                              */
 #define __FPU_PRESENT        1U    /*!< FPU present                                 */
@@ -289,21 +226,21 @@ The following code exemplifies the configuration of the Cortex-A9 Processor and 
 :
 :
 #include "core_ca.h"               /* Cortex-A processor and core peripherals       */
-\endcode
+```
 
 
-\section core_version_sect   CMSIS Version and Processor Information
+\section core_version_sect CMSIS Version and Processor Information
 
 Defines in the core_<i>cpu</i>.h file identify the version of the CMSIS-Core-A and the processor used.
 The following shows the defines in the various core_<i>cpu</i>.h files that may be used in the \ref device_h_pg
 to verify a minimum version or ensure that the right processor core is used.
 
-\code
+```c
 #define __CA_CMSIS_VERSION_MAIN  (5U)                                 /* [31:16] CMSIS Core main version */
 #define __CA_CMSIS_VERSION_SUB   (0U)                                 /* [15:0]  CMSIS Core sub version */
 #define __CA_CMSIS_VERSION       ((__CA_CMSIS_VERSION_MAIN << 16U) | \
                                    __CA_CMSIS_VERSION_SUB          )  /* CMSIS Core version number */
-\endcode
+```
 
 \section device_access Device Peripheral Access Layer
 
@@ -322,21 +259,12 @@ The \ref system_Device_h_sec which is provided as part of the CMSIS specificatio
 
 \verbinclude "Include/Device.h"
 
-*/
 
-/*=======0=========1=========2=========3=========4=========5=========6=========7=========8=========9=========0=========1====*/
-/**
 \page mem_h_pg Memory Configuration Files mem_<device>.h
 
-\verbinclude "Include/mem_Device.h"
+\verbinclude "Config/mem_Device.h"
 
-*/
 
-/*=======0=========1=========2=========3=========4=========5=========6=========7=========8=========9=========0=========1====*/
-/**
 \page mmu_c_pg Memory Management Unit Files mmu_<device>.c
 
 \verbinclude "Source/mmu_Device.c"
-
-*/
-

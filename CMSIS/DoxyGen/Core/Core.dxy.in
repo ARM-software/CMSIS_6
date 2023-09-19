@@ -246,7 +246,7 @@ MULTILINE_CPP_IS_BRIEF = YES
 # documentation blocks is shown as doxygen documentation.
 # The default value is: YES.
 
-PYTHON_DOCSTRING       = YES
+PYTHON_DOCSTRING       = NO
 
 # If the INHERIT_DOCS tag is set to YES then an undocumented member inherits the
 # documentation from any documented member that it re-implements.
@@ -417,7 +417,7 @@ DISTRIBUTE_GROUP_DOC   = NO
 # is disabled and one has to add nested compounds explicitly via \ingroup.
 # The default value is: NO.
 
-GROUP_NESTED_COMPOUNDS = NO
+GROUP_NESTED_COMPOUNDS = YES
 
 # Set the SUBGROUPING tag to YES to allow class member groups of the same type
 # (for instance a group of public functions) to be put as a subgroup of that
@@ -797,7 +797,7 @@ FILE_VERSION_FILTER    =
 # DoxygenLayout.xml, doxygen will parse it automatically even if the LAYOUT_FILE
 # tag is left empty.
 
-LAYOUT_FILE            = ../Doxygen_Templates/Layout_forUser.xml
+LAYOUT_FILE            = ../Doxygen_Templates/Layout_forUser_Core.xml
 
 # The CITE_BIB_FILES tag can be used to specify one or more bib files containing
 # the reference definitions. This must be a list of .bib files. The .bib
@@ -918,30 +918,39 @@ WARN_LOGFILE           =
 # spaces. See also FILE_PATTERNS and EXTENSION_MAPPING
 # Note: If this tag is empty the current directory is searched.
 
-INPUT                  = src/Overview.txt \
-                         src/Using.txt \
-                         src/UsingTrustZone.txt \
-                         src/Template.txt \
-                         src/MISRA.txt \
-                         src/Ref_VersionControl.txt \
-                         src/Ref_CompilerControl.txt \
-                         src/Ref_Peripheral.txt \
-                         src/Ref_SystemAndClock.txt \
-                         src/Ref_NVIC.txt \
-                         src/Ref_CoreReg.txt \
-                         src/Ref_cmInstr.txt \
-                         src/Ref_cm4_simd.txt \
-                         src/Ref_FPU.txt \
-                         src/Ref_MVE.txt \
-                         src/Ref_MPU.txt \
-                         src/Ref_MPU8.txt \
-                         src/Ref_PMU8.txt \
-                         src/Ref_Systick.txt \
-                         src/Ref_Debug.txt \
-                         src/Ref_Trustzone.txt \
-                         src/core_cm7.txt \
-                         src/Ref_DataStructs.txt \
-                         src/RegMap_CMSIS2ARM_Doc.txt
+INPUT                  = ./src/mainpage.md \
+                         ./src/history.md \
+                         ./src/using.md \
+                         ./src/using_tz.md \
+                         ./src/core_std_files.md \
+                         ./src/core_device_files.md \
+                         ./src/core_system_files.md \
+                         ./src/core_device_h.md \
+                         ./src/core_startup_c.md \
+                         ./src/core_linker_sct.md \
+                         ./src/core_partition_device_h.md \
+                         ./src/core_files_in_packs.md \
+                         ./src/misra.md \
+                         ./src/register_mapping.md \
+                         ./src/Ref_DevCaps.txt \
+                         ./src/Ref_VersionControl.txt \
+                         ./src/Ref_CompilerControl.txt \
+                         ./src/Ref_Peripheral.txt \
+                         ./src/Ref_SystemAndClock.txt \
+                         ./src/Ref_NVIC.txt \
+                         ./src/Ref_CoreRegister.txt \
+                         ./src/Ref_cmInstr.txt \
+                         ./src/Ref_cm4_simd.txt \
+                         ./src/Ref_FPU.txt \
+                         ./src/Ref_MVE.txt \
+                         ./src/Ref_MPU.txt \
+                         ./src/Ref_MPU8.txt \
+                         ./src/Ref_PMU8.txt \
+                         ./src/Ref_Systick.txt \
+                         ./src/Ref_Debug.txt \
+                         ./src/Ref_Trustzone.txt \
+                         ./src/core_cm7.txt \
+                         ./src/Ref_DataStructs.txt
 
 # This tag can be used to specify the character encoding of the source files
 # that doxygen parses. Internally doxygen uses the UTF-8 encoding. Doxygen uses
@@ -1043,6 +1052,7 @@ RECURSIVE              = NO
 
 EXCLUDE                = system*.c \
                          startup*.s \
+                         core_ca.h \
                          src/exclude/
 
 # The EXCLUDE_SYMLINKS tag can be used to select whether or not files or
@@ -1076,7 +1086,7 @@ EXCLUDE_SYMBOLS        =
 # that contain example code fragments that are included (see the \include
 # command).
 
-EXAMPLE_PATH           =
+EXAMPLE_PATH           = ../../Core/Template/Device_M/
 
 # If the value of the EXAMPLE_PATH tag contains directories, you can use the
 # EXAMPLE_PATTERNS tag to specify one or more wildcard pattern (like *.cpp and
@@ -2448,7 +2458,7 @@ TAGFILES               =
 # tag file that is based on the input files it reads. See section "Linking to
 # external documentation" for more information about the usage of tag files.
 
-GENERATE_TAGFILE       =
+GENERATE_TAGFILE       = ../../Documentation/Core/cmsis_core_m.tag
 
 # If the ALLEXTERNALS tag is set to YES, all external class will be listed in
 # the class index. If set to NO, only the inherited external classes will be

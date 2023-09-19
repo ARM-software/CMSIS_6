@@ -128,7 +128,7 @@ BRIEF_MEMBER_DESC      = YES
 # brief descriptions will be completely suppressed.
 # The default value is: YES.
 
-REPEAT_BRIEF           = NO
+REPEAT_BRIEF           = YES
 
 # This tag implements a quasi-intelligent brief description abbreviator that is
 # used to form the text in various listings. Each string in this list, if found
@@ -246,7 +246,7 @@ MULTILINE_CPP_IS_BRIEF = YES
 # documentation blocks is shown as doxygen documentation.
 # The default value is: YES.
 
-PYTHON_DOCSTRING       = YES
+PYTHON_DOCSTRING       = NO
 
 # If the INHERIT_DOCS tag is set to YES then an undocumented member inherits the
 # documentation from any documented member that it re-implements.
@@ -417,7 +417,7 @@ DISTRIBUTE_GROUP_DOC   = NO
 # is disabled and one has to add nested compounds explicitly via \ingroup.
 # The default value is: NO.
 
-GROUP_NESTED_COMPOUNDS = NO
+GROUP_NESTED_COMPOUNDS = YES
 
 # Set the SUBGROUPING tag to YES to allow class member groups of the same type
 # (for instance a group of public functions) to be put as a subgroup of that
@@ -795,7 +795,7 @@ FILE_VERSION_FILTER    =
 # DoxygenLayout.xml, doxygen will parse it automatically even if the LAYOUT_FILE
 # tag is left empty.
 
-LAYOUT_FILE            = ../Doxygen_Templates/Layout_forUser.xml
+LAYOUT_FILE            = ../Doxygen_Templates/Layout_forUser_Core.xml
 
 # The CITE_BIB_FILES tag can be used to specify one or more bib files containing
 # the reference definitions. This must be a list of .bib files. The .bib
@@ -916,24 +916,25 @@ WARN_LOGFILE           =
 # spaces. See also FILE_PATTERNS and EXTENSION_MAPPING
 # Note: If this tag is empty the current directory is searched.
 
-INPUT                  = src/Overview.txt \
-                         src/Using.txt \
-                         src/Template.txt \
-                         src/MISRA.txt \
-                         ../../Core_A/Include/core_ca.h \
-                         ../../Core_A/Include/cmsis_armcc.h \
-                         ../../Core_A/Include/cmsis_cp15.h \
-                         ../../Core_A/Source/irq_ctrl_gic.c \
-                         ../../Core_A/Include/irq_ctrl.h \
-                         src/Ref_SystemAndClock.txt \
-                         src/ref_gic.txt \
-                         src/ref_core_register.txt \
-                         src/ref_cache.txt \
-                         src/ref_timer.txt \
-                         src/ref_mmu.txt \
-                         src/core_ca.txt \
-                         src/cmsis_armcc.txt \
-                         src/irq_ctrl.txt \
+INPUT                  = ./src/mainpage.md \
+                         ./src/history.md \
+                         ./src/using.md \
+                         ./src/template.md \
+                         ./src/misra.md \
+                         ./../../Core/Include/core_ca.h \
+                         ./../../Core/Include/a-profile/cmsis_armclang_a.h \
+                         ./../../Core/Include/a-profile/cmsis_cp15.h \
+                         ./../../Core/Include/a-profile/irq_ctrl.h \
+                         ./../../Core/Source/irq_ctrl_gic.c \
+                         ./src/Ref_SystemAndClock.txt \
+                         ./src/Ref_GIC.txt \
+                         ./src/Ref_CoreRegister.txt \
+                         ./src/Ref_Cache.txt \
+                         ./src/Ref_Timer.txt \
+                         ./src/Ref_MMU.txt \
+                         ./src/core_ca.txt \
+                         ./src/Ref_CompilerControl.txt \
+                         ./src/Ref_IRQCtrl.txt \
 
 # This tag can be used to specify the character encoding of the source files
 # that doxygen parses. Internally doxygen uses the UTF-8 encoding. Doxygen uses
@@ -1068,7 +1069,7 @@ EXCLUDE_SYMBOLS        =
 # that contain example code fragments that are included (see the \include
 # command).
 
-EXAMPLE_PATH           =
+EXAMPLE_PATH           = ../../Core/Template/Device_A/
 
 # If the value of the EXAMPLE_PATH tag contains directories, you can use the
 # EXAMPLE_PATTERNS tag to specify one or more wildcard pattern (like *.cpp and
@@ -2398,12 +2399,10 @@ INCLUDE_FILE_PATTERNS  =
 
 PREDEFINED             = DOXYGEN \
                          __L2C_PRESENT:=1 \
-                         __CC_ARM \
+                         __ARMCC_VERSION:=6100100 \
                          __TARGET_FPU_VFP \
                          __CHECK_DEVICE_DEFINES \
                          __cplusplus:=1 \
-                         __TI_ARM__:=1 \
-                         __TASKING__:=1 \
                          __NO_EMBEDDED_ASM:=0 \
                          __CORTEX_A:=9 \
                          __CA_REV:=0x0000 \
@@ -2451,7 +2450,7 @@ TAGFILES               =
 # tag file that is based on the input files it reads. See section "Linking to
 # external documentation" for more information about the usage of tag files.
 
-GENERATE_TAGFILE       =
+GENERATE_TAGFILE       = ../../Documentation/Core/cmsis_core_a.tag
 
 # If the ALLEXTERNALS tag is set to YES, all external class will be listed in
 # the class index. If set to NO, only the inherited external classes will be

@@ -1,5 +1,5 @@
 /**************************************************************************//**
- * @file     cmsis_armcc.txt
+ * @file     Ref_CompilerControl.txt
  * @brief    CMSIS compiler specific macros, functions, instructions
  * @version  V1.00
  * @date     22. Feb 2017
@@ -24,6 +24,7 @@ Each CMSIS compliant compiler should support the functionality described in this
 \details
 The \b \#define __ARM_ARCH_7A__ is set to 1 when generating code for the Armv7-A architecture. This architecture is for example used by the Cortex-A7 processor.
 */
+#define __ARM_ARCH_7A__
 
 /**
 \def __ASM

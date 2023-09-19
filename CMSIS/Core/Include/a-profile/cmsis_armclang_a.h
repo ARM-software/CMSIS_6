@@ -328,10 +328,6 @@ __STATIC_FORCEINLINE uint8_t __CLZ(uint32_t value)
 #define __USAT             __builtin_arm_usat
 
 /* ###################  Compiler specific Intrinsics  ########################### */
-/** \defgroup CMSIS_SIMD_intrinsics CMSIS SIMD Intrinsics
-  Access to dedicated SIMD instructions
-  @{
-*/
 
 #if (defined (__ARM_FEATURE_DSP) && (__ARM_FEATURE_DSP == 1))
 

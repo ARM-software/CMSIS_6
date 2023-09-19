@@ -1,7 +1,4 @@
-/** 
-\page regMap_pg  Register Mapping
-
-\details 
+# Register Mapping {#regMap_pg}
 
 The table below associates some common register names used in CMSIS to the register names 
 used in Technical Reference Manuals.
@@ -9,8 +6,8 @@ used in Technical Reference Manuals.
 <table class="cmtable" summary="Register Mapping">
     <tr>
       <th>CMSIS Register Name</th>
-      <th>Cortex-M3, Cortex-M4, and Cortex-M7</th>
-      <th>Cortex-M0 and Cortex-M0+</th>
+      <th>Cortex-M3/M4/M7</th>
+      <th>Cortex-M0/M0+</th>
       <th>Register Name</th>
     </tr>
     <tr>
@@ -497,4 +494,3 @@ used in Technical Reference Manuals.
       <td>Media and VFP Feature Registers</td>
   </tr>
 </table>
-*/
