@@ -27,17 +27,25 @@ var NAVTREE =
   [ "CMSIS-Core (Cortex-A)", "index.html", [
     [ "Overview", "index.html", "index" ],
     [ "Revision History of CMSIS-Core (Cortex-A)", "rev_histCoreA.html", null ],
-    [ "Using CMSIS in Embedded Applications", "using_pg.html", "using_pg" ],
+    [ "Using CMSIS in Embedded Applications", "using_pg.html", [
+      [ "CMSIS Basic Example", "using_pg.html#using_CMSIS", null ],
+      [ "Using CMSIS with generic Arm Processors", "using_pg.html#using_ARM_pg", null ]
+    ] ],
     [ "CMSIS-Core Device Templates", "templates_pg.html", "templates_pg" ],
     [ "MISRA-C Deviations", "coreMISRA_Exceptions_pg.html", null ],
     [ "Deprecated List", "deprecated.html", null ],
-    [ "API Reference", "modules.html", "modules" ]
+    [ "API Reference", "modules.html", "modules" ],
+    [ "Data Structures", "annotated.html", [
+      [ "Data Structures", "annotated.html", "annotated_dup" ]
+    ] ]
   ] ]
 ];
 
 var NAVTREEINDEX =
 [
-"coreMISRA_Exceptions_pg.html"
+"annotated.html",
+"group__CMSIS__SCTLR__BITS.html#gac1cf872c51ed0baa6ed23e26c1ed35a9",
+"templates_pg.html#template_files_sec"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

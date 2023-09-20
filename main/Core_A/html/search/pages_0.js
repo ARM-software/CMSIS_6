@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['basic_20cmsis_20example_0',['Basic CMSIS Example',['../using_CMSIS.html',1,'using_pg']]]
+  ['cmsis_2dcore_20device_20templates_0',['CMSIS-Core Device Templates',['../templates_pg.html',1,'']]]
 ];

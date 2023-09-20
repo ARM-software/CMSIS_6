@@ -127,12 +127,26 @@ $(document).ready(function(){initNavTree('group__CMSIS__FPEXC.html',''); initRes
 </div>
 
 <div class="header">
+  <div class="summary">
+<a href="#func-members">Functions</a>  </div>
   <div class="headertitle"><div class="title">Floating-Point Exception Control register (FPEXC)<div class="ingroups"><a class="el" href="group__CMSIS__core__register.html">Core Register Access</a></div></div></div>
 </div><!--header-->
 <div class="contents">
 
 <p>Provides a global enable for the Advanced SIMD and Floating-point (VFP) Extensions, and indicates how the state of these extensions is recorded.  
-</p>
+<a href="#details">More...</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
+Functions</h2></td></tr>
+<tr class="memitem:gadde57667b9f81c468a49268513624b90"><td class="memItemLeft" align="right" valign="top"><a class="el" href="cmsis__armclang__a_8h.html#ab904513442afdf77d4f8c74f23cbb040">__STATIC_FORCEINLINE</a> uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CMSIS__FPEXC.html#gadde57667b9f81c468a49268513624b90">__get_FPEXC</a> (void)</td></tr>
+<tr class="memdesc:gadde57667b9f81c468a49268513624b90"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get FPEXC.  <br /></td></tr>
+<tr class="separator:gadde57667b9f81c468a49268513624b90"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga14ba90beb9b4712454f35ac453c45f5d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="cmsis__armclang__a_8h.html#ab904513442afdf77d4f8c74f23cbb040">__STATIC_FORCEINLINE</a> void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CMSIS__FPEXC.html#ga14ba90beb9b4712454f35ac453c45f5d">__set_FPEXC</a> (uint32_t fpexc)</td></tr>
+<tr class="memdesc:ga14ba90beb9b4712454f35ac453c45f5d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set FPEXC.  <br /></td></tr>
+<tr class="separator:ga14ba90beb9b4712454f35ac453c45f5d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">Description</h2>
+<p>Provides a global enable for the Advanced SIMD and Floating-point (VFP) Extensions, and indicates how the state of these extensions is recorded. </p>
 <table class="markdownTable">
 <tr class="markdownTableHead">
 <th class="markdownTableHeadLeft">Bits   </th><th class="markdownTableHeadLeft">Name   </th><th class="markdownTableHeadLeft">Function    </th></tr>
@@ -143,7 +157,57 @@ $(document).ready(function(){initNavTree('group__CMSIS__FPEXC.html',''); initRes
 <tr class="markdownTableRowOdd">
 <td class="markdownTableBodyLeft">[29:0]   </td><td class="markdownTableBodyLeft">-   </td><td class="markdownTableBodyLeft">SUBARCHITECTURE DEFINED.   </td></tr>
 </table>
-<p>Consider __get_FPEXC and __set_FPEXC to access this register. </p>
+<p>Consider <a class="el" href="group__CMSIS__FPEXC.html#gadde57667b9f81c468a49268513624b90">__get_FPEXC</a> and <a class="el" href="group__CMSIS__FPEXC.html#ga14ba90beb9b4712454f35ac453c45f5d">__set_FPEXC</a> to access this register. </p>
+<h2 class="groupheader">Function Documentation</h2>
+<a id="gadde57667b9f81c468a49268513624b90" name="gadde57667b9f81c468a49268513624b90"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gadde57667b9f81c468a49268513624b90">&#9670;&#160;</a></span>__get_FPEXC()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="group__comp__cntrl__gr.html#gaba87361bfad2ae52cfe2f40c1a1dbf9c">__STATIC_INLINE</a> uint32_t __get_FPEXC </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Get FPEXC. </p>
+<dl class="section return"><dt>Returns</dt><dd>Floating Point Exception Control register value</dd></dl>
+<p>This function returns the current value of the <a class="el" href="group__CMSIS__FPEXC.html">Floating-Point Exception Control register (FPEXC)</a>. </p>
+
+</div>
+</div>
+<a id="ga14ba90beb9b4712454f35ac453c45f5d" name="ga14ba90beb9b4712454f35ac453c45f5d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga14ba90beb9b4712454f35ac453c45f5d">&#9670;&#160;</a></span>__set_FPEXC()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="group__comp__cntrl__gr.html#gaba87361bfad2ae52cfe2f40c1a1dbf9c">__STATIC_INLINE</a> void __set_FPEXC </td>
+          <td>(</td>
+          <td class="paramtype">uint32_t&#160;</td>
+          <td class="paramname"><em>fpexc</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Set FPEXC. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">fpexc</td><td>Floating Point Exception Control value to set</td></tr>
+  </table>
+  </dd>
+</dl>
+<p>This function assigns the given value to the <a class="el" href="group__CMSIS__FPEXC.html">Floating-Point Exception Control register (FPEXC)</a>. </p>
+
+</div>
+</div>
 </div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->

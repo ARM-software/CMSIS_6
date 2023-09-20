@@ -146,6 +146,7 @@ Macros</h2></td></tr>
 <tr class="separator:ga139b6e261c981f014f386927ca4a8444"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Description</h2>
+<p>Naming conventions and optional features for accessing peripherals. </p>
 <p>The section below describes the naming conventions, requirements, and optional features for accessing device specific peripherals. Most of the rules also apply to the core peripherals. The <a class="el" href="device_h_pg.html">Device Header File &lt;device.h&gt;</a> contains typically these definition and also includes the core specific header files.</p>
 <p>The definitions for <a class="el" href="group__peripheral__gr.html">Peripheral Access</a> can be generated using the <a href="../../SVD/html/index.html"><b>CMSIS-SVD</b></a> System View Description for Peripherals. Refer to <a href="../../SVD/html/svd_SVDConv_pg.html"><b>SVDConv.exe</b></a> for more information.</p>
 <p>Each peripheral provides a data type definition with a name that is composed of:</p><ul>
@@ -179,20 +180,24 @@ Macros</h2></td></tr>
 </ul>
 <p>The typedef <b>&lt;<em>device abbreviation</em>&gt;_UART_TypeDef</b> shown below defines the generic register layout for all UART channels in a device.</p>
 <div class="fragment"><div class="line"><span class="keyword">typedef</span> <span class="keyword">struct </span>{</div>
-<div class="line">  __O  uint32_t UART_CR;            <span class="comment">// Offset: 0x0000 ( /W) Control Register </span></div>
-<div class="line">  __IO uint32_t UART_MR;            <span class="comment">// Offset: 0x0004 (R/W) Mode Register </span></div>
-<div class="line">  __O  uint32_t UART_IER;           <span class="comment">// Offset: 0x0008 ( /W) Interrupt Enable Register </span></div>
-<div class="line">  __O  uint32_t UART_IDR;           <span class="comment">// Offset: 0x000C ( /W) Interrupt Disable Register </span></div>
-<div class="line">  __I  uint32_t UART_IMR;           <span class="comment">// Offset: 0x0010 (R/ ) Interrupt Mask Register </span></div>
-<div class="line">  __I  uint32_t UART_SR;            <span class="comment">// Offset: 0x0014 (R/ ) Status Register </span></div>
-<div class="line">  __I  uint32_t UART_RHR;           <span class="comment">// Offset: 0x0018 (R/ ) Receive Holding Register </span></div>
-<div class="line">  __O  uint32_t UART_THR;           <span class="comment">// Offset: 0x001C ( /W) Transmit Holding Register </span></div>
-<div class="line">  __IO uint32_t UART_BRGR;          <span class="comment">// Offset: 0x0020 (R/W) Baud Rate Generator Register </span></div>
-<div class="line">  __IO uint32_t UART_CMPR;          <span class="comment">// Offset: 0x0024 (R/W) Comparison Register </span></div>
-<div class="line">  __IO uint32_t UART_RTOR;          <span class="comment">// Offset: 0x0028 (R/W) Receiver Time-out Register </span></div>
-<div class="line">  __I  uint32_t RESERVED[46];       <span class="comment">// Offset: 0x002C (R/ ) Reserved                     </span></div>
-<div class="line">  __IO uint32_t UART_WPMR;          <span class="comment">// Offset: 0x00E4 (R/W) Write Protection Mode Register </span></div>
+<div class="line">  <a class="code hl_define" href="core__ca_8h.html#a7e25d9380f9ef903923964322e71f2f6">__O</a>  uint32_t UART_CR;            <span class="comment">// Offset: 0x0000 ( /W) Control Register </span></div>
+<div class="line">  <a class="code hl_define" href="core__ca_8h.html#aec43007d9998a0a0e01faede4133d6be">__IO</a> uint32_t UART_MR;            <span class="comment">// Offset: 0x0004 (R/W) Mode Register </span></div>
+<div class="line">  <a class="code hl_define" href="core__ca_8h.html#a7e25d9380f9ef903923964322e71f2f6">__O</a>  uint32_t UART_IER;           <span class="comment">// Offset: 0x0008 ( /W) Interrupt Enable Register </span></div>
+<div class="line">  <a class="code hl_define" href="core__ca_8h.html#a7e25d9380f9ef903923964322e71f2f6">__O</a>  uint32_t UART_IDR;           <span class="comment">// Offset: 0x000C ( /W) Interrupt Disable Register </span></div>
+<div class="line">  <a class="code hl_define" href="core__ca_8h.html#af63697ed9952cc71e1225efe205f6cd3">__I</a>  uint32_t UART_IMR;           <span class="comment">// Offset: 0x0010 (R/ ) Interrupt Mask Register </span></div>
+<div class="line">  <a class="code hl_define" href="core__ca_8h.html#af63697ed9952cc71e1225efe205f6cd3">__I</a>  uint32_t UART_SR;            <span class="comment">// Offset: 0x0014 (R/ ) Status Register </span></div>
+<div class="line">  <a class="code hl_define" href="core__ca_8h.html#af63697ed9952cc71e1225efe205f6cd3">__I</a>  uint32_t UART_RHR;           <span class="comment">// Offset: 0x0018 (R/ ) Receive Holding Register </span></div>
+<div class="line">  <a class="code hl_define" href="core__ca_8h.html#a7e25d9380f9ef903923964322e71f2f6">__O</a>  uint32_t UART_THR;           <span class="comment">// Offset: 0x001C ( /W) Transmit Holding Register </span></div>
+<div class="line">  <a class="code hl_define" href="core__ca_8h.html#aec43007d9998a0a0e01faede4133d6be">__IO</a> uint32_t UART_BRGR;          <span class="comment">// Offset: 0x0020 (R/W) Baud Rate Generator Register </span></div>
+<div class="line">  <a class="code hl_define" href="core__ca_8h.html#aec43007d9998a0a0e01faede4133d6be">__IO</a> uint32_t UART_CMPR;          <span class="comment">// Offset: 0x0024 (R/W) Comparison Register </span></div>
+<div class="line">  <a class="code hl_define" href="core__ca_8h.html#aec43007d9998a0a0e01faede4133d6be">__IO</a> uint32_t UART_RTOR;          <span class="comment">// Offset: 0x0028 (R/W) Receiver Time-out Register </span></div>
+<div class="line">  <a class="code hl_define" href="core__ca_8h.html#af63697ed9952cc71e1225efe205f6cd3">__I</a>  uint32_t <a class="code hl_define" href="core__ca_8h.html#af7f66fda711fd46e157dbb6c1af88e04">RESERVED</a>[46];       <span class="comment">// Offset: 0x002C (R/ ) Reserved                     </span></div>
+<div class="line">  <a class="code hl_define" href="core__ca_8h.html#aec43007d9998a0a0e01faede4133d6be">__IO</a> uint32_t UART_WPMR;          <span class="comment">// Offset: 0x00E4 (R/W) Write Protection Mode Register </span></div>
 <div class="line">} IMX_UART_TypeDef;</div>
+<div class="ttc" id="acore__ca_8h_html_a7e25d9380f9ef903923964322e71f2f6"><div class="ttname"><a href="core__ca_8h.html#a7e25d9380f9ef903923964322e71f2f6">__O</a></div><div class="ttdeci">#define __O</div><div class="ttdoc">Defines 'write only' permissions.</div><div class="ttdef"><b>Definition:</b> core_ca.h:172</div></div>
+<div class="ttc" id="acore__ca_8h_html_aec43007d9998a0a0e01faede4133d6be"><div class="ttname"><a href="core__ca_8h.html#aec43007d9998a0a0e01faede4133d6be">__IO</a></div><div class="ttdeci">#define __IO</div><div class="ttdoc">Defines 'read / write' permissions.</div><div class="ttdef"><b>Definition:</b> core_ca.h:173</div></div>
+<div class="ttc" id="acore__ca_8h_html_af63697ed9952cc71e1225efe205f6cd3"><div class="ttname"><a href="core__ca_8h.html#af63697ed9952cc71e1225efe205f6cd3">__I</a></div><div class="ttdeci">#define __I</div><div class="ttdoc">Defines 'read only' permissions.</div><div class="ttdef"><b>Definition:</b> core_ca.h:168</div></div>
+<div class="ttc" id="acore__ca_8h_html_af7f66fda711fd46e157dbb6c1af88e04"><div class="ttname"><a href="core__ca_8h.html#af7f66fda711fd46e157dbb6c1af88e04">RESERVED</a></div><div class="ttdeci">#define RESERVED(N, T)</div><div class="ttdef"><b>Definition:</b> core_ca.h:179</div></div>
 </div><!-- fragment --><p>To access the registers of the UART defined above, pointers to this register structure are defined. If more instances of a peripheral exist, the variables have a postfix (digit or letter) that identifies the peripheral.</p>
 <p><b>Example:</b> In this example, <b>IMX_UART2</b> and <b>IMX_UART3</b> are two pointers to UARTs defined with above register structure. <br  />
 </p><div class="fragment"><div class="line"><span class="preprocessor">#define IMX_UART2   ((IMX_UART_TypeDef *) IMX_UART2_BASE)</span></div>
@@ -206,34 +211,37 @@ Macros</h2></td></tr>
 </div><!-- fragment --><hr  />
 <h1><a class="anchor" id="core_cmsis_pal_min_reqs"></a>
 Minimal Requirements</h1>
-<p>To access the peripheral registers and related function in a device, the files <b><em>device.h</em></b> and <b>core_ca.h</b> define as a minimum: <br  />
+<p>To access the peripheral registers and related function in a device, the files <b><em>device.h</em></b> and <b><a class="el" href="core__ca_8h.html" title="CMSIS Cortex-A Core Peripheral Access Layer Header File.">core_ca.h</a></b> define as a minimum: <br  />
 <br  />
 </p><ul>
 <li>The <b>Register Layout Typedef</b> for each peripheral that defines all register names. RESERVED is used to introduce space into the structure for adjusting the addresses of the peripheral registers. <br  />
 <br  />
 <b>Example:</b> <div class="fragment"><div class="line"><span class="keyword">typedef</span> <span class="keyword">struct</span></div>
 <div class="line">{</div>
-<div class="line">  __IOM uint32_t C_CTLR;              <span class="comment">// Offset: 0x0000 (R/W) CPU Interface Control Register </span></div>
-<div class="line">  __IOM uint32_t C_PMR;               <span class="comment">// Offset: 0x0004 (R/W) Interrupt Priority Mask Register </span></div>
-<div class="line">  __IOM uint32_t C_BPR;               <span class="comment">// Offset: 0x0008 (R/W) Binary Point Register </span></div>
-<div class="line">  __IM  uint32_t C_IAR;               <span class="comment">// Offset: 0x000C (R/ ) Interrupt Acknowledge Register </span></div>
-<div class="line">  __OM  uint32_t C_EOIR;              <span class="comment">// Offset: 0x0010 ( /W) End Of Interrupt Register </span></div>
-<div class="line">  __IM  uint32_t C_RPR;               <span class="comment">// Offset: 0x0014 (R/ ) Running Priority Register </span></div>
-<div class="line">  __IM  uint32_t C_HPPIR;             <span class="comment">// Offset: 0x0018 (R/ ) Highest Priority Pending Interrupt Register </span></div>
-<div class="line">  __IOM uint32_t C_ABPR;              <span class="comment">// Offset: 0x001C (R/W) Aliased Binary Point Register </span></div>
-<div class="line">  __IM  uint32_t C_AIAR;              <span class="comment">// Offset: 0x0020 (R/ ) Aliased Interrupt Acknowledge Register </span></div>
-<div class="line">  __OM  uint32_t C_AEOIR;             <span class="comment">// Offset: 0x0024 ( /W) Aliased End Of Interrupt Register </span></div>
-<div class="line">  __IM  uint32_t C_AHPPIR;            <span class="comment">// Offset: 0x0028 (R/ ) Aliased Highest Priority Pending Interrupt Register </span></div>
-<div class="line">  __IOM uint32_t C_STATUSR;           <span class="comment">// Offset: 0x002C (R/W) Error Reporting Status Register, optional </span></div>
-<div class="line">  __I   uint32_t RESERVED1[40];       <span class="comment">// Offset: 0x0030 (R/ ) Reserved</span></div>
-<div class="line">  __IOM uint32_t C_APR[4];            <span class="comment">// Offset: 0x00D0 (R/W) Active Priority Register </span></div>
-<div class="line">  __IOM uint32_t C_NSAPR[4];          <span class="comment">// Offset: 0x00E0 (R/W) Non-secure Active Priority Register </span></div>
-<div class="line">  __I   uint32_t RESERVED2[3];        <span class="comment">// Offset: 0x00F6 (R/ ) Reserved</span></div>
-<div class="line">  __IM  uint32_t C_IIDR;              <span class="comment">// Offset: 0x00FC (R/ ) CPU Interface Identification Register </span></div>
-<div class="line">  __I   uint32_t RESERVED3[960];      <span class="comment">// Offset: 0x0100 (R/ ) Reserved</span></div>
-<div class="line">  __OM  uint32_t C_DIR;               <span class="comment">// Offset: 0x1000 ( /W) Deactivate Interrupt Register </span></div>
+<div class="line">  <a class="code hl_define" href="core__ca_8h.html#ab6caba5853a60a17e8e04499b52bf691">__IOM</a> uint32_t C_CTLR;              <span class="comment">// Offset: 0x0000 (R/W) CPU Interface Control Register </span></div>
+<div class="line">  <a class="code hl_define" href="core__ca_8h.html#ab6caba5853a60a17e8e04499b52bf691">__IOM</a> uint32_t C_PMR;               <span class="comment">// Offset: 0x0004 (R/W) Interrupt Priority Mask Register </span></div>
+<div class="line">  <a class="code hl_define" href="core__ca_8h.html#ab6caba5853a60a17e8e04499b52bf691">__IOM</a> uint32_t C_BPR;               <span class="comment">// Offset: 0x0008 (R/W) Binary Point Register </span></div>
+<div class="line">  <a class="code hl_define" href="core__ca_8h.html#a4cc1649793116d7c2d8afce7a4ffce43">__IM</a>  uint32_t C_IAR;               <span class="comment">// Offset: 0x000C (R/ ) Interrupt Acknowledge Register </span></div>
+<div class="line">  <a class="code hl_define" href="core__ca_8h.html#a0ea2009ed8fd9ef35b48708280fdb758">__OM</a>  uint32_t C_EOIR;              <span class="comment">// Offset: 0x0010 ( /W) End Of Interrupt Register </span></div>
+<div class="line">  <a class="code hl_define" href="core__ca_8h.html#a4cc1649793116d7c2d8afce7a4ffce43">__IM</a>  uint32_t C_RPR;               <span class="comment">// Offset: 0x0014 (R/ ) Running Priority Register </span></div>
+<div class="line">  <a class="code hl_define" href="core__ca_8h.html#a4cc1649793116d7c2d8afce7a4ffce43">__IM</a>  uint32_t C_HPPIR;             <span class="comment">// Offset: 0x0018 (R/ ) Highest Priority Pending Interrupt Register </span></div>
+<div class="line">  <a class="code hl_define" href="core__ca_8h.html#ab6caba5853a60a17e8e04499b52bf691">__IOM</a> uint32_t C_ABPR;              <span class="comment">// Offset: 0x001C (R/W) Aliased Binary Point Register </span></div>
+<div class="line">  <a class="code hl_define" href="core__ca_8h.html#a4cc1649793116d7c2d8afce7a4ffce43">__IM</a>  uint32_t C_AIAR;              <span class="comment">// Offset: 0x0020 (R/ ) Aliased Interrupt Acknowledge Register </span></div>
+<div class="line">  <a class="code hl_define" href="core__ca_8h.html#a0ea2009ed8fd9ef35b48708280fdb758">__OM</a>  uint32_t C_AEOIR;             <span class="comment">// Offset: 0x0024 ( /W) Aliased End Of Interrupt Register </span></div>
+<div class="line">  <a class="code hl_define" href="core__ca_8h.html#a4cc1649793116d7c2d8afce7a4ffce43">__IM</a>  uint32_t C_AHPPIR;            <span class="comment">// Offset: 0x0028 (R/ ) Aliased Highest Priority Pending Interrupt Register </span></div>
+<div class="line">  <a class="code hl_define" href="core__ca_8h.html#ab6caba5853a60a17e8e04499b52bf691">__IOM</a> uint32_t C_STATUSR;           <span class="comment">// Offset: 0x002C (R/W) Error Reporting Status Register, optional </span></div>
+<div class="line">  <a class="code hl_define" href="core__ca_8h.html#af63697ed9952cc71e1225efe205f6cd3">__I</a>   uint32_t RESERVED1[40];       <span class="comment">// Offset: 0x0030 (R/ ) Reserved</span></div>
+<div class="line">  <a class="code hl_define" href="core__ca_8h.html#ab6caba5853a60a17e8e04499b52bf691">__IOM</a> uint32_t C_APR[4];            <span class="comment">// Offset: 0x00D0 (R/W) Active Priority Register </span></div>
+<div class="line">  <a class="code hl_define" href="core__ca_8h.html#ab6caba5853a60a17e8e04499b52bf691">__IOM</a> uint32_t C_NSAPR[4];          <span class="comment">// Offset: 0x00E0 (R/W) Non-secure Active Priority Register </span></div>
+<div class="line">  <a class="code hl_define" href="core__ca_8h.html#af63697ed9952cc71e1225efe205f6cd3">__I</a>   uint32_t RESERVED2[3];        <span class="comment">// Offset: 0x00F6 (R/ ) Reserved</span></div>
+<div class="line">  <a class="code hl_define" href="core__ca_8h.html#a4cc1649793116d7c2d8afce7a4ffce43">__IM</a>  uint32_t C_IIDR;              <span class="comment">// Offset: 0x00FC (R/ ) CPU Interface Identification Register </span></div>
+<div class="line">  <a class="code hl_define" href="core__ca_8h.html#af63697ed9952cc71e1225efe205f6cd3">__I</a>   uint32_t RESERVED3[960];      <span class="comment">// Offset: 0x0100 (R/ ) Reserved</span></div>
+<div class="line">  <a class="code hl_define" href="core__ca_8h.html#a0ea2009ed8fd9ef35b48708280fdb758">__OM</a>  uint32_t C_DIR;               <span class="comment">// Offset: 0x1000 ( /W) Deactivate Interrupt Register </span></div>
 <div class="line">}  <a class="code hl_struct" href="structGICInterface__Type.html">GICInterface_Type</a>;</div>
-<div class="ttc" id="astructGICInterface__Type_html"><div class="ttname"><a href="structGICInterface__Type.html">GICInterface_Type</a></div></div>
+<div class="ttc" id="acore__ca_8h_html_a0ea2009ed8fd9ef35b48708280fdb758"><div class="ttname"><a href="core__ca_8h.html#a0ea2009ed8fd9ef35b48708280fdb758">__OM</a></div><div class="ttdeci">#define __OM</div><div class="ttdoc">Defines 'write only' structure member permissions.</div><div class="ttdef"><b>Definition:</b> core_ca.h:177</div></div>
+<div class="ttc" id="acore__ca_8h_html_a4cc1649793116d7c2d8afce7a4ffce43"><div class="ttname"><a href="core__ca_8h.html#a4cc1649793116d7c2d8afce7a4ffce43">__IM</a></div><div class="ttdeci">#define __IM</div><div class="ttdoc">Defines 'read only' structure member permissions.</div><div class="ttdef"><b>Definition:</b> core_ca.h:176</div></div>
+<div class="ttc" id="acore__ca_8h_html_ab6caba5853a60a17e8e04499b52bf691"><div class="ttname"><a href="core__ca_8h.html#ab6caba5853a60a17e8e04499b52bf691">__IOM</a></div><div class="ttdeci">#define __IOM</div><div class="ttdoc">Defines 'read / write' structure member permissions.</div><div class="ttdef"><b>Definition:</b> core_ca.h:178</div></div>
+<div class="ttc" id="astructGICInterface__Type_html"><div class="ttname"><a href="structGICInterface__Type.html">GICInterface_Type</a></div><div class="ttdoc">Structure type to access the Generic Interrupt Controller Interface (GICC)</div><div class="ttdef"><b>Definition:</b> core_ca.h:958</div></div>
 </div><!-- fragment --></li>
 <li><b>Base Address</b> for each peripheral (in case of multiple peripherals that use the same <b>register layout typedef</b> multiple base addresses are defined). <br  />
 <br  />
@@ -247,7 +255,8 @@ Minimal Requirements</h1>
 <p>These definitions allow accessing peripheral registers with simple assignments.</p>
 <ul>
 <li><b>Example:</b> <br  />
-<div class="fragment"><div class="line">GICInterface-&gt;C_CTLR |= 1;   <span class="comment">// Enable Interface</span></div>
+<div class="fragment"><div class="line"><a class="code hl_define" href="core__ca_8h.html#a31a083dbdc5cb84178dbf184286180e3">GICInterface</a>-&gt;C_CTLR |= 1;   <span class="comment">// Enable Interface</span></div>
+<div class="ttc" id="acore__ca_8h_html_a31a083dbdc5cb84178dbf184286180e3"><div class="ttname"><a href="core__ca_8h.html#a31a083dbdc5cb84178dbf184286180e3">GICInterface</a></div><div class="ttdeci">#define GICInterface</div><div class="ttdoc">GIC Interface register set access pointer.</div><div class="ttdef"><b>Definition:</b> core_ca.h:980</div></div>
 </div><!-- fragment --></li>
 </ul>
 <hr  />
@@ -312,6 +321,8 @@ Register Bit Fields</h1>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Extract from a peripheral register value the a bit field value. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">field</td><td>name of bit field. </td></tr>
@@ -319,9 +330,9 @@ Register Bit Fields</h1>
   </table>
   </dd>
 </dl>
-<p>The macro <a class="el" href="group__peripheral__gr.html#ga139b6e261c981f014f386927ca4a8444">_FLD2VAL</a> uses the #define's <em>_Pos</em> and <em>_Msk</em> of the related bit field to extract the value of a bit field from a register.</p>
-<p><b>Example:</b> </p><div class="fragment"><div class="line">i = <a class="code hl_define" href="group__peripheral__gr.html#ga139b6e261c981f014f386927ca4a8444">_FLD2VAL</a>(ACTLR_SMP, ACTLR);</div>
-<div class="ttc" id="agroup__peripheral__gr_html_ga139b6e261c981f014f386927ca4a8444"><div class="ttname"><a href="group__peripheral__gr.html#ga139b6e261c981f014f386927ca4a8444">_FLD2VAL</a></div><div class="ttdeci">#define _FLD2VAL(field, value)</div><div class="ttdoc">Extract from a peripheral register value the a bit field value.</div><div class="ttdef"><b>Definition:</b> core_ca.txt:229</div></div>
+<p>The macro <a class="el" href="core__ca_8h.html#a139b6e261c981f014f386927ca4a8444">_FLD2VAL</a> uses the #define's <em>_Pos</em> and <em>_Msk</em> of the related bit field to extract the value of a bit field from a register.</p>
+<p><b>Example:</b> </p><div class="fragment"><div class="line">i = <a class="code hl_define" href="core__ca_8h.html#a139b6e261c981f014f386927ca4a8444">_FLD2VAL</a>(ACTLR_SMP, ACTLR);</div>
+<div class="ttc" id="acore__ca_8h_html_a139b6e261c981f014f386927ca4a8444"><div class="ttname"><a href="core__ca_8h.html#a139b6e261c981f014f386927ca4a8444">_FLD2VAL</a></div><div class="ttdeci">#define _FLD2VAL(field, value)</div><div class="ttdoc">Mask and shift a register value to extract a bit filed value.</div><div class="ttdef"><b>Definition:</b> core_ca.h:672</div></div>
 </div><!-- fragment --> 
 </div>
 </div>
@@ -350,6 +361,8 @@ Register Bit Fields</h1>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Mask and shift a bit field value for assigning the result to a peripheral register. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">field</td><td>name of bit field. </td></tr>
@@ -357,9 +370,9 @@ Register Bit Fields</h1>
   </table>
   </dd>
 </dl>
-<p>The macro <a class="el" href="group__peripheral__gr.html#ga286e3b913dbd236c7f48ea70c8821f4e">_VAL2FLD</a> uses the #define's <em>_Pos</em> and <em>_Msk</em> of the related bit field to shift bit-field values for assigning to a register.</p>
-<p><b>Example:</b> </p><div class="fragment"><div class="line">ACTLR = <a class="code hl_define" href="group__peripheral__gr.html#ga286e3b913dbd236c7f48ea70c8821f4e">_VAL2FLD</a>(ACTLR_SMP, 0x1)</div>
-<div class="ttc" id="agroup__peripheral__gr_html_ga286e3b913dbd236c7f48ea70c8821f4e"><div class="ttname"><a href="group__peripheral__gr.html#ga286e3b913dbd236c7f48ea70c8821f4e">_VAL2FLD</a></div><div class="ttdeci">#define _VAL2FLD(field, value)</div><div class="ttdoc">Mask and shift a bit field value for assigning the result to a peripheral register.</div><div class="ttdef"><b>Definition:</b> core_ca.txt:212</div></div>
+<p>The macro <a class="el" href="core__ca_8h.html#a286e3b913dbd236c7f48ea70c8821f4e">_VAL2FLD</a> uses the #define's <em>_Pos</em> and <em>_Msk</em> of the related bit field to shift bit-field values for assigning to a register.</p>
+<p><b>Example:</b> </p><div class="fragment"><div class="line">ACTLR = <a class="code hl_define" href="core__ca_8h.html#a286e3b913dbd236c7f48ea70c8821f4e">_VAL2FLD</a>(ACTLR_SMP, 0x1)</div>
+<div class="ttc" id="acore__ca_8h_html_a286e3b913dbd236c7f48ea70c8821f4e"><div class="ttname"><a href="core__ca_8h.html#a286e3b913dbd236c7f48ea70c8821f4e">_VAL2FLD</a></div><div class="ttdeci">#define _VAL2FLD(field, value)</div><div class="ttdoc">Mask and shift a bit field value for use in a register bit range.</div><div class="ttdef"><b>Definition:</b> core_ca.h:664</div></div>
 </div><!-- fragment --> 
 </div>
 </div>

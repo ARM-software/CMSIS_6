@@ -130,35 +130,27 @@ $(document).ready(function(){initNavTree('templates_pg.html',''); initResizable(
   <div class="headertitle"><div class="title">CMSIS-Core Device Templates </div></div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><p>Arm supplies CMSIS-Core device template files for the all supported Cortex-A processors and various compiler vendors. Refer to the list of <a class="el" href="index.html#tested_tools_sec">Tested and Verified Toolchains</a> for compliance.</p>
+<div class="textblock"><p><a class="anchor" id="md_src_template"></a> Arm supplies CMSIS-Core device template files for the all supported Cortex-A processors and various compiler vendors. Refer to the list of <a class="el" href="index.html#tested_tools_sec">Tested and Verified Toolchains</a> for compliance.</p>
 <p>These CMSIS-Core device template files include the following:</p><ul>
 <li>Register names of the Core Peripherals and names of the Core Exception Vectors.</li>
 <li>Functions to access core peripherals, cache, MMU and special CPU instructions</li>
 <li>Generic startup code and system configuration code.</li>
 </ul>
-<p>The detailed file structure of the CMSIS-Core device templates is shown in the following picture.</p>
 <h1><a class="anchor" id="CMSIS_Processor_files"></a>
 CMSIS-Core Processor Files</h1>
-<p>The CMSIS-Core processor files provided by Arm are in the directory .\CMSIS\Core_A\Include. These header files define all processor specific attributes do not need any modifications. The <b>core_&lt;cpu&gt;.h</b> defines the core peripherals and provides helper functions that access the core registers. One file is available for each supported Cortex-A processor:</p>
+<p>The CMSIS-Core processor files provided by Arm are in the directory .\CMSIS\Core\Include. These header files define all processor specific attributes do not need any modifications.</p>
+<p>The <code>core_&lt;cpu&gt;.h</code> defines the core peripherals and provides helper functions that access the core registers.</p>
 <table class="markdownTable">
 <tr class="markdownTableHead">
-<th class="markdownTableHeadLeft">Header File   </th><th class="markdownTableHeadLeft">Processor    </th></tr>
+<th class="markdownTableHeadLeft">Header File   </th><th class="markdownTableHeadLeft">Target Processor Core    </th></tr>
 <tr class="markdownTableRowOdd">
-<td class="markdownTableBodyLeft">core_ca.h   </td><td class="markdownTableBodyLeft">generics for all supported Cortex-A processors   </td></tr>
+<td class="markdownTableBodyLeft">📂 CMSIS/Core/Include   </td><td class="markdownTableBodyLeft">CMSIS-Core include folder (<a href="https://github.com/ARM-software/CMSIS_6/blob/main/CMSIS/Core/Include/">See on GitHub</a>)    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyLeft">┗ 📄 <a class="el" href="core__ca_8h.html" title="CMSIS Cortex-A Core Peripheral Access Layer Header File.">core_ca.h</a>   </td><td class="markdownTableBodyLeft">Generics for all supported Cortex-A processors   </td></tr>
 </table>
 <h1><a class="anchor" id="device_examples"></a>
 Device Examples</h1>
-<p>The CMSIS Software Pack defines several devices that are based on the various processors. The device related CMSIS-Core files are in the directory .\Device\ARM and include CMSIS-Core processor file explained before. The following sample devices are defined in the CMSIS-Pack description file <b>ARM.CMSIS.pdsc</b>:</p>
-<table class="markdownTable">
-<tr class="markdownTableHead">
-<th class="markdownTableHeadLeft">Family   </th><th class="markdownTableHeadLeft">Device   </th><th class="markdownTableHeadLeft">Description    </th></tr>
-<tr class="markdownTableRowOdd">
-<td class="markdownTableBodyLeft">ARM Cortex-A5   </td><td class="markdownTableBodyLeft">ARMCA5   </td><td class="markdownTableBodyLeft">Cortex-A5 based device    </td></tr>
-<tr class="markdownTableRowEven">
-<td class="markdownTableBodyLeft">ARM Cortex-A7   </td><td class="markdownTableBodyLeft">ARMCA7   </td><td class="markdownTableBodyLeft">Cortex-A7 based device    </td></tr>
-<tr class="markdownTableRowOdd">
-<td class="markdownTableBodyLeft">ARM Cortex-A9   </td><td class="markdownTableBodyLeft">ARMCA9   </td><td class="markdownTableBodyLeft">Cortex-A9 based device   </td></tr>
-</table>
+<p>The <a href="https://github.com/ARM-software/CMSIS-DFP">CMSIS-DFP pack</a> provides generic device definitions for supported Arm Cortex-A cores and contains corresponding CMSIS-Core device files.</p>
 <h1><a class="anchor" id="template_files_sec"></a>
 Template Files</h1>
 <p>To simplify the creation of CMSIS-Core device files, the following template files are provided that should be extended by the silicon vendor to reflect the actual device and device peripherals. Silicon vendors add to these template files the following information:</p><ul>
@@ -166,24 +158,31 @@ Template Files</h1>
 <li><b>Access Functions for Peripherals</b> (optional) that provides additional helper functions to access device-specific peripherals.</li>
 <li><b>Interrupt vectors</b> in the startup file that are device specific.</li>
 </ul>
-<table class="cmtable">
-<tr>
-<th>Template File </th><th>Description  </th></tr>
-<tr>
-<td>.\Device\_Template_Vendor\Vendor\Device_A\Source\ARM\startup_Device.c </td><td>Startup file template for Arm C/C++ Compiler.  <br  />
- </td></tr>
-<tr>
-<td>.\Device\_Template_Vendor\Vendor\Device_A\Source\ARM\Device.sct </td><td>Linker scatter file template for Arm C/C++ Compiler.  </td></tr>
-<tr>
-<td>.\Device\_Template_Vendor\Vendor\Device_A\Source\system_Device.c </td><td>Generic system_Device.c file for system configuration (i.e. processor clock and memory bus system).  </td></tr>
-<tr>
-<td>.\Device\_Template_Vendor\Vendor\Device_A\Source\mmu_Device.c </td><td>Sample mmu_Device.c file with memory map description for Memory Management Unit (MMU) configuration.  </td></tr>
-<tr>
-<td>.\Device\_Template_Vendor\Vendor\Device_A\Include\Device.h </td><td>Generic device header file. Needs to be extended with the device-specific peripheral registers. Optionally functions that access the peripherals can be part of that file.  </td></tr>
-<tr>
-<td>.\Device\_Template_Vendor\Vendor\Device_A\Include\system_Device.h </td><td>Generic system device configuration include file.  </td></tr>
-<tr>
-<td>.\Device\_Template_Vendor\Vendor\Device_A\Include\mem_Device.h </td><td>Generic memory base address and size definitions used in scatter file. Settable via Configuration Wizard.  </td></tr>
+<table class="markdownTable">
+<tr class="markdownTableHead">
+<th class="markdownTableHeadLeft">Template File   </th><th class="markdownTableHeadLeft">Description    </th></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyLeft">📂 CMSIS/Core/Template/Device_A   </td><td class="markdownTableBodyLeft">Folder with CMSIS-Core device file templates (<a href="https://github.com/ARM-software/CMSIS_6/blob/main/CMSIS/Core/Template/Device_A/">See on GitHub</a>)    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyLeft">┣ 📂 Config   </td><td class="markdownTableBodyLeft">Template configuration files    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyLeft">&emsp;&#160; ┣ 📄 Device_ac6.sct   </td><td class="markdownTableBodyLeft">Linker scatter file template for Arm C/C++ Compiler    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyLeft">&emsp;&#160; ┗ 📄 mem_Device.h   </td><td class="markdownTableBodyLeft"><a class="el" href="mem_h_pg.html">Memory Configuration Files mem_&lt;device&gt;.h</a> template    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyLeft">┣ 📂 Include   </td><td class="markdownTableBodyLeft">Template header files    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyLeft">&emsp;&#160; ┣ 📄 Device.h   </td><td class="markdownTableBodyLeft"><a class="el" href="device_h_pg.html">Device Header File &lt;Device.h&gt;</a> template    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyLeft">&emsp;&#160; ┗ 📄 system_Device.h   </td><td class="markdownTableBodyLeft"><a class="el" href="system_c_pg.html#system_Device_h_sec">system_Device.h Template File</a>    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyLeft">┗ 📂 Source   </td><td class="markdownTableBodyLeft">Template C files    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyLeft">&emsp;&#160; ┣ 📄 mmu_Device.c   </td><td class="markdownTableBodyLeft"><a class="el" href="mmu_c_pg.html">Memory Management Unit Files mmu_&lt;device&gt;.c</a> template    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyLeft">&emsp;&#160; ┣ 📄 startup_Device.c   </td><td class="markdownTableBodyLeft"><a class="el" href="startup_c_pg.html">Startup File startup_&lt;Device&gt;.c</a> template    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyLeft">&emsp;&#160; ┗ 📄 system_Device.c   </td><td class="markdownTableBodyLeft"><a class="el" href="system_c_pg.html#system_Device_sec">system_Device.c Template File</a>   </td></tr>
 </table>
 <p><b>Adapt Template Files to a Device</b></p>
 <p>The following steps describe how to adopt the template files to a specific device or device family. Copy the complete all files in the template directory and replace:</p><ul>
@@ -192,22 +191,22 @@ Template Files</h1>
 <li>in the file names 'Device' with the specific device name e.g.: LPC17xx.</li>
 </ul>
 <p>Each template file contains comments that start with <b>ToDo:</b> that describe a required modification. The template files contain place holders:</p>
-<table class="cmtable">
-<tr>
-<th>Placeholder </th><th>Replaced with  </th></tr>
-<tr>
-<td>&lt;Device&gt; </td><td>the specific device name or device family name; i.e. LPC17xx.  </td></tr>
-<tr>
-<td>&lt;DeviceInterrupt&gt; </td><td>a specific interrupt name of the device; i.e. TIM1 for Timer 1. </td></tr>
-<tr>
-<td>&lt;DeviceAbbreviation&gt; </td><td>short name or abbreviation of the device family; i.e. LPC.  </td></tr>
-<tr>
-<td>Cortex-M# </td><td>the specific Cortex-M processor name; i.e. Cortex-M3.  </td></tr>
+<table class="markdownTable">
+<tr class="markdownTableHead">
+<th class="markdownTableHeadLeft">Placeholder   </th><th class="markdownTableHeadLeft">To be replaced with    </th></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyLeft"><code>&lt;Device&gt;</code>   </td><td class="markdownTableBodyLeft">The specific device name or device family name, for example <code>LPC17xx</code>    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyLeft"><code>&lt;DeviceInterrupt&gt;</code>   </td><td class="markdownTableBodyLeft">The specific interrupt name of the device, for example <code>TIM1</code> for Timer 1 interrupt    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyLeft"><code>&lt;DeviceAbbreviation&gt;</code>   </td><td class="markdownTableBodyLeft">Short name or abbreviation of the device family, for example <code>LPC</code>    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyLeft"><code>Cortex-A#</code>   </td><td class="markdownTableBodyLeft">The specific Cortex-A processor name, for example <code>Cortex-A9</code>   </td></tr>
 </table>
 <p>The device configuration of the template files is described in detail on the following pages:</p><ul>
-<li><a class="el" href="startup_c_pg.html">Startup File startup_&lt;device&gt;.c</a></li>
-<li><a class="el" href="system_c_pg.html">System Configuration Files system_&lt;device&gt;.c and system_&lt;device&gt;.h</a></li>
-<li><a class="el" href="device_h_pg.html">Device Header File &lt;device.h&gt;</a></li>
+<li><a class="el" href="startup_c_pg.html">Startup File startup_&lt;Device&gt;.c</a></li>
+<li><a class="el" href="system_c_pg.html">System Configuration Files system_&lt;Device&gt;.c and system_&lt;Device&gt;.h</a></li>
+<li><a class="el" href="device_h_pg.html">Device Header File &lt;Device.h&gt;</a></li>
 <li><a class="el" href="mem_h_pg.html">Memory Configuration Files mem_&lt;device&gt;.h</a></li>
 <li><a class="el" href="mmu_c_pg.html">Memory Management Unit Files mmu_&lt;device&gt;.c</a> </li>
 </ul>

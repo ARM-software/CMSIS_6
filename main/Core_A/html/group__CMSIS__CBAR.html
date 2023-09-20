@@ -128,7 +128,8 @@ $(document).ready(function(){initNavTree('group__CMSIS__CBAR.html',''); initResi
 
 <div class="header">
   <div class="summary">
-<a href="#groups">Content</a>  </div>
+<a href="#groups">Content</a> &#124;
+<a href="#func-members">Functions</a>  </div>
   <div class="headertitle"><div class="title">Configuration Base Address Register (CBAR)<div class="ingroups"><a class="el" href="group__CMSIS__core__register.html">Core Register Access</a></div></div></div>
 </div><!--header-->
 <div class="contents">
@@ -141,8 +142,15 @@ Content</h2></td></tr>
 <tr class="memitem:group__CMSIS__CBAR__BITS"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CMSIS__CBAR__BITS.html">CBAR Bits</a></td></tr>
 <tr class="memdesc:group__CMSIS__CBAR__BITS"><td class="mdescLeft">&#160;</td><td class="mdescRight">Bit position and mask macros. <br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
+Functions</h2></td></tr>
+<tr class="memitem:gab0f00668bb0f6cbe3cc8b90535d66d8e"><td class="memItemLeft" align="right" valign="top"><a class="el" href="cmsis__armclang__a_8h.html#ab904513442afdf77d4f8c74f23cbb040">__STATIC_FORCEINLINE</a> uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CMSIS__CBAR.html#gab0f00668bb0f6cbe3cc8b90535d66d8e">__get_CBAR</a> (void)</td></tr>
+<tr class="memdesc:gab0f00668bb0f6cbe3cc8b90535d66d8e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get CBAR.  <br /></td></tr>
+<tr class="separator:gab0f00668bb0f6cbe3cc8b90535d66d8e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Description</h2>
+<p>Takes the physical base address value of the memory-mapped SCU peripherals at reset from the external signal PERIPHBASE[31:13]. </p>
 <table class="markdownTable">
 <tr class="markdownTableHead">
 <th class="markdownTableHeadLeft">Bits   </th><th class="markdownTableHeadLeft">Name   </th><th class="markdownTableHeadLeft">Function    </th></tr>
@@ -151,7 +159,30 @@ Content</h2></td></tr>
 <tr class="markdownTableRowEven">
 <td class="markdownTableBodyLeft">[12:0]   </td><td class="markdownTableBodyLeft">-   </td><td class="markdownTableBodyLeft">Read as zero.   </td></tr>
 </table>
-<p>Consider __get_CBAR to access this register. </p>
+<p>Consider <a class="el" href="group__CMSIS__CBAR.html#gab0f00668bb0f6cbe3cc8b90535d66d8e">__get_CBAR</a> to access this register. </p>
+<h2 class="groupheader">Function Documentation</h2>
+<a id="gab0f00668bb0f6cbe3cc8b90535d66d8e" name="gab0f00668bb0f6cbe3cc8b90535d66d8e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gab0f00668bb0f6cbe3cc8b90535d66d8e">&#9670;&#160;</a></span>__get_CBAR()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="group__comp__cntrl__gr.html#gaba87361bfad2ae52cfe2f40c1a1dbf9c">__STATIC_INLINE</a> uint32_t __get_CBAR </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Get CBAR. </p>
+<dl class="section return"><dt>Returns</dt><dd>Configuration Base Address register value</dd></dl>
+<p>This function returns the value of the Configuration Base Address register. </p>
+
+</div>
+</div>
 </div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->

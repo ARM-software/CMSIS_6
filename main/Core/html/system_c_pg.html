@@ -5,7 +5,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>CMSIS-Core (Cortex-M): System Configuration Files system_&lt;device&gt;.c and system_&lt;device&gt;.h</title>
+<title>CMSIS-Core (Cortex-M): System Configuration Files system_&lt;Device&gt;.c and system_&lt;Device&gt;.h</title>
 <link href="doxygen.css" rel="stylesheet" type="text/css"/>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <link href="extra_navtree.css" rel="stylesheet" type="text/css"/>
@@ -127,19 +127,17 @@ $(document).ready(function(){initNavTree('system_c_pg.html',''); initResizable()
 </div>
 
 <div><div class="header">
-  <div class="headertitle"><div class="title">System Configuration Files system_&lt;device&gt;.c and system_&lt;device&gt;.h </div></div>
+  <div class="headertitle"><div class="title">System Configuration Files system_&lt;Device&gt;.c and system_&lt;Device&gt;.h </div></div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><p>The <a class="el" href="system_c_pg.html">System Configuration Files system_&lt;device&gt;.c and system_&lt;device&gt;.h</a> provides as a minimum the functions described under <a class="el" href="group__system__init__gr.html">System and Clock Configuration</a>. These functions are device specific and need adaptations. In addition, the file might have configuration settings for the device such as XTAL frequency or PLL prescaler settings.</p>
-<p>For devices with external memory BUS the system_&lt;device&gt;.c also configures the BUS system.</p>
-<p>The silicon vendor might expose other functions (i.e. for power configuration) in the system_&lt;device&gt;.c file. In case of additional features the function prototypes need to be added to the system_&lt;device&gt;.h header file.</p>
+<div class="textblock"><p><a class="anchor" id="md_src_core_system_files"></a> CMSIS-Core system configuration files provide as a minimum the functions for system initialization and clock configuration as described under <a class="el" href="group__system__init__gr.html">System and Clock Configuration</a>. The file names use naming convention <code>system_&lt;Device&gt;.h</code> and <code>system_&lt;Device&gt;.c</code>, where <code>&lt;Device&gt;</code> corresponds to the device name.</p>
+<p><code>system_&lt;Device&gt;.h</code> file shall contain the prototypes for accessing the public functions and <code>system_&lt;Device&gt;.c</code> shall contain corresponding implementations.</p>
+<p>The system configuration functions are device specific and need adaptation for the target device. The silicon vendor might expose other functions and configuration parameters such as XTAL, power configuration, etc.</p>
+<p>Additional application-specific adaptations may be required in the initialization code and therefore the system configuration file shall be located in the application project. <a class="el" href="cmsis_files_dfps.html">Delivery in CMSIS-Packs</a> explains how this can be achieved when device support is provided in <a href="https://open-cmsis-pack.github.io/Open-CMSIS-Pack-Spec/main/html/index.html">CMSIS pack format</a>.</p>
 <h1><a class="anchor" id="system_Device_sec"></a>
-system_Device.c Template File</h1>
-<p>The <a class="el" href="system_c_pg.html#system_Device_sec">system_Device.c Template File</a> for the Cortex-M3 is shown below.</p>
-<pre class="fragment"></pre><h1><a class="anchor" id="system_Device_h_sec"></a>
-system_Device.h Template File</h1>
-<p>The system_&lt;device&gt;.h header file contains prototypes to access the public functions in the system_&lt;device&gt;.c file. The <a class="el" href="system_c_pg.html#system_Device_h_sec">system_Device.h Template File</a> is shown below.</p>
-<pre class="fragment"></pre> </div></div><!-- contents -->
+system_Device Template Files</h1>
+<p>CMSIS-Core <a class="el" href="cmsis_device_files.html#cmsis_template_files">Device Template Files</a> include <code>system_Device.c</code> and <code>system_Device.h</code> files that can be used as a starting point for implementing device-specific system configuration files. </p>
+</div></div><!-- contents -->
 </div><!-- PageDoc -->
 </div><!-- doc-content -->
 <!-- start footer part -->

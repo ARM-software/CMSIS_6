@@ -5,7 +5,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>CMSIS-Core (Cortex-M): TrustZone setup: partition_&lt;device&gt;.h</title>
+<title>CMSIS-Core (Cortex-M): TrustZone setup: partition_&lt;Device&gt;.h</title>
 <link href="doxygen.css" rel="stylesheet" type="text/css"/>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <link href="extra_navtree.css" rel="stylesheet" type="text/css"/>
@@ -127,23 +127,21 @@ $(document).ready(function(){initNavTree('partition_h_pg.html',''); initResizabl
 </div>
 
 <div><div class="header">
-  <div class="headertitle"><div class="title">TrustZone setup: partition_&lt;device&gt;.h </div></div>
+  <div class="headertitle"><div class="title">TrustZone setup: partition_&lt;Device&gt;.h </div></div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><p>The <a class="el" href="partition_h_pg.html">TrustZone setup: partition_&lt;device&gt;.h</a> header file contains the initial setup of the TrustZone hardware in an Armv8-M system.</p>
-<p>This file implements the function <a class="el" href="group__sau__trustzone__functions.html#ga6093bc5939ea8924fbcfdffb8f0553f1">TZ_SAU_Setup</a> that is call from <a class="el" href="group__system__init__gr.html#ga93f514700ccf00d08dbdcff7f1224eb2">SystemInit</a>. It uses settings in these files:</p>
-<ul>
-<li><a class="el" href="partition_h_pg.html">partition_&lt;device&gt;.h</a> that defines the initial system configuration and during SystemInit in Secure state.</li>
-<li><a class="el" href="partition_h_pg.html#partition_gen_h_pg">partition_gen.h</a> that contains SAU region and interrupt target assignments. This file may be generated using <a href="../../Zone/html/index.html"><b>CMSIS-Zone</b></a>.</li>
+<div class="textblock"><p><a class="anchor" id="md_src_core_partition_device_h"></a> The TrustZone header file contains the initial setup of the TrustZone hardware in an Armv8-M system.</p>
+<p>This file implements the function <a class="el" href="group__sau__trustzone__functions.html#ga6093bc5939ea8924fbcfdffb8f0553f1">TZ_SAU_Setup</a> that is called from <a class="el" href="group__system__init__gr.html#ga93f514700ccf00d08dbdcff7f1224eb2">SystemInit</a>. It uses settings in these files:</p><ul>
+<li><a class="el" href="partition_h_pg.html">partition_&lt;Device&gt;.h</a> that defines the initial system configuration and during SystemInit in Secure state.</li>
+<li><a class="el" href="partition_h_pg.html#partition_gen_h_pg">partition_gen.h</a> that contains SAU region and interrupt target assignments. This file may be generated using <a href="../../Zone/html/index.html">CMSIS-Zone</a>.</li>
 </ul>
-<dl class="section note"><dt>Note</dt><dd><a class="el" href="partition_h_pg.html#partition_gen_h_pg">partition_gen.h</a> is optional and can be generated using <a href="../../Zone/html/index.html"><b>CMSIS-Zone</b></a>. In previous versions of CMSIS-Core(M) this settings were part of <a class="el" href="partition_h_pg.html">partition_&lt;device&gt;.h</a>.</dd></dl>
-<p>&#160;</p>
-<p>The <a class="el" href="partition_h_pg.html">partition_&lt;device&gt;.h</a> file contains the following configuration settings for:</p><ul>
+<dl class="section note"><dt>Note</dt><dd><a class="el" href="partition_h_pg.html#partition_gen_h_pg">partition_gen.h</a> is optional and can be generated using <a href="../../Zone/html/index.html">CMSIS-Zone</a>. In previous versions of CMSIS-Core(M) this settings were part of <a class="el" href="partition_h_pg.html">partition_&lt;Device&gt;.h</a>.</dd></dl>
+<p>The <a class="el" href="partition_h_pg.html">partition_&lt;Device&gt;.h</a> file contains the following configuration settings for:</p><ul>
 <li><a class="el" href="partition_h_pg.html#sau_ctrlregister_sec">SAU CTRL register settings</a> provides settings for the SAU CTRL register.</li>
 <li><a class="el" href="partition_h_pg.html#sau_sleepexception_sec">Configuration of Sleep and Exception behaviour</a> provides device-specific deep-sleep and exception settings.</li>
 <li><a class="el" href="partition_h_pg.html#sau_fpu_sec">Configuration of Floating Point Unit</a> defines the usage of the Floating Point Unit in secure and non-secure state.</li>
 </ul>
-<p>The <a class="el" href="partition_h_pg.html">partition_&lt;device&gt;.h</a> file includes the <a class="el" href="partition_h_pg.html#partition_gen_h_pg">partition_gen.h</a> file with configuration settings for:</p><ul>
+<p>The <a class="el" href="partition_h_pg.html">partition_&lt;Device&gt;.h</a> file includes the <a class="el" href="partition_h_pg.html#partition_gen_h_pg">partition_gen.h</a> file with configuration settings for:</p><ul>
 <li><a class="el" href="partition_h_pg.html#sau_regions_sect">Configuration of the SAU Address Regions</a> provides configuration of the SAU Address Regions.</li>
 <li><a class="el" href="partition_h_pg.html#sau_interrupttarget_sec">Configuration of Interrupt Target settings</a> provides device-specific interrupt target settings.</li>
 </ul>
@@ -243,16 +241,14 @@ Configuration of Floating Point Unit</h1>
 </ul>
 </td></tr>
 </table>
-<p>&#160;</p>
-<hr  />
 <h1><a class="anchor" id="partition_gen_h_pg"></a>
 Region/ISR setup: partition_gen.h</h1>
-<p>The <a class="el" href="partition_h_pg.html#partition_gen_h_pg">partition_gen.h</a> header file can be generated using <a href="../../Zone/html/index.html"><b>CMSIS-Zone</b></a>.</p>
-<p>The <a class="el" href="partition_h_pg.html">partition_&lt;device&gt;.h</a> file includes the <a class="el" href="partition_h_pg.html">partition_gen.h</a> file with configuration settings for:</p><ul>
+<p>The <a class="el" href="partition_h_pg.html#partition_gen_h_pg">partition_gen.h</a> header file can be generated using <a href="../../Zone/html/index.html">CMSIS-Zone</a>.</p>
+<p>The <a class="el" href="partition_h_pg.html">partition_&lt;Device&gt;.h</a> file includes the <a class="el" href="partition_h_pg.html">partition_gen.h</a> file with configuration settings for:</p><ul>
 <li><a class="el" href="partition_h_pg.html#sau_regions_sect">Configuration of the SAU Address Regions</a> provides configuration of the SAU Address Regions.</li>
 <li><a class="el" href="partition_h_pg.html#sau_interrupttarget_sec">Configuration of Interrupt Target settings</a> provides device-specific interrupt target settings.</li>
 </ul>
-<dl class="section note"><dt>Note</dt><dd>In previous versions of CMSIS-Core(M) the above settings were part of <a class="el" href="partition_h_pg.html">partition_&lt;device&gt;.h</a></dd></dl>
+<dl class="section note"><dt>Note</dt><dd>In previous versions of CMSIS-Core(M) the above settings were part of <a class="el" href="partition_h_pg.html">partition_&lt;Device&gt;.h</a></dd></dl>
 <h2><a class="anchor" id="sau_regions_sect"></a>
 Configuration of the SAU Address Regions</h2>
 <table class="cmtable">
@@ -340,7 +336,7 @@ Configuration of Interrupt Target settings</h2>
 <p>The following example shows the configuration for a maximum of 64 external interrupts.</p>
 <div class="fragment"><div class="line"><span class="preprocessor">#define NVIC_INIT_ITNS0      0x0000122B</span></div>
 <div class="line"><span class="preprocessor">#define NVIC_INIT_ITNS1      0x0000003A</span></div>
-</div><!-- fragment --></div></div><!-- contents -->
+</div><!-- fragment --> </div></div><!-- contents -->
 </div><!-- PageDoc -->
 </div><!-- doc-content -->
 <!-- start footer part -->

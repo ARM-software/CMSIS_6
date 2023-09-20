@@ -127,12 +127,77 @@ $(document).ready(function(){initNavTree('group__CMSIS__DACR__BITS.html',''); in
 </div>
 
 <div class="header">
+  <div class="summary">
+<a href="#define-members">Macros</a>  </div>
   <div class="headertitle"><div class="title">DACR Bits<div class="ingroups"><a class="el" href="group__CMSIS__core__register.html">Core Register Access</a> &raquo; <a class="el" href="group__CMSIS__DACR.html">Domain Access Control Register (DACR)</a></div></div></div>
 </div><!--header-->
 <div class="contents">
 
 <p>Bit position and mask macros.  
-</p>
+<a href="#details">More...</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="define-members" name="define-members"></a>
+Macros</h2></td></tr>
+<tr class="memitem:ga2c014e929b74e6ded5e89a74903ce975"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CMSIS__DACR__BITS.html#ga2c014e929b74e6ded5e89a74903ce975">DACR_D_Pos_</a>(n)&#160;&#160;&#160;(2U*n)</td></tr>
+<tr class="memdesc:ga2c014e929b74e6ded5e89a74903ce975"><td class="mdescLeft">&#160;</td><td class="mdescRight">DACR: Dn Position.  <br /></td></tr>
+<tr class="separator:ga2c014e929b74e6ded5e89a74903ce975"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga41b90c8a7338fbe5e5b06be083ba22fe"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CMSIS__DACR__BITS.html#ga41b90c8a7338fbe5e5b06be083ba22fe">DACR_D_Msk_</a>(n)&#160;&#160;&#160;(3UL &lt;&lt; <a class="el" href="group__CMSIS__DACR__BITS.html#ga2c014e929b74e6ded5e89a74903ce975">DACR_D_Pos_</a>(n))</td></tr>
+<tr class="memdesc:ga41b90c8a7338fbe5e5b06be083ba22fe"><td class="mdescLeft">&#160;</td><td class="mdescRight">DACR: Dn Mask.  <br /></td></tr>
+<tr class="separator:ga41b90c8a7338fbe5e5b06be083ba22fe"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">Description</h2>
+<p>Bit position and mask macros. </p>
+<h2 class="groupheader">Macro Definition Documentation</h2>
+<a id="ga41b90c8a7338fbe5e5b06be083ba22fe" name="ga41b90c8a7338fbe5e5b06be083ba22fe"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga41b90c8a7338fbe5e5b06be083ba22fe">&#9670;&#160;</a></span>DACR_D_Msk_</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define DACR_D_Msk_</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">n</td><td>)</td>
+          <td>&#160;&#160;&#160;(3UL &lt;&lt; <a class="el" href="group__CMSIS__DACR__BITS.html#ga2c014e929b74e6ded5e89a74903ce975">DACR_D_Pos_</a>(n))</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>DACR: Dn Mask. </p>
+<p>Get the bit mask for domain n access permission.</p>
+<p><b>Example:</b> </p><div class="fragment"><div class="line"><span class="comment">// clear access permission for domain 7</span></div>
+<div class="line"><a class="code hl_function" href="group__CMSIS__DACR.html#ga72e050de5b19cd6b683f6c234968b78b">__set_DACR</a>(<a class="code hl_function" href="group__CMSIS__DACR.html#ga10278deb975c653555ee70178546aaa6">__get_DACR</a>() &amp; ~<a class="code hl_define" href="group__CMSIS__DACR__BITS.html#ga41b90c8a7338fbe5e5b06be083ba22fe">DACR_D_Msk_</a>(7));</div>
+<div class="ttc" id="agroup__CMSIS__DACR__BITS_html_ga41b90c8a7338fbe5e5b06be083ba22fe"><div class="ttname"><a href="group__CMSIS__DACR__BITS.html#ga41b90c8a7338fbe5e5b06be083ba22fe">DACR_D_Msk_</a></div><div class="ttdeci">#define DACR_D_Msk_(n)</div><div class="ttdoc">DACR: Dn Mask.</div></div>
+<div class="ttc" id="agroup__CMSIS__DACR_html_ga10278deb975c653555ee70178546aaa6"><div class="ttname"><a href="group__CMSIS__DACR.html#ga10278deb975c653555ee70178546aaa6">__get_DACR</a></div><div class="ttdeci">__STATIC_FORCEINLINE uint32_t __get_DACR(void)</div><div class="ttdoc">Get DACR.</div><div class="ttdef"><b>Definition:</b> cmsis_cp15.h:156</div></div>
+<div class="ttc" id="agroup__CMSIS__DACR_html_ga72e050de5b19cd6b683f6c234968b78b"><div class="ttname"><a href="group__CMSIS__DACR.html#ga72e050de5b19cd6b683f6c234968b78b">__set_DACR</a></div><div class="ttdeci">__STATIC_FORCEINLINE void __set_DACR(uint32_t dacr)</div><div class="ttdoc">Set DACR.</div><div class="ttdef"><b>Definition:</b> cmsis_cp15.h:169</div></div>
+</div><!-- fragment --> 
+</div>
+</div>
+<a id="ga2c014e929b74e6ded5e89a74903ce975" name="ga2c014e929b74e6ded5e89a74903ce975"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga2c014e929b74e6ded5e89a74903ce975">&#9670;&#160;</a></span>DACR_D_Pos_</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define DACR_D_Pos_</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">n</td><td>)</td>
+          <td>&#160;&#160;&#160;(2U*n)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>DACR: Dn Position. </p>
+<p>Get the bit position for domain n access permission.</p>
+<p><b>Example:</b> </p><div class="fragment"><div class="line"><span class="comment">// retrieve access permission for domain 5</span></div>
+<div class="line">uint32_t domain5 = (<a class="code hl_function" href="group__CMSIS__DACR.html#ga10278deb975c653555ee70178546aaa6">__get_DACR</a>() &amp; <a class="code hl_define" href="group__CMSIS__DACR__BITS.html#ga41b90c8a7338fbe5e5b06be083ba22fe">DACR_D_Msk_</a>(5)) &gt;&gt; <a class="code hl_define" href="group__CMSIS__DACR__BITS.html#ga2c014e929b74e6ded5e89a74903ce975">DACR_D_Pos_</a>(5);</div>
+<div class="ttc" id="agroup__CMSIS__DACR__BITS_html_ga2c014e929b74e6ded5e89a74903ce975"><div class="ttname"><a href="group__CMSIS__DACR__BITS.html#ga2c014e929b74e6ded5e89a74903ce975">DACR_D_Pos_</a></div><div class="ttdeci">#define DACR_D_Pos_(n)</div><div class="ttdoc">DACR: Dn Position.</div></div>
+</div><!-- fragment --> 
+</div>
+</div>
 </div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->

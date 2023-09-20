@@ -127,12 +127,26 @@ $(document).ready(function(){initNavTree('group__CMSIS__VBAR.html',''); initResi
 </div>
 
 <div class="header">
+  <div class="summary">
+<a href="#func-members">Functions</a>  </div>
   <div class="headertitle"><div class="title">Vector Base Address Register (VBAR)<div class="ingroups"><a class="el" href="group__CMSIS__core__register.html">Core Register Access</a></div></div></div>
 </div><!--header-->
 <div class="contents">
 
 <p>When high exception vectors are not selected, the VBAR holds the exception base address for exceptions that are not taken to Monitor mode or to Hyp mode.  
-</p>
+<a href="#details">More...</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
+Functions</h2></td></tr>
+<tr class="memitem:ga8abf5c92597d8e7d403aa26d8246387c"><td class="memItemLeft" align="right" valign="top"><a class="el" href="cmsis__armclang__a_8h.html#ab904513442afdf77d4f8c74f23cbb040">__STATIC_FORCEINLINE</a> uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CMSIS__VBAR.html#ga8abf5c92597d8e7d403aa26d8246387c">__get_VBAR</a> (void)</td></tr>
+<tr class="memdesc:ga8abf5c92597d8e7d403aa26d8246387c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get VBAR.  <br /></td></tr>
+<tr class="separator:ga8abf5c92597d8e7d403aa26d8246387c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga582f9a60f7b090ae5a4e8f60ef3b79f8"><td class="memItemLeft" align="right" valign="top"><a class="el" href="cmsis__armclang__a_8h.html#ab904513442afdf77d4f8c74f23cbb040">__STATIC_FORCEINLINE</a> void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CMSIS__VBAR.html#ga582f9a60f7b090ae5a4e8f60ef3b79f8">__set_VBAR</a> (uint32_t vbar)</td></tr>
+<tr class="memdesc:ga582f9a60f7b090ae5a4e8f60ef3b79f8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set VBAR.  <br /></td></tr>
+<tr class="separator:ga582f9a60f7b090ae5a4e8f60ef3b79f8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">Description</h2>
+<p>When high exception vectors are not selected, the VBAR holds the exception base address for exceptions that are not taken to Monitor mode or to Hyp mode. </p>
 <table class="markdownTable">
 <tr class="markdownTableHead">
 <th class="markdownTableHeadLeft">Bits   </th><th class="markdownTableHeadLeft">Name   </th><th class="markdownTableHeadLeft">Function    </th></tr>
@@ -141,7 +155,59 @@ $(document).ready(function(){initNavTree('group__CMSIS__VBAR.html',''); initResi
 <tr class="markdownTableRowEven">
 <td class="markdownTableBodyLeft">[4:0]   </td><td class="markdownTableBodyLeft">-   </td><td class="markdownTableBodyLeft">Reserved.   </td></tr>
 </table>
-<p>Consider using __get_VBAR and __set_VBAR for accessing this register. </p>
+<p>Consider using <a class="el" href="group__CMSIS__VBAR.html#ga8abf5c92597d8e7d403aa26d8246387c">__get_VBAR</a> and <a class="el" href="group__CMSIS__VBAR.html#ga582f9a60f7b090ae5a4e8f60ef3b79f8">__set_VBAR</a> for accessing this register. </p>
+<h2 class="groupheader">Function Documentation</h2>
+<a id="ga8abf5c92597d8e7d403aa26d8246387c" name="ga8abf5c92597d8e7d403aa26d8246387c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga8abf5c92597d8e7d403aa26d8246387c">&#9670;&#160;</a></span>__get_VBAR()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="group__comp__cntrl__gr.html#gaba87361bfad2ae52cfe2f40c1a1dbf9c">__STATIC_INLINE</a> uint32_t __get_VBAR </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Get VBAR. </p>
+<p>This function returns the value of the Vector Base Address Register.</p>
+<dl class="section return"><dt>Returns</dt><dd>Vector Base Address Register</dd></dl>
+<p>This function returns the value of the <a class="el" href="group__CMSIS__VBAR.html">Vector Base Address Register (VBAR)</a>. </p>
+
+</div>
+</div>
+<a id="ga582f9a60f7b090ae5a4e8f60ef3b79f8" name="ga582f9a60f7b090ae5a4e8f60ef3b79f8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga582f9a60f7b090ae5a4e8f60ef3b79f8">&#9670;&#160;</a></span>__set_VBAR()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="group__comp__cntrl__gr.html#gaba87361bfad2ae52cfe2f40c1a1dbf9c">__STATIC_INLINE</a> void __set_VBAR </td>
+          <td>(</td>
+          <td class="paramtype">uint32_t&#160;</td>
+          <td class="paramname"><em>vbar</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Set VBAR. </p>
+<p>This function assigns the given value to the Vector Base Address Register.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">vbar</td><td>Vector Base Address Register value to set</td></tr>
+  </table>
+  </dd>
+</dl>
+<p>This function assigns the given value to the <a class="el" href="group__CMSIS__VBAR.html">Vector Base Address Register (VBAR)</a>. </p>
+
+</div>
+</div>
 </div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->

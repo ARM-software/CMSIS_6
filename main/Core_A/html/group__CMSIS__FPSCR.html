@@ -129,7 +129,8 @@ $(document).ready(function(){initNavTree('group__CMSIS__FPSCR.html',''); initRes
 <div class="header">
   <div class="summary">
 <a href="#groups">Content</a> &#124;
-<a href="#nested-classes">Data Structures</a>  </div>
+<a href="#nested-classes">Data Structures</a> &#124;
+<a href="#define-members">Macros</a>  </div>
   <div class="headertitle"><div class="title">Floating-point Status and Control Register (FPSCR)<div class="ingroups"><a class="el" href="group__CMSIS__core__register.html">Core Register Access</a></div></div></div>
 </div><!--header-->
 <div class="contents">
@@ -148,8 +149,15 @@ Data Structures</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structFPSCR__Type.html">FPSCR_Type</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Bit field declaration for FPSCR layout.  <a href="structFPSCR__Type.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="define-members" name="define-members"></a>
+Macros</h2></td></tr>
+<tr class="memitem:gac8a2aec28b99faa0c261691f7be543e5"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CMSIS__FPSCR.html#gac8a2aec28b99faa0c261691f7be543e5">__get_FPSCR</a>&#160;&#160;&#160;__builtin_arm_get_fpscr</td></tr>
+<tr class="memdesc:gac8a2aec28b99faa0c261691f7be543e5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get FPSCR.  <br /></td></tr>
+<tr class="separator:gac8a2aec28b99faa0c261691f7be543e5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Description</h2>
+<p>Provides floating-point system status information and control. </p>
 <table class="markdownTable">
 <tr class="markdownTableHead">
 <th class="markdownTableHeadLeft">Bits   </th><th class="markdownTableHeadLeft">Name   </th><th class="markdownTableHeadLeft">Function    </th></tr>
@@ -206,7 +214,30 @@ Data Structures</h2></td></tr>
 <tr class="markdownTableRowEven">
 <td class="markdownTableBodyLeft">[0]   </td><td class="markdownTableBodyLeft">IOC   </td><td class="markdownTableBodyLeft">FIQ pending bit.   </td></tr>
 </table>
-<p>Consider __get_FPSCR and __set_FPSCR to access this register. </p>
+<p>Consider <a class="el" href="group__CMSIS__FPSCR.html#gac8a2aec28b99faa0c261691f7be543e5">__get_FPSCR</a> and <a class="el" href="cmsis__armclang__a_8h.html#a63b3bbd6ccb6b92ed6c0bbc489529f0f">__set_FPSCR</a> to access this register. </p>
+<h2 class="groupheader">Macro Definition Documentation</h2>
+<a id="gac8a2aec28b99faa0c261691f7be543e5" name="gac8a2aec28b99faa0c261691f7be543e5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gac8a2aec28b99faa0c261691f7be543e5">&#9670;&#160;</a></span>__get_FPSCR</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="group__comp__cntrl__gr.html#gaba87361bfad2ae52cfe2f40c1a1dbf9c">__STATIC_INLINE</a> uint32_t __get_FPSCR</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">void</td><td>)</td>
+          <td>&#160;&#160;&#160;__builtin_arm_get_fpscr</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Get FPSCR. </p>
+<p>Returns the current value of the Floating Point Status/Control register. </p><dl class="section return"><dt>Returns</dt><dd>Floating Point Status/Control register value</dd></dl>
+<p>This function returns the current value of the <a class="el" href="group__CMSIS__FPSCR.html">Floating-point Status and Control Register (FPSCR)</a>. </p>
+
+</div>
+</div>
 </div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->

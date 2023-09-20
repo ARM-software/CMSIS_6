@@ -444,7 +444,7 @@ function navTo(o,root,hash,relpath)
     getScript(relpath+'navtreeindex'+i,function(){
       navTreeSubIndices[i] = eval('NAVTREEINDEX'+i);
       /* ensures first section is expanded when opening index */
-      if ((i==0) && (root=="index.html") && (!navTreeSubIndices[i]["index.html"].length)) {
+      if ((root=="index.html") && (!navTreeSubIndices[i]["index.html"].length)) {
         navTreeSubIndices[i]["index.html"]=[0];
       }
       if (navTreeSubIndices[i]) {

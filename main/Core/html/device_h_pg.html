@@ -5,7 +5,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>CMSIS-Core (Cortex-M): Device Header File &lt;device.h&gt;</title>
+<title>CMSIS-Core (Cortex-M): Device Header File &lt;Device.h&gt;</title>
 <link href="doxygen.css" rel="stylesheet" type="text/css"/>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <link href="extra_navtree.css" rel="stylesheet" type="text/css"/>
@@ -127,24 +127,23 @@ $(document).ready(function(){initNavTree('device_h_pg.html',''); initResizable()
 </div>
 
 <div><div class="header">
-  <div class="headertitle"><div class="title">Device Header File &lt;device.h&gt; </div></div>
+  <div class="headertitle"><div class="title">Device Header File &lt;Device.h&gt; </div></div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><p>The <a class="el" href="device_h_pg.html">Device Header File &lt;device.h&gt;</a> contains the following sections that are device specific:</p>
-<ul>
+<div class="textblock"><p><a class="anchor" id="md_src_core_device_h"></a> The Device Header File contains the following functionalities that are device-specific:</p><ul>
 <li><a class="el" href="device_h_pg.html#interrupt_number_sec">Interrupt Number Definition</a> provides interrupt numbers (IRQn) for all exceptions and interrupts of the device.</li>
 <li><a class="el" href="device_h_pg.html#core_config_sect">Configuration of the Processor and Core Peripherals</a> reflect the features of the device.</li>
 <li><a class="el" href="device_h_pg.html#device_access">Device Peripheral Access Layer</a> provides definitions for the <a class="el" href="group__peripheral__gr.html">Peripheral Access</a> to all device peripherals. It contains all data structures and the address mapping for device-specific peripherals.</li>
 <li><b>Access Functions for Peripherals (optional)</b> provide additional helper functions for peripherals that are useful for programming of these peripherals. Access Functions may be provided as inline functions or can be extern references to a device-specific library provided by the silicon vendor.</li>
 </ul>
-<p><a href="modules.html"><b>Reference</b> </a> describes the standard features and functions of the <a class="el" href="device_h_pg.html">Device Header File &lt;device.h&gt;</a> in detail.</p>
+<p><a href="modules.html">API Reference</a> describes the standard features and functions of the <a class="el" href="device_h_pg.html">Device Header File &lt;Device.h&gt;</a> in details.</p>
 <h1><a class="anchor" id="interrupt_number_sec"></a>
 Interrupt Number Definition</h1>
-<p><a class="el" href="device_h_pg.html">Device Header File &lt;device.h&gt;</a> contains the enumeration <a class="el" href="group__NVIC__gr.html#ga7e1129cd8a196f4284d41db3e82ad5c8">IRQn_Type</a> that defines all exceptions and interrupts of the device.</p><ul>
+<p><a class="el" href="device_h_pg.html">Device Header File &lt;Device.h&gt;</a> contains the enumeration <a class="el" href="group__NVIC__gr.html#ga7e1129cd8a196f4284d41db3e82ad5c8">IRQn_Type</a> that defines all exceptions and interrupts of the device.</p><ul>
 <li>Negative IRQn values represent processor core exceptions (internal interrupts).</li>
-<li>Positive IRQn values represent device-specific exceptions (external interrupts). The first device-specific interrupt has the IRQn value 0. The IRQn values needs extension to reflect the device-specific interrupt vector table in the <a class="el" href="startup_s_pg.html">Startup File startup_&lt;device&gt;.s (deprecated)</a>.</li>
+<li>Positive IRQn values represent device-specific exceptions (external interrupts). The first device-specific interrupt has the IRQn value 0. The IRQn values needs extension to reflect the device-specific interrupt vector table in the <a class="el" href="startup_c_pg.html">Startup File startup_&lt;Device&gt;.c</a>.</li>
 </ul>
-<p><b>Example:</b> </p>
+<p><b>Example:</b></p>
 <p>The following example shows the extension of the interrupt vector table for the LPC1100 device family.</p>
 <div class="fragment"><div class="line"><span class="keyword">typedef</span> <span class="keyword">enum</span> IRQn</div>
 <div class="line">{</div>
@@ -171,8 +170,9 @@ Interrupt Number Definition</h1>
 <div class="ttc" id="agroup__NVIC__gr_html_gga7e1129cd8a196f4284d41db3e82ad5c8ade177d9c70c89e084093024b932a4e30"><div class="ttname"><a href="group__NVIC__gr.html#gga7e1129cd8a196f4284d41db3e82ad5c8ade177d9c70c89e084093024b932a4e30">NonMaskableInt_IRQn</a></div><div class="ttdeci">@ NonMaskableInt_IRQn</div><div class="ttdoc">Exception 2: Non Maskable Interrupt.</div><div class="ttdef"><b>Definition:</b> Ref_NVIC.txt:387</div></div>
 </div><!-- fragment --><h1><a class="anchor" id="core_config_sect"></a>
 Configuration of the Processor and Core Peripherals</h1>
-<p>The <a class="el" href="device_h_pg.html">Device Header File &lt;device.h&gt;</a> configures the Cortex-M or SecurCore processor and the core peripherals with <em>#defines</em> that are set prior to including the file <b>core_&lt;cpu&gt;.h</b>.</p>
-<p>The following tables list the <em>#defines</em> along with the possible values for each processor core. If these <em>#defines</em> are missing default values are used. <b>core_cm0.h</b> </p><table class="cmtable">
+<p>The <a class="el" href="device_h_pg.html">Device Header File &lt;Device.h&gt;</a> configures the Cortex-M or SecurCore processors and the core peripherals with <code>#define</code> directives that are set prior to including the file <code>core_&lt;cpu&gt;.h</code>.</p>
+<p>The following tables list the <em>#defines</em> along with the possible values for each processor core. If these <em>#defines</em> are missing default values are used.</p>
+<p><b>Cortex-M0 core</b> (core_cm0.h) </p><table class="cmtable">
 <tr>
 <th>#define </th><th>Value Range </th><th>Default </th><th>Description  </th></tr>
 <tr>
@@ -182,7 +182,7 @@ Configuration of the Processor and Core Peripherals</h1>
 <tr>
 <td><a class="el" href="group__device__config.html#gab58771b4ec03f9bdddc84770f7c95c68">__Vendor_SysTickConfig</a> </td><td>0 .. 1 </td><td>0 </td><td>Vendor defined <b>SysTick_Config</b> function.  </td></tr>
 </table>
-<p><b>core_cm0plus.h</b> </p><table class="cmtable">
+<p><b>Cortex-M0+ core</b> (core_cm0plus.h) </p><table class="cmtable">
 <tr>
 <th>#define </th><th>Value Range </th><th>Default </th><th>Description  </th></tr>
 <tr>
@@ -194,7 +194,7 @@ Configuration of the Processor and Core Peripherals</h1>
 <tr>
 <td><a class="el" href="group__device__config.html#gab58771b4ec03f9bdddc84770f7c95c68">__Vendor_SysTickConfig</a> </td><td>0 .. 1 </td><td>0 </td><td>Vendor defined <b>SysTick_Config</b> function.  </td></tr>
 </table>
-<p><b>core_cm3.h</b> </p><table class="cmtable">
+<p><b>Cortex-M3 core</b> (core_cm3.h) </p><table class="cmtable">
 <tr>
 <th>#define </th><th>Value Range </th><th>Default </th><th>Description  </th></tr>
 <tr>
@@ -208,7 +208,7 @@ Configuration of the Processor and Core Peripherals</h1>
 <tr>
 <td><a class="el" href="group__device__config.html#gab58771b4ec03f9bdddc84770f7c95c68">__Vendor_SysTickConfig</a> </td><td>0 .. 1 </td><td>0 </td><td>Vendor defined <b>SysTick_Config</b> function.  </td></tr>
 </table>
-<p><b>core_cm4.h</b> </p><table class="cmtable">
+<p><b>Cortex-M4 core</b> (core_cm4.h) </p><table class="cmtable">
 <tr>
 <th>#define </th><th>Value Range </th><th>Default </th><th>Description  </th></tr>
 <tr>
@@ -224,7 +224,7 @@ Configuration of the Processor and Core Peripherals</h1>
 <tr>
 <td><a class="el" href="group__device__config.html#gab58771b4ec03f9bdddc84770f7c95c68">__Vendor_SysTickConfig</a> </td><td>0 .. 1 </td><td>0 </td><td>Vendor defined <b>SysTick_Config</b> function.  </td></tr>
 </table>
-<p><b>core_cm7.h</b> </p><table class="cmtable">
+<p><b>Cortex-M7 core</b> (core_cm7.h) </p><table class="cmtable">
 <tr>
 <th>#define </th><th>Value Range </th><th>Default </th><th>Description  </th></tr>
 <tr>
@@ -248,7 +248,7 @@ Configuration of the Processor and Core Peripherals</h1>
 <tr>
 <td><a class="el" href="group__device__config.html#gacbb998663708df6626abb09378303019">__DTCM_PRESENT</a> </td><td>0 .. 1 </td><td>1 </td><td>Data Tightly Coupled Memory is present or not  </td></tr>
 </table>
-<p><b>core_sc000.h</b> </p><table class="cmtable">
+<p><b>SecurCore SC000 core</b> (core_sc000.h) </p><table class="cmtable">
 <tr>
 <th>#define </th><th>Value Range </th><th>Default </th><th>Description  </th></tr>
 <tr>
@@ -262,7 +262,7 @@ Configuration of the Processor and Core Peripherals</h1>
 <tr>
 <td><a class="el" href="group__device__config.html#gab58771b4ec03f9bdddc84770f7c95c68">__Vendor_SysTickConfig</a> </td><td>0 .. 1 </td><td>0 </td><td>Vendor defined <b>SysTick_Config</b> function.  </td></tr>
 </table>
-<p><b>core_sc300.h</b> </p><table class="cmtable">
+<p><b>SecurCore SC300 core</b> (core_sc300.h) </p><table class="cmtable">
 <tr>
 <th>#define </th><th>Value Range </th><th>Default </th><th>Description  </th></tr>
 <tr>
@@ -276,7 +276,7 @@ Configuration of the Processor and Core Peripherals</h1>
 <tr>
 <td><a class="el" href="group__device__config.html#gab58771b4ec03f9bdddc84770f7c95c68">__Vendor_SysTickConfig</a> </td><td>0 .. 1 </td><td>0 </td><td>Vendor defined <b>SysTick_Config</b> function.  </td></tr>
 </table>
-<p><b>core_CM23.h</b> or <b>core_ARMv8MBL.h</b> </p><table class="cmtable">
+<p><b>Cortex-M23 core, Armv8-M Baseline core</b> (core_cm23.h , core_armv8mbl.h) </p><table class="cmtable">
 <tr>
 <th>#define </th><th>Value Range </th><th>Default </th><th>Description  </th></tr>
 <tr>
@@ -292,7 +292,7 @@ Configuration of the Processor and Core Peripherals</h1>
 <tr>
 <td><a class="el" href="group__device__config.html#gab58771b4ec03f9bdddc84770f7c95c68">__Vendor_SysTickConfig</a> </td><td>0 .. 1 </td><td>0 </td><td>Vendor defined <b>SysTick_Config</b> function.  </td></tr>
 </table>
-<p><b>core_CM33.h</b> or <b>core_cm35p.h</b> or <b>core_ARMv8MML.h</b> </p><table class="cmtable">
+<p><b>Cortex-M33, Cortex-M35P, Armv8-M Mainline core</b> (core_cm33.h, core_cm35p.h, core_armv8mml.h) </p><table class="cmtable">
 <tr>
 <th>#define </th><th>Value Range </th><th>Default </th><th>Description  </th></tr>
 <tr>
@@ -310,7 +310,7 @@ Configuration of the Processor and Core Peripherals</h1>
 <tr>
 <td><a class="el" href="group__device__config.html#gab58771b4ec03f9bdddc84770f7c95c68">__Vendor_SysTickConfig</a> </td><td>0 .. 1 </td><td>0 </td><td>Vendor defined <b>SysTick_Config</b> function.  </td></tr>
 </table>
-<p><b>core_CM55.h</b> or <b>core_ARMv81MML.h</b> </p><table class="cmtable">
+<p><b>Cortex-M55 core, Armv8.1-M Mainline core</b> (core_cm55.h, core_armv81mml.h) </p><table class="cmtable">
 <tr>
 <th>#define </th><th>Value Range </th><th>Default </th><th>Description  </th></tr>
 <tr>
@@ -334,7 +334,7 @@ Configuration of the Processor and Core Peripherals</h1>
 <tr>
 <td><a class="el" href="group__device__config.html#gab58771b4ec03f9bdddc84770f7c95c68">__Vendor_SysTickConfig</a> </td><td>0 .. 1 </td><td>0 </td><td>Vendor defined <b>SysTick_Config</b> function.  </td></tr>
 </table>
-<p><b>core_CM85.h</b> </p><table class="cmtable">
+<p><b>Cortex-M85 core</b> (core_cm85.h) </p><table class="cmtable">
 <tr>
 <th>#define </th><th>Value Range </th><th>Default </th><th>Description  </th></tr>
 <tr>
@@ -358,7 +358,7 @@ Configuration of the Processor and Core Peripherals</h1>
 <tr>
 <td><a class="el" href="group__device__config.html#gab58771b4ec03f9bdddc84770f7c95c68">__Vendor_SysTickConfig</a> </td><td>0 .. 1 </td><td>0 </td><td>Vendor defined <b>SysTick_Config</b> function.  </td></tr>
 </table>
-<p><b>Example</b> </p>
+<p><b>Example</b></p>
 <p>The following code exemplifies the configuration of the Cortex-M4 Processor and Core Peripherals.</p>
 <div class="fragment"><div class="line"><span class="preprocessor">#define __CM4_REV                 0x0001U   </span><span class="comment">/* Core revision r0p1                                 */</span><span class="preprocessor"></span></div>
 <div class="line"><span class="preprocessor">#define __MPU_PRESENT             1U        </span><span class="comment">/* MPU present or not                                 */</span><span class="preprocessor"></span></div>
@@ -369,96 +369,10 @@ Configuration of the Processor and Core Peripherals</h1>
 <div class="line">.</div>
 <div class="line">.</div>
 <div class="line"><span class="preprocessor">#include &lt;core_cm4.h&gt;</span>                       <span class="comment">/* Cortex-M4 processor and core peripherals           */</span></div>
-<div class="line"><span class="preprocessor">#include &quot;system_&lt;device&gt;</span>.h<span class="stringliteral">&quot;                /* Device System Header                               */</span></div>
-</div><!-- fragment --><h1><a class="anchor" id="core_version_sect"></a>
-CMSIS Version and Processor Information</h1>
-<p>Defines in the core_<em>cpu</em>.h file identify the version of the CMSIS-Core (Cortex-M) and the processor used. The following shows the defines in the various core_<em>cpu</em>.h files that may be used in the <a class="el" href="device_h_pg.html">Device Header File &lt;device.h&gt;</a> to verify a minimum version or ensure that the right processor core is used.</p>
-<p><b>core_cm0.h</b> </p><div class="fragment"><div class="line"><span class="preprocessor">#define __CM0_CMSIS_VERSION_MAIN  (__CM_CMSIS_VERSION_MAIN)                         </span><span class="comment">/* [31:16] CMSIS HAL main version */</span><span class="preprocessor"></span></div>
-<div class="line"><span class="preprocessor">#define __CM0_CMSIS_VERSION_SUB   (__CM_CMSIS_VERSION_SUB)                          </span><span class="comment">/* [15:0]  CMSIS HAL sub version */</span><span class="preprocessor"></span></div>
-<div class="line"><span class="preprocessor">#define __CM0_CMSIS_VERSION       ((__CM0_CMSIS_VERSION_MAIN &lt;&lt; 16U) | \</span></div>
-<div class="line"><span class="preprocessor">                                    __CM0_CMSIS_VERSION_SUB          )              </span><span class="comment">/* CMSIS HAL version number */</span><span class="preprocessor"></span></div>
-<div class="line"> </div>
-<div class="line"><span class="preprocessor">#define __CORTEX_M                (0U)                                              </span><span class="comment">/* Cortex-M Core */</span><span class="preprocessor"></span></div>
-</div><!-- fragment --><p><b>core_cm0plus.h</b> </p><div class="fragment"><div class="line"><span class="preprocessor">#define __CM0PLUS_CMSIS_VERSION_MAIN  (__CM_CMSIS_VERSION_MAIN)                     </span><span class="comment">/* [31:16] CMSIS HAL main version */</span><span class="preprocessor"></span></div>
-<div class="line"><span class="preprocessor">#define __CM0PLUS_CMSIS_VERSION_SUB   (__CM_CMSIS_VERSION_SUB)                      </span><span class="comment">/* [15:0]  CMSIS HAL sub version */</span><span class="preprocessor"></span></div>
-<div class="line"><span class="preprocessor">#define __CM0PLUS_CMSIS_VERSION       ((__CM0P_CMSIS_VERSION_MAIN &lt;&lt; 16U) | \</span></div>
-<div class="line"><span class="preprocessor">                                        __CM0P_CMSIS_VERSION_SUB          )         </span><span class="comment">/* CMSIS HAL version number */</span><span class="preprocessor"></span></div>
-<div class="line"> </div>
-<div class="line"><span class="preprocessor">#define __CORTEX_M                    (0U)                                          </span><span class="comment">/* Cortex-M Core */</span><span class="preprocessor"></span></div>
-</div><!-- fragment --><p><b>core_cm1.h</b> </p><div class="fragment"><div class="line"><span class="preprocessor">#define __CM1_CMSIS_VERSION_MAIN  (__CM_CMSIS_VERSION_MAIN)                         </span></div>
-<div class="line"><span class="preprocessor">#define __CM1_CMSIS_VERSION_SUB   (__CM_CMSIS_VERSION_SUB)                          </span></div>
-<div class="line"><span class="preprocessor">#define __CM1_CMSIS_VERSION       ((__CM1_CMSIS_VERSION_MAIN &lt;&lt; 16U) | \</span></div>
-<div class="line"><span class="preprocessor">                                    __CM1_CMSIS_VERSION_SUB           )             </span></div>
-<div class="line"><span class="preprocessor">#define __CORTEX_M                (1U)                                              </span></div>
-</div><!-- fragment --><p><b>core_cm3.h</b> </p><div class="fragment"><div class="line"><span class="preprocessor">#define __CM3_CMSIS_VERSION_MAIN  (__CM_CMSIS_VERSION_MAIN)                         </span><span class="comment">/* [31:16] CMSIS HAL main version */</span><span class="preprocessor"></span></div>
-<div class="line"><span class="preprocessor">#define __CM3_CMSIS_VERSION_SUB   (__CM_CMSIS_VERSION_SUB)                          </span><span class="comment">/* [15:0]  CMSIS HAL sub version */</span><span class="preprocessor"></span></div>
-<div class="line"><span class="preprocessor">#define __CM3_CMSIS_VERSION       ((__CM3_CMSIS_VERSION_MAIN &lt;&lt; 16U) | \</span></div>
-<div class="line"><span class="preprocessor">                                    __CM3_CMSIS_VERSION_SUB          )              </span><span class="comment">/* CMSIS HAL version number */</span><span class="preprocessor"></span></div>
-<div class="line"> </div>
-<div class="line"><span class="preprocessor">#define __CORTEX_M                (3U)                                              </span><span class="comment">/* Cortex-M Core */</span><span class="preprocessor"></span></div>
-</div><!-- fragment --><p><b>core_cm4.h</b> </p><div class="fragment"><div class="line"><span class="preprocessor">#define __CM4_CMSIS_VERSION_MAIN  (__CM_CMSIS_VERSION_MAIN)                         </span><span class="comment">/* [31:16] CMSIS HAL main version */</span><span class="preprocessor"></span></div>
-<div class="line"><span class="preprocessor">#define __CM4_CMSIS_VERSION_SUB   (__CM_CMSIS_VERSION_SUB)                          </span><span class="comment">/* [15:0]  CMSIS HAL sub version */</span><span class="preprocessor"></span></div>
-<div class="line"><span class="preprocessor">#define __CM4_CMSIS_VERSION       ((__CM4_CMSIS_VERSION_MAIN &lt;&lt; 16U) | \</span></div>
-<div class="line"><span class="preprocessor">                                    __CM4_CMSIS_VERSION_SUB          )              </span><span class="comment">/* CMSIS HAL version number */</span><span class="preprocessor"></span></div>
-<div class="line"> </div>
-<div class="line"><span class="preprocessor">#define __CORTEX_M                (4U)                                              </span><span class="comment">/* Cortex-M Core */</span><span class="preprocessor"></span></div>
-</div><!-- fragment --><p><b>core_cm7.h</b> </p><div class="fragment"><div class="line"><span class="preprocessor">#define __CM7_CMSIS_VERSION_MAIN  (__CM_CMSIS_VERSION_MAIN                          </span><span class="comment">/* [31:16] CMSIS HAL main version */</span><span class="preprocessor"></span></div>
-<div class="line"><span class="preprocessor">#define __CM7_CMSIS_VERSION_SUB   (__CM_CMSIS_VERSION_SUB)                          </span><span class="comment">/* [15:0]  CMSIS HAL sub version */</span><span class="preprocessor"></span></div>
-<div class="line"><span class="preprocessor">#define __CM7_CMSIS_VERSION       ((__CM7_CMSIS_VERSION_MAIN &lt;&lt; 16U) | \</span></div>
-<div class="line"><span class="preprocessor">                                    __CM7_CMSIS_VERSION_SUB          )              </span><span class="comment">/* CMSIS HAL version number */</span><span class="preprocessor"></span></div>
-<div class="line"> </div>
-<div class="line"><span class="preprocessor">#define __CORTEX_M                (7U)                                              </span><span class="comment">/* Cortex-M Core */</span><span class="preprocessor"></span></div>
-</div><!-- fragment --><p><b>core_cm23.h</b> </p><div class="fragment"><div class="line"><span class="preprocessor">#define __CM23_CMSIS_VERSION_MAIN  (__CM_CMSIS_VERSION_MAIN)                        </span><span class="comment">/* [31:16] CMSIS HAL main version */</span><span class="preprocessor"></span></div>
-<div class="line"><span class="preprocessor">#define __CM23_CMSIS_VERSION_SUB   (__CM_CMSIS_VERSION_SUB)                         </span><span class="comment">/* [15:0]  CMSIS HAL sub version */</span><span class="preprocessor"></span></div>
-<div class="line"><span class="preprocessor">#define __CM23_CMSIS_VERSION       ((__CM23_CMSIS_VERSION_MAIN &lt;&lt; 16U) | \</span></div>
-<div class="line"><span class="preprocessor">                                     __CM23_CMSIS_VERSION_SUB          )            </span><span class="comment">/* CMSIS HAL version number */</span><span class="preprocessor"></span></div>
-<div class="line"> </div>
-<div class="line"><span class="preprocessor">#define __CORTEX_M                (23U)                                             </span><span class="comment">/* Cortex-M Core */</span><span class="preprocessor"></span></div>
-</div><!-- fragment --><p><b>core_cm33.h</b> </p><div class="fragment"><div class="line"><span class="preprocessor">#define __CM33_CMSIS_VERSION_MAIN  (__CM_CMSIS_VERSION_MAIN)                        </span><span class="comment">/* [31:16] CMSIS HAL main version */</span><span class="preprocessor"></span></div>
-<div class="line"><span class="preprocessor">#define __CM33_CMSIS_VERSION_SUB   (__CM_CMSIS_VERSION_SUB)                         </span><span class="comment">/* [15:0]  CMSIS HAL sub version */</span><span class="preprocessor"></span></div>
-<div class="line"><span class="preprocessor">#define __CM33_CMSIS_VERSION       ((__CM33_CMSIS_VERSION_MAIN &lt;&lt; 16U) | \</span></div>
-<div class="line"><span class="preprocessor">                                     __CM33_CMSIS_VERSION_SUB          )            </span><span class="comment">/* CMSIS HAL version number */</span><span class="preprocessor"></span></div>
-<div class="line"> </div>
-<div class="line"><span class="preprocessor">#define __CORTEX_M                (33U)                                             </span><span class="comment">/* Cortex-M Core */</span><span class="preprocessor"></span></div>
-</div><!-- fragment --><p><b>core_cm55.h</b> </p><div class="fragment"><div class="line"><span class="preprocessor">#define __CM55_CMSIS_VERSION_MAIN  (__CM_CMSIS_VERSION_MAIN)                        </span><span class="comment">/* [31:16] CMSIS HAL main version */</span><span class="preprocessor"></span></div>
-<div class="line"><span class="preprocessor">#define __CM55_CMSIS_VERSION_SUB   (__CM_CMSIS_VERSION_SUB)                         </span><span class="comment">/* [15:0]  CMSIS HAL sub version */</span><span class="preprocessor"></span></div>
-<div class="line"><span class="preprocessor">#define __CM55_CMSIS_VERSION       ((__CM55_CMSIS_VERSION_MAIN &lt;&lt; 16U) | \</span></div>
-<div class="line"><span class="preprocessor">                                     __CM55_CMSIS_VERSION_SUB          )            </span><span class="comment">/* CMSIS HAL version number */</span><span class="preprocessor"></span></div>
-<div class="line"> </div>
-<div class="line"><span class="preprocessor">#define __CORTEX_M                (7U)                                              </span><span class="comment">/* Cortex-M Core */</span><span class="preprocessor"></span></div>
-</div><!-- fragment --> <p><b>core_sc000.h</b> </p><div class="fragment"><div class="line"><span class="preprocessor">#define __SC000_CMSIS_VERSION_MAIN  (__CM_CMSIS_VERSION_MAIN)                       </span><span class="comment">/* [31:16] CMSIS HAL main version */</span><span class="preprocessor"></span></div>
-<div class="line"><span class="preprocessor">#define __SC000_CMSIS_VERSION_SUB   (__CM_CMSIS_VERSION_SUB)                        </span><span class="comment">/* [15:0]  CMSIS HAL sub version */</span><span class="preprocessor"></span></div>
-<div class="line"><span class="preprocessor">#define __SC000_CMSIS_VERSION       ((__SC000_CMSIS_VERSION_MAIN &lt;&lt; 16U) | \</span></div>
-<div class="line"><span class="preprocessor">                                      __SC000_CMSIS_VERSION_SUB          )          </span><span class="comment">/* CMSIS HAL version number */</span><span class="preprocessor"></span></div>
-<div class="line"> </div>
-<div class="line"><span class="preprocessor">#define __CORTEX_SC                 (0U)                                            </span><span class="comment">/* Cortex secure core */</span><span class="preprocessor"></span></div>
-</div><!-- fragment --> <p><b>core_sc300.h</b> </p><div class="fragment"><div class="line"><span class="preprocessor">#define __SC300_CMSIS_VERSION_MAIN  (__CM_CMSIS_VERSION_MAIN)                       </span><span class="comment">/* [31:16] CMSIS HAL main version */</span><span class="preprocessor"></span></div>
-<div class="line"><span class="preprocessor">#define __SC300_CMSIS_VERSION_SUB   (__CM_CMSIS_VERSION_SUB)                        </span><span class="comment">/* [15:0]  CMSIS HAL sub version */</span><span class="preprocessor"></span></div>
-<div class="line"><span class="preprocessor">#define __SC300_CMSIS_VERSION       ((__SC300_CMSIS_VERSION_MAIN &lt;&lt; 16U) | \</span></div>
-<div class="line"><span class="preprocessor">                                      __SC300_CMSIS_VERSION_SUB          )          </span><span class="comment">/* CMSIS HAL version number */</span><span class="preprocessor"></span></div>
-<div class="line"> </div>
-<div class="line"><span class="preprocessor">#define __CORTEX_SC                 (300U)                                          </span><span class="comment">/* Cortex secure core */</span><span class="preprocessor"></span></div>
-</div><!-- fragment --> <p><b>core_cm35p.h</b> </p><div class="fragment"><div class="line"><span class="preprocessor">#define __CM35P_CMSIS_VERSION_MAIN  (__CM_CMSIS_VERSION_MAIN)                       </span><span class="comment">/* [31:16] CMSIS HAL main version */</span><span class="preprocessor"></span></div>
-<div class="line"><span class="preprocessor">#define __CM35P_CMSIS_VERSION_SUB   (__CM_CMSIS_VERSION_SUB)                        </span><span class="comment">/* [15:0]  CMSIS HAL sub version */</span><span class="preprocessor"></span></div>
-<div class="line"><span class="preprocessor">#define __CM35P_CMSIS_VERSION       ((__CM35P_CMSIS_VERSION_MAIN &lt;&lt; 16U) | \</span></div>
-<div class="line"><span class="preprocessor">                                      __CM35P_CMSIS_VERSION_SUB          )          </span><span class="comment">/* CMSIS HAL version number */</span><span class="preprocessor"></span></div>
-<div class="line"> </div>
-<div class="line"><span class="preprocessor">#define __CORTEX_M                (35U)                                             </span><span class="comment">/* Cortex-M Core */</span><span class="preprocessor"></span></div>
-</div><!-- fragment -->  <p><b>core_ARMv8MBL.h</b> </p><div class="fragment"><div class="line"><span class="preprocessor">#define __ARMv8MBL_CMSIS_VERSION_MAIN  (__CM_CMSIS_VERSION_MAIN)                    </span><span class="comment">/* [31:16] CMSIS HAL main version */</span><span class="preprocessor"></span></div>
-<div class="line"><span class="preprocessor">#define __ARMv8MBL_CMSIS_VERSION_SUB   (__CM_CMSIS_VERSION_SUB)                     </span><span class="comment">/* [15:0]  CMSIS HAL sub version */</span><span class="preprocessor"></span></div>
-<div class="line"><span class="preprocessor">#define __ARMv8MBL_CMSIS_VERSION       ((__ARMv8MBL_CMSIS_VERSION_MAIN &lt;&lt; 16U) | \</span></div>
-<div class="line"><span class="preprocessor">                                         __ARMv8MBL_CMSIS_VERSION_SUB           )   </span><span class="comment">/* CMSIS HAL version number */</span><span class="preprocessor"></span></div>
-<div class="line"> </div>
-<div class="line"><span class="preprocessor">#define __CORTEX_M                     (2U)                                         </span><span class="comment">/* Cortex secure core */</span><span class="preprocessor"></span></div>
-</div><!-- fragment --> <p><b>core_ARMv8MML.h</b> </p><div class="fragment"><div class="line"><span class="preprocessor">#define __ARMv8MML_CMSIS_VERSION_MAIN  (__CM_CMSIS_VERSION_MAIN)                    </span><span class="comment">/* [31:16] CMSIS HAL main version */</span><span class="preprocessor"></span></div>
-<div class="line"><span class="preprocessor">#define __ARMv8MML_CMSIS_VERSION_SUB   (__CM_CMSIS_VERSION_SUB)                     </span><span class="comment">/* [15:0]  CMSIS HAL sub version */</span><span class="preprocessor"></span></div>
-<div class="line"><span class="preprocessor">#define __ARMv8MML_CMSIS_VERSION       ((__ARMv8MML_CMSIS_VERSION_MAIN &lt;&lt; 16U) | \</span></div>
-<div class="line"><span class="preprocessor">                                         __ARMv8MML_CMSIS_VERSION_SUB           )   </span><span class="comment">/* CMSIS HAL version number */</span><span class="preprocessor"></span></div>
-<div class="line"> </div>
-<div class="line"><span class="preprocessor">#define __CORTEX_M                     (80U)                                        </span><span class="comment">/* Cortex secure core */</span><span class="preprocessor"></span></div>
-</div><!-- fragment --> <h1><a class="anchor" id="device_access"></a>
+<div class="line"><span class="preprocessor">#include &quot;system_&lt;Device&gt;</span>.h<span class="stringliteral">&quot;                /* Device System Header                               */</span></div>
+</div><!-- fragment --><h1><a class="anchor" id="device_access"></a>
 Device Peripheral Access Layer</h1>
-<p>The <a class="el" href="device_h_pg.html">Device Header File &lt;device.h&gt;</a> contains for each peripheral:</p><ul>
+<p>The <a class="el" href="device_h_pg.html">Device Header File &lt;Device.h&gt;</a> contains for each peripheral:</p><ul>
 <li>Register Layout Typedef</li>
 <li>Base Address</li>
 <li>Access Definitions</li>
@@ -466,8 +380,8 @@ Device Peripheral Access Layer</h1>
 <p>The section <a class="el" href="group__peripheral__gr.html">Peripheral Access</a> shows examples for peripheral definitions.</p>
 <h1><a class="anchor" id="device_h_sec"></a>
 Device.h Template File</h1>
-<p>The silicon vendor needs to extend the Device.h template file with the CMSIS features described above. In addition the <a class="el" href="device_h_pg.html">Device Header File &lt;device.h&gt;</a> may contain functions to access device-specific peripherals. The <a class="el" href="system_c_pg.html#system_Device_h_sec">system_Device.h Template File</a> which is provided as part of the CMSIS specification is shown below.</p>
-<pre class="fragment"></pre> </div></div><!-- contents -->
+<p>CMSIS-Core <a class="el" href="cmsis_device_files.html#cmsis_template_files">Device Template Files</a> include <code>Device.h</code> file that can be used as a starting point for chip vendors to implement the device-specific features required in a Device header file as described above. But the may also contain other functions to access device-specific peripherals. </p>
+</div></div><!-- contents -->
 </div><!-- PageDoc -->
 </div><!-- doc-content -->
 <!-- start footer part -->

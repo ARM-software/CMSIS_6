@@ -1,13 +1,8 @@
 var searchData=
 [
-  ['sctlr_20bits_0',['SCTLR Bits',['../group__CMSIS__SCTLR__BITS.html',1,'']]],
-  ['sctlr_5ftype_1',['SCTLR_Type',['../structSCTLR__Type.html',1,'']]],
-  ['stack_20pointer_20_28sp_2fr13_29_2',['Stack Pointer (SP/R13)',['../group__CMSIS__SP.html',1,'']]],
-  ['startup_20file_20startup_5f_3cdevice_3e_2ec_3',['Startup File startup_&lt;device&gt;.c',['../startup_c_pg.html',1,'templates_pg']]],
-  ['system_20and_20clock_20configuration_4',['System and Clock Configuration',['../group__system__init__gr.html',1,'']]],
-  ['system_20configuration_20files_20system_5f_3cdevice_3e_2ec_20and_20system_5f_3cdevice_3e_2eh_5',['System Configuration Files system_&lt;device&gt;.c and system_&lt;device&gt;.h',['../system_c_pg.html',1,'templates_pg']]],
-  ['system_20control_20register_20_28sctlr_29_6',['System Control Register (SCTLR)',['../group__CMSIS__SCTLR.html',1,'']]],
-  ['systemcoreclock_7',['SystemCoreClock',['../group__system__init__gr.html#gaa3cd3e43291e81e795d642b79b6088e6',1,'Ref_SystemAndClock.txt']]],
-  ['systemcoreclockupdate_8',['SystemCoreClockUpdate',['../group__system__init__gr.html#gae0c36a9591fe6e9c45ecb21a794f0f0f',1,'Ref_SystemAndClock.txt']]],
-  ['systeminit_9',['SystemInit',['../group__system__init__gr.html#ga93f514700ccf00d08dbdcff7f1224eb2',1,'Ref_SystemAndClock.txt']]]
+  ['offset_5f1m_0',['OFFSET_1M',['../core__ca_8h.html#a8e51cfa91c0b6bbf1df1cff0bde44836',1,'core_ca.h']]],
+  ['offset_5f4k_1',['OFFSET_4K',['../core__ca_8h.html#a121c645cdc91018720ceaf1d021fcd89',1,'core_ca.h']]],
+  ['offset_5f64k_2',['OFFSET_64K',['../core__ca_8h.html#af19b9fb664a06a41562176a51c66fcff',1,'core_ca.h']]],
+  ['outer_5fnorm_5ft_3',['outer_norm_t',['../structmmu__region__attributes__Type.html#a2aebbdf7cfb941d5703d008f02131622',1,'mmu_region_attributes_Type']]],
+  ['overview_4',['Overview',['../index.html',1,'']]]
 ];

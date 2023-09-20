@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['template_2etxt_0',['Template.txt',['../Template_8txt.html',1,'']]]
+  ['using_2emd_0',['using.md',['../using_8md.html',1,'']]],
+  ['using_5ftz_2emd_1',['using_tz.md',['../using__tz_8md.html',1,'']]]
 ];

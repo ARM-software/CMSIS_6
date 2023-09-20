@@ -130,7 +130,46 @@ $(document).ready(function(){initNavTree('coreMISRA_Exceptions_pg.html',''); ini
   <div class="headertitle"><div class="title">MISRA-C Deviations </div></div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><p>CMSIS-Core (Cortex-M) uses the common coding rules for CMSIS components that are documented under <a href="../../General/html/index.html"><b>Introduction</b></a>. </p>
+<div class="textblock"><p><a class="anchor" id="md_src_misra"></a> CMSIS-Core (Cortex-M) uses the common coding rules for CMSIS components that are documented in <a href="../../General/html/index.html">CMSIS Introduction</a>.</p>
+<p>CMSIS-Core (Cortex-M) violates the following MISRA-C:2012 rules:</p>
+<ul>
+<li>Directive 4.9, function-like macro defined.<ul>
+<li>Violated since function-like macros are used to generate more efficient code.</li>
+</ul>
+</li>
+<li>Rule 1.3, multiple use of '#/##' operators in macro definition.<ul>
+<li>Violated since function-like macros are used to generate more efficient code.</li>
+</ul>
+</li>
+<li>Rule 11.4, conversion between a pointer and integer type.<ul>
+<li>Violated because of core register access.</li>
+</ul>
+</li>
+<li>Rule 11.6, cast from unsigned long to pointer.<ul>
+<li>Violated because of core register access.</li>
+</ul>
+</li>
+<li>Rule 13.5, side effects on right hand side of logical operator.<ul>
+<li>Violated because of shift operand is used in macros and functions.</li>
+</ul>
+</li>
+<li>Rule 14.4, conditional expression should have essentially Boolean type.<ul>
+<li>Violated since macros with several instructions are used.</li>
+</ul>
+</li>
+<li>Rule 15.5, return statement before end of function.<ul>
+<li>Violated to simplify code logic.</li>
+</ul>
+</li>
+<li>Rule 20.10, '#/##' operators used.<ul>
+<li>Violated since function-like macros are used to generate more efficient code.</li>
+</ul>
+</li>
+<li>Rule 21.1, reserved to the compiler.<ul>
+<li>Violated since macros with leading underscores are used. </li>
+</ul>
+</li>
+</ul>
 </div></div><!-- contents -->
 </div><!-- PageDoc -->
 </div><!-- doc-content -->

@@ -275,15 +275,15 @@ Mainline  </th><th>Description  </th></tr>
 <tr>
 <td><b>SysTick_IRQn</b> </td><td>SysTick_Handler </td><td>-1 </td><td><center>&radic;</center> </td><td><center>&radic;</center>  </td><td><center>&radic;</center> </td><td><center>&radic;</center> </td><td><center>&radic;</center>  </td><td>System Tick Interrupt  </td></tr>
 </table>
-<h1><a class="anchor" id="autotoc_md2"></a>
+<h1><a class="anchor" id="autotoc_md1"></a>
 Vector Table</h1>
-<p>The Vector Table defines the entry addresses of the processor exceptions and the device specific interrupts. It is typically located at the beginning of the program memory, however <a class="el" href="using_VTOR_pg.html">Using Interrupt Vector Remap</a> it can be relocated to RAM. The symbol <b>__Vectors</b> is the address of the vector table in the startup code and the register <b>SCB-&gt;VTOR</b> holds the start address of the vector table.</p>
+<p>The Vector Table defines the entry addresses of the processor exceptions and the device specific interrupts. It is typically located at the beginning of the program memory, however <a class="el" href="using_pg.html#using_vtor">Using Interrupt Vector Remap</a> it can be relocated to RAM. The symbol <b>__Vectors</b> is the address of the vector table in the startup code and the register <b>SCB-&gt;VTOR</b> holds the start address of the vector table.</p>
 <p>An Armv8-M implementation with TrustZone provides two vector tables:</p><ul>
 <li>vector table for Secure handlers</li>
 <li>vector table for Non-Secure handlers</li>
 </ul>
 <p>Refer to <a class="el" href="using_TrustZone_pg.html#Model_TrustZone">Programmers Model with TrustZone</a> for more information. </p>
-<h2><a class="anchor" id="autotoc_md3"></a>
+<h2><a class="anchor" id="autotoc_md2"></a>
 Processor Exceptions</h2>
 <p>At the beginning of the vector table, the initial stack value and the exception vectors of the processor are defined. The vector table below shows the exception vectors of a Armv8-M Mainline processor. Other processor variants may have fewer vectors.</p>
 <div class="fragment"><div class="line">__Vectors       DCD     __initial_sp              ; Top of Stack initialization</div>
@@ -302,7 +302,7 @@ Processor Exceptions</h2>
 <div class="line">                DCD     0                         ; Reserved</div>
 <div class="line">                DCD     PendSV_Handler            ; PendSV Handler</div>
 <div class="line">                DCD     SysTick_Handler           ; SysTick Handler</div>
-</div><!-- fragment --><h2><a class="anchor" id="autotoc_md4"></a>
+</div><!-- fragment --><h2><a class="anchor" id="autotoc_md3"></a>
 Device Specific Vectors</h2>
 <p>Following the processor exception vectors, the vector table contains also the device specific interrupt vectors.</p>
 <div class="fragment"><div class="line">; device specific interrupts</div>
@@ -328,10 +328,10 @@ Device Specific Vectors</h2>
 <div class="line">{</div>
 <div class="line">  ...</div>
 <div class="line">}</div>
-</div><!-- fragment --><h1><a class="anchor" id="autotoc_md5"></a>
+</div><!-- fragment --><h1><a class="anchor" id="autotoc_md4"></a>
 NVIC Function Usage</h1>
 <p>The code below shows the usage of various CMSIS NVIC functions with an LPC1700 device.</p>
-<h2><a class="anchor" id="autotoc_md6"></a>
+<h2><a class="anchor" id="autotoc_md5"></a>
 Code Example 1</h2>
 <div class="fragment"><div class="line"><span class="preprocessor">#include &quot;LPC17xx.h&quot;</span></div>
 <div class="line"> </div>
@@ -363,7 +363,7 @@ Code Example 1</h2>
 <div class="ttc" id="agroup__NVIC__gr_html_gab18fb9f6c5f4c70fdd73047f0f7c8395"><div class="ttname"><a href="group__NVIC__gr.html#gab18fb9f6c5f4c70fdd73047f0f7c8395">NVIC_GetPriority</a></div><div class="ttdeci">uint32_t NVIC_GetPriority(IRQn_Type IRQn)</div><div class="ttdoc">Get the priority of an interrupt.</div></div>
 <div class="ttc" id="agroup__NVIC__gr_html_gad3cbca1be7a4726afa9448a9acd89377"><div class="ttname"><a href="group__NVIC__gr.html#gad3cbca1be7a4726afa9448a9acd89377">NVIC_DecodePriority</a></div><div class="ttdeci">void NVIC_DecodePriority(uint32_t Priority, uint32_t PriorityGroup, uint32_t *pPreemptPriority, uint32_t *pSubPriority)</div><div class="ttdoc">Decode the interrupt priority [not for Cortex-M0, Cortex-M0+, or SC000].</div></div>
 <div class="ttc" id="agroup__NVIC__gr_html_gad78f447e891789b4d8f2e5b21eeda354"><div class="ttname"><a href="group__NVIC__gr.html#gad78f447e891789b4d8f2e5b21eeda354">NVIC_SetPriorityGrouping</a></div><div class="ttdeci">void NVIC_SetPriorityGrouping(uint32_t PriorityGroup)</div><div class="ttdoc">Set priority grouping [not for Cortex-M0, Cortex-M0+, or SC000].</div></div>
-</div><!-- fragment --><h2><a class="anchor" id="autotoc_md7"></a>
+</div><!-- fragment --><h2><a class="anchor" id="autotoc_md6"></a>
 Code Example 2</h2>
 <div class="fragment"><div class="line"><span class="preprocessor">#include &quot;LPC17xx.h&quot;</span></div>
 <div class="line"> </div>
@@ -390,7 +390,7 @@ Code Example 2</h2>
 <div class="ttc" id="agroup__NVIC__gr_html_ga530ad9fda2ed1c8b70e439ecfe80591f"><div class="ttname"><a href="group__NVIC__gr.html#ga530ad9fda2ed1c8b70e439ecfe80591f">NVIC_EnableIRQ</a></div><div class="ttdeci">void NVIC_EnableIRQ(IRQn_Type IRQn)</div><div class="ttdoc">Enable a device specific interrupt.</div></div>
 <div class="ttc" id="agroup__NVIC__gr_html_gadf4252e600661fd762cfc0d1a9f5b892"><div class="ttname"><a href="group__NVIC__gr.html#gadf4252e600661fd762cfc0d1a9f5b892">NVIC_GetActive</a></div><div class="ttdeci">uint32_t NVIC_GetActive(IRQn_Type IRQn)</div><div class="ttdoc">Get the device specific interrupt active status [not for Cortex-M0, Cortex-M0+, or SC000].</div></div>
 <div class="ttc" id="agroup__system__init__gr_html_gaa3cd3e43291e81e795d642b79b6088e6"><div class="ttname"><a href="group__system__init__gr.html#gaa3cd3e43291e81e795d642b79b6088e6">SystemCoreClock</a></div><div class="ttdeci">uint32_t SystemCoreClock</div><div class="ttdoc">Variable to hold the system core clock value.</div><div class="ttdef"><b>Definition:</b> Ref_SystemAndClock.txt:68</div></div>
-</div><!-- fragment --><h1><a class="anchor" id="autotoc_md8"></a>
+</div><!-- fragment --><h1><a class="anchor" id="autotoc_md7"></a>
 NVIC API Virtualization</h1>
 <p>The CMSIS-Core has provisions for overriding NVIC APIs as required for implementing secure systems that control access to peripherals and related interrupts. These overrides allow an operating system to control the access privileges of application code to critical interrupts.</p>
 <p>The NVIC function virtualization is enabled with the following #define symbols:</p><ul>
@@ -481,7 +481,7 @@ NVIC API Virtualization</h1>
 </div><div class="memdoc">
 
 <p>Definition of IRQn numbers. </p>
-<p>The core exception enumeration names for IRQn values are defined in the <a class="el" href="device_h_pg.html">Device Header File &lt;device.h&gt;</a>.</p>
+<p>The core exception enumeration names for IRQn values are defined in the <a class="el" href="device_h_pg.html">Device Header File &lt;Device.h&gt;</a>.</p>
 <ul>
 <li>Negative IRQn values represent processor core exceptions (internal interrupts).</li>
 <li>Positive IRQn values represent device-specific exceptions (external interrupts).</li>
@@ -550,7 +550,7 @@ NVIC API Virtualization</h1>
 </dd></dl>
 <dl class="section see"><dt>See also</dt><dd><ul>
 <li><a class="el" href="group__NVIC__gr.html#ga3b885147ef9965ecede49614de8df9d2">NVIC_SetPendingIRQ</a>; <a class="el" href="group__NVIC__gr.html#ga95a8329a680b051ecf3ee8f516acc662" title="Get the pending device specific interrupt.">NVIC_GetPendingIRQ</a></li>
-<li><a class="el" href="index.html#ref_man_sec">Cortex-M Generic User Guides</a> </li>
+<li><a class="el" href="index.html#ref_man_sec">ref_man_sec</a> </li>
 </ul>
 </dd></dl>
 
@@ -650,7 +650,7 @@ NVIC API Virtualization</h1>
 </dd></dl>
 <dl class="section see"><dt>See also</dt><dd><ul>
 <li><a class="el" href="group__NVIC__gr.html#ga0688c59605b119c53c71b2505ab23eb5">NVIC_EncodePriority</a>; <a class="el" href="group__NVIC__gr.html#gab18fb9f6c5f4c70fdd73047f0f7c8395" title="Get the priority of an interrupt.">NVIC_GetPriority</a>; <a class="el" href="group__NVIC__gr.html#gaa81b19849367d3cdb95ac108c500fa78" title="Read the priority grouping [not for Cortex-M0, Cortex-M0+, or SC000].">NVIC_GetPriorityGrouping</a>;</li>
-<li><a class="el" href="index.html#ref_man_sec">Cortex-M Generic User Guides</a> </li>
+<li><a class="el" href="index.html#ref_man_sec">ref_man_sec</a> </li>
 </ul>
 </dd></dl>
 
@@ -687,7 +687,7 @@ NVIC API Virtualization</h1>
 </dd></dl>
 <dl class="section see"><dt>See also</dt><dd><ul>
 <li><a class="el" href="group__NVIC__gr.html#ga530ad9fda2ed1c8b70e439ecfe80591f">NVIC_EnableIRQ</a></li>
-<li><a class="el" href="index.html#ref_man_sec">Cortex-M Generic User Guides</a> </li>
+<li><a class="el" href="index.html#ref_man_sec">ref_man_sec</a> </li>
 </ul>
 </dd></dl>
 
@@ -731,7 +731,7 @@ NVIC API Virtualization</h1>
 </dd></dl>
 <dl class="section see"><dt>See also</dt><dd><ul>
 <li><a class="el" href="group__NVIC__gr.html#ga736ba13a76eb37ef6e2c253be8b0331c">NVIC_DisableIRQ</a>; <a class="el" href="structSCnSCB__Type.html" title="Structure type to access the System Control and ID Register not in the SCB.">SCnSCB_Type</a>;</li>
-<li><a class="el" href="index.html#ref_man_sec">Cortex-M Generic User Guides</a> </li>
+<li><a class="el" href="index.html#ref_man_sec">ref_man_sec</a> </li>
 </ul>
 </dd></dl>
 
@@ -786,7 +786,7 @@ NVIC API Virtualization</h1>
 </dd></dl>
 <dl class="section see"><dt>See also</dt><dd><ul>
 <li><a class="el" href="group__NVIC__gr.html#gad3cbca1be7a4726afa9448a9acd89377">NVIC_DecodePriority</a>; <a class="el" href="group__NVIC__gr.html#ga5bb7f43ad92937c039dee3d36c3c2798" title="Set the priority for an interrupt.">NVIC_SetPriority</a>;</li>
-<li><a class="el" href="index.html#ref_man_sec">Cortex-M Generic User Guides</a> </li>
+<li><a class="el" href="index.html#ref_man_sec">ref_man_sec</a> </li>
 </ul>
 </dd></dl>
 
@@ -829,7 +829,7 @@ NVIC API Virtualization</h1>
 </ul>
 </dd></dl>
 <dl class="section see"><dt>See also</dt><dd><ul>
-<li><a class="el" href="index.html#ref_man_sec">Cortex-M Generic User Guides</a> </li>
+<li><a class="el" href="index.html#ref_man_sec">ref_man_sec</a> </li>
 </ul>
 </dd></dl>
 
@@ -871,7 +871,7 @@ NVIC API Virtualization</h1>
 </dd></dl>
 <dl class="section see"><dt>See also</dt><dd><ul>
 <li><a class="el" href="group__NVIC__gr.html#ga530ad9fda2ed1c8b70e439ecfe80591f">NVIC_EnableIRQ</a>; <a class="el" href="group__NVIC__gr.html#ga736ba13a76eb37ef6e2c253be8b0331c" title="Disable a device specific interrupt.">NVIC_DisableIRQ</a>;</li>
-<li><a class="el" href="index.html#ref_man_sec">Cortex-M Generic User Guides</a> </li>
+<li><a class="el" href="index.html#ref_man_sec">ref_man_sec</a> </li>
 </ul>
 </dd></dl>
 
@@ -913,7 +913,7 @@ NVIC API Virtualization</h1>
 </dd></dl>
 <dl class="section see"><dt>See also</dt><dd><ul>
 <li><a class="el" href="group__NVIC__gr.html#ga3b885147ef9965ecede49614de8df9d2">NVIC_SetPendingIRQ</a>; <a class="el" href="group__NVIC__gr.html#ga382ad6bedd6eecfdabd1b94dd128a01a" title="Clear a device specific interrupt from pending.">NVIC_ClearPendingIRQ</a></li>
-<li><a class="el" href="index.html#ref_man_sec">Cortex-M Generic User Guides</a> </li>
+<li><a class="el" href="index.html#ref_man_sec">ref_man_sec</a> </li>
 </ul>
 </dd></dl>
 
@@ -952,7 +952,7 @@ NVIC API Virtualization</h1>
 </dd></dl>
 <dl class="section see"><dt>See also</dt><dd><ul>
 <li><a class="el" href="group__NVIC__gr.html#ga5bb7f43ad92937c039dee3d36c3c2798">NVIC_SetPriority</a>; <a class="el" href="group__NVIC__gr.html#gaa81b19849367d3cdb95ac108c500fa78" title="Read the priority grouping [not for Cortex-M0, Cortex-M0+, or SC000].">NVIC_GetPriorityGrouping</a>; <a class="el" href="group__Core__Register__gr.html#ga32da759f46e52c95bcfbde5012260667" title="Read the BASEPRI register [not for Cortex-M0, Cortex-M0+, or SC000].">__get_BASEPRI</a>;</li>
-<li><a class="el" href="index.html#ref_man_sec">Cortex-M Generic User Guides</a> </li>
+<li><a class="el" href="index.html#ref_man_sec">ref_man_sec</a> </li>
 </ul>
 </dd></dl>
 
@@ -984,7 +984,7 @@ NVIC API Virtualization</h1>
 </dd></dl>
 <dl class="section see"><dt>See also</dt><dd><ul>
 <li><a class="el" href="group__NVIC__gr.html#gad78f447e891789b4d8f2e5b21eeda354">NVIC_SetPriorityGrouping</a>; <a class="el" href="group__NVIC__gr.html#gab18fb9f6c5f4c70fdd73047f0f7c8395" title="Get the priority of an interrupt.">NVIC_GetPriority</a>; <a class="el" href="structSCB__Type.html" title="Structure type to access the System Control Block (SCB).">SCB_Type</a></li>
-<li><a class="el" href="index.html#ref_man_sec">Cortex-M Generic User Guides</a> </li>
+<li><a class="el" href="index.html#ref_man_sec">ref_man_sec</a> </li>
 </ul>
 </dd></dl>
 
@@ -1060,7 +1060,7 @@ NVIC API Virtualization</h1>
 </dd></dl>
 <dl class="section see"><dt>See also</dt><dd><ul>
 <li><a class="el" href="group__NVIC__gr.html#gab43c1c59d5c081f1bc725237f4b1f916">NVIC_SetVector</a></li>
-<li><a class="el" href="index.html#ref_man_sec">Cortex-M Generic User Guides</a> </li>
+<li><a class="el" href="index.html#ref_man_sec">ref_man_sec</a> </li>
 </ul>
 </dd></dl>
 
@@ -1097,7 +1097,7 @@ NVIC API Virtualization</h1>
 </dd></dl>
 <dl class="section see"><dt>See also</dt><dd><ul>
 <li><a class="el" href="group__NVIC__gr.html#ga95a8329a680b051ecf3ee8f516acc662">NVIC_GetPendingIRQ</a>; <a class="el" href="group__NVIC__gr.html#ga382ad6bedd6eecfdabd1b94dd128a01a" title="Clear a device specific interrupt from pending.">NVIC_ClearPendingIRQ</a></li>
-<li><a class="el" href="index.html#ref_man_sec">Cortex-M Generic User Guides</a> </li>
+<li><a class="el" href="index.html#ref_man_sec">ref_man_sec</a> </li>
 </ul>
 </dd></dl>
 
@@ -1158,7 +1158,7 @@ NVIC API Virtualization</h1>
 </dd></dl>
 <dl class="section see"><dt>See also</dt><dd><ul>
 <li><a class="el" href="group__NVIC__gr.html#gab18fb9f6c5f4c70fdd73047f0f7c8395">NVIC_GetPriority</a>; <a class="el" href="group__NVIC__gr.html#gad78f447e891789b4d8f2e5b21eeda354" title="Set priority grouping [not for Cortex-M0, Cortex-M0+, or SC000].">NVIC_SetPriorityGrouping</a>; <a class="el" href="group__Core__Register__gr.html#ga360c73eb7ffb16088556f9278953b882" title="Set the BASEPRI register [not for Cortex-M0, Cortex-M0+, or SC000].">__set_BASEPRI</a>;</li>
-<li><a class="el" href="index.html#ref_man_sec">Cortex-M Generic User Guides</a> </li>
+<li><a class="el" href="index.html#ref_man_sec">ref_man_sec</a> </li>
 </ul>
 </dd></dl>
 
@@ -1195,7 +1195,7 @@ NVIC API Virtualization</h1>
 </dd></dl>
 <dl class="section see"><dt>See also</dt><dd><ul>
 <li><a class="el" href="group__NVIC__gr.html#gaa81b19849367d3cdb95ac108c500fa78">NVIC_GetPriorityGrouping</a>; <a class="el" href="group__NVIC__gr.html#ga5bb7f43ad92937c039dee3d36c3c2798" title="Set the priority for an interrupt.">NVIC_SetPriority</a>; <a class="el" href="structSCB__Type.html" title="Structure type to access the System Control Block (SCB).">SCB_Type</a></li>
-<li><a class="el" href="index.html#ref_man_sec">Cortex-M Generic User Guides</a> </li>
+<li><a class="el" href="index.html#ref_man_sec">ref_man_sec</a> </li>
 </ul>
 </dd></dl>
 
@@ -1276,7 +1276,7 @@ NVIC API Virtualization</h1>
   </dd>
 </dl>
 <dl class="section remark"><dt>Remarks</dt><dd><ul>
-<li>Usage of this function requires vector relocation to RAM. Refer to <a class="el" href="using_VTOR_pg.html">Using Interrupt Vector Remap</a> for more information.</li>
+<li>Usage of this function requires vector relocation to RAM. Refer to <a class="el" href="using_pg.html#using_vtor">Using Interrupt Vector Remap</a> for more information.</li>
 </ul>
 </dd></dl>
 <ul>
@@ -1284,7 +1284,7 @@ NVIC API Virtualization</h1>
 </ul>
 <dl class="section see"><dt>See also</dt><dd><ul>
 <li><a class="el" href="group__NVIC__gr.html#gaebee9cad6724a5bac1857f0f1fb6d6af">NVIC_GetVector</a></li>
-<li><a class="el" href="index.html#ref_man_sec">Cortex-M Generic User Guides</a> </li>
+<li><a class="el" href="index.html#ref_man_sec">ref_man_sec</a> </li>
 </ul>
 </dd></dl>
 
@@ -1313,7 +1313,7 @@ NVIC API Virtualization</h1>
 </ul>
 </dd></dl>
 <dl class="section see"><dt>See also</dt><dd><ul>
-<li><a class="el" href="index.html#ref_man_sec">Cortex-M Generic User Guides</a> </li>
+<li><a class="el" href="index.html#ref_man_sec">ref_man_sec</a> </li>
 </ul>
 </dd></dl>
 

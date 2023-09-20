@@ -127,9 +127,327 @@ $(document).ready(function(){initNavTree('structGICInterface__Type.html',''); in
 </div>
 
 <div class="header">
-  <div class="headertitle"><div class="title">GICInterface_Type Struct Reference<div class="ingroups"><a class="el" href="group__CMSIS__Core__FunctionInterface.html">Core Peripherals</a> &raquo; <a class="el" href="group__GIC__functions.html">Generic Interrupt Controller Functions</a></div></div></div>
+  <div class="summary">
+<a href="#pub-attribs">Data Fields</a>  </div>
+  <div class="headertitle"><div class="title">GICInterface_Type Struct Reference</div></div>
 </div><!--header-->
 <div class="contents">
+
+<p>Structure type to access the Generic Interrupt Controller Interface (GICC)  
+ <a href="structGICInterface__Type.html#details">More...</a></p>
+
+<p><code>#include &lt;core_ca.h&gt;</code></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
+Data Fields</h2></td></tr>
+<tr class="memitem:a5969edab40aa24e4d96e072af187a3a9"><td class="memItemLeft" align="right" valign="top"><a class="el" href="core__ca_8h.html#ab6caba5853a60a17e8e04499b52bf691">__IOM</a> uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structGICInterface__Type.html#a5969edab40aa24e4d96e072af187a3a9">CTLR</a></td></tr>
+<tr class="memdesc:a5969edab40aa24e4d96e072af187a3a9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Offset: 0x000 (R/W) CPU Interface Control Register.  <br /></td></tr>
+<tr class="separator:a5969edab40aa24e4d96e072af187a3a9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0edadabc6e3ce1f36d820f0b52bc143b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="core__ca_8h.html#ab6caba5853a60a17e8e04499b52bf691">__IOM</a> uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structGICInterface__Type.html#a0edadabc6e3ce1f36d820f0b52bc143b">PMR</a></td></tr>
+<tr class="memdesc:a0edadabc6e3ce1f36d820f0b52bc143b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Offset: 0x004 (R/W) Interrupt Priority Mask Register.  <br /></td></tr>
+<tr class="separator:a0edadabc6e3ce1f36d820f0b52bc143b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a949317484547dc1db89c9f7ab40d1829"><td class="memItemLeft" align="right" valign="top"><a class="el" href="core__ca_8h.html#ab6caba5853a60a17e8e04499b52bf691">__IOM</a> uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structGICInterface__Type.html#a949317484547dc1db89c9f7ab40d1829">BPR</a></td></tr>
+<tr class="memdesc:a949317484547dc1db89c9f7ab40d1829"><td class="mdescLeft">&#160;</td><td class="mdescRight">Offset: 0x008 (R/W) Binary Point Register.  <br /></td></tr>
+<tr class="separator:a949317484547dc1db89c9f7ab40d1829"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa48569605fc0c163e1db35321b4c76ea"><td class="memItemLeft" align="right" valign="top"><a class="el" href="core__ca_8h.html#a4cc1649793116d7c2d8afce7a4ffce43">__IM</a> uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structGICInterface__Type.html#aa48569605fc0c163e1db35321b4c76ea">IAR</a></td></tr>
+<tr class="memdesc:aa48569605fc0c163e1db35321b4c76ea"><td class="mdescLeft">&#160;</td><td class="mdescRight">Offset: 0x00C (R/ ) Interrupt Acknowledge Register.  <br /></td></tr>
+<tr class="separator:aa48569605fc0c163e1db35321b4c76ea"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4b9baa43aae026438bad64e63df17cdb"><td class="memItemLeft" align="right" valign="top"><a class="el" href="core__ca_8h.html#a0ea2009ed8fd9ef35b48708280fdb758">__OM</a> uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structGICInterface__Type.html#a4b9baa43aae026438bad64e63df17cdb">EOIR</a></td></tr>
+<tr class="memdesc:a4b9baa43aae026438bad64e63df17cdb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Offset: 0x010 ( /W) End Of Interrupt Register.  <br /></td></tr>
+<tr class="separator:a4b9baa43aae026438bad64e63df17cdb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a37762d42768ecb3d1302f34abc7f2821"><td class="memItemLeft" align="right" valign="top"><a class="el" href="core__ca_8h.html#a4cc1649793116d7c2d8afce7a4ffce43">__IM</a> uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structGICInterface__Type.html#a37762d42768ecb3d1302f34abc7f2821">RPR</a></td></tr>
+<tr class="memdesc:a37762d42768ecb3d1302f34abc7f2821"><td class="mdescLeft">&#160;</td><td class="mdescRight">Offset: 0x014 (R/ ) Running Priority Register.  <br /></td></tr>
+<tr class="separator:a37762d42768ecb3d1302f34abc7f2821"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af793cd280a74bf73cca8c4fedfc329d6"><td class="memItemLeft" align="right" valign="top"><a class="el" href="core__ca_8h.html#a4cc1649793116d7c2d8afce7a4ffce43">__IM</a> uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structGICInterface__Type.html#af793cd280a74bf73cca8c4fedfc329d6">HPPIR</a></td></tr>
+<tr class="memdesc:af793cd280a74bf73cca8c4fedfc329d6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Offset: 0x018 (R/ ) Highest Priority Pending Interrupt Register.  <br /></td></tr>
+<tr class="separator:af793cd280a74bf73cca8c4fedfc329d6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6d3ca9eaae5e0ac38f20846a1e67180d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="core__ca_8h.html#ab6caba5853a60a17e8e04499b52bf691">__IOM</a> uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structGICInterface__Type.html#a6d3ca9eaae5e0ac38f20846a1e67180d">ABPR</a></td></tr>
+<tr class="memdesc:a6d3ca9eaae5e0ac38f20846a1e67180d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Offset: 0x01C (R/W) Aliased Binary Point Register.  <br /></td></tr>
+<tr class="separator:a6d3ca9eaae5e0ac38f20846a1e67180d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a849e9ead6e9ced78dc6f0ba9256dd5a6"><td class="memItemLeft" align="right" valign="top"><a class="el" href="core__ca_8h.html#a4cc1649793116d7c2d8afce7a4ffce43">__IM</a> uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structGICInterface__Type.html#a849e9ead6e9ced78dc6f0ba9256dd5a6">AIAR</a></td></tr>
+<tr class="memdesc:a849e9ead6e9ced78dc6f0ba9256dd5a6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Offset: 0x020 (R/ ) Aliased Interrupt Acknowledge Register.  <br /></td></tr>
+<tr class="separator:a849e9ead6e9ced78dc6f0ba9256dd5a6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a89d5a920c2b91b4b7bd0312ba4c38a89"><td class="memItemLeft" align="right" valign="top"><a class="el" href="core__ca_8h.html#a0ea2009ed8fd9ef35b48708280fdb758">__OM</a> uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structGICInterface__Type.html#a89d5a920c2b91b4b7bd0312ba4c38a89">AEOIR</a></td></tr>
+<tr class="memdesc:a89d5a920c2b91b4b7bd0312ba4c38a89"><td class="mdescLeft">&#160;</td><td class="mdescRight">Offset: 0x024 ( /W) Aliased End Of Interrupt Register.  <br /></td></tr>
+<tr class="separator:a89d5a920c2b91b4b7bd0312ba4c38a89"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a12f25dec95ab3dd13a477573fab4b9c8"><td class="memItemLeft" align="right" valign="top"><a class="el" href="core__ca_8h.html#a4cc1649793116d7c2d8afce7a4ffce43">__IM</a> uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structGICInterface__Type.html#a12f25dec95ab3dd13a477573fab4b9c8">AHPPIR</a></td></tr>
+<tr class="memdesc:a12f25dec95ab3dd13a477573fab4b9c8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Offset: 0x028 (R/ ) Aliased Highest Priority Pending Interrupt Register.  <br /></td></tr>
+<tr class="separator:a12f25dec95ab3dd13a477573fab4b9c8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abd978b408fb69b7887be2c422f48ce7e"><td class="memItemLeft" align="right" valign="top"><a class="el" href="core__ca_8h.html#ab6caba5853a60a17e8e04499b52bf691">__IOM</a> uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structGICInterface__Type.html#abd978b408fb69b7887be2c422f48ce7e">STATUSR</a></td></tr>
+<tr class="memdesc:abd978b408fb69b7887be2c422f48ce7e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Offset: 0x02C (R/W) Error Reporting Status Register, optional.  <br /></td></tr>
+<tr class="separator:abd978b408fb69b7887be2c422f48ce7e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aebae4bdcd3930372d639b85c5c9301e8"><td class="memItemLeft" align="right" valign="top"><a class="el" href="core__ca_8h.html#ab6caba5853a60a17e8e04499b52bf691">__IOM</a> uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structGICInterface__Type.html#aebae4bdcd3930372d639b85c5c9301e8">APR</a> [4]</td></tr>
+<tr class="memdesc:aebae4bdcd3930372d639b85c5c9301e8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Offset: 0x0D0 (R/W) Active Priority Register.  <br /></td></tr>
+<tr class="separator:aebae4bdcd3930372d639b85c5c9301e8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ade3473ace2a8bf7c79a0251457be20f4"><td class="memItemLeft" align="right" valign="top"><a class="el" href="core__ca_8h.html#ab6caba5853a60a17e8e04499b52bf691">__IOM</a> uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structGICInterface__Type.html#ade3473ace2a8bf7c79a0251457be20f4">NSAPR</a> [4]</td></tr>
+<tr class="memdesc:ade3473ace2a8bf7c79a0251457be20f4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Offset: 0x0E0 (R/W) Non-secure Active Priority Register.  <br /></td></tr>
+<tr class="separator:ade3473ace2a8bf7c79a0251457be20f4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aee78d0b6f64a7b47fbd730aabfcc86cf"><td class="memItemLeft" align="right" valign="top"><a class="el" href="core__ca_8h.html#a4cc1649793116d7c2d8afce7a4ffce43">__IM</a> uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structGICInterface__Type.html#aee78d0b6f64a7b47fbd730aabfcc86cf">IIDR</a></td></tr>
+<tr class="memdesc:aee78d0b6f64a7b47fbd730aabfcc86cf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Offset: 0x0FC (R/ ) CPU Interface Identification Register.  <br /></td></tr>
+<tr class="separator:aee78d0b6f64a7b47fbd730aabfcc86cf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a554bd1f88421df3189c664b9fd9c02aa"><td class="memItemLeft" align="right" valign="top"><a class="el" href="core__ca_8h.html#a0ea2009ed8fd9ef35b48708280fdb758">__OM</a> uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structGICInterface__Type.html#a554bd1f88421df3189c664b9fd9c02aa">DIR</a></td></tr>
+<tr class="memdesc:a554bd1f88421df3189c664b9fd9c02aa"><td class="mdescLeft">&#160;</td><td class="mdescRight">Offset: 0x1000( /W) Deactivate Interrupt Register.  <br /></td></tr>
+<tr class="separator:a554bd1f88421df3189c664b9fd9c02aa"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">Description</h2>
+<div class="textblock"><p>Structure type to access the Generic Interrupt Controller Interface (GICC) </p>
+</div><h2 class="groupheader">Field Documentation</h2>
+<a id="a6d3ca9eaae5e0ac38f20846a1e67180d" name="a6d3ca9eaae5e0ac38f20846a1e67180d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6d3ca9eaae5e0ac38f20846a1e67180d">&#9670;&#160;</a></span>ABPR</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="core__ca_8h.html#ab6caba5853a60a17e8e04499b52bf691">__IOM</a> uint32_t GICInterface_Type::ABPR</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Offset: 0x01C (R/W) Aliased Binary Point Register. </p>
+
+</div>
+</div>
+<a id="a89d5a920c2b91b4b7bd0312ba4c38a89" name="a89d5a920c2b91b4b7bd0312ba4c38a89"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a89d5a920c2b91b4b7bd0312ba4c38a89">&#9670;&#160;</a></span>AEOIR</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="core__ca_8h.html#a0ea2009ed8fd9ef35b48708280fdb758">__OM</a> uint32_t GICInterface_Type::AEOIR</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Offset: 0x024 ( /W) Aliased End Of Interrupt Register. </p>
+
+</div>
+</div>
+<a id="a12f25dec95ab3dd13a477573fab4b9c8" name="a12f25dec95ab3dd13a477573fab4b9c8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a12f25dec95ab3dd13a477573fab4b9c8">&#9670;&#160;</a></span>AHPPIR</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="core__ca_8h.html#a4cc1649793116d7c2d8afce7a4ffce43">__IM</a> uint32_t GICInterface_Type::AHPPIR</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Offset: 0x028 (R/ ) Aliased Highest Priority Pending Interrupt Register. </p>
+
+</div>
+</div>
+<a id="a849e9ead6e9ced78dc6f0ba9256dd5a6" name="a849e9ead6e9ced78dc6f0ba9256dd5a6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a849e9ead6e9ced78dc6f0ba9256dd5a6">&#9670;&#160;</a></span>AIAR</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="core__ca_8h.html#a4cc1649793116d7c2d8afce7a4ffce43">__IM</a> uint32_t GICInterface_Type::AIAR</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Offset: 0x020 (R/ ) Aliased Interrupt Acknowledge Register. </p>
+
+</div>
+</div>
+<a id="aebae4bdcd3930372d639b85c5c9301e8" name="aebae4bdcd3930372d639b85c5c9301e8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aebae4bdcd3930372d639b85c5c9301e8">&#9670;&#160;</a></span>APR</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="core__ca_8h.html#ab6caba5853a60a17e8e04499b52bf691">__IOM</a> uint32_t GICInterface_Type::APR[4]</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Offset: 0x0D0 (R/W) Active Priority Register. </p>
+
+</div>
+</div>
+<a id="a949317484547dc1db89c9f7ab40d1829" name="a949317484547dc1db89c9f7ab40d1829"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a949317484547dc1db89c9f7ab40d1829">&#9670;&#160;</a></span>BPR</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="core__ca_8h.html#ab6caba5853a60a17e8e04499b52bf691">__IOM</a> uint32_t GICInterface_Type::BPR</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Offset: 0x008 (R/W) Binary Point Register. </p>
+
+</div>
+</div>
+<a id="a5969edab40aa24e4d96e072af187a3a9" name="a5969edab40aa24e4d96e072af187a3a9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5969edab40aa24e4d96e072af187a3a9">&#9670;&#160;</a></span>CTLR</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="core__ca_8h.html#ab6caba5853a60a17e8e04499b52bf691">__IOM</a> uint32_t GICInterface_Type::CTLR</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Offset: 0x000 (R/W) CPU Interface Control Register. </p>
+
+</div>
+</div>
+<a id="a554bd1f88421df3189c664b9fd9c02aa" name="a554bd1f88421df3189c664b9fd9c02aa"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a554bd1f88421df3189c664b9fd9c02aa">&#9670;&#160;</a></span>DIR</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="core__ca_8h.html#a0ea2009ed8fd9ef35b48708280fdb758">__OM</a> uint32_t GICInterface_Type::DIR</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Offset: 0x1000( /W) Deactivate Interrupt Register. </p>
+
+</div>
+</div>
+<a id="a4b9baa43aae026438bad64e63df17cdb" name="a4b9baa43aae026438bad64e63df17cdb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4b9baa43aae026438bad64e63df17cdb">&#9670;&#160;</a></span>EOIR</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="core__ca_8h.html#a0ea2009ed8fd9ef35b48708280fdb758">__OM</a> uint32_t GICInterface_Type::EOIR</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Offset: 0x010 ( /W) End Of Interrupt Register. </p>
+
+</div>
+</div>
+<a id="af793cd280a74bf73cca8c4fedfc329d6" name="af793cd280a74bf73cca8c4fedfc329d6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af793cd280a74bf73cca8c4fedfc329d6">&#9670;&#160;</a></span>HPPIR</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="core__ca_8h.html#a4cc1649793116d7c2d8afce7a4ffce43">__IM</a> uint32_t GICInterface_Type::HPPIR</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Offset: 0x018 (R/ ) Highest Priority Pending Interrupt Register. </p>
+
+</div>
+</div>
+<a id="aa48569605fc0c163e1db35321b4c76ea" name="aa48569605fc0c163e1db35321b4c76ea"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa48569605fc0c163e1db35321b4c76ea">&#9670;&#160;</a></span>IAR</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="core__ca_8h.html#a4cc1649793116d7c2d8afce7a4ffce43">__IM</a> uint32_t GICInterface_Type::IAR</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Offset: 0x00C (R/ ) Interrupt Acknowledge Register. </p>
+
+</div>
+</div>
+<a id="aee78d0b6f64a7b47fbd730aabfcc86cf" name="aee78d0b6f64a7b47fbd730aabfcc86cf"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aee78d0b6f64a7b47fbd730aabfcc86cf">&#9670;&#160;</a></span>IIDR</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="core__ca_8h.html#a4cc1649793116d7c2d8afce7a4ffce43">__IM</a> uint32_t GICInterface_Type::IIDR</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Offset: 0x0FC (R/ ) CPU Interface Identification Register. </p>
+
+</div>
+</div>
+<a id="ade3473ace2a8bf7c79a0251457be20f4" name="ade3473ace2a8bf7c79a0251457be20f4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ade3473ace2a8bf7c79a0251457be20f4">&#9670;&#160;</a></span>NSAPR</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="core__ca_8h.html#ab6caba5853a60a17e8e04499b52bf691">__IOM</a> uint32_t GICInterface_Type::NSAPR[4]</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Offset: 0x0E0 (R/W) Non-secure Active Priority Register. </p>
+
+</div>
+</div>
+<a id="a0edadabc6e3ce1f36d820f0b52bc143b" name="a0edadabc6e3ce1f36d820f0b52bc143b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0edadabc6e3ce1f36d820f0b52bc143b">&#9670;&#160;</a></span>PMR</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="core__ca_8h.html#ab6caba5853a60a17e8e04499b52bf691">__IOM</a> uint32_t GICInterface_Type::PMR</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Offset: 0x004 (R/W) Interrupt Priority Mask Register. </p>
+
+</div>
+</div>
+<a id="a37762d42768ecb3d1302f34abc7f2821" name="a37762d42768ecb3d1302f34abc7f2821"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a37762d42768ecb3d1302f34abc7f2821">&#9670;&#160;</a></span>RPR</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="core__ca_8h.html#a4cc1649793116d7c2d8afce7a4ffce43">__IM</a> uint32_t GICInterface_Type::RPR</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Offset: 0x014 (R/ ) Running Priority Register. </p>
+
+</div>
+</div>
+<a id="abd978b408fb69b7887be2c422f48ce7e" name="abd978b408fb69b7887be2c422f48ce7e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abd978b408fb69b7887be2c422f48ce7e">&#9670;&#160;</a></span>STATUSR</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="core__ca_8h.html#ab6caba5853a60a17e8e04499b52bf691">__IOM</a> uint32_t GICInterface_Type::STATUSR</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Offset: 0x02C (R/W) Error Reporting Status Register, optional. </p>
+
+</div>
+</div>
 </div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->

@@ -229,7 +229,7 @@ Macros</h2></td></tr>
 <a name="details" id="details"></a><h2 class="groupheader">Description</h2>
 <p>Compiler agnostic #define symbols for generic C/C++ source code. </p>
 <p>The CMSIS-Core provides the header file <b>cmsis_compiler.h</b> with consistent #define symbols for generate C or C++ source files that should be compiler agnostic. Each CMSIS compliant compiler should support the functionality described in this section.</p>
-<p>The header file <b>cmsis_compiler.h</b> is also included by each <a class="el" href="device_h_pg.html">Device Header File &lt;device.h&gt;</a> so that these definitions are available. </p>
+<p>The header file <b>cmsis_compiler.h</b> is also included by each <a class="el" href="device_h_pg.html">Device Header File &lt;Device.h&gt;</a> so that these definitions are available. </p>
 <h2 class="groupheader">Macro Definition Documentation</h2>
 <a id="gadc1a82527532aabbfa7d8eface645fb5" name="gadc1a82527532aabbfa7d8eface645fb5"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#gadc1a82527532aabbfa7d8eface645fb5">&#9670;&#160;</a></span>__ALIAS</h2>
@@ -421,7 +421,7 @@ Macros</h2></td></tr>
 
 <p>Compiler/linker symbol specifying the location of the main stack (MSP). </p>
 <p>The address of the specified symbol is used to initialize the main stack pointer (MSP) during low level init. This is compiler/linker specific. CMSIS specifies common default for supported compilers.</p>
-<dl class="section note"><dt>Note</dt><dd>This define is only intended to be used by the <a class="el" href="startup_c_pg.html">Startup File startup_&lt;device&gt;.c</a>. </dd></dl>
+<dl class="section note"><dt>Note</dt><dd>This define is only intended to be used by the <a class="el" href="startup_c_pg.html">Startup File startup_&lt;Device&gt;.c</a>. </dd></dl>
 
 </div>
 </div>
@@ -552,7 +552,7 @@ Macros</h2></td></tr>
 
 <p>Entry function into the user application or library startup. </p>
 <p>Gives the function to be jumped into right after low level initialization, i.e. SystemInit. This is compiler and library specific. CMSIS specifies common default for supported compilers.</p>
-<dl class="section note"><dt>Note</dt><dd>This define is only intended to be used by the <a class="el" href="startup_c_pg.html">Startup File startup_&lt;device&gt;.c</a>.</dd></dl>
+<dl class="section note"><dt>Note</dt><dd>This define is only intended to be used by the <a class="el" href="startup_c_pg.html">Startup File startup_&lt;Device&gt;.c</a>.</dd></dl>
 <p><b>Code Example:</b> </p><div class="fragment"><div class="line"><span class="keywordtype">void</span> Reset_Handler(<span class="keywordtype">void</span>)</div>
 <div class="line">{</div>
 <div class="line">  <a class="code hl_function" href="group__system__init__gr.html#ga93f514700ccf00d08dbdcff7f1224eb2">SystemInit</a>();                             <span class="comment">/* CMSIS System Initialization */</span></div>
@@ -605,7 +605,7 @@ Macros</h2></td></tr>
 
 <p>Compiler/linker symbol specifying the limit of the main stack (MSP). </p>
 <p>The address of the specified symbol is used to initialize the main stack pointer limit (MSPLIM on Armv8-M) during low level init. This is compiler/linker specific. CMSIS specifies common default for supported compilers.</p>
-<dl class="section note"><dt>Note</dt><dd>This define is only intended to be used by the <a class="el" href="startup_c_pg.html">Startup File startup_&lt;device&gt;.c</a>.</dd></dl>
+<dl class="section note"><dt>Note</dt><dd>This define is only intended to be used by the <a class="el" href="startup_c_pg.html">Startup File startup_&lt;Device&gt;.c</a>.</dd></dl>
 <p><b>Code Example:</b> </p><div class="fragment"><div class="line"><span class="keywordtype">void</span> Reset_Handler(<span class="keywordtype">void</span>)</div>
 <div class="line">{</div>
 <div class="line">  <a class="code hl_function" href="group__Core__Register__gr.html#ga6809a07c5cb7410e361f3fba57f72172">__set_MSPLIM</a>((uint32_t)(&amp;<a class="code hl_define" href="group__compiler__conntrol__gr.html#ga84b0bad4aa39632d3faea46aa1e102a8">__STACK_LIMIT</a>));</div>
@@ -820,7 +820,7 @@ Macros</h2></td></tr>
 
 <p>Symbol name used for the (static) interrupt vector table. </p>
 <p>The given name is used for defining the static (compiler time) interrupt vector table. The name must comply with any compiler/linker conventions, e.g. if used for vector table relocation or debugger awareness. CMSIS specifies common default for supported compilers.</p>
-<dl class="section note"><dt>Note</dt><dd>This define is only intended to be used by the <a class="el" href="startup_c_pg.html">Startup File startup_&lt;device&gt;.c</a>. </dd></dl>
+<dl class="section note"><dt>Note</dt><dd>This define is only intended to be used by the <a class="el" href="startup_c_pg.html">Startup File startup_&lt;Device&gt;.c</a>. </dd></dl>
 
 </div>
 </div>
@@ -838,7 +838,7 @@ Macros</h2></td></tr>
 
 <p>Additional decl specs to be used when defining the (static) interrupt vector table. </p>
 <p>The given decl specs are used for defining the static (compiler time) interrupt vector table, e.g. to mark the table as used and force it into a specific linker section. CMSIS specifies common default for supported compilers.</p>
-<dl class="section note"><dt>Note</dt><dd>This define is only intended to be used by the <a class="el" href="startup_c_pg.html">Startup File startup_&lt;device&gt;.c</a>. </dd></dl>
+<dl class="section note"><dt>Note</dt><dd>This define is only intended to be used by the <a class="el" href="startup_c_pg.html">Startup File startup_&lt;Device&gt;.c</a>. </dd></dl>
 
 </div>
 </div>

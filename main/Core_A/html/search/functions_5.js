@@ -1,0 +1,19 @@
+var searchData=
+[
+  ['pl1_5fgetcontrol_0',['PL1_GetControl',['../core__ca_8h.html#ac983fa17a1470661c80b47db29d07227',1,'core_ca.h']]],
+  ['pl1_5fgetcurrentphysicalvalue_1',['PL1_GetCurrentPhysicalValue',['../core__ca_8h.html#ac66bd336d2353f70aa8ebfc73aa3fc43',1,'core_ca.h']]],
+  ['pl1_5fgetcurrentvalue_2',['PL1_GetCurrentValue',['../core__ca_8h.html#aad29648d8e63daf8d605b6c9cc1c280b',1,'core_ca.h']]],
+  ['pl1_5fgetphysicalcomparevalue_3',['PL1_GetPhysicalCompareValue',['../core__ca_8h.html#a341ae7d1ae29f4dc5dae6310fa453164',1,'core_ca.h']]],
+  ['pl1_5fsetcontrol_4',['PL1_SetControl',['../core__ca_8h.html#a2e2ea7eac12a90c6243000172bf774e1',1,'core_ca.h']]],
+  ['pl1_5fsetcounterfrequency_5',['PL1_SetCounterFrequency',['../core__ca_8h.html#ac09f09327fde6a6adffe0e6298eaa1db',1,'core_ca.h']]],
+  ['pl1_5fsetloadvalue_6',['PL1_SetLoadValue',['../core__ca_8h.html#ae4edcfbdaf901a59a81d1fbf9845d9f7',1,'core_ca.h']]],
+  ['pl1_5fsetphysicalcomparevalue_7',['PL1_SetPhysicalCompareValue',['../core__ca_8h.html#ab34067824971064a829e17b791070643',1,'core_ca.h']]],
+  ['ptim_5fcleareventflag_8',['PTIM_ClearEventFlag',['../core__ca_8h.html#a59dca62df390bc4bce18559fc7d28578',1,'core_ca.h']]],
+  ['ptim_5fgetcontrol_9',['PTIM_GetControl',['../core__ca_8h.html#a34f0ceea142a4be1479cb552bf8bc4d1',1,'core_ca.h']]],
+  ['ptim_5fgetcurrentvalue_10',['PTIM_GetCurrentValue',['../core__ca_8h.html#aaccd88ab7931c379817f71d7c0183586',1,'core_ca.h']]],
+  ['ptim_5fgeteventflag_11',['PTIM_GetEventFlag',['../core__ca_8h.html#a2c3f9f942e8a08630562f35802dbe942',1,'core_ca.h']]],
+  ['ptim_5fgetloadvalue_12',['PTIM_GetLoadValue',['../core__ca_8h.html#acca3bf92e93c69e538ff4618317f7bfa',1,'core_ca.h']]],
+  ['ptim_5fsetcontrol_13',['PTIM_SetControl',['../core__ca_8h.html#aabc1dba029389fe0e2a6297952df7972',1,'core_ca.h']]],
+  ['ptim_5fsetcurrentvalue_14',['PTIM_SetCurrentValue',['../core__ca_8h.html#a323bf405e32846a7e57344935e51de66',1,'core_ca.h']]],
+  ['ptim_5fsetloadvalue_15',['PTIM_SetLoadValue',['../core__ca_8h.html#a30516fed24977be8eecf3efd8b6a2fea',1,'core_ca.h']]]
+];
