@@ -1,8 +1,4 @@
-/** 
-\page using_pg Using CMSIS in Embedded Applications
-
-
-\details 
+# Using CMSIS in Embedded Applications {#using_pg}
 
 To use the CMSIS-Core-A the following files are added to the embedded application:
  - \ref startup_c_pg with reset handler and exception vectors.
@@ -15,7 +11,7 @@ To use the CMSIS-Core-A the following files are added to the embedded applicatio
       into the application project folder prior configuration. The \ref device_h_pg is included in all source files that need device access 
       and can be stored on a central include folder that is generic for all projects.
 
-The \ref Reset_Handler defined in \ref startup_c_pg is executed after reset. 
+The `Reset_Handler` defined in \ref startup_c_pg is executed after reset.
 The default initialization sequence is
  - set the vector base address register (\ref __set_VBAR),
  - set stacks for each exception mode (\ref __set_mode, \ref __set_SP),
@@ -36,27 +32,31 @@ The \ref device_h_pg is the central include file that the application programmer
  - \ref PL1_timer_functions "Generic" and \ref PTM_timer_functions "Private" Timer functions to configure and start a periodic timer interrupt.
  - \ref L1_cache_functions "Level 1" and \ref L2_cache_functions "Level 2" Cache controller functions to enable, disable, clean and invalidate caches.
 
-CMSIS-Pack provides the <b>\#define CMSIS_header_file</b> in <a href="../../Pack/html/pdsc_components_pg.html#RTE_Components_h"><b>RTE_Components.h</b></a> which gives you access to this <b><i>device</i>.h</b> file.
+The use of \ref device_h_pg can be abstracted with the `#define CMSIS_header_file` provided in [RTE_Components.h](https://open-cmsis-pack.github.io/Open-CMSIS-Pack-Spec/main/html/cp_Packs.html#cp_RTECompH). This allows to have uniform include code in the application independent of the target device.
 
-\image html "CMSIS_CORE_A_Files_user.png" "CMSIS-Core-A User Files"
+```c
+#include "RTE_Components.h"                      // include information about project configuration
+#include CMSIS_device_header                     // include <Device>.h file
+```
+
+![CMSIS-Core-A User Files](./images/CMSIS_CORE_A_Files_user.png)
 
 The CMSIS-Core-A user files are device specific. In addition, the \ref startup_c_pg is also compiler vendor specific. 
 The various compiler vendor tool chains may provide folders that contain the CMSIS files for each supported device.
   
 \note The silicon vendors create these device-specific CMSIS-Core-A files based on \ref templates_pg provide by Arm.
 
-Thereafter, the functions described under <a href="modules.html">\b Reference </a> can be used in the application.
+Thereafter, the functions described under [API Reference](modules.html) can be used in the application.
 
-\b Examples
+**Examples:**
  - \subpage using_CMSIS is a simple example that shows the usage of the CMSIS layer.
  - \subpage using_ARM_pg explains how to use CMSIS-Core-M for Arm processors.
 
-
-\page using_CMSIS Basic CMSIS Example
+## CMSIS Basic Example {#using_CMSIS}
 
 A typical example for using the CMSIS layer is provided below. The example is based on an unspecific Cortex-A9 Device. 
     
-\code
+```c
 #include <ARMCA9.h>                              // File name depends on device used
  
 static const uint32_t TICK_RATE_HZ = 1000U;
@@ -112,53 +112,8 @@ int main(void)
     Delay(500);
   }
 }
-\endcode
+```
 
-CMSIS-Pack provides the <b>\#define CMSIS_header_file</b> in <a href="../../Pack/html/pdsc_components_pg.html#RTE_Components_h"><b>RTE_Components.h</b></a> which gives you access to the <b><i>device</i>.h</b> file 
-of a project. This allows you to generate generic software components that use the device selected in a project.
+## Using CMSIS with generic Arm Processors {#using_ARM_pg}
 
-\code
-#include "RTE_Components.h"     // include information about project configuration
-#include CMSIS_device_header    // include <device>.h file
-\endcode
-    
-\page using_ARM_pg Using CMSIS with generic Arm Processors
-
-Arm provides CMSIS-Core-A files for the supported Arm Processors and for various compiler vendors. 
-These files can be used when standard Arm processors should be used in a project.
-The table below lists the folder and device names of the Arm processors.
-  
-<table class="cmtable">
-  <tr>
-    <th>Folder</th>
-    <th>Processor</th>
-    <th>Description</th>
-  </tr>
-  <tr>
-    <td>".\Device\ARM\ARMCA5"</td>
-    <td>Cortex-A5</td>
-    <td>Contains \b Include and \b Source template files configured for the Cortex-A5 processor.
-        The device name is ARMCA5 and the name of the \ref device_h_pg is <ARMCA5.h>.
-    </td>
-  </tr>
-  <tr>
-    <td>".\Device\ARM\ARMCA7"</td>
-    <td>Cortex-A7</td>
-    <td>Contains \b Include and \b Source template files configured for the Cortex-A7 processor.
-        The device name is ARMCA7 and the name of the \ref device_h_pg is <ARMCA7.h>.
-    </td>
-  </tr>
-  <tr>
-    <td>".\Device\ARM\ARMCA9"</td>
-    <td>Cortex-A9</td>
-    <td>Contains \b Include and \b Source template files configured for the Cortex-A9 processor.
-        The device name is ARMCA9 and the name of the \ref device_h_pg is <ARMCA9.h>.
-    </td>
-  </tr>
-</table>
-
-\note
-CMSIS-Pack provides the <b>\#define CMSIS_header_file</b> in <a href="../../Pack/html/pdsc_components_pg.html#RTE_Components_h"><b>RTE_Components.h</b></a> which gives you access to the <b><i>device</i>.h</b> file 
-of a project. This allows you to generate generic software components that adjust to the device settings.
-
-*/
+The [CMSIS-DFP pack](https://github.com/ARM-software/CMSIS-DFP) provides generic device definitions for standard Arm Cortex-A cores and contains corresponding. These generic Arm devices can be used as a target for embedded programs, with execution, for example, on processor simulation models.

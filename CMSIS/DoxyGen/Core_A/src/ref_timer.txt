@@ -20,13 +20,15 @@ typedef union
   uint32_t w;               /*!< \brief Type      used for word access */
 } CNTP_CTL_Type;
 
-/** Configures the frequency the timer shall run at.
-* \param value The timer frequency in Hz.
+/**
+* \details
+*  Configures the frequency the timer shall run at.
 */
 __STATIC_INLINE void PL1_SetCounterFrequency(uint32_t value);
 
-/** Sets the reset value of the timer.
-* \param value The value the timer is loaded with.
+/**
+* \details 
+* Sets the reset value of the timer.
 */
 __STATIC_INLINE void PL1_SetLoadValue(uint32_t value);
 
@@ -50,8 +52,9 @@ __STATIC_INLINE void PL1_SetPhysicalCompareValue(uint64_t value);
 */
 __STATIC_INLINE uint64_t PL1_GetPhysicalCompareValue(void);
 
-/** Configure the timer by setting the control value.
-* \param value New \ref CNTP_CTL_Type "timer control value".
+/** 
+* \details
+*  Configure the timer by setting the control value.
 */
 __STATIC_INLINE void PL1_SetControl(uint32_t value);
 

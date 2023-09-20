@@ -138,7 +138,7 @@
  /* check device defines and use defaults */
 #if defined __CHECK_DEVICE_DEFINES
   #ifndef __CA_REV
-    #define __CA_REV              0x0000U
+    #define __CA_REV              0x0000U /*!< \brief Contains the core revision for a Cortex-A class device */
     #warning "__CA_REV not defined in device header file; using default!"
   #endif
   

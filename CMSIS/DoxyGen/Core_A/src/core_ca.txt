@@ -286,8 +286,9 @@ Use this define to query the full version of CMSIS-Core(A) component.
 #error This code needs at least CMSIS-Core(A) version 5.1!
 #endif
 \endcode
+*/
 
-\def __CA_REV
+/**
 \brief Contains the core revision for a Cortex-A class device.
 \details
 Use this define to query the core design revision number implemented in the selected device.
@@ -303,8 +304,10 @@ Use this define to query the core design revision number implemented in the sele
 #error This code needs at least a core revision r2p1.
 #endif
 \endcode
+*/
+#define __CA_REV 0x0000
 
-\def __CORTEX_A
+/**
 \brief Contains the core family for a Cortex-A class device.
 \details
 Use this define to query the actual Cortex-A class device number implemented in the selected device.
@@ -319,8 +322,10 @@ Use this define to query the actual Cortex-A class device number implemented in 
 #warning Running on Cortex-A9.
 #endif
 \endcode
-
 */
+#define __CORTEX_A 0x0000
+
+
 /** @} */ 
 /*end of group version_ctrl */
 
