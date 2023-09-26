@@ -52,8 +52,7 @@ The following header files define the Application Programming Interface (API) fo
   - \b %Driver_SAI.h : Driver API for Serial Audio Interface
 
 The driver implementation is a typical part of the
-<a class="el" href="../../Pack/html/index.html" target="_blank">Device Family Pack (DFP)</a> that supports the peripherals of
-the microcontroller family.
+<a class="el" href="https://open-cmsis-pack.github.io/Open-CMSIS-Pack-Spec/main/html/index.html" target="_blank">Device Family Pack (DFP)</a> that supports the peripherals of the microcontroller family.
 
 
 <b>Driver Functions</b>
@@ -64,7 +63,7 @@ The driver functions are published in the access struct as explained in \ref Dri
 \section Driver_SAI_I2S I2S
 <a href="https://en.wikipedia.org/wiki/I%C2%B2S" target="_blank">Integrated Interchip Sound</a> (\b I2S) is a serial bus
 interface that connects digital audio devices together. It was introduced by Philips (now
-<a href="http://www.nxp.com" target="_blank">NXP</a>) in the late 80's and last revised 1996. It uses pulse code modulation
+<a href="https://www.nxp.com" target="_blank">NXP</a>) in the late 80's and last revised 1996. It uses pulse code modulation
 to exchange the audio data between the devices. The following timing diagram explains the operation:
  
 \image html driver_sai_i2s.png
@@ -161,10 +160,10 @@ In terms of the CMSIS-Driver for SAI, the PCM protocol can be described as follo
 
 \section Driver_SAI_AC97 AC'97
 <a href="https://en.wikipedia.org/wiki/AC'97" target="_blank">Audio Codec '97</a> was developed by
-<a href="http://www.intel.com" target="_blank">Intel</a>. It is composed of five wires: the clock (12.288 MHz), a sync
+<a href="https://www.intel.com" target="_blank">Intel</a>. It is composed of five wires: the clock (12.288 MHz), a sync
 signal, a reset signal, and two data wires: sdata_out (contains the AC97 output) and sdata_in (contains the CODEC output).
 For more information, consult the
-<a href="http://inst.eecs.berkeley.edu/~cs150/Documents/ac97_r23.pdf" target="_blank">standard documentation</a>.
+<a href="https://inst.eecs.berkeley.edu/~cs150/Documents/ac97_r23.pdf" target="_blank">standard documentation</a>.
 
 \section Driver_SAI_User User Defined Protocol
 Using the control structs of the CMSIS-Driver SAI, it is possible to create support for nearly all serial audio protocols

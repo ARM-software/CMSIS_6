@@ -55,10 +55,10 @@ Following Cortex-M Device Generic User Guides contain the programmers model and 
  - [Cortex-M85 Devices Generic User Guide (Armv8.1-M architecture)](https://developer.arm.com/documentation/101928/latest/)
 
 CMSIS-Core also supports the following Cortex-M processor variants:
-- [Cortex-M1](https://developer.arm.com/products/processors/cortex-m/cortex-m1) is a processor designed specifically for implementation in FPGAs (Armv6-M architecture).
-- [SecurCore SC000](https://developer.arm.com/products/processors/cortex-m/sc000-processor) is designed specifically for smartcard and security applications (Armv6-M architecture).
-- [SecurCore SC300](https://developer.arm.com/products/processors/cortex-m/sc300-processor) is designed specifically for smartcard and security applications (Armv7-M architecture).
-- [Cortex-M35P](https://developer.arm.com/products/processors/cortex-m/cortex-m35p) is a tamper resistant Cortex-M processor with optional software isolation using TrustZone for Armv8-M.
+- [Cortex-M1](https://developer.arm.com/Processors/Cortex-M1) is a processor designed specifically for implementation in FPGAs (Armv6-M architecture).
+- [SecurCore SC000](https://developer.arm.com/Processors/SecurCore%20SC000) is designed specifically for smartcard and security applications (Armv6-M architecture).
+- [SecurCore SC300](https://developer.arm.com/Processors/SecurCore%20SC300) is designed specifically for smartcard and security applications (Armv7-M architecture).
+- [Cortex-M35P](https://developer.arm.com/Processors/Cortex-M35P) is a tamper resistant Cortex-M processor with optional software isolation using TrustZone for Armv8-M.
 - [STAR-MC1](https://www.armchina.com/mountain?infoId=160) is a variant of Armv8-M with TrustZone designed by Arm China.
 
 \anchor ARMv8M
@@ -70,7 +70,7 @@ The Armv8-M architecture is described in the [Armv8-M Architecture Reference Man
 
 The Armv8.1-M architecture further extends Armv8-M with Helium (the so called M-Profile Vector Extension (MVE)), as well as further instruction set and debug extensions.
 
-More information about Armv8.1-M architecture is available under [Arm Helium technology](https://developer.arm.com/technologies/helium).
+More information about Armv8.1-M architecture is available under [Arm Helium technology](hhttps://developer.arm.com/Architectures/Helium).
 
 ##  Tested and Verified Toolchains {#tested_tools_sec}
 

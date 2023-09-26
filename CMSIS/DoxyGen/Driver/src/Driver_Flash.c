@@ -2,16 +2,16 @@
 \defgroup flash_interface_gr Flash Interface
 \brief    Driver API for Flash Device Interface (%Driver_Flash.h)
 \details
-<a href="http://en.wikipedia.org/wiki/Flash_memory" target="_blank">Flash devices</a> based on NOR memory cells are the
+<a href="https://en.wikipedia.org/wiki/Flash_memory" target="_blank">Flash devices</a> based on NOR memory cells are the
 preferred technology for embedded applications requiring a discrete non-volatile memory device. The low read latency
 characteristic of these Flash devices allow a direct code execution
-(<a href="http://en.wikipedia.org/wiki/Execute_in_place" target="_blank">XIP</a>) and data storage in a single memory
+(<a href="https://en.wikipedia.org/wiki/Execute_in_place" target="_blank">XIP</a>) and data storage in a single memory
 product.
 
 <b>Flash API</b>
 
 The Flash API provides a generic API suitable for Flashes with NOR memory cells independent from the actual interface
-to the MCU (memory bus, SPI, ...). <a href="http://en.wikipedia.org/wiki/Flash_memory#Serial_flash" target="_blank">SPI</a>
+to the MCU (memory bus, SPI, ...). <a href="https://en.wikipedia.org/wiki/Flash_memory#Serial_flash" target="_blank">SPI</a>
 flashes are typically not named NOR flashes but have usually same flash cell properties. 
 
 The following header files define the Application Programming Interface (API) for the Flash interface:

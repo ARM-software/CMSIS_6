@@ -7,7 +7,7 @@ Wi-Fi is technology for radio wireless local area networking of devices. Wi-Fi c
 connect to the Internet via a WLAN and a wireless access point (AP) also called hotspot.
 
 Wikipedia offers more information about 
-the <a href="http://en.wikipedia.org/wiki/Ethernet" target="_blank"><b>WiFi</b></a>.
+the <a href="https://en.wikipedia.org/wiki/Ethernet" target="_blank"><b>WiFi</b></a>.
 
 <b>Driver Block Diagram</b>
 
