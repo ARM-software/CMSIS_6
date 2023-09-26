@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['ha_0',['HA',['../unionSCTLR__Type.html#aba2a8aac3478cdc34428af7b9726d97f',1,'SCTLR_Type']]],
-  ['hppir_1',['HPPIR',['../structGICInterface__Type.html#af793cd280a74bf73cca8c4fedfc329d6',1,'GICInterface_Type']]]
+  ['g_5ft_0',['g_t',['../structmmu__region__attributes__Type.html#a51f1a2a77db791b2bdf012f86605adfc',1,'mmu_region_attributes_Type']]],
+  ['ge_1',['GE',['../unionCPSR__Type.html#acc18314a4088adfb93a9662c76073704',1,'CPSR_Type']]]
 ];

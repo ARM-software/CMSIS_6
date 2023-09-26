@@ -158,7 +158,7 @@ CMSIS-Core Processor Files</h2>
 <tr class="markdownTableHead">
 <th class="markdownTableHeadLeft">Header File   </th><th class="markdownTableHeadLeft">Target Processor Core    </th></tr>
 <tr class="markdownTableRowOdd">
-<td class="markdownTableBodyLeft">📂 CMSIS/Core/Include   </td><td class="markdownTableBodyLeft">CMSIS-Core include folder (<a href="https://github.com/ARM-software/CMSIS_6/blob/main/CMSIS/Core/Include/">See on GitHub</a>)    </td></tr>
+<td class="markdownTableBodyLeft">📂 CMSIS/Core/Include   </td><td class="markdownTableBodyLeft">CMSIS-Core include folder (<a href="https://github.com/ARM-software/CMSIS_6/tree/main/CMSIS/Core/Include/">See on GitHub</a>)    </td></tr>
 <tr class="markdownTableRowEven">
 <td class="markdownTableBodyLeft">┣ 📄 core_cm0.h   </td><td class="markdownTableBodyLeft">Cortex-M0 processor    </td></tr>
 <tr class="markdownTableRowOdd">
@@ -197,7 +197,7 @@ CMSIS-Core Compiler Files</h2>
 <tr class="markdownTableHead">
 <th class="markdownTableHeadLeft">Header File   </th><th class="markdownTableHeadLeft">Description    </th></tr>
 <tr class="markdownTableRowOdd">
-<td class="markdownTableBodyLeft">📂 CMSIS/Core/Include   </td><td class="markdownTableBodyLeft">CMSIS-Core include folder (<a href="https://github.com/ARM-software/CMSIS_6/blob/main/CMSIS/Core/Include/">See on GitHub</a>)    </td></tr>
+<td class="markdownTableBodyLeft">📂 CMSIS/Core/Include   </td><td class="markdownTableBodyLeft">CMSIS-Core include folder (<a href="https://github.com/ARM-software/CMSIS_6/tree/main/CMSIS/Core/Include/">See on GitHub</a>)    </td></tr>
 <tr class="markdownTableRowEven">
 <td class="markdownTableBodyLeft">┣ 📄 cmsis_compiler.h   </td><td class="markdownTableBodyLeft">Main CMSIS-Core compiler header file    </td></tr>
 <tr class="markdownTableRowOdd">
@@ -221,7 +221,7 @@ CMSIS-Core Architecture Feature Files</h2>
 <tr class="markdownTableHead">
 <th class="markdownTableHeadLeft">Header File   </th><th class="markdownTableHeadLeft">Feature    </th></tr>
 <tr class="markdownTableRowOdd">
-<td class="markdownTableBodyLeft">📂 CMSIS/Core/Include   </td><td class="markdownTableBodyLeft">CMSIS-Core include folder (<a href="https://github.com/ARM-software/CMSIS_6/blob/main/CMSIS/Core/Include/">See on GitHub</a>)    </td></tr>
+<td class="markdownTableBodyLeft">📂 CMSIS/Core/Include   </td><td class="markdownTableBodyLeft">CMSIS-Core include folder (<a href="https://github.com/ARM-software/CMSIS_6/tree/main/CMSIS/Core/Include/">See on GitHub</a>)    </td></tr>
 <tr class="markdownTableRowEven">
 <td class="markdownTableBodyLeft">┣ 📂 m-profile   </td><td class="markdownTableBodyLeft">Directory for M-Profile specific files    </td></tr>
 <tr class="markdownTableRowOdd">
@@ -239,91 +239,15 @@ CMSIS-Core Architecture Feature Files</h2>
 </table>
 <h2><a class="anchor" id="core_version_sect"></a>
 CMSIS Version and Processor Information</h2>
-<p>Defines in the <code>core_&lt;cpu&gt;.h</code> file identify the version of the CMSIS-Core (Cortex-M) and the processor used. They can be used in the <a class="el" href="device_h_pg.html">Device Header File &lt;Device.h&gt;</a> to verify a minimum CMSIS-Core version as well as the target processor core.</p>
-<p><b>core_cm0.h</b> </p><div class="fragment"><div class="line"><span class="preprocessor">#define __CM0_CMSIS_VERSION_MAIN  (__CM_CMSIS_VERSION_MAIN)                         </span><span class="comment">/* [31:16] CMSIS HAL main version */</span><span class="preprocessor"></span></div>
-<div class="line"><span class="preprocessor">#define __CM0_CMSIS_VERSION_SUB   (__CM_CMSIS_VERSION_SUB)                          </span><span class="comment">/* [15:0]  CMSIS HAL sub version */</span><span class="preprocessor"></span></div>
-<div class="line"><span class="preprocessor">#define __CM0_CMSIS_VERSION       ((__CM0_CMSIS_VERSION_MAIN &lt;&lt; 16U) | \</span></div>
-<div class="line"><span class="preprocessor">                                    __CM0_CMSIS_VERSION_SUB          )              </span><span class="comment">/* CMSIS HAL version number */</span><span class="preprocessor"></span></div>
-<div class="line"> </div>
-<div class="line"><span class="preprocessor">#define __CORTEX_M                (0U)                                              </span><span class="comment">/* Cortex-M Core */</span><span class="preprocessor"></span></div>
-</div><!-- fragment --><p><b>core_cm0plus.h</b> </p><div class="fragment"><div class="line"><span class="preprocessor">#define __CM0PLUS_CMSIS_VERSION_MAIN  (__CM_CMSIS_VERSION_MAIN)                     </span><span class="comment">/* [31:16] CMSIS HAL main version */</span><span class="preprocessor"></span></div>
-<div class="line"><span class="preprocessor">#define __CM0PLUS_CMSIS_VERSION_SUB   (__CM_CMSIS_VERSION_SUB)                      </span><span class="comment">/* [15:0]  CMSIS HAL sub version */</span><span class="preprocessor"></span></div>
-<div class="line"><span class="preprocessor">#define __CM0PLUS_CMSIS_VERSION       ((__CM0P_CMSIS_VERSION_MAIN &lt;&lt; 16U) | \</span></div>
-<div class="line"><span class="preprocessor">                                        __CM0P_CMSIS_VERSION_SUB          )         </span><span class="comment">/* CMSIS HAL version number */</span><span class="preprocessor"></span></div>
-<div class="line"> </div>
-<div class="line"><span class="preprocessor">#define __CORTEX_M                    (0U)                                          </span><span class="comment">/* Cortex-M Core */</span><span class="preprocessor"></span></div>
-</div><!-- fragment --><p><b>core_cm1.h</b> </p><div class="fragment"><div class="line"><span class="preprocessor">#define __CM1_CMSIS_VERSION_MAIN  (__CM_CMSIS_VERSION_MAIN)                         </span></div>
-<div class="line"><span class="preprocessor">#define __CM1_CMSIS_VERSION_SUB   (__CM_CMSIS_VERSION_SUB)                          </span></div>
-<div class="line"><span class="preprocessor">#define __CM1_CMSIS_VERSION       ((__CM1_CMSIS_VERSION_MAIN &lt;&lt; 16U) | \</span></div>
-<div class="line"><span class="preprocessor">                                    __CM1_CMSIS_VERSION_SUB           )             </span></div>
-<div class="line"><span class="preprocessor">#define __CORTEX_M                (1U)                                              </span></div>
-</div><!-- fragment --><p><b>core_cm3.h</b> </p><div class="fragment"><div class="line"><span class="preprocessor">#define __CM3_CMSIS_VERSION_MAIN  (__CM_CMSIS_VERSION_MAIN)                         </span><span class="comment">/* [31:16] CMSIS HAL main version */</span><span class="preprocessor"></span></div>
-<div class="line"><span class="preprocessor">#define __CM3_CMSIS_VERSION_SUB   (__CM_CMSIS_VERSION_SUB)                          </span><span class="comment">/* [15:0]  CMSIS HAL sub version */</span><span class="preprocessor"></span></div>
-<div class="line"><span class="preprocessor">#define __CM3_CMSIS_VERSION       ((__CM3_CMSIS_VERSION_MAIN &lt;&lt; 16U) | \</span></div>
-<div class="line"><span class="preprocessor">                                    __CM3_CMSIS_VERSION_SUB          )              </span><span class="comment">/* CMSIS HAL version number */</span><span class="preprocessor"></span></div>
-<div class="line"> </div>
-<div class="line"><span class="preprocessor">#define __CORTEX_M                (3U)                                              </span><span class="comment">/* Cortex-M Core */</span><span class="preprocessor"></span></div>
-</div><!-- fragment --><p><b>core_cm4.h</b> </p><div class="fragment"><div class="line"><span class="preprocessor">#define __CM4_CMSIS_VERSION_MAIN  (__CM_CMSIS_VERSION_MAIN)                         </span><span class="comment">/* [31:16] CMSIS HAL main version */</span><span class="preprocessor"></span></div>
-<div class="line"><span class="preprocessor">#define __CM4_CMSIS_VERSION_SUB   (__CM_CMSIS_VERSION_SUB)                          </span><span class="comment">/* [15:0]  CMSIS HAL sub version */</span><span class="preprocessor"></span></div>
-<div class="line"><span class="preprocessor">#define __CM4_CMSIS_VERSION       ((__CM4_CMSIS_VERSION_MAIN &lt;&lt; 16U) | \</span></div>
-<div class="line"><span class="preprocessor">                                    __CM4_CMSIS_VERSION_SUB          )              </span><span class="comment">/* CMSIS HAL version number */</span><span class="preprocessor"></span></div>
-<div class="line"> </div>
-<div class="line"><span class="preprocessor">#define __CORTEX_M                (4U)                                              </span><span class="comment">/* Cortex-M Core */</span><span class="preprocessor"></span></div>
-</div><!-- fragment --><p><b>core_cm7.h</b> </p><div class="fragment"><div class="line"><span class="preprocessor">#define __CM7_CMSIS_VERSION_MAIN  (__CM_CMSIS_VERSION_MAIN                          </span><span class="comment">/* [31:16] CMSIS HAL main version */</span><span class="preprocessor"></span></div>
-<div class="line"><span class="preprocessor">#define __CM7_CMSIS_VERSION_SUB   (__CM_CMSIS_VERSION_SUB)                          </span><span class="comment">/* [15:0]  CMSIS HAL sub version */</span><span class="preprocessor"></span></div>
-<div class="line"><span class="preprocessor">#define __CM7_CMSIS_VERSION       ((__CM7_CMSIS_VERSION_MAIN &lt;&lt; 16U) | \</span></div>
-<div class="line"><span class="preprocessor">                                    __CM7_CMSIS_VERSION_SUB          )              </span><span class="comment">/* CMSIS HAL version number */</span><span class="preprocessor"></span></div>
-<div class="line"> </div>
-<div class="line"><span class="preprocessor">#define __CORTEX_M                (7U)                                              </span><span class="comment">/* Cortex-M Core */</span><span class="preprocessor"></span></div>
-</div><!-- fragment --><p><b>core_cm23.h</b> </p><div class="fragment"><div class="line"><span class="preprocessor">#define __CM23_CMSIS_VERSION_MAIN  (__CM_CMSIS_VERSION_MAIN)                        </span><span class="comment">/* [31:16] CMSIS HAL main version */</span><span class="preprocessor"></span></div>
-<div class="line"><span class="preprocessor">#define __CM23_CMSIS_VERSION_SUB   (__CM_CMSIS_VERSION_SUB)                         </span><span class="comment">/* [15:0]  CMSIS HAL sub version */</span><span class="preprocessor"></span></div>
-<div class="line"><span class="preprocessor">#define __CM23_CMSIS_VERSION       ((__CM23_CMSIS_VERSION_MAIN &lt;&lt; 16U) | \</span></div>
-<div class="line"><span class="preprocessor">                                     __CM23_CMSIS_VERSION_SUB          )            </span><span class="comment">/* CMSIS HAL version number */</span><span class="preprocessor"></span></div>
-<div class="line"> </div>
-<div class="line"><span class="preprocessor">#define __CORTEX_M                (23U)                                             </span><span class="comment">/* Cortex-M Core */</span><span class="preprocessor"></span></div>
-</div><!-- fragment --><p><b>core_cm33.h</b> </p><div class="fragment"><div class="line"><span class="preprocessor">#define __CM33_CMSIS_VERSION_MAIN  (__CM_CMSIS_VERSION_MAIN)                        </span><span class="comment">/* [31:16] CMSIS HAL main version */</span><span class="preprocessor"></span></div>
-<div class="line"><span class="preprocessor">#define __CM33_CMSIS_VERSION_SUB   (__CM_CMSIS_VERSION_SUB)                         </span><span class="comment">/* [15:0]  CMSIS HAL sub version */</span><span class="preprocessor"></span></div>
-<div class="line"><span class="preprocessor">#define __CM33_CMSIS_VERSION       ((__CM33_CMSIS_VERSION_MAIN &lt;&lt; 16U) | \</span></div>
-<div class="line"><span class="preprocessor">                                     __CM33_CMSIS_VERSION_SUB          )            </span><span class="comment">/* CMSIS HAL version number */</span><span class="preprocessor"></span></div>
-<div class="line"> </div>
-<div class="line"><span class="preprocessor">#define __CORTEX_M                (33U)                                             </span><span class="comment">/* Cortex-M Core */</span><span class="preprocessor"></span></div>
-</div><!-- fragment --><p><b>core_cm55.h</b> </p><div class="fragment"><div class="line"><span class="preprocessor">#define __CM55_CMSIS_VERSION_MAIN  (__CM_CMSIS_VERSION_MAIN)                        </span><span class="comment">/* [31:16] CMSIS HAL main version */</span><span class="preprocessor"></span></div>
-<div class="line"><span class="preprocessor">#define __CM55_CMSIS_VERSION_SUB   (__CM_CMSIS_VERSION_SUB)                         </span><span class="comment">/* [15:0]  CMSIS HAL sub version */</span><span class="preprocessor"></span></div>
-<div class="line"><span class="preprocessor">#define __CM55_CMSIS_VERSION       ((__CM55_CMSIS_VERSION_MAIN &lt;&lt; 16U) | \</span></div>
-<div class="line"><span class="preprocessor">                                     __CM55_CMSIS_VERSION_SUB          )            </span><span class="comment">/* CMSIS HAL version number */</span><span class="preprocessor"></span></div>
-<div class="line"> </div>
-<div class="line"><span class="preprocessor">#define __CORTEX_M                (7U)                                              </span><span class="comment">/* Cortex-M Core */</span><span class="preprocessor"></span></div>
-</div><!-- fragment --> <p><b>core_sc000.h</b> </p><div class="fragment"><div class="line"><span class="preprocessor">#define __SC000_CMSIS_VERSION_MAIN  (__CM_CMSIS_VERSION_MAIN)                       </span><span class="comment">/* [31:16] CMSIS HAL main version */</span><span class="preprocessor"></span></div>
-<div class="line"><span class="preprocessor">#define __SC000_CMSIS_VERSION_SUB   (__CM_CMSIS_VERSION_SUB)                        </span><span class="comment">/* [15:0]  CMSIS HAL sub version */</span><span class="preprocessor"></span></div>
-<div class="line"><span class="preprocessor">#define __SC000_CMSIS_VERSION       ((__SC000_CMSIS_VERSION_MAIN &lt;&lt; 16U) | \</span></div>
-<div class="line"><span class="preprocessor">                                      __SC000_CMSIS_VERSION_SUB          )          </span><span class="comment">/* CMSIS HAL version number */</span><span class="preprocessor"></span></div>
-<div class="line"> </div>
-<div class="line"><span class="preprocessor">#define __CORTEX_SC                 (0U)                                            </span><span class="comment">/* Cortex secure core */</span><span class="preprocessor"></span></div>
-</div><!-- fragment --> <p><b>core_sc300.h</b> </p><div class="fragment"><div class="line"><span class="preprocessor">#define __SC300_CMSIS_VERSION_MAIN  (__CM_CMSIS_VERSION_MAIN)                       </span><span class="comment">/* [31:16] CMSIS HAL main version */</span><span class="preprocessor"></span></div>
-<div class="line"><span class="preprocessor">#define __SC300_CMSIS_VERSION_SUB   (__CM_CMSIS_VERSION_SUB)                        </span><span class="comment">/* [15:0]  CMSIS HAL sub version */</span><span class="preprocessor"></span></div>
-<div class="line"><span class="preprocessor">#define __SC300_CMSIS_VERSION       ((__SC300_CMSIS_VERSION_MAIN &lt;&lt; 16U) | \</span></div>
-<div class="line"><span class="preprocessor">                                      __SC300_CMSIS_VERSION_SUB          )          </span><span class="comment">/* CMSIS HAL version number */</span><span class="preprocessor"></span></div>
-<div class="line"> </div>
-<div class="line"><span class="preprocessor">#define __CORTEX_SC                 (300U)                                          </span><span class="comment">/* Cortex secure core */</span><span class="preprocessor"></span></div>
-</div><!-- fragment --> <p><b>core_cm35p.h</b> </p><div class="fragment"><div class="line"><span class="preprocessor">#define __CM35P_CMSIS_VERSION_MAIN  (__CM_CMSIS_VERSION_MAIN)                       </span><span class="comment">/* [31:16] CMSIS HAL main version */</span><span class="preprocessor"></span></div>
-<div class="line"><span class="preprocessor">#define __CM35P_CMSIS_VERSION_SUB   (__CM_CMSIS_VERSION_SUB)                        </span><span class="comment">/* [15:0]  CMSIS HAL sub version */</span><span class="preprocessor"></span></div>
-<div class="line"><span class="preprocessor">#define __CM35P_CMSIS_VERSION       ((__CM35P_CMSIS_VERSION_MAIN &lt;&lt; 16U) | \</span></div>
-<div class="line"><span class="preprocessor">                                      __CM35P_CMSIS_VERSION_SUB          )          </span><span class="comment">/* CMSIS HAL version number */</span><span class="preprocessor"></span></div>
-<div class="line"> </div>
-<div class="line"><span class="preprocessor">#define __CORTEX_M                (35U)                                             </span><span class="comment">/* Cortex-M Core */</span><span class="preprocessor"></span></div>
-</div><!-- fragment -->  <p><b>core_ARMv8MBL.h</b> </p><div class="fragment"><div class="line"><span class="preprocessor">#define __ARMv8MBL_CMSIS_VERSION_MAIN  (__CM_CMSIS_VERSION_MAIN)                    </span><span class="comment">/* [31:16] CMSIS HAL main version */</span><span class="preprocessor"></span></div>
-<div class="line"><span class="preprocessor">#define __ARMv8MBL_CMSIS_VERSION_SUB   (__CM_CMSIS_VERSION_SUB)                     </span><span class="comment">/* [15:0]  CMSIS HAL sub version */</span><span class="preprocessor"></span></div>
-<div class="line"><span class="preprocessor">#define __ARMv8MBL_CMSIS_VERSION       ((__ARMv8MBL_CMSIS_VERSION_MAIN &lt;&lt; 16U) | \</span></div>
-<div class="line"><span class="preprocessor">                                         __ARMv8MBL_CMSIS_VERSION_SUB           )   </span><span class="comment">/* CMSIS HAL version number */</span><span class="preprocessor"></span></div>
-<div class="line"> </div>
-<div class="line"><span class="preprocessor">#define __CORTEX_M                     (2U)                                         </span><span class="comment">/* Cortex secure core */</span><span class="preprocessor"></span></div>
-</div><!-- fragment --> <p><b>core_ARMv8MML.h</b> </p><div class="fragment"><div class="line"><span class="preprocessor">#define __ARMv8MML_CMSIS_VERSION_MAIN  (__CM_CMSIS_VERSION_MAIN)                    </span><span class="comment">/* [31:16] CMSIS HAL main version */</span><span class="preprocessor"></span></div>
-<div class="line"><span class="preprocessor">#define __ARMv8MML_CMSIS_VERSION_SUB   (__CM_CMSIS_VERSION_SUB)                     </span><span class="comment">/* [15:0]  CMSIS HAL sub version */</span><span class="preprocessor"></span></div>
-<div class="line"><span class="preprocessor">#define __ARMv8MML_CMSIS_VERSION       ((__ARMv8MML_CMSIS_VERSION_MAIN &lt;&lt; 16U) | \</span></div>
-<div class="line"><span class="preprocessor">                                         __ARMv8MML_CMSIS_VERSION_SUB           )   </span><span class="comment">/* CMSIS HAL version number */</span><span class="preprocessor"></span></div>
-<div class="line"> </div>
-<div class="line"><span class="preprocessor">#define __CORTEX_M                     (80U)                                        </span><span class="comment">/* Cortex secure core */</span><span class="preprocessor"></span></div>
-</div><!-- fragment --> </div></div><!-- contents -->
+<p><a class="el" href="group__version__control__gr.html#ga39f3d64ff95fb58feccc7639e537ff89">__CM_CMSIS_VERSION</a> is defined in the <code>cmsis_version.h</code> file and provides the version of the CMSIS-Core (Cortex-M). It is constructed as follows:</p>
+<div class="fragment"><div class="line"><span class="preprocessor">#define __CM_CMSIS_VERSION_MAIN  ( 5U)                                    </span><span class="comment">/* [31:16] CMSIS Core(M) main version */</span><span class="preprocessor"></span></div>
+<div class="line"><span class="preprocessor">#define __CM_CMSIS_VERSION_SUB   ( 7U)                                    </span><span class="comment">/* [15:0]  CMSIS Core(M) sub version */</span><span class="preprocessor"></span></div>
+<div class="line"><span class="preprocessor">#define __CM_CMSIS_VERSION       ((__CM_CMSIS_VERSION_MAIN &lt;&lt; 16U) | \</span></div>
+<div class="line"><span class="preprocessor">                                   __CM_CMSIS_VERSION_SUB           )     </span><span class="comment">/* CMSIS Core(M) version number */</span><span class="preprocessor"></span></div>
+</div><!-- fragment --><p>The <code>cmsis_version.h</code> is included by each <code>cpu_&lt;core&gt;.h</code> so the CMSIS version defines are available via them already.</p>
+<p>The <code>cpu_&lt;core&gt;.h</code> files use specific defines (such as <a class="el" href="group__version__control__gr.html#ga63ea62503c88acab19fcf3d5743009e3">__CORTEX_M</a>) that provide identification of the target processor core.</p>
+<p>These defines can be used in the <a class="el" href="device_h_pg.html">Device Header File &lt;Device.h&gt;</a> to verify a minimum CMSIS-Core version as well as the target processor. Read more at <a class="el" href="group__version__control__gr.html">Version Control</a>. </p>
+</div></div><!-- contents -->
 </div><!-- PageDoc -->
 </div><!-- doc-content -->
 <!-- start footer part -->

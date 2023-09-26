@@ -1,8 +1,13 @@
 var searchData=
 [
-  ['f_0',['F',['../unionCPSR__Type.html#a20bbf5d5ba32cae380b7f181cf306f9e',1,'CPSR_Type::F()'],['../unionISR__Type.html#ae691a856f7de0f301c60521a7a779dc2',1,'ISR_Type::F()']]],
-  ['fi_1',['FI',['../unionSCTLR__Type.html#afe77b6c5d73e64d4ef3c5dc5ce2692dc',1,'SCTLR_Type']]],
-  ['fs0_2',['FS0',['../unionDFSR__Type.html#af29edf59ecfd29848b69e2bbfb7f3082',1,'DFSR_Type::FS0()'],['../unionIFSR__Type.html#a9f9ae1ffa89d33e90159eec5c4b7cd6a',1,'IFSR_Type::FS0()']]],
-  ['fs1_3',['FS1',['../unionDFSR__Type.html#a869658f432d5e213b8cd55e8e58d1f56',1,'DFSR_Type::FS1()'],['../unionIFSR__Type.html#adb493acf17881eaf09a2e8629ee2243e',1,'IFSR_Type::FS1()']]],
-  ['fw_4',['FW',['../unionACTLR__Type.html#a55b8e4dd5312f32237dd023032618781',1,'ACTLR_Type']]]
+  ['e_0',['E',['../unionCPSR__Type.html#a96bd175ed9927279dba40e76259dcfa7',1,'CPSR_Type']]],
+  ['e_5ft_1',['e_t',['../structmmu__region__attributes__Type.html#a7883ad6e464090150b175a54c68f592e',1,'mmu_region_attributes_Type']]],
+  ['ee_2',['EE',['../unionSCTLR__Type.html#af868e042d01b612649539c151f1aaea5',1,'SCTLR_Type']]],
+  ['enable_3',['ENABLE',['../unionCNTP__CTL__Type.html#a3b7426f99d1ecdacd172999b4d04b210',1,'CNTP_CTL_Type']]],
+  ['eoir_4',['EOIR',['../structGICInterface__Type.html#a4b9baa43aae026438bad64e63df17cdb',1,'GICInterface_Type']]],
+  ['event_5fcontrol_5',['EVENT_CONTROL',['../structL2C__310__TypeDef.html#a2bc6f09ea83f8d3c966558598a098995',1,'L2C_310_TypeDef']]],
+  ['event_5fcounter0_5fconf_6',['EVENT_COUNTER0_CONF',['../structL2C__310__TypeDef.html#a1c78032b2b237ee968d6758bddc915ba',1,'L2C_310_TypeDef']]],
+  ['event_5fcounter1_5fconf_7',['EVENT_COUNTER1_CONF',['../structL2C__310__TypeDef.html#a4465c7dd7b45f8f35acde8c6e28cbd17',1,'L2C_310_TypeDef']]],
+  ['excl_8',['EXCL',['../unionACTLR__Type.html#a10c6d649f67d6ca9029731fc44631e91',1,'ACTLR_Type']]],
+  ['ext_9',['ExT',['../unionDFSR__Type.html#aede34079d030df1977646c155a90f445',1,'DFSR_Type::ExT()'],['../unionIFSR__Type.html#aee6fed7525c5125e637acc8e957c8d0f',1,'IFSR_Type::ExT()']]]
 ];

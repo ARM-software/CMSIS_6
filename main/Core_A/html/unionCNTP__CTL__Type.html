@@ -129,7 +129,7 @@ $(document).ready(function(){initNavTree('unionCNTP__CTL__Type.html',''); initRe
 <div class="header">
   <div class="summary">
 <a href="#pub-attribs">Data Fields</a>  </div>
-  <div class="headertitle"><div class="title">CNTP_CTL_Type Union Reference</div></div>
+  <div class="headertitle"><div class="title">CNTP_CTL_Type Union Reference<div class="ingroups"><a class="el" href="group__CMSIS__Core__FunctionInterface.html">Core Peripherals</a> &raquo; <a class="el" href="group__PL1__timer__functions.html">Generic Physical Timer Functions</a></div></div></div>
 </div><!--header-->
 <div class="contents">
 
@@ -156,12 +156,60 @@ Data Fields</h2></td></tr>
 <tr class="memitem:a0e2d443e0447f9b286433220cd288dbf"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="unionCNTP__CTL__Type.html#a0e2d443e0447f9b286433220cd288dbf">w</a></td></tr>
 <tr class="memdesc:a0e2d443e0447f9b286433220cd288dbf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Type used for word access.  <br /></td></tr>
 <tr class="separator:a0e2d443e0447f9b286433220cd288dbf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae29d3dcafcb0fa0a873a651e5ad2fcf7"><td class="memItemLeft" >struct {</td></tr>
+<tr class="memitem:aa895e922fb1999148f0122f76c21e62c"><td class="memItemLeft" >&#160;&#160;&#160;uint32_t&#160;&#160;&#160;<a class="el" href="unionCNTP__CTL__Type.html#a3b7426f99d1ecdacd172999b4d04b210">ENABLE</a>:1</td></tr>
+<tr class="memdesc:aa895e922fb1999148f0122f76c21e62c"><td class="mdescLeft">&#160;</td><td class="mdescRight">bit: 0 Enables the timer.  <a href="unionCNTP__CTL__Type.html#a3b7426f99d1ecdacd172999b4d04b210">More...</a><br /></td></tr>
+<tr class="separator:aa895e922fb1999148f0122f76c21e62c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9e4350069ebf7bbe0a33728bd958bd8f"><td class="memItemLeft" >&#160;&#160;&#160;uint32_t&#160;&#160;&#160;<a class="el" href="unionCNTP__CTL__Type.html#a07e23afbd292bcb84f15ea27ae2c157d">IMASK</a>:1</td></tr>
+<tr class="memdesc:a9e4350069ebf7bbe0a33728bd958bd8f"><td class="mdescLeft">&#160;</td><td class="mdescRight">bit: 1 Timer output signal mask bit.  <a href="unionCNTP__CTL__Type.html#a07e23afbd292bcb84f15ea27ae2c157d">More...</a><br /></td></tr>
+<tr class="separator:a9e4350069ebf7bbe0a33728bd958bd8f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af340ef21505fcd55f4f14b5c3ac8423a"><td class="memItemLeft" >&#160;&#160;&#160;uint32_t&#160;&#160;&#160;<a class="el" href="unionCNTP__CTL__Type.html#acb2f8900c7f6960443df47c1f2f2add3">ISTATUS</a>:1</td></tr>
+<tr class="memdesc:af340ef21505fcd55f4f14b5c3ac8423a"><td class="mdescLeft">&#160;</td><td class="mdescRight">bit: 2 The status of the timer.  <a href="unionCNTP__CTL__Type.html#acb2f8900c7f6960443df47c1f2f2add3">More...</a><br /></td></tr>
+<tr class="separator:af340ef21505fcd55f4f14b5c3ac8423a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aab7caa5b0a34a122dcb8d6196f662742"><td class="memItemLeft" >&#160;&#160;&#160;uint32_t&#160;&#160;&#160;<a class="el" href="unionCNTP__CTL__Type.html#a033fc913891068a89b1609af783db8a8">_reserved0</a>:29</td></tr>
+<tr class="memdesc:aab7caa5b0a34a122dcb8d6196f662742"><td class="mdescLeft">&#160;</td><td class="mdescRight">bit: 3..31 Reserved  <a href="unionCNTP__CTL__Type.html#a033fc913891068a89b1609af783db8a8">More...</a><br /></td></tr>
+<tr class="separator:aab7caa5b0a34a122dcb8d6196f662742"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae29d3dcafcb0fa0a873a651e5ad2fcf7"><td class="memItemLeft" valign="top">}&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="unionCNTP__CTL__Type.html#ae29d3dcafcb0fa0a873a651e5ad2fcf7">b</a></td></tr>
+<tr class="memdesc:ae29d3dcafcb0fa0a873a651e5ad2fcf7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Structure used for bit access.  <br /></td></tr>
+<tr class="separator:ae29d3dcafcb0fa0a873a651e5ad2fcf7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Description</h2>
 <div class="textblock"><p>Physical Timer Control register. </p>
 </div><h2 class="groupheader">Field Documentation</h2>
+<a id="a033fc913891068a89b1609af783db8a8" name="a033fc913891068a89b1609af783db8a8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a033fc913891068a89b1609af783db8a8">&#9670;&#160;</a></span>_reserved0</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint32_t CNTP_CTL_Type::_reserved0</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>bit: 3..31 Reserved </p>
+
+</div>
+</div>
 <a id="a5bd2c1817c6e13a5df47f3ba3f4772e0" name="a5bd2c1817c6e13a5df47f3ba3f4772e0"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a5bd2c1817c6e13a5df47f3ba3f4772e0">&#9670;&#160;</a></span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a5bd2c1817c6e13a5df47f3ba3f4772e0">&#9670;&#160;</a></span> <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">struct  { ... }  CNTP_CTL_Type::b</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Structure used for bit access. </p>
+
+</div>
+</div>
+<a id="ae29d3dcafcb0fa0a873a651e5ad2fcf7" name="ae29d3dcafcb0fa0a873a651e5ad2fcf7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae29d3dcafcb0fa0a873a651e5ad2fcf7">&#9670;&#160;</a></span> <span class="overload">[2/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -189,6 +237,11 @@ Data Fields</h2></td></tr>
 </div><div class="memdoc">
 
 <p>bit: 0 Enables the timer. </p>
+<p>Enables the timer.</p>
+<p>Permitted values are:</p><ul>
+<li>0 - Timer disabled.</li>
+<li>1 - Timer enabled. </li>
+</ul>
 
 </div>
 </div>
@@ -205,6 +258,11 @@ Data Fields</h2></td></tr>
 </div><div class="memdoc">
 
 <p>bit: 1 Timer output signal mask bit. </p>
+<p>Timer output signal mask bit.</p>
+<p>Permitted values are:</p><ul>
+<li>0 - Timer output signal is not masked.</li>
+<li>1 - Timer output signal is masked. </li>
+</ul>
 
 </div>
 </div>
@@ -221,6 +279,11 @@ Data Fields</h2></td></tr>
 </div><div class="memdoc">
 
 <p>bit: 2 The status of the timer. </p>
+<p>The status of the timer.</p>
+<p>This bit indicates whether the timer condition is asserted:</p><ul>
+<li>0 - Timer condition is not asserted.</li>
+<li>1 - Timer condition is asserted. </li>
+</ul>
 
 </div>
 </div>

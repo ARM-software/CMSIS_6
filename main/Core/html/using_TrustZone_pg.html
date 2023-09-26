@@ -210,10 +210,10 @@ Non-Secure Memory Map</div></div>
 Registers</div></div>
     <h1><a class="anchor" id="RTOS_TrustZone_stacksealing"></a>
 Stack Sealing</h1>
-<p>CMSIS-Core <a class="el" href="group__stacksealing__support__trustzone__functions.html">Stack Sealing Support Functions</a> provide standard interface for implementing the <a href="https://developer.arm.com/support/arm-security-updates/armv8-m-stack-sealing">Secure Stack Sealing technique</a> recommended for mitigating some security vulnerabilities on Armv8-M systems with TrustZone.</p>
+<p>CMSIS-Core <a class="el" href="group__stacksealing__support__trustzone__functions.html">Stack Sealing Support Functions</a> provide standard interface for implementing the <a href="https://developer.arm.com/Arm%20Security%20Center/Armv8-M%20Stack%20Sealing%20Vulnerability">Secure Stack Sealing technique</a> recommended for mitigating some security vulnerabilities on Armv8-M systems with TrustZone.</p>
 <p><a class="el" href="startup_c_pg.html#startup_c_sec">startup_Device.c Template File</a> demonstrates how this functionality can be used in a device startup file.</p>
 <p>Stack Sealing also requires an application project to have a linker script that explicitly reserves 8 bytes for the stack seal on top of the secure main stack. Linker files provided with <a class="el" href="cmsis_files_dfps.html#device_examples">Device Examples</a> for Armv8-M cores demonstrate how this can be implemented. For example see .\Device\ARM\ARMCM33\Source\ARM\ARMCM33_ac6.sct.</p>
-<p>To learn more about the stack sealing implementation in CMSIS projects for Armv8-M devices, refer to <a href="https://www.keil.com/appnotes/docs/apnt_335.asp" target="_blank"><b>Application Note 335</b></a>.</p>
+<p>To learn more about the stack sealing implementation in CMSIS projects for Armv8-M devices, refer to <a href="https://developer.arm.com/documentation/kan335" target="_blank"><b>Application Note 335</b></a>.</p>
 <h1><a class="anchor" id="CMSIS_Files_TrustZone"></a>
 CMSIS Files for TrustZone</h1>
 <p>The CMSIS-Core files are extended by the header files <a class="el" href="partition_h_pg.html">TrustZone setup: partition_&lt;Device&gt;.h</a> and <a class="el" href="partition_h_pg.html#partition_gen_h_pg">Region/ISR setup: partition_gen.h</a> :</p>

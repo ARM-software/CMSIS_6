@@ -1,7 +1,7 @@
 var searchData=
 [
-  ['section_0',['SECTION',['../core__ca_8h.html#ab184b824a6d7cb728bd46c6abcd0c21aacb7227be6a36b93e485b62e3acddae51',1,'core_ca.h']]],
-  ['secure_1',['SECURE',['../core__ca_8h.html#ac3d277641df9fb3bb3b555e2e79dd639aa9dea2ba3f45f7d12b274eb6ab7d28d9',1,'core_ca.h']]],
+  ['section_0',['SECTION',['../core__ca_8h.html#gab184b824a6d7cb728bd46c6abcd0c21aacb7227be6a36b93e485b62e3acddae51',1,'core_ca.h']]],
+  ['secure_1',['SECURE',['../core__ca_8h.html#gac3d277641df9fb3bb3b555e2e79dd639aa9dea2ba3f45f7d12b274eb6ab7d28d9',1,'core_ca.h']]],
   ['securephytimer_5firqn_2',['SecurePhyTimer_IRQn',['../group__irq__ctrl__gr.html#gga7e1129cd8a196f4284d41db3e82ad5c8a82e7e80a1d7d70bbe65b380bcda3f309',1,'Ref_IRQCtrl.txt']]],
   ['sgi0_5firqn_3',['SGI0_IRQn',['../group__irq__ctrl__gr.html#gga7e1129cd8a196f4284d41db3e82ad5c8a056f32088a9c8bdb9309b005dfeb648e',1,'Ref_IRQCtrl.txt']]],
   ['sgi10_5firqn_4',['SGI10_IRQn',['../group__irq__ctrl__gr.html#gga7e1129cd8a196f4284d41db3e82ad5c8a12993bed484c7a70e6281b102d0e27e9',1,'Ref_IRQCtrl.txt']]],
@@ -19,7 +19,7 @@ var searchData=
   ['sgi7_5firqn_16',['SGI7_IRQn',['../group__irq__ctrl__gr.html#gga7e1129cd8a196f4284d41db3e82ad5c8aa1bcd760176e11cdece4386818022631',1,'Ref_IRQCtrl.txt']]],
   ['sgi8_5firqn_17',['SGI8_IRQn',['../group__irq__ctrl__gr.html#gga7e1129cd8a196f4284d41db3e82ad5c8aabbb7ca9433c474bfeade468e8c66455',1,'Ref_IRQCtrl.txt']]],
   ['sgi9_5firqn_18',['SGI9_IRQn',['../group__irq__ctrl__gr.html#gga7e1129cd8a196f4284d41db3e82ad5c8afa5f21d9fd3df5817a0f871b72bde681',1,'Ref_IRQCtrl.txt']]],
-  ['shared_19',['SHARED',['../core__ca_8h.html#ab884a11fa8d094573ab77fb1c0f8d8a7a9c46e16a4ab019339596acadeefc8c53',1,'core_ca.h']]],
-  ['shared_5fdevice_20',['SHARED_DEVICE',['../core__ca_8h.html#a83ac8de9263f89879079da521e86d5f2a9b78345535e6af3288cc69a572338808',1,'core_ca.h']]],
-  ['strongly_5fordered_21',['STRONGLY_ORDERED',['../core__ca_8h.html#a83ac8de9263f89879079da521e86d5f2a0a4d347de23312717e6e57b04f0b014e',1,'core_ca.h']]]
+  ['shared_19',['SHARED',['../core__ca_8h.html#gab884a11fa8d094573ab77fb1c0f8d8a7a9c46e16a4ab019339596acadeefc8c53',1,'core_ca.h']]],
+  ['shared_5fdevice_20',['SHARED_DEVICE',['../core__ca_8h.html#ga83ac8de9263f89879079da521e86d5f2a9b78345535e6af3288cc69a572338808',1,'core_ca.h']]],
+  ['strongly_5fordered_21',['STRONGLY_ORDERED',['../core__ca_8h.html#ga83ac8de9263f89879079da521e86d5f2a0a4d347de23312717e6e57b04f0b014e',1,'core_ca.h']]]
 ];

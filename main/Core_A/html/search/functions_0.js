@@ -32,7 +32,7 @@ var searchData=
   ['_5f_5fget_5fsp_5fusr_29',['__get_SP_usr',['../cmsis__armclang__a_8h.html#a7009688fca7a35b5e3ba6cf11cc74869',1,'cmsis_armclang_a.h']]],
   ['_5f_5fget_5fttbr0_30',['__get_TTBR0',['../group__CMSIS__TTBR.html#ga678997bc01f6d8d48b1d407cec24809d',1,'cmsis_cp15.h']]],
   ['_5f_5fget_5fvbar_31',['__get_VBAR',['../group__CMSIS__VBAR.html#ga8abf5c92597d8e7d403aa26d8246387c',1,'cmsis_cp15.h']]],
-  ['_5f_5fl1c_5fcleaninvalidatecache_32',['__L1C_CleanInvalidateCache',['../core__ca_8h.html#a88628cab0d9113dc46a509d6a4d96c58',1,'core_ca.h']]],
+  ['_5f_5fl1c_5fcleaninvalidatecache_32',['__L1C_CleanInvalidateCache',['../group__L1__cache__functions.html#ga722ceb077e491bb4befcfbb3aee9b20b',1,'core_ca.h']]],
   ['_5f_5fl1c_5fmaintaindcachesetway_33',['__L1C_MaintainDCacheSetWay',['../core__ca_8h.html#a5ace5c651cf18aaa7659e1fbe6e77988',1,'core_ca.h']]],
   ['_5f_5flog2_5fup_34',['__log2_up',['../core__ca_8h.html#a35988a42567ca868bffd0b6171021ecb',1,'core_ca.h']]],
   ['_5f_5frbit_35',['__RBIT',['../group__CMSIS__Core__InstructionInterface.html#gad6f9f297f6b91a995ee199fbc796b863',1,'Ref_CompilerControl.txt']]],

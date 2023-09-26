@@ -1,5 +1,7 @@
 var searchData=
 [
-  ['vector_20base_20address_20register_20_28vbar_29_0',['Vector Base Address Register (VBAR)',['../group__CMSIS__VBAR.html',1,'']]],
-  ['version_20control_1',['Version Control',['../group__version__ctrl.html',1,'']]]
+  ['sctlr_20bits_0',['SCTLR Bits',['../group__CMSIS__SCTLR__BITS.html',1,'']]],
+  ['stack_20pointer_20_28sp_2fr13_29_1',['Stack Pointer (SP/R13)',['../group__CMSIS__SP.html',1,'']]],
+  ['system_20and_20clock_20configuration_2',['System and Clock Configuration',['../group__system__init__gr.html',1,'']]],
+  ['system_20control_20register_20_28sctlr_29_3',['System Control Register (SCTLR)',['../group__CMSIS__SCTLR.html',1,'']]]
 ];

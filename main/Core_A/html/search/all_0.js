@@ -61,7 +61,7 @@ var searchData=
   ['_5f_5fio_58',['__IO',['../core__ca_8h.html#aec43007d9998a0a0e01faede4133d6be',1,'core_ca.h']]],
   ['_5f_5fiom_59',['__IOM',['../core__ca_8h.html#ab6caba5853a60a17e8e04499b52bf691',1,'core_ca.h']]],
   ['_5f_5fisb_60',['__ISB',['../group__CMSIS__Core__InstructionInterface.html#gaad233022e850a009fc6f7602be1182f6',1,'Ref_CompilerControl.txt']]],
-  ['_5f_5fl1c_5fcleaninvalidatecache_61',['__L1C_CleanInvalidateCache',['../core__ca_8h.html#a88628cab0d9113dc46a509d6a4d96c58',1,'core_ca.h']]],
+  ['_5f_5fl1c_5fcleaninvalidatecache_61',['__L1C_CleanInvalidateCache',['../group__L1__cache__functions.html#ga722ceb077e491bb4befcfbb3aee9b20b',1,'core_ca.h']]],
   ['_5f_5fl1c_5fmaintaindcachesetway_62',['__L1C_MaintainDCacheSetWay',['../core__ca_8h.html#a5ace5c651cf18aaa7659e1fbe6e77988',1,'core_ca.h']]],
   ['_5f_5fldrexb_63',['__LDREXB',['../cmsis__armclang__a_8h.html#a7d50fe10ca4fb48c076c45e607361ada',1,'cmsis_armclang_a.h']]],
   ['_5f_5fldrexh_64',['__LDREXH',['../cmsis__armclang__a_8h.html#a85552e9948b86c6530e1baa8f5dd2eda',1,'cmsis_armclang_a.h']]],
@@ -124,12 +124,13 @@ var searchData=
   ['_5f_5funaligned_5fuint16_5fwrite_121',['__UNALIGNED_UINT16_WRITE',['../cmsis__armclang__a_8h.html#a5103fb373cae9837cc4a384be55dc87f',1,'__UNALIGNED_UINT16_WRITE():&#160;cmsis_armclang_a.h'],['../group__comp__cntrl__gr.html#gadb9cd73446f7e11e92383cd327a23407',1,'__UNALIGNED_UINT16_WRITE():&#160;Ref_CompilerControl.txt']]],
   ['_5f_5funaligned_5fuint32_122',['__UNALIGNED_UINT32',['../group__comp__cntrl__gr.html#ga27fd2ec6767ca1ab66d36b5cc0103268',1,'Ref_CompilerControl.txt']]],
   ['_5f_5funaligned_5fuint32_5fread_123',['__UNALIGNED_UINT32_READ',['../cmsis__armclang__a_8h.html#a3b931f0b051b8c1a6377a3dcc7559b5e',1,'__UNALIGNED_UINT32_READ():&#160;cmsis_armclang_a.h'],['../group__comp__cntrl__gr.html#ga254322c344d954c9f829719a50a88e87',1,'__UNALIGNED_UINT32_READ():&#160;Ref_CompilerControl.txt']]],
-  ['_5f_5funaligned_5fuint32_5fwrite_124',['__UNALIGNED_UINT32_WRITE',['../cmsis__armclang__a_8h.html#a203f593d140ed88b81bc189edc861110',1,'__UNALIGNED_UINT32_WRITE():&#160;cmsis_armclang_a.h'],['../group__comp__cntrl__gr.html#gabb2180285c417aa9120a360c51f64b4b',1,'__UNALIGNED_UINT32_WRITE():&#160;Ref_CompilerControl.txt']]],
+  ['_5f_5funaligned_5fuint32_5fwrite_124',['__UNALIGNED_UINT32_WRITE',['../group__comp__cntrl__gr.html#gabb2180285c417aa9120a360c51f64b4b',1,'__UNALIGNED_UINT32_WRITE():&#160;Ref_CompilerControl.txt'],['../cmsis__armclang__a_8h.html#a203f593d140ed88b81bc189edc861110',1,'__UNALIGNED_UINT32_WRITE():&#160;cmsis_armclang_a.h']]],
   ['_5f_5fusat_125',['__USAT',['../cmsis__armclang__a_8h.html#ad0e4fa951d563740462d837bb6ddd7bb',1,'cmsis_armclang_a.h']]],
   ['_5f_5fused_126',['__USED',['../group__comp__cntrl__gr.html#ga3e40e4c553fc11588f7a4c2a19e789e0',1,'Ref_CompilerControl.txt']]],
   ['_5f_5fweak_127',['__WEAK',['../group__comp__cntrl__gr.html#gac607bf387b29162be6a9b77fc7999539',1,'Ref_CompilerControl.txt']]],
   ['_5f_5fwfe_128',['__WFE',['../group__CMSIS__Core__InstructionInterface.html#gaac6cc7dd4325d9cb40d3290fa5244b3d',1,'Ref_CompilerControl.txt']]],
   ['_5f_5fwfi_129',['__WFI',['../group__CMSIS__Core__InstructionInterface.html#gad23bf2b78a9a4524157c9de0d30b7448',1,'Ref_CompilerControl.txt']]],
   ['_5ffld2val_130',['_FLD2VAL',['../core__ca_8h.html#a139b6e261c981f014f386927ca4a8444',1,'_FLD2VAL():&#160;core_ca.h'],['../group__peripheral__gr.html#ga139b6e261c981f014f386927ca4a8444',1,'_FLD2VAL():&#160;core_ca.txt']]],
-  ['_5fval2fld_131',['_VAL2FLD',['../core__ca_8h.html#a286e3b913dbd236c7f48ea70c8821f4e',1,'_VAL2FLD():&#160;core_ca.h'],['../group__peripheral__gr.html#ga286e3b913dbd236c7f48ea70c8821f4e',1,'_VAL2FLD():&#160;core_ca.txt']]]
+  ['_5freserved0_131',['_reserved0',['../unionCNTP__CTL__Type.html#a033fc913891068a89b1609af783db8a8',1,'CNTP_CTL_Type']]],
+  ['_5fval2fld_132',['_VAL2FLD',['../core__ca_8h.html#a286e3b913dbd236c7f48ea70c8821f4e',1,'_VAL2FLD():&#160;core_ca.h'],['../group__peripheral__gr.html#ga286e3b913dbd236c7f48ea70c8821f4e',1,'_VAL2FLD():&#160;core_ca.txt']]]
 ];

@@ -129,7 +129,7 @@ $(document).ready(function(){initNavTree('structGICInterface__Type.html',''); in
 <div class="header">
   <div class="summary">
 <a href="#pub-attribs">Data Fields</a>  </div>
-  <div class="headertitle"><div class="title">GICInterface_Type Struct Reference</div></div>
+  <div class="headertitle"><div class="title">GICInterface_Type Struct Reference<div class="ingroups"><a class="el" href="group__CMSIS__Core__FunctionInterface.html">Core Peripherals</a> &raquo; <a class="el" href="group__GIC__functions.html">Generic Interrupt Controller Functions</a></div></div></div>
 </div><!--header-->
 <div class="contents">
 
@@ -205,6 +205,7 @@ Data Fields</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Offset: 0x01C (R/W) Aliased Binary Point Register. </p>
+<p>CPU Interface Aliased Binary Point Register </p><dl class="section see"><dt>See also</dt><dd><a class="el" href="structGICInterface__Type.html#a949317484547dc1db89c9f7ab40d1829" title="Offset: 0x008 (R/W) Binary Point Register.">GICInterface_Type::BPR</a> </dd></dl>
 
 </div>
 </div>
@@ -221,6 +222,7 @@ Data Fields</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Offset: 0x024 ( /W) Aliased End Of Interrupt Register. </p>
+<p>CPU Interface Aliased End Of Interrupt Register </p><dl class="section see"><dt>See also</dt><dd><a class="el" href="structGICInterface__Type.html#a4b9baa43aae026438bad64e63df17cdb" title="Offset: 0x010 ( /W) End Of Interrupt Register.">GICInterface_Type::EOIR</a> </dd></dl>
 
 </div>
 </div>
@@ -237,6 +239,7 @@ Data Fields</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Offset: 0x028 (R/ ) Aliased Highest Priority Pending Interrupt Register. </p>
+<p>CPU Interface Aliased Highest Priority Pending Interrupt Register </p><dl class="section see"><dt>See also</dt><dd><a class="el" href="structGICInterface__Type.html#af793cd280a74bf73cca8c4fedfc329d6" title="Offset: 0x018 (R/ ) Highest Priority Pending Interrupt Register.">GICInterface_Type::HPPIR</a> </dd></dl>
 
 </div>
 </div>
@@ -253,6 +256,7 @@ Data Fields</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Offset: 0x020 (R/ ) Aliased Interrupt Acknowledge Register. </p>
+<p>CPU Interface Aliased Interrupt Acknowledge Register </p><dl class="section see"><dt>See also</dt><dd><a class="el" href="structGICInterface__Type.html#aa48569605fc0c163e1db35321b4c76ea" title="Offset: 0x00C (R/ ) Interrupt Acknowledge Register.">GICInterface_Type::IAR</a> </dd></dl>
 
 </div>
 </div>
@@ -269,6 +273,7 @@ Data Fields</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Offset: 0x0D0 (R/W) Active Priority Register. </p>
+<p>CPU Interface Active Priorities Registers </p><dl class="section note"><dt>Note</dt><dd>The register values are IMPLEMENTATION DEFINED. </dd></dl>
 
 </div>
 </div>
@@ -285,6 +290,16 @@ Data Fields</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Offset: 0x008 (R/W) Binary Point Register. </p>
+<p>CPU Interface Binary Point Register</p>
+<table class="markdownTable">
+<tr class="markdownTableHead">
+<th class="markdownTableHeadLeft">Bits   </th><th class="markdownTableHeadLeft">Name   </th><th class="markdownTableHeadLeft">Function    </th></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyLeft">[31:3]   </td><td class="markdownTableBodyLeft">-   </td><td class="markdownTableBodyLeft">Reserved.    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyLeft">[2:0]   </td><td class="markdownTableBodyLeft">Binary_Point   </td><td class="markdownTableBodyLeft">Controls how the 8-bit interrupt priority field is split into a group priority field and a subpriority field.   </td></tr>
+</table>
+<p>The binary point (values 0-7) defines the amount of priority bits used as subpriority. Please refer to the section Interrupt prioritization in the <a href="http://infocenter.arm.com/help/index.jsp?topic=/com.arm.doc.ihi0048b/index.html">Arm Generic Interrupt Controller Architecture Specificaton</a> for details. </p>
 
 </div>
 </div>
@@ -301,6 +316,16 @@ Data Fields</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Offset: 0x000 (R/W) CPU Interface Control Register. </p>
+<p>CPU Interface Control Register</p>
+<p>Enables the signaling of interrupts by the CPU interface to the connected processor, and provides additional top-level control of the CPU interface. In a GICv2 implementation, this includes control of the end of interrupt (EOI) behavior.</p>
+<table class="markdownTable">
+<tr class="markdownTableHead">
+<th class="markdownTableHeadLeft">Bits   </th><th class="markdownTableHeadLeft">Name   </th><th class="markdownTableHeadLeft">Function    </th></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyLeft">[31:1]   </td><td class="markdownTableBodyLeft">-   </td><td class="markdownTableBodyLeft">Reserved.    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyLeft">[0]   </td><td class="markdownTableBodyLeft">Enable   </td><td class="markdownTableBodyLeft">Interrupt signaling: 0 - Disable. 1 - Enable.   </td></tr>
+</table>
 
 </div>
 </div>
@@ -317,6 +342,15 @@ Data Fields</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Offset: 0x1000( /W) Deactivate Interrupt Register. </p>
+<p>CPU Interface Deactivate Interrupt Register</p>
+<table class="markdownTable">
+<tr class="markdownTableHead">
+<th class="markdownTableHeadLeft">Bits   </th><th class="markdownTableHeadLeft">Name   </th><th class="markdownTableHeadLeft">Function    </th></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyLeft">[31:24]   </td><td class="markdownTableBodyLeft">-   </td><td class="markdownTableBodyLeft">Reserved.    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyLeft">[23:0]   </td><td class="markdownTableBodyLeft">INTID   </td><td class="markdownTableBodyLeft">The INTID of the interrupt to be disabled.   </td></tr>
+</table>
 
 </div>
 </div>
@@ -333,6 +367,15 @@ Data Fields</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Offset: 0x010 ( /W) End Of Interrupt Register. </p>
+<p>CPU Interface End Of Interrupt Register</p>
+<table class="markdownTable">
+<tr class="markdownTableHead">
+<th class="markdownTableHeadLeft">Bits   </th><th class="markdownTableHeadLeft">Name   </th><th class="markdownTableHeadLeft">Function    </th></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyLeft">[31:24]   </td><td class="markdownTableBodyLeft">-   </td><td class="markdownTableBodyLeft">Reserved.    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyLeft">[23:0]   </td><td class="markdownTableBodyLeft">INTID   </td><td class="markdownTableBodyLeft">The interrupt number of the finished interrupt.   </td></tr>
+</table>
 
 </div>
 </div>
@@ -349,6 +392,15 @@ Data Fields</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Offset: 0x018 (R/ ) Highest Priority Pending Interrupt Register. </p>
+<p>CPU Interface Highest Priority Pending Interrupt Register</p>
+<table class="markdownTable">
+<tr class="markdownTableHead">
+<th class="markdownTableHeadLeft">Bits   </th><th class="markdownTableHeadLeft">Name   </th><th class="markdownTableHeadLeft">Function    </th></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyLeft">[31:24]   </td><td class="markdownTableBodyLeft">-   </td><td class="markdownTableBodyLeft">Reserved.    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyLeft">[23:0]   </td><td class="markdownTableBodyLeft">INTID   </td><td class="markdownTableBodyLeft">The INTID of the signaled interrupt.   </td></tr>
+</table>
 
 </div>
 </div>
@@ -365,6 +417,15 @@ Data Fields</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Offset: 0x00C (R/ ) Interrupt Acknowledge Register. </p>
+<p>CPU Interface Interrupt Acknowledge Register</p>
+<table class="markdownTable">
+<tr class="markdownTableHead">
+<th class="markdownTableHeadLeft">Bits   </th><th class="markdownTableHeadLeft">Name   </th><th class="markdownTableHeadLeft">Function    </th></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyLeft">[31:24]   </td><td class="markdownTableBodyLeft">-   </td><td class="markdownTableBodyLeft">Reserved.    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyLeft">[23:0]   </td><td class="markdownTableBodyLeft">INTID   </td><td class="markdownTableBodyLeft">The interrupt number of the signaled interrupt.   </td></tr>
+</table>
 
 </div>
 </div>
@@ -381,6 +442,19 @@ Data Fields</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Offset: 0x0FC (R/ ) CPU Interface Identification Register. </p>
+<p>CPU Interface Identification Register</p>
+<table class="markdownTable">
+<tr class="markdownTableHead">
+<th class="markdownTableHeadLeft">Bits   </th><th class="markdownTableHeadLeft">Name   </th><th class="markdownTableHeadLeft">Function    </th></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyLeft">[31:20]   </td><td class="markdownTableBodyLeft">ProductID   </td><td class="markdownTableBodyLeft">An IMPLEMENTATION DEFINED product identifier    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyLeft">[19:16]   </td><td class="markdownTableBodyLeft">Arch_version   </td><td class="markdownTableBodyLeft">The version of the GIC architecture that is implemented.    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyLeft">[15:12]   </td><td class="markdownTableBodyLeft">Revision   </td><td class="markdownTableBodyLeft">An IMPLEMENTATION DEFINED revision number for the CPU interface.    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyLeft">[11:0]   </td><td class="markdownTableBodyLeft">Implementer   </td><td class="markdownTableBodyLeft">Contains the JEP106 code of the company that implemented the CPU interface.   </td></tr>
+</table>
 
 </div>
 </div>
@@ -397,6 +471,8 @@ Data Fields</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Offset: 0x0E0 (R/W) Non-secure Active Priority Register. </p>
+<p>CPU Interface Non-secure Active Priorities Registers </p><dl class="section note"><dt>Note</dt><dd>The register values are IMPLEMENTATION DEFINED. </dd></dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="structGICInterface__Type.html#aebae4bdcd3930372d639b85c5c9301e8" title="Offset: 0x0D0 (R/W) Active Priority Register.">GICInterface_Type::APR</a>[4] </dd></dl>
 
 </div>
 </div>
@@ -413,6 +489,16 @@ Data Fields</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Offset: 0x004 (R/W) Interrupt Priority Mask Register. </p>
+<p>CPU Interface Priority Mask Register</p>
+<table class="markdownTable">
+<tr class="markdownTableHead">
+<th class="markdownTableHeadLeft">Bits   </th><th class="markdownTableHeadLeft">Name   </th><th class="markdownTableHeadLeft">Function    </th></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyLeft">[31:8]   </td><td class="markdownTableBodyLeft">-   </td><td class="markdownTableBodyLeft">Reserved.    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyLeft">[7:0]   </td><td class="markdownTableBodyLeft">Priority   </td><td class="markdownTableBodyLeft">The priority mask level for the CPU interface.   </td></tr>
+</table>
+<dl class="section note"><dt>Note</dt><dd>IMPLEMENTATION DEFINED unsupported priority bits might be RAZ/WI. </dd></dl>
 
 </div>
 </div>
@@ -429,6 +515,15 @@ Data Fields</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Offset: 0x014 (R/ ) Running Priority Register. </p>
+<p>CPU Interface Running Priority Register</p>
+<table class="markdownTable">
+<tr class="markdownTableHead">
+<th class="markdownTableHeadLeft">Bits   </th><th class="markdownTableHeadLeft">Name   </th><th class="markdownTableHeadLeft">Function    </th></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyLeft">[31:8]   </td><td class="markdownTableBodyLeft">-   </td><td class="markdownTableBodyLeft">Reserved.    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyLeft">[7:0]   </td><td class="markdownTableBodyLeft">Priority   </td><td class="markdownTableBodyLeft">The current running priority on the CPU interface.   </td></tr>
+</table>
 
 </div>
 </div>
@@ -445,6 +540,23 @@ Data Fields</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Offset: 0x02C (R/W) Error Reporting Status Register, optional. </p>
+<p>CPU Interface Status Register</p>
+<table class="markdownTable">
+<tr class="markdownTableHead">
+<th class="markdownTableHeadLeft">Bits   </th><th class="markdownTableHeadLeft">Name   </th><th class="markdownTableHeadLeft">Function    </th></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyLeft">[31:5]   </td><td class="markdownTableBodyLeft">-   </td><td class="markdownTableBodyLeft">Reserved.    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyLeft">[4]   </td><td class="markdownTableBodyLeft">ASV   </td><td class="markdownTableBodyLeft">Attempted security violation.    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyLeft">[3]   </td><td class="markdownTableBodyLeft">WROD   </td><td class="markdownTableBodyLeft">Write to an RO location.    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyLeft">[2]   </td><td class="markdownTableBodyLeft">RWOD   </td><td class="markdownTableBodyLeft">Read of a WO location.    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyLeft">[1]   </td><td class="markdownTableBodyLeft">WRD   </td><td class="markdownTableBodyLeft">Write to a reserved location.    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyLeft">[0]   </td><td class="markdownTableBodyLeft">RRD   </td><td class="markdownTableBodyLeft">Read of a reserved location.   </td></tr>
+</table>
 
 </div>
 </div>

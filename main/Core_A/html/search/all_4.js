@@ -23,7 +23,7 @@ var searchData=
   ['debug_5fcontrol_20',['DEBUG_CONTROL',['../structL2C__310__TypeDef.html#a996a2a5c1f311a6f3555844adc28e7f4',1,'L2C_310_TypeDef']]],
   ['deprecated_20list_21',['Deprecated List',['../deprecated.html',1,'']]],
   ['descriptor_5ffault_22',['DESCRIPTOR_FAULT',['../core__ca_8h.html#aba92665a24bc2ba8c49b9a0881c9df8a',1,'core_ca.h']]],
-  ['device_23',['DEVICE',['../core__ca_8h.html#a83ac8de9263f89879079da521e86d5f2a28b8a7b4b6c2a98af7cf438255207174',1,'core_ca.h']]],
+  ['device_23',['DEVICE',['../core__ca_8h.html#ga83ac8de9263f89879079da521e86d5f2a28b8a7b4b6c2a98af7cf438255207174',1,'core_ca.h']]],
   ['device_20header_20file_20_26lt_3bdevice_2eh_3e_24',['Device Header File &amp;lt;Device.h&gt;',['../device_h_pg.html',1,'templates_pg']]],
   ['dfsr_5fcm_5fmsk_25',['DFSR_CM_Msk',['../group__CMSIS__DFSR__BITS.html#ga91cf285dc43beda62ae72f043e83238c',1,'Ref_CoreRegister.txt']]],
   ['dfsr_5fcm_5fpos_26',['DFSR_CM_Pos',['../group__CMSIS__DFSR__BITS.html#gac1c7d8f30e77bd1fe395d6e9a5a63a3e',1,'Ref_CoreRegister.txt']]],
@@ -44,8 +44,8 @@ var searchData=
   ['dfsr_5fwnr_5fpos_41',['DFSR_WnR_Pos',['../group__CMSIS__DFSR__BITS.html#ga410420633e9ba47cdd1ae2d3df146866',1,'Ref_CoreRegister.txt']]],
   ['dir_42',['DIR',['../structGICInterface__Type.html#a554bd1f88421df3189c664b9fd9c02aa',1,'GICInterface_Type']]],
   ['dodmbs_43',['DODMBS',['../unionACTLR__Type.html#acfabc61e73fb846970cd6541c5baf7d8',1,'ACTLR_Type']]],
-  ['domain_44',['Domain',['../unionDFSR__Type.html#a38982c7088a4069f8a4b347f5eb400e9',1,'DFSR_Type']]],
-  ['domain_45',['domain',['../structmmu__region__attributes__Type.html#a94158b710d212b8ca8105d78a910db39',1,'mmu_region_attributes_Type']]],
+  ['domain_44',['domain',['../structmmu__region__attributes__Type.html#a94158b710d212b8ca8105d78a910db39',1,'mmu_region_attributes_Type']]],
+  ['domain_45',['Domain',['../unionDFSR__Type.html#a38982c7088a4069f8a4b347f5eb400e9',1,'DFSR_Type']]],
   ['domain_20access_20control_20register_20_28dacr_29_46',['Domain Access Control Register (DACR)',['../group__CMSIS__DACR.html',1,'']]],
   ['dwbst_47',['DWBST',['../unionACTLR__Type.html#ad8faaa57629f258c6eba678ba8efc9da',1,'ACTLR_Type']]]
 ];

@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['z_0',['Z',['../unionCPSR__Type.html#a790f1950658257a87ac58d132eca9849',1,'CPSR_Type::Z()'],['../unionSCTLR__Type.html#a37f6910db32361f44a268f93b9ff7b20',1,'SCTLR_Type::Z()']]]
+  ['xn_5ft_0',['xn_t',['../structmmu__region__attributes__Type.html#aa8c562e2d40092a0001f49987c7f4a58',1,'mmu_region_attributes_Type']]]
 ];

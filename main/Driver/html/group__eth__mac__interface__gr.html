@@ -991,7 +991,7 @@ Seconds. </td></tr>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd><a class="el" href="group__execution__status.html">Status Error Codes</a></dd></dl>
-<p>The function <b>ARM_ETH_MAC_SetMacAddress</b> configures Ethernet MAC own address. The Ethernet MAC accepts packets <a href="http://en.wikipedia.org/wiki/Ethernet_frame" target="_blank"><b>Ethernet frames</b></a> which contains a MAC destination address that matches the address specified with <em>ptr_addr</em>.</p>
+<p>The function <b>ARM_ETH_MAC_SetMacAddress</b> configures Ethernet MAC own address. The Ethernet MAC accepts packets <a href="https://en.wikipedia.org/wiki/Ethernet_frame" target="_blank"><b>Ethernet frames</b></a> which contains a MAC destination address that matches the address specified with <em>ptr_addr</em>.</p>
 <p>The Ethernet MAC receiver will accept also packets with addresses configured by <a class="el" href="group__eth__mac__interface__gr.html#ga150fe30290275a4b32756f94208124e8">ARM_ETH_MAC_SetAddressFilter</a> function.</p>
 <p>MAC receiver can be configured to accept also packets with broadcast address, any multicast address or even all packets regardless of address (Promiscuity Mode). This is configured by function <a class="el" href="group__eth__mac__interface__gr.html#gac3e90c66058d20077f04ac8e8b8d0536">ARM_ETH_MAC_Control</a> with <a class="el" href="group__eth__mac__ctrls.html#ga7819c7a1aa7bbc13dc42d0fd7e75a23c">ARM_ETH_MAC_CONFIGURE</a> as control parameter. </p>
 
@@ -1032,7 +1032,7 @@ Seconds. </td></tr>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd><a class="el" href="group__execution__status.html">Status Error Codes</a></dd></dl>
-<p>The function <b>ARM_ETH_MAC_SetAddressFilter</b> configures Ethernet MAC receiver address filtering. The Ethernet MAC accepts packets <a href="http://en.wikipedia.org/wiki/Ethernet_frame" target="_blank"><b>Ethernet frames</b></a> which contains a MAC destination address of the list supplied with <em>ptr_addr</em>. The parameter <em>ptr_addr</em> provides and array of Ethernet MAC addresses. The number of addresses is supplied by <em>num_addr</em>. Specifying <em>num_adr</em> = 0 disables address filtering previously set with this function.</p>
+<p>The function <b>ARM_ETH_MAC_SetAddressFilter</b> configures Ethernet MAC receiver address filtering. The Ethernet MAC accepts packets <a href="https://en.wikipedia.org/wiki/Ethernet_frame" target="_blank"><b>Ethernet frames</b></a> which contains a MAC destination address of the list supplied with <em>ptr_addr</em>. The parameter <em>ptr_addr</em> provides and array of Ethernet MAC addresses. The number of addresses is supplied by <em>num_addr</em>. Specifying <em>num_adr</em> = 0 disables address filtering previously set with this function.</p>
 <p>The Ethernet MAC receiver will accept packets addressed to its own address and packets with addresses configured by this function.</p>
 <p>MAC receiver can be configured to accept also packets with broadcast address, any multicast address or even all packets regardless of address (Promiscuity Mode). This is configured by function <a class="el" href="group__eth__mac__interface__gr.html#gac3e90c66058d20077f04ac8e8b8d0536">ARM_ETH_MAC_Control</a> with <a class="el" href="group__eth__mac__ctrls.html#ga7819c7a1aa7bbc13dc42d0fd7e75a23c">ARM_ETH_MAC_CONFIGURE</a> as control parameter. </p>
 
@@ -1080,7 +1080,7 @@ Seconds. </td></tr>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd><a class="el" href="group__execution__status.html">Status Error Codes</a></dd></dl>
-<p>The function <b>ARM_ETH_MAC_SendFrame</b> writes an <a href="http://en.wikipedia.org/wiki/Ethernet_frame" target="_blank"><b>Ethernet frame</b></a> to the Ethernet MAC transmit buffer.</p>
+<p>The function <b>ARM_ETH_MAC_SendFrame</b> writes an <a href="https://en.wikipedia.org/wiki/Ethernet_frame" target="_blank"><b>Ethernet frame</b></a> to the Ethernet MAC transmit buffer.</p>
 <p>The Ethernet MAC transmit engine must be enabled by using the function <a class="el" href="group__eth__mac__interface__gr.html#gac3e90c66058d20077f04ac8e8b8d0536">ARM_ETH_MAC_Control</a> (ARM_ETH_MAC_CONTROL_TX, 1) before a call to this function.</p>
 <p>The frame data addressed by <em>buf</em> starts with MAC destination and ends with the last Payload data byte. The frame data is copied into the transmit buffer of the Ethernet MAC interface. The function does not wait until the transmission over the Ethernet is complete, however the memory addressed by <em>buf</em> is available for the next Ethernet frame after return.</p>
 <p>The maximum value for <em>len</em> is implied by the size restrictions of the Ethernet frame but is not verified. Using an invalid value for <em>len</em> may generate unpredicted results.</p>
@@ -1142,7 +1142,7 @@ Seconds. </td></tr>
 <li>value &lt; 0: error occurred, value is execution status as defined with <a class="el" href="group__execution__status.html">Status Error Codes</a></li>
 </ul>
 </dd></dl>
-<p>The function <b>ARM_ETH_MAC_ReadFrame</b> reads an <a href="http://en.wikipedia.org/wiki/Ethernet_frame" target="_blank"><b>Ethernet frame</b></a> from the Ethernet MAC receive buffer.</p>
+<p>The function <b>ARM_ETH_MAC_ReadFrame</b> reads an <a href="https://en.wikipedia.org/wiki/Ethernet_frame" target="_blank"><b>Ethernet frame</b></a> from the Ethernet MAC receive buffer.</p>
 <p>The Ethernet MAC receive engine must be enabled using the function <a class="el" href="group__eth__mac__interface__gr.html#gac3e90c66058d20077f04ac8e8b8d0536">ARM_ETH_MAC_Control</a> (ARM_ETH_MAC_CONTROL_RX , 1) before a call to this function. The <em>len</em> of the Ethernet frame can be checked using the function <a class="el" href="group__eth__mac__interface__gr.html#ga5ee86d6b0efab5329b9bc191c23a466d">ARM_ETH_MAC_GetRxFrameSize</a>.</p>
 <p>The frame data addressed by <em>buf</em> starts with MAC destination and ends with the last Payload data byte. The frame data is read from the receive buffer of the Ethernet MAC interface and the number of bytes written into the memory addressed by <em>buf</em> is returned. A negative return value indicates an error whereby the status code is defined with driver common return codes.</p>
 <p>The function <a class="el" href="group__eth__mac__interface__gr.html#ga4b79f57d8624bb4410ee12c73a483993">ARM_ETH_MAC_ReadFrame</a> may be called with <em>buf</em> = NULL and <em>len</em> = 0 to discard or release an frame. This is useful when an incorrect frame has been received or no memory is available to hold the Ethernet frame.</p>
@@ -1175,7 +1175,7 @@ Seconds. </td></tr>
 
 <p>Get size of received Ethernet frame. </p>
 <dl class="section return"><dt>Returns</dt><dd>number of bytes in received frame</dd></dl>
-<p>The function <b>ARM_ETH_MAC_GetRxFrameSize</b> returns the size of a received <a href="http://en.wikipedia.org/wiki/Ethernet_frame" target="_blank"><b>Ethernet frame</b></a>. This function is called before <a class="el" href="group__eth__mac__interface__gr.html#ga4b79f57d8624bb4410ee12c73a483993">ARM_ETH_MAC_ReadFrame</a> and supplies the value <em>len</em>.</p>
+<p>The function <b>ARM_ETH_MAC_GetRxFrameSize</b> returns the size of a received <a href="https://en.wikipedia.org/wiki/Ethernet_frame" target="_blank"><b>Ethernet frame</b></a>. This function is called before <a class="el" href="group__eth__mac__interface__gr.html#ga4b79f57d8624bb4410ee12c73a483993">ARM_ETH_MAC_ReadFrame</a> and supplies the value <em>len</em>.</p>
 <p>The frame size includes MAC destination and ends with the last Payload data byte. Value <em>0</em> indicates that no Ethernet frame is available in the receive buffer. Values smaller than minimum size of Ethernet frame or larger than maximum size of Ethernet frame indicate an invalid frame which needs to be discarded by calling <a class="el" href="group__eth__mac__interface__gr.html#ga4b79f57d8624bb4410ee12c73a483993">ARM_ETH_MAC_ReadFrame</a>.</p>
 <p><b>Example:</b> </p><ul>
 <li>see <a class="el" href="group__eth__mac__interface__gr.html#ga4b79f57d8624bb4410ee12c73a483993">ARM_ETH_MAC_ReadFrame</a> </li>
@@ -1207,7 +1207,7 @@ Seconds. </td></tr>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd><a class="el" href="group__execution__status.html">Status Error Codes</a></dd></dl>
-<p>Retrieve time stamp of a received <a href="http://en.wikipedia.org/wiki/Ethernet_frame" target="_blank"><b>Ethernet frame</b></a>. This function must be called before the frame is read using <a class="el" href="group__eth__mac__interface__gr.html#ga4b79f57d8624bb4410ee12c73a483993">ARM_ETH_MAC_ReadFrame</a>. </p>
+<p>Retrieve time stamp of a received <a href="https://en.wikipedia.org/wiki/Ethernet_frame" target="_blank"><b>Ethernet frame</b></a>. This function must be called before the frame is read using <a class="el" href="group__eth__mac__interface__gr.html#ga4b79f57d8624bb4410ee12c73a483993">ARM_ETH_MAC_ReadFrame</a>. </p>
 
 </div>
 </div>
@@ -1235,7 +1235,7 @@ Seconds. </td></tr>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd><a class="el" href="group__execution__status.html">Status Error Codes</a></dd></dl>
-<p>The function <b>returns</b> the time stamp of a transmitted <a href="http://en.wikipedia.org/wiki/Ethernet_frame" target="_blank"><b>Ethernet frame</b></a>. </p>
+<p>The function <b>returns</b> the time stamp of a transmitted <a href="https://en.wikipedia.org/wiki/Ethernet_frame" target="_blank"><b>Ethernet frame</b></a>. </p>
 
 </div>
 </div>

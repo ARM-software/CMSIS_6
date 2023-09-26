@@ -2542,15 +2542,15 @@
     <member kind="define">
       <type>#define</type>
       <name>L2C_310</name>
-      <anchorfile>core__ca_8h.html</anchorfile>
-      <anchor>a3b08fba5b9be921c8a971231f75f8764</anchor>
+      <anchorfile>group__L2__cache__functions.html</anchorfile>
+      <anchor>ga3b08fba5b9be921c8a971231f75f8764</anchor>
       <arglist></arglist>
     </member>
     <member kind="define">
       <type>#define</type>
       <name>GICDistributor</name>
-      <anchorfile>core__ca_8h.html</anchorfile>
-      <anchor>a82e193c0016a9377274756b2673464a6</anchor>
+      <anchorfile>group__GIC__functions.html</anchorfile>
+      <anchor>ga82e193c0016a9377274756b2673464a6</anchor>
       <arglist></arglist>
     </member>
     <member kind="define">
@@ -3375,8 +3375,8 @@
     <member kind="define">
       <type>#define</type>
       <name>GICInterface</name>
-      <anchorfile>core__ca_8h.html</anchorfile>
-      <anchor>a31a083dbdc5cb84178dbf184286180e3</anchor>
+      <anchorfile>group__GIC__functions.html</anchorfile>
+      <anchor>ga31a083dbdc5cb84178dbf184286180e3</anchor>
       <arglist></arglist>
     </member>
     <member kind="define">
@@ -3823,8 +3823,8 @@
     <member kind="define">
       <type>#define</type>
       <name>PTIM</name>
-      <anchorfile>core__ca_8h.html</anchorfile>
-      <anchor>aaaf976e808e92970c4853195f46f86aa</anchor>
+      <anchorfile>group__PTM__timer__functions.html</anchorfile>
+      <anchor>gaaaf976e808e92970c4853195f46f86aa</anchor>
       <arglist></arglist>
     </member>
     <member kind="define">
@@ -4075,8 +4075,8 @@
     <member kind="define">
       <type>#define</type>
       <name>SECTION_DESCRIPTOR</name>
-      <anchorfile>core__ca_8h.html</anchorfile>
-      <anchor>a4ab4ff3ff904df46da18f5532ceb1e89</anchor>
+      <anchorfile>group__MMU__defs__gr.html</anchorfile>
+      <anchor>ga4ab4ff3ff904df46da18f5532ceb1e89</anchor>
       <arglist></arglist>
     </member>
     <member kind="define">
@@ -4096,15 +4096,15 @@
     <member kind="define">
       <type>#define</type>
       <name>SECTION_B_SHIFT</name>
-      <anchorfile>core__ca_8h.html</anchorfile>
-      <anchor>aa77545190c32bb2f4d2d86e41552daef</anchor>
+      <anchorfile>group__MMU__defs__gr.html</anchorfile>
+      <anchor>gaa77545190c32bb2f4d2d86e41552daef</anchor>
       <arglist></arglist>
     </member>
     <member kind="define">
       <type>#define</type>
       <name>SECTION_C_SHIFT</name>
-      <anchorfile>core__ca_8h.html</anchorfile>
-      <anchor>ae0b3a2eccc4f9c249e928d359c43c20c</anchor>
+      <anchorfile>group__MMU__defs__gr.html</anchorfile>
+      <anchor>gae0b3a2eccc4f9c249e928d359c43c20c</anchor>
       <arglist></arglist>
     </member>
     <member kind="define">
@@ -4537,8 +4537,8 @@
     <member kind="define">
       <type>#define</type>
       <name>section_normal</name>
-      <anchorfile>core__ca_8h.html</anchorfile>
-      <anchor>a220aab449cf3716723979d06666c2ebf</anchor>
+      <anchorfile>group__MMU__defs__gr.html</anchorfile>
+      <anchor>ga220aab449cf3716723979d06666c2ebf</anchor>
       <arglist>(descriptor_l1, region)</arglist>
     </member>
     <member kind="define">
@@ -4551,305 +4551,305 @@
     <member kind="define">
       <type>#define</type>
       <name>section_normal_cod</name>
-      <anchorfile>core__ca_8h.html</anchorfile>
-      <anchor>ad598239f9bb9b6ae2bec8278305640b4</anchor>
+      <anchorfile>group__MMU__defs__gr.html</anchorfile>
+      <anchor>gad598239f9bb9b6ae2bec8278305640b4</anchor>
       <arglist>(descriptor_l1, region)</arglist>
     </member>
     <member kind="define">
       <type>#define</type>
       <name>section_normal_ro</name>
-      <anchorfile>core__ca_8h.html</anchorfile>
-      <anchor>af95fa76d8f0f7ccfd2ebc00860af4f1d</anchor>
+      <anchorfile>group__MMU__defs__gr.html</anchorfile>
+      <anchor>gaf95fa76d8f0f7ccfd2ebc00860af4f1d</anchor>
       <arglist>(descriptor_l1, region)</arglist>
     </member>
     <member kind="define">
       <type>#define</type>
       <name>section_normal_rw</name>
-      <anchorfile>core__ca_8h.html</anchorfile>
-      <anchor>a1f2ce84e6ec5c150a2ffc05092ea6d0e</anchor>
+      <anchorfile>group__MMU__defs__gr.html</anchorfile>
+      <anchor>ga1f2ce84e6ec5c150a2ffc05092ea6d0e</anchor>
       <arglist>(descriptor_l1, region)</arglist>
     </member>
     <member kind="define">
       <type>#define</type>
       <name>section_so</name>
-      <anchorfile>core__ca_8h.html</anchorfile>
-      <anchor>af77ecb86097e6e8cf5f6c7bb9d2740c9</anchor>
+      <anchorfile>group__MMU__defs__gr.html</anchorfile>
+      <anchor>gaf77ecb86097e6e8cf5f6c7bb9d2740c9</anchor>
       <arglist>(descriptor_l1, region)</arglist>
     </member>
     <member kind="define">
       <type>#define</type>
       <name>section_device_ro</name>
-      <anchorfile>core__ca_8h.html</anchorfile>
-      <anchor>a1f66b52e152895af070514528763c272</anchor>
+      <anchorfile>group__MMU__defs__gr.html</anchorfile>
+      <anchor>ga1f66b52e152895af070514528763c272</anchor>
       <arglist>(descriptor_l1, region)</arglist>
     </member>
     <member kind="define">
       <type>#define</type>
       <name>section_device_rw</name>
-      <anchorfile>core__ca_8h.html</anchorfile>
-      <anchor>a33c6ad1fc06648fe50f8b21554c9bccb</anchor>
+      <anchorfile>group__MMU__defs__gr.html</anchorfile>
+      <anchor>ga33c6ad1fc06648fe50f8b21554c9bccb</anchor>
       <arglist>(descriptor_l1, region)</arglist>
     </member>
     <member kind="define">
       <type>#define</type>
       <name>page4k_device_rw</name>
-      <anchorfile>core__ca_8h.html</anchorfile>
-      <anchor>afe66b1515bf7d251a9a3218162637a22</anchor>
+      <anchorfile>group__MMU__defs__gr.html</anchorfile>
+      <anchor>gafe66b1515bf7d251a9a3218162637a22</anchor>
       <arglist>(descriptor_l1, descriptor_l2, region)</arglist>
     </member>
     <member kind="define">
       <type>#define</type>
       <name>page64k_device_rw</name>
-      <anchorfile>core__ca_8h.html</anchorfile>
-      <anchor>a6c8c84bdeebf350d97eb3a99bd11845f</anchor>
+      <anchorfile>group__MMU__defs__gr.html</anchorfile>
+      <anchor>ga6c8c84bdeebf350d97eb3a99bd11845f</anchor>
       <arglist>(descriptor_l1, descriptor_l2, region)</arglist>
     </member>
     <member kind="enumeration">
       <type></type>
       <name>mmu_region_size_Type</name>
-      <anchorfile>core__ca_8h.html</anchorfile>
-      <anchor>ab184b824a6d7cb728bd46c6abcd0c21a</anchor>
+      <anchorfile>group__MMU__defs__gr.html</anchorfile>
+      <anchor>gab184b824a6d7cb728bd46c6abcd0c21a</anchor>
       <arglist></arglist>
     </member>
     <member kind="enumvalue">
       <name>SECTION</name>
       <anchorfile>core__ca_8h.html</anchorfile>
-      <anchor>ab184b824a6d7cb728bd46c6abcd0c21aacb7227be6a36b93e485b62e3acddae51</anchor>
+      <anchor>gab184b824a6d7cb728bd46c6abcd0c21aacb7227be6a36b93e485b62e3acddae51</anchor>
       <arglist></arglist>
     </member>
     <member kind="enumvalue">
       <name>PAGE_4k</name>
       <anchorfile>core__ca_8h.html</anchorfile>
-      <anchor>ab184b824a6d7cb728bd46c6abcd0c21aa99ce0ce05e9c418dc6bddcc47b2fa05a</anchor>
+      <anchor>gab184b824a6d7cb728bd46c6abcd0c21aa99ce0ce05e9c418dc6bddcc47b2fa05a</anchor>
       <arglist></arglist>
     </member>
     <member kind="enumvalue">
       <name>PAGE_64k</name>
       <anchorfile>core__ca_8h.html</anchorfile>
-      <anchor>ab184b824a6d7cb728bd46c6abcd0c21aafc53512bbf834739fcb97ad1c0f444fc</anchor>
+      <anchor>gab184b824a6d7cb728bd46c6abcd0c21aafc53512bbf834739fcb97ad1c0f444fc</anchor>
       <arglist></arglist>
     </member>
     <member kind="enumeration">
       <type></type>
       <name>mmu_memory_Type</name>
-      <anchorfile>core__ca_8h.html</anchorfile>
-      <anchor>a83ac8de9263f89879079da521e86d5f2</anchor>
+      <anchorfile>group__MMU__defs__gr.html</anchorfile>
+      <anchor>ga83ac8de9263f89879079da521e86d5f2</anchor>
       <arglist></arglist>
     </member>
     <member kind="enumvalue">
       <name>NORMAL</name>
       <anchorfile>core__ca_8h.html</anchorfile>
-      <anchor>a83ac8de9263f89879079da521e86d5f2a50d1448013c6f17125caee18aa418af7</anchor>
+      <anchor>ga83ac8de9263f89879079da521e86d5f2a50d1448013c6f17125caee18aa418af7</anchor>
       <arglist></arglist>
     </member>
     <member kind="enumvalue">
       <name>DEVICE</name>
       <anchorfile>core__ca_8h.html</anchorfile>
-      <anchor>a83ac8de9263f89879079da521e86d5f2a28b8a7b4b6c2a98af7cf438255207174</anchor>
+      <anchor>ga83ac8de9263f89879079da521e86d5f2a28b8a7b4b6c2a98af7cf438255207174</anchor>
       <arglist></arglist>
     </member>
     <member kind="enumvalue">
       <name>SHARED_DEVICE</name>
       <anchorfile>core__ca_8h.html</anchorfile>
-      <anchor>a83ac8de9263f89879079da521e86d5f2a9b78345535e6af3288cc69a572338808</anchor>
+      <anchor>ga83ac8de9263f89879079da521e86d5f2a9b78345535e6af3288cc69a572338808</anchor>
       <arglist></arglist>
     </member>
     <member kind="enumvalue">
       <name>NON_SHARED_DEVICE</name>
       <anchorfile>core__ca_8h.html</anchorfile>
-      <anchor>a83ac8de9263f89879079da521e86d5f2a765e5cbb28da82e4d8f7e94fce32a7e0</anchor>
+      <anchor>ga83ac8de9263f89879079da521e86d5f2a765e5cbb28da82e4d8f7e94fce32a7e0</anchor>
       <arglist></arglist>
     </member>
     <member kind="enumvalue">
       <name>STRONGLY_ORDERED</name>
       <anchorfile>core__ca_8h.html</anchorfile>
-      <anchor>a83ac8de9263f89879079da521e86d5f2a0a4d347de23312717e6e57b04f0b014e</anchor>
+      <anchor>ga83ac8de9263f89879079da521e86d5f2a0a4d347de23312717e6e57b04f0b014e</anchor>
       <arglist></arglist>
     </member>
     <member kind="enumeration">
       <type></type>
       <name>mmu_cacheability_Type</name>
-      <anchorfile>core__ca_8h.html</anchorfile>
-      <anchor>a11c86b7b193efb2c59b6a2179a02f584</anchor>
+      <anchorfile>group__MMU__defs__gr.html</anchorfile>
+      <anchor>ga11c86b7b193efb2c59b6a2179a02f584</anchor>
       <arglist></arglist>
     </member>
     <member kind="enumvalue">
       <name>NON_CACHEABLE</name>
       <anchorfile>core__ca_8h.html</anchorfile>
-      <anchor>a11c86b7b193efb2c59b6a2179a02f584a61a625191f7d288011e20bf2104ee151</anchor>
+      <anchor>ga11c86b7b193efb2c59b6a2179a02f584a61a625191f7d288011e20bf2104ee151</anchor>
       <arglist></arglist>
     </member>
     <member kind="enumvalue">
       <name>WB_WA</name>
       <anchorfile>core__ca_8h.html</anchorfile>
-      <anchor>a11c86b7b193efb2c59b6a2179a02f584a23294b86e8dbf6ff0fa98b678e8fd667</anchor>
+      <anchor>ga11c86b7b193efb2c59b6a2179a02f584a23294b86e8dbf6ff0fa98b678e8fd667</anchor>
       <arglist></arglist>
     </member>
     <member kind="enumvalue">
       <name>WT</name>
       <anchorfile>core__ca_8h.html</anchorfile>
-      <anchor>a11c86b7b193efb2c59b6a2179a02f584ab044987527e64a06f65aa6f2ae0e4e7e</anchor>
+      <anchor>ga11c86b7b193efb2c59b6a2179a02f584ab044987527e64a06f65aa6f2ae0e4e7e</anchor>
       <arglist></arglist>
     </member>
     <member kind="enumvalue">
       <name>WB_NO_WA</name>
       <anchorfile>core__ca_8h.html</anchorfile>
-      <anchor>a11c86b7b193efb2c59b6a2179a02f584aca2e70f575679d6f3e2e340d1ede4f13</anchor>
+      <anchor>ga11c86b7b193efb2c59b6a2179a02f584aca2e70f575679d6f3e2e340d1ede4f13</anchor>
       <arglist></arglist>
     </member>
     <member kind="enumeration">
       <type></type>
       <name>mmu_ecc_check_Type</name>
-      <anchorfile>core__ca_8h.html</anchorfile>
-      <anchor>a06d94c0eaa22d713636acaff81485409</anchor>
+      <anchorfile>group__MMU__defs__gr.html</anchorfile>
+      <anchor>ga06d94c0eaa22d713636acaff81485409</anchor>
       <arglist></arglist>
     </member>
     <member kind="enumvalue">
       <name>ECC_DISABLED</name>
       <anchorfile>core__ca_8h.html</anchorfile>
-      <anchor>a06d94c0eaa22d713636acaff81485409a48ce2ec8ec49f0167a7d571081a9301f</anchor>
+      <anchor>ga06d94c0eaa22d713636acaff81485409a48ce2ec8ec49f0167a7d571081a9301f</anchor>
       <arglist></arglist>
     </member>
     <member kind="enumvalue">
       <name>ECC_ENABLED</name>
       <anchorfile>core__ca_8h.html</anchorfile>
-      <anchor>a06d94c0eaa22d713636acaff81485409af0e84d9540ed9d79f01caad9841d414d</anchor>
+      <anchor>ga06d94c0eaa22d713636acaff81485409af0e84d9540ed9d79f01caad9841d414d</anchor>
       <arglist></arglist>
     </member>
     <member kind="enumeration">
       <type></type>
       <name>mmu_execute_Type</name>
-      <anchorfile>core__ca_8h.html</anchorfile>
-      <anchor>a2fe1157deda82e66b9a1b19772309b63</anchor>
+      <anchorfile>group__MMU__defs__gr.html</anchorfile>
+      <anchor>ga2fe1157deda82e66b9a1b19772309b63</anchor>
       <arglist></arglist>
     </member>
     <member kind="enumvalue">
       <name>EXECUTE</name>
       <anchorfile>core__ca_8h.html</anchorfile>
-      <anchor>a2fe1157deda82e66b9a1b19772309b63a887d2cbfd9131de5cc3745731421b34b</anchor>
+      <anchor>ga2fe1157deda82e66b9a1b19772309b63a887d2cbfd9131de5cc3745731421b34b</anchor>
       <arglist></arglist>
     </member>
     <member kind="enumvalue">
       <name>NON_EXECUTE</name>
       <anchorfile>core__ca_8h.html</anchorfile>
-      <anchor>a2fe1157deda82e66b9a1b19772309b63ad1d1eabb1b07ce896d5308a1144cf87a</anchor>
+      <anchor>ga2fe1157deda82e66b9a1b19772309b63ad1d1eabb1b07ce896d5308a1144cf87a</anchor>
       <arglist></arglist>
     </member>
     <member kind="enumeration">
       <type></type>
       <name>mmu_global_Type</name>
-      <anchorfile>core__ca_8h.html</anchorfile>
-      <anchor>a04160605fbe20914c8ef020430684a30</anchor>
+      <anchorfile>group__MMU__defs__gr.html</anchorfile>
+      <anchor>ga04160605fbe20914c8ef020430684a30</anchor>
       <arglist></arglist>
     </member>
     <member kind="enumvalue">
       <name>GLOBAL</name>
       <anchorfile>core__ca_8h.html</anchorfile>
-      <anchor>a04160605fbe20914c8ef020430684a30afde1bb5ef04b28059e61df449501f1c0</anchor>
+      <anchor>ga04160605fbe20914c8ef020430684a30afde1bb5ef04b28059e61df449501f1c0</anchor>
       <arglist></arglist>
     </member>
     <member kind="enumvalue">
       <name>NON_GLOBAL</name>
       <anchorfile>core__ca_8h.html</anchorfile>
-      <anchor>a04160605fbe20914c8ef020430684a30a611c091f2869100296a98915a19ee018</anchor>
+      <anchor>ga04160605fbe20914c8ef020430684a30a611c091f2869100296a98915a19ee018</anchor>
       <arglist></arglist>
     </member>
     <member kind="enumeration">
       <type></type>
       <name>mmu_shared_Type</name>
-      <anchorfile>core__ca_8h.html</anchorfile>
-      <anchor>ab884a11fa8d094573ab77fb1c0f8d8a7</anchor>
+      <anchorfile>group__MMU__defs__gr.html</anchorfile>
+      <anchor>gab884a11fa8d094573ab77fb1c0f8d8a7</anchor>
       <arglist></arglist>
     </member>
     <member kind="enumvalue">
       <name>NON_SHARED</name>
       <anchorfile>core__ca_8h.html</anchorfile>
-      <anchor>ab884a11fa8d094573ab77fb1c0f8d8a7a4a237208271e450df0a72c07169683b4</anchor>
+      <anchor>gab884a11fa8d094573ab77fb1c0f8d8a7a4a237208271e450df0a72c07169683b4</anchor>
       <arglist></arglist>
     </member>
     <member kind="enumvalue">
       <name>SHARED</name>
       <anchorfile>core__ca_8h.html</anchorfile>
-      <anchor>ab884a11fa8d094573ab77fb1c0f8d8a7a9c46e16a4ab019339596acadeefc8c53</anchor>
+      <anchor>gab884a11fa8d094573ab77fb1c0f8d8a7a9c46e16a4ab019339596acadeefc8c53</anchor>
       <arglist></arglist>
     </member>
     <member kind="enumeration">
       <type></type>
       <name>mmu_secure_Type</name>
-      <anchorfile>core__ca_8h.html</anchorfile>
-      <anchor>ac3d277641df9fb3bb3b555e2e79dd639</anchor>
+      <anchorfile>group__MMU__defs__gr.html</anchorfile>
+      <anchor>gac3d277641df9fb3bb3b555e2e79dd639</anchor>
       <arglist></arglist>
     </member>
     <member kind="enumvalue">
       <name>SECURE</name>
       <anchorfile>core__ca_8h.html</anchorfile>
-      <anchor>ac3d277641df9fb3bb3b555e2e79dd639aa9dea2ba3f45f7d12b274eb6ab7d28d9</anchor>
+      <anchor>gac3d277641df9fb3bb3b555e2e79dd639aa9dea2ba3f45f7d12b274eb6ab7d28d9</anchor>
       <arglist></arglist>
     </member>
     <member kind="enumvalue">
       <name>NON_SECURE</name>
       <anchorfile>core__ca_8h.html</anchorfile>
-      <anchor>ac3d277641df9fb3bb3b555e2e79dd639a9e08ca26fdda38ef731f13e4f058ef6f</anchor>
+      <anchor>gac3d277641df9fb3bb3b555e2e79dd639a9e08ca26fdda38ef731f13e4f058ef6f</anchor>
       <arglist></arglist>
     </member>
     <member kind="enumeration">
       <type></type>
       <name>mmu_access_Type</name>
-      <anchorfile>core__ca_8h.html</anchorfile>
-      <anchor>a2ee598252f996e4f96640b096291d280</anchor>
+      <anchorfile>group__MMU__defs__gr.html</anchorfile>
+      <anchor>ga2ee598252f996e4f96640b096291d280</anchor>
       <arglist></arglist>
     </member>
     <member kind="enumvalue">
       <name>NO_ACCESS</name>
       <anchorfile>core__ca_8h.html</anchorfile>
-      <anchor>a2ee598252f996e4f96640b096291d280a4c66cd69a45985317939a53d820fb9da</anchor>
+      <anchor>ga2ee598252f996e4f96640b096291d280a4c66cd69a45985317939a53d820fb9da</anchor>
       <arglist></arglist>
     </member>
     <member kind="enumvalue">
       <name>RW</name>
       <anchorfile>core__ca_8h.html</anchorfile>
-      <anchor>a2ee598252f996e4f96640b096291d280aec2497e0c8af01c04bec31ec0d1d7847</anchor>
+      <anchor>ga2ee598252f996e4f96640b096291d280aec2497e0c8af01c04bec31ec0d1d7847</anchor>
       <arglist></arglist>
     </member>
     <member kind="enumvalue">
       <name>READ</name>
       <anchorfile>core__ca_8h.html</anchorfile>
-      <anchor>a2ee598252f996e4f96640b096291d280acb9be765f361bb7efb9073730aac92c6</anchor>
+      <anchor>ga2ee598252f996e4f96640b096291d280acb9be765f361bb7efb9073730aac92c6</anchor>
       <arglist></arglist>
     </member>
     <member kind="function">
       <type>__STATIC_FORCEINLINE void</type>
       <name>L1C_EnableCaches</name>
-      <anchorfile>core__ca_8h.html</anchorfile>
-      <anchor>abb528d82b2f2e2d76410aa87a7883a2b</anchor>
+      <anchorfile>group__L1__cache__functions.html</anchorfile>
+      <anchor>gaff8a4966eff1ada5cba80f2b689446db</anchor>
       <arglist>(void)</arglist>
     </member>
     <member kind="function">
       <type>__STATIC_FORCEINLINE void</type>
       <name>L1C_DisableCaches</name>
-      <anchorfile>core__ca_8h.html</anchorfile>
-      <anchor>a783f09ae4bb3d25d3c48c44cb2b993d1</anchor>
+      <anchorfile>group__L1__cache__functions.html</anchorfile>
+      <anchor>ga320ef6fd1dd65f2f82e64c096a4994a6</anchor>
       <arglist>(void)</arglist>
     </member>
     <member kind="function">
       <type>__STATIC_FORCEINLINE void</type>
       <name>L1C_EnableBTAC</name>
-      <anchorfile>core__ca_8h.html</anchorfile>
-      <anchor>ab0eae45885238afdcffc086b301127cf</anchor>
+      <anchorfile>group__L1__cache__functions.html</anchorfile>
+      <anchor>gaa5fb36b4496e64472849f7811970c581</anchor>
       <arglist>(void)</arglist>
     </member>
     <member kind="function">
       <type>__STATIC_FORCEINLINE void</type>
       <name>L1C_DisableBTAC</name>
-      <anchorfile>core__ca_8h.html</anchorfile>
-      <anchor>a1bd039af58bfa7869cb8ef403c0c48aa</anchor>
+      <anchorfile>group__L1__cache__functions.html</anchorfile>
+      <anchor>gab8695cf1f4a7f3789b93c41dc4eeb51d</anchor>
       <arglist>(void)</arglist>
     </member>
     <member kind="function">
       <type>__STATIC_FORCEINLINE void</type>
       <name>L1C_InvalidateBTAC</name>
-      <anchorfile>core__ca_8h.html</anchorfile>
-      <anchor>a78968f859eef7851ea6bb1bad88693a0</anchor>
+      <anchorfile>group__L1__cache__functions.html</anchorfile>
+      <anchor>gad0d732293be6a928db184b59aadc1979</anchor>
       <arglist>(void)</arglist>
     </member>
     <member kind="function">
@@ -4862,29 +4862,29 @@
     <member kind="function">
       <type>__STATIC_FORCEINLINE void</type>
       <name>L1C_InvalidateICacheAll</name>
-      <anchorfile>core__ca_8h.html</anchorfile>
-      <anchor>a647b7ec0eae635de434c8e697fd63654</anchor>
+      <anchorfile>group__L1__cache__functions.html</anchorfile>
+      <anchor>gac932810cfe83f087590859010972645e</anchor>
       <arglist>(void)</arglist>
     </member>
     <member kind="function">
       <type>__STATIC_FORCEINLINE void</type>
       <name>L1C_CleanDCacheMVA</name>
-      <anchorfile>core__ca_8h.html</anchorfile>
-      <anchor>a22b6a043ba0e160ab043f6d06732a93f</anchor>
+      <anchorfile>group__L1__cache__functions.html</anchorfile>
+      <anchor>ga9eb6f0a7c9c04cc49efd964eb59ba26f</anchor>
       <arglist>(void *va)</arglist>
     </member>
     <member kind="function">
       <type>__STATIC_FORCEINLINE void</type>
       <name>L1C_InvalidateDCacheMVA</name>
-      <anchorfile>core__ca_8h.html</anchorfile>
-      <anchor>acf431c7e3d14da46c0592f46138ed29d</anchor>
+      <anchorfile>group__L1__cache__functions.html</anchorfile>
+      <anchor>ga9209853937940991daf70edd6bc633fe</anchor>
       <arglist>(void *va)</arglist>
     </member>
     <member kind="function">
       <type>__STATIC_FORCEINLINE void</type>
       <name>L1C_CleanInvalidateDCacheMVA</name>
-      <anchorfile>core__ca_8h.html</anchorfile>
-      <anchor>ae265290af9492b8d2a152e4dd7a831eb</anchor>
+      <anchorfile>group__L1__cache__functions.html</anchorfile>
+      <anchor>ga7646a5e01b529566968f393e485f46a2</anchor>
       <arglist>(void *va)</arglist>
     </member>
     <member kind="function">
@@ -4904,183 +4904,183 @@
     <member kind="function">
       <type>__STATIC_FORCEINLINE void</type>
       <name>L1C_CleanInvalidateCache</name>
-      <anchorfile>core__ca_8h.html</anchorfile>
-      <anchor>a2ec275f3c88f170b776f6595af090f64</anchor>
+      <anchorfile>group__L1__cache__functions.html</anchorfile>
+      <anchor>ga30d7632156a30a3b75064f6d15b8f850</anchor>
       <arglist>(uint32_t op)</arglist>
     </member>
     <member kind="function">
       <type>CMSIS_DEPRECATED __STATIC_FORCEINLINE void</type>
       <name>__L1C_CleanInvalidateCache</name>
-      <anchorfile>core__ca_8h.html</anchorfile>
-      <anchor>a88628cab0d9113dc46a509d6a4d96c58</anchor>
+      <anchorfile>group__L1__cache__functions.html</anchorfile>
+      <anchor>ga722ceb077e491bb4befcfbb3aee9b20b</anchor>
       <arglist>(uint32_t op)</arglist>
     </member>
     <member kind="function">
       <type>__STATIC_FORCEINLINE void</type>
       <name>L1C_InvalidateDCacheAll</name>
-      <anchorfile>core__ca_8h.html</anchorfile>
-      <anchor>a89438d9d00e7e9bdeecb8f9cda6ebae8</anchor>
+      <anchorfile>group__L1__cache__functions.html</anchorfile>
+      <anchor>gae895f75c4f3539058232f555d79e5df3</anchor>
       <arglist>(void)</arglist>
     </member>
     <member kind="function">
       <type>__STATIC_FORCEINLINE void</type>
       <name>L1C_CleanDCacheAll</name>
-      <anchorfile>core__ca_8h.html</anchorfile>
-      <anchor>a30799b58f1ffcfa82d7633c394408a23</anchor>
+      <anchorfile>group__L1__cache__functions.html</anchorfile>
+      <anchor>ga70359d824bf26f376e3d7cb9c787da27</anchor>
       <arglist>(void)</arglist>
     </member>
     <member kind="function">
       <type>__STATIC_FORCEINLINE void</type>
       <name>L1C_CleanInvalidateDCacheAll</name>
-      <anchorfile>core__ca_8h.html</anchorfile>
-      <anchor>ad8a4c7a2062cf6d54a8df9ed5cbc151a</anchor>
+      <anchorfile>group__L1__cache__functions.html</anchorfile>
+      <anchor>ga92b5babf7317abe3815f61a2731735c3</anchor>
       <arglist>(void)</arglist>
     </member>
     <member kind="function">
       <type>__STATIC_INLINE void</type>
       <name>L2C_Sync</name>
-      <anchorfile>core__ca_8h.html</anchorfile>
-      <anchor>a164c59c55e2d18bf8a94dc91c0f4ce68</anchor>
+      <anchorfile>group__L2__cache__functions.html</anchorfile>
+      <anchor>ga164c59c55e2d18bf8a94dc91c0f4ce68</anchor>
       <arglist>(void)</arglist>
     </member>
     <member kind="function">
       <type>__STATIC_INLINE int</type>
       <name>L2C_GetID</name>
-      <anchorfile>core__ca_8h.html</anchorfile>
-      <anchor>a75af64212e1d3d0b3ade860c365e95b3</anchor>
+      <anchorfile>group__L2__cache__functions.html</anchorfile>
+      <anchor>ga75af64212e1d3d0b3ade860c365e95b3</anchor>
       <arglist>(void)</arglist>
     </member>
     <member kind="function">
       <type>__STATIC_INLINE int</type>
       <name>L2C_GetType</name>
-      <anchorfile>core__ca_8h.html</anchorfile>
-      <anchor>a0c334fa25720d77e78cfa187bdf833be</anchor>
+      <anchorfile>group__L2__cache__functions.html</anchorfile>
+      <anchor>ga0c334fa25720d77e78cfa187bdf833be</anchor>
       <arglist>(void)</arglist>
     </member>
     <member kind="function">
       <type>__STATIC_INLINE void</type>
       <name>L2C_InvAllByWay</name>
-      <anchorfile>core__ca_8h.html</anchorfile>
-      <anchor>a5b0ea2db52d137b5531ce568479c9d17</anchor>
+      <anchorfile>group__L2__cache__functions.html</anchorfile>
+      <anchor>ga5b0ea2db52d137b5531ce568479c9d17</anchor>
       <arglist>(void)</arglist>
     </member>
     <member kind="function">
       <type>__STATIC_INLINE void</type>
       <name>L2C_CleanInvAllByWay</name>
-      <anchorfile>core__ca_8h.html</anchorfile>
-      <anchor>abd0a9b10926537fa283c0bb30d54abc7</anchor>
+      <anchorfile>group__L2__cache__functions.html</anchorfile>
+      <anchor>gabd0a9b10926537fa283c0bb30d54abc7</anchor>
       <arglist>(void)</arglist>
     </member>
     <member kind="function">
       <type>__STATIC_INLINE void</type>
       <name>L2C_Enable</name>
-      <anchorfile>core__ca_8h.html</anchorfile>
-      <anchor>a720c36b4cd1d6c070ed0d2c49cffd7e1</anchor>
+      <anchorfile>group__L2__cache__functions.html</anchorfile>
+      <anchor>ga720c36b4cd1d6c070ed0d2c49cffd7e1</anchor>
       <arglist>(void)</arglist>
     </member>
     <member kind="function">
       <type>__STATIC_INLINE void</type>
       <name>L2C_Disable</name>
-      <anchorfile>core__ca_8h.html</anchorfile>
-      <anchor>a66767e7f30f52d72de72231b2d6abd34</anchor>
+      <anchorfile>group__L2__cache__functions.html</anchorfile>
+      <anchor>ga66767e7f30f52d72de72231b2d6abd34</anchor>
       <arglist>(void)</arglist>
     </member>
     <member kind="function">
       <type>__STATIC_INLINE void</type>
       <name>L2C_InvPa</name>
-      <anchorfile>core__ca_8h.html</anchorfile>
-      <anchor>a4cf213e72c97776def35ab8223face82</anchor>
+      <anchorfile>group__L2__cache__functions.html</anchorfile>
+      <anchor>ga4cf213e72c97776def35ab8223face82</anchor>
       <arglist>(void *pa)</arglist>
     </member>
     <member kind="function">
       <type>__STATIC_INLINE void</type>
       <name>L2C_CleanPa</name>
-      <anchorfile>core__ca_8h.html</anchorfile>
-      <anchor>a242f6fa13f33e7d5cdd7d92935d52f5f</anchor>
+      <anchorfile>group__L2__cache__functions.html</anchorfile>
+      <anchor>ga242f6fa13f33e7d5cdd7d92935d52f5f</anchor>
       <arglist>(void *pa)</arglist>
     </member>
     <member kind="function">
       <type>__STATIC_INLINE void</type>
       <name>L2C_CleanInvPa</name>
-      <anchorfile>core__ca_8h.html</anchorfile>
-      <anchor>aaff11c6afa9eaacb4cdfcfe5c36f57eb</anchor>
+      <anchorfile>group__L2__cache__functions.html</anchorfile>
+      <anchor>gaaff11c6afa9eaacb4cdfcfe5c36f57eb</anchor>
       <arglist>(void *pa)</arglist>
     </member>
     <member kind="function">
       <type>__STATIC_INLINE void</type>
       <name>GIC_EnableDistributor</name>
-      <anchorfile>core__ca_8h.html</anchorfile>
-      <anchor>a0f44df6823e90178183257e096e5cac6</anchor>
+      <anchorfile>group__GIC__functions.html</anchorfile>
+      <anchor>ga0f44df6823e90178183257e096e5cac6</anchor>
       <arglist>(void)</arglist>
     </member>
     <member kind="function">
       <type>__STATIC_INLINE void</type>
       <name>GIC_DisableDistributor</name>
-      <anchorfile>core__ca_8h.html</anchorfile>
-      <anchor>a363311538d4a4d750197b9936505d466</anchor>
+      <anchorfile>group__GIC__functions.html</anchorfile>
+      <anchor>ga363311538d4a4d750197b9936505d466</anchor>
       <arglist>(void)</arglist>
     </member>
     <member kind="function">
       <type>__STATIC_INLINE uint32_t</type>
       <name>GIC_DistributorInfo</name>
-      <anchorfile>core__ca_8h.html</anchorfile>
-      <anchor>a7d93d39736ef5e379e6511430ee6e75f</anchor>
+      <anchorfile>group__GIC__functions.html</anchorfile>
+      <anchor>ga7d93d39736ef5e379e6511430ee6e75f</anchor>
       <arglist>(void)</arglist>
     </member>
     <member kind="function">
       <type>__STATIC_INLINE uint32_t</type>
       <name>GIC_DistributorImplementer</name>
-      <anchorfile>core__ca_8h.html</anchorfile>
-      <anchor>a1481d0cdf78f8c93fb2a710a519c4dc6</anchor>
+      <anchorfile>group__GIC__functions.html</anchorfile>
+      <anchor>ga1481d0cdf78f8c93fb2a710a519c4dc6</anchor>
       <arglist>(void)</arglist>
     </member>
     <member kind="function">
       <type>__STATIC_INLINE void</type>
       <name>GIC_SetTarget</name>
-      <anchorfile>core__ca_8h.html</anchorfile>
-      <anchor>ae86bba705d0d4ef812b84d29d7b3ca2b</anchor>
+      <anchorfile>group__GIC__functions.html</anchorfile>
+      <anchor>gae86bba705d0d4ef812b84d29d7b3ca2b</anchor>
       <arglist>(IRQn_Type IRQn, uint32_t cpu_target)</arglist>
     </member>
     <member kind="function">
       <type>__STATIC_INLINE uint32_t</type>
       <name>GIC_GetTarget</name>
-      <anchorfile>core__ca_8h.html</anchorfile>
-      <anchor>afccf881f9517592f30489bcabcb738a8</anchor>
+      <anchorfile>group__GIC__functions.html</anchorfile>
+      <anchor>gafccf881f9517592f30489bcabcb738a8</anchor>
       <arglist>(IRQn_Type IRQn)</arglist>
     </member>
     <member kind="function">
       <type>__STATIC_INLINE void</type>
       <name>GIC_EnableInterface</name>
-      <anchorfile>core__ca_8h.html</anchorfile>
-      <anchor>a758e5600d7f891e4f2f551bb45d07fce</anchor>
+      <anchorfile>group__GIC__functions.html</anchorfile>
+      <anchor>ga758e5600d7f891e4f2f551bb45d07fce</anchor>
       <arglist>(void)</arglist>
     </member>
     <member kind="function">
       <type>__STATIC_INLINE void</type>
       <name>GIC_DisableInterface</name>
-      <anchorfile>core__ca_8h.html</anchorfile>
-      <anchor>a0605877ad627c1f4320e518725fd103e</anchor>
+      <anchorfile>group__GIC__functions.html</anchorfile>
+      <anchor>ga0605877ad627c1f4320e518725fd103e</anchor>
       <arglist>(void)</arglist>
     </member>
     <member kind="function">
       <type>__STATIC_INLINE IRQn_Type</type>
       <name>GIC_AcknowledgePending</name>
-      <anchorfile>core__ca_8h.html</anchorfile>
-      <anchor>afc08bbc58b25fef0d24003313fd16eb8</anchor>
+      <anchorfile>group__GIC__functions.html</anchorfile>
+      <anchor>gafc08bbc58b25fef0d24003313fd16eb8</anchor>
       <arglist>(void)</arglist>
     </member>
     <member kind="function">
       <type>__STATIC_INLINE void</type>
       <name>GIC_EndInterrupt</name>
-      <anchorfile>core__ca_8h.html</anchorfile>
-      <anchor>ac23f090f572a058b4a737f6613ded9cd</anchor>
+      <anchorfile>group__GIC__functions.html</anchorfile>
+      <anchor>gac23f090f572a058b4a737f6613ded9cd</anchor>
       <arglist>(IRQn_Type IRQn)</arglist>
     </member>
     <member kind="function">
       <type>__STATIC_INLINE void</type>
       <name>GIC_EnableIRQ</name>
-      <anchorfile>core__ca_8h.html</anchorfile>
-      <anchor>aeba215d9c4ec3599e0a168800288c3f3</anchor>
+      <anchorfile>group__GIC__functions.html</anchorfile>
+      <anchor>gaeba215d9c4ec3599e0a168800288c3f3</anchor>
       <arglist>(IRQn_Type IRQn)</arglist>
     </member>
     <member kind="function">
@@ -5093,8 +5093,8 @@
     <member kind="function">
       <type>__STATIC_INLINE void</type>
       <name>GIC_DisableIRQ</name>
-      <anchorfile>core__ca_8h.html</anchorfile>
-      <anchor>a2102399d255690c0674209a6faeec13d</anchor>
+      <anchorfile>group__GIC__functions.html</anchorfile>
+      <anchor>ga2102399d255690c0674209a6faeec13d</anchor>
       <arglist>(IRQn_Type IRQn)</arglist>
     </member>
     <member kind="function">
@@ -5107,15 +5107,15 @@
     <member kind="function">
       <type>__STATIC_INLINE void</type>
       <name>GIC_SetPendingIRQ</name>
-      <anchorfile>core__ca_8h.html</anchorfile>
-      <anchor>a18fbddf7f3594df141c97f61a71da47c</anchor>
+      <anchorfile>group__GIC__functions.html</anchorfile>
+      <anchor>ga18fbddf7f3594df141c97f61a71da47c</anchor>
       <arglist>(IRQn_Type IRQn)</arglist>
     </member>
     <member kind="function">
       <type>__STATIC_INLINE void</type>
       <name>GIC_ClearPendingIRQ</name>
-      <anchorfile>core__ca_8h.html</anchorfile>
-      <anchor>a5ad17ad70f23d1ff36015ffac33d383d</anchor>
+      <anchorfile>group__GIC__functions.html</anchorfile>
+      <anchor>ga5ad17ad70f23d1ff36015ffac33d383d</anchor>
       <arglist>(IRQn_Type IRQn)</arglist>
     </member>
     <member kind="function">
@@ -5135,71 +5135,71 @@
     <member kind="function">
       <type>__STATIC_INLINE void</type>
       <name>GIC_SetPriority</name>
-      <anchorfile>core__ca_8h.html</anchorfile>
-      <anchor>a27b9862b58290276851ec669cabf0f71</anchor>
+      <anchorfile>group__GIC__functions.html</anchorfile>
+      <anchor>ga27b9862b58290276851ec669cabf0f71</anchor>
       <arglist>(IRQn_Type IRQn, uint32_t priority)</arglist>
     </member>
     <member kind="function">
       <type>__STATIC_INLINE uint32_t</type>
       <name>GIC_GetPriority</name>
-      <anchorfile>core__ca_8h.html</anchorfile>
-      <anchor>a397048004654f792649742f95bf8ae67</anchor>
+      <anchorfile>group__GIC__functions.html</anchorfile>
+      <anchor>ga397048004654f792649742f95bf8ae67</anchor>
       <arglist>(IRQn_Type IRQn)</arglist>
     </member>
     <member kind="function">
       <type>__STATIC_INLINE void</type>
       <name>GIC_SetInterfacePriorityMask</name>
-      <anchorfile>core__ca_8h.html</anchorfile>
-      <anchor>aa5eb0e76dbc89596e1ce47ddb9edc4a0</anchor>
+      <anchorfile>group__GIC__functions.html</anchorfile>
+      <anchor>gaa5eb0e76dbc89596e1ce47ddb9edc4a0</anchor>
       <arglist>(uint32_t priority)</arglist>
     </member>
     <member kind="function">
       <type>__STATIC_INLINE uint32_t</type>
       <name>GIC_GetInterfacePriorityMask</name>
-      <anchorfile>core__ca_8h.html</anchorfile>
-      <anchor>a2c5f9e5637560fc9d5c29d772580a728</anchor>
+      <anchorfile>group__GIC__functions.html</anchorfile>
+      <anchor>ga2c5f9e5637560fc9d5c29d772580a728</anchor>
       <arglist>(void)</arglist>
     </member>
     <member kind="function">
       <type>__STATIC_INLINE void</type>
       <name>GIC_SetBinaryPoint</name>
-      <anchorfile>core__ca_8h.html</anchorfile>
-      <anchor>a5dfedeb5403656a77e0fef4e1cc2c0c6</anchor>
+      <anchorfile>group__GIC__functions.html</anchorfile>
+      <anchor>ga5dfedeb5403656a77e0fef4e1cc2c0c6</anchor>
       <arglist>(uint32_t binary_point)</arglist>
     </member>
     <member kind="function">
       <type>__STATIC_INLINE uint32_t</type>
       <name>GIC_GetBinaryPoint</name>
-      <anchorfile>core__ca_8h.html</anchorfile>
-      <anchor>aa7046d8206ddd4696716726e68f85906</anchor>
+      <anchorfile>group__GIC__functions.html</anchorfile>
+      <anchor>gaa7046d8206ddd4696716726e68f85906</anchor>
       <arglist>(void)</arglist>
     </member>
     <member kind="function">
       <type>__STATIC_INLINE uint32_t</type>
       <name>GIC_GetIRQStatus</name>
-      <anchorfile>core__ca_8h.html</anchorfile>
-      <anchor>abc88483ecf94a2c222b644ecfa60eb9f</anchor>
+      <anchorfile>group__GIC__functions.html</anchorfile>
+      <anchor>gabc88483ecf94a2c222b644ecfa60eb9f</anchor>
       <arglist>(IRQn_Type IRQn)</arglist>
     </member>
     <member kind="function">
       <type>__STATIC_INLINE void</type>
       <name>GIC_SendSGI</name>
-      <anchorfile>core__ca_8h.html</anchorfile>
-      <anchor>a2de8850780af26e802ee4cc43e9da6e9</anchor>
+      <anchorfile>group__GIC__functions.html</anchorfile>
+      <anchor>ga2de8850780af26e802ee4cc43e9da6e9</anchor>
       <arglist>(IRQn_Type IRQn, uint32_t target_list, uint32_t filter_list)</arglist>
     </member>
     <member kind="function">
       <type>__STATIC_INLINE uint32_t</type>
       <name>GIC_GetHighPendingIRQ</name>
-      <anchorfile>core__ca_8h.html</anchorfile>
-      <anchor>a8bb27e1bab132a8df44190adb996c2a1</anchor>
+      <anchorfile>group__GIC__functions.html</anchorfile>
+      <anchor>ga8bb27e1bab132a8df44190adb996c2a1</anchor>
       <arglist>(void)</arglist>
     </member>
     <member kind="function">
       <type>__STATIC_INLINE uint32_t</type>
       <name>GIC_GetInterfaceId</name>
-      <anchorfile>core__ca_8h.html</anchorfile>
-      <anchor>aba1b2665cdda47fc0bc3d7b90690dc50</anchor>
+      <anchorfile>group__GIC__functions.html</anchorfile>
+      <anchor>gaba1b2665cdda47fc0bc3d7b90690dc50</anchor>
       <arglist>(void)</arglist>
     </member>
     <member kind="function">
@@ -5219,92 +5219,92 @@
     <member kind="function">
       <type>__STATIC_INLINE void</type>
       <name>GIC_DistInit</name>
-      <anchorfile>core__ca_8h.html</anchorfile>
-      <anchor>a07acd03d02683bb6e33e7f57f5f371d1</anchor>
+      <anchorfile>group__GIC__functions.html</anchorfile>
+      <anchor>ga07acd03d02683bb6e33e7f57f5f371d1</anchor>
       <arglist>(void)</arglist>
     </member>
     <member kind="function">
       <type>__STATIC_INLINE void</type>
       <name>GIC_CPUInterfaceInit</name>
-      <anchorfile>core__ca_8h.html</anchorfile>
-      <anchor>a1c93f8af9f428cda8ec066bf4bfbade9</anchor>
+      <anchorfile>group__GIC__functions.html</anchorfile>
+      <anchor>ga1c93f8af9f428cda8ec066bf4bfbade9</anchor>
       <arglist>(void)</arglist>
     </member>
     <member kind="function">
       <type>__STATIC_INLINE void</type>
       <name>GIC_Enable</name>
-      <anchorfile>core__ca_8h.html</anchorfile>
-      <anchor>a818881f69aae3eef6eb996bee6f6c63e</anchor>
+      <anchorfile>group__GIC__functions.html</anchorfile>
+      <anchor>ga818881f69aae3eef6eb996bee6f6c63e</anchor>
       <arglist>(void)</arglist>
     </member>
     <member kind="function">
       <type>__STATIC_INLINE void</type>
       <name>PL1_SetCounterFrequency</name>
-      <anchorfile>core__ca_8h.html</anchorfile>
-      <anchor>ac09f09327fde6a6adffe0e6298eaa1db</anchor>
+      <anchorfile>group__PL1__timer__functions.html</anchorfile>
+      <anchor>gac09f09327fde6a6adffe0e6298eaa1db</anchor>
       <arglist>(uint32_t value)</arglist>
     </member>
     <member kind="function">
       <type>__STATIC_INLINE void</type>
       <name>PL1_SetLoadValue</name>
-      <anchorfile>core__ca_8h.html</anchorfile>
-      <anchor>ae4edcfbdaf901a59a81d1fbf9845d9f7</anchor>
+      <anchorfile>group__PL1__timer__functions.html</anchorfile>
+      <anchor>gae4edcfbdaf901a59a81d1fbf9845d9f7</anchor>
       <arglist>(uint32_t value)</arglist>
     </member>
     <member kind="function">
       <type>__STATIC_INLINE uint32_t</type>
       <name>PL1_GetCurrentValue</name>
-      <anchorfile>core__ca_8h.html</anchorfile>
-      <anchor>aad29648d8e63daf8d605b6c9cc1c280b</anchor>
+      <anchorfile>group__PL1__timer__functions.html</anchorfile>
+      <anchor>ga8a212e9457005edfb9f14afbf937ebf9</anchor>
       <arglist>(void)</arglist>
     </member>
     <member kind="function">
       <type>__STATIC_INLINE uint64_t</type>
       <name>PL1_GetCurrentPhysicalValue</name>
-      <anchorfile>core__ca_8h.html</anchorfile>
-      <anchor>ac66bd336d2353f70aa8ebfc73aa3fc43</anchor>
+      <anchorfile>group__PL1__timer__functions.html</anchorfile>
+      <anchor>gac66bd336d2353f70aa8ebfc73aa3fc43</anchor>
       <arglist>(void)</arglist>
     </member>
     <member kind="function">
       <type>__STATIC_INLINE void</type>
       <name>PL1_SetPhysicalCompareValue</name>
-      <anchorfile>core__ca_8h.html</anchorfile>
-      <anchor>ab34067824971064a829e17b791070643</anchor>
+      <anchorfile>group__PL1__timer__functions.html</anchorfile>
+      <anchor>gab34067824971064a829e17b791070643</anchor>
       <arglist>(uint64_t value)</arglist>
     </member>
     <member kind="function">
       <type>__STATIC_INLINE uint64_t</type>
       <name>PL1_GetPhysicalCompareValue</name>
-      <anchorfile>core__ca_8h.html</anchorfile>
-      <anchor>a341ae7d1ae29f4dc5dae6310fa453164</anchor>
+      <anchorfile>group__PL1__timer__functions.html</anchorfile>
+      <anchor>ga341ae7d1ae29f4dc5dae6310fa453164</anchor>
       <arglist>(void)</arglist>
     </member>
     <member kind="function">
       <type>__STATIC_INLINE void</type>
       <name>PL1_SetControl</name>
-      <anchorfile>core__ca_8h.html</anchorfile>
-      <anchor>a2e2ea7eac12a90c6243000172bf774e1</anchor>
+      <anchorfile>group__PL1__timer__functions.html</anchorfile>
+      <anchor>ga2e2ea7eac12a90c6243000172bf774e1</anchor>
       <arglist>(uint32_t value)</arglist>
     </member>
     <member kind="function">
       <type>__STATIC_INLINE uint32_t</type>
       <name>PL1_GetControl</name>
-      <anchorfile>core__ca_8h.html</anchorfile>
-      <anchor>ac983fa17a1470661c80b47db29d07227</anchor>
+      <anchorfile>group__PL1__timer__functions.html</anchorfile>
+      <anchor>gaf7fda3fe3452565fbe46cb0ea53a9f8a</anchor>
       <arglist>(void)</arglist>
     </member>
     <member kind="function">
       <type>__STATIC_INLINE void</type>
       <name>PTIM_SetLoadValue</name>
-      <anchorfile>core__ca_8h.html</anchorfile>
-      <anchor>a30516fed24977be8eecf3efd8b6a2fea</anchor>
+      <anchorfile>group__PTM__timer__functions.html</anchorfile>
+      <anchor>ga30516fed24977be8eecf3efd8b6a2fea</anchor>
       <arglist>(uint32_t value)</arglist>
     </member>
     <member kind="function">
       <type>__STATIC_INLINE uint32_t</type>
       <name>PTIM_GetLoadValue</name>
-      <anchorfile>core__ca_8h.html</anchorfile>
-      <anchor>acca3bf92e93c69e538ff4618317f7bfa</anchor>
+      <anchorfile>group__PTM__timer__functions.html</anchorfile>
+      <anchor>gacca3bf92e93c69e538ff4618317f7bfa</anchor>
       <arglist>(void)</arglist>
     </member>
     <member kind="function">
@@ -5317,22 +5317,22 @@
     <member kind="function">
       <type>__STATIC_INLINE uint32_t</type>
       <name>PTIM_GetCurrentValue</name>
-      <anchorfile>core__ca_8h.html</anchorfile>
-      <anchor>aaccd88ab7931c379817f71d7c0183586</anchor>
+      <anchorfile>group__PTM__timer__functions.html</anchorfile>
+      <anchor>gaaccd88ab7931c379817f71d7c0183586</anchor>
       <arglist>(void)</arglist>
     </member>
     <member kind="function">
       <type>__STATIC_INLINE void</type>
       <name>PTIM_SetControl</name>
-      <anchorfile>core__ca_8h.html</anchorfile>
-      <anchor>aabc1dba029389fe0e2a6297952df7972</anchor>
+      <anchorfile>group__PTM__timer__functions.html</anchorfile>
+      <anchor>gaabc1dba029389fe0e2a6297952df7972</anchor>
       <arglist>(uint32_t value)</arglist>
     </member>
     <member kind="function">
       <type>__STATIC_INLINE uint32_t</type>
       <name>PTIM_GetControl</name>
-      <anchorfile>core__ca_8h.html</anchorfile>
-      <anchor>a34f0ceea142a4be1479cb552bf8bc4d1</anchor>
+      <anchorfile>group__PTM__timer__functions.html</anchorfile>
+      <anchor>ga34f0ceea142a4be1479cb552bf8bc4d1</anchor>
       <arglist>(void)</arglist>
     </member>
     <member kind="function">
@@ -5345,176 +5345,176 @@
     <member kind="function">
       <type>__STATIC_INLINE void</type>
       <name>PTIM_ClearEventFlag</name>
-      <anchorfile>core__ca_8h.html</anchorfile>
-      <anchor>a59dca62df390bc4bce18559fc7d28578</anchor>
+      <anchorfile>group__PTM__timer__functions.html</anchorfile>
+      <anchor>ga59dca62df390bc4bce18559fc7d28578</anchor>
       <arglist>(void)</arglist>
     </member>
     <member kind="function">
       <type>__STATIC_INLINE int</type>
       <name>MMU_XNSection</name>
-      <anchorfile>core__ca_8h.html</anchorfile>
-      <anchor>a9132cbfe3b2367de3db27daf4cc82ad7</anchor>
+      <anchorfile>group__MMU__functions.html</anchorfile>
+      <anchor>ga9132cbfe3b2367de3db27daf4cc82ad7</anchor>
       <arglist>(uint32_t *descriptor_l1, mmu_execute_Type xn)</arglist>
     </member>
     <member kind="function">
       <type>__STATIC_INLINE int</type>
       <name>MMU_DomainSection</name>
-      <anchorfile>core__ca_8h.html</anchorfile>
-      <anchor>abd88f4c41b74365c38209692785287d0</anchor>
+      <anchorfile>group__MMU__functions.html</anchorfile>
+      <anchor>gabd88f4c41b74365c38209692785287d0</anchor>
       <arglist>(uint32_t *descriptor_l1, uint8_t domain)</arglist>
     </member>
     <member kind="function">
       <type>__STATIC_INLINE int</type>
       <name>MMU_PSection</name>
-      <anchorfile>core__ca_8h.html</anchorfile>
-      <anchor>a3577aec23189228c9f95abba50c3716d</anchor>
+      <anchorfile>group__MMU__functions.html</anchorfile>
+      <anchor>ga3577aec23189228c9f95abba50c3716d</anchor>
       <arglist>(uint32_t *descriptor_l1, mmu_ecc_check_Type p_bit)</arglist>
     </member>
     <member kind="function">
       <type>__STATIC_INLINE int</type>
       <name>MMU_APSection</name>
-      <anchorfile>core__ca_8h.html</anchorfile>
-      <anchor>a946866c84a72690c385ee07545bf8145</anchor>
+      <anchorfile>group__MMU__functions.html</anchorfile>
+      <anchor>ga946866c84a72690c385ee07545bf8145</anchor>
       <arglist>(uint32_t *descriptor_l1, mmu_access_Type user, mmu_access_Type priv, uint32_t afe)</arglist>
     </member>
     <member kind="function">
       <type>__STATIC_INLINE int</type>
       <name>MMU_SharedSection</name>
-      <anchorfile>core__ca_8h.html</anchorfile>
-      <anchor>a29ea426394746cdd6a4b4c14164ec6b9</anchor>
+      <anchorfile>group__MMU__functions.html</anchorfile>
+      <anchor>ga29ea426394746cdd6a4b4c14164ec6b9</anchor>
       <arglist>(uint32_t *descriptor_l1, mmu_shared_Type s_bit)</arglist>
     </member>
     <member kind="function">
       <type>__STATIC_INLINE int</type>
       <name>MMU_GlobalSection</name>
-      <anchorfile>core__ca_8h.html</anchorfile>
-      <anchor>a3ca22117a7f2d3c4d1cd1bf832cc4d2f</anchor>
+      <anchorfile>group__MMU__functions.html</anchorfile>
+      <anchor>ga3ca22117a7f2d3c4d1cd1bf832cc4d2f</anchor>
       <arglist>(uint32_t *descriptor_l1, mmu_global_Type g_bit)</arglist>
     </member>
     <member kind="function">
       <type>__STATIC_INLINE int</type>
       <name>MMU_SecureSection</name>
-      <anchorfile>core__ca_8h.html</anchorfile>
-      <anchor>a84a5a15ee353d70a9b904e3814bd94d8</anchor>
+      <anchorfile>group__MMU__functions.html</anchorfile>
+      <anchor>ga84a5a15ee353d70a9b904e3814bd94d8</anchor>
       <arglist>(uint32_t *descriptor_l1, mmu_secure_Type s_bit)</arglist>
     </member>
     <member kind="function">
       <type>__STATIC_INLINE int</type>
       <name>MMU_XNPage</name>
-      <anchorfile>core__ca_8h.html</anchorfile>
-      <anchor>ab0e0fed40d998757147beb8fcf05a890</anchor>
+      <anchorfile>group__MMU__functions.html</anchorfile>
+      <anchor>gab0e0fed40d998757147beb8fcf05a890</anchor>
       <arglist>(uint32_t *descriptor_l2, mmu_execute_Type xn, mmu_region_size_Type page)</arglist>
     </member>
     <member kind="function">
       <type>__STATIC_INLINE int</type>
       <name>MMU_DomainPage</name>
-      <anchorfile>core__ca_8h.html</anchorfile>
-      <anchor>a45f5389cb1351bb2806a38ac8c32d416</anchor>
+      <anchorfile>group__MMU__functions.html</anchorfile>
+      <anchor>ga45f5389cb1351bb2806a38ac8c32d416</anchor>
       <arglist>(uint32_t *descriptor_l1, uint8_t domain)</arglist>
     </member>
     <member kind="function">
       <type>__STATIC_INLINE int</type>
       <name>MMU_PPage</name>
-      <anchorfile>core__ca_8h.html</anchorfile>
-      <anchor>ab15289c416609cd56dde816b39a4cea4</anchor>
+      <anchorfile>group__MMU__functions.html</anchorfile>
+      <anchor>gab15289c416609cd56dde816b39a4cea4</anchor>
       <arglist>(uint32_t *descriptor_l1, mmu_ecc_check_Type p_bit)</arglist>
     </member>
     <member kind="function">
       <type>__STATIC_INLINE int</type>
       <name>MMU_APPage</name>
-      <anchorfile>core__ca_8h.html</anchorfile>
-      <anchor>ac7c88d4d613350059b4d77814ea2c7a0</anchor>
+      <anchorfile>group__MMU__functions.html</anchorfile>
+      <anchor>gac7c88d4d613350059b4d77814ea2c7a0</anchor>
       <arglist>(uint32_t *descriptor_l2, mmu_access_Type user, mmu_access_Type priv, uint32_t afe)</arglist>
     </member>
     <member kind="function">
       <type>__STATIC_INLINE int</type>
       <name>MMU_SharedPage</name>
-      <anchorfile>core__ca_8h.html</anchorfile>
-      <anchor>aaa19560532778e4fdc667e56fd2dd378</anchor>
+      <anchorfile>group__MMU__functions.html</anchorfile>
+      <anchor>gaaa19560532778e4fdc667e56fd2dd378</anchor>
       <arglist>(uint32_t *descriptor_l2, mmu_shared_Type s_bit)</arglist>
     </member>
     <member kind="function">
       <type>__STATIC_INLINE int</type>
       <name>MMU_GlobalPage</name>
-      <anchorfile>core__ca_8h.html</anchorfile>
-      <anchor>a14dfeaf8983de57521aaa66c19dd43c9</anchor>
+      <anchorfile>group__MMU__functions.html</anchorfile>
+      <anchor>ga14dfeaf8983de57521aaa66c19dd43c9</anchor>
       <arglist>(uint32_t *descriptor_l2, mmu_global_Type g_bit)</arglist>
     </member>
     <member kind="function">
       <type>__STATIC_INLINE int</type>
       <name>MMU_SecurePage</name>
-      <anchorfile>core__ca_8h.html</anchorfile>
-      <anchor>a2c1887ed6aaff0a51e3effc3db595c94</anchor>
+      <anchorfile>group__MMU__functions.html</anchorfile>
+      <anchor>ga2c1887ed6aaff0a51e3effc3db595c94</anchor>
       <arglist>(uint32_t *descriptor_l1, mmu_secure_Type s_bit)</arglist>
     </member>
     <member kind="function">
       <type>__STATIC_INLINE int</type>
       <name>MMU_MemorySection</name>
-      <anchorfile>core__ca_8h.html</anchorfile>
-      <anchor>a353d3d794bcd1b35b3b5aeb73d6feb08</anchor>
+      <anchorfile>group__MMU__functions.html</anchorfile>
+      <anchor>ga353d3d794bcd1b35b3b5aeb73d6feb08</anchor>
       <arglist>(uint32_t *descriptor_l1, mmu_memory_Type mem, mmu_cacheability_Type outer, mmu_cacheability_Type inner)</arglist>
     </member>
     <member kind="function">
       <type>__STATIC_INLINE int</type>
       <name>MMU_MemoryPage</name>
-      <anchorfile>core__ca_8h.html</anchorfile>
-      <anchor>a9a2946f7c93bcb05cdd20be691a54b8c</anchor>
+      <anchorfile>group__MMU__functions.html</anchorfile>
+      <anchor>ga9a2946f7c93bcb05cdd20be691a54b8c</anchor>
       <arglist>(uint32_t *descriptor_l2, mmu_memory_Type mem, mmu_cacheability_Type outer, mmu_cacheability_Type inner, mmu_region_size_Type page)</arglist>
     </member>
     <member kind="function">
       <type>__STATIC_INLINE int</type>
       <name>MMU_GetSectionDescriptor</name>
-      <anchorfile>core__ca_8h.html</anchorfile>
-      <anchor>a4f21eee79309cf8cde694d0d7e1205bd</anchor>
+      <anchorfile>group__MMU__functions.html</anchorfile>
+      <anchor>ga4f21eee79309cf8cde694d0d7e1205bd</anchor>
       <arglist>(uint32_t *descriptor, mmu_region_attributes_Type reg)</arglist>
     </member>
     <member kind="function">
       <type>__STATIC_INLINE int</type>
       <name>MMU_GetPageDescriptor</name>
-      <anchorfile>core__ca_8h.html</anchorfile>
-      <anchor>aa2fcfb63c7019665b8a352d54f55d740</anchor>
+      <anchorfile>group__MMU__functions.html</anchorfile>
+      <anchor>gaa2fcfb63c7019665b8a352d54f55d740</anchor>
       <arglist>(uint32_t *descriptor, uint32_t *descriptor2, mmu_region_attributes_Type reg)</arglist>
     </member>
     <member kind="function">
       <type>__STATIC_INLINE void</type>
       <name>MMU_TTSection</name>
-      <anchorfile>core__ca_8h.html</anchorfile>
-      <anchor>aaff28ea191391cbbd389d74327961753</anchor>
+      <anchorfile>group__MMU__functions.html</anchorfile>
+      <anchor>gaaff28ea191391cbbd389d74327961753</anchor>
       <arglist>(uint32_t *ttb, uint32_t base_address, uint32_t count, uint32_t descriptor_l1)</arglist>
     </member>
     <member kind="function">
       <type>__STATIC_INLINE void</type>
       <name>MMU_TTPage4k</name>
-      <anchorfile>core__ca_8h.html</anchorfile>
-      <anchor>a823cca9649a28bab8a90f8bd9bb92d83</anchor>
+      <anchorfile>group__MMU__functions.html</anchorfile>
+      <anchor>ga823cca9649a28bab8a90f8bd9bb92d83</anchor>
       <arglist>(uint32_t *ttb, uint32_t base_address, uint32_t count, uint32_t descriptor_l1, uint32_t *ttb_l2, uint32_t descriptor_l2)</arglist>
     </member>
     <member kind="function">
       <type>__STATIC_INLINE void</type>
       <name>MMU_TTPage64k</name>
-      <anchorfile>core__ca_8h.html</anchorfile>
-      <anchor>a48c509501f94a3f7316e79f8ccd34184</anchor>
+      <anchorfile>group__MMU__functions.html</anchorfile>
+      <anchor>ga48c509501f94a3f7316e79f8ccd34184</anchor>
       <arglist>(uint32_t *ttb, uint32_t base_address, uint32_t count, uint32_t descriptor_l1, uint32_t *ttb_l2, uint32_t descriptor_l2)</arglist>
     </member>
     <member kind="function">
       <type>__STATIC_INLINE void</type>
       <name>MMU_Enable</name>
-      <anchorfile>core__ca_8h.html</anchorfile>
-      <anchor>a63334cbd77d310d078eb226c7542b96b</anchor>
+      <anchorfile>group__MMU__functions.html</anchorfile>
+      <anchor>ga63334cbd77d310d078eb226c7542b96b</anchor>
       <arglist>(void)</arglist>
     </member>
     <member kind="function">
       <type>__STATIC_INLINE void</type>
       <name>MMU_Disable</name>
-      <anchorfile>core__ca_8h.html</anchorfile>
-      <anchor>a2a2badd06531e04f559b97fdb2aea154</anchor>
+      <anchorfile>group__MMU__functions.html</anchorfile>
+      <anchor>ga2a2badd06531e04f559b97fdb2aea154</anchor>
       <arglist>(void)</arglist>
     </member>
     <member kind="function">
       <type>__STATIC_INLINE void</type>
       <name>MMU_InvalidateTLB</name>
-      <anchorfile>core__ca_8h.html</anchorfile>
-      <anchor>a9de65bea1cabf73dc4302e0e727cc8c3</anchor>
+      <anchorfile>group__MMU__functions.html</anchorfile>
+      <anchor>ga9de65bea1cabf73dc4302e0e727cc8c3</anchor>
       <arglist>(void)</arglist>
     </member>
   </compound>
@@ -5571,6 +5571,11 @@
     <name>misra.md</name>
     <path>src/</path>
     <filename>misra_8md.html</filename>
+  </compound>
+  <compound kind="file">
+    <name>Ref_Cache.txt</name>
+    <path>src/</path>
+    <filename>Ref__Cache_8txt.html</filename>
   </compound>
   <compound kind="file">
     <name>Ref_CompilerControl.txt</name>
@@ -5679,6 +5684,11 @@
     <name>Ref_CoreRegister.txt</name>
     <path>src/</path>
     <filename>Ref__CoreRegister_8txt.html</filename>
+  </compound>
+  <compound kind="file">
+    <name>Ref_GIC.txt</name>
+    <path>src/</path>
+    <filename>Ref__GIC_8txt.html</filename>
   </compound>
   <compound kind="file">
     <name>Ref_IRQCtrl.txt</name>
@@ -5831,6 +5841,11 @@
     </member>
   </compound>
   <compound kind="file">
+    <name>Ref_MMU.txt</name>
+    <path>src/</path>
+    <filename>Ref__MMU_8txt.html</filename>
+  </compound>
+  <compound kind="file">
     <name>Ref_SystemAndClock.txt</name>
     <path>src/</path>
     <filename>Ref__SystemAndClock_8txt.html</filename>
@@ -5854,6 +5869,68 @@
       <anchorfile>group__system__init__gr.html</anchorfile>
       <anchor>gaa3cd3e43291e81e795d642b79b6088e6</anchor>
       <arglist></arglist>
+    </member>
+  </compound>
+  <compound kind="file">
+    <name>Ref_Timer.txt</name>
+    <path>src/</path>
+    <filename>Ref__Timer_8txt.html</filename>
+    <class kind="union">CNTP_CTL_Type</class>
+    <member kind="function">
+      <type>__STATIC_INLINE void</type>
+      <name>PL1_SetCounterFrequency</name>
+      <anchorfile>group__PL1__timer__functions.html</anchorfile>
+      <anchor>gac09f09327fde6a6adffe0e6298eaa1db</anchor>
+      <arglist>(uint32_t value)</arglist>
+    </member>
+    <member kind="function">
+      <type>__STATIC_INLINE void</type>
+      <name>PL1_SetLoadValue</name>
+      <anchorfile>group__PL1__timer__functions.html</anchorfile>
+      <anchor>gae4edcfbdaf901a59a81d1fbf9845d9f7</anchor>
+      <arglist>(uint32_t value)</arglist>
+    </member>
+    <member kind="function">
+      <type>__STATIC_INLINE uint32_t</type>
+      <name>PL1_GetCurrentValue</name>
+      <anchorfile>group__PL1__timer__functions.html</anchorfile>
+      <anchor>ga8a212e9457005edfb9f14afbf937ebf9</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="function">
+      <type>__STATIC_INLINE uint64_t</type>
+      <name>PL1_GetCurrentPhysicalValue</name>
+      <anchorfile>group__PL1__timer__functions.html</anchorfile>
+      <anchor>gac66bd336d2353f70aa8ebfc73aa3fc43</anchor>
+      <arglist>(void)</arglist>
+    </member>
+    <member kind="function">
+      <type>__STATIC_INLINE void</type>
+      <name>PL1_SetPhysicalCompareValue</name>
+      <anchorfile>group__PL1__timer__functions.html</anchorfile>
+      <anchor>gab34067824971064a829e17b791070643</anchor>
+      <arglist>(uint64_t value)</arglist>
+    </member>
+    <member kind="function">
+      <type>__STATIC_INLINE uint64_t</type>
+      <name>PL1_GetPhysicalCompareValue</name>
+      <anchorfile>group__PL1__timer__functions.html</anchorfile>
+      <anchor>ga341ae7d1ae29f4dc5dae6310fa453164</anchor>
+      <arglist>(void)</arglist>
+    </member>
+    <member kind="function">
+      <type>__STATIC_INLINE void</type>
+      <name>PL1_SetControl</name>
+      <anchorfile>group__PL1__timer__functions.html</anchorfile>
+      <anchor>ga2e2ea7eac12a90c6243000172bf774e1</anchor>
+      <arglist>(uint32_t value)</arglist>
+    </member>
+    <member kind="function">
+      <type>__STATIC_INLINE uint32_t</type>
+      <name>PL1_GetControl</name>
+      <anchorfile>group__PL1__timer__functions.html</anchorfile>
+      <anchor>gaf7fda3fe3452565fbe46cb0ea53a9f8a</anchor>
+      <arglist>()</arglist>
     </member>
   </compound>
   <compound kind="file">
@@ -6067,6 +6144,20 @@
       <name>w</name>
       <anchorfile>unionCNTP__CTL__Type.html</anchorfile>
       <anchor>a0e2d443e0447f9b286433220cd288dbf</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable">
+      <type>uint32_t</type>
+      <name>_reserved0</name>
+      <anchorfile>unionCNTP__CTL__Type.html</anchorfile>
+      <anchor>a033fc913891068a89b1609af783db8a8</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable">
+      <type>struct CNTP_CTL_Type::@12</type>
+      <name>b</name>
+      <anchorfile>unionCNTP__CTL__Type.html</anchorfile>
+      <anchor>ae29d3dcafcb0fa0a873a651e5ad2fcf7</anchor>
       <arglist></arglist>
     </member>
   </compound>
@@ -6450,28 +6541,28 @@
       <type>__OM uint32_t</type>
       <name>SETSPI_NSR</name>
       <anchorfile>structGICDistributor__Type.html</anchorfile>
-      <anchor>a5f35d6c1bff6ac7a33ac58b151ed3940</anchor>
+      <anchor>afbdd372578e2cd6f998320282cc8ed25</anchor>
       <arglist></arglist>
     </member>
     <member kind="variable">
       <type>__OM uint32_t</type>
       <name>CLRSPI_NSR</name>
       <anchorfile>structGICDistributor__Type.html</anchorfile>
-      <anchor>a88657f0219275f324f66f4715661e1b7</anchor>
+      <anchor>a2f584d3fbeaa355faf234f2ee57d1168</anchor>
       <arglist></arglist>
     </member>
     <member kind="variable">
       <type>__OM uint32_t</type>
       <name>SETSPI_SR</name>
       <anchorfile>structGICDistributor__Type.html</anchorfile>
-      <anchor>a8eaf8c4fe9c97e97d04b9fb1e73836de</anchor>
+      <anchor>ad55a8644bc95caf8bf53e1407ec9ed0c</anchor>
       <arglist></arglist>
     </member>
     <member kind="variable">
       <type>__OM uint32_t</type>
       <name>CLRSPI_SR</name>
       <anchorfile>structGICDistributor__Type.html</anchorfile>
-      <anchor>a10cd230c8b023ebd5c6b8fa866fe4732</anchor>
+      <anchor>ab487e4a8684b8a77357c6c20cf71dead</anchor>
       <arglist></arglist>
     </member>
     <member kind="variable">
@@ -6527,14 +6618,14 @@
       <type>__IOM uint32_t</type>
       <name>IPRIORITYR</name>
       <anchorfile>structGICDistributor__Type.html</anchorfile>
-      <anchor>ab408bd022ce4076aa38233b4f93df62d</anchor>
+      <anchor>a08fa902293567e85dc6398dab58afaa9</anchor>
       <arglist>[255]</arglist>
     </member>
     <member kind="variable">
       <type>__IOM uint32_t</type>
       <name>ITARGETSR</name>
       <anchorfile>structGICDistributor__Type.html</anchorfile>
-      <anchor>a3f81374b2766e69d841cbc7200ec7061</anchor>
+      <anchor>a6f1b07d48d3a9199f2effec8492f721c</anchor>
       <arglist>[255]</arglist>
     </member>
     <member kind="variable">
@@ -6569,14 +6660,14 @@
       <type>__IOM uint32_t</type>
       <name>CPENDSGIR</name>
       <anchorfile>structGICDistributor__Type.html</anchorfile>
-      <anchor>ab9f2473e7f8bbd62fb4f23988d872d14</anchor>
+      <anchor>a644a70cf4c12093c0277ce01f194b69b</anchor>
       <arglist>[4]</arglist>
     </member>
     <member kind="variable">
       <type>__IOM uint32_t</type>
       <name>SPENDSGIR</name>
       <anchorfile>structGICDistributor__Type.html</anchorfile>
-      <anchor>af6bc488789f97ead0767d363aca941a7</anchor>
+      <anchor>ae40b4a50d9766c2bbf57441f68094f41</anchor>
       <arglist>[4]</arglist>
     </member>
     <member kind="variable">
@@ -7082,7 +7173,7 @@
       <type>__IOM uint32_t</type>
       <name>ADDRESS_FILTER_END</name>
       <anchorfile>structL2C__310__TypeDef.html</anchorfile>
-      <anchor>ac4baf15d42646489405593d50ef2dcb6</anchor>
+      <anchor>a956e7653f25ae52ac9534eb0e1d94c8c</anchor>
       <arglist></arglist>
     </member>
     <member kind="variable">
@@ -7374,7 +7465,7 @@
       <type>__IOM uint32_t</type>
       <name>ISR</name>
       <anchorfile>structTimer__Type.html</anchorfile>
-      <anchor>ae1b9ac951b7670a3fcc4cbe1aae2a26c</anchor>
+      <anchor>ace17db6ca92940b030ad2ccbc674877e</anchor>
       <arglist></arglist>
     </member>
     <member kind="variable">
@@ -7416,7 +7507,7 @@
       <type>__OM uint32_t</type>
       <name>WDISABLE</name>
       <anchorfile>structTimer__Type.html</anchorfile>
-      <anchor>ae103de33efd10c1323c799eb5fa3df25</anchor>
+      <anchor>a9d577164e0a55ecd6c630a9720f153c3</anchor>
       <arglist></arglist>
     </member>
   </compound>
@@ -7446,6 +7537,216 @@
       <arglist></arglist>
     </member>
     <docanchor file="group__system__init__gr.html" title="Code Example">system_init_code_ex_sec</docanchor>
+  </compound>
+  <compound kind="group">
+    <name>GIC_functions</name>
+    <title>Generic Interrupt Controller Functions</title>
+    <filename>group__GIC__functions.html</filename>
+    <class kind="struct">GICInterface_Type</class>
+    <class kind="struct">GICDistributor_Type</class>
+    <member kind="define">
+      <type>#define</type>
+      <name>GICDistributor</name>
+      <anchorfile>group__GIC__functions.html</anchorfile>
+      <anchor>ga82e193c0016a9377274756b2673464a6</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="define">
+      <type>#define</type>
+      <name>GICInterface</name>
+      <anchorfile>group__GIC__functions.html</anchorfile>
+      <anchor>ga31a083dbdc5cb84178dbf184286180e3</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="function">
+      <type>__STATIC_INLINE void</type>
+      <name>GIC_EnableDistributor</name>
+      <anchorfile>group__GIC__functions.html</anchorfile>
+      <anchor>ga0f44df6823e90178183257e096e5cac6</anchor>
+      <arglist>(void)</arglist>
+    </member>
+    <member kind="function">
+      <type>__STATIC_INLINE void</type>
+      <name>GIC_DisableDistributor</name>
+      <anchorfile>group__GIC__functions.html</anchorfile>
+      <anchor>ga363311538d4a4d750197b9936505d466</anchor>
+      <arglist>(void)</arglist>
+    </member>
+    <member kind="function">
+      <type>__STATIC_INLINE uint32_t</type>
+      <name>GIC_DistributorInfo</name>
+      <anchorfile>group__GIC__functions.html</anchorfile>
+      <anchor>ga7d93d39736ef5e379e6511430ee6e75f</anchor>
+      <arglist>(void)</arglist>
+    </member>
+    <member kind="function">
+      <type>__STATIC_INLINE uint32_t</type>
+      <name>GIC_DistributorImplementer</name>
+      <anchorfile>group__GIC__functions.html</anchorfile>
+      <anchor>ga1481d0cdf78f8c93fb2a710a519c4dc6</anchor>
+      <arglist>(void)</arglist>
+    </member>
+    <member kind="function">
+      <type>__STATIC_INLINE void</type>
+      <name>GIC_SetTarget</name>
+      <anchorfile>group__GIC__functions.html</anchorfile>
+      <anchor>gae86bba705d0d4ef812b84d29d7b3ca2b</anchor>
+      <arglist>(IRQn_Type IRQn, uint32_t cpu_target)</arglist>
+    </member>
+    <member kind="function">
+      <type>__STATIC_INLINE uint32_t</type>
+      <name>GIC_GetTarget</name>
+      <anchorfile>group__GIC__functions.html</anchorfile>
+      <anchor>gafccf881f9517592f30489bcabcb738a8</anchor>
+      <arglist>(IRQn_Type IRQn)</arglist>
+    </member>
+    <member kind="function">
+      <type>__STATIC_INLINE void</type>
+      <name>GIC_EnableInterface</name>
+      <anchorfile>group__GIC__functions.html</anchorfile>
+      <anchor>ga758e5600d7f891e4f2f551bb45d07fce</anchor>
+      <arglist>(void)</arglist>
+    </member>
+    <member kind="function">
+      <type>__STATIC_INLINE void</type>
+      <name>GIC_DisableInterface</name>
+      <anchorfile>group__GIC__functions.html</anchorfile>
+      <anchor>ga0605877ad627c1f4320e518725fd103e</anchor>
+      <arglist>(void)</arglist>
+    </member>
+    <member kind="function">
+      <type>__STATIC_INLINE IRQn_Type</type>
+      <name>GIC_AcknowledgePending</name>
+      <anchorfile>group__GIC__functions.html</anchorfile>
+      <anchor>gafc08bbc58b25fef0d24003313fd16eb8</anchor>
+      <arglist>(void)</arglist>
+    </member>
+    <member kind="function">
+      <type>__STATIC_INLINE void</type>
+      <name>GIC_EndInterrupt</name>
+      <anchorfile>group__GIC__functions.html</anchorfile>
+      <anchor>gac23f090f572a058b4a737f6613ded9cd</anchor>
+      <arglist>(IRQn_Type IRQn)</arglist>
+    </member>
+    <member kind="function">
+      <type>__STATIC_INLINE void</type>
+      <name>GIC_EnableIRQ</name>
+      <anchorfile>group__GIC__functions.html</anchorfile>
+      <anchor>gaeba215d9c4ec3599e0a168800288c3f3</anchor>
+      <arglist>(IRQn_Type IRQn)</arglist>
+    </member>
+    <member kind="function">
+      <type>__STATIC_INLINE void</type>
+      <name>GIC_DisableIRQ</name>
+      <anchorfile>group__GIC__functions.html</anchorfile>
+      <anchor>ga2102399d255690c0674209a6faeec13d</anchor>
+      <arglist>(IRQn_Type IRQn)</arglist>
+    </member>
+    <member kind="function">
+      <type>__STATIC_INLINE void</type>
+      <name>GIC_SetPendingIRQ</name>
+      <anchorfile>group__GIC__functions.html</anchorfile>
+      <anchor>ga18fbddf7f3594df141c97f61a71da47c</anchor>
+      <arglist>(IRQn_Type IRQn)</arglist>
+    </member>
+    <member kind="function">
+      <type>__STATIC_INLINE void</type>
+      <name>GIC_ClearPendingIRQ</name>
+      <anchorfile>group__GIC__functions.html</anchorfile>
+      <anchor>ga5ad17ad70f23d1ff36015ffac33d383d</anchor>
+      <arglist>(IRQn_Type IRQn)</arglist>
+    </member>
+    <member kind="function">
+      <type>__STATIC_INLINE void</type>
+      <name>GIC_SetPriority</name>
+      <anchorfile>group__GIC__functions.html</anchorfile>
+      <anchor>ga27b9862b58290276851ec669cabf0f71</anchor>
+      <arglist>(IRQn_Type IRQn, uint32_t priority)</arglist>
+    </member>
+    <member kind="function">
+      <type>__STATIC_INLINE uint32_t</type>
+      <name>GIC_GetPriority</name>
+      <anchorfile>group__GIC__functions.html</anchorfile>
+      <anchor>ga397048004654f792649742f95bf8ae67</anchor>
+      <arglist>(IRQn_Type IRQn)</arglist>
+    </member>
+    <member kind="function">
+      <type>__STATIC_INLINE void</type>
+      <name>GIC_SetInterfacePriorityMask</name>
+      <anchorfile>group__GIC__functions.html</anchorfile>
+      <anchor>gaa5eb0e76dbc89596e1ce47ddb9edc4a0</anchor>
+      <arglist>(uint32_t priority)</arglist>
+    </member>
+    <member kind="function">
+      <type>__STATIC_INLINE uint32_t</type>
+      <name>GIC_GetInterfacePriorityMask</name>
+      <anchorfile>group__GIC__functions.html</anchorfile>
+      <anchor>ga2c5f9e5637560fc9d5c29d772580a728</anchor>
+      <arglist>(void)</arglist>
+    </member>
+    <member kind="function">
+      <type>__STATIC_INLINE void</type>
+      <name>GIC_SetBinaryPoint</name>
+      <anchorfile>group__GIC__functions.html</anchorfile>
+      <anchor>ga5dfedeb5403656a77e0fef4e1cc2c0c6</anchor>
+      <arglist>(uint32_t binary_point)</arglist>
+    </member>
+    <member kind="function">
+      <type>__STATIC_INLINE uint32_t</type>
+      <name>GIC_GetBinaryPoint</name>
+      <anchorfile>group__GIC__functions.html</anchorfile>
+      <anchor>gaa7046d8206ddd4696716726e68f85906</anchor>
+      <arglist>(void)</arglist>
+    </member>
+    <member kind="function">
+      <type>__STATIC_INLINE uint32_t</type>
+      <name>GIC_GetIRQStatus</name>
+      <anchorfile>group__GIC__functions.html</anchorfile>
+      <anchor>gabc88483ecf94a2c222b644ecfa60eb9f</anchor>
+      <arglist>(IRQn_Type IRQn)</arglist>
+    </member>
+    <member kind="function">
+      <type>__STATIC_INLINE void</type>
+      <name>GIC_SendSGI</name>
+      <anchorfile>group__GIC__functions.html</anchorfile>
+      <anchor>ga2de8850780af26e802ee4cc43e9da6e9</anchor>
+      <arglist>(IRQn_Type IRQn, uint32_t target_list, uint32_t filter_list)</arglist>
+    </member>
+    <member kind="function">
+      <type>__STATIC_INLINE uint32_t</type>
+      <name>GIC_GetHighPendingIRQ</name>
+      <anchorfile>group__GIC__functions.html</anchorfile>
+      <anchor>ga8bb27e1bab132a8df44190adb996c2a1</anchor>
+      <arglist>(void)</arglist>
+    </member>
+    <member kind="function">
+      <type>__STATIC_INLINE uint32_t</type>
+      <name>GIC_GetInterfaceId</name>
+      <anchorfile>group__GIC__functions.html</anchorfile>
+      <anchor>gaba1b2665cdda47fc0bc3d7b90690dc50</anchor>
+      <arglist>(void)</arglist>
+    </member>
+    <member kind="function">
+      <type>__STATIC_INLINE void</type>
+      <name>GIC_DistInit</name>
+      <anchorfile>group__GIC__functions.html</anchorfile>
+      <anchor>ga07acd03d02683bb6e33e7f57f5f371d1</anchor>
+      <arglist>(void)</arglist>
+    </member>
+    <member kind="function">
+      <type>__STATIC_INLINE void</type>
+      <name>GIC_CPUInterfaceInit</name>
+      <anchorfile>group__GIC__functions.html</anchorfile>
+      <anchor>ga1c93f8af9f428cda8ec066bf4bfbade9</anchor>
+      <arglist>(void)</arglist>
+    </member>
+    <member kind="function">
+      <type>__STATIC_INLINE void</type>
+      <name>GIC_Enable</name>
+      <anchorfile>group__GIC__functions.html</anchorfile>
+      <anchor>ga818881f69aae3eef6eb996bee6f6c63e</anchor>
+      <arglist>(void)</arglist>
+    </member>
   </compound>
   <compound kind="group">
     <name>CMSIS_core_register</name>
@@ -9140,6 +9441,786 @@
     </member>
   </compound>
   <compound kind="group">
+    <name>L1_cache_functions</name>
+    <title>L1 Cache Functions</title>
+    <filename>group__L1__cache__functions.html</filename>
+    <member kind="function">
+      <type>__STATIC_FORCEINLINE void</type>
+      <name>L1C_EnableCaches</name>
+      <anchorfile>group__L1__cache__functions.html</anchorfile>
+      <anchor>gaff8a4966eff1ada5cba80f2b689446db</anchor>
+      <arglist>(void)</arglist>
+    </member>
+    <member kind="function">
+      <type>__STATIC_FORCEINLINE void</type>
+      <name>L1C_DisableCaches</name>
+      <anchorfile>group__L1__cache__functions.html</anchorfile>
+      <anchor>ga320ef6fd1dd65f2f82e64c096a4994a6</anchor>
+      <arglist>(void)</arglist>
+    </member>
+    <member kind="function">
+      <type>__STATIC_FORCEINLINE void</type>
+      <name>L1C_EnableBTAC</name>
+      <anchorfile>group__L1__cache__functions.html</anchorfile>
+      <anchor>gaa5fb36b4496e64472849f7811970c581</anchor>
+      <arglist>(void)</arglist>
+    </member>
+    <member kind="function">
+      <type>__STATIC_FORCEINLINE void</type>
+      <name>L1C_DisableBTAC</name>
+      <anchorfile>group__L1__cache__functions.html</anchorfile>
+      <anchor>gab8695cf1f4a7f3789b93c41dc4eeb51d</anchor>
+      <arglist>(void)</arglist>
+    </member>
+    <member kind="function">
+      <type>__STATIC_FORCEINLINE void</type>
+      <name>L1C_InvalidateBTAC</name>
+      <anchorfile>group__L1__cache__functions.html</anchorfile>
+      <anchor>gad0d732293be6a928db184b59aadc1979</anchor>
+      <arglist>(void)</arglist>
+    </member>
+    <member kind="function">
+      <type>__STATIC_FORCEINLINE void</type>
+      <name>L1C_InvalidateICacheAll</name>
+      <anchorfile>group__L1__cache__functions.html</anchorfile>
+      <anchor>gac932810cfe83f087590859010972645e</anchor>
+      <arglist>(void)</arglist>
+    </member>
+    <member kind="function">
+      <type>__STATIC_FORCEINLINE void</type>
+      <name>L1C_CleanDCacheMVA</name>
+      <anchorfile>group__L1__cache__functions.html</anchorfile>
+      <anchor>ga9eb6f0a7c9c04cc49efd964eb59ba26f</anchor>
+      <arglist>(void *va)</arglist>
+    </member>
+    <member kind="function">
+      <type>__STATIC_FORCEINLINE void</type>
+      <name>L1C_InvalidateDCacheMVA</name>
+      <anchorfile>group__L1__cache__functions.html</anchorfile>
+      <anchor>ga9209853937940991daf70edd6bc633fe</anchor>
+      <arglist>(void *va)</arglist>
+    </member>
+    <member kind="function">
+      <type>__STATIC_FORCEINLINE void</type>
+      <name>L1C_CleanInvalidateDCacheMVA</name>
+      <anchorfile>group__L1__cache__functions.html</anchorfile>
+      <anchor>ga7646a5e01b529566968f393e485f46a2</anchor>
+      <arglist>(void *va)</arglist>
+    </member>
+    <member kind="function">
+      <type>__STATIC_FORCEINLINE void</type>
+      <name>L1C_CleanInvalidateCache</name>
+      <anchorfile>group__L1__cache__functions.html</anchorfile>
+      <anchor>ga30d7632156a30a3b75064f6d15b8f850</anchor>
+      <arglist>(uint32_t op)</arglist>
+    </member>
+    <member kind="function">
+      <type>__STATIC_FORCEINLINE void</type>
+      <name>L1C_InvalidateDCacheAll</name>
+      <anchorfile>group__L1__cache__functions.html</anchorfile>
+      <anchor>gae895f75c4f3539058232f555d79e5df3</anchor>
+      <arglist>(void)</arglist>
+    </member>
+    <member kind="function">
+      <type>__STATIC_FORCEINLINE void</type>
+      <name>L1C_CleanDCacheAll</name>
+      <anchorfile>group__L1__cache__functions.html</anchorfile>
+      <anchor>ga70359d824bf26f376e3d7cb9c787da27</anchor>
+      <arglist>(void)</arglist>
+    </member>
+    <member kind="function">
+      <type>__STATIC_FORCEINLINE void</type>
+      <name>L1C_CleanInvalidateDCacheAll</name>
+      <anchorfile>group__L1__cache__functions.html</anchorfile>
+      <anchor>ga92b5babf7317abe3815f61a2731735c3</anchor>
+      <arglist>(void)</arglist>
+    </member>
+    <member kind="function">
+      <type>CMSIS_DEPRECATED __STATIC_FORCEINLINE void</type>
+      <name>__L1C_CleanInvalidateCache</name>
+      <anchorfile>group__L1__cache__functions.html</anchorfile>
+      <anchor>ga722ceb077e491bb4befcfbb3aee9b20b</anchor>
+      <arglist>(uint32_t op)</arglist>
+    </member>
+  </compound>
+  <compound kind="group">
+    <name>L2_cache_functions</name>
+    <title>L2C-310 Cache Controller Functions</title>
+    <filename>group__L2__cache__functions.html</filename>
+    <class kind="struct">L2C_310_TypeDef</class>
+    <member kind="define">
+      <type>#define</type>
+      <name>L2C_310</name>
+      <anchorfile>group__L2__cache__functions.html</anchorfile>
+      <anchor>ga3b08fba5b9be921c8a971231f75f8764</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="function">
+      <type>__STATIC_INLINE void</type>
+      <name>L2C_Sync</name>
+      <anchorfile>group__L2__cache__functions.html</anchorfile>
+      <anchor>ga164c59c55e2d18bf8a94dc91c0f4ce68</anchor>
+      <arglist>(void)</arglist>
+    </member>
+    <member kind="function">
+      <type>__STATIC_INLINE int</type>
+      <name>L2C_GetID</name>
+      <anchorfile>group__L2__cache__functions.html</anchorfile>
+      <anchor>ga75af64212e1d3d0b3ade860c365e95b3</anchor>
+      <arglist>(void)</arglist>
+    </member>
+    <member kind="function">
+      <type>__STATIC_INLINE int</type>
+      <name>L2C_GetType</name>
+      <anchorfile>group__L2__cache__functions.html</anchorfile>
+      <anchor>ga0c334fa25720d77e78cfa187bdf833be</anchor>
+      <arglist>(void)</arglist>
+    </member>
+    <member kind="function">
+      <type>__STATIC_INLINE void</type>
+      <name>L2C_InvAllByWay</name>
+      <anchorfile>group__L2__cache__functions.html</anchorfile>
+      <anchor>ga5b0ea2db52d137b5531ce568479c9d17</anchor>
+      <arglist>(void)</arglist>
+    </member>
+    <member kind="function">
+      <type>__STATIC_INLINE void</type>
+      <name>L2C_CleanInvAllByWay</name>
+      <anchorfile>group__L2__cache__functions.html</anchorfile>
+      <anchor>gabd0a9b10926537fa283c0bb30d54abc7</anchor>
+      <arglist>(void)</arglist>
+    </member>
+    <member kind="function">
+      <type>__STATIC_INLINE void</type>
+      <name>L2C_Enable</name>
+      <anchorfile>group__L2__cache__functions.html</anchorfile>
+      <anchor>ga720c36b4cd1d6c070ed0d2c49cffd7e1</anchor>
+      <arglist>(void)</arglist>
+    </member>
+    <member kind="function">
+      <type>__STATIC_INLINE void</type>
+      <name>L2C_Disable</name>
+      <anchorfile>group__L2__cache__functions.html</anchorfile>
+      <anchor>ga66767e7f30f52d72de72231b2d6abd34</anchor>
+      <arglist>(void)</arglist>
+    </member>
+    <member kind="function">
+      <type>__STATIC_INLINE void</type>
+      <name>L2C_InvPa</name>
+      <anchorfile>group__L2__cache__functions.html</anchorfile>
+      <anchor>ga4cf213e72c97776def35ab8223face82</anchor>
+      <arglist>(void *pa)</arglist>
+    </member>
+    <member kind="function">
+      <type>__STATIC_INLINE void</type>
+      <name>L2C_CleanPa</name>
+      <anchorfile>group__L2__cache__functions.html</anchorfile>
+      <anchor>ga242f6fa13f33e7d5cdd7d92935d52f5f</anchor>
+      <arglist>(void *pa)</arglist>
+    </member>
+    <member kind="function">
+      <type>__STATIC_INLINE void</type>
+      <name>L2C_CleanInvPa</name>
+      <anchorfile>group__L2__cache__functions.html</anchorfile>
+      <anchor>gaaff11c6afa9eaacb4cdfcfe5c36f57eb</anchor>
+      <arglist>(void *pa)</arglist>
+    </member>
+  </compound>
+  <compound kind="group">
+    <name>PL1_timer_functions</name>
+    <title>Generic Physical Timer Functions</title>
+    <filename>group__PL1__timer__functions.html</filename>
+    <class kind="union">CNTP_CTL_Type</class>
+    <member kind="function">
+      <type>__STATIC_INLINE void</type>
+      <name>PL1_SetCounterFrequency</name>
+      <anchorfile>group__PL1__timer__functions.html</anchorfile>
+      <anchor>gac09f09327fde6a6adffe0e6298eaa1db</anchor>
+      <arglist>(uint32_t value)</arglist>
+    </member>
+    <member kind="function">
+      <type>__STATIC_INLINE void</type>
+      <name>PL1_SetLoadValue</name>
+      <anchorfile>group__PL1__timer__functions.html</anchorfile>
+      <anchor>gae4edcfbdaf901a59a81d1fbf9845d9f7</anchor>
+      <arglist>(uint32_t value)</arglist>
+    </member>
+    <member kind="function">
+      <type>__STATIC_INLINE uint32_t</type>
+      <name>PL1_GetCurrentValue</name>
+      <anchorfile>group__PL1__timer__functions.html</anchorfile>
+      <anchor>ga8a212e9457005edfb9f14afbf937ebf9</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="function">
+      <type>__STATIC_INLINE uint64_t</type>
+      <name>PL1_GetCurrentPhysicalValue</name>
+      <anchorfile>group__PL1__timer__functions.html</anchorfile>
+      <anchor>gac66bd336d2353f70aa8ebfc73aa3fc43</anchor>
+      <arglist>(void)</arglist>
+    </member>
+    <member kind="function">
+      <type>__STATIC_INLINE void</type>
+      <name>PL1_SetPhysicalCompareValue</name>
+      <anchorfile>group__PL1__timer__functions.html</anchorfile>
+      <anchor>gab34067824971064a829e17b791070643</anchor>
+      <arglist>(uint64_t value)</arglist>
+    </member>
+    <member kind="function">
+      <type>__STATIC_INLINE uint64_t</type>
+      <name>PL1_GetPhysicalCompareValue</name>
+      <anchorfile>group__PL1__timer__functions.html</anchorfile>
+      <anchor>ga341ae7d1ae29f4dc5dae6310fa453164</anchor>
+      <arglist>(void)</arglist>
+    </member>
+    <member kind="function">
+      <type>__STATIC_INLINE void</type>
+      <name>PL1_SetControl</name>
+      <anchorfile>group__PL1__timer__functions.html</anchorfile>
+      <anchor>ga2e2ea7eac12a90c6243000172bf774e1</anchor>
+      <arglist>(uint32_t value)</arglist>
+    </member>
+    <member kind="function">
+      <type>__STATIC_INLINE uint32_t</type>
+      <name>PL1_GetControl</name>
+      <anchorfile>group__PL1__timer__functions.html</anchorfile>
+      <anchor>gaf7fda3fe3452565fbe46cb0ea53a9f8a</anchor>
+      <arglist>()</arglist>
+    </member>
+  </compound>
+  <compound kind="group">
+    <name>PTM_timer_functions</name>
+    <title>Private Timer Functions</title>
+    <filename>group__PTM__timer__functions.html</filename>
+    <class kind="struct">Timer_Type</class>
+    <member kind="define">
+      <type>#define</type>
+      <name>PTIM</name>
+      <anchorfile>group__PTM__timer__functions.html</anchorfile>
+      <anchor>gaaaf976e808e92970c4853195f46f86aa</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="function">
+      <type>__STATIC_INLINE void</type>
+      <name>PTIM_SetLoadValue</name>
+      <anchorfile>group__PTM__timer__functions.html</anchorfile>
+      <anchor>ga30516fed24977be8eecf3efd8b6a2fea</anchor>
+      <arglist>(uint32_t value)</arglist>
+    </member>
+    <member kind="function">
+      <type>__STATIC_INLINE uint32_t</type>
+      <name>PTIM_GetLoadValue</name>
+      <anchorfile>group__PTM__timer__functions.html</anchorfile>
+      <anchor>gacca3bf92e93c69e538ff4618317f7bfa</anchor>
+      <arglist>(void)</arglist>
+    </member>
+    <member kind="function">
+      <type>__STATIC_INLINE uint32_t</type>
+      <name>PTIM_GetCurrentValue</name>
+      <anchorfile>group__PTM__timer__functions.html</anchorfile>
+      <anchor>gaaccd88ab7931c379817f71d7c0183586</anchor>
+      <arglist>(void)</arglist>
+    </member>
+    <member kind="function">
+      <type>__STATIC_INLINE void</type>
+      <name>PTIM_SetControl</name>
+      <anchorfile>group__PTM__timer__functions.html</anchorfile>
+      <anchor>gaabc1dba029389fe0e2a6297952df7972</anchor>
+      <arglist>(uint32_t value)</arglist>
+    </member>
+    <member kind="function">
+      <type>__STATIC_INLINE uint32_t</type>
+      <name>PTIM_GetControl</name>
+      <anchorfile>group__PTM__timer__functions.html</anchorfile>
+      <anchor>ga34f0ceea142a4be1479cb552bf8bc4d1</anchor>
+      <arglist>(void)</arglist>
+    </member>
+    <member kind="function">
+      <type>__STATIC_INLINE void</type>
+      <name>PTIM_ClearEventFlag</name>
+      <anchorfile>group__PTM__timer__functions.html</anchorfile>
+      <anchor>ga59dca62df390bc4bce18559fc7d28578</anchor>
+      <arglist>(void)</arglist>
+    </member>
+  </compound>
+  <compound kind="group">
+    <name>MMU_functions</name>
+    <title>Memory Management Unit Functions</title>
+    <filename>group__MMU__functions.html</filename>
+    <subgroup>MMU_defs_gr</subgroup>
+    <member kind="function">
+      <type>__STATIC_INLINE int</type>
+      <name>MMU_XNSection</name>
+      <anchorfile>group__MMU__functions.html</anchorfile>
+      <anchor>ga9132cbfe3b2367de3db27daf4cc82ad7</anchor>
+      <arglist>(uint32_t *descriptor_l1, mmu_execute_Type xn)</arglist>
+    </member>
+    <member kind="function">
+      <type>__STATIC_INLINE int</type>
+      <name>MMU_DomainSection</name>
+      <anchorfile>group__MMU__functions.html</anchorfile>
+      <anchor>gabd88f4c41b74365c38209692785287d0</anchor>
+      <arglist>(uint32_t *descriptor_l1, uint8_t domain)</arglist>
+    </member>
+    <member kind="function">
+      <type>__STATIC_INLINE int</type>
+      <name>MMU_PSection</name>
+      <anchorfile>group__MMU__functions.html</anchorfile>
+      <anchor>ga3577aec23189228c9f95abba50c3716d</anchor>
+      <arglist>(uint32_t *descriptor_l1, mmu_ecc_check_Type p_bit)</arglist>
+    </member>
+    <member kind="function">
+      <type>__STATIC_INLINE int</type>
+      <name>MMU_APSection</name>
+      <anchorfile>group__MMU__functions.html</anchorfile>
+      <anchor>ga946866c84a72690c385ee07545bf8145</anchor>
+      <arglist>(uint32_t *descriptor_l1, mmu_access_Type user, mmu_access_Type priv, uint32_t afe)</arglist>
+    </member>
+    <member kind="function">
+      <type>__STATIC_INLINE int</type>
+      <name>MMU_SharedSection</name>
+      <anchorfile>group__MMU__functions.html</anchorfile>
+      <anchor>ga29ea426394746cdd6a4b4c14164ec6b9</anchor>
+      <arglist>(uint32_t *descriptor_l1, mmu_shared_Type s_bit)</arglist>
+    </member>
+    <member kind="function">
+      <type>__STATIC_INLINE int</type>
+      <name>MMU_GlobalSection</name>
+      <anchorfile>group__MMU__functions.html</anchorfile>
+      <anchor>ga3ca22117a7f2d3c4d1cd1bf832cc4d2f</anchor>
+      <arglist>(uint32_t *descriptor_l1, mmu_global_Type g_bit)</arglist>
+    </member>
+    <member kind="function">
+      <type>__STATIC_INLINE int</type>
+      <name>MMU_SecureSection</name>
+      <anchorfile>group__MMU__functions.html</anchorfile>
+      <anchor>ga84a5a15ee353d70a9b904e3814bd94d8</anchor>
+      <arglist>(uint32_t *descriptor_l1, mmu_secure_Type s_bit)</arglist>
+    </member>
+    <member kind="function">
+      <type>__STATIC_INLINE int</type>
+      <name>MMU_XNPage</name>
+      <anchorfile>group__MMU__functions.html</anchorfile>
+      <anchor>gab0e0fed40d998757147beb8fcf05a890</anchor>
+      <arglist>(uint32_t *descriptor_l2, mmu_execute_Type xn, mmu_region_size_Type page)</arglist>
+    </member>
+    <member kind="function">
+      <type>__STATIC_INLINE int</type>
+      <name>MMU_DomainPage</name>
+      <anchorfile>group__MMU__functions.html</anchorfile>
+      <anchor>ga45f5389cb1351bb2806a38ac8c32d416</anchor>
+      <arglist>(uint32_t *descriptor_l1, uint8_t domain)</arglist>
+    </member>
+    <member kind="function">
+      <type>__STATIC_INLINE int</type>
+      <name>MMU_PPage</name>
+      <anchorfile>group__MMU__functions.html</anchorfile>
+      <anchor>gab15289c416609cd56dde816b39a4cea4</anchor>
+      <arglist>(uint32_t *descriptor_l1, mmu_ecc_check_Type p_bit)</arglist>
+    </member>
+    <member kind="function">
+      <type>__STATIC_INLINE int</type>
+      <name>MMU_APPage</name>
+      <anchorfile>group__MMU__functions.html</anchorfile>
+      <anchor>gac7c88d4d613350059b4d77814ea2c7a0</anchor>
+      <arglist>(uint32_t *descriptor_l2, mmu_access_Type user, mmu_access_Type priv, uint32_t afe)</arglist>
+    </member>
+    <member kind="function">
+      <type>__STATIC_INLINE int</type>
+      <name>MMU_SharedPage</name>
+      <anchorfile>group__MMU__functions.html</anchorfile>
+      <anchor>gaaa19560532778e4fdc667e56fd2dd378</anchor>
+      <arglist>(uint32_t *descriptor_l2, mmu_shared_Type s_bit)</arglist>
+    </member>
+    <member kind="function">
+      <type>__STATIC_INLINE int</type>
+      <name>MMU_GlobalPage</name>
+      <anchorfile>group__MMU__functions.html</anchorfile>
+      <anchor>ga14dfeaf8983de57521aaa66c19dd43c9</anchor>
+      <arglist>(uint32_t *descriptor_l2, mmu_global_Type g_bit)</arglist>
+    </member>
+    <member kind="function">
+      <type>__STATIC_INLINE int</type>
+      <name>MMU_SecurePage</name>
+      <anchorfile>group__MMU__functions.html</anchorfile>
+      <anchor>ga2c1887ed6aaff0a51e3effc3db595c94</anchor>
+      <arglist>(uint32_t *descriptor_l1, mmu_secure_Type s_bit)</arglist>
+    </member>
+    <member kind="function">
+      <type>__STATIC_INLINE int</type>
+      <name>MMU_MemorySection</name>
+      <anchorfile>group__MMU__functions.html</anchorfile>
+      <anchor>ga353d3d794bcd1b35b3b5aeb73d6feb08</anchor>
+      <arglist>(uint32_t *descriptor_l1, mmu_memory_Type mem, mmu_cacheability_Type outer, mmu_cacheability_Type inner)</arglist>
+    </member>
+    <member kind="function">
+      <type>__STATIC_INLINE int</type>
+      <name>MMU_MemoryPage</name>
+      <anchorfile>group__MMU__functions.html</anchorfile>
+      <anchor>ga9a2946f7c93bcb05cdd20be691a54b8c</anchor>
+      <arglist>(uint32_t *descriptor_l2, mmu_memory_Type mem, mmu_cacheability_Type outer, mmu_cacheability_Type inner, mmu_region_size_Type page)</arglist>
+    </member>
+    <member kind="function">
+      <type>__STATIC_INLINE int</type>
+      <name>MMU_GetSectionDescriptor</name>
+      <anchorfile>group__MMU__functions.html</anchorfile>
+      <anchor>ga4f21eee79309cf8cde694d0d7e1205bd</anchor>
+      <arglist>(uint32_t *descriptor, mmu_region_attributes_Type reg)</arglist>
+    </member>
+    <member kind="function">
+      <type>__STATIC_INLINE int</type>
+      <name>MMU_GetPageDescriptor</name>
+      <anchorfile>group__MMU__functions.html</anchorfile>
+      <anchor>gaa2fcfb63c7019665b8a352d54f55d740</anchor>
+      <arglist>(uint32_t *descriptor, uint32_t *descriptor2, mmu_region_attributes_Type reg)</arglist>
+    </member>
+    <member kind="function">
+      <type>__STATIC_INLINE void</type>
+      <name>MMU_TTSection</name>
+      <anchorfile>group__MMU__functions.html</anchorfile>
+      <anchor>gaaff28ea191391cbbd389d74327961753</anchor>
+      <arglist>(uint32_t *ttb, uint32_t base_address, uint32_t count, uint32_t descriptor_l1)</arglist>
+    </member>
+    <member kind="function">
+      <type>__STATIC_INLINE void</type>
+      <name>MMU_TTPage4k</name>
+      <anchorfile>group__MMU__functions.html</anchorfile>
+      <anchor>ga823cca9649a28bab8a90f8bd9bb92d83</anchor>
+      <arglist>(uint32_t *ttb, uint32_t base_address, uint32_t count, uint32_t descriptor_l1, uint32_t *ttb_l2, uint32_t descriptor_l2)</arglist>
+    </member>
+    <member kind="function">
+      <type>__STATIC_INLINE void</type>
+      <name>MMU_TTPage64k</name>
+      <anchorfile>group__MMU__functions.html</anchorfile>
+      <anchor>ga48c509501f94a3f7316e79f8ccd34184</anchor>
+      <arglist>(uint32_t *ttb, uint32_t base_address, uint32_t count, uint32_t descriptor_l1, uint32_t *ttb_l2, uint32_t descriptor_l2)</arglist>
+    </member>
+    <member kind="function">
+      <type>__STATIC_INLINE void</type>
+      <name>MMU_Enable</name>
+      <anchorfile>group__MMU__functions.html</anchorfile>
+      <anchor>ga63334cbd77d310d078eb226c7542b96b</anchor>
+      <arglist>(void)</arglist>
+    </member>
+    <member kind="function">
+      <type>__STATIC_INLINE void</type>
+      <name>MMU_Disable</name>
+      <anchorfile>group__MMU__functions.html</anchorfile>
+      <anchor>ga2a2badd06531e04f559b97fdb2aea154</anchor>
+      <arglist>(void)</arglist>
+    </member>
+    <member kind="function">
+      <type>__STATIC_INLINE void</type>
+      <name>MMU_InvalidateTLB</name>
+      <anchorfile>group__MMU__functions.html</anchorfile>
+      <anchor>ga9de65bea1cabf73dc4302e0e727cc8c3</anchor>
+      <arglist>(void)</arglist>
+    </member>
+  </compound>
+  <compound kind="group">
+    <name>MMU_defs_gr</name>
+    <title>MMU Defines and Structs</title>
+    <filename>group__MMU__defs__gr.html</filename>
+    <class kind="struct">mmu_region_attributes_Type</class>
+    <member kind="define">
+      <type>#define</type>
+      <name>SECTION_DESCRIPTOR</name>
+      <anchorfile>group__MMU__defs__gr.html</anchorfile>
+      <anchor>ga4ab4ff3ff904df46da18f5532ceb1e89</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="define">
+      <type>#define</type>
+      <name>SECTION_B_SHIFT</name>
+      <anchorfile>group__MMU__defs__gr.html</anchorfile>
+      <anchor>gaa77545190c32bb2f4d2d86e41552daef</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="define">
+      <type>#define</type>
+      <name>SECTION_C_SHIFT</name>
+      <anchorfile>group__MMU__defs__gr.html</anchorfile>
+      <anchor>gae0b3a2eccc4f9c249e928d359c43c20c</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="define">
+      <type>#define</type>
+      <name>section_normal</name>
+      <anchorfile>group__MMU__defs__gr.html</anchorfile>
+      <anchor>ga220aab449cf3716723979d06666c2ebf</anchor>
+      <arglist>(descriptor_l1, region)</arglist>
+    </member>
+    <member kind="define">
+      <type>#define</type>
+      <name>section_normal_cod</name>
+      <anchorfile>group__MMU__defs__gr.html</anchorfile>
+      <anchor>gad598239f9bb9b6ae2bec8278305640b4</anchor>
+      <arglist>(descriptor_l1, region)</arglist>
+    </member>
+    <member kind="define">
+      <type>#define</type>
+      <name>section_normal_ro</name>
+      <anchorfile>group__MMU__defs__gr.html</anchorfile>
+      <anchor>gaf95fa76d8f0f7ccfd2ebc00860af4f1d</anchor>
+      <arglist>(descriptor_l1, region)</arglist>
+    </member>
+    <member kind="define">
+      <type>#define</type>
+      <name>section_normal_rw</name>
+      <anchorfile>group__MMU__defs__gr.html</anchorfile>
+      <anchor>ga1f2ce84e6ec5c150a2ffc05092ea6d0e</anchor>
+      <arglist>(descriptor_l1, region)</arglist>
+    </member>
+    <member kind="define">
+      <type>#define</type>
+      <name>section_so</name>
+      <anchorfile>group__MMU__defs__gr.html</anchorfile>
+      <anchor>gaf77ecb86097e6e8cf5f6c7bb9d2740c9</anchor>
+      <arglist>(descriptor_l1, region)</arglist>
+    </member>
+    <member kind="define">
+      <type>#define</type>
+      <name>section_device_ro</name>
+      <anchorfile>group__MMU__defs__gr.html</anchorfile>
+      <anchor>ga1f66b52e152895af070514528763c272</anchor>
+      <arglist>(descriptor_l1, region)</arglist>
+    </member>
+    <member kind="define">
+      <type>#define</type>
+      <name>section_device_rw</name>
+      <anchorfile>group__MMU__defs__gr.html</anchorfile>
+      <anchor>ga33c6ad1fc06648fe50f8b21554c9bccb</anchor>
+      <arglist>(descriptor_l1, region)</arglist>
+    </member>
+    <member kind="define">
+      <type>#define</type>
+      <name>page4k_device_rw</name>
+      <anchorfile>group__MMU__defs__gr.html</anchorfile>
+      <anchor>gafe66b1515bf7d251a9a3218162637a22</anchor>
+      <arglist>(descriptor_l1, descriptor_l2, region)</arglist>
+    </member>
+    <member kind="define">
+      <type>#define</type>
+      <name>page64k_device_rw</name>
+      <anchorfile>group__MMU__defs__gr.html</anchorfile>
+      <anchor>ga6c8c84bdeebf350d97eb3a99bd11845f</anchor>
+      <arglist>(descriptor_l1, descriptor_l2, region)</arglist>
+    </member>
+    <member kind="enumeration">
+      <type></type>
+      <name>mmu_region_size_Type</name>
+      <anchorfile>group__MMU__defs__gr.html</anchorfile>
+      <anchor>gab184b824a6d7cb728bd46c6abcd0c21a</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>SECTION</name>
+      <anchorfile>core__ca_8h.html</anchorfile>
+      <anchor>gab184b824a6d7cb728bd46c6abcd0c21aacb7227be6a36b93e485b62e3acddae51</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>PAGE_4k</name>
+      <anchorfile>core__ca_8h.html</anchorfile>
+      <anchor>gab184b824a6d7cb728bd46c6abcd0c21aa99ce0ce05e9c418dc6bddcc47b2fa05a</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>PAGE_64k</name>
+      <anchorfile>core__ca_8h.html</anchorfile>
+      <anchor>gab184b824a6d7cb728bd46c6abcd0c21aafc53512bbf834739fcb97ad1c0f444fc</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumeration">
+      <type></type>
+      <name>mmu_memory_Type</name>
+      <anchorfile>group__MMU__defs__gr.html</anchorfile>
+      <anchor>ga83ac8de9263f89879079da521e86d5f2</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>NORMAL</name>
+      <anchorfile>core__ca_8h.html</anchorfile>
+      <anchor>ga83ac8de9263f89879079da521e86d5f2a50d1448013c6f17125caee18aa418af7</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>DEVICE</name>
+      <anchorfile>core__ca_8h.html</anchorfile>
+      <anchor>ga83ac8de9263f89879079da521e86d5f2a28b8a7b4b6c2a98af7cf438255207174</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>SHARED_DEVICE</name>
+      <anchorfile>core__ca_8h.html</anchorfile>
+      <anchor>ga83ac8de9263f89879079da521e86d5f2a9b78345535e6af3288cc69a572338808</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>NON_SHARED_DEVICE</name>
+      <anchorfile>core__ca_8h.html</anchorfile>
+      <anchor>ga83ac8de9263f89879079da521e86d5f2a765e5cbb28da82e4d8f7e94fce32a7e0</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>STRONGLY_ORDERED</name>
+      <anchorfile>core__ca_8h.html</anchorfile>
+      <anchor>ga83ac8de9263f89879079da521e86d5f2a0a4d347de23312717e6e57b04f0b014e</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumeration">
+      <type></type>
+      <name>mmu_cacheability_Type</name>
+      <anchorfile>group__MMU__defs__gr.html</anchorfile>
+      <anchor>ga11c86b7b193efb2c59b6a2179a02f584</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>NON_CACHEABLE</name>
+      <anchorfile>core__ca_8h.html</anchorfile>
+      <anchor>ga11c86b7b193efb2c59b6a2179a02f584a61a625191f7d288011e20bf2104ee151</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>WB_WA</name>
+      <anchorfile>core__ca_8h.html</anchorfile>
+      <anchor>ga11c86b7b193efb2c59b6a2179a02f584a23294b86e8dbf6ff0fa98b678e8fd667</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>WT</name>
+      <anchorfile>core__ca_8h.html</anchorfile>
+      <anchor>ga11c86b7b193efb2c59b6a2179a02f584ab044987527e64a06f65aa6f2ae0e4e7e</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>WB_NO_WA</name>
+      <anchorfile>core__ca_8h.html</anchorfile>
+      <anchor>ga11c86b7b193efb2c59b6a2179a02f584aca2e70f575679d6f3e2e340d1ede4f13</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumeration">
+      <type></type>
+      <name>mmu_ecc_check_Type</name>
+      <anchorfile>group__MMU__defs__gr.html</anchorfile>
+      <anchor>ga06d94c0eaa22d713636acaff81485409</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>ECC_DISABLED</name>
+      <anchorfile>core__ca_8h.html</anchorfile>
+      <anchor>ga06d94c0eaa22d713636acaff81485409a48ce2ec8ec49f0167a7d571081a9301f</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>ECC_ENABLED</name>
+      <anchorfile>core__ca_8h.html</anchorfile>
+      <anchor>ga06d94c0eaa22d713636acaff81485409af0e84d9540ed9d79f01caad9841d414d</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumeration">
+      <type></type>
+      <name>mmu_execute_Type</name>
+      <anchorfile>group__MMU__defs__gr.html</anchorfile>
+      <anchor>ga2fe1157deda82e66b9a1b19772309b63</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>EXECUTE</name>
+      <anchorfile>core__ca_8h.html</anchorfile>
+      <anchor>ga2fe1157deda82e66b9a1b19772309b63a887d2cbfd9131de5cc3745731421b34b</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>NON_EXECUTE</name>
+      <anchorfile>core__ca_8h.html</anchorfile>
+      <anchor>ga2fe1157deda82e66b9a1b19772309b63ad1d1eabb1b07ce896d5308a1144cf87a</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumeration">
+      <type></type>
+      <name>mmu_global_Type</name>
+      <anchorfile>group__MMU__defs__gr.html</anchorfile>
+      <anchor>ga04160605fbe20914c8ef020430684a30</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>GLOBAL</name>
+      <anchorfile>core__ca_8h.html</anchorfile>
+      <anchor>ga04160605fbe20914c8ef020430684a30afde1bb5ef04b28059e61df449501f1c0</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>NON_GLOBAL</name>
+      <anchorfile>core__ca_8h.html</anchorfile>
+      <anchor>ga04160605fbe20914c8ef020430684a30a611c091f2869100296a98915a19ee018</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumeration">
+      <type></type>
+      <name>mmu_shared_Type</name>
+      <anchorfile>group__MMU__defs__gr.html</anchorfile>
+      <anchor>gab884a11fa8d094573ab77fb1c0f8d8a7</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>NON_SHARED</name>
+      <anchorfile>core__ca_8h.html</anchorfile>
+      <anchor>gab884a11fa8d094573ab77fb1c0f8d8a7a4a237208271e450df0a72c07169683b4</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>SHARED</name>
+      <anchorfile>core__ca_8h.html</anchorfile>
+      <anchor>gab884a11fa8d094573ab77fb1c0f8d8a7a9c46e16a4ab019339596acadeefc8c53</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumeration">
+      <type></type>
+      <name>mmu_secure_Type</name>
+      <anchorfile>group__MMU__defs__gr.html</anchorfile>
+      <anchor>gac3d277641df9fb3bb3b555e2e79dd639</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>SECURE</name>
+      <anchorfile>core__ca_8h.html</anchorfile>
+      <anchor>gac3d277641df9fb3bb3b555e2e79dd639aa9dea2ba3f45f7d12b274eb6ab7d28d9</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>NON_SECURE</name>
+      <anchorfile>core__ca_8h.html</anchorfile>
+      <anchor>gac3d277641df9fb3bb3b555e2e79dd639a9e08ca26fdda38ef731f13e4f058ef6f</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumeration">
+      <type></type>
+      <name>mmu_access_Type</name>
+      <anchorfile>group__MMU__defs__gr.html</anchorfile>
+      <anchor>ga2ee598252f996e4f96640b096291d280</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>NO_ACCESS</name>
+      <anchorfile>core__ca_8h.html</anchorfile>
+      <anchor>ga2ee598252f996e4f96640b096291d280a4c66cd69a45985317939a53d820fb9da</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>RW</name>
+      <anchorfile>core__ca_8h.html</anchorfile>
+      <anchor>ga2ee598252f996e4f96640b096291d280aec2497e0c8af01c04bec31ec0d1d7847</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="enumvalue">
+      <name>READ</name>
+      <anchorfile>core__ca_8h.html</anchorfile>
+      <anchor>ga2ee598252f996e4f96640b096291d280acb9be765f361bb7efb9073730aac92c6</anchor>
+      <arglist></arglist>
+    </member>
+  </compound>
+  <compound kind="group">
     <name>peripheral_gr</name>
     <title>Peripheral Access</title>
     <filename>group__peripheral__gr.html</filename>
@@ -9205,6 +10286,12 @@
     <name>CMSIS_Core_FunctionInterface</name>
     <title>Core Peripherals</title>
     <filename>group__CMSIS__Core__FunctionInterface.html</filename>
+    <subgroup>GIC_functions</subgroup>
+    <subgroup>L1_cache_functions</subgroup>
+    <subgroup>L2_cache_functions</subgroup>
+    <subgroup>PL1_timer_functions</subgroup>
+    <subgroup>PTM_timer_functions</subgroup>
+    <subgroup>MMU_functions</subgroup>
     <subgroup>FPU_functions</subgroup>
   </compound>
   <compound kind="group">

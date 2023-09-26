@@ -1,15 +1,9 @@
 var searchData=
 [
-  ['s_0',['s',['../unionDFSR__Type.html#afc36037af17229f81bcbeeca6965c6d5',1,'DFSR_Type::s()'],['../unionIFSR__Type.html#a424f36ec82b25a5c3b42223f7fd7a2e6',1,'IFSR_Type::s()']]],
-  ['sec_5ft_1',['sec_t',['../structmmu__region__attributes__Type.html#a195e022fa08ec703937fa8175d8371d7',1,'mmu_region_attributes_Type']]],
-  ['setspi_5fnsr_2',['SETSPI_NSR',['../structGICDistributor__Type.html#a5f35d6c1bff6ac7a33ac58b151ed3940',1,'GICDistributor_Type']]],
-  ['setspi_5fsr_3',['SETSPI_SR',['../structGICDistributor__Type.html#a8eaf8c4fe9c97e97d04b9fb1e73836de',1,'GICDistributor_Type']]],
-  ['sgir_4',['SGIR',['../structGICDistributor__Type.html#a6ac65c4a5394926cc9518753a00d4da1',1,'GICDistributor_Type']]],
-  ['sh_5ft_5',['sh_t',['../structmmu__region__attributes__Type.html#ad1962a36e3bf13dfb89bc76862097ed5',1,'mmu_region_attributes_Type']]],
-  ['smp_6',['SMP',['../unionACTLR__Type.html#afa360e0c6bf79094d72bc78fac300149',1,'ACTLR_Type']]],
-  ['spendsgir_7',['SPENDSGIR',['../structGICDistributor__Type.html#af6bc488789f97ead0767d363aca941a7',1,'GICDistributor_Type']]],
-  ['status_8',['STATUS',['../unionDFSR__Type.html#a4cb3ba7b8c8075bfbff792b7e5b88103',1,'DFSR_Type::STATUS()'],['../unionIFSR__Type.html#a543066fc60d5b63478cc85ba082524d4',1,'IFSR_Type::STATUS()']]],
-  ['statusr_9',['STATUSR',['../structGICDistributor__Type.html#ae24f260e27065660a2059803293084f2',1,'GICDistributor_Type::STATUSR()'],['../structGICInterface__Type.html#abd978b408fb69b7887be2c422f48ce7e',1,'GICInterface_Type::STATUSR()']]],
-  ['sw_10',['SW',['../unionSCTLR__Type.html#a6598f817304ccaef4509843ce041de1c',1,'SCTLR_Type']]],
-  ['systemcoreclock_11',['SystemCoreClock',['../group__system__init__gr.html#gaa3cd3e43291e81e795d642b79b6088e6',1,'Ref_SystemAndClock.txt']]]
+  ['radis_0',['RADIS',['../unionACTLR__Type.html#a7921e6e73e0841402a5519f09e6e2ef3',1,'ACTLR_Type']]],
+  ['raw_5fint_5fstatus_1',['RAW_INT_STATUS',['../structL2C__310__TypeDef.html#a404f8453b6df3aaf5f3db4ff9b658637',1,'L2C_310_TypeDef']]],
+  ['rg_5ft_2',['rg_t',['../structmmu__region__attributes__Type.html#a3f9d884c340aca62d3287b91809ac262',1,'mmu_region_attributes_Type']]],
+  ['rpr_3',['RPR',['../structGICInterface__Type.html#a37762d42768ecb3d1302f34abc7f2821',1,'GICInterface_Type']]],
+  ['rr_4',['RR',['../unionSCTLR__Type.html#a10212a8d038bb1e076cbd06a5ba0b055',1,'SCTLR_Type']]],
+  ['rsdis_5',['RSDIS',['../unionACTLR__Type.html#a91288f7320d267d76b4aad4adcf8cda3',1,'ACTLR_Type']]]
 ];
