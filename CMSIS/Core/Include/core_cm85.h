@@ -64,7 +64,7 @@
 
 #include "cmsis_version.h"
 
-/*  CMSIS CM85 definitions */
+/* CMSIS CM85 definitions */
 
 #define __CORTEX_M                      (85U)                                 /*!< Cortex-M Core */
 
