@@ -9,7 +9,7 @@ via a terminal emulation program (Hyperterm, TeraTerm) or to another microcontro
 A UART takes bytes of data and transmits the individual bits in a sequential mode. At the destination, 
 a second UART reassembles the bits into complete bytes. Each UART contains a shift register for converting between serial and parallel transmission forms. 
 Wikipedia offers more information about  
-the <a href="http://en.wikipedia.org/wiki/Universal_asynchronous_receiver/transmitter" target="_blank"><b>Universal asynchronous receiver/transmitter</b></a>.
+the <a href="https://en.wikipedia.org/wiki/Universal_asynchronous_receiver/transmitter" target="_blank"><b>Universal asynchronous receiver/transmitter</b></a>.
 
 
 <b>USART API</b>

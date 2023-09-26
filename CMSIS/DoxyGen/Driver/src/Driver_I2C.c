@@ -14,8 +14,8 @@ Most significant features of the I<sup>2</sup>C bus include:
  - Providing arbitration and collision detection
 
 For more information about I<sup>2</sup>C refer to the following web pages:
-  - Wikipedia: <a href="http://en.wikipedia.org/wiki/I%C2%B2C" target="_blank">I<sup>2</sup>C</a>
-  - <a href="http://www.i2c-bus.org" target="_blank">www.i2c-bus.org</a>.
+  - Wikipedia: <a href="https://en.wikipedia.org/wiki/I%C2%B2C" target="_blank">I<sup>2</sup>C</a>
+  - <a href="https://www.i2c-bus.org" target="_blank">www.i2c-bus.org</a>.
 
 Devices can operation in Master or Slave mode:
 

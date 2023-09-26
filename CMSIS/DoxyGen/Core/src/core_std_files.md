@@ -29,7 +29,7 @@ The files have naming convention `core_<cpu>.h`, with one file available for eac
 
 Header File            | Target Processor Core
 :----------------------|:-------------------------------
-📂 CMSIS/Core/Include  | CMSIS-Core include folder ([See on GitHub](https://github.com/ARM-software/CMSIS_6/blob/main/CMSIS/Core/Include/))
+📂 CMSIS/Core/Include  | CMSIS-Core include folder ([See on GitHub](https://github.com/ARM-software/CMSIS_6/tree/main/CMSIS/Core/Include/))
  ┣ 📄 core_cm0.h       | Cortex-M0 processor
  ┣ 📄 core_cm0plus.h   | Cortex-M0+ processor
  ┣ 📄 core_cm1.h       | Cortex-M1 processor
@@ -55,7 +55,7 @@ CMSIS-Core compiler files are provided in `CMSIS/Core/Include/` directory, and d
 
 Header File                            | Description
 :--------------------------------------|:-------------------
-📂 CMSIS/Core/Include    | CMSIS-Core include folder ([See on GitHub](https://github.com/ARM-software/CMSIS_6/blob/main/CMSIS/Core/Include/))
+📂 CMSIS/Core/Include    | CMSIS-Core include folder ([See on GitHub](https://github.com/ARM-software/CMSIS_6/tree/main/CMSIS/Core/Include/))
  ┣ 📄 cmsis_compiler.h                  | Main CMSIS-Core compiler header file
  ┗ 📂 m-profile                         | Directory for M-Profile specific files
  &emsp;&nbsp; ┣ 📄 cmsis_armclang_m.h   | CMSIS-Core Arm Clang compiler file for Cortex-M
@@ -72,7 +72,7 @@ For Cortex-M cores following architecture feature files are provided in the `CMS
 
 Header File         | Feature
 :-------------------|:-------------------
-📂 CMSIS/Core/Include    | CMSIS-Core include folder ([See on GitHub](https://github.com/ARM-software/CMSIS_6/blob/main/CMSIS/Core/Include/))
+📂 CMSIS/Core/Include    | CMSIS-Core include folder ([See on GitHub](https://github.com/ARM-software/CMSIS_6/tree/main/CMSIS/Core/Include/))
  ┣ 📂 m-profile                    | Directory for M-Profile specific files
  &emsp;&nbsp; ┣ 📄 armv7m_cache1.h | \ref cache_functions_m7
  &emsp;&nbsp; ┣ 📄 armv7m_mpu.h    | \ref mpu_functions

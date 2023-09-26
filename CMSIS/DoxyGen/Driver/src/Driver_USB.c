@@ -6,8 +6,8 @@ The <b>Universal Serial Bus</b> (USB) implements a serial bus for data exchange.
 between a USB host and USB devices using a tiered star topology. 
 In microcontroller (MCU) applications, the interface is often used to connect a device to a host for data exchange or control purposes.
 
- - Wikipedia offers more information about the <a href="http://en.wikipedia.org/wiki/Universal_Serial_Bus" target="_blank"><b>Universal Serial Bus</b></a>.
- - The USB Implementers Forum provides detailed documentation under <a href="http://www.usb.org"><b>www.usb.org</b></a>.
+ - Wikipedia offers more information about the <a href="https://en.wikipedia.org/wiki/Universal_Serial_Bus" target="_blank"><b>Universal Serial Bus</b></a>.
+ - The USB Implementers Forum provides detailed documentation under <a href="https://www.usb.org"><b>www.usb.org</b></a>.
 
 
 <b>Block Diagram</b>

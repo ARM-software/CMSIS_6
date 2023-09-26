@@ -88,13 +88,13 @@ The core registers of the current state (Secure or Non-secure) are accessed usin
 
 ## Stack Sealing {#RTOS_TrustZone_stacksealing}
 
-CMSIS-Core \ref stacksealing_support_trustzone_functions provide standard interface for implementing the [Secure Stack Sealing technique](https://developer.arm.com/support/arm-security-updates/armv8-m-stack-sealing) recommended for mitigating some security vulnerabilities on Armv8-M systems with TrustZone.
+CMSIS-Core \ref stacksealing_support_trustzone_functions provide standard interface for implementing the [Secure Stack Sealing technique](https://developer.arm.com/Arm%20Security%20Center/Armv8-M%20Stack%20Sealing%20Vulnerability) recommended for mitigating some security vulnerabilities on Armv8-M systems with TrustZone.
 
 \ref startup_c_sec demonstrates how this functionality can be used in a device startup file.
 
 Stack Sealing also requires an application project to have a linker script that explicitly reserves 8 bytes for the stack seal on top of the secure main stack. Linker files provided with \ref device_examples for Armv8-M cores demonstrate how this can be implemented. For example see .\\Device\\ARM\\ARMCM33\\Source\\ARM\\ARMCM33_ac6.sct.
 
-To learn more about the stack sealing implementation in CMSIS projects for Armv8-M devices, refer to <a href="https://www.keil.com/appnotes/docs/apnt_335.asp" target="_blank"><b>Application Note 335</b></a>.
+To learn more about the stack sealing implementation in CMSIS projects for Armv8-M devices, refer to <a href="https://developer.arm.com/documentation/kan335" target="_blank"><b>Application Note 335</b></a>.
 
 ## CMSIS Files for TrustZone {#CMSIS_Files_TrustZone}
 

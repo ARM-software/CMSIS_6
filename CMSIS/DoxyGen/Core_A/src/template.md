@@ -15,7 +15,7 @@ The `core_<cpu>.h` defines the core peripherals and provides helper functions th
 
 Header File            | Target Processor Core
 :----------------------|:-------------------------------
-📂 CMSIS/Core/Include  | CMSIS-Core include folder ([See on GitHub](https://github.com/ARM-software/CMSIS_6/blob/main/CMSIS/Core/Include/))
+📂 CMSIS/Core/Include  | CMSIS-Core include folder ([See on GitHub](https://github.com/ARM-software/CMSIS_6/tree/main/CMSIS/Core/Include/))
  ┗ 📄 core_ca.h        | Generics for all supported Cortex-A processors
 
 ## Device Examples {#device_examples}
@@ -48,9 +48,9 @@ Template File                       | Description
 
 The following steps describe how to adopt the template files to a specific device or device family.
 Copy the complete all files in the template directory and replace:
-  - directory name 'Vendor' with the abbreviation for the device vendor  e.g.: NXP.
-  - directory name 'Device' with the specific device name e.g.: LPC17xx.
-  - in the file names 'Device' with the specific device name e.g.: LPC17xx.
+ - directory name 'Vendor' with the abbreviation for the device vendor  e.g.: NXP.
+ - directory name 'Device' with the specific device name e.g.: LPC17xx.
+ - in the file names 'Device' with the specific device name e.g.: LPC17xx.
 
 Each template file contains comments that start with \b ToDo: that describe a required modification.
 The template files contain place holders:

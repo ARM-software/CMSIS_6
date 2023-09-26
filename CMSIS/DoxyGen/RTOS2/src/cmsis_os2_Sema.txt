@@ -27,7 +27,7 @@ Semaphore Use Cases
 -------------------
 Due to their flexibility, semaphores cover a wide range of synchronizing applications. At the same time, they are perhaps the
 most challenging RTOS object to understand. The following explains a use case for semaphores, taken from the book
-<a href="http://www.greenteapress.com/semaphores/" target="_blank">The Little Book Of Semaphores</a> by Allen B. Downey which
+<a href="https://greenteapress.com/wp/semaphores/" target="_blank">The Little Book Of Semaphores</a> by Allen B. Downey which
 is available for free download.
 
 <b>Non-binary Semaphore (Multiplex)</b>
