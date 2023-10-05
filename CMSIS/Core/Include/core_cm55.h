@@ -1,8 +1,8 @@
 /**************************************************************************//**
  * @file     core_cm55.h
  * @brief    CMSIS Cortex-M55 Core Peripheral Access Layer Header File
- * @version  V1.5.2
- * @date     19. April 2023
+ * @version  V1.5.3
+ * @date     05. October 2023
  ******************************************************************************/
 /*
  * Copyright (c) 2018-2023 Arm Limited. All rights reserved.
@@ -98,7 +98,7 @@
     #if defined (__FPU_PRESENT) && (__FPU_PRESENT == 1U)
       #define __FPU_USED       1U
     #else
-      #warning "Compiler generates FPU instructions for a device without an FPU (check __FPU_PRESENT)"
+      #error "Compiler generates FPU instructions for a device without an FPU (check __FPU_PRESENT)"
       #define __FPU_USED       0U
     #endif
   #else
