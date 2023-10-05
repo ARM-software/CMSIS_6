@@ -3,7 +3,7 @@
 #include "cmsis_compiler.h"
 
 void isb() {
-    // CHECK: <isb>:
+    // CHECK-LABEL: <isb>:
     // CHECK: isb sy
     __ISB();
     // CHECK: bx lr

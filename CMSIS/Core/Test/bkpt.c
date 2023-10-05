@@ -3,7 +3,7 @@
 #include "cmsis_compiler.h"
 
 void bkpt() {
-    // CHECK: <bkpt>:
+    // CHECK-LABEL: <bkpt>:
     // CHECK: bkpt #0x15
     __BKPT(0x15);
     // CHECK: bx lr

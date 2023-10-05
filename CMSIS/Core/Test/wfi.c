@@ -3,7 +3,7 @@
 #include "cmsis_compiler.h"
 
 void wfi() {
-    // CHECK: <wfi>:
+    // CHECK-LABEL: <wfi>:
     // CHECK: wfi
     __WFI();
     // CHECK: bx lr

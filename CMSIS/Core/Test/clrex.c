@@ -4,7 +4,7 @@
 #include "cmsis_compiler.h"
 
 void clrex() {
-    // CHECK: <clrex>:
+    // CHECK-LABEL: <clrex>:
     // CHECK: clrex
     __CLREX();
     // CHECK: bx lr

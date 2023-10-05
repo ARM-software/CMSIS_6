@@ -3,7 +3,7 @@
 #include "cmsis_compiler.h"
 
 void sev() {
-    // CHECK: <sev>:
+    // CHECK-LABEL: <sev>:
     // CHECK: sev
     __SEV();
     // CHECK: bx lr

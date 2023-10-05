@@ -71,6 +71,9 @@ def lit(config):
 def run_lit(toolchain, device, optimize):
     return ["lit", "-D", f"toolchain={toolchain}", "-D", f"device={device}", "-D", f"optimize={optimize}", "." ]
 
+@matrix_filter
+def filter_iar(config):
+    return config.compiler == CompilerAxis.IAR
 
 @matrix_filter
 def filter_clang_v8m(config):

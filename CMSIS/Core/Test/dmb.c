@@ -3,7 +3,7 @@
 #include "cmsis_compiler.h"
 
 void dmb() {
-    // CHECK: <dmb>:
+    // CHECK-LABEL: <dmb>:
     // CHECK: dmb sy
     __DMB();
     // CHECK: bx lr

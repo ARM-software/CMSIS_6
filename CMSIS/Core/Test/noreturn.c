@@ -8,7 +8,7 @@ static void func() {
 }
 
 void noreturn() {
-    // CHECK: <noreturn>:
+    // CHECK-LABEL: <noreturn>:
     // CHECK: b 0x0 <noreturn>
     func();
     // CHECK-NOT: bx lr
