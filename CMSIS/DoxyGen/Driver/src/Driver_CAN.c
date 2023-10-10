@@ -12,12 +12,12 @@ Devices are connected to the bus through a host processor, a CAN controller, and
 
 
 The CAN Driver API allows to implement CAN Interfaces that conform to the  
-<a href="http://www.bosch-semiconductors.com/" target="_blank">
+<a href="https://www.bosch-semiconductors.com/" target="_blank">
 CAN specifications available from BOSCH</a>:
   - CAN 2.0B: CAN Specification 2.0B (released Sep. 1991) which is now superseded by ISO 11898-1.
   - CAN FD: CAN with Flexible Data Rate introduced in 2012 (released April 17th, 2012).
 
-Wikipedia offers more information about the <a href="http://en.wikipedia.org/wiki/CAN_bus" target="_blank"><b>CAN Bus</b></a>.
+Wikipedia offers more information about the <a href="https://en.wikipedia.org/wiki/CAN_bus" target="_blank"><b>CAN Bus</b></a>.
 
 **CAN 2.0B**
 Every CAN CMSIS-Driver supports the CAN 2.0B standard

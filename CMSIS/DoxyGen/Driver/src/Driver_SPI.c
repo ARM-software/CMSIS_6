@@ -5,7 +5,7 @@
 The <b>Serial Peripheral Interface Bus</b> (SPI) implements a synchronous serial bus for data exchange. In microcontroller (MCU) applications,
 the interface is often used to connect peripheral components at board (PCB) level. SPI devices can operate as Master (SCLK and SS are outputs) or 
 Slave (SCLK and SS are inputs). Wikipedia offers more information about 
-the <a href="http://en.wikipedia.org/wiki/Serial_Peripheral_Interface_Bus" target="_blank"><b>Serial Peripheral Interface Bus</b></a>.
+the <a href="https://en.wikipedia.org/wiki/Serial_Peripheral_Interface_Bus" target="_blank"><b>Serial Peripheral Interface Bus</b></a>.
 
 <b>Block Diagram</b>
 

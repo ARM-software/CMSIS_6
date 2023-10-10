@@ -1,8 +1,8 @@
 /**************************************************************************//**
  * @file     core_cm35p.h
  * @brief    CMSIS Cortex-M35P Core Peripheral Access Layer Header File
- * @version  V1.2.0
- * @date     04. April 2023
+ * @version  V1.2.1
+ * @date     05. October 2023
  ******************************************************************************/
 /*
  * Copyright (c) 2018-2023 Arm Limited. All rights reserved.
@@ -64,11 +64,7 @@
 
 #include "cmsis_version.h"
 
-/*  CMSIS CM35P definitions */
-#define __CM35P_CMSIS_VERSION_MAIN  (__CM_CMSIS_VERSION_MAIN)                  /*!< \deprecated [31:16] CMSIS HAL main version */
-#define __CM35P_CMSIS_VERSION_SUB   (__CM_CMSIS_VERSION_SUB)                   /*!< \deprecated [15:0]  CMSIS HAL sub version */
-#define __CM35P_CMSIS_VERSION       ((__CM35P_CMSIS_VERSION_MAIN << 16U) | \
-                                      __CM35P_CMSIS_VERSION_SUB           )    /*!< \deprecated CMSIS HAL version number */
+/* CMSIS CM35 definitions */
 
 #define __CORTEX_M                 (35U)                                       /*!< Cortex-M Core */
 
@@ -103,7 +99,7 @@
     #if defined (__FPU_PRESENT) && (__FPU_PRESENT == 1U)
       #define __FPU_USED       1U
     #else
-      #warning "Compiler generates FPU instructions for a device without an FPU (check __FPU_PRESENT)"
+      #error "Compiler generates FPU instructions for a device without an FPU (check __FPU_PRESENT)"
       #define __FPU_USED       0U
     #endif
   #else
@@ -126,7 +122,7 @@
     #if defined (__FPU_PRESENT) && (__FPU_PRESENT == 1U)
       #define __FPU_USED       1U
     #else
-      #warning "Compiler generates FPU instructions for a device without an FPU (check __FPU_PRESENT)"
+      #error "Compiler generates FPU instructions for a device without an FPU (check __FPU_PRESENT)"
       #define __FPU_USED       0U
     #endif
   #else

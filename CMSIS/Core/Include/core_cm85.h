@@ -1,8 +1,8 @@
 /**************************************************************************//**
  * @file     core_cm85.h
  * @brief    CMSIS Cortex-M85 Core Peripheral Access Layer Header File
- * @version  V1.3.2
- * @date     26. September 2023
+ * @version  V1.3.3
+ * @date     10. October 2023
  ******************************************************************************/
 /*
  * Copyright (c) 2022-2023 Arm Limited. All rights reserved.
@@ -64,7 +64,7 @@
 
 #include "cmsis_version.h"
 
-/*  CMSIS CM85 definitions */
+/* CMSIS CM85 definitions */
 
 #define __CORTEX_M                      (85U)                                 /*!< Cortex-M Core */
 
@@ -98,7 +98,7 @@
     #if defined (__FPU_PRESENT) && (__FPU_PRESENT == 1U)
       #define __FPU_USED       1U
     #else
-      #warning "Compiler generates FPU instructions for a device without an FPU (check __FPU_PRESENT)"
+      #error "Compiler generates FPU instructions for a device without an FPU (check __FPU_PRESENT)"
       #define __FPU_USED       0U
     #endif
   #else

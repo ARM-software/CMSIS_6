@@ -15,13 +15,6 @@ The header file <b>cmsis_version.h</b> is included by each core header so that t
 #endif
 \endcode
 
-<b>Deprecated</b>
-
-The following macros are deprecated:
-  - \b __XXX_CMSIS_VERSION_MAIN which is replaced by \ref __CM_CMSIS_VERSION_MAIN.
-  - \b __XXX_CMSIS_VERSION_SUB which is replaced by \ref __CM_CMSIS_VERSION_SUB.
-  - \b __XXX_CMSIS_VERSION which is replaced by \ref __CM_CMSIS_VERSION.
-
 @{
 */
 

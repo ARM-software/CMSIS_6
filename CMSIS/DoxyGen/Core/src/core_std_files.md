@@ -29,7 +29,7 @@ The files have naming convention `core_<cpu>.h`, with one file available for eac
 
 Header File            | Target Processor Core
 :----------------------|:-------------------------------
-📂 CMSIS/Core/Include  | CMSIS-Core include folder ([See on GitHub](https://github.com/ARM-software/CMSIS_6/blob/main/CMSIS/Core/Include/))
+📂 CMSIS/Core/Include  | CMSIS-Core include folder ([See on GitHub](https://github.com/ARM-software/CMSIS_6/tree/main/CMSIS/Core/Include/))
  ┣ 📄 core_cm0.h       | Cortex-M0 processor
  ┣ 📄 core_cm0plus.h   | Cortex-M0+ processor
  ┣ 📄 core_cm1.h       | Cortex-M1 processor
@@ -55,7 +55,7 @@ CMSIS-Core compiler files are provided in `CMSIS/Core/Include/` directory, and d
 
 Header File                            | Description
 :--------------------------------------|:-------------------
-📂 CMSIS/Core/Include    | CMSIS-Core include folder ([See on GitHub](https://github.com/ARM-software/CMSIS_6/blob/main/CMSIS/Core/Include/))
+📂 CMSIS/Core/Include    | CMSIS-Core include folder ([See on GitHub](https://github.com/ARM-software/CMSIS_6/tree/main/CMSIS/Core/Include/))
  ┣ 📄 cmsis_compiler.h                  | Main CMSIS-Core compiler header file
  ┗ 📂 m-profile                         | Directory for M-Profile specific files
  &emsp;&nbsp; ┣ 📄 cmsis_armclang_m.h   | CMSIS-Core Arm Clang compiler file for Cortex-M
@@ -72,7 +72,7 @@ For Cortex-M cores following architecture feature files are provided in the `CMS
 
 Header File         | Feature
 :-------------------|:-------------------
-📂 CMSIS/Core/Include    | CMSIS-Core include folder ([See on GitHub](https://github.com/ARM-software/CMSIS_6/blob/main/CMSIS/Core/Include/))
+📂 CMSIS/Core/Include    | CMSIS-Core include folder ([See on GitHub](https://github.com/ARM-software/CMSIS_6/tree/main/CMSIS/Core/Include/))
  ┣ 📂 m-profile                    | Directory for M-Profile specific files
  &emsp;&nbsp; ┣ 📄 armv7m_cache1.h | \ref cache_functions_m7
  &emsp;&nbsp; ┣ 📄 armv7m_mpu.h    | \ref mpu_functions
@@ -83,171 +83,18 @@ Header File         | Feature
 
 ### CMSIS Version and Processor Information {#core_version_sect}
 
-Defines in the `core_<cpu>.h` file identify the version of the CMSIS-Core (Cortex-M) and the processor used. They can be used in the \ref device_h_pg to verify a minimum CMSIS-Core version as well as the target processor core.
+\ref __CM_CMSIS_VERSION is defined in the `cmsis_version.h` file and provides the version of the CMSIS-Core (Cortex-M). It is constructed as follows:
 
-**core_cm0.h**
 ```c
-#define __CM0_CMSIS_VERSION_MAIN  (__CM_CMSIS_VERSION_MAIN)                         /* [31:16] CMSIS HAL main version */
-#define __CM0_CMSIS_VERSION_SUB   (__CM_CMSIS_VERSION_SUB)                          /* [15:0]  CMSIS HAL sub version */
-#define __CM0_CMSIS_VERSION       ((__CM0_CMSIS_VERSION_MAIN << 16U) | \
-                                    __CM0_CMSIS_VERSION_SUB          )              /* CMSIS HAL version number */
+#define __CM_CMSIS_VERSION_MAIN  ( 5U)                                    /* [31:16] CMSIS Core(M) main version */
+#define __CM_CMSIS_VERSION_SUB   ( 7U)                                    /* [15:0]  CMSIS Core(M) sub version */
+#define __CM_CMSIS_VERSION       ((__CM_CMSIS_VERSION_MAIN << 16U) | \
+                                   __CM_CMSIS_VERSION_SUB           )     /* CMSIS Core(M) version number */
 
-#define __CORTEX_M                (0U)                                              /* Cortex-M Core */
 ```
 
-**core_cm0plus.h**
-```c
-#define __CM0PLUS_CMSIS_VERSION_MAIN  (__CM_CMSIS_VERSION_MAIN)                     /* [31:16] CMSIS HAL main version */
-#define __CM0PLUS_CMSIS_VERSION_SUB   (__CM_CMSIS_VERSION_SUB)                      /* [15:0]  CMSIS HAL sub version */
-#define __CM0PLUS_CMSIS_VERSION       ((__CM0P_CMSIS_VERSION_MAIN << 16U) | \
-                                        __CM0P_CMSIS_VERSION_SUB          )         /* CMSIS HAL version number */
+The `cmsis_version.h` is included by each `cpu_<core>.h` so the CMSIS version defines are available via them already.
 
-#define __CORTEX_M                    (0U)                                          /* Cortex-M Core */
-```
+The `cpu_<core>.h` files use specific defines (such as \ref __CORTEX_M) that provide identification of the target processor core.
 
-
-**core_cm1.h**
-```c
-#define __CM1_CMSIS_VERSION_MAIN  (__CM_CMSIS_VERSION_MAIN)                         /*!< \deprecated [31:16] CMSIS HAL main version */
-#define __CM1_CMSIS_VERSION_SUB   (__CM_CMSIS_VERSION_SUB)                          /*!< \deprecated [15:0]  CMSIS HAL sub version */
-#define __CM1_CMSIS_VERSION       ((__CM1_CMSIS_VERSION_MAIN << 16U) | \
-                                    __CM1_CMSIS_VERSION_SUB           )             /*!< \deprecated CMSIS HAL version number */
-
-#define __CORTEX_M                (1U)                                              /*!< Cortex-M Core */
-```
-
-**core_cm3.h**
-```c
-#define __CM3_CMSIS_VERSION_MAIN  (__CM_CMSIS_VERSION_MAIN)                         /* [31:16] CMSIS HAL main version */
-#define __CM3_CMSIS_VERSION_SUB   (__CM_CMSIS_VERSION_SUB)                          /* [15:0]  CMSIS HAL sub version */
-#define __CM3_CMSIS_VERSION       ((__CM3_CMSIS_VERSION_MAIN << 16U) | \
-                                    __CM3_CMSIS_VERSION_SUB          )              /* CMSIS HAL version number */
-
-#define __CORTEX_M                (3U)                                              /* Cortex-M Core */
-```
-
-**core_cm4.h**
-```c
-#define __CM4_CMSIS_VERSION_MAIN  (__CM_CMSIS_VERSION_MAIN)                         /* [31:16] CMSIS HAL main version */
-#define __CM4_CMSIS_VERSION_SUB   (__CM_CMSIS_VERSION_SUB)                          /* [15:0]  CMSIS HAL sub version */
-#define __CM4_CMSIS_VERSION       ((__CM4_CMSIS_VERSION_MAIN << 16U) | \
-                                    __CM4_CMSIS_VERSION_SUB          )              /* CMSIS HAL version number */
-
-#define __CORTEX_M                (4U)                                              /* Cortex-M Core */
-```
-
-**core_cm7.h**
-```c
-#define __CM7_CMSIS_VERSION_MAIN  (__CM_CMSIS_VERSION_MAIN                          /* [31:16] CMSIS HAL main version */
-#define __CM7_CMSIS_VERSION_SUB   (__CM_CMSIS_VERSION_SUB)                          /* [15:0]  CMSIS HAL sub version */
-#define __CM7_CMSIS_VERSION       ((__CM7_CMSIS_VERSION_MAIN << 16U) | \
-                                    __CM7_CMSIS_VERSION_SUB          )              /* CMSIS HAL version number */
-
-#define __CORTEX_M                (7U)                                              /* Cortex-M Core */
-```
-
-\if ARMv8M
-**core_cm23.h**
-```c
-#define __CM23_CMSIS_VERSION_MAIN  (__CM_CMSIS_VERSION_MAIN)                        /* [31:16] CMSIS HAL main version */
-#define __CM23_CMSIS_VERSION_SUB   (__CM_CMSIS_VERSION_SUB)                         /* [15:0]  CMSIS HAL sub version */
-#define __CM23_CMSIS_VERSION       ((__CM23_CMSIS_VERSION_MAIN << 16U) | \
-                                     __CM23_CMSIS_VERSION_SUB          )            /* CMSIS HAL version number */
-
-#define __CORTEX_M                (23U)                                             /* Cortex-M Core */
-```
-
-**core_cm33.h**
-```c
-#define __CM33_CMSIS_VERSION_MAIN  (__CM_CMSIS_VERSION_MAIN)                        /* [31:16] CMSIS HAL main version */
-#define __CM33_CMSIS_VERSION_SUB   (__CM_CMSIS_VERSION_SUB)                         /* [15:0]  CMSIS HAL sub version */
-#define __CM33_CMSIS_VERSION       ((__CM33_CMSIS_VERSION_MAIN << 16U) | \
-                                     __CM33_CMSIS_VERSION_SUB          )            /* CMSIS HAL version number */
-
-#define __CORTEX_M                (33U)                                             /* Cortex-M Core */
-```
-
-**core_cm55.h**
-```c
-#define __CM55_CMSIS_VERSION_MAIN  (__CM_CMSIS_VERSION_MAIN)                        /* [31:16] CMSIS HAL main version */
-#define __CM55_CMSIS_VERSION_SUB   (__CM_CMSIS_VERSION_SUB)                         /* [15:0]  CMSIS HAL sub version */
-#define __CM55_CMSIS_VERSION       ((__CM55_CMSIS_VERSION_MAIN << 16U) | \
-                                     __CM55_CMSIS_VERSION_SUB          )            /* CMSIS HAL version number */
-
-#define __CORTEX_M                (7U)                                              /* Cortex-M Core */
-```
-\endif
-
-\if ARMSC
-**core_sc000.h**
-```c
-#define __SC000_CMSIS_VERSION_MAIN  (__CM_CMSIS_VERSION_MAIN)                       /* [31:16] CMSIS HAL main version */
-#define __SC000_CMSIS_VERSION_SUB   (__CM_CMSIS_VERSION_SUB)                        /* [15:0]  CMSIS HAL sub version */
-#define __SC000_CMSIS_VERSION       ((__SC000_CMSIS_VERSION_MAIN << 16U) | \
-                                      __SC000_CMSIS_VERSION_SUB          )          /* CMSIS HAL version number */
-
-#define __CORTEX_SC                 (0U)                                            /* Cortex secure core */
-```
-\endif
-
-\if ARMSC
-**core_sc300.h**
-```c
-#define __SC300_CMSIS_VERSION_MAIN  (__CM_CMSIS_VERSION_MAIN)                       /* [31:16] CMSIS HAL main version */
-#define __SC300_CMSIS_VERSION_SUB   (__CM_CMSIS_VERSION_SUB)                        /* [15:0]  CMSIS HAL sub version */
-#define __SC300_CMSIS_VERSION       ((__SC300_CMSIS_VERSION_MAIN << 16U) | \
-                                      __SC300_CMSIS_VERSION_SUB          )          /* CMSIS HAL version number */
-
-#define __CORTEX_SC                 (300U)                                          /* Cortex secure core */
-```
-\endif
-
-\if ARMv8M
-\if ARMSC
-**core_cm35p.h**
-```c
-#define __CM35P_CMSIS_VERSION_MAIN  (__CM_CMSIS_VERSION_MAIN)                       /* [31:16] CMSIS HAL main version */
-#define __CM35P_CMSIS_VERSION_SUB   (__CM_CMSIS_VERSION_SUB)                        /* [15:0]  CMSIS HAL sub version */
-#define __CM35P_CMSIS_VERSION       ((__CM35P_CMSIS_VERSION_MAIN << 16U) | \
-                                      __CM35P_CMSIS_VERSION_SUB          )          /* CMSIS HAL version number */
-
-#define __CORTEX_M                (35U)                                             /* Cortex-M Core */
-```
-\endif
-\endif
-
-\if ARMv8M
-**core_ARMv8MBL.h**
-```c
-#define __ARMv8MBL_CMSIS_VERSION_MAIN  (__CM_CMSIS_VERSION_MAIN)                    /* [31:16] CMSIS HAL main version */
-#define __ARMv8MBL_CMSIS_VERSION_SUB   (__CM_CMSIS_VERSION_SUB)                     /* [15:0]  CMSIS HAL sub version */
-#define __ARMv8MBL_CMSIS_VERSION       ((__ARMv8MBL_CMSIS_VERSION_MAIN << 16U) | \
-                                         __ARMv8MBL_CMSIS_VERSION_SUB           )   /* CMSIS HAL version number */
-
-#define __CORTEX_M                     (2U)                                         /* Cortex secure core */
-```
-\endif
-
-\if ARMv8M
-**core_ARMv8MML.h**
-```c
-#define __ARMv8MML_CMSIS_VERSION_MAIN  (__CM_CMSIS_VERSION_MAIN)                    /* [31:16] CMSIS HAL main version */
-#define __ARMv8MML_CMSIS_VERSION_SUB   (__CM_CMSIS_VERSION_SUB)                     /* [15:0]  CMSIS HAL sub version */
-#define __ARMv8MML_CMSIS_VERSION       ((__ARMv8MML_CMSIS_VERSION_MAIN << 16U) | \
-                                         __ARMv8MML_CMSIS_VERSION_SUB           )   /* CMSIS HAL version number */
-
-#define __CORTEX_M                     (80U)                                        /* Cortex secure core */
-```
-\endif
-
-\if ARMv81M
-**core_ARMv81MML.h**
-```c
-#define __ARMv81MML_CMSIS_VERSION_MAIN  (__CM_CMSIS_VERSION_MAIN)                   /* [31:16] CMSIS HAL main version */
-#define __ARMv81MML_CMSIS_VERSION_SUB   (__CM_CMSIS_VERSION_SUB)                    /* [15:0]  CMSIS HAL sub version */
-#define __ARMv81MML_CMSIS_VERSION       ((__ARMv81MML_CMSIS_VERSION_MAIN << 16U) | \
-                                          __ARMv81MML_CMSIS_VERSION_SUB           ) /* CMSIS HAL version number */
-
-#define __CORTEX_M                     (81U)                                        /* Cortex secure core */
-```
-\endif
+These defines can be used in the \ref device_h_pg to verify a minimum CMSIS-Core version as well as the target processor. Read more at \ref version_control_gr.

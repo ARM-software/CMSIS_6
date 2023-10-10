@@ -29,7 +29,7 @@ Silicon vendors typically need to add to these template files the following info
 
 Template File                       | Description
 :-----------------------------------|:----------------------------------------
-📂 CMSIS/Core/Template/Device_M     | Folder with CMSIS-Core device file templates ([See on GitHub](https://github.com/ARM-software/CMSIS_6/blob/main/CMSIS/Core/Template/Device_M/))
+📂 CMSIS/Core/Template/Device_M     | Folder with CMSIS-Core device file templates ([See on GitHub](https://github.com/ARM-software/CMSIS_6/tree/main/CMSIS/Core/Template/Device_M/))
  ┣ 📂 Config                        | Template configuration files
  &emsp;&nbsp; ┣ 📄 Device_ac6.sct   | \ref linker_sct_pg template
  &emsp;&nbsp; ┣ 📄 Device_gcc.ld    | Linker description file for GNU GCC Arm Embedded Compiler

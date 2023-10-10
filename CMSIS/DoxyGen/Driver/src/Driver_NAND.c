@@ -5,7 +5,7 @@
 \details
 <b>NAND</b> devices are a type of non-volatile storage and do not require power to hold data. 
 Wikipedia offers more information about 
-the <a href="http://en.wikipedia.org/wiki/Flash_memory#ARM_NAND_memories" target="_blank"><b>Flash Memories</b></a>, including NAND.
+the <a href="https://en.wikipedia.org/wiki/Flash_memory#ARM_NAND_memories" target="_blank"><b>Flash Memories</b></a>, including NAND.
 
 <b>Block Diagram</b>
 

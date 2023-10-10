@@ -9,10 +9,10 @@ forms (SD, miniSD, microSD, MMC, MMCmicro) or as non-removable device
 es that are directly soldered to the PCB (eMMC).  
 
 \b References:
-- Wikipedia offers more information about the <a href="http://en.wikipedia.org/wiki/SD_card" target="_blank"><b>Secure Digital</b> memory</a>.
-- Wikipedia offers more information about the <a href="http://en.wikipedia.org/wiki/MultiMediaCard" target="_blank"><b>MultiMediaCard</b></a>.
-- The SD Association provides detailed documentation under <a href="http://www.sdcard.org">www.sdcard.org</a>.
-- The MultiMediaCard Association (merged with JEDEC) provides detailed documentation under <a href="http://www.jedec.org">www.jedec.org</a>.
+- Wikipedia offers more information about the <a href="https://en.wikipedia.org/wiki/SD_card" target="_blank"><b>Secure Digital</b> memory</a>.
+- Wikipedia offers more information about the <a href="https://en.wikipedia.org/wiki/MultiMediaCard" target="_blank"><b>MultiMediaCard</b></a>.
+- The SD Association provides detailed documentation under <a href="https://www.sdcard.org">www.sdcard.org</a>.
+- The MultiMediaCard Association (merged with JEDEC) provides detailed documentation under <a href="https://www.jedec.org">www.jedec.org</a>.
 
 <b>Block Diagram</b>
 

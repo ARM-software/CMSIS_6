@@ -7,7 +7,7 @@
 an Ethernet MAC (Media Access Control) data-link layer that interfaces to an Ethernet PHY (Physical Interface Transceiver).
 
 Wikipedia offers more information about 
-the <a href="http://en.wikipedia.org/wiki/Ethernet" target="_blank"><b>Ethernet</b></a>.
+the <a href="https://en.wikipedia.org/wiki/Ethernet" target="_blank"><b>Ethernet</b></a>.
 
 
 <b>Block Diagram</b>
@@ -189,7 +189,7 @@ The Ethernet Link information provides parameters about the current established 
 \struct ARM_ETH_MAC_ADDR
 \details
 Stores the MAC Address of the Ethernet interface as defined by IEEE 802. Wikipedia offers more information about 
-the <a href="http://en.wikipedia.org/wiki/MAC_address" target="_blank"><b>MAC Address</b></a>.
+the <a href="https://en.wikipedia.org/wiki/MAC_address" target="_blank"><b>MAC Address</b></a>.
 
 <b>Parameter for:</b>
   - \ref ARM_ETH_MAC_GetMacAddress, \ref ARM_ETH_MAC_SetMacAddress, \ref ARM_ETH_MAC_SetAddressFilter

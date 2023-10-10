@@ -198,8 +198,7 @@ int32_t ARM_ETH_MAC_SetMacAddress (const ARM_ETH_MAC_ADDR *ptr_addr)  {
 \fn int32_t ARM_ETH_MAC_SetMacAddress (const ARM_ETH_MAC_ADDR *ptr_addr)
 \details
 The function \b ARM_ETH_MAC_SetMacAddress configures Ethernet MAC own address.
-The Ethernet MAC accepts packets <a href="http://en.wikipedia.org/wiki/Ethernet_frame" target="_blank"><b>Ethernet frames</b></a> which contains 
-a MAC destination address that matches the address specified with \em ptr_addr. 
+The Ethernet MAC accepts packets <a href="https://en.wikipedia.org/wiki/Ethernet_frame" target="_blank"><b>Ethernet frames</b></a> which contains a MAC destination address that matches the address specified with \em ptr_addr.
 
 The Ethernet MAC receiver will accept also packets with addresses configured by \ref ARM_ETH_MAC_SetAddressFilter function.
 
@@ -214,9 +213,7 @@ int32_t ARM_ETH_MAC_SetAddressFilter (const ARM_ETH_MAC_ADDR *ptr_addr, uint32_t
 \fn int32_t ARM_ETH_MAC_SetAddressFilter (const ARM_ETH_MAC_ADDR *ptr_addr, uint32_t num_addr)
 \details
 The function \b ARM_ETH_MAC_SetAddressFilter configures Ethernet MAC receiver address filtering.
-The Ethernet MAC accepts packets <a href="http://en.wikipedia.org/wiki/Ethernet_frame" target="_blank"><b>Ethernet frames</b></a> which contains 
-a MAC destination address of the list supplied with \em ptr_addr.  The parameter \em ptr_addr provides and array of Ethernet MAC addresses.  The number of addresses
-is supplied by \em num_addr. Specifying \em num_adr = 0 disables address filtering previously set with this function.
+The Ethernet MAC accepts packets <a href="https://en.wikipedia.org/wiki/Ethernet_frame" target="_blank"><b>Ethernet frames</b></a> which contains a MAC destination address of the list supplied with \em ptr_addr.  The parameter \em ptr_addr provides and array of Ethernet MAC addresses.  The number of addresses is supplied by \em num_addr. Specifying \em num_adr = 0 disables address filtering previously set with this function.
 
 The Ethernet MAC receiver will accept packets addressed to its own address and packets with addresses configured by this function.
 
@@ -230,7 +227,7 @@ int32_t ARM_ETH_MAC_SendFrame (const uint8_t *frame, uint32_t len, uint32_t flag
 /**
 \fn int32_t ARM_ETH_MAC_SendFrame (const uint8_t *frame, uint32_t len, uint32_t flags)
 \details
-The function \b ARM_ETH_MAC_SendFrame writes an <a href="http://en.wikipedia.org/wiki/Ethernet_frame" target="_blank"><b>Ethernet frame</b></a> to the Ethernet MAC transmit buffer.
+The function \b ARM_ETH_MAC_SendFrame writes an <a href="https://en.wikipedia.org/wiki/Ethernet_frame" target="_blank"><b>Ethernet frame</b></a> to the Ethernet MAC transmit buffer.
 
 The Ethernet MAC transmit engine must be enabled by using the function \ref ARM_ETH_MAC_Control (ARM_ETH_MAC_CONTROL_TX, 1) before a call to this function.
 
@@ -267,7 +264,7 @@ int32_t ARM_ETH_MAC_ReadFrame (uint8_t *frame, uint32_t len)  {
 /**
 \fn int32_t ARM_ETH_MAC_ReadFrame (uint8_t *frame, uint32_t len)
 \details
-The function \b ARM_ETH_MAC_ReadFrame reads an <a href="http://en.wikipedia.org/wiki/Ethernet_frame" target="_blank"><b>Ethernet frame</b></a> from the Ethernet MAC receive buffer.
+The function \b ARM_ETH_MAC_ReadFrame reads an <a href="https://en.wikipedia.org/wiki/Ethernet_frame" target="_blank"><b>Ethernet frame</b></a> from the Ethernet MAC receive buffer.
 
 The Ethernet MAC receive engine must be enabled using the function \ref ARM_ETH_MAC_Control (ARM_ETH_MAC_CONTROL_RX , 1) before a call to this function.
 The \em len of the Ethernet frame can be checked using the function \ref ARM_ETH_MAC_GetRxFrameSize.
@@ -299,7 +296,7 @@ uint32_t ARM_ETH_MAC_GetRxFrameSize (void)  {
 \fn uint32_t ARM_ETH_MAC_GetRxFrameSize (void)
 \details
 The function \b ARM_ETH_MAC_GetRxFrameSize returns the size of a received 
-<a href="http://en.wikipedia.org/wiki/Ethernet_frame" target="_blank"><b>Ethernet frame</b></a>.
+<a href="https://en.wikipedia.org/wiki/Ethernet_frame" target="_blank"><b>Ethernet frame</b></a>.
 This function is called before \ref ARM_ETH_MAC_ReadFrame and supplies the value \em len.
 
 The frame size includes MAC destination and ends with the last Payload data byte.
@@ -318,7 +315,7 @@ int32_t ARM_ETH_MAC_GetRxFrameTime (ARM_ETH_MAC_TIME *time)  {
 /**
 \fn int32_t ARM_ETH_MAC_GetRxFrameTime (ARM_ETH_MAC_TIME *time)
 \details
-Retrieve time stamp of a received <a href="http://en.wikipedia.org/wiki/Ethernet_frame" target="_blank"><b>Ethernet frame</b></a>.
+Retrieve time stamp of a received <a href="https://en.wikipedia.org/wiki/Ethernet_frame" target="_blank"><b>Ethernet frame</b></a>.
 This function must be called before the frame is read using \ref ARM_ETH_MAC_ReadFrame.
 *******************************************************************************************************************/
 
@@ -328,7 +325,7 @@ int32_t ARM_ETH_MAC_GetTxFrameTime (ARM_ETH_MAC_TIME *time)  {
 /**
 \fn int32_t ARM_ETH_MAC_GetTxFrameTime (ARM_ETH_MAC_TIME *time)
 \details
-The function \b returns the time stamp of a transmitted <a href="http://en.wikipedia.org/wiki/Ethernet_frame" target="_blank"><b>Ethernet frame</b></a>.
+The function \b returns the time stamp of a transmitted <a href="https://en.wikipedia.org/wiki/Ethernet_frame" target="_blank"><b>Ethernet frame</b></a>.
 *******************************************************************************************************************/
 
 int32_t ARM_ETH_MAC_Control (uint32_t control, uint32_t arg)  {
