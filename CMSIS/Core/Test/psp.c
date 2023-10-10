@@ -1,5 +1,5 @@
 // REQUIRES: thumbv6m
-// RUN: %cc% %ccflags% %ccout% %s.o %s; llvm-objdump -d %s.o | FileCheck --allow-unused-prefixes --check-prefixes %prefixes% %s
+// RUN: %cc% %ccflags% %ccout% %s.o %s; llvm-objdump --mcpu=%mcpu% -d %s.o | FileCheck --allow-unused-prefixes --check-prefixes %prefixes% %s
 
 #include "cmsis_compiler.h"
 
@@ -7,7 +7,7 @@ void get_psp() {
     // CHECK-LABEL: <get_psp>:
     // CHECK: mrs {{r[0-9]+}}, psp
     volatile uint32_t result = __get_PSP();
-    // CHECK: bx lr
+    // CHECK: {{(bx lr)|(pop {.*pc})}}
 }
 
 void get_psp_ns() {
@@ -16,14 +16,14 @@ void get_psp_ns() {
     // CHECK-S: mrs {{r[0-9]+}}, psp_ns
     volatile uint32_t result = __TZ_get_PSP_NS();
 #endif
-    // CHECK: bx lr
+    // CHECK: {{(bx lr)|(pop {.*pc})}}
 }
 
 void set_psp() {
     // CHECK-LABEL: <set_psp>:
     // CHECK: msr psp, {{r[0-9]+}}
     __set_PSP(0x0815u);
-    // CHECK: bx lr
+    // CHECK: {{(bx lr)|(pop {.*pc})}}
 }
 
 void set_psp_ns() {
@@ -32,5 +32,5 @@ void set_psp_ns() {
     // CHECK-S: msr psp_ns, {{r[0-9]+}}
      __TZ_set_PSP_NS(0x0815u);
 #endif
-    // CHECK: bx lr
+    // CHECK: {{(bx lr)|(pop {.*pc})}}
 }

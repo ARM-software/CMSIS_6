@@ -1,6 +1,6 @@
 
 // REQUIRES: thumb-2
-// RUN: %cc% %ccflags% %ccout% %s.o %s; llvm-objdump -d %s.o | FileCheck --allow-unused-prefixes --check-prefixes %prefixes% %s
+// RUN: %cc% %ccflags% %ccout% %s.o %s; llvm-objdump --mcpu=%mcpu% -d %s.o | FileCheck --allow-unused-prefixes --check-prefixes %prefixes% %s
 
 #include "cmsis_compiler.h"
 
@@ -12,19 +12,19 @@ void ldrbt() {
     // CHECK-LABEL: <ldrbt>:
     // CHECK: ldrbt {{r[0-9]+}}, [{{r[0-9]+}}]
     volatile uint8_t result = __LDRBT(&v8);
-    // CHECK: bx lr
+    // CHECK: {{(bx lr)|(pop {.*pc})}}
 }
 
 void ldrht() {
     // CHECK-LABEL: <ldrht>:
     // CHECK: ldrht {{r[0-9]+}}, [{{r[0-9]+}}]
     volatile uint16_t result = __LDRHT(&v16);
-    // CHECK: bx lr
+    // CHECK: {{(bx lr)|(pop {.*pc})}}
 }
 
 void ldrt() {
     // CHECK-LABEL: <ldrt>:
     // CHECK: ldrt {{r[0-9]+}}, [{{r[0-9]+}}]
     volatile uint32_t result = __LDRT(&v32);
-    // CHECK: bx lr
+    // CHECK: {{(bx lr)|(pop {.*pc})}}
 }

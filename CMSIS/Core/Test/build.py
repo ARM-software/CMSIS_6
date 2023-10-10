@@ -29,16 +29,18 @@ class DeviceAxis(Enum):
     CM35P = ('Cortex-M35P', 'CM35P')
     CM35PS = ('Cortex-M35PS', 'CM35PS')
     CM35PNS = ('Cortex-M35PNS', 'CM35PNS')
+    CM55 = ('Cortex-M55', 'CM55')
     CM55S = ('Cortex-M55S', 'CM55S')
     CM55NS = ('Cortex-M55NS', 'CM55NS')
+    CM85 = ('Cortex-M85', 'CM85')
     CM85S = ('Cortex-M85S', 'CM85S')
     CM85NS = ('Cortex-M85NS', 'CM85NS')
     CA5 = ('Cortex-A5', 'CA5')
     CA7 = ('Cortex-A7', 'CA7')
     CA9 = ('Cortex-A9', 'CA9')
-#    CA5NEON = ('Cortex-A5neon', 'CA5neon')
-#    CA7NEON = ('Cortex-A7neon', 'CA7neon')
-#    CA9NEON = ('Cortex-A9neon', 'CA9neon')
+    CA5NEON = ('Cortex-A5neon', 'CA5neon')
+    CA7NEON = ('Cortex-A7neon', 'CA7neon')
+    CA9NEON = ('Cortex-A9neon', 'CA9neon')
 
 
 @matrix_axis("compiler", "c", "Compiler(s) to be considered.")
@@ -75,8 +77,8 @@ def filter_iar(config):
     return config.compiler == CompilerAxis.IAR
 
 @matrix_filter
-def filter_clang_v8m(config):
-    return config.compiler == CompilerAxis.CLANG and config.device.match('CM[2358][35]*S')
+def filter_gcc_cm85(config):
+    return config.compiler == CompilerAxis.GCC and config.device.match('CM85*')
 
 
 @matrix_filter

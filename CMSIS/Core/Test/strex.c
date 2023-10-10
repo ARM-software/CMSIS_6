@@ -1,5 +1,5 @@
 // REQUIRES: ldrex
-// RUN: %cc% %ccflags% %ccout% %s.o %s; llvm-objdump -d %s.o | FileCheck --allow-unused-prefixes --check-prefixes %prefixes% %s
+// RUN: %cc% %ccflags% %ccout% %s.o %s; llvm-objdump --mcpu=%mcpu% -d %s.o | FileCheck --allow-unused-prefixes --check-prefixes %prefixes% %s
 
 #include "cmsis_compiler.h"
 
@@ -11,19 +11,19 @@ void strexb() {
     // CHECK-LABEL: <strexb>:
     // CHECK: strexb {{r[0-9]+}}, {{r[0-9]+}}, [{{r[0-9]+}}]
     volatile uint32_t result = __STREXB(0x7u, &v8);
-    // CHECK: bx lr
+    // CHECK: {{(bx lr)|(pop {.*pc})}}
 }
 
 void strexh() {
     // CHECK-LABEL: <strexh>:
     // CHECK: strexh {{r[0-9]+}}, {{r[0-9]+}}, [{{r[0-9]+}}]
     volatile uint32_t result = __STREXH(0x7u, &v16);
-    // CHECK: bx lr
+    // CHECK: {{(bx lr)|(pop {.*pc})}}
 }
 
 void strexw() {
     // CHECK-LABEL: <strexw>:
     // CHECK: strex {{r[0-9]+}}, {{r[0-9]+}}, [{{r[0-9]+}}]
     volatile uint32_t result = __STREXW(0x7u, &v32);
-    // CHECK: bx lr
+    // CHECK: {{(bx lr)|(pop {.*pc})}}
 }

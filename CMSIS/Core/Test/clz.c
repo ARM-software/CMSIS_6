@@ -1,5 +1,5 @@
 // REQUIRES: clz
-// RUN: %cc% %ccflags% %ccout% %s.o %s; llvm-objdump -d %s.o | FileCheck --allow-unused-prefixes --check-prefixes %prefixes% %s
+// RUN: %cc% %ccflags% %ccout% %s.o %s; llvm-objdump --mcpu=%mcpu% -d %s.o | FileCheck --allow-unused-prefixes --check-prefixes %prefixes% %s
 
 #include "cmsis_compiler.h"
 
@@ -9,6 +9,6 @@ void clz() {
     // CHECK-LABEL: <clz>:
     // CHECK: clz {{r[0-9]+}}, {{r[0-9]+}}
     volatile uint32_t c = __CLZ(a);
-    // CHECK: bx lr
+    // CHECK: {{(bx lr)|(pop {.*pc})}}
 }
 

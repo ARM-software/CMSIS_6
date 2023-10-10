@@ -1,5 +1,5 @@
 // REQUIRES: armv8m
-// RUN: %cc% %ccflags% %ccout% %s.o %s; llvm-objdump -d %s.o | FileCheck --allow-unused-prefixes --check-prefixes %prefixes% %s
+// RUN: %cc% %ccflags% %ccout% %s.o %s; llvm-objdump --mcpu=%mcpu% -d %s.o | FileCheck --allow-unused-prefixes --check-prefixes %prefixes% %s
 
 #include "cmsis_compiler.h"
 
@@ -11,19 +11,19 @@ void ldaexb() {
     // CHECK-LABEL: <ldaexb>:
     // CHECK: ldaexb {{r[0-9]+}}, [{{r[0-9]+}}]
     volatile uint8_t result = __LDAEXB(&v8);
-    // CHECK: bx lr
+    // CHECK: {{(bx lr)|(pop {.*pc})}}
 }
 
 void ldaexh() {
     // CHECK-LABEL: <ldaexh>:
     // CHECK: ldaexh {{r[0-9]+}}, [{{r[0-9]+}}]
     volatile uint16_t result = __LDAEXH(&v16);
-    // CHECK: bx lr
+    // CHECK: {{(bx lr)|(pop {.*pc})}}
 }
 
 void ldaex() {
     // CHECK-LABEL: <ldaex>:
     // CHECK: ldaex {{r[0-9]+}}, [{{r[0-9]+}}]
     volatile uint32_t result = __LDAEX(&v32);
-    // CHECK: bx lr
+    // CHECK: {{(bx lr)|(pop {.*pc})}}
 }

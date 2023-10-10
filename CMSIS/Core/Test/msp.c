@@ -1,5 +1,5 @@
 // REQUIRES: thumbv6m
-// RUN: %cc% %ccflags% %ccout% %s.o %s; llvm-objdump -d %s.o | FileCheck --allow-unused-prefixes --check-prefixes %prefixes% %s
+// RUN: %cc% %ccflags% %ccout% %s.o %s; llvm-objdump --mcpu=%mcpu% -d %s.o | FileCheck --allow-unused-prefixes --check-prefixes %prefixes% %s
 
 #include "cmsis_compiler.h"
 
@@ -7,7 +7,7 @@ void get_msp() {
     // CHECK-LABEL: <get_msp>:
     // CHECK: mrs {{r[0-9]+}}, msp
     volatile uint32_t result = __get_MSP();
-    // CHECK: bx lr
+    // CHECK: {{(bx lr)|(pop {.*pc})}}
 }
 
 void get_msp_ns() {
@@ -16,14 +16,14 @@ void get_msp_ns() {
     // CHECK-S: mrs {{r[0-9]+}}, msp_ns
     volatile uint32_t result = __TZ_get_MSP_NS();
 #endif
-    // CHECK: bx lr
+    // CHECK: {{(bx lr)|(pop {.*pc})}}
 }
 
 void set_msp() {
     // CHECK-LABEL: <set_msp>:
     // CHECK: msr msp, {{r[0-9]+}}
     __set_MSP(0x0815u);
-    // CHECK: bx lr
+    // CHECK: {{(bx lr)|(pop {.*pc})}}
 }
 
 void set_msp_ns() {
@@ -32,5 +32,5 @@ void set_msp_ns() {
     // CHECK-S: msr msp_ns, {{r[0-9]+}}
      __TZ_set_MSP_NS(0x0815u);
 #endif
-    // CHECK: bx lr
+    // CHECK: {{(bx lr)|(pop {.*pc})}}
 }

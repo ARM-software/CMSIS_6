@@ -1,5 +1,5 @@
 // REQUIRES: unsupported
-// RUN: %cc% %ccflags% %ccout% %s.o %s; llvm-objdump -d %s.o | FileCheck --allow-unused-prefixes --check-prefixes %prefixes% %s
+// RUN: %cc% %ccflags% %ccout% %s.o %s; llvm-objdump --mcpu=%mcpu% -d %s.o | FileCheck --allow-unused-prefixes --check-prefixes %prefixes% %s
 
 #include <stdint.h>
 
@@ -13,5 +13,5 @@ void systick_type_ctrl() {
     // CHECK: mov.w [[REG:r[0-9]+]], #0xe000e000
     // CHECK: ldr {{r[0-9]+}}, [[[REG]], #0x10]
     uint32_t ctrl = SysTick->CTRL;
-    // CHECK: bx lr
+    // CHECK: {{(bx lr)|(pop {.*pc})}}
 }
