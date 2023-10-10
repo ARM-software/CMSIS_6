@@ -1,8 +1,8 @@
 /**************************************************************************//**
  * @file     core_cm85.h
  * @brief    CMSIS Cortex-M85 Core Peripheral Access Layer Header File
- * @version  V1.3.2
- * @date     05. October 2023
+ * @version  V1.3.3
+ * @date     10. October 2023
  ******************************************************************************/
 /*
  * Copyright (c) 2022-2023 Arm Limited. All rights reserved.
@@ -1164,18 +1164,6 @@ typedef struct
   __IM  uint32_t DEVARCH;                /*!< Offset: 0xFBC (R/ )  ITM Device Architecture Register */
         uint32_t RESERVED7[3U];
   __IM  uint32_t DEVTYPE;                /*!< Offset: 0xFCC (R/ )  ITM Device Type Register */
-  __IM  uint32_t PID4;                   /*!< Offset: 0xFD0 (R/ )  ITM Peripheral Identification Register #4 */
-  __IM  uint32_t PID5;                   /*!< Offset: 0xFD4 (R/ )  ITM Peripheral Identification Register #5 */
-  __IM  uint32_t PID6;                   /*!< Offset: 0xFD8 (R/ )  ITM Peripheral Identification Register #6 */
-  __IM  uint32_t PID7;                   /*!< Offset: 0xFDC (R/ )  ITM Peripheral Identification Register #7 */
-  __IM  uint32_t PID0;                   /*!< Offset: 0xFE0 (R/ )  ITM Peripheral Identification Register #0 */
-  __IM  uint32_t PID1;                   /*!< Offset: 0xFE4 (R/ )  ITM Peripheral Identification Register #1 */
-  __IM  uint32_t PID2;                   /*!< Offset: 0xFE8 (R/ )  ITM Peripheral Identification Register #2 */
-  __IM  uint32_t PID3;                   /*!< Offset: 0xFEC (R/ )  ITM Peripheral Identification Register #3 */
-  __IM  uint32_t CID0;                   /*!< Offset: 0xFF0 (R/ )  ITM Component  Identification Register #0 */
-  __IM  uint32_t CID1;                   /*!< Offset: 0xFF4 (R/ )  ITM Component  Identification Register #1 */
-  __IM  uint32_t CID2;                   /*!< Offset: 0xFF8 (R/ )  ITM Component  Identification Register #2 */
-  __IM  uint32_t CID3;                   /*!< Offset: 0xFFC (R/ )  ITM Component  Identification Register #3 */
 } ITM_Type;
 
 /* ITM Stimulus Port Register Definitions */
@@ -1644,28 +1632,28 @@ typedef struct
 } EWIC_ISA_Type;
 
 /* EWIC_ISA Event Set Pending (EVENTSPR) Register Definitions */
-#define EWIC_ISA_EVENTSPR_EDBGREQ_Pos   2U                                             /*!< EWIC_ISA EVENTSPR: EDBGREQ Position */
-#define EWIC_ISA_EVENTSPR_EDBGREQ_Msk  (0x1UL << EWIC_ISA_EVENTSPR_EDBGREQ_Pos)        /*!< EWIC_ISA EVENTSPR: EDBGREQ Mask */
+#define EWIC_ISA_EVENTSPR_EDBGREQ_Pos       2U                                         /*!< EWIC_ISA EVENTSPR: EDBGREQ Position */
+#define EWIC_ISA_EVENTSPR_EDBGREQ_Msk      (0x1UL << EWIC_ISA_EVENTSPR_EDBGREQ_Pos)    /*!< EWIC_ISA EVENTSPR: EDBGREQ Mask */
 
-#define EWIC_ISA_EVENTSPR_NMI_Pos   1U                                                 /*!< EWIC_ISA EVENTSPR: NMI Position */
-#define EWIC_ISA_EVENTSPR_NMI_Msk  (0x1UL << EWIC_ISA_EVENTSPR_NMI_Pos)                /*!< EWIC_ISA EVENTSPR: NMI Mask */
+#define EWIC_ISA_EVENTSPR_NMI_Pos           1U                                         /*!< EWIC_ISA EVENTSPR: NMI Position */
+#define EWIC_ISA_EVENTSPR_NMI_Msk          (0x1UL << EWIC_ISA_EVENTSPR_NMI_Pos)        /*!< EWIC_ISA EVENTSPR: NMI Mask */
 
-#define EWIC_ISA_EVENTSPR_EVENT_Pos   0U                                               /*!< EWIC_ISA EVENTSPR: EVENT Position */
-#define EWIC_ISA_EVENTSPR_EVENT_Msk  (0x1UL /*<< EWIC_ISA_EVENTSPR_EVENT_Pos*/)        /*!< EWIC_ISA EVENTSPR: EVENT Mask */
+#define EWIC_ISA_EVENTSPR_EVENT_Pos         0U                                         /*!< EWIC_ISA EVENTSPR: EVENT Position */
+#define EWIC_ISA_EVENTSPR_EVENT_Msk        (0x1UL /*<< EWIC_ISA_EVENTSPR_EVENT_Pos*/)  /*!< EWIC_ISA EVENTSPR: EVENT Mask */
 
 /* EWIC_ISA Event Mask A (EVENTMASKA) Register Definitions */
-#define EWIC_ISA_EVENTMASKA_EDBGREQ_Pos   2U                                           /*!< EWIC_ISA EVENTMASKA: EDBGREQ Position */
-#define EWIC_ISA_EVENTMASKA_EDBGREQ_Msk  (0x1UL << EWIC_ISA_EVENTMASKA_EDBGREQ_Pos)    /*!< EWIC_ISA EVENTMASKA: EDBGREQ Mask */
+#define EWIC_ISA_EVENTMASKA_EDBGREQ_Pos     2U                                         /*!< EWIC_ISA EVENTMASKA: EDBGREQ Position */
+#define EWIC_ISA_EVENTMASKA_EDBGREQ_Msk    (0x1UL << EWIC_ISA_EVENTMASKA_EDBGREQ_Pos)  /*!< EWIC_ISA EVENTMASKA: EDBGREQ Mask */
 
-#define EWIC_ISA_EVENTMASKA_NMI_Pos   1U                                               /*!< EWIC_ISA EVENTMASKA: NMI Position */
-#define EWIC_ISA_EVENTMASKA_NMI_Msk  (0x1UL << EWIC_ISA_EVENTMASKA_NMI_Pos)            /*!< EWIC_ISA EVENTMASKA: NMI Mask */
+#define EWIC_ISA_EVENTMASKA_NMI_Pos         1U                                         /*!< EWIC_ISA EVENTMASKA: NMI Position */
+#define EWIC_ISA_EVENTMASKA_NMI_Msk        (0x1UL << EWIC_ISA_EVENTMASKA_NMI_Pos)      /*!< EWIC_ISA EVENTMASKA: NMI Mask */
 
-#define EWIC_ISA_EVENTMASKA_EVENT_Pos   0U                                             /*!< EWIC_ISA EVENTMASKA: EVENT Position */
-#define EWIC_ISA_EVENTMASKA_EVENT_Msk  (0x1UL /*<< EWIC_ISA_EVENTMASKA_EVENT_Pos*/)    /*!< EWIC_ISA EVENTMASKA: EVENT Mask */
+#define EWIC_ISA_EVENTMASKA_EVENT_Pos       0U                                               /*!< EWIC_ISA EVENTMASKA: EVENT Position */
+#define EWIC_ISA_EVENTMASKA_EVENT_Msk      (0x1UL /*<< EWIC_ISA_EVENTMASKA_EVENT_Pos*/)      /*!< EWIC_ISA EVENTMASKA: EVENT Mask */
 
 /* EWIC_ISA Event Mask n (EVENTMASKn) Register Definitions */
-#define EWIC_ISA_EVENTMASKn_IRQ_Pos   0U                                                /*!< EWIC_ISA EVENTMASKn: IRQ Position */
-#define EWIC_ISA_EVENTMASKn_IRQ_Msk  (0xFFFFFFFFUL /*<< EWIC_ISA_EVENTMASKn_IRQ_Pos*/)  /*!< EWIC_ISA EVENTMASKn: IRQ Mask */
+#define EWIC_ISA_EVENTMASKn_IRQ_Pos         0U                                               /*!< EWIC_ISA EVENTMASKn: IRQ Position */
+#define EWIC_ISA_EVENTMASKn_IRQ_Msk        (0xFFFFFFFFUL /*<< EWIC_ISA_EVENTMASKn_IRQ_Pos*/) /*!< EWIC_ISA EVENTMASKn: IRQ Mask */
 
 /*@}*/ /* end of group EWIC_ISA_Type */
 
@@ -1855,12 +1843,20 @@ typedef struct
   __IM  uint32_t FFSR;                   /*!< Offset: 0x300 (R/ )  Formatter and Flush Status Register */
   __IOM uint32_t FFCR;                   /*!< Offset: 0x304 (R/W)  Formatter and Flush Control Register */
   __IOM uint32_t PSCR;                   /*!< Offset: 0x308 (R/W)  Periodic Synchronization Control Register */
-        uint32_t RESERVED3[809U];
-  __OM  uint32_t LAR;                    /*!< Offset: 0xFB0 ( /W)  Software Lock Access Register */
-  __IM  uint32_t LSR;                    /*!< Offset: 0xFB4 (R/ )  Software Lock Status Register */
-        uint32_t RESERVED4[4U];
-  __IM  uint32_t TYPE;                   /*!< Offset: 0xFC8 (R/ )  Device Identifier Register */
-  __IM  uint32_t DEVTYPE;                /*!< Offset: 0xFCC (R/ )  Device Type Register */
+        uint32_t RESERVED3[759U];
+  __IM  uint32_t TRIGGER;                /*!< Offset: 0xEE8 (R/ )  TRIGGER Register */
+  __IM  uint32_t ITFTTD0;                /*!< Offset: 0xEEC (R/ )  Integration Test FIFO Test Data 0 Register */
+  __IOM uint32_t ITATBCTR2;              /*!< Offset: 0xEF0 (R/W)  Integration Test ATB Control Register 2 */
+        uint32_t RESERVED4[1U];
+  __IM  uint32_t ITATBCTR0;              /*!< Offset: 0xEF8 (R/ )  Integration Test ATB Control Register 0 */
+  __IM  uint32_t ITFTTD1;                /*!< Offset: 0xEFC (R/ )  Integration Test FIFO Test Data 1 Register */
+  __IOM uint32_t ITCTRL;                 /*!< Offset: 0xF00 (R/W)  Integration Mode Control */
+        uint32_t RESERVED5[39U];
+  __IOM uint32_t CLAIMSET;               /*!< Offset: 0xFA0 (R/W)  Claim tag set */
+  __IOM uint32_t CLAIMCLR;               /*!< Offset: 0xFA4 (R/W)  Claim tag clear */
+        uint32_t RESERVED7[8U];
+  __IM  uint32_t DEVID;                  /*!< Offset: 0xFC8 (R/ )  Device Configuration Register */
+  __IM  uint32_t DEVTYPE;                /*!< Offset: 0xFCC (R/ )  Device Type Identifier Register */
 } TPI_Type;
 
 /* TPI Asynchronous Clock Prescaler Register Definitions */
@@ -1976,16 +1972,6 @@ typedef struct
   __IOM uint32_t DEVARCH;                           /*!< Offset: 0xFBC (R/W)  PMU Device Architecture Register */
         uint32_t RESERVED12[3];
   __IOM uint32_t DEVTYPE;                           /*!< Offset: 0xFCC (R/W)  PMU Device Type Register */
-  __IOM uint32_t PIDR4;                             /*!< Offset: 0xFD0 (R/W)  PMU Peripheral Identification Register 4 */
-        uint32_t RESERVED13[3];
-  __IOM uint32_t PIDR0;                             /*!< Offset: 0xFE0 (R/W)  PMU Peripheral Identification Register 0 */
-  __IOM uint32_t PIDR1;                             /*!< Offset: 0xFE4 (R/W)  PMU Peripheral Identification Register 1 */
-  __IOM uint32_t PIDR2;                             /*!< Offset: 0xFE8 (R/W)  PMU Peripheral Identification Register 2 */
-  __IOM uint32_t PIDR3;                             /*!< Offset: 0xFEC (R/W)  PMU Peripheral Identification Register 3 */
-  __IOM uint32_t CIDR0;                             /*!< Offset: 0xFF0 (R/W)  PMU Component Identification Register 0 */
-  __IOM uint32_t CIDR1;                             /*!< Offset: 0xFF4 (R/W)  PMU Component Identification Register 1 */
-  __IOM uint32_t CIDR2;                             /*!< Offset: 0xFF8 (R/W)  PMU Component Identification Register 2 */
-  __IOM uint32_t CIDR3;                             /*!< Offset: 0xFFC (R/W)  PMU Component Identification Register 3 */
 } PMU_Type;
 
 /** \brief PMU Event Counter Registers (0-30) Definitions  */

@@ -1,8 +1,8 @@
 /**************************************************************************//**
  * @file     core_cm55.h
  * @brief    CMSIS Cortex-M55 Core Peripheral Access Layer Header File
- * @version  V1.5.3
- * @date     05. October 2023
+ * @version  V1.5.4
+ * @date     10. October 2023
  ******************************************************************************/
 /*
  * Copyright (c) 2018-2023 Arm Limited. All rights reserved.
@@ -1164,18 +1164,6 @@ typedef struct
   __IM  uint32_t DEVARCH;                /*!< Offset: 0xFBC (R/ )  ITM Device Architecture Register */
         uint32_t RESERVED7[3U];
   __IM  uint32_t DEVTYPE;                /*!< Offset: 0xFCC (R/ )  ITM Device Type Register */
-  __IM  uint32_t PID4;                   /*!< Offset: 0xFD0 (R/ )  ITM Peripheral Identification Register #4 */
-  __IM  uint32_t PID5;                   /*!< Offset: 0xFD4 (R/ )  ITM Peripheral Identification Register #5 */
-  __IM  uint32_t PID6;                   /*!< Offset: 0xFD8 (R/ )  ITM Peripheral Identification Register #6 */
-  __IM  uint32_t PID7;                   /*!< Offset: 0xFDC (R/ )  ITM Peripheral Identification Register #7 */
-  __IM  uint32_t PID0;                   /*!< Offset: 0xFE0 (R/ )  ITM Peripheral Identification Register #0 */
-  __IM  uint32_t PID1;                   /*!< Offset: 0xFE4 (R/ )  ITM Peripheral Identification Register #1 */
-  __IM  uint32_t PID2;                   /*!< Offset: 0xFE8 (R/ )  ITM Peripheral Identification Register #2 */
-  __IM  uint32_t PID3;                   /*!< Offset: 0xFEC (R/ )  ITM Peripheral Identification Register #3 */
-  __IM  uint32_t CID0;                   /*!< Offset: 0xFF0 (R/ )  ITM Component  Identification Register #0 */
-  __IM  uint32_t CID1;                   /*!< Offset: 0xFF4 (R/ )  ITM Component  Identification Register #1 */
-  __IM  uint32_t CID2;                   /*!< Offset: 0xFF8 (R/ )  ITM Component  Identification Register #2 */
-  __IM  uint32_t CID3;                   /*!< Offset: 0xFFC (R/ )  ITM Component  Identification Register #3 */
 } ITM_Type;
 
 /* ITM Stimulus Port Register Definitions */
@@ -1596,7 +1584,7 @@ typedef struct
 #define EWIC_EWIC_NUMID_NUMEVENT_Pos        0U                                         /*!< EWIC_NUMID: NUMEVENT Position */
 #define EWIC_EWIC_NUMID_NUMEVENT_Msk       (0xFFFFUL /*<< EWIC_EWIC_NUMID_NUMEVENT_Pos*/) /*!< EWIC_NUMID: NUMEVENT Mask */
 
-/* EWIC Mask A (EWIC_MASKA) Register Definitions */
+/* EWIC MaskA (EWIC_MASKA) Register Definitions */
 #define EWIC_EWIC_MASKA_EDBGREQ_Pos         2U                                         /*!< EWIC EWIC_MASKA: EDBGREQ Position */
 #define EWIC_EWIC_MASKA_EDBGREQ_Msk        (0x1UL << EWIC_EWIC_MASKA_EDBGREQ_Pos)      /*!< EWIC EWIC_MASKA: EDBGREQ Mask */
 
@@ -1610,7 +1598,7 @@ typedef struct
 #define EWIC_EWIC_MASKn_IRQ_Pos             0U                                           /*!< EWIC EWIC_MASKn: IRQ Position */
 #define EWIC_EWIC_MASKn_IRQ_Msk            (0xFFFFFFFFUL /*<< EWIC_EWIC_MASKn_IRQ_Pos*/) /*!< EWIC EWIC_MASKn: IRQ Mask */
 
-/* EWIC Pend A (EWIC_PENDA) Register Definitions */
+/* EWIC PendA (EWIC_PENDA) Register Definitions */
 #define EWIC_EWIC_PENDA_EDBGREQ_Pos         2U                                         /*!< EWIC EWIC_PENDA: EDBGREQ Position */
 #define EWIC_EWIC_PENDA_EDBGREQ_Msk        (0x1UL << EWIC_EWIC_PENDA_EDBGREQ_Pos)      /*!< EWIC EWIC_PENDA: EDBGREQ Mask */
 
@@ -1946,12 +1934,20 @@ typedef struct
   __IM  uint32_t FFSR;                   /*!< Offset: 0x300 (R/ )  Formatter and Flush Status Register */
   __IOM uint32_t FFCR;                   /*!< Offset: 0x304 (R/W)  Formatter and Flush Control Register */
   __IOM uint32_t PSCR;                   /*!< Offset: 0x308 (R/W)  Periodic Synchronization Control Register */
-        uint32_t RESERVED3[809U];
-  __OM  uint32_t LAR;                    /*!< Offset: 0xFB0 ( /W)  Software Lock Access Register */
-  __IM  uint32_t LSR;                    /*!< Offset: 0xFB4 (R/ )  Software Lock Status Register */
-        uint32_t RESERVED4[4U];
-  __IM  uint32_t TYPE;                   /*!< Offset: 0xFC8 (R/ )  Device Identifier Register */
-  __IM  uint32_t DEVTYPE;                /*!< Offset: 0xFCC (R/ )  Device Type Register */
+        uint32_t RESERVED3[759U];
+  __IM  uint32_t TRIGGER;                /*!< Offset: 0xEE8 (R/ )  TRIGGER Register */
+  __IM  uint32_t ITFTTD0;                /*!< Offset: 0xEEC (R/ )  Integration Test FIFO Test Data 0 Register */
+  __IOM uint32_t ITATBCTR2;              /*!< Offset: 0xEF0 (R/W)  Integration Test ATB Control Register 2 */
+        uint32_t RESERVED4[1U];
+  __IM  uint32_t ITATBCTR0;              /*!< Offset: 0xEF8 (R/ )  Integration Test ATB Control Register 0 */
+  __IM  uint32_t ITFTTD1;                /*!< Offset: 0xEFC (R/ )  Integration Test FIFO Test Data 1 Register */
+  __IOM uint32_t ITCTRL;                 /*!< Offset: 0xF00 (R/W)  Integration Mode Control */
+        uint32_t RESERVED5[39U];
+  __IOM uint32_t CLAIMSET;               /*!< Offset: 0xFA0 (R/W)  Claim tag set */
+  __IOM uint32_t CLAIMCLR;               /*!< Offset: 0xFA4 (R/W)  Claim tag clear */
+        uint32_t RESERVED7[8U];
+  __IM  uint32_t DEVID;                  /*!< Offset: 0xFC8 (R/ )  Device Configuration Register */
+  __IM  uint32_t DEVTYPE;                /*!< Offset: 0xFCC (R/ )  Device Type Identifier Register */
 } TPI_Type;
 
 /* TPI Asynchronous Clock Prescaler Register Definitions */
@@ -2067,16 +2063,6 @@ typedef struct
   __IOM uint32_t DEVARCH;                           /*!< Offset: 0xFBC (R/W)  PMU Device Architecture Register */
         uint32_t RESERVED12[3];
   __IOM uint32_t DEVTYPE;                           /*!< Offset: 0xFCC (R/W)  PMU Device Type Register */
-  __IOM uint32_t PIDR4;                             /*!< Offset: 0xFD0 (R/W)  PMU Peripheral Identification Register 4 */
-        uint32_t RESERVED13[3];
-  __IOM uint32_t PIDR0;                             /*!< Offset: 0xFE0 (R/W)  PMU Peripheral Identification Register 0 */
-  __IOM uint32_t PIDR1;                             /*!< Offset: 0xFE4 (R/W)  PMU Peripheral Identification Register 1 */
-  __IOM uint32_t PIDR2;                             /*!< Offset: 0xFE8 (R/W)  PMU Peripheral Identification Register 2 */
-  __IOM uint32_t PIDR3;                             /*!< Offset: 0xFEC (R/W)  PMU Peripheral Identification Register 3 */
-  __IOM uint32_t CIDR0;                             /*!< Offset: 0xFF0 (R/W)  PMU Component Identification Register 0 */
-  __IOM uint32_t CIDR1;                             /*!< Offset: 0xFF4 (R/W)  PMU Component Identification Register 1 */
-  __IOM uint32_t CIDR2;                             /*!< Offset: 0xFF8 (R/W)  PMU Component Identification Register 2 */
-  __IOM uint32_t CIDR3;                             /*!< Offset: 0xFFC (R/W)  PMU Component Identification Register 3 */
 } PMU_Type;
 
 /** \brief PMU Event Counter Registers (0-30) Definitions  */
@@ -3739,60 +3725,6 @@ typedef struct
   \brief      Register alias definitions for backwards compatibility.
   @{
  */
-#define ID_ADR  (ID_AFR)    /*!< SCB Auxiliary Feature Register */
-
-/* 'SCnSCB' is deprecated and replaced by 'ICB' */
-typedef ICB_Type SCnSCB_Type;
-
-/* Auxiliary Control Register Definitions */
-#define SCnSCB_ACTLR_DISCRITAXIRUW_Pos   (ICB_ACTLR_DISCRITAXIRUW_Pos)
-#define SCnSCB_ACTLR_DISCRITAXIRUW_Msk   (ICB_ACTLR_DISCRITAXIRUW_Msk)
-
-#define SCnSCB_ACTLR_DISDI_Pos           (ICB_ACTLR_DISDI_Pos)
-#define SCnSCB_ACTLR_DISDI_Msk           (ICB_ACTLR_DISDI_Msk)
-
-#define SCnSCB_ACTLR_DISCRITAXIRUR_Pos   (ICB_ACTLR_DISCRITAXIRUR_Pos)
-#define SCnSCB_ACTLR_DISCRITAXIRUR_Msk   (ICB_ACTLR_DISCRITAXIRUR_Msk)
-
-#define SCnSCB_ACTLR_EVENTBUSEN_Pos      (ICB_ACTLR_EVENTBUSEN_Pos)
-#define SCnSCB_ACTLR_EVENTBUSEN_Msk      (ICB_ACTLR_EVENTBUSEN_Msk)
-
-#define SCnSCB_ACTLR_EVENTBUSEN_S_Pos    (ICB_ACTLR_EVENTBUSEN_S_Pos)
-#define SCnSCB_ACTLR_EVENTBUSEN_S_Msk    (ICB_ACTLR_EVENTBUSEN_S_Msk)
-
-#define SCnSCB_ACTLR_DISITMATBFLUSH_Pos  (ICB_ACTLR_DISITMATBFLUSH_Pos)
-#define SCnSCB_ACTLR_DISITMATBFLUSH_Msk  (ICB_ACTLR_DISITMATBFLUSH_Msk)
-
-#define SCnSCB_ACTLR_DISNWAMODE_Pos      (ICB_ACTLR_DISNWAMODE_Pos)
-#define SCnSCB_ACTLR_DISNWAMODE_Msk      (ICB_ACTLR_DISNWAMODE_Msk)
-
-#define SCnSCB_ACTLR_FPEXCODIS_Pos       (ICB_ACTLR_FPEXCODIS_Pos)
-#define SCnSCB_ACTLR_FPEXCODIS_Msk       (ICB_ACTLR_FPEXCODIS_Msk)
-
-#define SCnSCB_ACTLR_DISOLAP_Pos         (ICB_ACTLR_DISOLAP_Pos)
-#define SCnSCB_ACTLR_DISOLAP_Msk         (ICB_ACTLR_DISOLAP_Msk)
-
-#define SCnSCB_ACTLR_DISOLAPS_Pos        (ICB_ACTLR_DISOLAPS_Pos)
-#define SCnSCB_ACTLR_DISOLAPS_Msk        (ICB_ACTLR_DISOLAPS_Msk)
-
-#define SCnSCB_ACTLR_DISLOBR_Pos         (ICB_ACTLR_DISLOBR_Pos)
-#define SCnSCB_ACTLR_DISLOBR_Msk         (ICB_ACTLR_DISLOBR_Msk)
-
-#define SCnSCB_ACTLR_DISLO_Pos           (ICB_ACTLR_DISLO_Pos)
-#define SCnSCB_ACTLR_DISLO_Msk           (ICB_ACTLR_DISLO_Msk)
-
-#define SCnSCB_ACTLR_DISLOLEP_Pos        (ICB_ACTLR_DISLOLEP_Pos)
-#define SCnSCB_ACTLR_DISLOLEP_Msk        (ICB_ACTLR_DISLOLEP_Msk)
-
-#define SCnSCB_ACTLR_DISFOLD_Pos         (ICB_ACTLR_DISFOLD_Pos)
-#define SCnSCB_ACTLR_DISFOLD_Msk         (ICB_ACTLR_DISFOLD_Msk)
-
-/* Interrupt Controller Type Register Definitions */
-#define SCnSCB_ICTR_INTLINESNUM_Pos      (ICB_ICTR_INTLINESNUM_Pos)
-#define SCnSCB_ICTR_INTLINESNUM_Msk      (ICB_ICTR_INTLINESNUM_Msk)
-
-#define SCnSCB                           (ICB)
-#define SCnSCB_NS                        (ICB_NS)
 
 /*@} */
 
