@@ -2,6 +2,8 @@
 **/__pycache__
 CMSIS/Documentation/
 CMSIS/DoxyGen/**/*.dxy
+CMSIS/Core/Test/*.o
+CMSIS/Core/Test/*.xunit
 CMSIS/CoreValidation/Project/*.zip
 CMSIS/CoreValidation/Project/*.junit
 CMSIS/CoreValidation/Project/*.clangd

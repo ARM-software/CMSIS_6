@@ -5,14 +5,9 @@ import logging
 
 from datetime import datetime
 from enum import Enum
-from glob import glob, iglob
-from pathlib import Path
-
-from lxml.etree import XMLSyntaxError
-from zipfile import ZipFile
 
 from matrix_runner import main, matrix_axis, matrix_action, matrix_command, matrix_filter, \
-    ConsoleReport, CropReport, TransformReport, JUnitReport
+    FileReport, JUnitReport
 
 
 @matrix_axis("device", "d", "Device(s) to be considered.")
@@ -67,9 +62,13 @@ def lit(config):
     yield run_lit(config.compiler[0], config.device[1], config.optimize[0])
 
 
+def timestamp():
+    return datetime.now().strftime('%Y%m%d%H%M%S')
+
 @matrix_command()
 def run_lit(toolchain, device, optimize):
-    return ["lit", "-D", f"toolchain={toolchain}", "-D", f"device={device}", "-D", f"optimize={optimize}", "." ]
+
+    return ["lit", "--xunit-xml-output", f"lit-{toolchain}-{optimize}-{device}.xunit", "-D", f"toolchain={toolchain}", "-D", f"device={device}", "-D", f"optimize={optimize}", "." ]
 
 @matrix_filter
 def filter_iar(config):

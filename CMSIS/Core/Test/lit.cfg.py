@@ -14,7 +14,12 @@ DEVICES = {
         'mfpu': 'none',
         'mpu': False,
         'features': ['thumbv6m'],
-        'header': 'core_cm0.h'
+        'header': 'core_cm0.h',
+        'defines': {
+            '__CM0_REV': '0x0000U',
+            '__NVIC_PRIO_BITS': '2U',
+            '__Vendor_SysTickConfig': '0U'
+        }
     },
     'CM0plus': {
         'arch': 'thumbv6m',
@@ -24,7 +29,14 @@ DEVICES = {
         'mfpu': 'none',
         'mpu': True,
         'features': ['thumbv6m'],
-        'header': 'core_cm0plus.h'
+        'header': 'core_cm0plus.h',
+        'defines': {
+            '__CM0PLUS_REV': '0x0000U',
+            '__MPU_PRESENT': '1U',
+            '__VTOR_PRESENT': '1U',
+            '__NVIC_PRIO_BITS': '2U',
+            '__Vendor_SysTickConfig': '0U'
+        }
     },
     'CM3': {
         'arch': 'thumbv7m',
@@ -37,7 +49,6 @@ DEVICES = {
         'header': 'core_cm3.h',
         'defines': {
             '__CM3_REV': '0x0000U',
-            '__FPU_PRESENT': '0U',
             '__MPU_PRESENT': '1U',
             '__VTOR_PRESENT': '1U',
             '__NVIC_PRIO_BITS': '3U',
@@ -52,7 +63,15 @@ DEVICES = {
         'mfpu': 'none',
         'mpu': True,
         'features': ['thumbv6m', 'thumbv7m', 'thumbv7em', 'thumb-2', 'sat', 'ldrex'],
-        'header': 'core_cm4.h'
+        'header': 'core_cm4.h',
+        'defines': {
+            '__CM4_REV': '0x0000U',
+            '__FPU_PRESENT': '0U',
+            '__MPU_PRESENT': '1U',
+            '__VTOR_PRESENT': '1U',
+            '__NVIC_PRIO_BITS': '3U',
+            '__Vendor_SysTickConfig': '0U'
+        }
     },
     'CM4FP': {
         'arch': 'thumbv7em',
@@ -62,7 +81,15 @@ DEVICES = {
         'mfpu': 'fpv4-sp-d16',
         'mpu': True,
         'features': ['thumbv6m', 'thumbv7m', 'thumbv7em', 'thumb-2', 'sat', 'ldrex'],
-        'header': 'core_cm4.h'
+        'header': 'core_cm4.h',
+        'defines': {
+            '__CM4_REV': '0x0000U',
+            '__FPU_PRESENT': '1U',
+            '__MPU_PRESENT': '1U',
+            '__VTOR_PRESENT': '1U',
+            '__NVIC_PRIO_BITS': '3U',
+            '__Vendor_SysTickConfig': '0U'
+        }
     },
     'CM7': {
         'arch': 'thumbv7em',
@@ -72,7 +99,18 @@ DEVICES = {
         'mfpu': 'none',
         'mpu': True,
         'features': ['thumbv6m', 'thumbv7m', 'thumbv7em', 'thumb-2', 'sat', 'ldrex'],
-        'header': 'core_cm7.h'
+        'header': 'core_cm7.h',
+        'defines': {
+            '__CM7_REV': '0x0000U',
+            '__FPU_PRESENT': '0U',
+            '__MPU_PRESENT': '1U',
+            '__ICACHE_PRESENT': '1U',
+            '__DCACHE_PRESENT': '1U',
+            '__DTCM_PRESENT': '1U',
+            '__VTOR_PRESENT': '1U',
+            '__NVIC_PRIO_BITS': '3U',
+            '__Vendor_SysTickConfig': '0U'
+        }
     },
     'CM7SP': {
         'arch': 'thumbv7em',
@@ -82,7 +120,18 @@ DEVICES = {
         'mfpu': 'fpv4-sp-d16',
         'mpu': True,
         'features': ['thumbv6m', 'thumbv7m', 'thumbv7em', 'thumb-2', 'sat', 'ldrex'],
-        'header': 'core_cm7.h'
+        'header': 'core_cm7.h',
+        'defines': {
+            '__CM7_REV': '0x0000U',
+            '__FPU_PRESENT': '1U',
+            '__MPU_PRESENT': '1U',
+            '__ICACHE_PRESENT': '1U',
+            '__DCACHE_PRESENT': '1U',
+            '__DTCM_PRESENT': '1U',
+            '__VTOR_PRESENT': '1U',
+            '__NVIC_PRIO_BITS': '3U',
+            '__Vendor_SysTickConfig': '0U'
+        }
     },
     'CM7DP': {
         'arch': 'thumbv7em',
@@ -92,7 +141,18 @@ DEVICES = {
         'mfpu': 'fpv5-d16',
         'mpu': True,
         'features': ['thumbv6m', 'thumbv7m', 'thumbv7em', 'thumb-2', 'sat', 'ldrex'],
-        'header': 'core_cm7.h'
+        'header': 'core_cm7.h',
+        'defines': {
+            '__CM7_REV': '0x0000U',
+            '__FPU_PRESENT': '1U',
+            '__MPU_PRESENT': '1U',
+            '__ICACHE_PRESENT': '1U',
+            '__DCACHE_PRESENT': '1U',
+            '__DTCM_PRESENT': '1U',
+            '__VTOR_PRESENT': '1U',
+            '__NVIC_PRIO_BITS': '3U',
+            '__Vendor_SysTickConfig': '0U'
+        }
     },
     'CM23': {
         'arch': 'thumbv8m.base',
@@ -102,7 +162,16 @@ DEVICES = {
         'mfpu': 'none',
         'mpu': True,
         'features': ['thumbv6m', 'thumbv7m', 'thumbv8m.base', 'ldrex'],
-        'header': 'core_cm23.h'
+        'header': 'core_cm23.h',
+        'defines': {
+            '__CM23_REV': '0x0000U',
+            '__FPU_PRESENT': '0U',
+            '__MPU_PRESENT': '1U',
+            '__SAUREGION_PRESENT': '8U',
+            '__VTOR_PRESENT': '1U',
+            '__NVIC_PRIO_BITS': '3U',
+            '__Vendor_SysTickConfig': '0U'
+        }
     },
     'CM23S': {
         'arch': 'thumbv8m.base',
@@ -112,7 +181,16 @@ DEVICES = {
         'mfpu': 'none',
         'mpu': True,
         'features': ['thumbv6m', 'thumbv7m', 'thumbv8m.base', 'ldrex'],
-        'header': 'core_cm23.h'
+        'header': 'core_cm23.h',
+        'defines': {
+            '__CM23_REV': '0x0000U',
+            '__FPU_PRESENT': '0U',
+            '__MPU_PRESENT': '1U',
+            '__SAUREGION_PRESENT': '8U',
+            '__VTOR_PRESENT': '1U',
+            '__NVIC_PRIO_BITS': '3U',
+            '__Vendor_SysTickConfig': '0U'
+        }
     },
     'CM23NS': {
         'arch': 'thumbv8m.base',
@@ -122,7 +200,16 @@ DEVICES = {
         'mfpu': 'none',
         'mpu': True,
         'features': ['thumbv6m', 'thumbv7m', 'thumbv8m.base', 'ldrex'],
-        'header': 'core_cm23.h'
+        'header': 'core_cm23.h',
+        'defines': {
+            '__CM23_REV': '0x0000U',
+            '__FPU_PRESENT': '0U',
+            '__MPU_PRESENT': '1U',
+            '__SAUREGION_PRESENT': '8U',
+            '__VTOR_PRESENT': '1U',
+            '__NVIC_PRIO_BITS': '3U',
+            '__Vendor_SysTickConfig': '0U'
+        }
     },
     'CM33': {
         'arch': 'thumbv8m.main',
@@ -138,7 +225,6 @@ DEVICES = {
             '__FPU_PRESENT': '1U',
             '__MPU_PRESENT': '1U',
             '__SAUREGION_PRESENT': '8U',
-            '__DSP_PRESENT': '1U',
             '__VTOR_PRESENT': '1U',
             '__NVIC_PRIO_BITS': '3U',
             '__Vendor_SysTickConfig': '0U'
@@ -152,7 +238,16 @@ DEVICES = {
         'mfpu': 'fpv5-d16',
         'mpu': True,
         'features': ['thumbv6m', 'thumbv7m', 'thumbv7em', 'thumbv8m.base', 'thumbv8m.main', 'thumb-2', 'sat', 'ldrex'],
-        'header': 'core_cm33.h'
+        'header': 'core_cm33.h',
+        'defines': {
+            '__CM33_REV': '0x0000U',
+            '__FPU_PRESENT': '1U',
+            '__MPU_PRESENT': '1U',
+            '__SAUREGION_PRESENT': '8U',
+            '__VTOR_PRESENT': '1U',
+            '__NVIC_PRIO_BITS': '3U',
+            '__Vendor_SysTickConfig': '0U'
+        }
     },
     'CM33NS': {
         'arch': 'thumbv8m.main',
@@ -162,7 +257,16 @@ DEVICES = {
         'mfpu': 'fpv5-d16',
         'mpu': True,
         'features': ['thumbv6m', 'thumbv7m', 'thumbv7em', 'thumbv8m.base', 'thumbv8m.main', 'thumb-2', 'sat', 'ldrex'],
-        'header': 'core_cm33.h'
+        'header': 'core_cm33.h',
+        'defines': {
+            '__CM33_REV': '0x0000U',
+            '__FPU_PRESENT': '1U',
+            '__MPU_PRESENT': '1U',
+            '__SAUREGION_PRESENT': '8U',
+            '__VTOR_PRESENT': '1U',
+            '__NVIC_PRIO_BITS': '3U',
+            '__Vendor_SysTickConfig': '0U'
+        }
     },
     'CM35P': {
         'arch': 'thumbv8m.main',
@@ -172,7 +276,16 @@ DEVICES = {
         'mfpu': 'fpv5-d16',
         'mpu': True,
         'features': ['thumbv6m', 'thumbv7m', 'thumbv7em', 'thumbv8m.base', 'thumbv8m.main', 'thumb-2', 'sat', 'ldrex'],
-        'header': 'core_cm35p.h'
+        'header': 'core_cm35p.h',
+        'defines': {
+            '__CM35P_REV': '0x0000U',
+            '__FPU_PRESENT': '1U',
+            '__MPU_PRESENT': '1U',
+            '__SAUREGION_PRESENT': '8U',
+            '__VTOR_PRESENT': '1U',
+            '__NVIC_PRIO_BITS': '3U',
+            '__Vendor_SysTickConfig': '0U'
+        }
     },
     'CM35PS': {
         'arch': 'thumbv8m.main',
@@ -182,7 +295,16 @@ DEVICES = {
         'mfpu': 'fpv5-d16',
         'mpu': True,
         'features': ['thumbv6m', 'thumbv7m', 'thumbv7em', 'thumbv8m.base', 'thumbv8m.main', 'thumb-2', 'sat', 'ldrex'],
-        'header': 'core_cm35p.h'
+        'header': 'core_cm35p.h',
+        'defines': {
+            '__CM35P_REV': '0x0000U',
+            '__FPU_PRESENT': '1U',
+            '__MPU_PRESENT': '1U',
+            '__SAUREGION_PRESENT': '8U',
+            '__VTOR_PRESENT': '1U',
+            '__NVIC_PRIO_BITS': '3U',
+            '__Vendor_SysTickConfig': '0U'
+        }
     },
     'CM35PNS': {
         'arch': 'thumbv8m.main',
@@ -192,7 +314,16 @@ DEVICES = {
         'mfpu': 'fpv5-d16',
         'mpu': True,
         'features': ['thumbv6m', 'thumbv7m', 'thumbv7em', 'thumbv8m.base', 'thumbv8m.main', 'thumb-2', 'sat', 'ldrex'],
-        'header': 'core_cm35p.h'
+        'header': 'core_cm35p.h',
+        'defines': {
+            '__CM35P_REV': '0x0000U',
+            '__FPU_PRESENT': '1U',
+            '__MPU_PRESENT': '1U',
+            '__SAUREGION_PRESENT': '8U',
+            '__VTOR_PRESENT': '1U',
+            '__NVIC_PRIO_BITS': '3U',
+            '__Vendor_SysTickConfig': '0U'
+        }
     },
     'CM55': {
         'arch': 'thumbv8.1m.main',
@@ -202,7 +333,23 @@ DEVICES = {
         'mfpu': 'fpv5-d16',
         'mpu': True,
         'features': ['thumbv6m', 'thumbv7m', 'thumbv7em', 'thumbv8m.base', 'thumbv8m.main', 'thumbv8.1m.main', 'thumb-2', 'sat', 'ldrex'],
-        'header': 'core_cm55.h'
+        'header': 'core_cm55.h',
+        'defines': {
+            '__CM55_REV': '0x0000U',
+            '__FPU_PRESENT': '1U',
+            '__FPU_DP': '1U',
+            '__MPU_PRESENT': '1U',
+            '__ICACHE_PRESENT': '1U',
+            '__DCACHE_PRESENT': '1U',
+            '__SAUREGION_PRESENT': '8U',
+            '__DSP_PRESENT': '1U',
+            '__VTOR_PRESENT': '1U',
+            '__PMU_PRESENT': '1U',
+            '__PMU_NUM_EVENTCNT': '8U',
+            '__DSP_PRESENT': '1U',
+            '__NVIC_PRIO_BITS': '3U',
+            '__Vendor_SysTickConfig': '0U'
+        }
     },
     'CM55S': {
         'arch': 'thumbv8.1m.main',
@@ -212,7 +359,23 @@ DEVICES = {
         'mfpu': 'fpv5-d16',
         'mpu': True,
         'features': ['thumbv6m', 'thumbv7m', 'thumbv7em', 'thumbv8m.base', 'thumbv8m.main', 'thumbv8.1m.main', 'thumb-2', 'sat', 'ldrex'],
-        'header': 'core_cm55.h'
+        'header': 'core_cm55.h',
+        'defines': {
+            '__CM55_REV': '0x0000U',
+            '__FPU_PRESENT': '1U',
+            '__FPU_DP': '1U',
+            '__MPU_PRESENT': '1U',
+            '__ICACHE_PRESENT': '1U',
+            '__DCACHE_PRESENT': '1U',
+            '__SAUREGION_PRESENT': '8U',
+            '__DSP_PRESENT': '1U',
+            '__VTOR_PRESENT': '1U',
+            '__PMU_PRESENT': '1U',
+            '__PMU_NUM_EVENTCNT': '8U',
+            '__DSP_PRESENT': '1U',
+            '__NVIC_PRIO_BITS': '3U',
+            '__Vendor_SysTickConfig': '0U'
+        }
     },
     'CM55NS': {
         'arch': 'thumbv8.1m.main',
@@ -222,7 +385,23 @@ DEVICES = {
         'mfpu': 'fpv5-d16',
         'mpu': True,
         'features': ['thumbv6m', 'thumbv7m', 'thumbv7em', 'thumbv8m.base', 'thumbv8m.main', 'thumbv8.1m.main', 'thumb-2', 'sat', 'ldrex'],
-        'header': 'core_cm55.h'
+        'header': 'core_cm55.h',
+        'defines': {
+            '__CM55_REV': '0x0000U',
+            '__FPU_PRESENT': '1U',
+            '__FPU_DP': '1U',
+            '__MPU_PRESENT': '1U',
+            '__ICACHE_PRESENT': '1U',
+            '__DCACHE_PRESENT': '1U',
+            '__SAUREGION_PRESENT': '8U',
+            '__DSP_PRESENT': '1U',
+            '__VTOR_PRESENT': '1U',
+            '__PMU_PRESENT': '1U',
+            '__PMU_NUM_EVENTCNT': '8U',
+            '__DSP_PRESENT': '1U',
+            '__NVIC_PRIO_BITS': '3U',
+            '__Vendor_SysTickConfig': '0U'
+        }
     },
     'CM85': {
         'arch': 'thumbv8.1m.main',
@@ -232,7 +411,23 @@ DEVICES = {
         'mfpu': 'fpv5-d16',
         'mpu': True,
         'features': ['thumbv6m', 'thumbv7m', 'thumbv7em', 'thumbv8m.base', 'thumbv8m.main', 'thumbv8.1m.main', 'thumb-2', 'sat', 'ldrex'],
-        'header': 'core_cm85.h'
+        'header': 'core_cm85.h',
+        'defines': {
+            '__CM85_REV': '0x0000U',
+            '__FPU_PRESENT': '1U',
+            '__FPU_DP': '1U',
+            '__MPU_PRESENT': '1U',
+            '__ICACHE_PRESENT': '1U',
+            '__DCACHE_PRESENT': '1U',
+            '__SAUREGION_PRESENT': '8U',
+            '__DSP_PRESENT': '1U',
+            '__VTOR_PRESENT': '1U',
+            '__PMU_PRESENT': '1U',
+            '__PMU_NUM_EVENTCNT': '8U',
+            '__DSP_PRESENT': '1U',
+            '__NVIC_PRIO_BITS': '3U',
+            '__Vendor_SysTickConfig': '0U'
+        }
     },
     'CM85S': {
         'arch': 'thumbv8.1m.main',
@@ -242,7 +437,23 @@ DEVICES = {
         'mfpu': 'fpv5-d16',
         'mpu': True,
         'features': ['thumbv6m', 'thumbv7m', 'thumbv7em', 'thumbv8m.base', 'thumbv8m.main', 'thumbv8.1m.main', 'thumb-2', 'sat', 'ldrex'],
-        'header': 'core_cm85.h'
+        'header': 'core_cm85.h',
+        'defines': {
+            '__CM85_REV': '0x0000U',
+            '__FPU_PRESENT': '1U',
+            '__FPU_DP': '1U',
+            '__MPU_PRESENT': '1U',
+            '__ICACHE_PRESENT': '1U',
+            '__DCACHE_PRESENT': '1U',
+            '__SAUREGION_PRESENT': '8U',
+            '__DSP_PRESENT': '1U',
+            '__VTOR_PRESENT': '1U',
+            '__PMU_PRESENT': '1U',
+            '__PMU_NUM_EVENTCNT': '8U',
+            '__DSP_PRESENT': '1U',
+            '__NVIC_PRIO_BITS': '3U',
+            '__Vendor_SysTickConfig': '0U'
+        }
     },
     'CM85NS': {
         'arch': 'thumbv8.1m.main',
@@ -252,7 +463,23 @@ DEVICES = {
         'mfpu': 'fpv5-d16',
         'mpu': True,
         'features': ['thumbv6m', 'thumbv7m', 'thumbv7em', 'thumbv8m.base', 'thumbv8m.main', 'thumbv8.1m.main', 'thumb-2', 'sat', 'ldrex'],
-        'header': 'core_cm85.h'
+        'header': 'core_cm85.h',
+        'defines': {
+            '__CM85_REV': '0x0000U',
+            '__FPU_PRESENT': '1U',
+            '__FPU_DP': '1U',
+            '__MPU_PRESENT': '1U',
+            '__ICACHE_PRESENT': '1U',
+            '__DCACHE_PRESENT': '1U',
+            '__SAUREGION_PRESENT': '8U',
+            '__DSP_PRESENT': '1U',
+            '__VTOR_PRESENT': '1U',
+            '__PMU_PRESENT': '1U',
+            '__PMU_NUM_EVENTCNT': '8U',
+            '__DSP_PRESENT': '1U',
+            '__NVIC_PRIO_BITS': '3U',
+            '__Vendor_SysTickConfig': '0U'
+        }
     },
     'CA5': {
         'arch': 'armv7a',
@@ -262,7 +489,14 @@ DEVICES = {
         'mfpu': 'none',
         'mpu': True,
         'features': ['armv7a', 'thumb-2'],
-        'header': 'core_ca.h'
+        'header': 'core_ca.h',
+        'defines': {
+            '__CA_REV': '0x0000U',
+            '__FPU_PRESENT': '1U',
+            '__GIC_PRESENT': '1U',
+            '__TIM_PRESENT': '1U',
+            '__L2C_PRESENT': '1U'
+        }
     },
     'CA7': {
         'arch': 'armv7a',
@@ -272,7 +506,14 @@ DEVICES = {
         'mfpu': 'none',
         'mpu': True,
         'features': ['armv7a', 'thumb-2'],
-        'header': 'core_ca.h'
+        'header': 'core_ca.h',
+        'defines': {
+            '__CA_REV': '0x0000U',
+            '__FPU_PRESENT': '1U',
+            '__GIC_PRESENT': '1U',
+            '__TIM_PRESENT': '1U',
+            '__L2C_PRESENT': '1U'
+        }
     },
     'CA9': {
         'arch': 'armv7a',
@@ -282,7 +523,14 @@ DEVICES = {
         'mfpu': 'none',
         'mpu': True,
         'features': ['armv7a', 'thumb-2'],
-        'header': 'core_ca.h'
+        'header': 'core_ca.h',
+        'defines': {
+            '__CA_REV': '0x0000U',
+            '__FPU_PRESENT': '1U',
+            '__GIC_PRESENT': '1U',
+            '__TIM_PRESENT': '1U',
+            '__L2C_PRESENT': '1U'
+        }
     }
 }
 

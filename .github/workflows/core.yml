@@ -1,0 +1,106 @@
+name: Core Checks
+on:
+  workflow_dispatch:
+  pull_request:
+  push:
+    branches: [main]
+  
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  lit:
+    runs-on: ubuntu-latest
+
+    env:
+      ARM_UBL_ACTIVATION_CODE: ${{ secrets.ARM_UBL_ACTIVATION_CODE }}
+
+    steps:
+      - uses: actions/checkout@v3
+      
+      - uses: actions/setup-python@v4
+        with:
+          python-version: '3.10'    
+          cache: 'pip'
+
+      - name: Python requirements
+        run: |
+          pip install -r ./CMSIS/Core/Test/requirements.txt
+
+      - name: Cache vcpkg
+        uses: actions/cache@v3
+        with:
+          key: vcpkg-${{ runner.os }}-${{ runner.arch }}-${{ github.run_id }}-${{ matrix.compiler }}
+          restore-keys: |
+            vcpkg-${{ runner.os }}-${{ runner.arch }}-
+          path: /home/runner/.vcpkg
+
+      - name: Cache LLVM/Clang 17.0.0-devdrop0
+        uses: actions/cache@v3
+        with:
+          key: clang-17.0.0-devdrop0-${{ runner.os }}-${{ runner.arch }}-${{ github.run_id }}
+          restore-keys: |
+            clang-17.0.0-devdrop0-${{ runner.os }}-${{ runner.arch }}-
+            clang-17.0.0-devdrop0
+          path: /home/runner/LLVMEmbeddedToolchainForArm-17.0.0-Linux-x86_64
+
+      - name: Install LLVM/Clang 17.0.0-devdrop0
+        working-directory: /home/runner
+        run: |
+          sudo apt-get update
+          sudo apt-get install libtinfo5 llvm-15-tools
+          sudo ln -s /usr/bin/FileCheck-15 /usr/bin/FileCheck
+          if [[ ! -d LLVMEmbeddedToolchainForArm-17.0.0-Linux-x86_64 ]]; then
+            wget https://github.com/ARM-software/LLVM-embedded-toolchain-for-Arm/releases/download/preview-17.0.0-devdrop0/LLVMEmbeddedToolchainForArm-17.0.0-Linux-x86_64.tar.xz
+            tar -xf LLVMEmbeddedToolchainForArm-17.0.0-Linux-x86_64.tar.xz
+          fi
+          ./LLVMEmbeddedToolchainForArm-17.0.0-Linux-x86_64/bin/clang --version
+          echo "CLANG_TOOLCHAIN_17_0_0=$(pwd)/LLVMEmbeddedToolchainForArm-17.0.0-Linux-x86_64/bin" >> $GITHUB_ENV
+    
+      - name: Prepare vcpkg env
+        working-directory: ./CMSIS/Core/Test
+        run: |
+          . <(curl https://aka.ms/vcpkg-init.sh -L)
+          vcpkg x-update-registry --all
+          vcpkg activate
+          
+      - name: Activate Arm tool license
+        working-directory: ./CMSIS/Core/Test
+        run: |
+          . /home/runner/.vcpkg/vcpkg-init
+          vcpkg activate
+          if [[ -n "${{ env.ARM_UBL_ACTIVATION_CODE }}" ]]; then
+            armlm activate --code ${{ env.ARM_UBL_ACTIVATION_CODE }}
+          else
+            armlm activate --server https://mdk-preview.keil.arm.com --product KEMDK-COM0
+          fi
+
+      - uses: ammaraskar/gcc-problem-matcher@master
+
+      - name: Run LIT
+        working-directory: ./CMSIS/Core/Test
+        run: |
+          . /home/runner/.vcpkg/vcpkg-init
+          vcpkg activate
+
+          ./build.py lit
+
+      - name: Deactivate Arm tool license
+        if: always()
+        working-directory: ./CMSIS/Core/Test
+        run: |
+          . /home/runner/.vcpkg/vcpkg-init
+          vcpkg activate
+          if [[ -n "${{ env.ARM_UBL_ACTIVATION_CODE }}" ]]; then
+            armlm deactivate --code ${{ env.ARM_UBL_ACTIVATION_CODE }}
+          else
+            armlm deactivate --product KEMDK-COM0
+          fi
+
+      - name: Publish Test Results
+        if: ${{ !cancelled() && env.ARM_UBL_ACTIVATION_CODE }}
+        uses: EnricoMi/publish-unit-test-result-action@v2
+        with:
+          report_individual_runs: true
+          files: ./CMSIS/Core/Test/*.xunit
