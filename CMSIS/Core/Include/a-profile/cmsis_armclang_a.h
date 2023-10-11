@@ -1,11 +1,11 @@
 /**************************************************************************//**
  * @file     cmsis_armclang_a.h
  * @brief    CMSIS compiler armclang (Arm Compiler 6) header file
- * @version  V1.2.2
- * @date     13. November 2022
+ * @version  V1.2.3
+ * @date     11. October 2023
  ******************************************************************************/
 /*
- * Copyright (c) 2009-2021 Arm Limited. All rights reserved.
+ * Copyright (c) 2009-2023 Arm Limited. All rights reserved.
  *
  * SPDX-License-Identifier: Apache-2.0
  *
@@ -327,6 +327,102 @@ __STATIC_FORCEINLINE uint8_t __CLZ(uint32_t value)
  */
 #define __USAT             __builtin_arm_usat
 
+/**
+  \brief   Rotate Right with Extend (32 bit)
+  \details Moves each bit of a bitstring right by one bit.
+           The carry input is shifted in at the left end of the bitstring.
+  \param [in]    value  Value to rotate
+  \return               Rotated value
+ */
+__STATIC_FORCEINLINE uint32_t __RRX(uint32_t value)
+{
+  uint32_t result;
+
+  __ASM volatile ("rrx %0, %1" : "=r" (result) : "r" (value));
+  return (result);
+}
+
+
+/**
+  \brief   LDRT Unprivileged (8 bit)
+  \details Executes a Unprivileged LDRT instruction for 8 bit value.
+  \param [in]    ptr  Pointer to data
+  \return             value of type uint8_t at (*ptr)
+ */
+__STATIC_FORCEINLINE uint8_t __LDRBT(volatile uint8_t *ptr)
+{
+  uint32_t result;
+
+  __ASM volatile ("ldrbt %0, %1" : "=r" (result) : "Q" (*ptr) );
+  return ((uint8_t)result);    /* Add explicit type cast here */
+}
+
+
+/**
+  \brief   LDRT Unprivileged (16 bit)
+  \details Executes a Unprivileged LDRT instruction for 16 bit values.
+  \param [in]    ptr  Pointer to data
+  \return        value of type uint16_t at (*ptr)
+ */
+__STATIC_FORCEINLINE uint16_t __LDRHT(volatile uint16_t *ptr)
+{
+  uint32_t result;
+
+  __ASM volatile ("ldrht %0, %1" : "=r" (result) : "Q" (*ptr) );
+  return ((uint16_t)result);    /* Add explicit type cast here */
+}
+
+
+/**
+  \brief   LDRT Unprivileged (32 bit)
+  \details Executes a Unprivileged LDRT instruction for 32 bit values.
+  \param [in]    ptr  Pointer to data
+  \return        value of type uint32_t at (*ptr)
+ */
+__STATIC_FORCEINLINE uint32_t __LDRT(volatile uint32_t *ptr)
+{
+  uint32_t result;
+
+  __ASM volatile ("ldrt %0, %1" : "=r" (result) : "Q" (*ptr) );
+  return (result);
+}
+
+
+/**
+  \brief   STRT Unprivileged (8 bit)
+  \details Executes a Unprivileged STRT instruction for 8 bit values.
+  \param [in]  value  Value to store
+  \param [in]    ptr  Pointer to location
+ */
+__STATIC_FORCEINLINE void __STRBT(uint8_t value, volatile uint8_t *ptr)
+{
+  __ASM volatile ("strbt %1, %0, #0" : "=Q" (*ptr) : "r" ((uint32_t)value) );
+}
+
+
+/**
+  \brief   STRT Unprivileged (16 bit)
+  \details Executes a Unprivileged STRT instruction for 16 bit values.
+  \param [in]  value  Value to store
+  \param [in]    ptr  Pointer to location
+ */
+__STATIC_FORCEINLINE void __STRHT(uint16_t value, volatile uint16_t *ptr)
+{
+  __ASM volatile ("strht %1, %0, #0" : "=Q" (*ptr) : "r" ((uint32_t)value) );
+}
+
+
+/**
+  \brief   STRT Unprivileged (32 bit)
+  \details Executes a Unprivileged STRT instruction for 32 bit values.
+  \param [in]  value  Value to store
+  \param [in]    ptr  Pointer to location
+ */
+__STATIC_FORCEINLINE void __STRT(uint32_t value, volatile uint32_t *ptr)
+{
+  __ASM volatile ("strt %1, %0, #0" : "=Q" (*ptr) : "r" (value) );
+}
+
 /* ###################  Compiler specific Intrinsics  ########################### */
 
 #if (defined (__ARM_FEATURE_DSP) && (__ARM_FEATURE_DSP == 1))
@@ -434,19 +530,36 @@ __STATIC_FORCEINLINE void __disable_fault_irq(void)
   __ASM volatile ("cpsid f" : : : "memory");
 }
 
+
 /**
   \brief   Get FPSCR
   \details Returns the current value of the Floating Point Status/Control register.
   \return               Floating Point Status/Control register value
  */
-#define __get_FPSCR      __builtin_arm_get_fpscr
+__STATIC_FORCEINLINE  uint32_t __get_FPSCR(void)
+{
+  #if (__ARM_FP >= 1)
+    return __builtin_arm_get_fpscr();
+  #else
+    return(0U);
+  #endif
+}
+
 
 /**
   \brief   Set FPSCR
   \details Assigns the given value to the Floating Point Status/Control register.
   \param [in]    fpscr  Floating Point Status/Control value to set
  */
-#define __set_FPSCR      __builtin_arm_set_fpscr
+__STATIC_FORCEINLINE void __set_FPSCR(uint32_t fpscr)
+{
+  #if (__ARM_FP >= 1)
+    __builtin_arm_set_fpscr(fpscr);
+  #else
+    (void)fpscr;
+  #endif
+}
+
 
 /** \brief  Get CPSR Register
     \return               CPSR Register value

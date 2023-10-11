@@ -1,11 +1,11 @@
 /**************************************************************************//**
  * @file     cmsis_gcc_a.h
  * @brief    CMSIS compiler GCC header file
- * @version  V1.3.3
- * @date     13. November 2022
+ * @version  V1.3.4
+ * @date     11. October 2023
  ******************************************************************************/
 /*
- * Copyright (c) 2009-2022 Arm Limited. All rights reserved.
+ * Copyright (c) 2009-2023 Arm Limited. All rights reserved.
  *
  * SPDX-License-Identifier: Apache-2.0
  *
@@ -444,6 +444,102 @@ __extension__ \
   __RES; \
  })
 
+/**
+  \brief   Rotate Right with Extend (32 bit)
+  \details Moves each bit of a bitstring right by one bit.
+           The carry input is shifted in at the left end of the bitstring.
+  \param [in]    value  Value to rotate
+  \return               Rotated value
+ */
+__STATIC_FORCEINLINE uint32_t __RRX(uint32_t value)
+{
+  uint32_t result;
+
+  __ASM volatile ("rrx %0, %1" : "=r" (result) : "r" (value));
+  return (result);
+}
+
+
+/**
+  \brief   LDRT Unprivileged (8 bit)
+  \details Executes a Unprivileged LDRT instruction for 8 bit value.
+  \param [in]    ptr  Pointer to data
+  \return             value of type uint8_t at (*ptr)
+ */
+__STATIC_FORCEINLINE uint8_t __LDRBT(volatile uint8_t *ptr)
+{
+  uint32_t result;
+
+  __ASM volatile ("ldrbt %0, %1" : "=r" (result) : "Q" (*ptr) );
+  return ((uint8_t)result);    /* Add explicit type cast here */
+}
+
+
+/**
+  \brief   LDRT Unprivileged (16 bit)
+  \details Executes a Unprivileged LDRT instruction for 16 bit values.
+  \param [in]    ptr  Pointer to data
+  \return        value of type uint16_t at (*ptr)
+ */
+__STATIC_FORCEINLINE uint16_t __LDRHT(volatile uint16_t *ptr)
+{
+  uint32_t result;
+
+  __ASM volatile ("ldrht %0, %1" : "=r" (result) : "Q" (*ptr) );
+  return ((uint16_t)result);    /* Add explicit type cast here */
+}
+
+
+/**
+  \brief   LDRT Unprivileged (32 bit)
+  \details Executes a Unprivileged LDRT instruction for 32 bit values.
+  \param [in]    ptr  Pointer to data
+  \return        value of type uint32_t at (*ptr)
+ */
+__STATIC_FORCEINLINE uint32_t __LDRT(volatile uint32_t *ptr)
+{
+  uint32_t result;
+
+  __ASM volatile ("ldrt %0, %1" : "=r" (result) : "Q" (*ptr) );
+  return (result);
+}
+
+
+/**
+  \brief   STRT Unprivileged (8 bit)
+  \details Executes a Unprivileged STRT instruction for 8 bit values.
+  \param [in]  value  Value to store
+  \param [in]    ptr  Pointer to location
+ */
+__STATIC_FORCEINLINE void __STRBT(uint8_t value, volatile uint8_t *ptr)
+{
+  __ASM volatile ("strbt %1, %0" : "=Q" (*ptr) : "r" ((uint32_t)value) );
+}
+
+
+/**
+  \brief   STRT Unprivileged (16 bit)
+  \details Executes a Unprivileged STRT instruction for 16 bit values.
+  \param [in]  value  Value to store
+  \param [in]    ptr  Pointer to location
+ */
+__STATIC_FORCEINLINE void __STRHT(uint16_t value, volatile uint16_t *ptr)
+{
+  __ASM volatile ("strht %1, %0" : "=Q" (*ptr) : "r" ((uint32_t)value) );
+}
+
+
+/**
+  \brief   STRT Unprivileged (32 bit)
+  \details Executes a Unprivileged STRT instruction for 32 bit values.
+  \param [in]  value  Value to store
+  \param [in]    ptr  Pointer to location
+ */
+__STATIC_FORCEINLINE void __STRT(uint32_t value, volatile uint32_t *ptr)
+{
+  __ASM volatile ("strt %1, %0" : "=Q" (*ptr) : "r" (value) );
+}
+
 /* ###########################  Core Function Access  ########################### */
 /** \ingroup  CMSIS_Core_FunctionInterface
     \defgroup CMSIS_Core_RegAccFunctions CMSIS Core Register Access Functions
@@ -499,19 +595,8 @@ __STATIC_FORCEINLINE void __disable_fault_irq(void)
  */
 __STATIC_FORCEINLINE  uint32_t __get_FPSCR(void)
 {
-  #if ((defined (__FPU_PRESENT) && (__FPU_PRESENT == 1U)) && \
-       (defined (__FPU_USED   ) && (__FPU_USED    == 1U))     )
-  #if __has_builtin(__builtin_arm_get_fpscr) 
-  // Re-enable using built-in when GCC has been fixed
-  // || (__GNUC__ > 7) || (__GNUC__ == 7 && __GNUC_MINOR__ >= 2)
-    /* see https://gcc.gnu.org/ml/gcc-patches/2017-04/msg00443.html */
+  #if (__ARM_FP >= 1)
     return __builtin_arm_get_fpscr();
-  #else
-    uint32_t result;
-
-    __ASM volatile ("VMRS %0, fpscr" : "=r" (result) );
-    return(result);
-  #endif
   #else
     return(0U);
   #endif
@@ -525,16 +610,8 @@ __STATIC_FORCEINLINE  uint32_t __get_FPSCR(void)
  */
 __STATIC_FORCEINLINE void __set_FPSCR(uint32_t fpscr)
 {
-  #if ((defined (__FPU_PRESENT) && (__FPU_PRESENT == 1U)) && \
-       (defined (__FPU_USED   ) && (__FPU_USED    == 1U))     )
-  #if __has_builtin(__builtin_arm_set_fpscr)
-  // Re-enable using built-in when GCC has been fixed
-  // || (__GNUC__ > 7) || (__GNUC__ == 7 && __GNUC_MINOR__ >= 2)
-    /* see https://gcc.gnu.org/ml/gcc-patches/2017-04/msg00443.html */
+  #if (__ARM_FP >= 1)
     __builtin_arm_set_fpscr(fpscr);
-  #else
-    __ASM volatile ("VMSR fpscr, %0" : : "r" (fpscr) : "vfpcc", "memory");
-  #endif
   #else
     (void)fpscr;
   #endif
