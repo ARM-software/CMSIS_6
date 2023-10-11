@@ -273,20 +273,6 @@
     </member>
     <member kind="define">
       <type>#define</type>
-      <name>__get_FPSCR</name>
-      <anchorfile>group__CMSIS__FPSCR.html</anchorfile>
-      <anchor>gac8a2aec28b99faa0c261691f7be543e5</anchor>
-      <arglist></arglist>
-    </member>
-    <member kind="define">
-      <type>#define</type>
-      <name>__set_FPSCR</name>
-      <anchorfile>cmsis__armclang__a_8h.html</anchorfile>
-      <anchor>a63b3bbd6ccb6b92ed6c0bbc489529f0f</anchor>
-      <arglist></arglist>
-    </member>
-    <member kind="define">
-      <type>#define</type>
       <name>__get_CP</name>
       <anchorfile>cmsis__armclang__a_8h.html</anchorfile>
       <anchor>ad2a4e5d85d92189d574854b2fbfff057</anchor>
@@ -328,6 +314,55 @@
       <arglist>(uint32_t value)</arglist>
     </member>
     <member kind="function">
+      <type>__STATIC_FORCEINLINE uint32_t</type>
+      <name>__RRX</name>
+      <anchorfile>cmsis__armclang__a_8h.html</anchorfile>
+      <anchor>a87e96ac34a5d8dd9083b687dc3664215</anchor>
+      <arglist>(uint32_t value)</arglist>
+    </member>
+    <member kind="function">
+      <type>__STATIC_FORCEINLINE uint8_t</type>
+      <name>__LDRBT</name>
+      <anchorfile>cmsis__armclang__a_8h.html</anchorfile>
+      <anchor>a3504b9468d4f1cad2fbaea9aba65a0fa</anchor>
+      <arglist>(volatile uint8_t *ptr)</arglist>
+    </member>
+    <member kind="function">
+      <type>__STATIC_FORCEINLINE uint16_t</type>
+      <name>__LDRHT</name>
+      <anchorfile>cmsis__armclang__a_8h.html</anchorfile>
+      <anchor>aad7090d4dc9abc8446f021d38e2706a1</anchor>
+      <arglist>(volatile uint16_t *ptr)</arglist>
+    </member>
+    <member kind="function">
+      <type>__STATIC_FORCEINLINE uint32_t</type>
+      <name>__LDRT</name>
+      <anchorfile>cmsis__armclang__a_8h.html</anchorfile>
+      <anchor>a63c311279e8a0d47b52e67e978b7f0cd</anchor>
+      <arglist>(volatile uint32_t *ptr)</arglist>
+    </member>
+    <member kind="function">
+      <type>__STATIC_FORCEINLINE void</type>
+      <name>__STRBT</name>
+      <anchorfile>cmsis__armclang__a_8h.html</anchorfile>
+      <anchor>a3d8a768c00b348d526b941a7f51ce2d3</anchor>
+      <arglist>(uint8_t value, volatile uint8_t *ptr)</arglist>
+    </member>
+    <member kind="function">
+      <type>__STATIC_FORCEINLINE void</type>
+      <name>__STRHT</name>
+      <anchorfile>cmsis__armclang__a_8h.html</anchorfile>
+      <anchor>aca61d1e42169f57b1d0be2ab873aae51</anchor>
+      <arglist>(uint16_t value, volatile uint16_t *ptr)</arglist>
+    </member>
+    <member kind="function">
+      <type>__STATIC_FORCEINLINE void</type>
+      <name>__STRT</name>
+      <anchorfile>cmsis__armclang__a_8h.html</anchorfile>
+      <anchor>a2e578cf2f48002f7a76e42d6d4e1c743</anchor>
+      <arglist>(uint32_t value, volatile uint32_t *ptr)</arglist>
+    </member>
+    <member kind="function">
       <type>__STATIC_FORCEINLINE void</type>
       <name>__enable_irq</name>
       <anchorfile>cmsis__armclang__a_8h.html</anchorfile>
@@ -354,6 +389,20 @@
       <anchorfile>cmsis__armclang__a_8h.html</anchorfile>
       <anchor>a6f1d7bf2b8b84502e8de12f0c288e117</anchor>
       <arglist>(void)</arglist>
+    </member>
+    <member kind="function">
+      <type>__STATIC_FORCEINLINE uint32_t</type>
+      <name>__get_FPSCR</name>
+      <anchorfile>group__CMSIS__FPSCR.html</anchorfile>
+      <anchor>ga6a275172e274ea7ce6c22030d07c6c64</anchor>
+      <arglist>(void)</arglist>
+    </member>
+    <member kind="function">
+      <type>__STATIC_FORCEINLINE void</type>
+      <name>__set_FPSCR</name>
+      <anchorfile>group__CMSIS__FPSCR.html</anchorfile>
+      <anchor>ga17c6ff443c52c74125fefef7de5fee1d</anchor>
+      <arglist>(uint32_t fpscr)</arglist>
     </member>
     <member kind="function">
       <type>__STATIC_FORCEINLINE uint32_t</type>
@@ -8769,12 +8818,19 @@
     <filename>group__CMSIS__FPSCR.html</filename>
     <subgroup>CMSIS_FPSCR_BITS</subgroup>
     <class kind="struct">FPSCR_Type</class>
-    <member kind="define">
-      <type>#define</type>
+    <member kind="function">
+      <type>__STATIC_FORCEINLINE uint32_t</type>
       <name>__get_FPSCR</name>
       <anchorfile>group__CMSIS__FPSCR.html</anchorfile>
-      <anchor>gac8a2aec28b99faa0c261691f7be543e5</anchor>
-      <arglist></arglist>
+      <anchor>ga6a275172e274ea7ce6c22030d07c6c64</anchor>
+      <arglist>(void)</arglist>
+    </member>
+    <member kind="function">
+      <type>__STATIC_FORCEINLINE void</type>
+      <name>__set_FPSCR</name>
+      <anchorfile>group__CMSIS__FPSCR.html</anchorfile>
+      <anchor>ga17c6ff443c52c74125fefef7de5fee1d</anchor>
+      <arglist>(uint32_t fpscr)</arglist>
     </member>
   </compound>
   <compound kind="group">

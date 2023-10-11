@@ -245,12 +245,6 @@ Macros</h2></td></tr>
 <tr class="memitem:ad0e4fa951d563740462d837bb6ddd7bb"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="cmsis__armclang__a_8h.html#ad0e4fa951d563740462d837bb6ddd7bb">__USAT</a>&#160;&#160;&#160;__builtin_arm_usat</td></tr>
 <tr class="memdesc:ad0e4fa951d563740462d837bb6ddd7bb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Unsigned Saturate.  <br /></td></tr>
 <tr class="separator:ad0e4fa951d563740462d837bb6ddd7bb"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gac8a2aec28b99faa0c261691f7be543e5"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CMSIS__FPSCR.html#gac8a2aec28b99faa0c261691f7be543e5">__get_FPSCR</a>&#160;&#160;&#160;__builtin_arm_get_fpscr</td></tr>
-<tr class="memdesc:gac8a2aec28b99faa0c261691f7be543e5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get FPSCR.  <br /></td></tr>
-<tr class="separator:gac8a2aec28b99faa0c261691f7be543e5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a63b3bbd6ccb6b92ed6c0bbc489529f0f"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="cmsis__armclang__a_8h.html#a63b3bbd6ccb6b92ed6c0bbc489529f0f">__set_FPSCR</a>&#160;&#160;&#160;__builtin_arm_set_fpscr</td></tr>
-<tr class="memdesc:a63b3bbd6ccb6b92ed6c0bbc489529f0f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set FPSCR.  <br /></td></tr>
-<tr class="separator:a63b3bbd6ccb6b92ed6c0bbc489529f0f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad2a4e5d85d92189d574854b2fbfff057"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="cmsis__armclang__a_8h.html#ad2a4e5d85d92189d574854b2fbfff057">__get_CP</a>(cp,  op1,  Rt,  CRn,  CRm,  op2)&#160;&#160;&#160;<a class="el" href="group__comp__cntrl__gr.html#ga1378040bcf22428955c6e3ce9c2053cd">__ASM</a> volatile(&quot;MRC p&quot; # cp &quot;, &quot; # op1 &quot;, %0, c&quot; # CRn &quot;, c&quot; # CRm &quot;, &quot; # op2 : &quot;=r&quot; (Rt) : : &quot;memory&quot; )</td></tr>
 <tr class="separator:ad2a4e5d85d92189d574854b2fbfff057"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5e4710ddc910c7feee1de7f118b84ad1"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="cmsis__armclang__a_8h.html#a5e4710ddc910c7feee1de7f118b84ad1">__set_CP</a>(cp,  op1,  Rt,  CRn,  CRm,  op2)&#160;&#160;&#160;<a class="el" href="group__comp__cntrl__gr.html#ga1378040bcf22428955c6e3ce9c2053cd">__ASM</a> volatile(&quot;MCR p&quot; # cp &quot;, &quot; # op1 &quot;, %0, c&quot; # CRn &quot;, c&quot; # CRm &quot;, &quot; # op2 : : &quot;r&quot; (Rt) : &quot;memory&quot; )</td></tr>
@@ -268,6 +262,27 @@ Functions</h2></td></tr>
 <tr class="memitem:ga90884c591ac5d73d6069334eba9d6c02"><td class="memItemLeft" align="right" valign="top"><a class="el" href="cmsis__armclang__a_8h.html#ab904513442afdf77d4f8c74f23cbb040">__STATIC_FORCEINLINE</a> uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CMSIS__Core__InstructionInterface.html#ga90884c591ac5d73d6069334eba9d6c02">__CLZ</a> (uint32_t value)</td></tr>
 <tr class="memdesc:ga90884c591ac5d73d6069334eba9d6c02"><td class="mdescLeft">&#160;</td><td class="mdescRight">Count leading zeros.  <br /></td></tr>
 <tr class="separator:ga90884c591ac5d73d6069334eba9d6c02"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a87e96ac34a5d8dd9083b687dc3664215"><td class="memItemLeft" align="right" valign="top"><a class="el" href="cmsis__armclang__a_8h.html#ab904513442afdf77d4f8c74f23cbb040">__STATIC_FORCEINLINE</a> uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="cmsis__armclang__a_8h.html#a87e96ac34a5d8dd9083b687dc3664215">__RRX</a> (uint32_t value)</td></tr>
+<tr class="memdesc:a87e96ac34a5d8dd9083b687dc3664215"><td class="mdescLeft">&#160;</td><td class="mdescRight">Rotate Right with Extend (32 bit)  <br /></td></tr>
+<tr class="separator:a87e96ac34a5d8dd9083b687dc3664215"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3504b9468d4f1cad2fbaea9aba65a0fa"><td class="memItemLeft" align="right" valign="top"><a class="el" href="cmsis__armclang__a_8h.html#ab904513442afdf77d4f8c74f23cbb040">__STATIC_FORCEINLINE</a> uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="cmsis__armclang__a_8h.html#a3504b9468d4f1cad2fbaea9aba65a0fa">__LDRBT</a> (volatile uint8_t *ptr)</td></tr>
+<tr class="memdesc:a3504b9468d4f1cad2fbaea9aba65a0fa"><td class="mdescLeft">&#160;</td><td class="mdescRight">LDRT Unprivileged (8 bit)  <br /></td></tr>
+<tr class="separator:a3504b9468d4f1cad2fbaea9aba65a0fa"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aad7090d4dc9abc8446f021d38e2706a1"><td class="memItemLeft" align="right" valign="top"><a class="el" href="cmsis__armclang__a_8h.html#ab904513442afdf77d4f8c74f23cbb040">__STATIC_FORCEINLINE</a> uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="cmsis__armclang__a_8h.html#aad7090d4dc9abc8446f021d38e2706a1">__LDRHT</a> (volatile uint16_t *ptr)</td></tr>
+<tr class="memdesc:aad7090d4dc9abc8446f021d38e2706a1"><td class="mdescLeft">&#160;</td><td class="mdescRight">LDRT Unprivileged (16 bit)  <br /></td></tr>
+<tr class="separator:aad7090d4dc9abc8446f021d38e2706a1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a63c311279e8a0d47b52e67e978b7f0cd"><td class="memItemLeft" align="right" valign="top"><a class="el" href="cmsis__armclang__a_8h.html#ab904513442afdf77d4f8c74f23cbb040">__STATIC_FORCEINLINE</a> uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="cmsis__armclang__a_8h.html#a63c311279e8a0d47b52e67e978b7f0cd">__LDRT</a> (volatile uint32_t *ptr)</td></tr>
+<tr class="memdesc:a63c311279e8a0d47b52e67e978b7f0cd"><td class="mdescLeft">&#160;</td><td class="mdescRight">LDRT Unprivileged (32 bit)  <br /></td></tr>
+<tr class="separator:a63c311279e8a0d47b52e67e978b7f0cd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3d8a768c00b348d526b941a7f51ce2d3"><td class="memItemLeft" align="right" valign="top"><a class="el" href="cmsis__armclang__a_8h.html#ab904513442afdf77d4f8c74f23cbb040">__STATIC_FORCEINLINE</a> void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="cmsis__armclang__a_8h.html#a3d8a768c00b348d526b941a7f51ce2d3">__STRBT</a> (uint8_t value, volatile uint8_t *ptr)</td></tr>
+<tr class="memdesc:a3d8a768c00b348d526b941a7f51ce2d3"><td class="mdescLeft">&#160;</td><td class="mdescRight">STRT Unprivileged (8 bit)  <br /></td></tr>
+<tr class="separator:a3d8a768c00b348d526b941a7f51ce2d3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aca61d1e42169f57b1d0be2ab873aae51"><td class="memItemLeft" align="right" valign="top"><a class="el" href="cmsis__armclang__a_8h.html#ab904513442afdf77d4f8c74f23cbb040">__STATIC_FORCEINLINE</a> void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="cmsis__armclang__a_8h.html#aca61d1e42169f57b1d0be2ab873aae51">__STRHT</a> (uint16_t value, volatile uint16_t *ptr)</td></tr>
+<tr class="memdesc:aca61d1e42169f57b1d0be2ab873aae51"><td class="mdescLeft">&#160;</td><td class="mdescRight">STRT Unprivileged (16 bit)  <br /></td></tr>
+<tr class="separator:aca61d1e42169f57b1d0be2ab873aae51"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2e578cf2f48002f7a76e42d6d4e1c743"><td class="memItemLeft" align="right" valign="top"><a class="el" href="cmsis__armclang__a_8h.html#ab904513442afdf77d4f8c74f23cbb040">__STATIC_FORCEINLINE</a> void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="cmsis__armclang__a_8h.html#a2e578cf2f48002f7a76e42d6d4e1c743">__STRT</a> (uint32_t value, volatile uint32_t *ptr)</td></tr>
+<tr class="memdesc:a2e578cf2f48002f7a76e42d6d4e1c743"><td class="mdescLeft">&#160;</td><td class="mdescRight">STRT Unprivileged (32 bit)  <br /></td></tr>
+<tr class="separator:a2e578cf2f48002f7a76e42d6d4e1c743"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae84bf4e95944e61937f4ed2453e5ef23"><td class="memItemLeft" align="right" valign="top"><a class="el" href="cmsis__armclang__a_8h.html#ab904513442afdf77d4f8c74f23cbb040">__STATIC_FORCEINLINE</a> void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="cmsis__armclang__a_8h.html#ae84bf4e95944e61937f4ed2453e5ef23">__enable_irq</a> (void)</td></tr>
 <tr class="memdesc:ae84bf4e95944e61937f4ed2453e5ef23"><td class="mdescLeft">&#160;</td><td class="mdescRight">Enable IRQ Interrupts.  <br /></td></tr>
 <tr class="separator:ae84bf4e95944e61937f4ed2453e5ef23"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -280,6 +295,12 @@ Functions</h2></td></tr>
 <tr class="memitem:a6f1d7bf2b8b84502e8de12f0c288e117"><td class="memItemLeft" align="right" valign="top"><a class="el" href="cmsis__armclang__a_8h.html#ab904513442afdf77d4f8c74f23cbb040">__STATIC_FORCEINLINE</a> void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="cmsis__armclang__a_8h.html#a6f1d7bf2b8b84502e8de12f0c288e117">__disable_fault_irq</a> (void)</td></tr>
 <tr class="memdesc:a6f1d7bf2b8b84502e8de12f0c288e117"><td class="mdescLeft">&#160;</td><td class="mdescRight">Disable FIQ.  <br /></td></tr>
 <tr class="separator:a6f1d7bf2b8b84502e8de12f0c288e117"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga6a275172e274ea7ce6c22030d07c6c64"><td class="memItemLeft" align="right" valign="top"><a class="el" href="cmsis__armclang__a_8h.html#ab904513442afdf77d4f8c74f23cbb040">__STATIC_FORCEINLINE</a> uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CMSIS__FPSCR.html#ga6a275172e274ea7ce6c22030d07c6c64">__get_FPSCR</a> (void)</td></tr>
+<tr class="memdesc:ga6a275172e274ea7ce6c22030d07c6c64"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get FPSCR.  <br /></td></tr>
+<tr class="separator:ga6a275172e274ea7ce6c22030d07c6c64"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga17c6ff443c52c74125fefef7de5fee1d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="cmsis__armclang__a_8h.html#ab904513442afdf77d4f8c74f23cbb040">__STATIC_FORCEINLINE</a> void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CMSIS__FPSCR.html#ga17c6ff443c52c74125fefef7de5fee1d">__set_FPSCR</a> (uint32_t fpscr)</td></tr>
+<tr class="memdesc:ga17c6ff443c52c74125fefef7de5fee1d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set FPSCR.  <br /></td></tr>
+<tr class="separator:ga17c6ff443c52c74125fefef7de5fee1d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:gaa4bddbd2091b8fb234ae43d290e69e78"><td class="memItemLeft" align="right" valign="top"><a class="el" href="cmsis__armclang__a_8h.html#ab904513442afdf77d4f8c74f23cbb040">__STATIC_FORCEINLINE</a> uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CMSIS__CPSR.html#gaa4bddbd2091b8fb234ae43d290e69e78">__get_CPSR</a> (void)</td></tr>
 <tr class="memdesc:gaa4bddbd2091b8fb234ae43d290e69e78"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get CPSR Register.  <br /></td></tr>
 <tr class="separator:gaa4bddbd2091b8fb234ae43d290e69e78"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -327,8 +348,8 @@ Variables</h2></td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>CMSIS compiler armclang (Arm Compiler 6) header file. </p>
-<dl class="section version"><dt>Version</dt><dd>V1.2.2 </dd></dl>
-<dl class="section date"><dt>Date</dt><dd>13. November 2022 </dd></dl>
+<dl class="section version"><dt>Version</dt><dd>V1.2.3 </dd></dl>
+<dl class="section date"><dt>Date</dt><dd>11. October 2023 </dd></dl>
 </div><h2 class="groupheader">Macro Definition Documentation</h2>
 <a id="a7f7b66103530fadcce226375af3c2c03" name="a7f7b66103530fadcce226375af3c2c03"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a7f7b66103530fadcce226375af3c2c03">&#9670;&#160;</a></span>__CLREX</h2>
@@ -749,28 +770,6 @@ Variables</h2></td></tr>
 
 </div>
 </div>
-<a id="a63b3bbd6ccb6b92ed6c0bbc489529f0f" name="a63b3bbd6ccb6b92ed6c0bbc489529f0f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a63b3bbd6ccb6b92ed6c0bbc489529f0f">&#9670;&#160;</a></span>__set_FPSCR</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define __set_FPSCR&#160;&#160;&#160;__builtin_arm_set_fpscr</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Set FPSCR. </p>
-<p>Assigns the given value to the Floating Point Status/Control register. </p><dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">fpscr</td><td>Floating Point Status/Control value to set </td></tr>
-  </table>
-  </dd>
-</dl>
-
-</div>
-</div>
 <a id="a3c013c2ed76ebc48c283c8bae17b9ab8" name="a3c013c2ed76ebc48c283c8bae17b9ab8"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a3c013c2ed76ebc48c283c8bae17b9ab8">&#9670;&#160;</a></span>__SSAT</h2>
 
@@ -1165,6 +1164,114 @@ Variables</h2></td></tr>
 
 </div>
 </div>
+<a id="a3504b9468d4f1cad2fbaea9aba65a0fa" name="a3504b9468d4f1cad2fbaea9aba65a0fa"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3504b9468d4f1cad2fbaea9aba65a0fa">&#9670;&#160;</a></span>__LDRBT()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="cmsis__armclang__a_8h.html#ab904513442afdf77d4f8c74f23cbb040">__STATIC_FORCEINLINE</a> uint8_t __LDRBT </td>
+          <td>(</td>
+          <td class="paramtype">volatile uint8_t *&#160;</td>
+          <td class="paramname"><em>ptr</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>LDRT Unprivileged (8 bit) </p>
+<p>Executes a Unprivileged LDRT instruction for 8 bit value. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">ptr</td><td>Pointer to data </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>value of type uint8_t at (*ptr) </dd></dl>
+
+</div>
+</div>
+<a id="aad7090d4dc9abc8446f021d38e2706a1" name="aad7090d4dc9abc8446f021d38e2706a1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aad7090d4dc9abc8446f021d38e2706a1">&#9670;&#160;</a></span>__LDRHT()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="cmsis__armclang__a_8h.html#ab904513442afdf77d4f8c74f23cbb040">__STATIC_FORCEINLINE</a> uint16_t __LDRHT </td>
+          <td>(</td>
+          <td class="paramtype">volatile uint16_t *&#160;</td>
+          <td class="paramname"><em>ptr</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>LDRT Unprivileged (16 bit) </p>
+<p>Executes a Unprivileged LDRT instruction for 16 bit values. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">ptr</td><td>Pointer to data </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>value of type uint16_t at (*ptr) </dd></dl>
+
+</div>
+</div>
+<a id="a63c311279e8a0d47b52e67e978b7f0cd" name="a63c311279e8a0d47b52e67e978b7f0cd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a63c311279e8a0d47b52e67e978b7f0cd">&#9670;&#160;</a></span>__LDRT()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="cmsis__armclang__a_8h.html#ab904513442afdf77d4f8c74f23cbb040">__STATIC_FORCEINLINE</a> uint32_t __LDRT </td>
+          <td>(</td>
+          <td class="paramtype">volatile uint32_t *&#160;</td>
+          <td class="paramname"><em>ptr</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>LDRT Unprivileged (32 bit) </p>
+<p>Executes a Unprivileged LDRT instruction for 32 bit values. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">ptr</td><td>Pointer to data </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>value of type uint32_t at (*ptr) </dd></dl>
+
+</div>
+</div>
+<a id="a87e96ac34a5d8dd9083b687dc3664215" name="a87e96ac34a5d8dd9083b687dc3664215"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a87e96ac34a5d8dd9083b687dc3664215">&#9670;&#160;</a></span>__RRX()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="cmsis__armclang__a_8h.html#ab904513442afdf77d4f8c74f23cbb040">__STATIC_FORCEINLINE</a> uint32_t __RRX </td>
+          <td>(</td>
+          <td class="paramtype">uint32_t&#160;</td>
+          <td class="paramname"><em>value</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Rotate Right with Extend (32 bit) </p>
+<p>Moves each bit of a bitstring right by one bit. The carry input is shifted in at the left end of the bitstring. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">value</td><td>Value to rotate </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Rotated value </dd></dl>
+
+</div>
+</div>
 <a id="a7ad5710bc622794ffed1d31740f6be55" name="a7ad5710bc622794ffed1d31740f6be55"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a7ad5710bc622794ffed1d31740f6be55">&#9670;&#160;</a></span>__set_mode()</h2>
 
@@ -1185,6 +1292,117 @@ Variables</h2></td></tr>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">mode</td><td>Mode value to set </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a3d8a768c00b348d526b941a7f51ce2d3" name="a3d8a768c00b348d526b941a7f51ce2d3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3d8a768c00b348d526b941a7f51ce2d3">&#9670;&#160;</a></span>__STRBT()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="cmsis__armclang__a_8h.html#ab904513442afdf77d4f8c74f23cbb040">__STATIC_FORCEINLINE</a> void __STRBT </td>
+          <td>(</td>
+          <td class="paramtype">uint8_t&#160;</td>
+          <td class="paramname"><em>value</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">volatile uint8_t *&#160;</td>
+          <td class="paramname"><em>ptr</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>STRT Unprivileged (8 bit) </p>
+<p>Executes a Unprivileged STRT instruction for 8 bit values. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">value</td><td>Value to store </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">ptr</td><td>Pointer to location </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="aca61d1e42169f57b1d0be2ab873aae51" name="aca61d1e42169f57b1d0be2ab873aae51"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aca61d1e42169f57b1d0be2ab873aae51">&#9670;&#160;</a></span>__STRHT()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="cmsis__armclang__a_8h.html#ab904513442afdf77d4f8c74f23cbb040">__STATIC_FORCEINLINE</a> void __STRHT </td>
+          <td>(</td>
+          <td class="paramtype">uint16_t&#160;</td>
+          <td class="paramname"><em>value</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">volatile uint16_t *&#160;</td>
+          <td class="paramname"><em>ptr</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>STRT Unprivileged (16 bit) </p>
+<p>Executes a Unprivileged STRT instruction for 16 bit values. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">value</td><td>Value to store </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">ptr</td><td>Pointer to location </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a2e578cf2f48002f7a76e42d6d4e1c743" name="a2e578cf2f48002f7a76e42d6d4e1c743"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2e578cf2f48002f7a76e42d6d4e1c743">&#9670;&#160;</a></span>__STRT()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="cmsis__armclang__a_8h.html#ab904513442afdf77d4f8c74f23cbb040">__STATIC_FORCEINLINE</a> void __STRT </td>
+          <td>(</td>
+          <td class="paramtype">uint32_t&#160;</td>
+          <td class="paramname"><em>value</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">volatile uint32_t *&#160;</td>
+          <td class="paramname"><em>ptr</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>STRT Unprivileged (32 bit) </p>
+<p>Executes a Unprivileged STRT instruction for 32 bit values. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">value</td><td>Value to store </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">ptr</td><td>Pointer to location </td></tr>
   </table>
   </dd>
 </dl>
