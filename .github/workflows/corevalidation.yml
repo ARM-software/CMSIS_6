@@ -58,28 +58,12 @@ jobs:
             vcpkg-${{ runner.os }}-${{ runner.arch }}-
           path: /home/runner/.vcpkg
 
-      - name: Cache LLVM/Clang 17.0.0-devdrop0
-        if: matrix.compiler == 'Clang'
-        uses: actions/cache@v3
-        with:
-          key: clang-17.0.0-devdrop0-${{ runner.os }}-${{ runner.arch }}-${{ github.run_id }}-${{ matrix.compiler }}
-          restore-keys: |
-            clang-17.0.0-devdrop0-${{ runner.os }}-${{ runner.arch }}-
-            clang-17.0.0-devdrop0
-          path: /home/runner/LLVMEmbeddedToolchainForArm-17.0.0-Linux-x86_64
-
-      - name: Install LLVM/Clang 17.0.0-devdrop0
+      - name: Install LLVM/Clang dependencies
         if: matrix.compiler == 'Clang'
         working-directory: /home/runner
         run: |
           sudo apt-get update
           sudo apt-get install libtinfo5
-          if [[ ! -d LLVMEmbeddedToolchainForArm-17.0.0-Linux-x86_64 ]]; then
-            wget https://github.com/ARM-software/LLVM-embedded-toolchain-for-Arm/releases/download/preview-17.0.0-devdrop0/LLVMEmbeddedToolchainForArm-17.0.0-Linux-x86_64.tar.xz
-            tar -xf LLVMEmbeddedToolchainForArm-17.0.0-Linux-x86_64.tar.xz
-          fi
-          ./LLVMEmbeddedToolchainForArm-17.0.0-Linux-x86_64/bin/clang --version
-          echo "CLANG_TOOLCHAIN_17_0_0=$(pwd)/LLVMEmbeddedToolchainForArm-17.0.0-Linux-x86_64/bin" >> $GITHUB_ENV
     
       - name: Prepare vcpkg env
         working-directory: ./CMSIS/CoreValidation/Project

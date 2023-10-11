@@ -1,8 +1,8 @@
 /**************************************************************************//**
  * @file     cmsis_gcc_m.h
  * @brief    CMSIS compiler GCC header file
- * @version  V6.0.0
- * @date     27. July 2023
+ * @version  V6.0.1
+ * @date     11. October 2023
  ******************************************************************************/
 /*
  * Copyright (c) 2009-2023 Arm Limited. All rights reserved.
@@ -344,7 +344,6 @@ __STATIC_FORCEINLINE uint32_t __ROR(uint32_t op1, uint32_t op2)
   }
   return (op1 >> op2) | (op1 << (32U - op2));
 }
-
 
 /**
   \brief   Breakpoint
@@ -1638,9 +1637,33 @@ __extension__ \
   __RES; \
  })
 
-#define __SXTB16_RORn(ARG1, ARG2)        __SXTB16(__ROR(ARG1, ARG2))
+__STATIC_FORCEINLINE uint32_t __SXTB16_RORn(uint32_t op1, uint32_t rotate)
+{
+    uint32_t result;
+    if (__builtin_constant_p(rotate) && ((rotate == 8U) || (rotate == 16U) || (rotate == 24U)))
+    {
+        __ASM volatile("sxtb16 %0, %1, ROR %2" : "=r"(result) : "r"(op1), "i"(rotate));
+    }
+    else
+    {
+        result = __SXTB16(__ROR(op1, rotate));
+    }
+    return result;
+}
 
-#define __SXTAB16_RORn(ARG1, ARG2, ARG3) __SXTAB16(ARG1, __ROR(ARG2, ARG3))
+__STATIC_FORCEINLINE uint32_t __SXTAB16_RORn(uint32_t op1, uint32_t op2, uint32_t rotate)
+{
+    uint32_t result;
+    if (__builtin_constant_p(rotate) && ((rotate == 8U) || (rotate == 16U) || (rotate == 24U)))
+    {
+        __ASM volatile("sxtab16 %0, %1, %2, ROR %3" : "=r"(result) : "r"(op1), "r"(op2), "i"(rotate));
+    }
+    else
+    {
+        result = __SXTAB16(op1, __ROR(op2, rotate));
+    }
+    return result;
+}
 
 __STATIC_FORCEINLINE int32_t __SMMLA (int32_t op1, int32_t op2, int32_t op3)
 {
