@@ -1,4 +1,4 @@
-// REQUIRES: thumbv7em
+// REQUIRES: dsp
 // RUN: %cc% %ccflags% %ccout% %s.o %s; llvm-objdump --mcpu=%mcpu% -d %s.o | FileCheck --allow-unused-prefixes --check-prefixes %prefixes% %s
 
 #include "cmsis_compiler.h"
@@ -480,12 +480,14 @@ void sxtb16_ror() {
     // CHECK: sxtb16 {{r[0-9]+}}, {{r[0-9]+}}, ror #24
     result = __SXTB16_RORn(s32_1, 24);
 
-    // CHECK: ror.w [[REG:r[0-9]+]], {{r[0-9]+}}, {{#5|#0x5}}
+    // CHECK-THUMB: ror.w [[REG:r[0-9]+]], {{r[0-9]+}}, {{#5|#0x5}}
+    // CHECK-ARM: ror [[REG:r[0-9]+]], {{r[0-9]+}}, {{#5|#0x5}}
     // CHECK: sxtb16 {{r[0-9]+}}, [[REG]]
     // CHECK-NOT: , ror
     result = __SXTB16_RORn(s32_1, 5);
 
-    // CHECK: ror{{.w|ne|s}} {{r[0-9]+}}, {{r[0-9]+}}
+    // CHECK-THUMB: ror{{.w|ne|s}} {{r[0-9]+}}, {{r[0-9]+}}
+    // CHECK-ARM: ror {{r[0-9]+}}, {{r[0-9]+}}
     // CHECK: sxtb16 {{r[0-9]+}}, {{r[0-9]+}}
     // CHECK-NOT: , ror
     result = __SXTB16_RORn(s32_1, u8);
@@ -505,12 +507,14 @@ void sxtab16_ror() {
     // CHECK: sxtab16 {{r[0-9]+}}, {{r[0-9]+}}, {{r[0-9]+}}, ror #24
     result = __SXTAB16_RORn(s32_1, s32_2, 24);
 
-    // CHECK: ror.w [[REG:r[0-9]+]], {{r[0-9]+}}, {{#5|#0x5}}
+    // CHECK-THUMB: ror.w [[REG:r[0-9]+]], {{r[0-9]+}}, {{#5|#0x5}}
+    // CHECK-ARM: ror [[REG:r[0-9]+]], {{r[0-9]+}}, {{#5|#0x5}}
     // CHECK: sxtab16 {{r[0-9]+}}, {{r[0-9]+}}, [[REG]]
     // CHECK-NOT: , ror
     result = __SXTAB16_RORn(s32_1, s32_2, 5);
 
-    // CHECK: ror{{.w|ne|s}} {{r[0-9]+}}, {{r[0-9]+}}
+    // CHECK-THUMB: ror{{.w|ne|s}} {{r[0-9]+}}, {{r[0-9]+}}
+    // CHECK-ARM: ror {{r[0-9]+}}, {{r[0-9]+}}
     // CHECK: sxtab16 {{r[0-9]+}}, {{r[0-9]+}}, {{r[0-9]+}}
     // CHECK-NOT: , ror
     result = __SXTAB16_RORn(s32_1, s32_2, u8);

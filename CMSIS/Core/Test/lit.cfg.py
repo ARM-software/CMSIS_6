@@ -45,7 +45,7 @@ DEVICES = {
         'mcpu': 'cortex-m3',
         'mfpu': 'none',
         'mpu': True,
-        'features': ['thumbv6m', 'thumbv7m', 'thumb-2', 'sat', 'ldrex'],
+        'features': ['thumbv6m', 'thumbv7m', 'thumb-2', 'sat', 'ldrex', 'clz'],
         'header': 'core_cm3.h',
         'defines': {
             '__CM3_REV': '0x0000U',
@@ -62,7 +62,7 @@ DEVICES = {
         'mcpu': 'cortex-m4',
         'mfpu': 'none',
         'mpu': True,
-        'features': ['thumbv6m', 'thumbv7m', 'thumbv7em', 'thumb-2', 'sat', 'ldrex'],
+        'features': ['thumbv6m', 'thumbv7m', 'dsp', 'thumb-2', 'sat', 'ldrex', 'clz'],
         'header': 'core_cm4.h',
         'defines': {
             '__CM4_REV': '0x0000U',
@@ -80,7 +80,7 @@ DEVICES = {
         'mcpu': 'cortex-m4',
         'mfpu': 'fpv4-sp-d16',
         'mpu': True,
-        'features': ['thumbv6m', 'thumbv7m', 'thumbv7em', 'thumb-2', 'sat', 'ldrex'],
+        'features': ['thumbv6m', 'thumbv7m', 'dsp', 'thumb-2', 'sat', 'ldrex', 'clz'],
         'header': 'core_cm4.h',
         'defines': {
             '__CM4_REV': '0x0000U',
@@ -98,7 +98,7 @@ DEVICES = {
         'mcpu': 'cortex-m7',
         'mfpu': 'none',
         'mpu': True,
-        'features': ['thumbv6m', 'thumbv7m', 'thumbv7em', 'thumb-2', 'sat', 'ldrex'],
+        'features': ['thumbv6m', 'thumbv7m', 'dsp', 'thumb-2', 'sat', 'ldrex', 'clz'],
         'header': 'core_cm7.h',
         'defines': {
             '__CM7_REV': '0x0000U',
@@ -119,7 +119,7 @@ DEVICES = {
         'mcpu': 'cortex-m7',
         'mfpu': 'fpv4-sp-d16',
         'mpu': True,
-        'features': ['thumbv6m', 'thumbv7m', 'thumbv7em', 'thumb-2', 'sat', 'ldrex'],
+        'features': ['thumbv6m', 'thumbv7m', 'dsp', 'thumb-2', 'sat', 'ldrex', 'clz'],
         'header': 'core_cm7.h',
         'defines': {
             '__CM7_REV': '0x0000U',
@@ -140,7 +140,7 @@ DEVICES = {
         'mcpu': 'cortex-m7',
         'mfpu': 'fpv5-d16',
         'mpu': True,
-        'features': ['thumbv6m', 'thumbv7m', 'thumbv7em', 'thumb-2', 'sat', 'ldrex'],
+        'features': ['thumbv6m', 'thumbv7m', 'dsp', 'thumb-2', 'sat', 'ldrex', 'clz'],
         'header': 'core_cm7.h',
         'defines': {
             '__CM7_REV': '0x0000U',
@@ -218,7 +218,7 @@ DEVICES = {
         'mcpu': 'cortex-m33',
         'mfpu': 'fpv5-d16',
         'mpu': True,
-        'features': ['thumbv6m', 'thumbv7m', 'thumbv7em', 'thumbv8m.base', 'thumbv8m.main', 'thumb-2', 'sat', 'ldrex'],
+        'features': ['thumbv6m', 'thumbv7m', 'dsp', 'thumbv8m.base', 'thumbv8m.main', 'thumb-2', 'sat', 'ldrex', 'clz'],
         'header': 'core_cm33.h',
         'defines': {
             '__CM33_REV': '0x0000U',
@@ -237,7 +237,7 @@ DEVICES = {
         'mcpu': 'cortex-m33',
         'mfpu': 'fpv5-d16',
         'mpu': True,
-        'features': ['thumbv6m', 'thumbv7m', 'thumbv7em', 'thumbv8m.base', 'thumbv8m.main', 'thumb-2', 'sat', 'ldrex'],
+        'features': ['thumbv6m', 'thumbv7m', 'dsp', 'thumbv8m.base', 'thumbv8m.main', 'thumb-2', 'sat', 'ldrex', 'clz'],
         'header': 'core_cm33.h',
         'defines': {
             '__CM33_REV': '0x0000U',
@@ -256,7 +256,7 @@ DEVICES = {
         'mcpu': 'cortex-m33',
         'mfpu': 'fpv5-d16',
         'mpu': True,
-        'features': ['thumbv6m', 'thumbv7m', 'thumbv7em', 'thumbv8m.base', 'thumbv8m.main', 'thumb-2', 'sat', 'ldrex'],
+        'features': ['thumbv6m', 'thumbv7m', 'dsp', 'thumbv8m.base', 'thumbv8m.main', 'thumb-2', 'sat', 'ldrex', 'clz'],
         'header': 'core_cm33.h',
         'defines': {
             '__CM33_REV': '0x0000U',
@@ -275,7 +275,7 @@ DEVICES = {
         'mcpu': 'cortex-m35p',
         'mfpu': 'fpv5-d16',
         'mpu': True,
-        'features': ['thumbv6m', 'thumbv7m', 'thumbv7em', 'thumbv8m.base', 'thumbv8m.main', 'thumb-2', 'sat', 'ldrex'],
+        'features': ['thumbv6m', 'thumbv7m', 'dsp', 'thumbv8m.base', 'thumbv8m.main', 'thumb-2', 'sat', 'ldrex', 'clz'],
         'header': 'core_cm35p.h',
         'defines': {
             '__CM35P_REV': '0x0000U',
@@ -294,7 +294,7 @@ DEVICES = {
         'mcpu': 'cortex-m35p',
         'mfpu': 'fpv5-d16',
         'mpu': True,
-        'features': ['thumbv6m', 'thumbv7m', 'thumbv7em', 'thumbv8m.base', 'thumbv8m.main', 'thumb-2', 'sat', 'ldrex'],
+        'features': ['thumbv6m', 'thumbv7m', 'dsp', 'thumbv8m.base', 'thumbv8m.main', 'thumb-2', 'sat', 'ldrex', 'clz'],
         'header': 'core_cm35p.h',
         'defines': {
             '__CM35P_REV': '0x0000U',
@@ -313,7 +313,7 @@ DEVICES = {
         'mcpu': 'cortex-m35p',
         'mfpu': 'fpv5-d16',
         'mpu': True,
-        'features': ['thumbv6m', 'thumbv7m', 'thumbv7em', 'thumbv8m.base', 'thumbv8m.main', 'thumb-2', 'sat', 'ldrex'],
+        'features': ['thumbv6m', 'thumbv7m', 'dsp', 'thumbv8m.base', 'thumbv8m.main', 'thumb-2', 'sat', 'ldrex', 'clz'],
         'header': 'core_cm35p.h',
         'defines': {
             '__CM35P_REV': '0x0000U',
@@ -332,7 +332,7 @@ DEVICES = {
         'mcpu': 'cortex-m55',
         'mfpu': 'fpv5-d16',
         'mpu': True,
-        'features': ['thumbv6m', 'thumbv7m', 'thumbv7em', 'thumbv8m.base', 'thumbv8m.main', 'thumbv8.1m.main', 'thumb-2', 'sat', 'ldrex'],
+        'features': ['thumbv6m', 'thumbv7m', 'dsp', 'thumbv8m.base', 'thumbv8m.main', 'thumbv8.1m.main', 'thumb-2', 'sat', 'ldrex', 'clz'],
         'header': 'core_cm55.h',
         'defines': {
             '__CM55_REV': '0x0000U',
@@ -358,7 +358,7 @@ DEVICES = {
         'mcpu': 'cortex-m55',
         'mfpu': 'fpv5-d16',
         'mpu': True,
-        'features': ['thumbv6m', 'thumbv7m', 'thumbv7em', 'thumbv8m.base', 'thumbv8m.main', 'thumbv8.1m.main', 'thumb-2', 'sat', 'ldrex'],
+        'features': ['thumbv6m', 'thumbv7m', 'dsp', 'thumbv8m.base', 'thumbv8m.main', 'thumbv8.1m.main', 'thumb-2', 'sat', 'ldrex', 'clz'],
         'header': 'core_cm55.h',
         'defines': {
             '__CM55_REV': '0x0000U',
@@ -384,7 +384,7 @@ DEVICES = {
         'mcpu': 'cortex-m55',
         'mfpu': 'fpv5-d16',
         'mpu': True,
-        'features': ['thumbv6m', 'thumbv7m', 'thumbv7em', 'thumbv8m.base', 'thumbv8m.main', 'thumbv8.1m.main', 'thumb-2', 'sat', 'ldrex'],
+        'features': ['thumbv6m', 'thumbv7m', 'dsp', 'thumbv8m.base', 'thumbv8m.main', 'thumbv8.1m.main', 'thumb-2', 'sat', 'ldrex', 'clz'],
         'header': 'core_cm55.h',
         'defines': {
             '__CM55_REV': '0x0000U',
@@ -410,7 +410,7 @@ DEVICES = {
         'mcpu': 'cortex-m85',
         'mfpu': 'fpv5-d16',
         'mpu': True,
-        'features': ['thumbv6m', 'thumbv7m', 'thumbv7em', 'thumbv8m.base', 'thumbv8m.main', 'thumbv8.1m.main', 'thumb-2', 'sat', 'ldrex'],
+        'features': ['thumbv6m', 'thumbv7m', 'dsp', 'thumbv8m.base', 'thumbv8m.main', 'thumbv8.1m.main', 'thumb-2', 'sat', 'ldrex', 'clz'],
         'header': 'core_cm85.h',
         'defines': {
             '__CM85_REV': '0x0000U',
@@ -436,7 +436,7 @@ DEVICES = {
         'mcpu': 'cortex-m85',
         'mfpu': 'fpv5-d16',
         'mpu': True,
-        'features': ['thumbv6m', 'thumbv7m', 'thumbv7em', 'thumbv8m.base', 'thumbv8m.main', 'thumbv8.1m.main', 'thumb-2', 'sat', 'ldrex'],
+        'features': ['thumbv6m', 'thumbv7m', 'dsp', 'thumbv8m.base', 'thumbv8m.main', 'thumbv8.1m.main', 'thumb-2', 'sat', 'ldrex', 'clz'],
         'header': 'core_cm85.h',
         'defines': {
             '__CM85_REV': '0x0000U',
@@ -462,7 +462,7 @@ DEVICES = {
         'mcpu': 'cortex-m85',
         'mfpu': 'fpv5-d16',
         'mpu': True,
-        'features': ['thumbv6m', 'thumbv7m', 'thumbv7em', 'thumbv8m.base', 'thumbv8m.main', 'thumbv8.1m.main', 'thumb-2', 'sat', 'ldrex'],
+        'features': ['thumbv6m', 'thumbv7m', 'dsp', 'thumbv8m.base', 'thumbv8m.main', 'thumbv8.1m.main', 'thumb-2', 'sat', 'ldrex', 'clz'],
         'header': 'core_cm85.h',
         'defines': {
             '__CM85_REV': '0x0000U',
@@ -488,7 +488,7 @@ DEVICES = {
         'mcpu': 'cortex-a5',
         'mfpu': 'none',
         'mpu': True,
-        'features': ['armv7a', 'thumb-2'],
+        'features': ['armv7a', 'thumb-2', 'sat', 'clz'],
         'header': 'core_ca.h',
         'defines': {
             '__CA_REV': '0x0000U',
@@ -505,7 +505,7 @@ DEVICES = {
         'mcpu': 'cortex-a5',
         'mfpu': 'neon-vfpv4',
         'mpu': True,
-        'features': ['armv7a', 'thumb-2'],
+        'features': ['armv7a', 'thumb-2', 'sat', 'dsp', 'clz'],
         'header': 'core_ca.h',
         'defines': {
             '__CA_REV': '0x0000U',
@@ -522,7 +522,7 @@ DEVICES = {
         'mcpu': 'cortex-a7',
         'mfpu': 'none',
         'mpu': True,
-        'features': ['armv7a', 'thumb-2'],
+        'features': ['armv7a', 'thumb-2', 'sat', 'clz'],
         'header': 'core_ca.h',
         'defines': {
             '__CA_REV': '0x0000U',
@@ -539,7 +539,7 @@ DEVICES = {
         'mcpu': 'cortex-a7',
         'mfpu': 'neon-vfpv4',
         'mpu': True,
-        'features': ['armv7a', 'thumb-2'],
+        'features': ['armv7a', 'thumb-2', 'sat', 'dsp', 'clz'],
         'header': 'core_ca.h',
         'defines': {
             '__CA_REV': '0x0000U',
@@ -556,7 +556,7 @@ DEVICES = {
         'mcpu': 'cortex-a9',
         'mfpu': 'none',
         'mpu': True,
-        'features': ['armv7a', 'thumb-2'],
+        'features': ['armv7a', 'thumb-2', 'sat', 'clz'],
         'header': 'core_ca.h',
         'defines': {
             '__CA_REV': '0x0000U',
@@ -573,7 +573,7 @@ DEVICES = {
         'mcpu': 'cortex-a9',
         'mfpu': 'neon-vfpv3',
         'mpu': True,
-        'features': ['armv7a', 'thumb-2'],
+        'features': ['armv7a', 'thumb-2', 'sat', 'dsp', 'ldrex', 'clz'],
         'header': 'core_ca.h',
         'defines': {
             '__CA_REV': '0x0000U',
