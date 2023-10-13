@@ -19,6 +19,7 @@
         - RTX4 Deprecated and removed!
       CMSIS-RTOS2: 2.3.0 (see revision history for details)
         - RTX5 Moved into separate pack!
+        - OS Tick moved from Device to CMSIS class
       CMSIS-Driver: 2.9.0
         - Updated VIO API 1.0.0
         - Added GPIO Driver API 1.0.0
@@ -430,7 +431,8 @@
         <file category="header" name="CMSIS/Core/Include/a-profile/irq_ctrl.h"/>
       </files>
     </api>
-    <api Cclass="Device" Cgroup="OS Tick" Capiversion="1.0.1" exclusive="1">
+    <!-- CMSIS OS Tick API -->
+    <api Cclass="CMSIS" Cgroup="OS Tick" Capiversion="1.0.1" exclusive="1">
       <description>RTOS Kernel system tick timer interface</description>
       <files>
         <file category="header" name="CMSIS/RTOS2/Include/os_tick.h"/>
@@ -679,21 +681,21 @@
     </component>
 
     <!-- OS Tick -->
-    <component Cclass="Device" Cgroup="OS Tick" Csub="SysTick" Capiversion="1.0.1" Cversion="1.0.0" condition="OS Tick SysTick">
+    <component Cclass="CMSIS" Cgroup="OS Tick" Csub="SysTick" Capiversion="1.0.1" Cversion="1.0.0" condition="OS Tick SysTick">
       <description>OS Tick implementation using Cortex-M SysTick Timer</description>
       <files>
         <file category="sourceC" name="CMSIS/RTOS2/Source/os_systick.c"/>
       </files>
     </component>
 
-    <component Cclass="Device" Cgroup="OS Tick" Csub="Private Timer" Capiversion="1.0.1" Cversion="1.0.2" condition="OS Tick PTIM">
+    <component Cclass="CMSIS" Cgroup="OS Tick" Csub="Private Timer" Capiversion="1.0.1" Cversion="1.0.2" condition="OS Tick PTIM">
       <description>OS Tick implementation using Private Timer</description>
       <files>
         <file category="sourceC" name="CMSIS/RTOS2/Source/os_tick_ptim.c"/>
       </files>
     </component>
 
-    <component Cclass="Device" Cgroup="OS Tick" Csub="Generic Physical Timer" Capiversion="1.0.1" Cversion="1.0.1" condition="OS Tick GTIM">
+    <component Cclass="CMSIS" Cgroup="OS Tick" Csub="Generic Physical Timer" Capiversion="1.0.1" Cversion="1.0.1" condition="OS Tick GTIM">
       <description>OS Tick implementation using Generic Physical Timer</description>
       <files>
         <file category="sourceC" name="CMSIS/RTOS2/Source/os_tick_gtim.c"/>
