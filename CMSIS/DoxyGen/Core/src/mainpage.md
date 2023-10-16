@@ -70,7 +70,7 @@ The Armv8-M architecture is described in the [Armv8-M Architecture Reference Man
 
 The Armv8.1-M architecture further extends Armv8-M with Helium (the so called M-Profile Vector Extension (MVE)), as well as further instruction set and debug extensions.
 
-More information about Armv8.1-M architecture is available under [Arm Helium technology](hhttps://developer.arm.com/Architectures/Helium).
+More information about Armv8.1-M architecture is available under [Arm Helium technology](https://developer.arm.com/Architectures/Helium).
 
 ##  Tested and Verified Toolchains {#tested_tools_sec}
 

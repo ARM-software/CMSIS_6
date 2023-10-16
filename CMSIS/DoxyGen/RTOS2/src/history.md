@@ -16,7 +16,7 @@
     <tr>
       <td>V2.2.0</td>
       <td>
-        Added support for Process Isolation (Functional Safety):
+        Added support for \ref CMSIS_RTOS_ProcessIsolation :
          - Kernel Management: \ref osKernelProtect, \ref osKernelDestroyClass
          - Thread Management: \ref osThreadGetClass, \ref osThreadGetZone,<br>
            \ref osThreadSuspendClass, \ref osThreadResumeClass, \ref osThreadTerminateZone,<br>
@@ -82,8 +82,8 @@
     </tr>
     <tr>
       <td>V1.02</td>
-      <td>Added: New control functions for short timeouts in microsecond resolution \b osKernelSysTick,
-      \b osKernelSysTickFrequency, \b osKernelSysTickMicroSec.\n
+      <td>Added: New control functions for short timeouts in microsecond resolution **osKernelSysTick**,
+      \b osKernelSysTickFrequency, **osKernelSysTickMicroSec**.\n
       Removed: osSignalGet.
      </td>
     </tr>fv

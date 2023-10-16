@@ -7,8 +7,21 @@ The **CMSIS-Toolbox** provides command-line tools for:
 
 ## Access to CMSIS-Toolbox
 
-- [**CMSIS-Toolbox GitHub Repo**](https://github.com/Open-CMSIS-Pack/cmsis-toolbox/releases) - direct access to the release versions for the tools.
-- [**vcpkg**](todo) - uses the Arm tools artifactory for consistent installation of development tools.
+CMSIS-Toolbox is actively maintained in a dedicated GitHub repository and released as a set of binary utilities.
+
+- [**CMSIS-Toolbox GitHub Repo**](https://github.com/Open-CMSIS-Pack/cmsis-toolbox) - contains the source code and releases.
+- [**CMSIS-Toolbox User Guide**](https://github.com/Open-CMSIS-Pack/cmsis-toolbox/blob/main/docs/README.md) - provides user documentation for the CMSIS-Toolbox.
+
+## Benefits
+
+- Flexible CLI tools that can be used stand-alone or integrated into [VS Code](https://marketplace.visualstudio.com/items?itemName=Arm.keil-studio-pack) or DevOps systems for Continuous Integration (CI).
+- Stand-alone tools that are available for all host platforms (Windows, Mac, Linux) and flexible deployable.
+- [Software Packs](https://www.keil.arm.com/packs/) simplify tool setup with `device:` or `board:` selection and project creation with access to reusable software components.
+- Organize solutions with projects that are independently managed simplifies a wide range of use cases including  multi-processor applications or unit testing.
+- Provisions for product lifecycle management (PLM) with versioned software packs that are easy to update and management for configuration files.
+- Software layers enable code reuse across similar applications with a pre-configured set of source files and software components.
+- Multiple hardware targets allow application deployment to different hardware (test board, production hardware, virtual hardware, etc.).
+- Multiple build types support software testing and verification (debug build, test build, release build, ect.).
 
 ## Project Creation
 
@@ -29,17 +42,6 @@ The **Output Files** contain detailed build information and manage the configura
 The diagram below provides an overview of the **build information** used by the CMSIS-Toolbox.
 
 ![Overview of Project Definition](./images/csolution-overview.png)
-
-### Benefits
-
-- Flexible CLI tools that can be used stand-alone or integrated into [VS Code](https://marketplace.visualstudio.com/items?itemName=Arm.keil-studio-pack) or DevOps systems for Continuous Integration (CI).
-- Stand-alone tools that are available for all host platforms (Windows, Mac, Linux) and flexible deployable.
-- [Software Packs](https://www.keil.arm.com/packs/) simplify tool setup with `device:` or `board:` selection and project creation with access to reusable software components.
-- Organize solutions with projects that are independently managed simplifies a wide range of use cases including  multi-processor applications or unit testing.
-- Provisions for product lifecycle management (PLM) with versioned software packs that are easy to update and management for configuration files.
-- Software layers enable code reuse across similar applications with a pre-configured set of source files and software components.
-- Multiple hardware targets allow application deployment to different hardware (test board, production hardware, virtual hardware, etc.).
-- Multiple build types support software testing and verification (debug build, test build, release build, ect.).
 
 ## Software Pack Creation
 
