@@ -916,7 +916,7 @@ WARN_LOGFILE           =
 # spaces. See also FILE_PATTERNS and EXTENSION_MAPPING
 # Note: If this tag is empty the current directory is searched.
 
-INPUT                  = ./src/introduction.md \
+INPUT                  = ./src/mainpage.md \
                          ./src/cmsis_sw_pack.md \
                          ./src/revision_history.md
 

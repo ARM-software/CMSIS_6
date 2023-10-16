@@ -26,7 +26,7 @@ The Armv7-A architecture defines a common set of first level exceptions, see tab
 By default those handlers are defined as weak empty functions by the \ref startup_c_sec "device specific startup code".
 Software and peripheral interrupts are all handled by one of the both central interrupt handlers (IRQ and FIQ). These needs to
 be implemented application specific. If an RTOS is used the interrupt handlers are typically provided by the RTOS, e.g. when using 
-<a href="../../RTOS2/html/rtx5_impl.html">RTX5</a>.
+<a href="https://arm-software.github.io/CMSIS-RTX/latest/html/index.html">CMSIS-RTX</a>.
 
 The interrupts available depends on the actual device in use. According to CMSIS specification the interrupts are defined in \ref IRQn_Type in \ref device_h_pg. Using the generic IRQ API one can easily enable and disable interrupts, set up priorities, modes  and preemption rules, and register interrupt callbacks.
 

@@ -17,13 +17,13 @@ The CMSIS-RTOS2 defines APIs for common RTOS services as listed below:
 
  - \ref CMSIS_RTOS_KernelCtrl provides system information and controls the RTOS Kernel.
  - \ref CMSIS_RTOS_ThreadMgmt allows you to define, create, and control RTOS threads (tasks).
+ - \ref CMSIS_RTOS_Wait for controlling time delays. Also see \ref CMSIS_RTOS_TimeOutValue.
+ - \ref CMSIS_RTOS_TimerMgmt functions are used to trigger the execution of functions.
  - Three different event types support communication between multiple threads and/or ISR:
    - \ref CMSIS_RTOS_ThreadFlagsMgmt "Thread Flags": may be used to indicate specific conditions to a thread.
    - \ref CMSIS_RTOS_EventFlags "Event Flags": may be used to indicate events to a thread or ISR.
    - \ref CMSIS_RTOS_Message "Messages": can be sent to a thread or an ISR. Messages are buffered in a queue.
- - \ref CMSIS_RTOS_Wait for controlling time delays. Also see \ref CMSIS_RTOS_TimeOutValue.
  - \ref CMSIS_RTOS_MutexMgmt and \ref CMSIS_RTOS_SemaphoreMgmt are incorporated.
- - \ref CMSIS_RTOS_TimerMgmt functions are used to trigger the execution of functions.
 
 The referenced pages contain theory of operation for corresponding services as well as detailed API description with example code.
 
@@ -43,20 +43,20 @@ CMSIS-RTOS2 is especially easy use to integrate in projects that support [CMSIS-
 
 CMSIS-RTOS2 follows [the general CMSIS coding rules](../../General/html/index.html#coding_rules). Additionally following Namespace prefixes are used in CMSIS-RTOS2 API:
 
-- **os** for all definitions and function names. Examples: \ref osThreadPrivileged, \ref osKernelStart.
-- **os** with postfix **_t** for all typedefs. Examples: \ref osStatus_t, \ref osThreadAttr_t.
+- `os` for all definitions and function names. Examples: \ref osThreadPrivileged, \ref osKernelStart.
+- `os` with postfix `_t` for all typedefs. Examples: \ref osStatus_t, \ref osThreadAttr_t.
 
 ## System Startup {#SystemStartup}
 
-When program execution reaches \c main() function there is a recommended order to initialize the hardware and start the kernel.
+When program execution reaches `main()` function there is a recommended order to initialize the hardware and start the kernel.
 
-Your application's \c main() should implement at least the following in the given order:
+Your application's `main()` should implement at least the following in the given order:
  -# Initialize and configure hardware including peripherals, memory, pins, clocks and the interrupt system.
  -# Update the system core clock using the respective
    [CMSIS-Core (Cortex-M)](../../Core/html/group__system__init__gr.html) \if ARMCA or [CMSIS-Core (Cortex-A)](../../Core_A/html/group__system__init__gr.html) \endif function.
  -# Initialize the RTOS kernel using \ref osKernelInitialize.
- -# Optionally, create one thread (for example \c app_main) using \ref osThreadNew, which will be used as a main thread . This thread should take care of creating and starting objects, once it is run by the scheduler. Alternatively, threads can be created directly in \c main().
- -# Start the RTOS scheduler using \ref osKernelStart which also configures the system tick timer and initializes RTOS specific interrupts. This function does not return in case of successful execution. Therefore, any application code after \b osKernelStart will not be executed.
+ -# Optionally, create one thread (for example `app_main`) using \ref osThreadNew, which will be used as a main thread . This thread should take care of creating and starting objects, once it is run by the scheduler. Alternatively, threads can be created directly in `main()`.
+ -# Start the RTOS scheduler using \ref osKernelStart which also configures the system tick timer and initializes RTOS specific interrupts. This function does not return in case of successful execution. Therefore, any application code after `osKernelStart` will not be executed.
 
 \note
 - Modifying priorities and groupings in the NVIC by the application after the above sequence is not recommended.
@@ -151,7 +151,7 @@ Examples:
 
  - CPU time can be scheduled with the following functionalities:
    - A \a timeout parameter is incorporated in many CMSIS-RTOS2 functions to avoid system lockup. When a timeout is specified, the system waits until a resource is available or an event occurs. While waiting, other threads are scheduled.
-   - The \ref osDelay and \ref osDelayUntil functions put a thread into the \b WAITING state for a specified period of time.
+   - The \ref osDelay and \ref osDelayUntil functions put a thread into the **WAITING** state for a specified period of time.
    - The \ref osThreadYield provides co-operative thread switching and passes execution to another thread of the same priority.
 
 

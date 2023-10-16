@@ -39,7 +39,7 @@ Several popular RTOS kernels include support for CMSIS-RTOS2 API:
 
 ## Access to CMSIS-RTOS2 {#rtos2_access}
 
-CMSIS-RTOS2 and OS Tick intefaces are actively maintained in [**CMSIS 6 GitHub repository**](https://github.com/ARM-software/CMSIS_6) and provided as part of the CMSIS Software Pack.
+CMSIS-RTOS2 and OS Tick intefaces are actively maintained in [**CMSIS 6 GitHub repository**](https://github.com/ARM-software/CMSIS_6) and provided as part of the [CMSIS Software Pack](../../General/html/cmsis_pack.html).
 
 The following files relevant to CMSIS-RTOS2 are present in the **ARM::CMSIS** Pack directories:
 

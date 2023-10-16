@@ -1,6 +1,6 @@
 # CMSIS-DAP {#mainpage}
 
-**CMSIS-DAP** is a **protocol** specification and an open-source **firmware** implementation that provides standardized access to the CoreSight Debug Access Port ([DAP](https://developer.arm.com/documentation/102585/0000/what-is-a-debug-access-port))
+**CMSIS-DAP** is a protocol specification and an open-source firmware implementation that provides standardized access to the CoreSight Debug Access Port ([DAP](https://developer.arm.com/documentation/102585/0000/what-is-a-debug-access-port))
  available on many Arm Cortex processors as part of the [CoreSight Debug and Trace](https://developer.arm.com/ip-products/system-ip/coresight-debug-and-trace) functionality.
 
 ![Overview of CMSIS-DAP](./images/cmsis_dap_interface.png)

@@ -9,8 +9,8 @@ Most of the rules also apply to the core peripherals.  The \ref device_h_pg cont
 the core specific header files.
 
 \ifnot FuSaRTS
-The definitions for \ref peripheral_gr can be generated using the <a href="../../SVD/html/index.html"><b>CMSIS-SVD</b></a> System View Description for Peripherals.
-Refer to <a href="../../SVD/html/svd_SVDConv_pg.html"><b>SVDConv.exe</b></a> for more information.
+The definitions for \ref peripheral_gr can be generated using the <a href="https://open-cmsis-pack.github.io/svd-spec/latest/index.html"><b>CMSIS-SVD</b></a> System View Description for Peripherals.
+Refer to <a href="https://open-cmsis-pack.github.io/svd-spec/latest/svd_SVDConv_pg.html"><b>SVDConv.exe</b></a> for more information.
 \endif
 	
 Each peripheral provides a data type definition with a name that is composed of:
