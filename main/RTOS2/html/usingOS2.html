@@ -146,15 +146,15 @@ Functionality overview</h1>
 <ul>
 <li><a class="el" href="group__CMSIS__RTOS__KernelCtrl.html">Kernel Information and Control</a> provides system information and controls the RTOS Kernel.</li>
 <li><a class="el" href="group__CMSIS__RTOS__ThreadMgmt.html">Thread Management</a> allows you to define, create, and control RTOS threads (tasks).</li>
+<li><a class="el" href="group__CMSIS__RTOS__Wait.html">Generic Wait Functions</a> for controlling time delays. Also see <a class="el" href="usingOS2.html#CMSIS_RTOS_TimeOutValue">Timeout Values</a>.</li>
+<li><a class="el" href="group__CMSIS__RTOS__TimerMgmt.html">Timer Management</a> functions are used to trigger the execution of functions.</li>
 <li>Three different event types support communication between multiple threads and/or ISR:<ul>
 <li><a class="el" href="group__CMSIS__RTOS__ThreadFlagsMgmt.html">Thread Flags</a>: may be used to indicate specific conditions to a thread.</li>
 <li><a class="el" href="group__CMSIS__RTOS__EventFlags.html">Event Flags</a>: may be used to indicate events to a thread or ISR.</li>
 <li><a class="el" href="group__CMSIS__RTOS__Message.html">Messages</a>: can be sent to a thread or an ISR. Messages are buffered in a queue.</li>
 </ul>
 </li>
-<li><a class="el" href="group__CMSIS__RTOS__Wait.html">Generic Wait Functions</a> for controlling time delays. Also see <a class="el" href="usingOS2.html#CMSIS_RTOS_TimeOutValue">Timeout Values</a>.</li>
 <li><a class="el" href="group__CMSIS__RTOS__MutexMgmt.html">Mutex Management</a> and <a class="el" href="group__CMSIS__RTOS__SemaphoreMgmt.html">Semaphores</a> are incorporated.</li>
-<li><a class="el" href="group__CMSIS__RTOS__TimerMgmt.html">Timer Management</a> functions are used to trigger the execution of functions.</li>
 </ul>
 <p>The referenced pages contain theory of operation for corresponding services as well as detailed API description with example code.</p>
 <h1><a class="anchor" id="cmsis_os2_h"></a>
@@ -171,8 +171,8 @@ CMSIS-RTOS File Structure</div></div>
 Coding Rules</h1>
 <p>CMSIS-RTOS2 follows <a href="../../General/html/index.html#coding_rules">the general CMSIS coding rules</a>. Additionally following Namespace prefixes are used in CMSIS-RTOS2 API:</p>
 <ul>
-<li><b>os</b> for all definitions and function names. Examples: <a class="el" href="group__CMSIS__RTOS__ThreadMgmt.html#ga7c2b7db42d23e4f56132e0ed739d02e5">osThreadPrivileged</a>, <a class="el" href="group__CMSIS__RTOS__KernelCtrl.html#ga9ae2cc00f0d89d7b6a307bba942b5221">osKernelStart</a>.</li>
-<li><b>os</b> with postfix **_t** for all typedefs. Examples: <a class="el" href="group__CMSIS__RTOS__Definitions.html#ga6c0dbe6069e4e7f47bb4cd32ae2b813e">osStatus_t</a>, <a class="el" href="group__CMSIS__RTOS__ThreadMgmt.html#structosThreadAttr__t">osThreadAttr_t</a>.</li>
+<li><code>os</code> for all definitions and function names. Examples: <a class="el" href="group__CMSIS__RTOS__ThreadMgmt.html#ga7c2b7db42d23e4f56132e0ed739d02e5">osThreadPrivileged</a>, <a class="el" href="group__CMSIS__RTOS__KernelCtrl.html#ga9ae2cc00f0d89d7b6a307bba942b5221">osKernelStart</a>.</li>
+<li><code>os</code> with postfix <code>_t</code> for all typedefs. Examples: <a class="el" href="group__CMSIS__RTOS__Definitions.html#ga6c0dbe6069e4e7f47bb4cd32ae2b813e">osStatus_t</a>, <a class="el" href="group__CMSIS__RTOS__ThreadMgmt.html#structosThreadAttr__t">osThreadAttr_t</a>.</li>
 </ul>
 <h1><a class="anchor" id="SystemStartup"></a>
 System Startup</h1>
@@ -182,7 +182,7 @@ System Startup</h1>
 <li>Update the system core clock using the respective <a href="../../Core/html/group__system__init__gr.html">CMSIS-Core (Cortex-M)</a>  or <a href="../../Core_A/html/group__system__init__gr.html">CMSIS-Core (Cortex-A)</a>  function.</li>
 <li>Initialize the RTOS kernel using <a class="el" href="group__CMSIS__RTOS__KernelCtrl.html#gae818f6611d25ba3140bede410a52d659">osKernelInitialize</a>.</li>
 <li>Optionally, create one thread (for example <code>app_main</code>) using <a class="el" href="group__CMSIS__RTOS__ThreadMgmt.html#ga48d68b8666d99d28fa646ee1d2182b8f">osThreadNew</a>, which will be used as a main thread . This thread should take care of creating and starting objects, once it is run by the scheduler. Alternatively, threads can be created directly in <code>main()</code>.</li>
-<li>Start the RTOS scheduler using <a class="el" href="group__CMSIS__RTOS__KernelCtrl.html#ga9ae2cc00f0d89d7b6a307bba942b5221">osKernelStart</a> which also configures the system tick timer and initializes RTOS specific interrupts. This function does not return in case of successful execution. Therefore, any application code after <b>osKernelStart</b> will not be executed.</li>
+<li>Start the RTOS scheduler using <a class="el" href="group__CMSIS__RTOS__KernelCtrl.html#ga9ae2cc00f0d89d7b6a307bba942b5221">osKernelStart</a> which also configures the system tick timer and initializes RTOS specific interrupts. This function does not return in case of successful execution. Therefore, any application code after <code>osKernelStart</code> will not be executed.</li>
 </ol>
 <dl class="section note"><dt>Note</dt><dd><ul>
 <li>Modifying priorities and groupings in the NVIC by the application after the above sequence is not recommended.</li>

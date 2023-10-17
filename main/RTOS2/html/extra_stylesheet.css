@@ -413,6 +413,7 @@ body, table, div, p, dl {
  margin-bottom:0px;
  padding-inline: 5px;
  padding-bottom: 3px;
+ cursor: pointer;
 }
 	
 .tile h2 {
