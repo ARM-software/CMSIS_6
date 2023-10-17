@@ -37,11 +37,9 @@
  *                 CMSIS definitions
  ******************************************************************************/
 
+#include "cmsis_version.h"
+
 /*  CMSIS CA definitions */
-#define __CA_CMSIS_VERSION_MAIN  (1U)                                      /*!< \brief [31:16] CMSIS-Core(A) main version   */
-#define __CA_CMSIS_VERSION_SUB   (1U)                                      /*!< \brief [15:0]  CMSIS-Core(A) sub version    */
-#define __CA_CMSIS_VERSION       ((__CA_CMSIS_VERSION_MAIN << 16U) | \
-                                   __CA_CMSIS_VERSION_SUB          )       /*!< \brief CMSIS-Core(A) version number         */
 
 #if defined ( __CC_ARM )
   #if defined (__TARGET_FPU_VFP)

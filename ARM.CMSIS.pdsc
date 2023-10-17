@@ -681,7 +681,7 @@
     </component>
 
     <!-- OS Tick -->
-    <component Cclass="CMSIS" Cgroup="OS Tick" Csub="SysTick" Capiversion="1.0.1" Cversion="1.0.0" condition="OS Tick SysTick">
+    <component Cclass="CMSIS" Cgroup="OS Tick" Csub="SysTick" Capiversion="1.0.1" Cversion="1.0.5" condition="OS Tick SysTick">
       <description>OS Tick implementation using Cortex-M SysTick Timer</description>
       <files>
         <file category="sourceC" name="CMSIS/RTOS2/Source/os_systick.c"/>
