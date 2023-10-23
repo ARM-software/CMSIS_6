@@ -23,7 +23,7 @@ RUN pip install \
         lit \
         python-matrix-runner
 
-RUN bash -c "$(curl -fsSL https://raw.githubusercontent.com/ohmybash/oh-my-bash/master/tools/install.sh)" &&
+RUN bash -c "$(curl -fsSL https://raw.githubusercontent.com/ohmybash/oh-my-bash/master/tools/install.sh)" && \
     sed -i 's/OSH_THEME="font"/OSH_THEME="powerline"/' ~/.bashrc
 
 ADD vcpkg-configuration.json /root/
