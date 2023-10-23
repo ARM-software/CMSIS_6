@@ -13,7 +13,7 @@ solution:
   packs:
     - pack: ARM::CMSIS
       path: ../../../
-    - pack: ARM::CMSIS_DFP
+    - pack: ARM::Cortex_DFP
 
   target-types:
     #CM0
