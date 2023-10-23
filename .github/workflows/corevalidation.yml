@@ -33,12 +33,12 @@ jobs:
         env:
           GH_TOKEN: ${{ github.token }}
         run: |
-          if [ -d CMSIS-DFP ]; then
-            cd CMSIS-DFP
+          if [ -d Cortex_DFP ]; then
+            cd Cortex_DFP
             git fetch origin main
             git checkout -f origin/main
           else
-            gh repo clone ARM-software/CMSIS-DFP
+            gh repo clone ARM-software/Cortex_DFP
           fi
 
       - uses: actions/setup-python@v4
@@ -119,8 +119,8 @@ jobs:
           . /home/runner/.vcpkg/vcpkg-init
           vcpkg activate
 
-          echo "Register local CMSIS-DFP pack"
-          cpackget add /home/runner/CMSIS-DFP/ARM.CMSIS_DFP.pdsc
+          echo "Register local Cortex_DFP pack"
+          cpackget add /home/runner/Cortex_DFP/ARM.Cortex_DFP.pdsc
 
           echo "Build test projects ..."
           ./build.py --verbose -m VHT -c ${{ matrix.compiler }} build || echo "::warning::=== Some configurations failed to build! ==="
