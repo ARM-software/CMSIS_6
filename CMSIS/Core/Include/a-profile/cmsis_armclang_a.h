@@ -428,18 +428,49 @@ __STATIC_FORCEINLINE void __STRT(uint32_t value, volatile uint32_t *ptr)
 #if (defined (__ARM_FEATURE_DSP) && (__ARM_FEATURE_DSP == 1))
 
 #define     __SADD8                 __builtin_arm_sadd8
-#define     __SADD16                __builtin_arm_sadd16
 #define     __QADD8                 __builtin_arm_qadd8
+#define     __SHADD8                __builtin_arm_shadd8
+#define     __UADD8                 __builtin_arm_uadd8
+#define     __UQADD8                __builtin_arm_uqadd8
+#define     __UHADD8                __builtin_arm_uhadd8
+#define     __SSUB8                 __builtin_arm_ssub8
 #define     __QSUB8                 __builtin_arm_qsub8
+#define     __SHSUB8                __builtin_arm_shsub8
+#define     __USUB8                 __builtin_arm_usub8
+#define     __UQSUB8                __builtin_arm_uqsub8
+#define     __UHSUB8                __builtin_arm_uhsub8
+#define     __SADD16                __builtin_arm_sadd16
 #define     __QADD16                __builtin_arm_qadd16
 #define     __SHADD16               __builtin_arm_shadd16
+#define     __UADD16                __builtin_arm_uadd16
+#define     __UQADD16               __builtin_arm_uqadd16
+#define     __UHADD16               __builtin_arm_uhadd16
+#define     __SSUB16                __builtin_arm_ssub16
 #define     __QSUB16                __builtin_arm_qsub16
 #define     __SHSUB16               __builtin_arm_shsub16
+#define     __USUB16                __builtin_arm_usub16
+#define     __UQSUB16               __builtin_arm_uqsub16
+#define     __UHSUB16               __builtin_arm_uhsub16
+#define     __SASX                  __builtin_arm_sasx
 #define     __QASX                  __builtin_arm_qasx
 #define     __SHASX                 __builtin_arm_shasx
+#define     __UASX                  __builtin_arm_uasx
+#define     __UQASX                 __builtin_arm_uqasx
+#define     __UHASX                 __builtin_arm_uhasx
+#define     __SSAX                  __builtin_arm_ssax
 #define     __QSAX                  __builtin_arm_qsax
 #define     __SHSAX                 __builtin_arm_shsax
+#define     __USAX                  __builtin_arm_usax
+#define     __UQSAX                 __builtin_arm_uqsax
+#define     __UHSAX                 __builtin_arm_uhsax
+#define     __USAD8                 __builtin_arm_usad8
+#define     __USADA8                __builtin_arm_usada8
+#define     __SSAT16                __builtin_arm_ssat16
+#define     __USAT16                __builtin_arm_usat16
+#define     __UXTB16                __builtin_arm_uxtb16
+#define     __UXTAB16               __builtin_arm_uxtab16
 #define     __SXTB16                __builtin_arm_sxtb16
+#define     __SXTAB16               __builtin_arm_sxtab16
 #define     __SMUAD                 __builtin_arm_smuad
 #define     __SMUADX                __builtin_arm_smuadx
 #define     __SMLAD                 __builtin_arm_smlad
@@ -448,34 +479,23 @@ __STATIC_FORCEINLINE void __STRT(uint32_t value, volatile uint32_t *ptr)
 #define     __SMLALDX               __builtin_arm_smlaldx
 #define     __SMUSD                 __builtin_arm_smusd
 #define     __SMUSDX                __builtin_arm_smusdx
+#define     __SMLSD                 __builtin_arm_smlsd
 #define     __SMLSDX                __builtin_arm_smlsdx
-#define     __USAT16                __builtin_arm_usat16
-#define     __SSUB8                 __builtin_arm_ssub8
-#define     __SXTB16                __builtin_arm_sxtb16
-#define     __SXTAB16               __builtin_arm_sxtab16
-
-
-__STATIC_FORCEINLINE  int32_t __QADD( int32_t op1,  int32_t op2)
-{
-  int32_t result;
-
-  __ASM volatile ("qadd %0, %1, %2" : "=r" (result) : "r" (op1), "r" (op2) );
-  return(result);
-}
-
-__STATIC_FORCEINLINE  int32_t __QSUB( int32_t op1,  int32_t op2)
-{
-  int32_t result;
-
-  __ASM volatile ("qsub %0, %1, %2" : "=r" (result) : "r" (op1), "r" (op2) );
-  return(result);
-}
+#define     __SMLSLD                __builtin_arm_smlsld
+#define     __SMLSLDX               __builtin_arm_smlsldx
+#define     __SEL                   __builtin_arm_sel
+#define     __QADD                  __builtin_arm_qadd
+#define     __QSUB                  __builtin_arm_qsub
 
 #define __PKHBT(ARG1,ARG2,ARG3)          ( ((((uint32_t)(ARG1))          ) & 0x0000FFFFUL) |  \
                                            ((((uint32_t)(ARG2)) << (ARG3)) & 0xFFFF0000UL)  )
 
 #define __PKHTB(ARG1,ARG2,ARG3)          ( ((((uint32_t)(ARG1))          ) & 0xFFFF0000UL) |  \
                                            ((((uint32_t)(ARG2)) >> (ARG3)) & 0x0000FFFFUL)  )
+
+#define __SXTB16_RORn(ARG1, ARG2)        __SXTB16(__ROR(ARG1, ARG2))
+
+#define __SXTAB16_RORn(ARG1, ARG2, ARG3) __SXTAB16(ARG1, __ROR(ARG2, ARG3))
 
 __STATIC_FORCEINLINE int32_t __SMMLA (int32_t op1, int32_t op2, int32_t op3)
 {
