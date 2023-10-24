@@ -2,6 +2,9 @@
 **/__pycache__
 CMSIS/Documentation/
 CMSIS/DoxyGen/**/*.dxy
+CMSIS/Core/Test/*.o
+CMSIS/Core/Test/*.xunit
+CMSIS/Core/Test/.lit_test_times.txt
 CMSIS/CoreValidation/Project/*.zip
 CMSIS/CoreValidation/Project/*.junit
 CMSIS/CoreValidation/Project/*.clangd
@@ -9,6 +12,7 @@ CMSIS/CoreValidation/Project/Validation.*/
 CMSIS/CoreValidation/Project/Bootloader.*/
 CMSIS/CoreValidation/Project/build
 CMSIS/CoreValidation/Project/RTE/_**/*
+*.cbuild-idx.yml
 *.uvguix.*
 *.uvmpw.uvgui.*
 *.zip
@@ -17,3 +21,4 @@ build
 output
 linkchecker-out.csv
 .DS_STORE
+*.tmp
