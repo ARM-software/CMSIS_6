@@ -487,7 +487,7 @@ void sxtb16_ror() {
     result = __SXTB16_RORn(s32_1, 5);
 
     // CHECK-THUMB: ror{{.w|ne|s}} {{r[0-9]+}}, {{r[0-9]+}}
-    // CHECK-ARM: ror {{r[0-9]+}}, {{r[0-9]+}}
+    // CHECK-ARM: ror{{(ne)?}} {{r[0-9]+}}, {{r[0-9]+}}
     // CHECK: sxtb16 {{r[0-9]+}}, {{r[0-9]+}}
     // CHECK-NOT: , ror
     result = __SXTB16_RORn(s32_1, u8);
@@ -514,7 +514,7 @@ void sxtab16_ror() {
     result = __SXTAB16_RORn(s32_1, s32_2, 5);
 
     // CHECK-THUMB: ror{{.w|ne|s}} {{r[0-9]+}}, {{r[0-9]+}}
-    // CHECK-ARM: ror {{r[0-9]+}}, {{r[0-9]+}}
+    // CHECK-ARM: ror{{(ne)?}} {{r[0-9]+}}, {{r[0-9]+}}
     // CHECK: sxtab16 {{r[0-9]+}}, {{r[0-9]+}}, {{r[0-9]+}}
     // CHECK-NOT: , ror
     result = __SXTAB16_RORn(s32_1, s32_2, u8);
