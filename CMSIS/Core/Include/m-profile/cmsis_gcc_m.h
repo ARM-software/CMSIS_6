@@ -25,8 +25,6 @@
 #ifndef __CMSIS_GCC_M_H
 #define __CMSIS_GCC_M_H
 
-#pragma clang system_header   /* treat file as system include file */
-
 /* ignore some GCC warnings */
 #pragma GCC diagnostic push
 #pragma GCC diagnostic ignored "-Wsign-conversion"
