@@ -69,7 +69,6 @@ def timestamp():
 
 @matrix_command()
 def run_lit(toolchain, device, optimize):
-
     return ["lit", "--xunit-xml-output", f"lit-{toolchain}-{optimize}-{device}.xunit", "-D", f"toolchain={toolchain}", "-D", f"device={device}", "-D", f"optimize={optimize}", "." ]
 
 @matrix_filter
@@ -80,10 +79,9 @@ def filter_iar(config):
 def filter_gcc_cm85(config):
     return config.compiler == CompilerAxis.GCC and config.device.match('CM85*')
 
-
-@matrix_filter
-def filter_clang_cortex_a(config):
-    return config.compiler == CompilerAxis.CLANG and config.device.match('CA*')
+#@matrix_filter
+#def filter_clang_cortex_a(config):
+#    return config.compiler == CompilerAxis.CLANG and config.device.match('CA*')
 
 
 if __name__ == "__main__":

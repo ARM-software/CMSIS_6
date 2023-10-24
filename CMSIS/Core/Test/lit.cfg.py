@@ -705,7 +705,13 @@ class Toolchain_Clang(Toolchain):
         'CM55NS': 'thumbv8.1m.main-none-unknown-eabihf',
         'CM85': 'thumbv8.1m.main-none-unknown-eabihf',
         'CM85S': 'thumbv8.1m.main-none-unknown-eabihf',
-        'CM85NS': 'thumbv8.1m.main-none-unknown-eabihf'
+        'CM85NS': 'thumbv8.1m.main-none-unknown-eabihf',
+        'CA5': 'armv7-none-unknown-eabi',
+        'CA5neon': 'armv7-none-unknown-eabihf',
+        'CA7': 'armv7-none-unknown-eabi',
+        'CA7neon': 'armv7-none-unknown-eabihf',
+        'CA9': 'armv7-none-unknown-eabi',
+        'CA9neon': 'armv7-none-unknown-eabihf'
     }
     OPTIMIZE = {
         'none': '-O1',
