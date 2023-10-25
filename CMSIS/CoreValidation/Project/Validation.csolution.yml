@@ -1,7 +1,7 @@
-# yaml-language-server: $schema=https://raw.githubusercontent.com/Open-CMSIS-Pack/devtools/schemas/projmgr/2.0.0/tools/projmgr/schemas/csolution.schema.json
+# yaml-language-server: $schema=https://raw.githubusercontent.com/Open-CMSIS-Pack/devtools/schemas/projmgr/2.1.0/tools/projmgr/schemas/csolution.schema.json
 
 solution:
-  created-for: cmsis-toobox@2.0.0-dev2
+  created-for: cmsis-toobox@2.1.0
 
   cdefault:
 

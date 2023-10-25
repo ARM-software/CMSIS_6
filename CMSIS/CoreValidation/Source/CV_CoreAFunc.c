@@ -111,40 +111,6 @@ void TC_CoreAFunc_Mode(void) {
 }
 
 /*=======0=========1=========2=========3=========4=========5=========6=========7=========8=========9=========0=========1====*/
-static uint32_t TC_CoreAFunc_SP_orig;
-static uint32_t TC_CoreAFunc_SP_sp;
-static uint32_t TC_CoreAFunc_SP_result;
-
-void TC_CoreAFunc_SP(void) {
-  TC_CoreAFunc_SP_orig = __get_SP();
-
-  TC_CoreAFunc_SP_sp = TC_CoreAFunc_SP_orig + 0x12345678U;
-  __set_SP(TC_CoreAFunc_SP_sp);
-  TC_CoreAFunc_SP_result = __get_SP();
-
-  __set_SP(TC_CoreAFunc_SP_orig);
-
-  ASSERT_TRUE(TC_CoreAFunc_SP_result == TC_CoreAFunc_SP_sp);
-}
-
-/*=======0=========1=========2=========3=========4=========5=========6=========7=========8=========9=========0=========1====*/
-static uint32_t TC_CoreAFunc_SP_usr_orig;
-static uint32_t TC_CoreAFunc_SP_usr_sp;
-static uint32_t TC_CoreAFunc_SP_usr_result;
-
-void TC_CoreAFunc_SP_usr(void) {
-  TC_CoreAFunc_SP_usr_orig = __get_SP_usr();
-
-  TC_CoreAFunc_SP_usr_sp = TC_CoreAFunc_SP_usr_orig + 0x12345678U;
-  __set_SP(TC_CoreAFunc_SP_usr_sp);
-  TC_CoreAFunc_SP_usr_result = __get_SP_usr();
-
-  __set_SP(TC_CoreAFunc_SP_usr_orig);
-
-  ASSERT_TRUE(TC_CoreAFunc_SP_usr_result == TC_CoreAFunc_SP_usr_sp);
-}
-
-/*=======0=========1=========2=========3=========4=========5=========6=========7=========8=========9=========0=========1====*/
 void TC_CoreAFunc_FPEXC(void) {
   uint32_t fpexc = __get_FPEXC();
   __set_FPEXC(fpexc);

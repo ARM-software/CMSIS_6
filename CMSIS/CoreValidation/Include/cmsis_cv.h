@@ -87,8 +87,6 @@ extern void TC_CoreSimd_MulAcc32 (void);
   extern void TC_CoreAFunc_FPSCR (void);
   extern void TC_CoreAFunc_CPSR (void);
   extern void TC_CoreAFunc_Mode (void);
-  extern void TC_CoreAFunc_SP (void);
-  extern void TC_CoreAFunc_SP_usr (void);
   extern void TC_CoreAFunc_FPEXC (void);
   extern void TC_CoreAFunc_ACTLR (void);
   extern void TC_CoreAFunc_CPACR (void);

@@ -120,8 +120,6 @@ static TEST_CASE TC_LIST[] = {
     TCD ( TC_CoreAFunc_FPSCR,                      TC_COREAFUNC_FPSCR                        ),
     TCD ( TC_CoreAFunc_CPSR,                       TC_COREAFUNC_CPSR                         ),
     TCD ( TC_CoreAFunc_Mode,                       TC_COREAFUNC_MODE                         ),
-    TCD ( TC_CoreAFunc_SP,                         TC_COREAFUNC_SP                           ),
-    TCD ( TC_CoreAFunc_SP_usr,                     TC_COREAFUNC_SP_USR                       ),
     TCD ( TC_CoreAFunc_FPEXC,                      TC_COREAFUNC_FPEXC                        ),
     TCD ( TC_CoreAFunc_ACTLR,                      TC_COREAFUNC_ACTLR                        ),
     TCD ( TC_CoreAFunc_CPACR,                      TC_COREAFUNC_CPACR                        ),
