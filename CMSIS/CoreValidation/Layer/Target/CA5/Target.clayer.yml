@@ -27,10 +27,14 @@ layer:
     - script: RTE/Device/ARMCA5/ARMCA5_iar.icf
       for-compiler:
         - IAR
+    - script: RTE/Device/ARMCA5/ARMCA5_clang.ld
+      for-compiler:
+        - CLANG
     - regions: RTE/Device/ARMCA5/mem_ARMCA5.h
       for-compiler:
         - AC6
         - GCC
+        - CLANG
 
   groups:
     - group: VHT/FVP

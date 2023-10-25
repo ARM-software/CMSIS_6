@@ -24,6 +24,9 @@ layer:
     - script: RTE/Device/ARMCA9/ARMCA9_gcc.ld
       for-compiler:
         - GCC
+    - script: RTE/Device/ARMCA9/ARMCA9_clang.ld
+      for-compiler:
+        - CLANG
     - script: RTE/Device/ARMCA9/ARMCA9_iar.icf
       for-compiler:
         - IAR
@@ -31,6 +34,7 @@ layer:
       for-compiler:
         - AC6
         - GCC
+        - CLANG
 
   groups:
     - group: VHT/FVP
