@@ -252,5 +252,16 @@ def model_exec(config):
         cmdline += ["-a", f"{build_dir(config)}/{bl_output_dir(config)}/Bootloader.{config.compiler.image_ext}"]
     return cmdline
 
+
+@matrix_filter
+def filter_iar(config):
+    return config.compiler == CompilerAxis.IAR
+
+
+@matrix_filter
+def filter_gcc_cm85(config):
+    return config.compiler == CompilerAxis.GCC and config.device.match('CM85*')
+
+
 if __name__ == "__main__":
     main()

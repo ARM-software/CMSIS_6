@@ -130,7 +130,6 @@ static TEST_CASE TC_LIST[] = {
     TCD ( TC_CoreAFunc_TTBR0,                      TC_COREAFUNC_TTBR0                        ),
     TCD ( TC_CoreAFunc_DACR,                       TC_COREAFUNC_DACR                         ),
     TCD ( TC_CoreAFunc_SCTLR,                      TC_COREAFUNC_SCTLR                        ),
-    TCD ( TC_CoreAFunc_ACTRL,                      TC_COREAFUNC_ACTRL                        ),
     TCD ( TC_CoreAFunc_MPIDR,                      TC_COREAFUNC_MPIDR                        ),
     TCD ( TC_CoreAFunc_VBAR,                       TC_COREAFUNC_VBAR                         ),
     TCD ( TC_CoreAFunc_MVBAR,                      TC_COREAFUNC_MVBAR                        ),

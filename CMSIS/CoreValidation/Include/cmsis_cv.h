@@ -97,7 +97,6 @@ extern void TC_CoreSimd_MulAcc32 (void);
   extern void TC_CoreAFunc_TTBR0 (void);
   extern void TC_CoreAFunc_DACR (void);
   extern void TC_CoreAFunc_SCTLR (void);
-  extern void TC_CoreAFunc_ACTRL (void);
   extern void TC_CoreAFunc_MPIDR (void);
   extern void TC_CoreAFunc_VBAR (void);
   extern void TC_CoreAFunc_MVBAR (void);

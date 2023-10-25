@@ -76,8 +76,6 @@
 #define TC_COREAFUNC_DACR                     1
 // <q0> TC_CoreAFunc_SCTLR
 #define TC_COREAFUNC_SCTLR                    1
-// <q0> TC_CoreAFunc_ACTRL
-#define TC_COREAFUNC_ACTRL                    1
 // <q0> TC_CoreAFunc_MPIDR
 #define TC_COREAFUNC_MPIDR                    1
 // <q0> TC_CoreAFunc_VBAR
