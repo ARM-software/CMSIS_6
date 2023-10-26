@@ -22,14 +22,14 @@
  * limitations under the License.
  */
 
+#ifndef ARM_MPU_ARMV8_H
+#define ARM_MPU_ARMV8_H
+
 #if   defined ( __ICCARM__ )
   #pragma system_include         /* treat file as system include file for MISRA check */
 #elif defined (__clang__)
   #pragma clang system_header    /* treat file as system include file */
 #endif
-
-#ifndef ARM_MPU_ARMV8_H
-#define ARM_MPU_ARMV8_H
 
 /** \brief Attribute for device memory (outer only) */
 #define ARM_MPU_ATTR_DEVICE                           ( 0U )

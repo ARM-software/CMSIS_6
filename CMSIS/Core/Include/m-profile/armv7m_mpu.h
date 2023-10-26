@@ -22,15 +22,15 @@
  * limitations under the License.
  */
  
+#ifndef ARM_MPU_ARMV7_H
+#define ARM_MPU_ARMV7_H
+
 #if   defined ( __ICCARM__ )
   #pragma system_include         /* treat file as system include file for MISRA check */
 #elif defined (__clang__)
   #pragma clang system_header    /* treat file as system include file */
 #endif
  
-#ifndef ARM_MPU_ARMV7_H
-#define ARM_MPU_ARMV7_H
-
 #define ARM_MPU_REGION_SIZE_32B      ((uint8_t)0x04U) ///!< MPU Region Size 32 Bytes
 #define ARM_MPU_REGION_SIZE_64B      ((uint8_t)0x05U) ///!< MPU Region Size 64 Bytes
 #define ARM_MPU_REGION_SIZE_128B     ((uint8_t)0x06U) ///!< MPU Region Size 128 Bytes
