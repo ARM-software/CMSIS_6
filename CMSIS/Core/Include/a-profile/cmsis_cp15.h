@@ -192,24 +192,6 @@ __STATIC_FORCEINLINE uint32_t __get_SCTLR(void)
   return result;
 }
 
-/** \brief  Set ACTRL
-    \param [in]    actrl  Auxiliary Control Register value to set
- */
-__STATIC_FORCEINLINE void __set_ACTRL(uint32_t actrl)
-{
-  __set_CP(15, 0, actrl, 1, 0, 1);
-}
-
-/** \brief  Get ACTRL
-    \return               Auxiliary Control Register value
- */
-__STATIC_FORCEINLINE uint32_t __get_ACTRL(void)
-{
-  uint32_t result;
-  __get_CP(15, 0, result, 1, 0, 1);
-  return result;
-}
-
 /** \brief  Get MPIDR
 
     This function returns the value of the Multiprocessor Affinity Register.
