@@ -514,13 +514,6 @@
     <name>cmsis_cp15.h</name>
     <path>/home/runner/work/CMSIS_6/CMSIS_6/CMSIS/Core/Include/a-profile/</path>
     <filename>cmsis__cp15_8h.html</filename>
-    <member kind="define">
-      <type>#define</type>
-      <name>__CMSIS_CP15_H</name>
-      <anchorfile>cmsis__cp15_8h.html</anchorfile>
-      <anchor>ae6f92562f567fd8583d8ddd98cae46d5</anchor>
-      <arglist></arglist>
-    </member>
     <member kind="function">
       <type>__STATIC_FORCEINLINE uint32_t</type>
       <name>__get_ACTLR</name>
@@ -795,13 +788,6 @@
       <arglist>(void)</arglist>
     </member>
     <member kind="function">
-      <type>CMSIS_DEPRECATED __STATIC_FORCEINLINE void</type>
-      <name>__set_CCSIDR</name>
-      <anchorfile>cmsis__cp15_8h.html</anchorfile>
-      <anchor>a639d467f42fdad7a173f90568b697fc8</anchor>
-      <arglist>(uint32_t value)</arglist>
-    </member>
-    <member kind="function">
       <type>__STATIC_FORCEINLINE uint32_t</type>
       <name>__get_CCSIDR</name>
       <anchorfile>cmsis__cp15_8h.html</anchorfile>
@@ -841,13 +827,6 @@
     <name>irq_ctrl.h</name>
     <path>/home/runner/work/CMSIS_6/CMSIS_6/CMSIS/Core/Include/a-profile/</path>
     <filename>irq__ctrl_8h.html</filename>
-    <member kind="define">
-      <type>#define</type>
-      <name>IRQ_CTRL_H_</name>
-      <anchorfile>irq__ctrl_8h.html</anchorfile>
-      <anchor>ad98f7b2e49c628cc86ee5ad15f5b28a6</anchor>
-      <arglist></arglist>
-    </member>
     <member kind="define">
       <type>#define</type>
       <name>IRQHANDLER_T</name>
@@ -1279,13 +1258,6 @@
     <class kind="struct">Timer_Type</class>
     <class kind="union">CNTP_CTL_Type</class>
     <class kind="struct">mmu_region_attributes_Type</class>
-    <member kind="define">
-      <type>#define</type>
-      <name>__CORE_CA_H_GENERIC</name>
-      <anchorfile>core__ca_8h.html</anchorfile>
-      <anchor>af6738f04c5c33edae09174f235ef3e14</anchor>
-      <arglist></arglist>
-    </member>
     <member kind="define">
       <type>#define</type>
       <name>__CA_CMSIS_VERSION_MAIN</name>
