@@ -699,7 +699,7 @@ typedef struct
   #define NVIC_GetPendingIRQ          __NVIC_GetPendingIRQ
   #define NVIC_SetPendingIRQ          __NVIC_SetPendingIRQ
   #define NVIC_ClearPendingIRQ        __NVIC_ClearPendingIRQ
-/*#define NVIC_GetActive              __NVIC_GetActive             not available for Cortex-M0+ */
+/*        NVIC_GetActive              not available for Cortex-M0+ */
   #define NVIC_SetPriority            __NVIC_SetPriority
   #define NVIC_GetPriority            __NVIC_GetPriority
   #define NVIC_SystemReset            __NVIC_SystemReset

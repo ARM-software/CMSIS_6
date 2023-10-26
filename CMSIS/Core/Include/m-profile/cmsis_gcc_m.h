@@ -31,11 +31,7 @@
 #pragma GCC diagnostic ignored "-Wconversion"
 #pragma GCC diagnostic ignored "-Wunused-parameter"
 
-//#if (__ARM_ACLE >= 200)
-  #include <arm_acle.h>
-//#else
-//  #error Compiler must support ACLE V2.0
-//#endif /* (__ARM_ACLE >= 200) */
+#include <arm_acle.h>
 
 /* Fallback for __has_builtin */
 #ifndef __has_builtin
