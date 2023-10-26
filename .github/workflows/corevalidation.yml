@@ -2,6 +2,12 @@ name: CoreValidation
 on:
   workflow_dispatch:
   pull_request:
+    paths: 
+      - .github/workflows/corevalidation.yml
+      - .github/workflows/corevalidation-report.yml
+      - CMSIS/Core/Include/**/*
+      - CMSIS/Core/Source/**/*
+      - CMSIS/CoreValidation/Source/**/*
   push:
     branches: [main]
   
@@ -27,7 +33,7 @@ jobs:
           sudo add-apt-repository ppa:deadsnakes/ppa
           sudo apt-get install libpython3.9
 
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
 
       - working-directory: /home/runner
         env:
