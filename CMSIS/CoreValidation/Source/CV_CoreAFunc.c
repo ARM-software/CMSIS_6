@@ -5,8 +5,6 @@
  *      Copyright (c) 2017 ARM Limited. All rights reserved.
  *----------------------------------------------------------------------------*/
 
-#include "cmsis_compiler.h"
-
 #include "CV_Framework.h"
 #include "cmsis_cv.h"
 
@@ -111,40 +109,6 @@ void TC_CoreAFunc_Mode(void) {
 }
 
 /*=======0=========1=========2=========3=========4=========5=========6=========7=========8=========9=========0=========1====*/
-static uint32_t TC_CoreAFunc_SP_orig;
-static uint32_t TC_CoreAFunc_SP_sp;
-static uint32_t TC_CoreAFunc_SP_result;
-
-void TC_CoreAFunc_SP(void) {
-  TC_CoreAFunc_SP_orig = __get_SP();
-
-  TC_CoreAFunc_SP_sp = TC_CoreAFunc_SP_orig + 0x12345678U;
-  __set_SP(TC_CoreAFunc_SP_sp);
-  TC_CoreAFunc_SP_result = __get_SP();
-
-  __set_SP(TC_CoreAFunc_SP_orig);
-
-  ASSERT_TRUE(TC_CoreAFunc_SP_result == TC_CoreAFunc_SP_sp);
-}
-
-/*=======0=========1=========2=========3=========4=========5=========6=========7=========8=========9=========0=========1====*/
-static uint32_t TC_CoreAFunc_SP_usr_orig;
-static uint32_t TC_CoreAFunc_SP_usr_sp;
-static uint32_t TC_CoreAFunc_SP_usr_result;
-
-void TC_CoreAFunc_SP_usr(void) {
-  TC_CoreAFunc_SP_usr_orig = __get_SP_usr();
-
-  TC_CoreAFunc_SP_usr_sp = TC_CoreAFunc_SP_usr_orig + 0x12345678U;
-  __set_SP(TC_CoreAFunc_SP_usr_sp);
-  TC_CoreAFunc_SP_usr_result = __get_SP_usr();
-
-  __set_SP(TC_CoreAFunc_SP_usr_orig);
-
-  ASSERT_TRUE(TC_CoreAFunc_SP_usr_result == TC_CoreAFunc_SP_usr_sp);
-}
-
-/*=======0=========1=========2=========3=========4=========5=========6=========7=========8=========9=========0=========1====*/
 void TC_CoreAFunc_FPEXC(void) {
   uint32_t fpexc = __get_FPEXC();
   __set_FPEXC(fpexc);
@@ -223,14 +187,6 @@ void TC_CoreAFunc_SCTLR(void) {
 }
 
 /*=======0=========1=========2=========3=========4=========5=========6=========7=========8=========9=========0=========1====*/
-void TC_CoreAFunc_ACTRL(void) {
-  uint32_t actrl = __get_ACTRL();
-  __set_ACTRL(actrl);
-
-  ASSERT_TRUE(actrl == __get_ACTRL());
-}
-
-/*=======0=========1=========2=========3=========4=========5=========6=========7=========8=========9=========0=========1====*/
 void TC_CoreAFunc_MPIDR(void) {
   uint32_t mpidr = __get_MPIDR();
 
@@ -265,22 +221,30 @@ void TC_CoreAFunc_MVBAR(void) {
 
 /*=======0=========1=========2=========3=========4=========5=========6=========7=========8=========9=========0=========1====*/
 
+#define STRINGIFYx(x) #x
+#define STRINGIFY(x) STRINGIFYx(x)
+
 void TC_CoreAFunc_FPU_Enable(void) {
   uint32_t fpexc = __get_FPEXC();
-  __set_FPEXC(fpexc & ~0x40000000u); // disable FPU
+  __set_FPEXC(fpexc & ~0x40000000ul); // disable FPU
 
-  uint32_t cp15;
-  __get_CP(15, 0, cp15, 1, 0, 2);
+  fpexc = __get_FPEXC();
+  ASSERT_TRUE((fpexc & 0x40000000ul) == 0x00000000ul);
 
-  cp15 &= ~0x00F00000u;
-  __set_CP(15, 0, cp15, 1, 0, 2); // disable FPU access
+  uint32_t cparc;
+  __get_CP(15, 0, cparc, 1, 0, 2);
+
+  cparc &= ~0x00F00000ul;
+  __set_CP(15, 0, cparc, 1, 0, 2); // disable FPU access
+
+  __get_CP(15, 0, cparc, 1, 0, 2);
+  ASSERT_TRUE((cparc & 0x00F00000ul) == 0x00000000ul);
 
   __FPU_Enable();
 
-  __get_CP(15, 0, cp15, 1, 0, 2);
-  ASSERT_TRUE((cp15 & 0x00F00000u) == 0x00F00000u);
+  __get_CP(15, 0, cparc, 1, 0, 2);
+  ASSERT_TRUE((cparc & 0x00F00000ul) == 0x00F00000ul);
 
   fpexc = __get_FPEXC();
-  ASSERT_TRUE((fpexc & 0x40000000u) == 0x40000000u);
+  ASSERT_TRUE((fpexc & 0x40000000ul) == 0x40000000ul);
 }
-

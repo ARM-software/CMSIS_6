@@ -491,11 +491,17 @@ DEVICES = {
         'features': ['armv7a', 'thumb-2', 'sat', 'clz'],
         'header': 'core_ca.h',
         'defines': {
+            '__CORTEX_A': '7',
             '__CA_REV': '0x0000U',
             '__FPU_PRESENT': '0U',
             '__GIC_PRESENT': '1U',
             '__TIM_PRESENT': '1U',
-            '__L2C_PRESENT': '1U'
+            '__L2C_PRESENT': '1U',
+            'GIC_DISTRIBUTOR_BASE': '0x2C001000UL',
+            'GIC_INTERFACE_BASE': '0x2C000100UL',
+            'TIMER_BASE': '0x2C000600UL',
+            'L2C_310_BASE': '0x2C0F0000UL',
+            'IRQn_Type': 'int'
         }
     },
     'CA5neon': {
@@ -508,11 +514,17 @@ DEVICES = {
         'features': ['armv7a', 'thumb-2', 'sat', 'dsp', 'clz'],
         'header': 'core_ca.h',
         'defines': {
+            '__CORTEX_A': '7',
             '__CA_REV': '0x0000U',
             '__FPU_PRESENT': '1U',
             '__GIC_PRESENT': '1U',
             '__TIM_PRESENT': '1U',
-            '__L2C_PRESENT': '1U'
+            '__L2C_PRESENT': '1U',
+            'GIC_DISTRIBUTOR_BASE': '0x2C001000UL',
+            'GIC_INTERFACE_BASE': '0x2C000100UL',
+            'TIMER_BASE': '0x2C000600UL',
+            'L2C_310_BASE': '0x2C0F0000UL',
+            'IRQn_Type': 'int'
         }
     },
     'CA7': {
@@ -525,11 +537,17 @@ DEVICES = {
         'features': ['armv7a', 'thumb-2', 'sat', 'clz'],
         'header': 'core_ca.h',
         'defines': {
+            '__CORTEX_A': '7',
             '__CA_REV': '0x0000U',
             '__FPU_PRESENT': '0U',
             '__GIC_PRESENT': '1U',
             '__TIM_PRESENT': '1U',
-            '__L2C_PRESENT': '1U'
+            '__L2C_PRESENT': '1U',
+            'GIC_DISTRIBUTOR_BASE': '0x2C001000UL',
+            'GIC_INTERFACE_BASE': '0x2C000100UL',
+            'TIMER_BASE': '0x2C000600UL',
+            'L2C_310_BASE': '0x2C0F0000UL',
+            'IRQn_Type': 'int'
         }
     },
     'CA7neon': {
@@ -542,11 +560,17 @@ DEVICES = {
         'features': ['armv7a', 'thumb-2', 'sat', 'dsp', 'clz'],
         'header': 'core_ca.h',
         'defines': {
+            '__CORTEX_A': '7',
             '__CA_REV': '0x0000U',
             '__FPU_PRESENT': '1U',
             '__GIC_PRESENT': '1U',
             '__TIM_PRESENT': '1U',
-            '__L2C_PRESENT': '1U'
+            '__L2C_PRESENT': '1U',
+            'GIC_DISTRIBUTOR_BASE': '0x2C001000UL',
+            'GIC_INTERFACE_BASE': '0x2C000100UL',
+            'TIMER_BASE': '0x2C000600UL',
+            'L2C_310_BASE': '0x2C0F0000UL',
+            'IRQn_Type': 'int'
         }
     },
     'CA9': {
@@ -559,11 +583,17 @@ DEVICES = {
         'features': ['armv7a', 'thumb-2', 'sat', 'clz'],
         'header': 'core_ca.h',
         'defines': {
+            '__CORTEX_A': '7',
             '__CA_REV': '0x0000U',
             '__FPU_PRESENT': '0U',
             '__GIC_PRESENT': '1U',
             '__TIM_PRESENT': '1U',
-            '__L2C_PRESENT': '1U'
+            '__L2C_PRESENT': '1U',
+            'GIC_DISTRIBUTOR_BASE': '0x2C001000UL',
+            'GIC_INTERFACE_BASE': '0x2C000100UL',
+            'TIMER_BASE': '0x2C000600UL',
+            'L2C_310_BASE': '0x2C0F0000UL',
+            'IRQn_Type': 'int'
         }
     },
     'CA9neon': {
@@ -576,11 +606,17 @@ DEVICES = {
         'features': ['armv7a', 'thumb-2', 'sat', 'dsp', 'ldrex', 'clz'],
         'header': 'core_ca.h',
         'defines': {
+            '__CORTEX_A': '7',
             '__CA_REV': '0x0000U',
             '__FPU_PRESENT': '1U',
             '__GIC_PRESENT': '1U',
             '__TIM_PRESENT': '1U',
-            '__L2C_PRESENT': '1U'
+            '__L2C_PRESENT': '1U',
+            'GIC_DISTRIBUTOR_BASE': '0x2C001000UL',
+            'GIC_INTERFACE_BASE': '0x2C000100UL',
+            'TIMER_BASE': '0x2C000600UL',
+            'L2C_310_BASE': '0x2C0F0000UL',
+            'IRQn_Type': 'int'
         }
     }
 }
