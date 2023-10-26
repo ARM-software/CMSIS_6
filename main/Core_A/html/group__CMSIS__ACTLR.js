@@ -26,6 +26,5 @@ var group__CMSIS__ACTLR =
       [ "w", "unionACTLR__Type.html#ac65c09d839f8a78340c3b81d3bc90e4d", null ],
       [ "WFLZM", "unionACTLR__Type.html#a67e005f7741b6d46cf95d9c477efef36", null ]
     ] ],
-    [ "__get_ACTLR", "group__CMSIS__ACTLR.html#gae75d412bfd6fe873ade00b021aefcab3", null ],
-    [ "__set_ACTRL", "group__CMSIS__ACTLR.html#gabe7491eac1652f740050bd905baea187", null ]
+    [ "__get_ACTLR", "group__CMSIS__ACTLR.html#gae75d412bfd6fe873ade00b021aefcab3", null ]
 ];

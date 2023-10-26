@@ -634,20 +634,6 @@
       <arglist>(void)</arglist>
     </member>
     <member kind="function">
-      <type>__STATIC_FORCEINLINE void</type>
-      <name>__set_ACTRL</name>
-      <anchorfile>group__CMSIS__ACTLR.html</anchorfile>
-      <anchor>gabe7491eac1652f740050bd905baea187</anchor>
-      <arglist>(uint32_t actrl)</arglist>
-    </member>
-    <member kind="function">
-      <type>__STATIC_FORCEINLINE uint32_t</type>
-      <name>__get_ACTRL</name>
-      <anchorfile>cmsis__cp15_8h.html</anchorfile>
-      <anchor>a41816284abd2ff7a2ea050c37ff5b5b0</anchor>
-      <arglist>(void)</arglist>
-    </member>
-    <member kind="function">
       <type>__STATIC_FORCEINLINE uint32_t</type>
       <name>__get_MPIDR</name>
       <anchorfile>group__CMSIS__MPIDR.html</anchorfile>
@@ -7831,13 +7817,6 @@
     <filename>group__CMSIS__ACTLR.html</filename>
     <subgroup>CMSIS_ACTLR_BITS</subgroup>
     <class kind="struct">ACTLR_Type</class>
-    <member kind="function">
-      <type>__STATIC_FORCEINLINE void</type>
-      <name>__set_ACTRL</name>
-      <anchorfile>group__CMSIS__ACTLR.html</anchorfile>
-      <anchor>gabe7491eac1652f740050bd905baea187</anchor>
-      <arglist>(uint32_t actrl)</arglist>
-    </member>
     <member kind="function">
       <type>__STATIC_FORCEINLINE uint32_t</type>
       <name>__get_ACTLR</name>
