@@ -116,4 +116,4 @@ int main(void)
 
 ## Using CMSIS with generic Arm Processors {#using_ARM_pg}
 
-The [CMSIS-DFP pack](https://github.com/ARM-software/CMSIS-DFP) provides generic device definitions for standard Arm Cortex-A cores and contains corresponding. These generic Arm devices can be used as a target for embedded programs, with execution, for example, on processor simulation models.
+The [Cortex_DFP pack](https://github.com/ARM-software/Cortex_DFP) provides generic device definitions for standard Arm Cortex-A cores and contains corresponding. These generic Arm devices can be used as a target for embedded programs, with execution, for example, on processor simulation models.

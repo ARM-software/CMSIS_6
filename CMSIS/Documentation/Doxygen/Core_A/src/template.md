@@ -20,7 +20,7 @@ Header File            | Target Processor Core
 
 ## Device Examples {#device_examples}
 
-The [CMSIS-DFP pack](https://github.com/ARM-software/CMSIS-DFP) provides generic device definitions for supported Arm Cortex-A cores and contains corresponding CMSIS-Core device files.
+The [Cortex_DFP pack](https://github.com/ARM-software/Cortex_DFP) provides generic device definitions for supported Arm Cortex-A cores and contains corresponding CMSIS-Core device files.
 
 ## Template Files {#template_files_sec}
 
@@ -32,7 +32,7 @@ Silicon vendors add to these template files the following information:
 
 Template File                       | Description
 :-----------------------------------|:----------------------------------------
-📂 CMSIS/Core/Template/Device_A     | Folder with CMSIS-Core device file templates ([See on GitHub](https://github.com/ARM-software/CMSIS_6/blob/main/CMSIS/Core/Template/Device_A/))
+📂 CMSIS/Core/Template/Device_A     | Folder with CMSIS-Core device file templates ([See on GitHub](https://github.com/ARM-software/CMSIS_6/tree/main/CMSIS/Core/Template/Device_A/))
  ┣ 📂 Config                        | Template configuration files
  &emsp;&nbsp; ┣ 📄 Device_ac6.sct   | Linker scatter file template for Arm C/C++ Compiler
  &emsp;&nbsp; ┗ 📄 mem_Device.h     |\ref mem_h_pg template

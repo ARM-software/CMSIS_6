@@ -181,7 +181,7 @@ int main (void) {
 
 Test and example projects of many software components have a need for implementations that are independent from specific device vendors but still have adaptations for various Arm Cortex-M cores to benefit from their architectural differenceis.
 
-The [CMSIS-DFP pack](https://github.com/ARM-software/CMSIS-DFP) provides generic device definitions for standard Arm Cortex-M cores and contains corresponding \ref cmsis_device_files. These generic Arm devices can be used as a target for embedded programs, with execution, for example, on processor simulation models.
+The [Cortex_DFP pack](https://github.com/ARM-software/Cortex_DFP) provides generic device definitions for standard Arm Cortex-M cores and contains corresponding \ref cmsis_device_files. These generic Arm devices can be used as a target for embedded programs, with execution, for example, on processor simulation models.
 
 Validation suits and example projects for such components as [CMSIS-DSP](../DSP/index.html), [CMSIS-RTOS](../RTOS2/index.html) and [CMSIS-Core](index.html) itself use that approach already.
 

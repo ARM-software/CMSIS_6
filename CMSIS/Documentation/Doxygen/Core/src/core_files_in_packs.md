@@ -49,7 +49,7 @@ Since the \ref cmsis_device_files require access to implementations from \ref cm
 
 ## Device Examples {#device_examples}
 
-The [CMSIS-DFP pack](https://github.com/ARM-software/CMSIS-DFP) provides generic device definitions for standard Arm Cortex-M cores and contains corresponding \ref cmsis_device_files.
+The [Cortex_DFP pack](https://github.com/ARM-software/Cortex_DFP) provides generic device definitions for standard Arm Cortex-M cores and contains corresponding \ref cmsis_device_files.
 
 These files can be used as a reference for device support in a DFP pack, but can also be used in projects that require standard Arm processors functionality. See \ref using_arm.
 

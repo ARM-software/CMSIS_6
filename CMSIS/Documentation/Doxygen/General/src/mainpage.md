@@ -11,6 +11,7 @@ CMSIS has been created to help the industry in standardization. It enables consi
 ![CMSIS Structure](./images/cmsis_components.png)
 
 <h2>CMSIS Base Software Components</h2>
+
  - Provide software abstractions for basic level functionalities of a device.
  - Maintained in the same GitHub repository and delivered as one \ref cmsis_pack with the name `Arm::CMSIS`.
 <div class="tiles">
@@ -26,8 +27,9 @@ CMSIS has been created to help the industry in standardization. It enables consi
 </div>
 
 <h2>CMSIS Extended Software Components</h2>
-- Implement specific functionalities optimized for execution on Arm processors.
-- Maintained in separate GitHub repositories and delivered in standalone CMSIS-Packs.
+
+ - Implement specific functionalities optimized for execution on Arm processors.
+ - Maintained in separate GitHub repositories and delivered in standalone CMSIS-Packs.
 <div class="tiles">
   <div class="tile" onclick="document.location='../DSP/index.html'">
     <span class="tileh h2">CMSIS-DSP</span><span class="tiletxt">Optimized compute functions for embedded systems</span><span class="tilelinks"><a href="https://arm-software.github.io/CMSIS-DSP/latest/">Guide</a> | <a href="https://github.com/ARM-software/CMSIS-DSP">GitHub</a> | <a href="https://www.keil.arm.com/packs/cmsis-dsp-arm/versions/">Pack</a></span>
@@ -44,6 +46,7 @@ CMSIS has been created to help the industry in standardization. It enables consi
 </div>
 
 <h2>CMSIS Tools</h2>
+
 - Provide useful utilities for software development workflows with CMSIS-based components.
 - Maintained in separate GitHub repositories.
 <div class="tiles">
@@ -63,6 +66,7 @@ CMSIS has been created to help the industry in standardization. It enables consi
 
 
 <h2>CMSIS Specifications</h2>
+
 - Define methodologies and workflows for embedded software development.
 <div class="tiles">
   <div class="tile" onclick="document.location='https://open-cmsis-pack.github.io/Open-CMSIS-Pack-Spec/main/html/index.html'">
@@ -77,37 +81,29 @@ CMSIS has been created to help the industry in standardization. It enables consi
 
 The benefits of the CMSIS are:
 
- - CMSIS reduces the learning curve, development costs, and time-to-market. Developers can write software quicker through a
-   variety of easy-to-use, standardized software interfaces.
- - Consistent software interfaces improve the software portability and re-usability. Generic software libraries and
-   interfaces provide consistent software framework.
- - It provides interfaces for debug connectivity, debug peripheral views, software delivery, and device support to reduce
-   time-to-market for new microcontroller deployment.
+ - CMSIS reduces the learning curve, development costs, and time-to-market. Developers can write software quicker through a variety of easy-to-use, standardized software interfaces.
+ - Consistent software interfaces improve the software portability and re-usability. Generic software libraries and interfaces provide consistent software framework.
+ - It provides interfaces for debug connectivity, debug peripheral views, software delivery, and device support to reduce time-to-market for new microcontroller deployment.
  - It allows to use the compiler of your choice, as it is compiler independent and thus supported by mainstream compilers.
  - It enhances program debugging with peripheral information for debuggers and ITM channels for printf-style output.
- - CMSIS is delivered in CMSIS-Pack format which enables fast software delivery, simplifies updates, and enables consistent
-   integration into development tools.
- - CMSIS-Zone will simplify system resource and partitioning as it manages the configuration of multiple processors, memory
-   areas, and peripherals.
- - Continuous integration is common practice for most software developers nowadays. CMSIS-Build supports these workflows
-   and makes continuous testing and validation easier.
+ - CMSIS is delivered in CMSIS-Pack format which enables fast software delivery, simplifies updates, and enables consistent integration into development tools.
+ - CMSIS-Zone will simplify system resource and partitioning as it manages the configuration of multiple processors, memory areas, and peripherals.
+ - IDE and Continuous Integration (CI) are important workflows for embedded software developers. The CMSIS-Toolbox provides command-line build tools with CMake backend and integration into IDEs such as VS Code.
 
 ## Development {#development}
 
-CMSIS is defined in close cooperation with various silicon and software vendors and provides a common approach to interface
-to peripherals, real-time operating systems, and middleware components. It is intended to enable the combination of software
-components from multiple vendors.
+CMSIS is defined in close cooperation with various silicon and software vendors and provides a common approach to interface to peripherals, real-time operating systems, and middleware components. It is intended to enable the combination of software components from multiple vendors.
 
 CMSIS is open-source and collaboratively developed. The repository for the base components is [github.com/Arm-software/CMSIS_6](https://github.com/ARM-software/CMSIS_6).
 
-## CodingRules {#coding_rules}
+## Coding Rules {#coding_rules}
 
 The CMSIS uses the following essential coding rules and conventions:
 
  - Compliant with ANSI C (C99) and C++ (C++03).
- - Uses ANSI C standard data types defined in \b <stdint.h>.
+ - Uses ANSI C standard data types defined in **<stdint.h>**.
  - Variables and parameters have a complete data type.
- - Expressions for \c \#define constants are enclosed in parenthesis.
+ - Expressions for `#define` constants are enclosed in parenthesis.
  - Conforms to MISRA 2012 (but does not claim MISRA compliance). MISRA rule violations are documented.
 
 In addition, the CMSIS recommends the following conventions for identifiers:
@@ -117,16 +113,17 @@ In addition, the CMSIS recommends the following conventions for identifiers:
  - **Namespace_** prefixes avoid clashes with user identifiers and provide functional groups (i.e. for peripherals, RTOS, or DSP Library).
 
 The CMSIS is documented within the source files with:
- \li Comments that use the C or C++ style.
- \li <a href="https://www.doxygen.nl/" target="_blank">Doxygen</a> compliant <b>function comments</b> that provide:
+
+ - Comments that use the C or C++ style.
+ - [Doxygen](https://www.doxygen.nl/) compliant **function comments** that provide:
     - brief function overview.
     - detailed description of the function.
     - detailed parameter explanation.
     - detailed information about return values.
 
-Doxygen	comment example:
+Doxygen comment example:
 
-``` c
+```c
 /**
  * @brief  Enable Interrupt in NVIC Interrupt Controller
  * @param  IRQn  interrupt number that specifies the interrupt
@@ -138,24 +135,14 @@ Doxygen	comment example:
 
 ## Validation {#validation}
 
-The various components of CMSIS are validated using mainstream compilers. To get a diverse coverage,  
-Arm Compiler v6 (based on LLVM front-end) and GCC are used in the various tests. For each component, the
-section **Validation** describes the scope of the various verification steps.
+The various components of CMSIS are validated using mainstream compilers. To get a diverse coverage, Arm Compiler v6 (based on LLVM front-end) and GCC are used in the various tests. For each component, the section **Validation** describes the scope of the various verification steps.
 
-CMSIS components are compatible with a range of C and C++ language standards. The CMSIS components comply with the
-[Application Binary Interface (ABI) for the Arm Architecture](https://github.com/ARM-software/abi-aa). This ensures 
-C API interfaces that support inter-operation between various toolchains.
+CMSIS components are compatible with a range of C and C++ language standards. The CMSIS components comply with the [Application Binary Interface (ABI) for the Arm Architecture](https://github.com/ARM-software/abi-aa). This ensures C API interfaces that support inter-operation between various toolchains.
 
-As CMSIS defines API interfaces and functions that scale to a wide range of processors and devices, the scope of
-the run-time test coverage is limited. However, several components are validated using dedicated test suites
-(<a href="../Driver/driverValidation.html">CMSIS-Driver</a>,
- and <a href="../RTOS2/rtosValidation.html">CMSIS-RTOS v2</a>).
+As CMSIS defines API interfaces and functions that scale to a wide range of processors and devices, the scope of the run-time test coverage is limited. However, several components are validated using dedicated test suites ([CMSIS-Driver](../Driver/driverValidation.html), and [CMSIS-RTOS v2](../RTOS2/rtosValidation.html)).
 
-The CMSIS source code is checked for MISRA C:2012 conformance. MISRA deviations are documented with
-reasonable effort, however Arm does not claim MISRA compliance as there is today for example no guideline enforcement
-plan. The CMSIS source code is not checked for MISRA C++:2008 conformance as there is a risk that it is incompatible
-with C language standards, specifically warnings that may be generated by the various C compilers.
+The CMSIS source code is checked for MISRA C:2012 conformance. MISRA deviations are documented with reasonable effort, however Arm does not claim MISRA compliance as there is today for example no guideline enforcement plan. The CMSIS source code is not checked for MISRA C++:2008 conformance as there is a risk that it is incompatible with C language standards, specifically warnings that may be generated by the various C compilers.
 
 ## License {#License}
 
-CMSIS is provided free of charge by Arm under the <a href="https://raw.githubusercontent.com/ARM-software/CMSIS_6/main/LICENSE">Apache 2.0 License</a>.
+CMSIS is provided free of charge by Arm under the [Apache 2.0 License](https://raw.githubusercontent.com/ARM-software/CMSIS_6/main/LICENSE).

@@ -6,11 +6,11 @@ The table below shows the high-level structure of the **ARM::CMSIS** pack. Detai
 
 File/Directory        | Content
 :---------------------|:-------------------
-📄 ARM.CMSIS.pdsc      | Package description file in CMSIS-Pack format
-📄 LICENSE             | CMSIS License Agreement (Apache 2.0)
 📂 CMSIS               | CMSIS Base software components folder
    ┣ 📂 Core           | Processor files for the [CMSIS-Core (Cortex-M)](../Core/index.html)
    ┣ 📂 Core_A         | Processor files for the [CMSIS-Core (Cortex-A)](../Core_A/index.html)
    ┣ 📂 Documentation  | A local copy of this documentation
    ┣ 📂 Driver         | API header files and template implementations for the [CMSIS-Driver](../Driver/index.html)
    ┗ 📂 RTOS2          | API header files and OS tick implementations for the [CMSIS-RTOS2](../RTOS2/index.html)
+📄 ARM.CMSIS.pdsc      | Package description file in CMSIS-Pack format
+📄 LICENSE             | CMSIS License Agreement (Apache 2.0)
