@@ -22,14 +22,14 @@
  * limitations under the License.
  */
 
+#ifndef __CORE_CA_H_GENERIC
+#define __CORE_CA_H_GENERIC
+
 #if   defined ( __ICCARM__ )
   #pragma system_include         /* treat file as system include file for MISRA check */
 #elif defined (__clang__)
   #pragma clang system_header   /* treat file as system include file */
 #endif
-
-#ifndef __CORE_CA_H_GENERIC
-#define __CORE_CA_H_GENERIC
 
 #ifdef __cplusplus
  extern "C" {
@@ -130,6 +130,12 @@
 
 #ifndef __CORE_CA_H_DEPENDANT
 #define __CORE_CA_H_DEPENDANT
+
+#if   defined ( __ICCARM__ )
+  #pragma system_include         /* treat file as system include file for MISRA check */
+#elif defined (__clang__)
+  #pragma clang system_header   /* treat file as system include file */
+#endif
 
 #ifdef __cplusplus
  extern "C" {
@@ -675,7 +681,8 @@ typedef union
 /**
  \brief  Union type to access the L2C_310 Cache Controller.
 */
-#if (__L2C_PRESENT == 1U) || defined(DOXYGEN)
+#if (defined(__L2C_PRESENT) && (__L2C_PRESENT == 1U)) || \
+     defined(DOXYGEN)
 typedef struct
 {
   __IM  uint32_t CACHE_ID;                   /*!< \brief Offset: 0x0000 (R/ ) Cache ID Register               */
@@ -738,7 +745,8 @@ typedef struct
 #define L2C_310           ((L2C_310_TypeDef *)L2C_310_BASE) /*!< \brief L2C_310 register set access pointer */
 #endif
 
-#if (__GIC_PRESENT == 1U) || defined(DOXYGEN)
+#if (defined(__GIC_PRESENT) && (__GIC_PRESENT == 1U)) || \
+    defined(DOXYGEN)
 
 /** \brief  Structure type to access the Generic Interrupt Controller Distributor (GICD)
 */
@@ -1078,7 +1086,8 @@ typedef struct
 #define GICInterface_DIR_INTID(x)           (((uint32_t)(((uint32_t)(x)) /*<< GICInterface_DIR_INTID_Pos*/)) & GICInterface_DIR_INTID_Msk)
 #endif /*  (__GIC_PRESENT == 1U) || defined(DOXYGEN) */
 
-#if (__TIM_PRESENT == 1U) || defined(DOXYGEN)
+#if (defined(__TIM_PRESENT) && (__TIM_PRESENT == 1U)) || \
+     defined(DOXYGEN)
 #if ((__CORTEX_A == 5U) || (__CORTEX_A == 9U)) || defined(DOXYGEN)
 /** \brief Structure type to access the Private Timer
 */
@@ -1280,7 +1289,7 @@ __STATIC_FORCEINLINE void __L1C_MaintainDCacheSetWay(uint32_t level, uint32_t ma
   uint32_t num_ways;
   uint32_t shift_way;
   uint32_t log2_linesize;
-   int32_t log2_num_ways;
+   uint8_t log2_num_ways;
 
   Dummy = level << 1U;
   /* set csselr, select ccsidr register */
@@ -1291,10 +1300,10 @@ __STATIC_FORCEINLINE void __L1C_MaintainDCacheSetWay(uint32_t level, uint32_t ma
   num_ways = ((ccsidr & 0x00001FF8U) >> 3U) + 1U;
   log2_linesize = (ccsidr & 0x00000007U) + 2U + 2U;
   log2_num_ways = __log2_up(num_ways);
-  if ((log2_num_ways < 0) || (log2_num_ways > 32)) {
+  if (log2_num_ways > 32U) {
     return; // FATAL ERROR
   }
-  shift_way = 32U - (uint32_t)log2_num_ways;
+  shift_way = 32U - log2_num_ways;
   for(int32_t way = num_ways-1; way >= 0; way--)
   {
     for(int32_t set = num_sets-1; set >= 0; set--)
@@ -1358,7 +1367,8 @@ __STATIC_FORCEINLINE void L1C_CleanInvalidateDCacheAll(void) {
 }
 
 /* ##########################  L2 Cache functions  ################################# */
-#if (__L2C_PRESENT == 1U) || defined(DOXYGEN)
+#if (defined(__L2C_PRESENT) && (__L2C_PRESENT == 1U)) || \
+     defined(DOXYGEN)
 /** \brief Cache Sync operation by writing CACHE_SYNC register.
 */
 __STATIC_INLINE void L2C_Sync(void)
@@ -1468,7 +1478,8 @@ __STATIC_INLINE void L2C_CleanInvPa (void *pa)
 #endif
 
 /* ##########################  GIC functions  ###################################### */
-#if (__GIC_PRESENT == 1U) || defined(DOXYGEN)
+#if (defined(__GIC_PRESENT) && (__GIC_PRESENT == 1U)) || \
+     defined(DOXYGEN)
   
 /** \brief  Enable the interrupt distributor using the GIC's CTLR register.
 */
@@ -1854,7 +1865,8 @@ __STATIC_INLINE void GIC_Enable(void)
 #endif
 
 /* ##########################  Generic Timer functions  ############################ */
-#if (__TIM_PRESENT == 1U) || defined(DOXYGEN)
+#if (defined(__TIM_PRESENT) && (__TIM_PRESENT == 1U)) || \
+    defined(DOXYGEN)
   
 /* PL1 Physical Timer */
 #if (__CORTEX_A == 7U) || defined(DOXYGEN)

@@ -1,0 +1,13 @@
+{
+    "name": "Ubuntu-22.04",
+    "build": { "dockerfile": "Dockerfile" },
+  
+    "customizations": {
+      "vscode": {
+        "extensions": [
+			    "ms-vscode.cpptools",
+			    "ms-vscode.cpptools-extension-pack"
+        ]
+      }
+    }
+  }

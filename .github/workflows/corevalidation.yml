@@ -2,6 +2,12 @@ name: CoreValidation
 on:
   workflow_dispatch:
   pull_request:
+    paths: 
+      - .github/workflows/corevalidation.yml
+      - .github/workflows/corevalidation-report.yml
+      - CMSIS/Core/Include/**/*
+      - CMSIS/Core/Source/**/*
+      - CMSIS/CoreValidation/Source/**/*
   push:
     branches: [main]
   
@@ -27,7 +33,7 @@ jobs:
           sudo add-apt-repository ppa:deadsnakes/ppa
           sudo apt-get install libpython3.9
 
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
 
       - working-directory: /home/runner
         env:
@@ -80,16 +86,7 @@ jobs:
 
           echo "Patch CMSIS-Toolbox"
           pushd $(dirname $(which cbuild))/../etc
-          curl -O https://raw.githubusercontent.com/Open-CMSIS-Pack/devtools/main/tools/buildmgr/cbuildgen/config/AC6.6.18.0.cmake
-          curl -O https://raw.githubusercontent.com/Open-CMSIS-Pack/devtools/main/tools/buildmgr/cbuildgen/config/GCC.10.3.1.cmake
-          curl -O https://raw.githubusercontent.com/Open-CMSIS-Pack/devtools/main/tools/buildmgr/cbuildgen/config/CLANG.16.0.0.cmake
-          curl -O https://raw.githubusercontent.com/Open-CMSIS-Pack/devtools/main/tools/buildmgr/cbuildgen/config/IAR.9.32.1.cmake
-          curl -O https://raw.githubusercontent.com/Open-CMSIS-Pack/devtools/main/tools/buildmgr/cbuildgen/config/CMSIS-Build-Utils.cmake
-          curl -O https://raw.githubusercontent.com/Open-CMSIS-Pack/devtools/main/tools/projmgr/templates/cdefault.yml
-          curl -O https://raw.githubusercontent.com/Open-CMSIS-Pack/devtools/main/tools/projmgr/templates/ac6_linker_script.sct
-          curl -O https://raw.githubusercontent.com/Open-CMSIS-Pack/devtools/main/tools/projmgr/templates/clang_linker_script.ld
-          curl -O https://raw.githubusercontent.com/Open-CMSIS-Pack/devtools/main/tools/projmgr/templates/gcc_linker_script.ld
-          curl -O https://raw.githubusercontent.com/Open-CMSIS-Pack/devtools/main/tools/projmgr/templates/iar_linker_script.ifc
+          curl -O https://raw.githubusercontent.com/Open-CMSIS-Pack/devtools/main/tools/buildmgr/cbuildgen/config/CLANG.17.0.1.cmake
           popd
 
       - name: Activate Arm tool license

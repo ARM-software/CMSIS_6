@@ -60,10 +60,6 @@
 #define TC_COREAFUNC_CPSR                     1
 // <q0> TC_CoreAFunc_Mode
 #define TC_COREAFUNC_MODE                     1
-// <q0> TC_CoreAFunc_SP
-#define TC_COREAFUNC_SP                       1
-// <q0> TC_CoreAFunc_SP_usr
-#define TC_COREAFUNC_SP_USR                   1
 // <q0> TC_CoreAFunc_FPEXC
 #define TC_COREAFUNC_FPEXC                    1
 // <q0> TC_CoreAFunc_ACTLR
@@ -84,8 +80,6 @@
 #define TC_COREAFUNC_DACR                     1
 // <q0> TC_CoreAFunc_SCTLR
 #define TC_COREAFUNC_SCTLR                    1
-// <q0> TC_CoreAFunc_ACTRL
-#define TC_COREAFUNC_ACTRL                    1
 // <q0> TC_CoreAFunc_MPIDR
 #define TC_COREAFUNC_MPIDR                    1
 // <q0> TC_CoreAFunc_VBAR

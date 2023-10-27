@@ -22,14 +22,14 @@
  * limitations under the License.
  */
 
+#ifndef ARM_ARMV7M_CACHEL1_H
+#define ARM_ARMV7M_CACHEL1_H
+
 #if   defined ( __ICCARM__ )
   #pragma system_include         /* treat file as system include file for MISRA check */
 #elif defined (__clang__)
   #pragma clang system_header    /* treat file as system include file */
 #endif
-
-#ifndef ARM_ARMV7M_CACHEL1_H
-#define ARM_ARMV7M_CACHEL1_H
 
 /**
   \ingroup  CMSIS_Core_FunctionInterface

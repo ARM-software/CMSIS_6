@@ -22,14 +22,14 @@
  * limitations under the License.
  */
 
+#ifndef __CMSIS_CP15_H
+#define __CMSIS_CP15_H
+
 #if   defined ( __ICCARM__ )
   #pragma system_include         /* treat file as system include file for MISRA check */
 #elif defined (__clang__)
   #pragma clang system_header   /* treat file as system include file */
 #endif
-
-#ifndef __CMSIS_CP15_H
-#define __CMSIS_CP15_H
 
 /** \brief  Get ACTLR
     \return               Auxiliary Control register value
@@ -192,24 +192,6 @@ __STATIC_FORCEINLINE uint32_t __get_SCTLR(void)
   return result;
 }
 
-/** \brief  Set ACTRL
-    \param [in]    actrl  Auxiliary Control Register value to set
- */
-__STATIC_FORCEINLINE void __set_ACTRL(uint32_t actrl)
-{
-  __set_CP(15, 0, actrl, 1, 0, 1);
-}
-
-/** \brief  Get ACTRL
-    \return               Auxiliary Control Register value
- */
-__STATIC_FORCEINLINE uint32_t __get_ACTRL(void)
-{
-  uint32_t result;
-  __get_CP(15, 0, result, 1, 0, 1);
-  return result;
-}
-
 /** \brief  Get MPIDR
 
     This function returns the value of the Multiprocessor Affinity Register.
@@ -271,8 +253,7 @@ __STATIC_FORCEINLINE void __set_MVBAR(uint32_t mvbar)
   __set_CP(15, 0, mvbar, 12, 0, 1);
 }
 
-#if (defined(__CORTEX_A) && (__CORTEX_A == 7U) && \
-    defined(__TIM_PRESENT) && (__TIM_PRESENT == 1U)) || \
+#if (defined(__TIM_PRESENT) && (__TIM_PRESENT == 1U)) || \
     defined(DOXYGEN)
 
 /** \brief  Set CNTFRQ
@@ -450,7 +431,6 @@ __STATIC_FORCEINLINE void __set_DCCIMVAC(uint32_t value)
  */
 __STATIC_FORCEINLINE void __set_CSSELR(uint32_t value)
 {
-//  __ASM volatile("MCR p15, 2, %0, c0, c0, 0" : : "r"(value) : "memory");
   __set_CP(15, 2, value, 0, 0, 0);
 }
 
@@ -460,18 +440,8 @@ __STATIC_FORCEINLINE void __set_CSSELR(uint32_t value)
 __STATIC_FORCEINLINE uint32_t __get_CSSELR(void)
 {
   uint32_t result;
-//  __ASM volatile("MRC p15, 2, %0, c0, c0, 0" : "=r"(result) : : "memory");
   __get_CP(15, 2, result, 0, 0, 0);
   return result;
-}
-
-/** \brief  Set CCSIDR
-    \deprecated CCSIDR itself is read-only. Use __set_CSSELR to select cache level instead.
- */
-CMSIS_DEPRECATED
-__STATIC_FORCEINLINE void __set_CCSIDR(uint32_t value)
-{
-  __set_CSSELR(value);
 }
 
 /** \brief  Get CCSIDR
@@ -480,7 +450,6 @@ __STATIC_FORCEINLINE void __set_CCSIDR(uint32_t value)
 __STATIC_FORCEINLINE uint32_t __get_CCSIDR(void)
 {
   uint32_t result;
-//  __ASM volatile("MRC p15, 1, %0, c0, c0, 0" : "=r"(result) : : "memory");
   __get_CP(15, 1, result, 0, 0, 0);
   return result;
 }
@@ -491,7 +460,6 @@ __STATIC_FORCEINLINE uint32_t __get_CCSIDR(void)
 __STATIC_FORCEINLINE uint32_t __get_CLIDR(void)
 {
   uint32_t result;
-//  __ASM volatile("MRC p15, 1, %0, c0, c0, 1" : "=r"(result) : : "memory");
   __get_CP(15, 1, result, 0, 0, 1);
   return result;
 }
@@ -500,7 +468,6 @@ __STATIC_FORCEINLINE uint32_t __get_CLIDR(void)
  */
 __STATIC_FORCEINLINE void __set_DCISW(uint32_t value)
 {
-//  __ASM volatile("MCR p15, 0, %0, c7, c6, 2" : : "r"(value) : "memory")
   __set_CP(15, 0, value, 7, 6, 2);
 }
 
@@ -508,7 +475,6 @@ __STATIC_FORCEINLINE void __set_DCISW(uint32_t value)
  */
 __STATIC_FORCEINLINE void __set_DCCSW(uint32_t value)
 {
-//  __ASM volatile("MCR p15, 0, %0, c7, c10, 2" : : "r"(value) : "memory")
   __set_CP(15, 0, value, 7, 10, 2);
 }
 
@@ -516,7 +482,6 @@ __STATIC_FORCEINLINE void __set_DCCSW(uint32_t value)
  */
 __STATIC_FORCEINLINE void __set_DCCISW(uint32_t value)
 {
-//  __ASM volatile("MCR p15, 0, %0, c7, c14, 2" : : "r"(value) : "memory")
   __set_CP(15, 0, value, 7, 14, 2);
 }
 
