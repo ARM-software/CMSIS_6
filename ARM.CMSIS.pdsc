@@ -406,9 +406,9 @@
     <description Cclass="Board Support">Generic Interfaces for Evaluation and Development Boards</description>
     <description Cclass="Board Part">Drivers that support an external component available on an evaluation board</description>
     <description Cclass="Compiler">Compiler Software Extensions</description>
-    <description Cclass="CMSIS" doc="CMSIS/Documentation/General/html/index.html">Cortex Microcontroller Software Interface Components</description>
-    <description Cclass="CMSIS Driver" doc="CMSIS/Documentation/Driver/html/index.html">Unified Device Drivers compliant to CMSIS-Driver Specifications</description>
-    <description Cclass="Device" doc="CMSIS/Documentation/Core/html/index.html">Startup, System Setup</description>
+    <description Cclass="CMSIS" doc="CMSIS/Documentation/html/General/index.html">Cortex Microcontroller Software Interface Components</description>
+    <description Cclass="CMSIS Driver" doc="CMSIS/Documentation/html/Driver/index.html">Unified Device Drivers compliant to CMSIS-Driver Specifications</description>
+    <description Cclass="Device" doc="CMSIS/Documentation/html/Core/index.html">Startup, System Setup</description>
     <description Cclass="Data Exchange">Data exchange or data formatter</description>
     <description Cclass="Extension Board">Drivers that support an extension board or shield</description>
     <description Cclass="File System">File Drive Support and File System</description>
@@ -442,7 +442,7 @@
     <api Cclass="CMSIS" Cgroup="RTOS2" Capiversion="2.3.0" exclusive="1">
       <description>CMSIS-RTOS API for Cortex-M, SC000, and SC300</description>
       <files>
-        <file category="doc" name="CMSIS/Documentation/RTOS2/html/index.html"/>
+        <file category="doc" name="CMSIS/Documentation/html/RTOS2/index.html"/>
         <file category="header" name="CMSIS/RTOS2/Include/cmsis_os2.h"/>
       </files>
     </api>
@@ -450,63 +450,63 @@
     <api Cclass="CMSIS Driver" Cgroup="USART" Capiversion="2.4.0" exclusive="0">
       <description>USART Driver API for Cortex-M</description>
       <files>
-        <file category="doc" name="CMSIS/Documentation/Driver/html/group__usart__interface__gr.html" />
+        <file category="doc" name="CMSIS/Documentation/html/Driver/group__usart__interface__gr.html" />
         <file category="header" name="CMSIS/Driver/Include/Driver_USART.h" />
       </files>
     </api>
     <api Cclass="CMSIS Driver" Cgroup="SPI" Capiversion="2.3.0" exclusive="0">
       <description>SPI Driver API for Cortex-M</description>
       <files>
-        <file category="doc" name="CMSIS/Documentation/Driver/html/group__spi__interface__gr.html" />
+        <file category="doc" name="CMSIS/Documentation/html/Driver/group__spi__interface__gr.html" />
         <file category="header" name="CMSIS/Driver/Include/Driver_SPI.h" />
       </files>
     </api>
     <api Cclass="CMSIS Driver" Cgroup="SAI" Capiversion="1.2.0" exclusive="0">
       <description>SAI Driver API for Cortex-M</description>
       <files>
-        <file category="doc" name="CMSIS/Documentation/Driver/html/group__sai__interface__gr.html"/>
+        <file category="doc" name="CMSIS/Documentation/html/Driver/group__sai__interface__gr.html"/>
         <file category="header" name="CMSIS/Driver/Include/Driver_SAI.h" />
       </files>
     </api>
     <api Cclass="CMSIS Driver" Cgroup="I2C" Capiversion="2.4.0" exclusive="0">
       <description>I2C Driver API for Cortex-M</description>
       <files>
-        <file category="doc" name="CMSIS/Documentation/Driver/html/group__i2c__interface__gr.html"/>
+        <file category="doc" name="CMSIS/Documentation/html/Driver/group__i2c__interface__gr.html"/>
         <file category="header" name="CMSIS/Driver/Include/Driver_I2C.h" />
       </files>
     </api>
     <api Cclass="CMSIS Driver" Cgroup="CAN" Capiversion="1.3.0" exclusive="0">
       <description>CAN Driver API for Cortex-M</description>
       <files>
-        <file category="doc" name="CMSIS/Documentation/Driver/html/group__can__interface__gr.html"/>
+        <file category="doc" name="CMSIS/Documentation/html/Driver/group__can__interface__gr.html"/>
         <file category="header" name="CMSIS/Driver/Include/Driver_CAN.h" />
       </files>
     </api>
     <api Cclass="CMSIS Driver" Cgroup="Flash" Capiversion="2.3.0" exclusive="0">
       <description>Flash Driver API for Cortex-M</description>
       <files>
-        <file category="doc" name="CMSIS/Documentation/Driver/html/group__flash__interface__gr.html" />
+        <file category="doc" name="CMSIS/Documentation/html/Driver/group__flash__interface__gr.html" />
         <file category="header" name="CMSIS/Driver/Include/Driver_Flash.h" />
       </files>
     </api>
     <api Cclass="CMSIS Driver" Cgroup="MCI" Capiversion="2.4.0" exclusive="0">
       <description>MCI Driver API for Cortex-M</description>
       <files>
-        <file category="doc" name="CMSIS/Documentation/Driver/html/group__mci__interface__gr.html" />
+        <file category="doc" name="CMSIS/Documentation/html/Driver/group__mci__interface__gr.html" />
         <file category="header" name="CMSIS/Driver/Include/Driver_MCI.h" />
       </files>
     </api>
     <api Cclass="CMSIS Driver" Cgroup="NAND" Capiversion="2.4.0" exclusive="0">
       <description>NAND Flash Driver API for Cortex-M</description>
       <files>
-        <file category="doc" name="CMSIS/Documentation/Driver/html/group__nand__interface__gr.html" />
+        <file category="doc" name="CMSIS/Documentation/html/Driver/group__nand__interface__gr.html" />
         <file category="header" name="CMSIS/Driver/Include/Driver_NAND.h" />
       </files>
     </api>
     <api Cclass="CMSIS Driver" Cgroup="Ethernet" Capiversion="2.2.0" exclusive="0">
       <description>Ethernet MAC and PHY Driver API for Cortex-M</description>
       <files>
-        <file category="doc" name="CMSIS/Documentation/Driver/html/group__eth__interface__gr.html" />
+        <file category="doc" name="CMSIS/Documentation/html/Driver/group__eth__interface__gr.html" />
         <file category="header" name="CMSIS/Driver/Include/Driver_ETH_MAC.h" />
         <file category="header" name="CMSIS/Driver/Include/Driver_ETH_PHY.h" />
       </files>
@@ -514,49 +514,49 @@
     <api Cclass="CMSIS Driver" Cgroup="Ethernet MAC" Capiversion="2.2.0" exclusive="0">
       <description>Ethernet MAC Driver API for Cortex-M</description>
       <files>
-        <file category="doc" name="CMSIS/Documentation/Driver/html/group__eth__mac__interface__gr.html" />
+        <file category="doc" name="CMSIS/Documentation/html/Driver/group__eth__mac__interface__gr.html" />
         <file category="header" name="CMSIS/Driver/Include/Driver_ETH_MAC.h" />
       </files>
     </api>
     <api Cclass="CMSIS Driver" Cgroup="Ethernet PHY" Capiversion="2.2.0" exclusive="0">
       <description>Ethernet PHY Driver API for Cortex-M</description>
       <files>
-        <file category="doc" name="CMSIS/Documentation/Driver/html/group__eth__phy__interface__gr.html" />
+        <file category="doc" name="CMSIS/Documentation/html/Driver/group__eth__phy__interface__gr.html" />
         <file category="header" name="CMSIS/Driver/Include/Driver_ETH_PHY.h" />
       </files>
     </api>
     <api Cclass="CMSIS Driver" Cgroup="USB Device" Capiversion="2.3.0" exclusive="0">
       <description>USB Device Driver API for Cortex-M</description>
       <files>
-        <file category="doc" name="CMSIS/Documentation/Driver/html/group__usbd__interface__gr.html" />
+        <file category="doc" name="CMSIS/Documentation/html/Driver/group__usbd__interface__gr.html" />
         <file category="header" name="CMSIS/Driver/Include/Driver_USBD.h" />
       </files>
     </api>
     <api Cclass="CMSIS Driver" Cgroup="USB Host" Capiversion="2.3.0" exclusive="0">
       <description>USB Host Driver API for Cortex-M</description>
       <files>
-        <file category="doc" name="CMSIS/Documentation/Driver/html/group__usbh__interface__gr.html" />
+        <file category="doc" name="CMSIS/Documentation/html/Driver/group__usbh__interface__gr.html" />
         <file category="header" name="CMSIS/Driver/Include/Driver_USBH.h" />
       </files>
     </api>
     <api Cclass="CMSIS Driver" Cgroup="GPIO" Capiversion="1.0.0" exclusive="0">
       <description>GPIO Driver API for Cortex-M</description>
       <files>
-        <file category="doc" name="CMSIS/Documentation/Driver/html/group__gpio__interface__gr.html" />
+        <file category="doc" name="CMSIS/Documentation/html/Driver/group__gpio__interface__gr.html" />
         <file category="header" name="CMSIS/Driver/Include/Driver_GPIO.h" />
       </files>
     </api>
     <api Cclass="CMSIS Driver" Cgroup="WiFi" Capiversion="1.1.0" exclusive="0">
       <description>WiFi driver</description>
       <files>
-        <file category="doc" name="CMSIS/Documentation/Driver/html/group__wifi__interface__gr.html" />
+        <file category="doc" name="CMSIS/Documentation/html/Driver/group__wifi__interface__gr.html" />
         <file category="header" name="CMSIS/Driver/Include/Driver_WiFi.h" />
       </files>
     </api>
     <api Cclass="CMSIS Driver" Cgroup="VIO" Capiversion="1.0.0" exclusive="1">
       <description>Virtual I/O</description>
       <files>
-        <file category="doc"    name="CMSIS/Documentation/Driver/html/group__vio__interface__gr.html" />
+        <file category="doc"    name="CMSIS/Documentation/html/Driver/group__vio__interface__gr.html" />
         <file category="header" name="CMSIS/Driver/VIO/Include/cmsis_vio.h" />
         <file category="other"  name="CMSIS/Driver/VIO/cmsis_vio.scvd" />
       </files>
@@ -654,7 +654,7 @@
       <description>CMSIS-CORE for Cortex-M, SC000, SC300, Star-MC1, ARMv8-M, ARMv8.1-M</description>
       <files>
         <!-- CPU independent -->
-        <file category="doc"     name="CMSIS/Documentation/Core/html/index.html"/>
+        <file category="doc"     name="CMSIS/Documentation/html/Core/index.html"/>
         <file category="include" name="CMSIS/Core/Include/"/>
         <file category="header"  name="CMSIS/Core/Include/tz_context.h" condition="TrustZone"/>
         <!-- Code template -->
@@ -667,7 +667,7 @@
       <description>CMSIS-CORE for Cortex-A</description>
       <files>
         <!-- CPU independent -->
-        <file category="doc"     name="CMSIS/Documentation/Core_A/html/index.html"/>
+        <file category="doc"     name="CMSIS/Documentation/html/Core_A/index.html"/>
         <file category="include" name="CMSIS/Core/Include/"/>
       </files>
     </component>

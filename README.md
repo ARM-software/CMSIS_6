@@ -51,7 +51,7 @@ To build a complete CMSIS pack for installation the following additional tools a
 
 Using these tools, you can generate on a Windows PC:
 
-- **CMSIS Documentation** using the shell script **gen_doc.sh** (located in ./CMSIS/DoxyGen).
+- **CMSIS Documentation** using the shell script **gen_doc.sh** (located in ./CMSIS/Documentation/DoxyGen).
 - **CMSIS Software Pack** using the shell script **gen_pack.sh**.
 
 ## License
