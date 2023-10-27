@@ -83,7 +83,7 @@ PACK_CHANGELOG_MODE="tag"
 function preprocess() {
   # add custom steps here to be executed
   # before populating the pack build folder
-  ./CMSIS/Documentation/DoxyGen/gen_doc.sh
+  ./CMSIS/Documentation/Doxygen/gen_doc.sh
   return 0
 }
 

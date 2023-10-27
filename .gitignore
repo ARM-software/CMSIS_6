@@ -1,7 +1,7 @@
 *.junit
 **/__pycache__
-CMSIS/Documentation/
-CMSIS/DoxyGen/**/*.dxy
+CMSIS/Documentation/html
+CMSIS/Documentation/Doxygen/**/*.dxy
 CMSIS/Core/Test/*.o
 CMSIS/Core/Test/*.xunit
 CMSIS/Core/Test/.lit_test_times.txt
