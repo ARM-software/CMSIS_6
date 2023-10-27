@@ -3,6 +3,7 @@
 A scatter file for linking is required when using a \ref startup_c_pg.
 
 The \ref linker_sct_pg contains regions for:
+
  - Code (read-only data, execute-only data)
  - RAM (read/write data, zero-initialized data)
  - Stack
@@ -10,8 +11,7 @@ The \ref linker_sct_pg contains regions for:
  - Stack seal (for Armv8-M/v8.1-M)
  - CMSE veneer (for Armv8-M/v8.1-M)
 
-Within the scatter file, the user needs to specify a set of macros. The scatter file is passed through the
-C preprocessor which uses these macros to calculate the start address and the size of the different regions.
+Within the scatter file, the user needs to specify a set of macros. The scatter file is passed through the C preprocessor which uses these macros to calculate the start address and the size of the different regions.
 
 ```
 /*--------------------- Flash Configuration ----------------------------------
@@ -55,6 +55,7 @@ C preprocessor which uses these macros to calculate the start address and the si
 ## Preprocessor command {#linker_sct_preproc_sec}
 
 The scatter file uses following preprocessor command for Arm Compiler v6
+
 ```
 #! armclang -E --target=arm-arm-none-eabi -mcpu=&lt;mcpu&gt; -xc
 ```

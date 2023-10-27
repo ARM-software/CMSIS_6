@@ -3,6 +3,7 @@
 CMSIS-Core (Cortex-M) implements the basic run-time system for a Cortex-M device and gives the user access to the processor core and the device peripherals.
 
 In detail it defines:
+
  - **Hardware Abstraction Layer (HAL)** for Cortex-M processor registers with standardized  definitions for the SysTick, NVIC, System Control Block registers, MPU registers, FPU registers, and core access functions.
  - **System exception names** to interface to system exceptions without having compatibility issues.
  - **Methods to organize header files** that makes it easy to learn new Cortex-M microcontroller products and improve software portability. This includes naming conventions for device-specific interrupts.
@@ -12,6 +13,7 @@ In detail it defines:
 
 
 The following sections provide details about the CMSIS-Core (Cortex-M):
+
  - \ref using_pg explains the project setup and shows a simple program example.
 \if ARMv8M
  - \ref using_TrustZone_pg "Using TrustZone&reg; for Armv8-M" describes how to use the security extensions available in the Armv8-M architecture.
@@ -75,6 +77,7 @@ More information about Armv8.1-M architecture is available under [Arm Helium tec
 ##  Tested and Verified Toolchains {#tested_tools_sec}
 
 The \ref cmsis_core_files supplied by Arm have been tested and verified with the following toolchains:
+
  - Arm: Arm Compiler 5.06 update 7 (not for Cortex-M23/33/35P/55/85, Armv8-M, Armv8.1-M)
  - Arm: Arm Compiler 6.16
  - Arm: Arm Compiler 6.6.4 (not for Cortex-M0/23/33/35P/55/85, Armv8-M, Armv8.1-M)

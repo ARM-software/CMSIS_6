@@ -2,8 +2,8 @@
 
 CMSIS-Core files can be differentiated in two main groups:
 
- -# \subpage cmsis_standard_files are provided by Arm for supported CPU cores as part of the CMSIS-Core software component. These files typically do not require any modifications and are expected to be included via CMSIS-Core device files.
- -# \subpage cmsis_device_files are specified in CMSIS-Core methodology, and are typically provided by CPU device vendors to correctly cover their specific functionalities. Some of them may expect additional application-specific changes.
+ 1. \subpage cmsis_standard_files are provided by Arm for supported CPU cores as part of the CMSIS-Core software component. These files typically do not require any modifications and are expected to be included via CMSIS-Core device files.
+ 2. \subpage cmsis_device_files are specified in CMSIS-Core methodology, and are typically provided by CPU device vendors to correctly cover their specific functionalities. Some of them may expect additional application-specific changes.
 
 The detailed file structure of the CMSIS-Core files is shown in the following picture.
 

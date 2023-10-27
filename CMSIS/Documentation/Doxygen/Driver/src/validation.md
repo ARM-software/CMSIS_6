@@ -7,6 +7,7 @@ The CMSIS-Driver Validation is maintained in a separate public [GitHub repositor
 This page gives an overview about driver validation. Refer to [CMSIS-Driver Validation Guide](https://arm-software.github.io/CMSIS-Driver_Validation/latest/index.html)) for full documentation.
 
 The CMSIS-Driver Validation Suite performs the following tests:
+
  - Generic Validation of API function calls
  - Validation of Configuration Parameters
  - Validation of Communication with loopback tests
@@ -14,6 +15,7 @@ The CMSIS-Driver Validation Suite performs the following tests:
  - Validation of Event functions
 
 The following CMSIS-Drivers can be tested with the current release:
+
  - \ref can_interface_gr : with loop back test of communication.
  - \ref eth_interface_gr : MAC and PHY with loop back test of communication.
  - \ref i2c_interface_gr : only API and setup; does not test data transfer.
@@ -68,6 +70,7 @@ SPI              | Connect MISO to MOSI
 USART            | Connect TX with RX
 
 The following picture shows the necessary external loop back connections for the Keil MCBSTM32F400 evaluation board:
+
  - SPI: PB14 (SPI2_MISO) and PB15 (SPI2_MOSI)
  - USART: PB6 (USART1_TX) and PB7 (USART1_RX)
  - Ethernet: Pin 1 (TX+) and Pin 3 (RX+), Pin 2 (TX-) and Pin 6 (RX-)

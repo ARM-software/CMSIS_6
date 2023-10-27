@@ -4,16 +4,16 @@ CMSIS-RTOS2 API supports a concept of **process isolation** that allows develope
 
 Process Isolation in CMSIS-RTOS2 is enabled by following features:
 
-- \subpage rtos_process_isolation_mpu for memory access protection in the system using Memory Protection Unit (MPU).<br/>
+ - \subpage rtos_process_isolation_mpu for memory access protection in the system using Memory Protection Unit (MPU).<br/>
     RTOS threads are executed with permission to access only memory regions and peripherals required for their operation. Hence thread code cannot accidentally modify critical RTOS kernel data or memory dedicated to other tasks.
-.
-- \subpage rtos_process_isolation_safety_class for access protection to RTOS objects via RTOS APIs.<br/>
+ .
+ - \subpage rtos_process_isolation_safety_class for access protection to RTOS objects via RTOS APIs.<br/>
     The RTOS objects with a higher safety class assigned to them cannot be modified via RTOS API functions from threads that have lower safety class assigned.
-.
-- \subpage rtos_process_isolation_thread_wdt to verify execution times of threads.<br/>
+ .
+ - \subpage rtos_process_isolation_thread_wdt to verify execution times of threads.<br/>
     Each thread can maintain own thread watchdog and in case of timing violations, corresponding thread watchdog alarm will be triggered.
-.
-- \subpage rtos_process_isolation_faults in case of a detected failure (for example thread watchdog alarm or MPU Fault).<br/>
+ .
+ - \subpage rtos_process_isolation_faults in case of a detected failure (for example thread watchdog alarm or MPU Fault).<br/>
     The RTOS provides functions to block execution of malfunctioning components and with that dedicate system resources for operation of the safety critical threads.
 
 \if FuSaRTS
@@ -32,20 +32,21 @@ The figure below illustrates the concept for MPU Protected Zones for isolating t
 ![System partitioning with MPU Protected Zones](./images/rtos_mpu.png)
 
 Sections below explain in details how to define and use MPU Protected Zones:
-- \ref rtos_process_isolation_mpu_def
-- \ref rtos_process_isolation_mpu_load
-- \ref rtos_process_isolation_mpu_objects
-- \ref rtos_process_isolation_mpu_fault
+
+ - \ref rtos_process_isolation_mpu_def
+ - \ref rtos_process_isolation_mpu_load
+ - \ref rtos_process_isolation_mpu_objects
+ - \ref rtos_process_isolation_mpu_fault
 
 **Function references**
 
 Following functions implement and use MPU Protected Zone functionality:
 
-- \ref osThreadNew : \copybrief osThreadNew
-- \ref osThreadZone : \copybrief osThreadZone
-- \ref osThreadGetZone : \copybrief osThreadGetZone
-- \ref osThreadTerminateZone : \copybrief osThreadTerminateZone
-- \ref osZoneSetup_Callback : \copybrief osZoneSetup_Callback
+ - \ref osThreadNew : \copybrief osThreadNew
+ - \ref osThreadZone : \copybrief osThreadZone
+ - \ref osThreadGetZone : \copybrief osThreadGetZone
+ - \ref osThreadTerminateZone : \copybrief osThreadTerminateZone
+ - \ref osZoneSetup_Callback : \copybrief osZoneSetup_Callback
 
 ## Define MPU Protected Zones {#rtos_process_isolation_mpu_def}
 
@@ -78,6 +79,7 @@ osThreadNew(ThreadA, NULL, &thread_A_attr);
 When switching threads the RTOS kernel compares Zone IDs of the currently running thread and the next thread to be executed. If the Zone Ids are different then a callback function \ref osZoneSetup_Callback is called. This callback function shall be implemented in the user application code to actually switch to the new MPU Protected Zone. In the function the user should load the MPU Protected Zone according to the Zone Id provided in the argument.
 
 **Example:**
+
 ```c
 /* Update MPU settings for newly activating Zone */
 void osZoneSetup_Callback (uint32_t zone) {
@@ -91,6 +93,7 @@ void osZoneSetup_Callback (uint32_t zone) {
 ```
 
 ## RTOS Objects and MPU Protection {#rtos_process_isolation_mpu_objects}
+
 To access RTOS objects from the application RTOS APIs rely on a numeric `xxx_id` parameter associated with the object as explained in \ref rtos_objects. For example as `evt_flags` in this code:
 
 ```c
@@ -119,17 +122,17 @@ For example, it is not possible to change the priority or suspend a thread that 
 
 **Function references**
 
-- Following functions and macros are used explicitly for managing safety classes:
-  - \ref osSafetyClass : \copybrief osSafetyClass
-  - \ref osThreadGetClass : \copybrief osThreadGetClass
-  - \ref osSafetyWithSameClass : \copybrief osSafetyWithSameClass
-  - \ref osSafetyWithLowerClass : \copybrief osSafetyWithLowerClass
-  - \ref osKernelProtect : \copybrief osKernelProtect
-  - \ref osThreadSuspendClass : \copybrief osThreadSuspendClass
-  - \ref osThreadResumeClass : \copybrief osThreadResumeClass
-  - \ref osKernelDestroyClass  : \copybrief osKernelDestroyClass
-- CMSIS-RTOS2 API functions that support safety class assignment when creating RTOS objects are listed in \ref rtos_process_isolation_safety_class_assign.
-- CMSIS-RTOS2 API functions that verify safety class assignment before execution are listed in \ref rtos_process_isolation_safety_class_error lists.
+ - Following functions and macros are used explicitly for managing safety classes:
+   - \ref osSafetyClass : \copybrief osSafetyClass
+   - \ref osThreadGetClass : \copybrief osThreadGetClass
+   - \ref osSafetyWithSameClass : \copybrief osSafetyWithSameClass
+   - \ref osSafetyWithLowerClass : \copybrief osSafetyWithLowerClass
+   - \ref osKernelProtect : \copybrief osKernelProtect
+   - \ref osThreadSuspendClass : \copybrief osThreadSuspendClass
+   - \ref osThreadResumeClass : \copybrief osThreadResumeClass
+   - \ref osKernelDestroyClass  : \copybrief osKernelDestroyClass
+ - CMSIS-RTOS2 API functions that support safety class assignment when creating RTOS objects are listed in \ref rtos_process_isolation_safety_class_assign.
+ - CMSIS-RTOS2 API functions that verify safety class assignment before execution are listed in \ref rtos_process_isolation_safety_class_error lists.
 
 ## Assign Safety Class to an RTOS Object {#rtos_process_isolation_safety_class_assign}
 
@@ -147,13 +150,13 @@ evt_flags = osEventFlagsNew(&evt_flags_attr);
 
 The following object types support safety class assignment when creating an object with corresponding \e os<Object>New function:
 
-- \ref osThreadAttr_t \copybrief osThreadAttr_t Used in the \ref osThreadNew function.
-- \ref osEventFlagsAttr_t \copybrief  osEventFlagsAttr_t Used in the \ref osThreadNew function.
-- \ref osTimerAttr_t \copybrief osTimerAttr_t Used in the \ref osTimerNew function.
-- \ref osMutexAttr_t \copybrief osMutexAttr_t Used in the \ref osMutexNew function.
-- \ref osSemaphoreAttr_t \copybrief osSemaphoreAttr_t Used in the \ref osSemaphoreNew function.
-- \ref osMemoryPoolAttr_t \copybrief osMemoryPoolAttr_t Used in the \ref osMemoryPoolNew function.
-- \ref osMessageQueueAttr_t \copybrief osMessageQueueAttr_t Used in the \ref osMessageQueueNew function.
+ - \ref osThreadAttr_t \copybrief osThreadAttr_t Used in the \ref osThreadNew function.
+ - \ref osEventFlagsAttr_t \copybrief  osEventFlagsAttr_t Used in the \ref osThreadNew function.
+ - \ref osTimerAttr_t \copybrief osTimerAttr_t Used in the \ref osTimerNew function.
+ - \ref osMutexAttr_t \copybrief osMutexAttr_t Used in the \ref osMutexNew function.
+ - \ref osSemaphoreAttr_t \copybrief osSemaphoreAttr_t Used in the \ref osSemaphoreNew function.
+ - \ref osMemoryPoolAttr_t \copybrief osMemoryPoolAttr_t Used in the \ref osMemoryPoolNew function.
+ - \ref osMessageQueueAttr_t \copybrief osMessageQueueAttr_t Used in the \ref osMessageQueueNew function.
 
 If safety class is not provided when creating the RTOS object then it inherits the safety class of the current running thread that creates the object. If the object is created before kernel is started and no safety class is provided, then it receives default safety class 0. This simplifies integration of third-party code that can be classified as non-safety critical.
 
@@ -174,62 +177,71 @@ Following functions compare the safety class of the running thread with the safe
 In \ref CMSIS_RTOS_KernelCtrl functions:
 
 Comparison is done with safety class configured with \ref osKernelProtect
-- \ref osKernelLock
-- \ref osKernelRestoreLock
-- \ref osKernelSuspend
-- \ref osKernelProtect
-- \ref osKernelDestroyClass
+
+ - \ref osKernelLock
+ - \ref osKernelRestoreLock
+ - \ref osKernelSuspend
+ - \ref osKernelProtect
+ - \ref osKernelDestroyClass
 
 In \ref CMSIS_RTOS_ThreadMgmt functions:
-- \ref osThreadNew
-- \ref osThreadSetPriority
-- \ref osThreadSuspend
-- \ref osThreadResume
-- \ref osThreadDetach
-- \ref osThreadJoin
-- \ref osThreadTerminate
-- \ref osThreadSuspendClass
-- \ref osThreadResumeClass
+
+ - \ref osThreadNew
+ - \ref osThreadSetPriority
+ - \ref osThreadSuspend
+ - \ref osThreadResume
+ - \ref osThreadDetach
+ - \ref osThreadJoin
+ - \ref osThreadTerminate
+ - \ref osThreadSuspendClass
+ - \ref osThreadResumeClass
 
 In \ref CMSIS_RTOS_ThreadFlagsMgmt functions:
-- \ref osThreadFlagsSet
+
+ - \ref osThreadFlagsSet
 
 In \ref CMSIS_RTOS_EventFlags functions:
-- \ref osEventFlagsNew
-- \ref osEventFlagsSet
-- \ref osEventFlagsClear
-- \ref osEventFlagsWait
-- \ref osEventFlagsDelete
+
+ - \ref osEventFlagsNew
+ - \ref osEventFlagsSet
+ - \ref osEventFlagsClear
+ - \ref osEventFlagsWait
+ - \ref osEventFlagsDelete
 
 In \ref CMSIS_RTOS_TimerMgmt functions:
-- \ref osTimerNew
-- \ref osTimerStart
-- \ref osTimerStop
-- \ref osTimerDelete
+
+ - \ref osTimerNew
+ - \ref osTimerStart
+ - \ref osTimerStop
+ - \ref osTimerDelete
 
 In \ref CMSIS_RTOS_MutexMgmt functions:
-- \ref osMutexNew
-- \ref osMutexAcquire
-- \ref osMutexDelete
+
+ - \ref osMutexNew
+ - \ref osMutexAcquire
+ - \ref osMutexDelete
 
 In \ref CMSIS_RTOS_SemaphoreMgmt functions:
-- \ref osSemaphoreNew
-- \ref osSemaphoreAcquire
-- \ref osSemaphoreRelease
-- \ref osSemaphoreDelete
+
+ - \ref osSemaphoreNew
+ - \ref osSemaphoreAcquire
+ - \ref osSemaphoreRelease
+ - \ref osSemaphoreDelete
 
 In \ref CMSIS_RTOS_PoolMgmt functions:
-- \ref osMemoryPoolNew
-- \ref osMemoryPoolAlloc
-- \ref osMemoryPoolFree
-- \ref osMemoryPoolDelete
+
+ - \ref osMemoryPoolNew
+ - \ref osMemoryPoolAlloc
+ - \ref osMemoryPoolFree
+ - \ref osMemoryPoolDelete
 
 In \ref CMSIS_RTOS_Message functions:
-- \ref osMessageQueueNew
-- \ref osMessageQueuePut
-- \ref osMessageQueueGet
-- \ref osMessageQueueReset
-- \ref osMessageQueueDelete
+
+ - \ref osMessageQueueNew
+ - \ref osMessageQueuePut
+ - \ref osMessageQueueGet
+ - \ref osMessageQueueReset
+ - \ref osMessageQueueDelete
 
 <!-- =============================================================== !-->
 \page rtos_process_isolation_thread_wdt Thread Watchdogs
@@ -254,8 +266,8 @@ Figure below explains the concept with an example:
 
 Summary of functions that implement thread watchdog functionality:
 
-- \ref osThreadFeedWatchdog : \copybrief osThreadFeedWatchdog
-- \ref osWatchdogAlarm_Handler : \copybrief osWatchdogAlarm_Handler
+ - \ref osThreadFeedWatchdog : \copybrief osThreadFeedWatchdog
+ - \ref osWatchdogAlarm_Handler : \copybrief osWatchdogAlarm_Handler
 
 <!-- =============================================================== !-->
 \page rtos_process_isolation_faults Fault Handling
@@ -263,6 +275,7 @@ Summary of functions that implement thread watchdog functionality:
 When a failure, or an error is detected in a system (for example \ref rtos_process_isolation_mpu_fault "memory access fault", \ref rtos_process_isolation_thread_wdt "thread watchdog alarm", or others) CMSIS-RTOS2 API allows to stop further execution of selected RTOS threads. This can be used to block malfunctioning components or free computing resources and so enable execution of the safety critical threads. 
 
 Following approaches are available:
+
  - function \ref osThreadTerminateZone can be called in case of a fault exception. It will terminate all threads from the specified MPU Protected Zone (for example, can be the zone that has caused the fault). The function cannot be called in thread context or interrupts other than faults. Note that \ref osFaultResume can be called at the end of the handling code to return program execution into a known context and let kernel schedule the next thread ready for execution.
  - function \ref osThreadSuspendClass can be called in case of a thread watchdog alarm or other errors handled in thread context. It allows to suspend operation of threads based on the safety class assignment. Function \ref osThreadResumeClass can be used to resume operation of threads based on their safety class. \ref rtos_process_isolation_thread_wdt contains an example that demonstrates fault handling concept for thread watchdogs.
 
@@ -272,13 +285,13 @@ Function \ref osKernelDestroyClass fully removes RTOS objects of specific safety
 
 Following CMSIS-RTOS2 functions and macros support fault handling:
 
-- \ref osThreadGetZone : \copybrief osThreadGetZone
-- \ref osThreadTerminateZone : \copybrief osThreadTerminateZone
-- \ref osThreadGetClass : \copybrief osThreadGetClass
-- \ref osSafetyWithSameClass : \copybrief osSafetyWithSameClass
-- \ref osSafetyWithLowerClass : \copybrief osSafetyWithLowerClass
-- \ref osThreadSuspendClass : \copybrief osThreadSuspendClass
-- \ref osThreadResumeClass : \copybrief osThreadResumeClass
-- \ref osKernelDestroyClass : \copybrief osKernelDestroyClass
-- \ref osFaultResume : \copybrief osFaultResume
-- \ref osWatchdogAlarm_Handler : \copybrief osFaultResume
+ - \ref osThreadGetZone : \copybrief osThreadGetZone
+ - \ref osThreadTerminateZone : \copybrief osThreadTerminateZone
+ - \ref osThreadGetClass : \copybrief osThreadGetClass
+ - \ref osSafetyWithSameClass : \copybrief osSafetyWithSameClass
+ - \ref osSafetyWithLowerClass : \copybrief osSafetyWithLowerClass
+ - \ref osThreadSuspendClass : \copybrief osThreadSuspendClass
+ - \ref osThreadResumeClass : \copybrief osThreadResumeClass
+ - \ref osKernelDestroyClass : \copybrief osKernelDestroyClass
+ - \ref osFaultResume : \copybrief osFaultResume
+ - \ref osWatchdogAlarm_Handler : \copybrief osFaultResume

@@ -5,6 +5,7 @@
 The [TrustZone for Cortex-M](https://www.arm.com/technologies/trustzone-for-cortex-m) is a security extension for Armv8-M architecture that is optimized for ultra-low power embedded applications. It enables software security domains that restrict access to secure memory and I/O only for trusted software.
 
 TrustZone for Armv8-M:
+
 - preserves low interrupt latencies for both Secure and Non-secure domains.
 - does not impose code overhead, cycle overhead or the complexity of a virtualization based solution.
 - introduces the Secure Gateway (SG) processor instruction for calls to the secure domain.
@@ -71,8 +72,7 @@ The \ref partition_h_pg defines the initial setup of the <a href="#MemoryMap_NS"
 
 ![Non-Secure Memory Map](./images/MemoryMap_NS.png)
 
-The figure **Registers** shows the register view of the Armv8-M system with TrustZone. As the general purpose registers are can be accessed from any state (secure or non-secure), function calls between the states use these registers for parameter
-and return values.
+The figure **Registers** shows the register view of the Armv8-M system with TrustZone. As the general purpose registers are can be accessed from any state (secure or non-secure), function calls between the states use these registers for parameter and return values.
 
 The register R13 is the stack pointer alias, and the actual stack pointer (PSP_NS, MSP_NS, PSP_S, MSP_S) accessed depends on state (Secure or Non-secure) and mode (handler=exception/interrupt execution or thread=normal code execution).
 
@@ -118,8 +118,7 @@ As the *non-secure state* and *secure state* parts of an application are separat
 
 ![RTOS Thread Context Management for Armv8-M TrustZone](./images/TZ_context.png)
 
-To allocate the context memory for threads, an RTOS kernel that runs in *non-secure state* calls the interface functions defined by the header file **tz_context.h**. The **TZ Context** functions themselves are part of the *secure state* application. An minimum implementation is provided as part of RTOS2 and should handle the secure stack for the thread execution. However it is also possible to implement the context memory 
-management system with additional features such as access control to *secure state* memory regions using an MPU.
+To allocate the context memory for threads, an RTOS kernel that runs in *non-secure state* calls the interface functions defined by the header file **tz_context.h**. The **TZ Context** functions themselves are part of the *secure state* application. An minimum implementation is provided as part of RTOS2 and should handle the secure stack for the thread execution. However it is also possible to implement the context memory management system with additional features such as access control to *secure state* memory regions using an MPU.
 
 The API functions of **TZ Context** are described in the chapter [API Reference](modules.html) under \ref trustzone_functions - \ref context_trustzone_functions.
 

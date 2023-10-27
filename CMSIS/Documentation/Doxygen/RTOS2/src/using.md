@@ -44,20 +44,20 @@ CMSIS-RTOS2 is especially easy use to integrate in projects that support [CMSIS-
 
 CMSIS-RTOS2 follows [the general CMSIS coding rules](../General/index.html#coding_rules). Additionally following Namespace prefixes are used in CMSIS-RTOS2 API:
 
-- `os` for all definitions and function names. Examples: \ref osThreadPrivileged, \ref osKernelStart.
-- `os` with postfix `_t` for all typedefs. Examples: \ref osStatus_t, \ref osThreadAttr_t.
+ - `os` for all definitions and function names. Examples: \ref osThreadPrivileged, \ref osKernelStart.
+ - `os` with postfix `_t` for all typedefs. Examples: \ref osStatus_t, \ref osThreadAttr_t.
 
 ## System Startup {#SystemStartup}
 
 When program execution reaches `main()` function there is a recommended order to initialize the hardware and start the kernel.
 
 Your application's `main()` should implement at least the following in the given order:
- -# Initialize and configure hardware including peripherals, memory, pins, clocks and the interrupt system.
- -# Update the system core clock using the respective
-   [CMSIS-Core (Cortex-M)](../Core/group__system__init__gr.html) \if ARMCA or [CMSIS-Core (Cortex-A)](../Core_A/group__system__init__gr.html) \endif function.
- -# Initialize the RTOS kernel using \ref osKernelInitialize.
- -# Optionally, create one thread (for example `app_main`) using \ref osThreadNew, which will be used as a main thread . This thread should take care of creating and starting objects, once it is run by the scheduler. Alternatively, threads can be created directly in `main()`.
- -# Start the RTOS scheduler using \ref osKernelStart which also configures the system tick timer and initializes RTOS specific interrupts. This function does not return in case of successful execution. Therefore, any application code after `osKernelStart` will not be executed.
+
+ 1. Initialize and configure hardware including peripherals, memory, pins, clocks and the interrupt system.
+ 2. Update the system core clock using the respective [CMSIS-Core (Cortex-M)](../Core/group__system__init__gr.html) \if ARMCA or [CMSIS-Core (Cortex-A)](../Core_A/group__system__init__gr.html) \endif function.
+ 3. Initialize the RTOS kernel using \ref osKernelInitialize.
+ 4. Optionally, create one thread (for example `app_main`) using \ref osThreadNew, which will be used as a main thread . This thread should take care of creating and starting objects, once it is run by the scheduler. Alternatively, threads can be created directly in `main()`.
+ 5. Start the RTOS scheduler using \ref osKernelStart which also configures the system tick timer and initializes RTOS specific interrupts. This function does not return in case of successful execution. Therefore, any application code after `osKernelStart` will not be executed.
 
 > **Note**
 > - Modifying priorities and groupings in the NVIC by the application after the above sequence is not recommended.
@@ -106,9 +106,8 @@ An RTOS object (thread, timer, flags, mutex, etc.) is created by calling its `os
 
 The actual state of an object is typically stored in an object specific control block. The memory layout (and size needed) for the control block is implementation specific. One should not make any specific assumptions about the control block. The control block layout might change and hence should be seen as an implementation internal detail.
 
-In order to expose control about object specific options all `osXxxNew` functions provide an
-optional `attr` argument, which can be left as \token{NULL} by default. It takes a pointer to
-an object specific attribute structure, commonly containing the fields
+In order to expose control about object specific options all `osXxxNew` functions provide an optional `attr` argument, which can be left as \token{NULL} by default. It takes a pointer to an object specific attribute structure, commonly containing the fields:
+
  - `name` to attach a human readable name to the object for identification,
  - `attr_bits` to control object-specific options,
  - `cb_mem` to provide memory for the control block manually, and
@@ -141,14 +140,13 @@ The only exception one has to take care of are Threads which do not have an expl
 Timeout value is an argument in many API functions that allows to set the maximum time delay for resolving a request. The timeout value specifies the number of timer ticks until the time delay elapses. The value is an upper bound and depends on the actual time elapsed since the last timer tick.
 
 Examples:
-  - timeout value **0** : the system does not wait, even when no resource is available the RTOS function returns instantly. 
-  - timeout value **1** : the system waits until the next timer tick occurs; depending on the previous timer tick, it may be a
-    very short wait time.
-  - timeout value **2** : actual wait time is between 1 and 2 timer ticks.
-  - timeout value \ref osWaitForever : system waits infinite until a resource becomes available. Or one forces the thread to resume using \ref osThreadResume which is discouraged.
+
+ - timeout value **0** : the system does not wait, even when no resource is available the RTOS function returns instantly. 
+ - timeout value **1** : the system waits until the next timer tick occurs; depending on the previous timer tick, it may be a very short wait time.
+ - timeout value **2** : actual wait time is between 1 and 2 timer ticks.
+ - timeout value \ref osWaitForever : system waits infinite until a resource becomes available. Or one forces the thread to resume using \ref osThreadResume which is discouraged.
 
 ![Example of timeout using osDelay()](./images/TimerValues.png)
-
 
  - CPU time can be scheduled with the following functionalities:
    - A \a timeout parameter is incorporated in many CMSIS-RTOS2 functions to avoid system lockup. When a timeout is specified, the system waits until a resource is available or an event occurs. While waiting, other threads are scheduled.
@@ -159,23 +157,22 @@ Examples:
 ## Calls from Interrupt Service Routines {#CMSIS_RTOS_ISR_Calls}
 
 The following CMSIS-RTOS2 functions can be called from threads and Interrupt Service Routines (ISR):
-  - \ref osKernelGetInfo, \ref osKernelGetState,
-    \ref osKernelGetTickCount, \ref osKernelGetTickFreq, \ref osKernelGetSysTimerCount, \ref osKernelGetSysTimerFreq
-  - \ref osThreadGetName, \ref osThreadGetId, \ref osThreadFlagsSet
-  - \ref osTimerGetName
-  - \ref osEventFlagsGetName, \ref osEventFlagsSet, \ref osEventFlagsClear, \ref osEventFlagsGet, \ref osEventFlagsWait
-  - \ref osMutexGetName
-  - \ref osSemaphoreGetName, \ref osSemaphoreAcquire, \ref osSemaphoreRelease, \ref osSemaphoreGetCount
-  - \ref osMemoryPoolGetName, \ref osMemoryPoolAlloc, \ref osMemoryPoolFree,
-    \ref osMemoryPoolGetCapacity, \ref osMemoryPoolGetBlockSize, \ref osMemoryPoolGetCount, \ref osMemoryPoolGetSpace
-  - \ref osMessageQueueGetName, \ref osMessageQueuePut, \ref osMessageQueueGet, \ref osMessageQueueGetCapacity,
-    \ref osMessageQueueGetMsgSize, \ref osMessageQueueGetCount, \ref osMessageQueueGetSpace
+
+ - \ref osKernelGetInfo, \ref osKernelGetState, \ref osKernelGetTickCount, \ref osKernelGetTickFreq, \ref osKernelGetSysTimerCount, \ref osKernelGetSysTimerFreq
+ - \ref osThreadGetName, \ref osThreadGetId, \ref osThreadFlagsSet
+ - \ref osTimerGetName
+ - \ref osEventFlagsGetName, \ref osEventFlagsSet, \ref osEventFlagsClear, \ref osEventFlagsGet, \ref osEventFlagsWait
+ - \ref osMutexGetName
+ - \ref osSemaphoreGetName, \ref osSemaphoreAcquire, \ref osSemaphoreRelease, \ref osSemaphoreGetCount
+ - \ref osMemoryPoolGetName, \ref osMemoryPoolAlloc, \ref osMemoryPoolFree, \ref osMemoryPoolGetCapacity, \ref osMemoryPoolGetBlockSize, \ref osMemoryPoolGetCount, \ref osMemoryPoolGetSpace
+ - \ref osMessageQueueGetName, \ref osMessageQueuePut, \ref osMessageQueueGet, \ref osMessageQueueGetCapacity, \ref osMessageQueueGetMsgSize, \ref osMessageQueueGetCount, \ref osMessageQueueGetSpace
 
 Functions that cannot be called from an ISR are verifying the interrupt status and return the status code \ref osErrorISR, in case they are called from an ISR context. In some implementations, this condition might be caught using the HARD_FAULT
 
 ## Memory Management {#CMSIS_RTOS_MemoryMgmt}
 
 The \ref CMSIS_RTOS offers two options for memory management the user can choose. For object storage one can either use
+
  - \ref CMSIS_RTOS_MemoryMgmt_Automatic (fully portable), or
  - \ref CMSIS_RTOS_MemoryMgmt_Manual (implementation specific).
 
@@ -214,9 +211,7 @@ The Mutexes in this example are created using automatic memory allocation.
 
 ### Manual User-defined Allocation {#CMSIS_RTOS_MemoryMgmt_Manual}
 
-One can get fine grained control over memory allocation by providing user-defined memory.
-The actual requirements such user-defined memory are kernel-specific. Thus one
-needs to carefully refer to the size and alignment rules of the implementation used.
+One can get fine grained control over memory allocation by providing user-defined memory. The actual requirements such user-defined memory are kernel-specific. Thus one needs to carefully refer to the size and alignment rules of the implementation used.
 
 **Code Example:**
 

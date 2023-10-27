@@ -3,6 +3,7 @@
 The TrustZone header file contains the initial setup of the TrustZone hardware in an Armv8-M system.
 
 This file implements the function \ref TZ_SAU_Setup that is called from \ref SystemInit. It uses settings in these files:
+
  - \ref partition_h_pg "partition_<Device>.h" that defines the initial system configuration and during SystemInit in Secure state.
  - \ref partition_gen_h_pg "partition_gen.h" that contains SAU region and interrupt target assignments. This file may be generated using [CMSIS-Zone](../Zone/index.html).
 
@@ -10,11 +11,13 @@ This file implements the function \ref TZ_SAU_Setup that is called from \ref Sys
 > - \ref partition_gen_h_pg "partition_gen.h" is optional and can be generated using [CMSIS-Zone](../Zone/index.html). In previous versions of CMSIS-Core(M) this settings were part of \ref partition_h_pg "partition_<Device>.h".
 
 The \ref partition_h_pg "partition_<Device>.h" file contains the following configuration settings for:
+
  - \ref sau_ctrlregister_sec provides settings for the SAU CTRL register.
  - \ref sau_sleepexception_sec provides device-specific deep-sleep and exception settings.
  - \ref sau_fpu_sec defines the usage of the Floating Point Unit in secure and non-secure state.
 
 The \ref partition_h_pg "partition_<Device>.h" file includes the \ref partition_gen_h_pg "partition_gen.h" file with configuration settings for:
+
  - \ref sau_regions_sect provides configuration of the SAU Address Regions.
  - \ref sau_interrupttarget_sec provides device-specific interrupt target settings.
 
@@ -161,6 +164,7 @@ The \ref partition_h_pg "partition_<Device>.h" file includes the \ref partition_
 The \ref partition_gen_h_pg "partition_gen.h" header file can be generated using [CMSIS-Zone](../Zone/index.html).
 
 The \ref partition_h_pg "partition_<Device>.h" file includes the \ref partition_h_pg "partition_gen.h" file with configuration settings for:
+
   - \ref sau_regions_sect provides configuration of the SAU Address Regions.
   - \ref sau_interrupttarget_sec provides device-specific interrupt target settings.
 
@@ -266,9 +270,7 @@ The following example shows a set of SAU region macros.
 
 ### Configuration of Interrupt Target settings {#sau_interrupttarget_sec}
 
-Each interrupt has a configuration bit that defines the execution
-in Secure or Non-secure state. The Non-Secure interrupts have a separate
-vector table.  Refer to \ref Model_TrustZone for more information.
+Each interrupt has a configuration bit that defines the execution in Secure or Non-secure state. The Non-Secure interrupts have a separate vector table.  Refer to \ref Model_TrustZone for more information.
 
 <table class="cmtable">
     <tr>

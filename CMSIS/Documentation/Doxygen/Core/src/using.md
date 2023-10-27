@@ -3,6 +3,7 @@
 [TOC]
 
 To use the CMSIS-Core (Cortex-M) in an embedded software project at the following \ref cmsis_device_files need to be added to the application:
+
  - \ref startup_c_pg with reset handler and exception vectors.
  - \ref system_c_pg with general device configuration (i.e. for clock and BUS setup).
  - \ref device_h_pg gives access to processor core and all peripherals.
@@ -17,6 +18,7 @@ The \ref system_c_pg performs the setup for the processor clock. The variable \r
 > - The files \ref startup_c_pg and \ref system_c_pg may require application specific adaptations and therefore should be copied into the application project folder prior configuration.
 
 The \ref device_h_pg provides access to the following device-specific functionalities:
+
  - \ref peripheral_gr provides a standardized register layout for all peripherals. Optionally functions for device-specific peripherals may be available.
  - \ref NVIC_gr can be accessed with standardized symbols and functions for the Nested Interrupt Vector Controller (NVIC) are provided.
  - \ref intrinsic_CPU_gr allow to access special instructions, for example for activating sleep mode or the NOP instruction.
@@ -56,6 +58,7 @@ File                         | Description
 ## Usage Examples {#usage_examples}
 
 **Examples**
+
  - \ref using_basic is a simple example that shows the usage of the CMSIS layer.
  - \ref using_vtor shows how to remap the interrupt vector table.
  - \ref using_arm explains how to use CMSIS-Core (Cortex-M) for Arm processors.

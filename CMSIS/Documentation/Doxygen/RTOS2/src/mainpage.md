@@ -27,18 +27,22 @@ CMSIS-RTOS2 provides great benefits to the embedded developers and software vend
 Several popular RTOS kernels include support for CMSIS-RTOS2 API:
 
 **CMSIS-RTX** (or Keil RTX5): provides most complete support for CMSIS-RTOS2 API and uses it as native interface. For more information see:
+
  - [CMSIS-RTX GitHub repository](https://github.com/ARM-software/CMSIS-RTX)
  - [CMSIS-RTX Documentation](https://arm-software.github.io/CMSIS-RTX/)
 
 **FreeRTOS** : this popular RTOS kernel is enabled with CMSIS-RTOS2 API in the *CMSIS-FreeRTOS* variant. To learn more see:
+
  - [CMSIS-FreeRTOS GitHub repository](https://github.com/ARM-software/CMSIS-FreeRTOS)
  - [CMSIS-FreeRTOS Documentation](https://arm-software.github.io/CMSIS-FreeRTOS/)
 
 **Zephyr RTOS**: is developed under governance of Linux Foundation and includes CMSIS-RTOS2 support. See more at:
+
  - [Zephyr GitHub repository](https://github.com/zephyrproject-rtos/zephyr), see folder *subsys/portability/cmsis_rtos_v2/*
  - [Zephyr documentation about CMSIS-RTOS2 support](https://docs.zephyrproject.org/latest/services/portability/cmsis_rtos_v2.html)
 
 **Micrium OS** is developed and maintained by Silicon Labs. See more at:
+
  - [Micrium OS overview and comparison](https://www.silabs.com/developers/rtos)
 
 ## Access to CMSIS-RTOS2 {#rtos2_access}
@@ -59,4 +63,3 @@ File/Directory                        | Content
 &emsp;&emsp;&nbsp; ┣ 📄 os_systick.c   | OS tick implementation using Cortex-M SysTick timer
 &emsp;&emsp;&nbsp; ┣ 📄 os_tick_gtim.c | OS tick implementation using Cortex-A Generic Timer
 &emsp;&emsp;&nbsp; ┗ 📄 os_tick_ptim.c | OS tick implementation using Cortex-A Private Timer
-

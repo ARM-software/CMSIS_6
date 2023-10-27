@@ -13,8 +13,8 @@ CMSIS-DAP provides the interface firmware for a debug unit that implements the c
 
 ## Access to CMSIS-DAP
 
-- [**CMSIS-DAP GitHub Repo**](https://github.com/ARM-software/CMSIS-DAP) provides the full source code.
-- [**CMSIS-DAP Documentation**](https://arm-software.github.io/CMSIS-DAP/latest/) describes the implemented functions in details.
+ - [**CMSIS-DAP GitHub Repo**](https://github.com/ARM-software/CMSIS-DAP) provides the full source code.
+ - [**CMSIS-DAP Documentation**](https://arm-software.github.io/CMSIS-DAP/latest/) describes the implemented functions in details.
 
 ## Key Features and Benefits
 

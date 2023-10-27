@@ -3,6 +3,7 @@
 The startup file defines device exceptions and interrupts, and provides their initial (weak) handler functions. The file has a naming convention `startup_<Device>.c` where `<Device>` corresponds to the device name.
 
 Specifically, following functionalities are provided in the startup file:
+
  - The reset handler `Reset_Handler` which is executed upon CPU reset and typically calls the `SystemInit()` function. After the system init the control is transferred to the C/C++ run-time library which performs initialization and calls the `main` function in the user code.
  - The setup values for the Main Stack Pointer (MSP).
  - Exception vectors of the Cortex-M Processor with weak functions that implement default routines.
@@ -71,6 +72,7 @@ extern const pFunc __VECTOR_TABLE[240];
 CMSIS-Core \ref cmsis_template_files include a `startup_Device.c` file that can be used as a starting point for chip vendors to implement own device-specific startup file.
 
 The C startup file relys on certain compiler specific preprocessor defines specified in CMSIS compiler headers:
+
  - \ref __INITIAL_SP
  - \ref __STACK_LIMIT
  - \ref __PROGRAM_START

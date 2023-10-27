@@ -5,21 +5,22 @@
 ![Overview of CMSIS-NN](./images/cmsis-nn-overview.png)
 
 CMSIS-NN functions are implemented in several variants and the optimal solution is automatically taken at compile time depending on the features available on the target processor architecture. Implementations for the following features are available:
-- Single Instruction Multiple Data (SIMD) capability (e.g, Cortex-M0)
-- DSP extension (e.g Cortex-M4)
-- Arm M-Profile Vector Extension(MVE) (e.g Cortex-M55).
+
+ - Single Instruction Multiple Data (SIMD) capability (e.g, Cortex-M0)
+ - DSP extension (e.g Cortex-M4)
+ - Arm M-Profile Vector Extension(MVE) (e.g Cortex-M55).
 
 ## Access to CMSIS-NN
 
 CMSIS-NN is actively maintained in a GitHub repository and is also released as a standalone package in CMSIS Pack format.
 
-- [**CMSIS-NN GitHub Repo**](https://github.com/ARM-software/CMSIS-NN) provides the full source code as well as releases in CMSIS-Pack format.
-- [**CMSIS-NN Documentation**](https://arm-software.github.io/CMSIS-NN/latest/) explains how to use the library and describes the implemented functions in details.
+ - [**CMSIS-NN GitHub Repo**](https://github.com/ARM-software/CMSIS-NN) provides the full source code as well as releases in CMSIS-Pack format.
+ - [**CMSIS-NN Documentation**](https://arm-software.github.io/CMSIS-NN/latest/) explains how to use the library and describes the implemented functions in details.
 
 ## Key Features and Benefits
 
-- CMSIS-NN provides a broad set of neural network kernels for Cortex-M devices.
-- Optimized implementations for different Cortex-M capabilities (SIMD, FPU, MVE).
-- Arm Compiler 6 and on Arm GNU Toolchain support.
-- Follows int8 and int16 quantization specification of TensorFlow Lite for Microcontrollers.
-- Widely adopted in the industry.
+ - CMSIS-NN provides a broad set of neural network kernels for Cortex-M devices.
+ - Optimized implementations for different Cortex-M capabilities (SIMD, FPU, MVE).
+ - Arm Compiler 6 and on Arm GNU Toolchain support.
+ - Follows int8 and int16 quantization specification of TensorFlow Lite for Microcontrollers.
+ - Widely adopted in the industry.
