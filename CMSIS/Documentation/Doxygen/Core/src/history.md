@@ -1,8 +1,8 @@
 # Revision History {#core_revisionHistory}
 
-CMSIS-Core (M) component is maintaned with own versioning that gets incremented together with the [CMSIS Software Pack](../General/cmsis_pack.html) releases.
+CMSIS-Core (M) component is maintained with its own versioning that gets offically updated upon releases of the [CMSIS Software Pack](../General/cmsis_pack.html).
 
-The table below provides information about the changes delivered with specific versions of CMSIS-Core (M) updates.
+The table below provides information about the changes delivered with specific versions of CMSIS-Core (M).
 
 <table class="cmtable" summary="Revision History">
     <tr>

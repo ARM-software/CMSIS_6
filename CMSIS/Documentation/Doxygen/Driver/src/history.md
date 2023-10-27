@@ -1,6 +1,8 @@
 # Revision History {#driver_revisionHistory}
 
-CMSIS-Driver component is maintaned with own versioning and gets updated together with the [CMSIS Software Pack](../General/cmsis_pack.html). The table below provides information about the changes delivered with specific versions of CMSIS-Driver releases.
+CMSIS-Driver component is maintained with its own versioning that gets offically updated upon releases of the [CMSIS Software Pack](../General/cmsis_pack.html).
+
+The table below provides information about the changes delivered with specific versions of CMSIS-Driver.
 
 <table class="cmtable" summary="Revision History">
     <tr>

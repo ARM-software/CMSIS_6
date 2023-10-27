@@ -1,10 +1,13 @@
 ## Revision History {#revision_history}
 
-The table on this page provides high-level overview of the CMSIS Base Software release history. In addition, each component of the CMSIS Base software has its own release history:
-- <a href="../Core/core_revisionHistory.html"><b>CMSIS-Core (Cortex-M) Revision History</b></a>
-- <a href="../Core_A/rev_histCoreA.html"><b>CMSIS-Core (Cortex-A) Revision History</b></a>
-- <a href="../Driver/driver_revisionHistory.html"><b>CMSIS-Driver Revision History</b></a>
-- <a href="../RTOS2/rtos_revisionHistory.html"><b>CMSIS-RTOS2 Revision History</b></a>
+The table on this page provides high-level overview of the CMSIS Base Software release history.
+
+In addition, each component of the CMSIS Base software has its own release history listed on following pages:
+
+ - [**CMSIS-Core (Cortex-M) Revision History**](../Core/core_revisionHistory.html)
+ - [**CMSIS-Core (Cortex-A) Revision History**](../Core_A/rev_histCoreA.html)
+ - [**CMSIS-Driver Revision History**](../Driver/driver_revisionHistory.html)
+ - [**CMSIS-RTOS2 Revision History**](../RTOS2/rtos_revisionHistory.html)
 
 Release history of other CMSIS components and tools can be found in their documentation referenced in \ref cmsis_components.
 
@@ -17,6 +20,7 @@ Release history of other CMSIS components and tools can be found in their docume
       <td>6.0.0-dev</td>
       <td>
        In development.
+
        - CMSIS-Core(A): 
        - CMSIS-Core(M): 
        - CMSIS-Driver: 
