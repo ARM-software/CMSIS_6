@@ -7,7 +7,7 @@ on:
       - .github/workflows/corevalidation-report.yml
       - CMSIS/Core/Include/**/*
       - CMSIS/Core/Source/**/*
-      - CMSIS/CoreValidation/Source/**/*
+      - CMSIS/CoreValidation/**/*
   push:
     branches: [main]
   
