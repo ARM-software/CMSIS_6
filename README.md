@@ -5,13 +5,13 @@
 The branch *main* of this GitHub repository contains ![Version](https://img.shields.io/github/v/release/arm-software/CMSIS_6?display_name=release&label=%20&sort=semver).
 
 The [documentation](https://arm-software.github.io/CMSIS_6/) is available under https://arm-software.github.io/CMSIS_6/
+For a list of all CMSIS components refer to [**CMSIS Components**](https://arm-software.github.io/CMSIS_6/latest/General/html/index.html#cmsis_components)
 
 Use [Issues](https://github.com/ARM-software/CMSIS_6#issues-and-labels) to provide feedback and report problems for CMSIS Version 6.
 
 **Note:** The branch *main* of this GitHub repository reflects our current state of development and is constantly updated. It gives our users and partners contiguous access to the CMSIS development. It allows you to review the work and provide feedback or create pull requests for contributions. A [pre-built documentation](https://arm-software.github.io/CMSIS_5/develop/General/html/index.html) is updated from time to time, but may be also generated using the instructions under [Generate CMSIS Pack for Release](https://github.com/ARM-software/CMSIS_5#generate-cmsis-pack-for-release).
 
 For a list of all CMSIS components refer to [**Introduction - CMSIS Components**](./CMSIS/Documentation/Doxygen/General/src/introduction.md#structure)
-
 
 ## Other related GitHub repositories
 
