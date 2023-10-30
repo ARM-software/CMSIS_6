@@ -11,6 +11,7 @@ Use [Issues](https://github.com/ARM-software/CMSIS_6#issues-and-labels) to provi
 
 **Note:** The branch *main* of this GitHub repository reflects our current state of development and is constantly updated. It gives our users and partners contiguous access to the CMSIS development. It allows you to review the work and provide feedback or create pull requests for contributions. A [pre-built documentation](https://arm-software.github.io/CMSIS_5/develop/General/html/index.html) is updated from time to time, but may be also generated using the instructions under [Generate CMSIS Pack for Release](https://github.com/ARM-software/CMSIS_5#generate-cmsis-pack-for-release).
 
+For a list of all CMSIS components refer to [**Introduction - CMSIS Components**](./CMSIS/Documentation/Doxygen/General/src/introduction.md#structure)
 
 ## Other related GitHub repositories
 
@@ -50,7 +51,7 @@ To build a complete CMSIS pack for installation the following additional tools a
 
 Using these tools, you can generate on a Windows PC:
 
-- **CMSIS Documentation** using the shell script **gen_doc.sh** (located in ./CMSIS/DoxyGen).
+- **CMSIS Documentation** using the shell script **gen_doc.sh** (located in ./CMSIS/Documentation/Doxygen).
 - **CMSIS Software Pack** using the shell script **gen_pack.sh**.
 
 ## License
