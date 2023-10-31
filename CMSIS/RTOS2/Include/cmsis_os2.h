@@ -216,7 +216,7 @@ typedef enum {
 #define osThreadZone_Msk        (0x3FUL << osThreadZone_Pos)  ///< MPU protected zone mask
 #define osThreadZone_Valid      (0x80UL << osThreadZone_Pos)  ///< MPU protected zone valid flag
 #define osThreadZone(n)         ((((n) << osThreadZone_Pos) & osThreadZone_Msk) | \
-                                 osThreadZone_Valid)          ///< MPU protected zone
+                                 osThreadZone_Valid)          ///< MPU zone value in attribute bit field format
  
 // Thread processor affinity (affinity_mask in \ref osThreadAttr_t).
 #define osThreadProcessor(n)    (1UL << (n))    ///< Thread processor number for SMP systems
@@ -293,7 +293,7 @@ typedef struct {
   uint32_t                stack_size;   ///< size of stack
   osPriority_t              priority;   ///< initial thread priority (default: osPriorityNormal)
   TZ_ModuleId_t            tz_module;   ///< TrustZone module identifier
-  uint32_t             affinity_mask;   ///< processor affinity mask (0 when not used)
+  uint32_t             affinity_mask;   ///< processor affinity mask for binding the thread to a CPU in a SMP system (0 when not used)
 } osThreadAttr_t;
  
 /// Attributes structure for timer.

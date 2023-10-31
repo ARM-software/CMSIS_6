@@ -14,8 +14,9 @@ CMSIS-NN functions are implemented in several variants and the optimal solution 
 
 CMSIS-NN is actively maintained in a GitHub repository and is also released as a standalone package in CMSIS Pack format.
 
- - [**CMSIS-NN GitHub Repo**](https://github.com/ARM-software/CMSIS-NN) provides the full source code as well as releases in CMSIS-Pack format.
+ - [**CMSIS-NN GitHub Repo**](https://github.com/ARM-software/CMSIS-NN) provides the full source code of CMSIS-NN kernels.
  - [**CMSIS-NN Documentation**](https://arm-software.github.io/CMSIS-NN/latest/) explains how to use the library and describes the implemented functions in details.
+ - [**CMSIS-NN Pack**](https://www.keil.arm.com/packs/cmsis-nn-arm/versions/) delivers CMSIS-NN components and examples in [CMSIS-Pack format](https://open-cmsis-pack.github.io/Open-CMSIS-Pack-Spec/main/html/index.html).
 
 ## Key Features and Benefits
 

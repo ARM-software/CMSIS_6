@@ -14,8 +14,9 @@ Standard C library functions are platform independent, but the implementations o
 
 CMSIS-Compiler is maintained in a GitHub repository and is also released as a standalone package in CMSIS Pack format.
 
- - [**CMSIS-Compiler GitHub Repo**](https://github.com/Arm-Software/CMSIS-Compiler) provides the full source code as well as releases in CMSIS-Pack format.
+ - [**CMSIS-Compiler GitHub Repo**](https://github.com/Arm-Software/CMSIS-Compiler) provides the full source code of CMSIS-Compiler components.
  - [**CMSIS-Compiler Documentation**](https://arm-software.github.io/CMSIS-Compiler/latest/) explains how to use the library and describes the implemented functions in details.
+ - [**CMSIS-Compiler Pack**](https://www.keil.arm.com/packs/cmsis-compiler-arm/versions/) delivers CMSIS-Compiler components and examples in [CMSIS-Pack format](https://open-cmsis-pack.github.io/Open-CMSIS-Pack-Spec/main/html/index.html).
 
 ## Key Features and Benefits
 

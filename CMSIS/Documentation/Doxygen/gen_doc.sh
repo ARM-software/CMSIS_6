@@ -95,11 +95,11 @@ function generate() {
   "${UTILITY_DOXYGEN}" $1.dxy
 
   mkdir -p "${DIRNAME}/${GENDIR}/$1/search/"
-  cp -f "${DIRNAME}/Doxygen_Templates/search.css" "${DIRNAME}/${GENDIR}/$1/search/"
-  cp -f "${DIRNAME}/Doxygen_Templates/navtree.js" "${DIRNAME}/${GENDIR}/$1/"
-  cp -f "${DIRNAME}/Doxygen_Templates/resize.js" "${DIRNAME}/${GENDIR}/$1/"
+  cp -f "${DIRNAME}/style_template/search.css" "${DIRNAME}/${GENDIR}/$1/search/"
+  cp -f "${DIRNAME}/style_template/navtree.js" "${DIRNAME}/${GENDIR}/$1/"
+  cp -f "${DIRNAME}/style_template/resize.js" "${DIRNAME}/${GENDIR}/$1/"
 
-  sed -e "s/{datetime}/${datetime}/" "${DIRNAME}/Doxygen_Templates/footer.js.in" \
+  sed -e "s/{datetime}/${datetime}/" "${DIRNAME}/style_template/footer.js.in" \
     | sed -e "s/{year}/${year}/" \
     | sed -e "s/{projectName}/${projectName}/" \
     | sed -e "s/{projectNumber}/${projectNumber}/" \
