@@ -66,13 +66,13 @@ The ACTLR characteristics are differs between various Armv7-A implementations.
 | [1]     | -             | Reserved.                                                     |
 | [0]     | FW            | Cache and TLB maintenance broadcast.                          |
 
-Consider using \ref __get_ACTLR and \ref __set_ACTRL to access ACTRL register.
+Consider using \ref __get_ACTLR and \ref __set_ACTLR to access ACTRL register.
 
 @{
 */
 
 /**
-\fn __STATIC_INLINE void __set_ACTRL(uint32_t actrl)
+\fn __STATIC_INLINE void __set_ACTLR(uint32_t actlr)
 \details
   This function assigns the given value to the \ref CMSIS_ACTLR.
 

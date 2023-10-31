@@ -24,24 +24,31 @@ CMSIS-RTOS2 provides great benefits to the embedded developers and software vend
 
 ## Supported RTOS kernels {#rtos2_kernels}
 
-Several popular RTOS kernels include support for CMSIS-RTOS2 API:
+Many popular RTOS kernels include support for CMSIS-RTOS2 API:
 
 **CMSIS-RTX** (or Keil RTX5): provides most complete support for CMSIS-RTOS2 API and uses it as native interface. For more information see:
 
  - [CMSIS-RTX GitHub repository](https://github.com/ARM-software/CMSIS-RTX)
- - [CMSIS-RTX Documentation](https://arm-software.github.io/CMSIS-RTX/)
+ - [CMSIS-RTX documentation](https://arm-software.github.io/CMSIS-RTX/)
+ - [CMSIS-RTX pack](https://www.keil.arm.com/packs/cmsis-rtx-arm/versions/)
 
 **FreeRTOS** : this popular RTOS kernel is enabled with CMSIS-RTOS2 API in the *CMSIS-FreeRTOS* variant. To learn more see:
 
  - [CMSIS-FreeRTOS GitHub repository](https://github.com/ARM-software/CMSIS-FreeRTOS)
- - [CMSIS-FreeRTOS Documentation](https://arm-software.github.io/CMSIS-FreeRTOS/)
+ - [CMSIS-FreeRTOS documentation](https://arm-software.github.io/CMSIS-FreeRTOS/)
+ - [CMSIS-FreeRTOS pack](https://www.keil.arm.com/packs/cmsis-freertos-arm/versions/)
 
-**Zephyr RTOS**: is developed under governance of Linux Foundation and includes CMSIS-RTOS2 support. See more at:
+**Zephyr RTOS**: is developed under governance of Linux Foundation and includes CMSIS-RTOS2 API support. See more at:
 
  - [Zephyr GitHub repository](https://github.com/zephyrproject-rtos/zephyr), see folder *subsys/portability/cmsis_rtos_v2/*
  - [Zephyr documentation about CMSIS-RTOS2 support](https://docs.zephyrproject.org/latest/services/portability/cmsis_rtos_v2.html)
 
-**Micrium OS** is developed and maintained by Silicon Labs. See more at:
+**embOS**: is a preemptive RTOS designed by Segger, and provides support for CMSIS-RTOS2 API.
+
+ - [Using embOS in CMSIS-Pack projects](https://wiki.segger.com/Using_embOS_in_CMSIS-Pack_projects)
+ - [CMSIS-embOS pack](https://www.keil.arm.com/packs/cmsis-embos-segger/versions/)
+
+**Micrium OS** is developed and maintained by Silicon Labs.
 
  - [Micrium OS overview and comparison](https://www.silabs.com/developers/rtos)
 
@@ -49,11 +56,11 @@ Several popular RTOS kernels include support for CMSIS-RTOS2 API:
 
 CMSIS-RTOS2 and OS Tick intefaces are actively maintained in [**CMSIS 6 GitHub repository**](https://github.com/ARM-software/CMSIS_6) and provided as part of the [CMSIS Software Pack](../General/cmsis_pack.html).
 
-The following files relevant to CMSIS-RTOS2 are present in the **ARM::CMSIS** Pack directories:
+The following files and directories relevant to CMSIS-RTOS2 are present in the **ARM::CMSIS** Pack:
 
 File/Directory                        | Content
 :-------------------------------------|:----------------------------------------------------
-📂 CMSIS                              | CMSIS Base software components folder 
+📂 CMSIS                              | CMSIS Base software components folder
  ┣ 📂 Documentation/html/RTOS2        | A local copy of this CMSIS-RTOS2 documentation
  ┗ 📂 RTOS2                           | CMSIS-RTOS2 API header files and OS tick implementations
 &emsp;&nbsp; ┣ 📂 Include             | API header files

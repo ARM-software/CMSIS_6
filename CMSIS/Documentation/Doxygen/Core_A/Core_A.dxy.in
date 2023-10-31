@@ -60,7 +60,7 @@ PROJECT_BRIEF          = "CMSIS-Core support for Cortex-A processor-based device
 # pixels and the maximum width should not exceed 200 pixels. Doxygen will copy
 # the logo to the output directory.
 
-PROJECT_LOGO           = ../Doxygen_Templates/cmsis_logo_white_small.png
+PROJECT_LOGO           = ../style_template/cmsis_logo_white_small.png
 
 # The OUTPUT_DIRECTORY tag is used to specify the (relative or absolute) path
 # into which the generated documentation will be written. If a relative path is
@@ -795,7 +795,7 @@ FILE_VERSION_FILTER    =
 # DoxygenLayout.xml, doxygen will parse it automatically even if the LAYOUT_FILE
 # tag is left empty.
 
-LAYOUT_FILE            = ../Doxygen_Templates/Layout_forUser_Core.xml
+LAYOUT_FILE            = ../style_template/Layout_forUser_Core.xml
 
 # The CITE_BIB_FILES tag can be used to specify one or more bib files containing
 # the reference definitions. This must be a list of .bib files. The .bib
@@ -1349,7 +1349,7 @@ HTML_FILE_EXTENSION    = .html
 # of the possible markers and block names see the documentation.
 # This tag requires that the tag GENERATE_HTML is set to YES.
 
-HTML_HEADER            = ../Doxygen_Templates/header.html
+HTML_HEADER            = ../style_template/header.html
 
 # The HTML_FOOTER tag can be used to specify a user-defined HTML footer for each
 # generated HTML page. If the tag is left blank doxygen will generate a standard
@@ -1359,7 +1359,7 @@ HTML_HEADER            = ../Doxygen_Templates/header.html
 # that doxygen normally uses.
 # This tag requires that the tag GENERATE_HTML is set to YES.
 
-HTML_FOOTER            = ../Doxygen_Templates/footer.html
+HTML_FOOTER            = ../style_template/footer.html
 
 # The HTML_STYLESHEET tag can be used to specify a user-defined cascading style
 # sheet that is used by each HTML page. It can be used to fine-tune the look of
@@ -1389,9 +1389,9 @@ HTML_STYLESHEET        =
 # documentation.
 # This tag requires that the tag GENERATE_HTML is set to YES.
 
-HTML_EXTRA_STYLESHEET  = ../Doxygen_Templates/extra_stylesheet.css \
-                         ../Doxygen_Templates/extra_navtree.css \
-                         ../Doxygen_Templates/extra_search.css \
+HTML_EXTRA_STYLESHEET  = ../style_template/extra_stylesheet.css \
+                         ../style_template/extra_navtree.css \
+                         ../style_template/extra_search.css \
 
 # The HTML_EXTRA_FILES tag can be used to specify one or more extra images or
 # other source files which should be copied to the HTML output directory. Note
@@ -1401,13 +1401,13 @@ HTML_EXTRA_STYLESHEET  = ../Doxygen_Templates/extra_stylesheet.css \
 # files will be copied as-is; there are no commands or markers available.
 # This tag requires that the tag GENERATE_HTML is set to YES.
 
-HTML_EXTRA_FILES       = ../Doxygen_Templates/tabs.css \
-                         ../Doxygen_Templates/version.css \
-                         ../Doxygen_Templates/tab_b.png \
-                         ../Doxygen_Templates/printComponentTabs.js \
-                         ../Doxygen_Templates/darkmode_toggle.js \
-                         ../Doxygen_Templates/navtree.js \
-                         ../Doxygen_Templates/dropdown.png
+HTML_EXTRA_FILES       = ../style_template/tabs.css \
+                         ../style_template/version.css \
+                         ../style_template/tab_b.png \
+                         ../style_template/printComponentTabs.js \
+                         ../style_template/darkmode_toggle.js \
+                         ../style_template/navtree.js \
+                         ../style_template/dropdown.png
 
 # The HTML_COLORSTYLE tag can be used to specify if the generated HTML output
 # should be rendered with a dark or light theme.

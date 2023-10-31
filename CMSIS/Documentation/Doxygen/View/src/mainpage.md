@@ -12,8 +12,9 @@ Key elements of CMSIS-View are:
 
 CMSIS-View is maintained in a GitHub repository and is also released as a standalone package in CMSIS Software Pack format.
 
- - [**CMSIS-View GitHub Repo**](https://github.com/Arm-Software/CMSIS-View) provides the full source code as well as releases in CMSIS-Pack format.
+ - [**CMSIS-View GitHub Repo**](https://github.com/Arm-Software/CMSIS-View) provides the full source code of CMSIS-View software, example projects and documentation.
  - [**CMSIS-View Documentation**](https://arm-software.github.io/CMSIS-View/latest/) explains how to use the library and describes the implemented functions in details.
+ - [**CMSIS-View Pack**](https://www.keil.arm.com/packs/cmsis-view-arm/versions/) delivers CMSIS-View firmware components and examples in [CMSIS-Pack format](https://open-cmsis-pack.github.io/Open-CMSIS-Pack-Spec/main/html/index.html).
 
 ## Key Features and Benefits
 

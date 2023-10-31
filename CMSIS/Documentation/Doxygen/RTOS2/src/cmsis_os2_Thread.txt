@@ -272,7 +272,7 @@ the higher priority until it releases the resource.
 entry function. The optional argument can be used to hand over arbitrary user data to the thread, i.e. to identify the thread
 or for runtime parameters.
 
-\param[in] argument Arbitrary user data set on \ref osThreadNew.
+\param[in] argument arbitrary user data set on \ref osThreadNew.
 */
 
 /*=======0=========1=========2=========3=========4=========5=========6=========7=========8=========9=========0=========1====*/
@@ -347,7 +347,6 @@ In \b privileged processor mode, the application software can use all the instru
 /**
 \def osThreadZone(n)
 \param  n MPU Protected Zone value.
-\brief  MPU zone value in attribute bit field format.
 \details
 
 The preprocessor macro \b osThreadZone constructs attribute bitmask with MPU zone bits set to \a n.
@@ -365,11 +364,10 @@ const osThreadAttr_t thread_B_attr = {
 /*=======0=========1=========2=========3=========4=========5=========6=========7=========8=========9=========0=========1====*/
 /**
 \def osThreadProcessor(n)
-\param  n Processor number.
-\brief  Thread processor affinity mask value in attribute affinity_mask format.
+\param  n processor number, starting with n=0 for processor #0. The number of supported processors depend on the hardware.
 \details
 
-The preprocessor macro \b osThreadProcessor constructs attribute affinity_mask derived from \a n.
+The preprocessor macro \b osThreadProcessor constructs the value for the osThreadAttr_t::affinity_mask derived from \a n.
 */
 
 
@@ -913,7 +911,7 @@ The mask indicates on which processor(s) the thread should run (\token{0} indica
 
 Possible \ref osStatus_t return values:
     - \em osOK: the affinity mask of the specified thread has been set successfully.
-    - \em osErrorParameter: \a thread_id is \token{NULL} or invalid or \a priority is incorrect.
+    - \em osErrorParameter: \a thread_id is \token{NULL} or invalid or \a affinity_mask is incorrect.
     - \em osErrorResource: the thread is in an invalid state.
     - \em osErrorISR: the function \b osThreadSetAffinityMask cannot be called from interrupt service routines.
     - \em osErrorSafetyClass: the calling thread safety class is lower than the safety class of the specified thread.
@@ -930,7 +928,7 @@ void Thread_1 (void const *arg) {               // Thread function
  
   id = osThreadGetId();                         // Obtain ID of current running thread
  
-  status = osThreadSetAffinityMask(id, osThreadProcessor(1));  // Set thread affinity mask
+  status = osThreadSetAffinityMask(id, osThreadProcessor(1));  // run thread processor #1
   if (status == osOK) {
     // Thread affinity mask set to processor number 1
   }
@@ -1096,8 +1094,7 @@ Applicable only for devices on Armv8-M architecture. Ignored on others.
 
 \var osThreadAttr_t::affinity_mask
 \details
-The affinity mask specified by \ref osThreadProcessor macro (multiple processors can be specified by OR-ing macros).
+Use the \ref osThreadProcessor macro to create the mask value. Multiple processors can be specified by OR-ing values.
 
-Default: \token{0} to run on any processor.
-
+Default: value \token{0} is RTOS implementation specific and may map to running on processor #0 or on any processor.
 */
