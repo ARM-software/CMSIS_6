@@ -167,7 +167,7 @@ Macros</h2></td></tr>
 <tr class="memdesc:gaefca370070d0b1616421bc3311acfecc"><td class="mdescLeft">&#160;</td><td class="mdescRight">MPU zone value in attribute bit field format.  <br /></td></tr>
 <tr class="separator:gaefca370070d0b1616421bc3311acfecc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga4ef461379ceba9ab7764850ef2c7b0ac"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CMSIS__RTOS__ThreadMgmt.html#ga4ef461379ceba9ab7764850ef2c7b0ac">osThreadProcessor</a>(n)&#160;&#160;&#160;(1UL &lt;&lt; (n))</td></tr>
-<tr class="memdesc:ga4ef461379ceba9ab7764850ef2c7b0ac"><td class="mdescLeft">&#160;</td><td class="mdescRight">Thread processor affinity mask value in attribute affinity_mask format.  <br /></td></tr>
+<tr class="memdesc:ga4ef461379ceba9ab7764850ef2c7b0ac"><td class="mdescLeft">&#160;</td><td class="mdescRight">Thread processor number for SMP systems.  <br /></td></tr>
 <tr class="separator:ga4ef461379ceba9ab7764850ef2c7b0ac"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="typedef-members" name="typedef-members"></a>
@@ -648,8 +648,8 @@ TrustZone module identifier. <p>TrustZone Thread Context Management Identifier t
 <td class="fieldname">
 affinity_mask</td>
 <td class="fielddoc">
-processor affinity mask (0 when not used) <p>The affinity mask specified by <a class="el" href="group__CMSIS__RTOS__ThreadMgmt.html#ga4ef461379ceba9ab7764850ef2c7b0ac">osThreadProcessor</a> macro (multiple processors can be specified by OR-ing macros).</p>
-<p>Default: <span class="XML-Token">0</span> to run on any processor. </p>
+processor affinity mask for binding the thread to a CPU in a SMP system (0 when not used) <p>Use the <a class="el" href="group__CMSIS__RTOS__ThreadMgmt.html#ga4ef461379ceba9ab7764850ef2c7b0ac">osThreadProcessor</a> macro to create the mask value. Multiple processors can be specified by OR-ing values.</p>
+<p>Default: value <span class="XML-Token">0</span> is RTOS implementation specific and may map to running on processor #0 or on any processor. </p>
 </td></tr>
 </table>
 
@@ -768,7 +768,6 @@ processor affinity mask (0 when not used) <p>The affinity mask specified by <a c
 </div><div class="memdoc">
 
 <p>MPU zone value in attribute bit field format. </p>
-<p>MPU protected zone.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">n</td><td>MPU Protected Zone value.</td></tr>
@@ -800,15 +799,14 @@ processor affinity mask (0 when not used) <p>The affinity mask specified by <a c
       </table>
 </div><div class="memdoc">
 
-<p>Thread processor affinity mask value in attribute affinity_mask format. </p>
-<p>Thread processor number for SMP systems.</p>
+<p>Thread processor number for SMP systems. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">n</td><td>Processor number.</td></tr>
+    <tr><td class="paramname">n</td><td>processor number, starting with n=0 for processor #0. The number of supported processors depend on the hardware.</td></tr>
   </table>
   </dd>
 </dl>
-<p>The preprocessor macro <b>osThreadProcessor</b> constructs attribute affinity_mask derived from <em>n</em>. </p>
+<p>The preprocessor macro <b>osThreadProcessor</b> constructs the value for the <a class="el" href="group__CMSIS__RTOS__ThreadMgmt.html#aaf358099120136bf63c5e53cf5d40043" title="processor affinity mask for binding the thread to a CPU in a SMP system (0 when not used)">osThreadAttr_t::affinity_mask</a> derived from <em>n</em>. </p>
 
 </div>
 </div>
@@ -829,7 +827,7 @@ processor affinity mask (0 when not used) <p>The affinity mask specified by <a c
 <p>Entry function for threads. Setting up a new thread (<a class="el" href="group__CMSIS__RTOS__ThreadMgmt.html#ga48d68b8666d99d28fa646ee1d2182b8f">osThreadNew</a>) will start execution with a call into this entry function. The optional argument can be used to hand over arbitrary user data to the thread, i.e. to identify the thread or for runtime parameters.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">argument</td><td>Arbitrary user data set on <a class="el" href="group__CMSIS__RTOS__ThreadMgmt.html#ga48d68b8666d99d28fa646ee1d2182b8f">osThreadNew</a>. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">argument</td><td>arbitrary user data set on <a class="el" href="group__CMSIS__RTOS__ThreadMgmt.html#ga48d68b8666d99d28fa646ee1d2182b8f">osThreadNew</a>. </td></tr>
   </table>
   </dd>
 </dl>
@@ -1913,7 +1911,7 @@ Avoid calling the function with a <em>thread_id</em> that does not exist or has 
 <p>The function <b>osThreadSetAffinityMask</b> sets the affinity mask of the thread specified by parameter <em>thread_id</em> to the mask specified by the parameter <em>affinity_mask</em>. The mask indicates on which processor(s) the thread should run (<span class="XML-Token">0</span> indicates on any processor).</p>
 <p>Possible <a class="el" href="group__CMSIS__RTOS__Definitions.html#ga6c0dbe6069e4e7f47bb4cd32ae2b813e">osStatus_t</a> return values:</p><ul>
 <li><em>osOK:</em> the affinity mask of the specified thread has been set successfully.</li>
-<li><em>osErrorParameter:</em> <em>thread_id</em> is <span class="XML-Token">NULL</span> or invalid or <em>priority</em> is incorrect.</li>
+<li><em>osErrorParameter:</em> <em>thread_id</em> is <span class="XML-Token">NULL</span> or invalid or <em>affinity_mask</em> is incorrect.</li>
 <li><em>osErrorResource:</em> the thread is in an invalid state.</li>
 <li><em>osErrorISR:</em> the function <b>osThreadSetAffinityMask</b> cannot be called from interrupt service routines.</li>
 <li><em>osErrorSafetyClass:</em> the calling thread safety class is lower than the safety class of the specified thread.</li>
@@ -1927,7 +1925,7 @@ Avoid calling the function with a <em>thread_id</em> that does not exist or has 
 <div class="line"> </div>
 <div class="line">  <span class="keywordtype">id</span> = <a class="code hl_function" href="group__CMSIS__RTOS__ThreadMgmt.html#ga8df03548e89fbc56402a5cd584a505da" title="Return the thread ID of the current running thread.">osThreadGetId</a>();                         <span class="comment">// Obtain ID of current running thread</span></div>
 <div class="line"> </div>
-<div class="line">  status = <a class="code hl_function" href="group__CMSIS__RTOS__ThreadMgmt.html#ga60e2518df0194587a134b7e1836f2470" title="Set processor affinity mask of a thread.">osThreadSetAffinityMask</a>(<span class="keywordtype">id</span>, <a class="code hl_define" href="group__CMSIS__RTOS__ThreadMgmt.html#ga4ef461379ceba9ab7764850ef2c7b0ac" title="Thread processor affinity mask value in attribute affinity_mask format.">osThreadProcessor</a>(1));  <span class="comment">// Set thread affinity mask</span></div>
+<div class="line">  status = <a class="code hl_function" href="group__CMSIS__RTOS__ThreadMgmt.html#ga60e2518df0194587a134b7e1836f2470" title="Set processor affinity mask of a thread.">osThreadSetAffinityMask</a>(<span class="keywordtype">id</span>, <a class="code hl_define" href="group__CMSIS__RTOS__ThreadMgmt.html#ga4ef461379ceba9ab7764850ef2c7b0ac" title="Thread processor number for SMP systems.">osThreadProcessor</a>(1));  <span class="comment">// run thread processor #1</span></div>
 <div class="line">  <span class="keywordflow">if</span> (status == <a class="code hl_enumvalue" href="group__CMSIS__RTOS__Definitions.html#gga6c0dbe6069e4e7f47bb4cd32ae2b813eab17c65ad8b5bae759882b41c5bf35cda" title="Operation completed successfully.">osOK</a>) {</div>
 <div class="line">    <span class="comment">// Thread affinity mask set to processor number 1</span></div>
 <div class="line">  }</div>

@@ -35,6 +35,7 @@ var NAVTREEINDEX0 =
 "device_h_pg.html#device_h_sec":[3,5,4],
 "device_h_pg.html#interrupt_number_sec":[3,5,0],
 "group__CMSIS__ACTLR.html":[6,1,0],
+"group__CMSIS__ACTLR.html#ga6317030a08c8c015425ffd0e3e7dae17":[6,1,0,3],
 "group__CMSIS__ACTLR.html#gae75d412bfd6fe873ade00b021aefcab3":[6,1,0,2],
 "group__CMSIS__ACTLR__BITS.html":[6,1,0,0],
 "group__CMSIS__ACTLR__BITS.html#ga0367a8413c0a37d6c1de7b90f3a56aee":[6,1,0,0,7],
@@ -248,6 +249,5 @@ var NAVTREEINDEX0 =
 "group__CMSIS__SCTLR__BITS.html#ga1372b569553a0740d881e24c0be7334f":[6,1,18,0,37],
 "group__CMSIS__SCTLR__BITS.html#ga1ff9e6766c7e1ca312b025bf34d384bc":[6,1,18,0,22],
 "group__CMSIS__SCTLR__BITS.html#ga2be72788d984153ded81711e20fd2d33":[6,1,18,0,6],
-"group__CMSIS__SCTLR__BITS.html#ga316882abba6c9cdd31dbbd7ba46c9f52":[6,1,18,0,15],
-"group__CMSIS__SCTLR__BITS.html#ga316b80925b88fe3b88ec46a55655b0bc":[6,1,18,0,12]
+"group__CMSIS__SCTLR__BITS.html#ga316882abba6c9cdd31dbbd7ba46c9f52":[6,1,18,0,15]
 };

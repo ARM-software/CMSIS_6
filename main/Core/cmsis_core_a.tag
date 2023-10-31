@@ -524,8 +524,8 @@
     <member kind="function">
       <type>__STATIC_FORCEINLINE void</type>
       <name>__set_ACTLR</name>
-      <anchorfile>cmsis__cp15_8h.html</anchorfile>
-      <anchor>af0fd00dce8d7368f78c033e5f7fda9cd</anchor>
+      <anchorfile>group__CMSIS__ACTLR.html</anchorfile>
+      <anchor>ga6317030a08c8c015425ffd0e3e7dae17</anchor>
       <arglist>(uint32_t actlr)</arglist>
     </member>
     <member kind="function">
@@ -7768,6 +7768,13 @@
     <filename>group__CMSIS__ACTLR.html</filename>
     <subgroup>CMSIS_ACTLR_BITS</subgroup>
     <class kind="struct">ACTLR_Type</class>
+    <member kind="function">
+      <type>__STATIC_FORCEINLINE void</type>
+      <name>__set_ACTLR</name>
+      <anchorfile>group__CMSIS__ACTLR.html</anchorfile>
+      <anchor>ga6317030a08c8c015425ffd0e3e7dae17</anchor>
+      <arglist>(uint32_t actlr)</arglist>
+    </member>
     <member kind="function">
       <type>__STATIC_FORCEINLINE uint32_t</type>
       <name>__get_ACTLR</name>

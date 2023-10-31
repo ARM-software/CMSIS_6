@@ -1,5 +1,6 @@
 var NAVTREEINDEX1 =
 {
+"group__CMSIS__SCTLR__BITS.html#ga316b80925b88fe3b88ec46a55655b0bc":[6,1,18,0,12],
 "group__CMSIS__SCTLR__BITS.html#ga3290be0882c1493bca9a0db6b4d0bff8":[6,1,18,0,25],
 "group__CMSIS__SCTLR__BITS.html#ga4853d6f9ccbf919fcdadb0b2a5913cc6":[6,1,18,0,4],
 "group__CMSIS__SCTLR__BITS.html#ga4a68d6660c76951ada2541ceaf040b3b":[6,1,18,0,26],
@@ -248,6 +249,5 @@ var NAVTREEINDEX1 =
 "group__irq__mode__defs.html#gab09616a5ccd05d75d81ab80a37387a9a":[6,7,0,1],
 "group__irq__mode__defs.html#gab0d022bbd15beb1a6578b5535d95f9cf":[6,7,0,20],
 "group__irq__mode__defs.html#gabc31ba71612436a6ccc49342f35fec58":[6,7,0,16],
-"group__irq__mode__defs.html#gacb276aa0488a9bf1aa56e1072d2a15a5":[6,7,0,0],
-"group__irq__mode__defs.html#gad3d0505689768247c67495b7359e147f":[6,7,0,8]
+"group__irq__mode__defs.html#gacb276aa0488a9bf1aa56e1072d2a15a5":[6,7,0,0]
 };

@@ -76,7 +76,7 @@ var searchData=
   ['_5f_5frevsh_73',['__REVSH',['../cmsis__armclang__a_8h.html#ae580812686119c9c5cf3c11a7519a404',1,'__REVSH():&#160;cmsis_armclang_a.h'],['../group__CMSIS__Core__InstructionInterface.html#ga1ec006e6d79063363cb0c2a2e0b3adbe',1,'__REVSH(int32_t value):&#160;Ref_CompilerControl.txt']]],
   ['_5f_5fror_74',['__ROR',['../group__CMSIS__Core__InstructionInterface.html#gae05c1a2dac5bb7a399420c804c3048ca',1,'__ROR(uint32_t op1, uint32_t op2):&#160;cmsis_armclang_a.h'],['../group__CMSIS__Core__InstructionInterface.html#gae05c1a2dac5bb7a399420c804c3048ca',1,'__ROR(uint32_t op1, uint32_t op2):&#160;cmsis_armclang_a.h']]],
   ['_5f_5frrx_75',['__RRX',['../cmsis__armclang__a_8h.html#a87e96ac34a5d8dd9083b687dc3664215',1,'cmsis_armclang_a.h']]],
-  ['_5f_5fset_5factlr_76',['__set_ACTLR',['../cmsis__cp15_8h.html#af0fd00dce8d7368f78c033e5f7fda9cd',1,'cmsis_cp15.h']]],
+  ['_5f_5fset_5factlr_76',['__set_ACTLR',['../group__CMSIS__ACTLR.html#ga6317030a08c8c015425ffd0e3e7dae17',1,'cmsis_cp15.h']]],
   ['_5f_5fset_5fbpiall_77',['__set_BPIALL',['../group__CMSIS__CBPM.html#gaa5a1bf5487bd00c61764ee2614bea3d4',1,'cmsis_cp15.h']]],
   ['_5f_5fset_5fcntfrq_78',['__set_CNTFRQ',['../group__CMSIS__CNTFRQ.html#ga9510002064eb2100ce656233bc475e6d',1,'cmsis_cp15.h']]],
   ['_5f_5fset_5fcntp_5fctl_79',['__set_CNTP_CTL',['../group__CMSIS__CNTP__CTL.html#ga2d0441a0266268a063cb7577b8873c65',1,'cmsis_cp15.h']]],
