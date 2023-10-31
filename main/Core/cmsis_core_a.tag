@@ -1260,27 +1260,6 @@
     <class kind="struct">mmu_region_attributes_Type</class>
     <member kind="define">
       <type>#define</type>
-      <name>__CA_CMSIS_VERSION_MAIN</name>
-      <anchorfile>group__version__ctrl.html</anchorfile>
-      <anchor>ga519092cc80304900838f3d79a1a04e36</anchor>
-      <arglist></arglist>
-    </member>
-    <member kind="define">
-      <type>#define</type>
-      <name>__CA_CMSIS_VERSION_SUB</name>
-      <anchorfile>group__version__ctrl.html</anchorfile>
-      <anchor>gaca4690227a53e24645758cdab9a00cdf</anchor>
-      <arglist></arglist>
-    </member>
-    <member kind="define">
-      <type>#define</type>
-      <name>__CA_CMSIS_VERSION</name>
-      <anchorfile>group__version__ctrl.html</anchorfile>
-      <anchor>ga60199f17babba1ac0cf233e59043b23b</anchor>
-      <arglist></arglist>
-    </member>
-    <member kind="define">
-      <type>#define</type>
       <name>__FPU_USED</name>
       <anchorfile>core__ca_8h.html</anchorfile>
       <anchor>aa167d0f532a7c2b2e3a6395db2fa0776</anchor>
@@ -10253,27 +10232,6 @@
     <name>version_ctrl</name>
     <title>Version Control</title>
     <filename>group__version__ctrl.html</filename>
-    <member kind="define">
-      <type>#define</type>
-      <name>__CA_CMSIS_VERSION_MAIN</name>
-      <anchorfile>group__version__ctrl.html</anchorfile>
-      <anchor>ga519092cc80304900838f3d79a1a04e36</anchor>
-      <arglist></arglist>
-    </member>
-    <member kind="define">
-      <type>#define</type>
-      <name>__CA_CMSIS_VERSION_SUB</name>
-      <anchorfile>group__version__ctrl.html</anchorfile>
-      <anchor>gaca4690227a53e24645758cdab9a00cdf</anchor>
-      <arglist></arglist>
-    </member>
-    <member kind="define">
-      <type>#define</type>
-      <name>__CA_CMSIS_VERSION</name>
-      <anchorfile>group__version__ctrl.html</anchorfile>
-      <anchor>ga60199f17babba1ac0cf233e59043b23b</anchor>
-      <arglist></arglist>
-    </member>
     <member kind="define">
       <type>#define</type>
       <name>__CA_REV</name>

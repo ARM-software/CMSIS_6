@@ -138,18 +138,6 @@ $(document).ready(function(){initNavTree('group__version__ctrl.html',''); initRe
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="define-members" name="define-members"></a>
 Macros</h2></td></tr>
-<tr class="memitem:ga519092cc80304900838f3d79a1a04e36"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__version__ctrl.html#ga519092cc80304900838f3d79a1a04e36">__CA_CMSIS_VERSION_MAIN</a>&#160;&#160;&#160;(1U)</td></tr>
-<tr class="memdesc:ga519092cc80304900838f3d79a1a04e36"><td class="mdescLeft">&#160;</td><td class="mdescRight">[31:16] CMSIS-Core(A) main version <br  />
-  <br /></td></tr>
-<tr class="separator:ga519092cc80304900838f3d79a1a04e36"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gaca4690227a53e24645758cdab9a00cdf"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__version__ctrl.html#gaca4690227a53e24645758cdab9a00cdf">__CA_CMSIS_VERSION_SUB</a>&#160;&#160;&#160;(1U)</td></tr>
-<tr class="memdesc:gaca4690227a53e24645758cdab9a00cdf"><td class="mdescLeft">&#160;</td><td class="mdescRight">[15:0] CMSIS-Core(A) sub version <br  />
-  <br /></td></tr>
-<tr class="separator:gaca4690227a53e24645758cdab9a00cdf"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga60199f17babba1ac0cf233e59043b23b"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__version__ctrl.html#ga60199f17babba1ac0cf233e59043b23b">__CA_CMSIS_VERSION</a></td></tr>
-<tr class="memdesc:ga60199f17babba1ac0cf233e59043b23b"><td class="mdescLeft">&#160;</td><td class="mdescRight">CMSIS-Core(A) version number <br  />
-  <br /></td></tr>
-<tr class="separator:ga60199f17babba1ac0cf233e59043b23b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga8ebf37d3e9141ccae33bb6b1edf539bd"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__version__ctrl.html#ga8ebf37d3e9141ccae33bb6b1edf539bd">__CA_REV</a>&#160;&#160;&#160;0x0000</td></tr>
 <tr class="memdesc:ga8ebf37d3e9141ccae33bb6b1edf539bd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Contains the core revision for a Cortex-A class device.  <br /></td></tr>
 <tr class="separator:ga8ebf37d3e9141ccae33bb6b1edf539bd"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -160,81 +148,6 @@ Macros</h2></td></tr>
 <a name="details" id="details"></a><h2 class="groupheader">Description</h2>
 <p>Version symbols for CMSIS release specific C/C++ source code. </p>
 <h2 class="groupheader">Macro Definition Documentation</h2>
-<a id="ga60199f17babba1ac0cf233e59043b23b" name="ga60199f17babba1ac0cf233e59043b23b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga60199f17babba1ac0cf233e59043b23b">&#9670;&#160;</a></span>__CA_CMSIS_VERSION</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define __CA_CMSIS_VERSION</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>CMSIS-Core(A) version number <br  />
- </p>
-<p>Use this define to query the full version of CMSIS-Core(A) component.</p>
-<table class="markdownTable">
-<tr class="markdownTableHead">
-<th class="markdownTableHeadLeft">Bits   </th><th class="markdownTableHeadLeft">Name   </th><th class="markdownTableHeadLeft">Function    </th></tr>
-<tr class="markdownTableRowOdd">
-<td class="markdownTableBodyLeft">[31:16]   </td><td class="markdownTableBodyLeft">MAIN   </td><td class="markdownTableBodyLeft">__CA_CMSIS_VERSION_MAIN    </td></tr>
-<tr class="markdownTableRowEven">
-<td class="markdownTableBodyLeft">[15:0]   </td><td class="markdownTableBodyLeft">SUB   </td><td class="markdownTableBodyLeft">__CA_CMSIS_VERSION_SUB   </td></tr>
-</table>
-<p><b>Example:</b> </p><div class="fragment"><div class="line"><span class="preprocessor">#if __CA_CMSIS_VERSION &lt; 0x00050001</span></div>
-<div class="line"><span class="preprocessor">#error This code needs at least CMSIS-Core(A) version 5.1!</span></div>
-<div class="line"><span class="preprocessor">#endif</span></div>
-</div><!-- fragment --> 
-</div>
-</div>
-<a id="ga519092cc80304900838f3d79a1a04e36" name="ga519092cc80304900838f3d79a1a04e36"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga519092cc80304900838f3d79a1a04e36">&#9670;&#160;</a></span>__CA_CMSIS_VERSION_MAIN</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define __CA_CMSIS_VERSION_MAIN&#160;&#160;&#160;(1U)</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>[31:16] CMSIS-Core(A) main version <br  />
- </p>
-<p>Use this define to query the major version of CMSIS-Core(A) component.</p>
-<p><b>Example:</b> </p><div class="fragment"><div class="line"><span class="preprocessor">#if __CA_CMSIS_VERSION_MAIN &lt; 5</span></div>
-<div class="line"><span class="preprocessor">#error This code needs at least CMSIS-Core(A) version 5!</span></div>
-<div class="line"><span class="preprocessor">#endif</span></div>
-</div><!-- fragment --> 
-</div>
-</div>
-<a id="gaca4690227a53e24645758cdab9a00cdf" name="gaca4690227a53e24645758cdab9a00cdf"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#gaca4690227a53e24645758cdab9a00cdf">&#9670;&#160;</a></span>__CA_CMSIS_VERSION_SUB</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define __CA_CMSIS_VERSION_SUB&#160;&#160;&#160;(1U)</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>[15:0] CMSIS-Core(A) sub version <br  />
- </p>
-<p>Use this define to query the minor version of CMSIS-Core(A) component.</p>
-<p><b>Example:</b> </p><div class="fragment"><div class="line"><span class="preprocessor">#if __CA_CMSIS_VERSION_MAIN &lt; 5</span></div>
-<div class="line"><span class="preprocessor">#error This code needs at least CMSIS-Core(A) version 5!</span></div>
-<div class="line"><span class="preprocessor">#else</span></div>
-<div class="line"><span class="preprocessor">#if __CA_CMSIS_VERSION_SUB &lt; 1</span></div>
-<div class="line"><span class="preprocessor">#warning Using CMSIS-Core(A) version 5.0 compatibility functions.</span></div>
-<div class="line"><span class="preprocessor">#endif</span></div>
-<div class="line"><span class="preprocessor">#endif</span></div>
-</div><!-- fragment --> 
-</div>
-</div>
 <a id="ga8ebf37d3e9141ccae33bb6b1edf539bd" name="ga8ebf37d3e9141ccae33bb6b1edf539bd"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ga8ebf37d3e9141ccae33bb6b1edf539bd">&#9670;&#160;</a></span>__CA_REV</h2>
 
