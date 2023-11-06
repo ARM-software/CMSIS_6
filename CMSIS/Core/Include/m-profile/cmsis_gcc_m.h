@@ -181,7 +181,7 @@ __STATIC_FORCEINLINE __NO_RETURN void __cmsis_start(void)
 #define __VECTOR_TABLE_ATTRIBUTE  __attribute__((used, section(".vectors")))
 #endif
 
-#if (__ARM_FEATURE_CMSE == 3)
+#if defined (__ARM_FEATURE_CMSE) && (__ARM_FEATURE_CMSE == 3)
 #ifndef __STACK_SEAL
 #define __STACK_SEAL              __StackSeal
 #endif
@@ -910,7 +910,7 @@ __STATIC_FORCEINLINE uint32_t __get_CONTROL(void)
 }
 
 
-#if (__ARM_FEATURE_CMSE == 3)
+#if defined (__ARM_FEATURE_CMSE) && (__ARM_FEATURE_CMSE == 3)
 /**
   \brief   Get Control Register (non-secure)
   \details Returns the content of the non-secure Control Register when in secure mode.
@@ -938,7 +938,7 @@ __STATIC_FORCEINLINE void __set_CONTROL(uint32_t control)
 }
 
 
-#if (__ARM_FEATURE_CMSE == 3)
+#if defined (__ARM_FEATURE_CMSE) && (__ARM_FEATURE_CMSE == 3)
 /**
   \brief   Set Control Register (non-secure)
   \details Writes the given value to the non-secure Control Register when in secure state.
@@ -1008,7 +1008,7 @@ __STATIC_FORCEINLINE uint32_t __get_PSP(void)
 }
 
 
-#if (__ARM_FEATURE_CMSE == 3)
+#if defined (__ARM_FEATURE_CMSE) && (__ARM_FEATURE_CMSE == 3)
 /**
   \brief   Get Process Stack Pointer (non-secure)
   \details Returns the current value of the non-secure Process Stack Pointer (PSP) when in secure state.
@@ -1035,7 +1035,7 @@ __STATIC_FORCEINLINE void __set_PSP(uint32_t topOfProcStack)
 }
 
 
-#if (__ARM_FEATURE_CMSE == 3)
+#if defined (__ARM_FEATURE_CMSE) && (__ARM_FEATURE_CMSE == 3)
 /**
   \brief   Set Process Stack Pointer (non-secure)
   \details Assigns the given value to the non-secure Process Stack Pointer (PSP) when in secure state.
@@ -1062,7 +1062,7 @@ __STATIC_FORCEINLINE uint32_t __get_MSP(void)
 }
 
 
-#if (__ARM_FEATURE_CMSE == 3)
+#if defined (__ARM_FEATURE_CMSE) && (__ARM_FEATURE_CMSE == 3)
 /**
   \brief   Get Main Stack Pointer (non-secure)
   \details Returns the current value of the non-secure Main Stack Pointer (MSP) when in secure state.
@@ -1089,7 +1089,7 @@ __STATIC_FORCEINLINE void __set_MSP(uint32_t topOfMainStack)
 }
 
 
-#if (__ARM_FEATURE_CMSE == 3)
+#if defined (__ARM_FEATURE_CMSE) && (__ARM_FEATURE_CMSE == 3)
 /**
   \brief   Set Main Stack Pointer (non-secure)
   \details Assigns the given value to the non-secure Main Stack Pointer (MSP) when in secure state.
@@ -1102,7 +1102,7 @@ __STATIC_FORCEINLINE void __TZ_set_MSP_NS(uint32_t topOfMainStack)
 #endif
 
 
-#if (__ARM_FEATURE_CMSE == 3)
+#if defined (__ARM_FEATURE_CMSE) && (__ARM_FEATURE_CMSE == 3)
 /**
   \brief   Get Stack Pointer (non-secure)
   \details Returns the current value of the non-secure Stack Pointer (SP) when in secure state.
@@ -1143,7 +1143,7 @@ __STATIC_FORCEINLINE uint32_t __get_PRIMASK(void)
 }
 
 
-#if (__ARM_FEATURE_CMSE == 3)
+#if defined (__ARM_FEATURE_CMSE) && (__ARM_FEATURE_CMSE == 3)
 /**
   \brief   Get Priority Mask (non-secure)
   \details Returns the current state of the non-secure priority mask bit from the Priority Mask Register when in secure state.
@@ -1170,7 +1170,7 @@ __STATIC_FORCEINLINE void __set_PRIMASK(uint32_t priMask)
 }
 
 
-#if (__ARM_FEATURE_CMSE == 3)
+#if defined (__ARM_FEATURE_CMSE) && (__ARM_FEATURE_CMSE == 3)
 /**
   \brief   Set Priority Mask (non-secure)
   \details Assigns the given value to the non-secure Priority Mask Register when in secure state.
@@ -1220,7 +1220,7 @@ __STATIC_FORCEINLINE uint32_t __get_BASEPRI(void)
 }
 
 
-#if (__ARM_FEATURE_CMSE == 3)
+#if defined (__ARM_FEATURE_CMSE) && (__ARM_FEATURE_CMSE == 3)
 /**
   \brief   Get Base Priority (non-secure)
   \details Returns the current value of the non-secure Base Priority register when in secure state.
@@ -1247,7 +1247,7 @@ __STATIC_FORCEINLINE void __set_BASEPRI(uint32_t basePri)
 }
 
 
-#if (__ARM_FEATURE_CMSE == 3)
+#if defined (__ARM_FEATURE_CMSE) && (__ARM_FEATURE_CMSE == 3)
 /**
   \brief   Set Base Priority (non-secure)
   \details Assigns the given value to the non-secure Base Priority register when in secure state.
@@ -1286,7 +1286,7 @@ __STATIC_FORCEINLINE uint32_t __get_FAULTMASK(void)
 }
 
 
-#if (__ARM_FEATURE_CMSE == 3)
+#if defined (__ARM_FEATURE_CMSE) && (__ARM_FEATURE_CMSE == 3)
 /**
   \brief   Get Fault Mask (non-secure)
   \details Returns the current value of the non-secure Fault Mask register when in secure state.
@@ -1313,7 +1313,7 @@ __STATIC_FORCEINLINE void __set_FAULTMASK(uint32_t faultMask)
 }
 
 
-#if (__ARM_FEATURE_CMSE == 3)
+#if defined (__ARM_FEATURE_CMSE) && (__ARM_FEATURE_CMSE == 3)
 /**
   \brief   Set Fault Mask (non-secure)
   \details Assigns the given value to the non-secure Fault Mask register when in secure state.
@@ -1352,7 +1352,7 @@ __STATIC_FORCEINLINE uint32_t __get_PSPLIM(void)
 #endif
 }
 
-#if (__ARM_FEATURE_CMSE == 3)
+#if defined (__ARM_FEATURE_CMSE) && (__ARM_FEATURE_CMSE == 3)
 /**
   \brief   Get Process Stack Pointer Limit (non-secure)
   Devices without ARMv8-M Main Extensions (i.e. Cortex-M23) lack the non-secure
@@ -1398,7 +1398,7 @@ __STATIC_FORCEINLINE void __set_PSPLIM(uint32_t ProcStackPtrLimit)
 }
 
 
-#if (__ARM_FEATURE_CMSE == 3)
+#if defined (__ARM_FEATURE_CMSE) && (__ARM_FEATURE_CMSE == 3)
 /**
   \brief   Set Process Stack Pointer (non-secure)
   Devices without ARMv8-M Main Extensions (i.e. Cortex-M23) lack the non-secure
@@ -1443,7 +1443,7 @@ __STATIC_FORCEINLINE uint32_t __get_MSPLIM(void)
 }
 
 
-#if (__ARM_FEATURE_CMSE == 3)
+#if defined (__ARM_FEATURE_CMSE) && (__ARM_FEATURE_CMSE == 3)
 /**
   \brief   Get Main Stack Pointer Limit (non-secure)
   Devices without ARMv8-M Main Extensions (i.e. Cortex-M23) lack the non-secure
@@ -1488,7 +1488,7 @@ __STATIC_FORCEINLINE void __set_MSPLIM(uint32_t MainStackPtrLimit)
 }
 
 
-#if (__ARM_FEATURE_CMSE == 3)
+#if defined (__ARM_FEATURE_CMSE) && (__ARM_FEATURE_CMSE == 3)
 /**
   \brief   Set Main Stack Pointer Limit (non-secure)
   Devices without ARMv8-M Main Extensions (i.e. Cortex-M23) lack the non-secure
