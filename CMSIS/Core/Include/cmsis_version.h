@@ -1,11 +1,5 @@
-/**************************************************************************//**
- * @file     cmsis_version.h
- * @brief    CMSIS Core(M) Version definitions
- * @version  V5.0.5
- * @date     02. February 2022
- ******************************************************************************/
 /*
- * Copyright (c) 2009-2022 ARM Limited. All rights reserved.
+ * Copyright (c) 2009-2023 ARM Limited. All rights reserved.
  *
  * SPDX-License-Identifier: Apache-2.0
  *
@@ -20,6 +14,10 @@
  * WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  * See the License for the specific language governing permissions and
  * limitations under the License.
+ */
+
+/*
+ * CMSIS Core Version definitions
  */
 
 #if   defined ( __ICCARM__ )
