@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['c_0',['C',['../unionSCTLR__Type.html#a122a4dde5ab1a27855ddad88bb3f9f78',1,'SCTLR_Type::C()'],['../unionCPSR__Type.html#aa967d0e42ed00bd886b2c6df6f49a7e2',1,'CPSR_Type::C()']]],
+  ['c_0',['C',['../unionCPSR__Type.html#aa967d0e42ed00bd886b2c6df6f49a7e2',1,'CPSR_Type::C()'],['../unionSCTLR__Type.html#a122a4dde5ab1a27855ddad88bb3f9f78',1,'SCTLR_Type::C()']]],
   ['cache_20and_20branch_20predictor_20maintenance_20operations_1',['Cache and branch predictor maintenance operations',['../group__CMSIS__CBPM.html',1,'']]],
   ['cache_5fid_2',['CACHE_ID',['../structL2C__310__TypeDef.html#a87833c2acdf685d6ad6d0811f45677d7',1,'L2C_310_TypeDef']]],
   ['cache_5fsync_3',['CACHE_SYNC',['../structL2C__310__TypeDef.html#ab9b9d1842b5d9e828a6825533ab80c0f',1,'L2C_310_TypeDef']]],

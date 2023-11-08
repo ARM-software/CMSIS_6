@@ -52,7 +52,7 @@ var searchData=
   ['socketsetopt_49',['SocketSetOpt',['../group__wifi__interface__gr.html#acc1d2021f95fea959902e5e85f793d34',1,'ARM_DRIVER_WIFI']]],
   ['software_5fattacks_50',['software_attacks',['../Driver__Storage_8h.html#a1b6a0329dd65f25a0ab22496ab708306',1,'ARM_STORAGE_SECURITY_FEATURES']]],
   ['speed_51',['speed',['../group__eth__interface__gr.html#a220859a8b5da0232739a11cbe7f79fc5',1,'ARM_ETH_LINK_INFO::speed()'],['../group__usbd__interface__gr.html#a220859a8b5da0232739a11cbe7f79fc5',1,'ARM_USBD_STATE::speed()'],['../group__usbh__host__gr.html#a220859a8b5da0232739a11cbe7f79fc5',1,'ARM_USBH_PORT_STATE::speed()']]],
-  ['ssid_52',['ssid',['../group__wifi__management__gr.html#ae7eccb3e4df8625b86b5572fc16c37c3',1,'ARM_WIFI_SCAN_INFO_t::ssid()'],['../group__wifi__management__gr.html#ae7eccb3e4df8625b86b5572fc16c37c3',1,'ARM_WIFI_NET_INFO_t::ssid()'],['../group__wifi__management__gr.html#a587ba0cb07f02913598610049a3bbb79',1,'ARM_WIFI_CONFIG_t::ssid()']]],
+  ['ssid_52',['ssid',['../group__wifi__management__gr.html#a587ba0cb07f02913598610049a3bbb79',1,'ARM_WIFI_CONFIG_t::ssid()'],['../group__wifi__management__gr.html#ae7eccb3e4df8625b86b5572fc16c37c3',1,'ARM_WIFI_SCAN_INFO_t::ssid()'],['../group__wifi__management__gr.html#ae7eccb3e4df8625b86b5572fc16c37c3',1,'ARM_WIFI_NET_INFO_t::ssid()']]],
   ['start_53',['start',['../group__flash__interface__gr.html#a61eb63d26b2fa6c2971603ceccffb14b',1,'ARM_FLASH_SECTOR']]],
   ['station_54',['station',['../group__wifi__control__gr.html#a3c9e76f6560429efd6dcc41ffd4b67b9',1,'ARM_WIFI_CAPABILITIES']]],
   ['station_5fap_55',['station_ap',['../group__wifi__control__gr.html#ad280904e2429375205c09e53fe8cdcb1',1,'ARM_WIFI_CAPABILITIES']]],

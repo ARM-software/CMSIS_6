@@ -8,8 +8,8 @@ get_versions() {
   local folders=($(find -maxdepth 1  -mindepth 1 -type d) $(find -maxdepth 1 -mindepth 1 -type l))
   declare -A versions
   for folder in ${folders[*]#./}; do
-    if [ -f $folder/$1/html/footer.js ]; then
-      version=$(grep "Version" $folder/$1/html/footer.js | \
+    if [ -f $folder/$1/footer.js ]; then
+      version=$(grep "Version" $folder/$1/footer.js | \
                 sed -r "s/.*'Version ([^']+)'.*/\1/" | \
                 sed -r "s/\+.*$//" | \
                 sed -r "s/([^0-9])$/\10/")
@@ -21,7 +21,7 @@ get_versions() {
       fields+=( "\"${versions[$version]}\": \"$version\"" )
   done
   
-  echo "    $1: {"
+  echo "    \"$1\": {"
   echo -n "        "
   echo $(IFS=,; echo "${fields[*]}") | sed 's/,/,\n        /g'
   echo -n "    }"

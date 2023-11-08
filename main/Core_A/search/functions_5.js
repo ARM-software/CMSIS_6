@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['pl1_5fgetcontrol_0',['PL1_GetControl',['../group__PL1__timer__functions.html#gaf7fda3fe3452565fbe46cb0ea53a9f8a',1,'PL1_GetControl():&#160;core_ca.h'],['../group__PL1__timer__functions.html#gaf7fda3fe3452565fbe46cb0ea53a9f8a',1,'PL1_GetControl(void):&#160;core_ca.h']]],
+  ['pl1_5fgetcontrol_0',['PL1_GetControl',['../group__PL1__timer__functions.html#gaf7fda3fe3452565fbe46cb0ea53a9f8a',1,'PL1_GetControl(void):&#160;core_ca.h'],['../group__PL1__timer__functions.html#gaf7fda3fe3452565fbe46cb0ea53a9f8a',1,'PL1_GetControl():&#160;core_ca.h']]],
   ['pl1_5fgetcurrentphysicalvalue_1',['PL1_GetCurrentPhysicalValue',['../group__PL1__timer__functions.html#gac66bd336d2353f70aa8ebfc73aa3fc43',1,'PL1_GetCurrentPhysicalValue(void):&#160;core_ca.h'],['../group__PL1__timer__functions.html#gac66bd336d2353f70aa8ebfc73aa3fc43',1,'PL1_GetCurrentPhysicalValue(void):&#160;core_ca.h']]],
   ['pl1_5fgetcurrentvalue_2',['PL1_GetCurrentValue',['../group__PL1__timer__functions.html#ga8a212e9457005edfb9f14afbf937ebf9',1,'PL1_GetCurrentValue(void):&#160;core_ca.h'],['../group__PL1__timer__functions.html#ga8a212e9457005edfb9f14afbf937ebf9',1,'PL1_GetCurrentValue():&#160;core_ca.h']]],
   ['pl1_5fgetphysicalcomparevalue_3',['PL1_GetPhysicalCompareValue',['../group__PL1__timer__functions.html#ga341ae7d1ae29f4dc5dae6310fa453164',1,'PL1_GetPhysicalCompareValue(void):&#160;core_ca.h'],['../group__PL1__timer__functions.html#ga341ae7d1ae29f4dc5dae6310fa453164',1,'PL1_GetPhysicalCompareValue(void):&#160;core_ca.h']]],
