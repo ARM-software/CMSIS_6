@@ -1,7 +1,7 @@
 function writeHeader() {
-    document.write('Version 04de644d');
+    document.write('Version 6453c8a2');
 };
 
 function writeFooter()  {
-    document.write('Generated on Mon Nov  6 2023 13:21:36 for CMSIS-Toolbox 04de644d. Copyright &copy; 2023 Arm Limited (or its affiliates). All rights reserved.');
+    document.write('Generated on Wed Nov  8 2023 11:38:31 for CMSIS-Toolbox 6453c8a2. Copyright &copy; 2023 Arm Limited (or its affiliates). All rights reserved.');
 };
