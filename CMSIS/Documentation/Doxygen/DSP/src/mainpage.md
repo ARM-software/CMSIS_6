@@ -10,7 +10,7 @@
 
 ## Access to CMSIS-DSP
 
-CMSIS-DSP is actively maintained in a dedicated GitHub repository and is also published as a standalone release in [CMSIS Pack format]().
+CMSIS-DSP is actively maintained in a GitHub repository and is released as a standalone package in the CMSIS-Pack format.
 
  - [**CMSIS-DSP GitHub Repo**](https://github.com/ARM-software/CMSIS-DSP) provides the full source code of CMSIS-DSP functions.
  - [**CMSIS-DSP Documentation**](https://arm-software.github.io/CMSIS-DSP/latest/) explains how to use the library and describes the implemented functions in details.
