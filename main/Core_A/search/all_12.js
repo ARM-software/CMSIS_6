@@ -106,7 +106,7 @@ var searchData=
   ['spendsgir_103',['SPENDSGIR',['../structGICDistributor__Type.html#ae40b4a50d9766c2bbf57441f68094f41',1,'GICDistributor_Type']]],
   ['stack_20pointer_20_28sp_2fr13_29_104',['Stack Pointer (SP/R13)',['../group__CMSIS__SP.html',1,'']]],
   ['startup_20file_20startup_5f_3cdevice_3e_2ec_105',['Startup File startup_&lt;Device&gt;.c',['../startup_c_pg.html',1,'templates_pg']]],
-  ['status_106',['STATUS',['../unionIFSR__Type.html#a543066fc60d5b63478cc85ba082524d4',1,'IFSR_Type::STATUS()'],['../unionDFSR__Type.html#a4cb3ba7b8c8075bfbff792b7e5b88103',1,'DFSR_Type::STATUS()']]],
+  ['status_106',['STATUS',['../unionDFSR__Type.html#a4cb3ba7b8c8075bfbff792b7e5b88103',1,'DFSR_Type::STATUS()'],['../unionIFSR__Type.html#a543066fc60d5b63478cc85ba082524d4',1,'IFSR_Type::STATUS()']]],
   ['statusr_107',['STATUSR',['../structGICInterface__Type.html#abd978b408fb69b7887be2c422f48ce7e',1,'GICInterface_Type::STATUSR()'],['../structGICDistributor__Type.html#ae24f260e27065660a2059803293084f2',1,'GICDistributor_Type::STATUSR()']]],
   ['strongly_5fordered_108',['STRONGLY_ORDERED',['../core__ca_8h.html#ga83ac8de9263f89879079da521e86d5f2a0a4d347de23312717e6e57b04f0b014e',1,'core_ca.h']]],
   ['sw_109',['SW',['../unionSCTLR__Type.html#a6598f817304ccaef4509843ce041de1c',1,'SCTLR_Type']]],

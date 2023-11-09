@@ -19,7 +19,7 @@ var searchData=
   ['erase_5funit_16',['erase_unit',['../group__storage__interface__gr.html#aac21d3f798c9fcad415b99cf4157935a',1,'ARM_STORAGE_BLOCK_ATTRIBUTES']]],
   ['eraseall_17',['EraseAll',['../group__storage__interface__gr.html#ae1c3482cb5e2e25acfdd267115952dff',1,'ARM_DRIVER_STORAGE']]],
   ['erasechip_18',['EraseChip',['../group__flash__interface__gr.html#ae5f2734d17c3ab6219fd09d5a4dcb16f',1,'ARM_DRIVER_FLASH']]],
-  ['erased_5fvalue_19',['erased_value',['../group__flash__interface__gr.html#a85c3826bf20669d38e466dfd376994db',1,'ARM_FLASH_INFO::erased_value()'],['../group__storage__interface__gr.html#a902510dbedab116ab6a260a83fbd0f27',1,'ARM_STORAGE_INFO::erased_value()']]],
+  ['erased_5fvalue_19',['erased_value',['../group__storage__interface__gr.html#a902510dbedab116ab6a260a83fbd0f27',1,'ARM_STORAGE_INFO::erased_value()'],['../group__flash__interface__gr.html#a85c3826bf20669d38e466dfd376994db',1,'ARM_FLASH_INFO::erased_value()']]],
   ['erasesector_20',['EraseSector',['../group__flash__interface__gr.html#acf570dd7e8af7662033610c39a8a3c31',1,'ARM_DRIVER_FLASH']]],
   ['error_21',['error',['../group__flash__interface__gr.html#aa8d183302fdfa4a6892f1d80300cdb32',1,'ARM_FLASH_STATUS::error()'],['../group__storage__interface__gr.html#aa8d183302fdfa4a6892f1d80300cdb32',1,'ARM_STORAGE_STATUS::error()']]],
   ['esi_22',['esi',['../group__can__interface__gr.html#ada78e3124de6adf5a5d212f9ebc4bbe0',1,'ARM_CAN_MSG_INFO']]],
