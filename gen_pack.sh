@@ -102,7 +102,9 @@ function postprocess() {
 
 ############ DO NOT EDIT BELOW ###########
 
-if [[ -d ${GEN_PACK_LIB} ]]; then
+# Set GEN_PACK_LIB_PATH to use a specific gen-pack library root
+# ... instead of bootstrap based on REQUIRED_GEN_PACK_LIB
+if [[ -f "${GEN_PACK_LIB_PATH}/gen-pack" ]]; then
   . "${GEN_PACK_LIB}/gen-pack"
 else
   . <(curl -sL "https://raw.githubusercontent.com/Open-CMSIS-Pack/gen-pack/main/bootstrap")

@@ -7,3 +7,6 @@ ignoreerrors=
     ../tab_a.png
     ../tab_ad.png
     
+[filtering]
+ignorewarnings=
+    http-redirected

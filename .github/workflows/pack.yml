@@ -30,7 +30,6 @@ jobs:
           doxygen-version: 1.9.6
           packchk-version: 1.3.98
           gen-doc-script: ./CMSIS/Documentation/Doxygen/gen_doc.sh
-          check-links-script: ./CMSIS/Documentation/Doxygen/check_links.sh
           doc-path: ./CMSIS/Documentation/html
           gen-pack-script: ./gen_pack.sh --no-preprocess
           gen-pack-output: ./output
