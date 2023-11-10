@@ -797,7 +797,7 @@ FILE_VERSION_FILTER    =
 # DoxygenLayout.xml, doxygen will parse it automatically even if the LAYOUT_FILE
 # tag is left empty.
 
-LAYOUT_FILE            = ../style_template/Layout_forUser.xml
+LAYOUT_FILE            = ../style_template/layout.xml
 
 # The CITE_BIB_FILES tag can be used to specify one or more bib files containing
 # the reference definitions. This must be a list of .bib files. The .bib
@@ -1417,6 +1417,8 @@ HTML_STYLESHEET        =
 HTML_EXTRA_STYLESHEET  = ../style_template/extra_stylesheet.css \
                          ../style_template/extra_navtree.css \
                          ../style_template/extra_search.css \
+                         ../style_template/extra_tabs.css \
+                         ../style_template/version.css
 
 # The HTML_EXTRA_FILES tag can be used to specify one or more extra images or
 # other source files which should be copied to the HTML output directory. Note
@@ -1426,10 +1428,8 @@ HTML_EXTRA_STYLESHEET  = ../style_template/extra_stylesheet.css \
 # files will be copied as-is; there are no commands or markers available.
 # This tag requires that the tag GENERATE_HTML is set to YES.
 
-HTML_EXTRA_FILES       = ../style_template/tabs.css \
-                         ../style_template/version.css \
-                         ../style_template/tab_b.png \
-                         ../style_template/printComponentTabs.js \
+HTML_EXTRA_FILES       = ../style_template/tab_b.png \
+                         ../style_template/tabs.js \
                          ../style_template/darkmode_toggle.js \
                          ../style_template/navtree.js \
                          ../style_template/dropdown.png
@@ -1774,7 +1774,7 @@ ENUM_VALUES_PER_LINE   = 1
 # Minimum value: 0, maximum value: 1500, default value: 250.
 # This tag requires that the tag GENERATE_HTML is set to YES.
 
-TREEVIEW_WIDTH         = 250
+TREEVIEW_WIDTH         = 330
 
 # If the EXT_LINKS_IN_WINDOW option is set to YES, doxygen will open links to
 # external symbols imported via tag files in a separate window.
