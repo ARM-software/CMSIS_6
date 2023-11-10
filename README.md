@@ -7,9 +7,9 @@
 ## Useful Links
 
  - [**Documentation of latest release**](https://arm-software.github.io/CMSIS_6/) -  access to the CMSIS user's manual.
- - [**CMSIS Components**](https://arm-software.github.io/CMSIS_6/latest/General/html/index.html#cmsis_components) - overview of software, tools, and specification.
+ - [**CMSIS Components**](https://arm-software.github.io/CMSIS_6/latest/General/index.html#cmsis_components) - overview of software, tools, and specification.
  - [**Raise Issues**](https://github.com/ARM-software/CMSIS_6#issues-and-labels) - to provide feedback or report problems.
- - [**Documentation of development branch**](https://arm-software.github.io/CMSIS_6/develop/General/html/index.html) - updated from time to time (use [Generate CMSIS Pack for Release](https://github.com/ARM-software/CMSIS_6#generate-cmsis-pack-for-release) for local generation).
+ - [**Documentation of development branch**](https://arm-software.github.io/CMSIS_6/develop/General/index.html) - updated from time to time (use [Generate CMSIS Pack for Release](https://github.com/ARM-software/CMSIS_6#generate-cmsis-pack-for-release) for local generation).
 
 ## Other related GitHub repositories
 

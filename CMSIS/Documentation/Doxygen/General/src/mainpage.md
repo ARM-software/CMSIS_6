@@ -8,7 +8,7 @@ CMSIS has been created to help the industry in standardization. It enables consi
 
 ## CMSIS Components {#cmsis_components}
 
-![CMSIS Structure](./images/cmsis_components.png)
+![CMSIS Components Overview](./images/cmsis_components.png)
 
 <h2>CMSIS Base Software Components</h2>
 
@@ -16,13 +16,13 @@ CMSIS has been created to help the industry in standardization. It enables consi
  - Maintained in the same GitHub repository and delivered as one \ref cmsis_pack with the name `Arm::CMSIS`.
 <div class="tiles">
   <div class="tile" onclick="document.location='../Core/index.html'">
-    <span class="tileh h2">CMSIS-Core</span><span class="tiletxt">Standardized access to Arm Cortex processor cores</span><span class="tilelinks"><a href="https://arm-software.github.io/CMSIS_6/latest/Core/html/index.html">Guide</a> | <a href="https://github.com/ARM-software/CMSIS_6">GitHub</a> | <a href="https://www.keil.arm.com/packs/cmsis-arm/versions/">Pack</a></span>
+    <span class="tileh h2">CMSIS-Core</span><span class="tiletxt">Standardized access to Arm Cortex processor cores</span><span class="tilelinks"><a href="https://arm-software.github.io/CMSIS_6/latest/Core/index.html">Guide</a> | <a href="https://github.com/ARM-software/CMSIS_6">GitHub</a> | <a href="https://www.keil.arm.com/packs/cmsis-arm/versions/">Pack</a></span>
   </div>
 <div class="tile" onclick="document.location='../Driver/index.html'">
-    <span class="tileh h2">CMSIS-Driver</span><span class="tiletxt">Generic peripheral driver interfaces for middleware</span><span class="tilelinks"><a href="https://arm-software.github.io/CMSIS_6/latest/Driver/html/index.html">Guide</a> | <a href="https://github.com/ARM-software/CMSIS_6">GitHub</a> | <a href="https://www.keil.arm.com/packs/cmsis-arm/versions/">Pack</a></span>
+    <span class="tileh h2">CMSIS-Driver</span><span class="tiletxt">Generic peripheral driver interfaces for middleware</span><span class="tilelinks"><a href="https://arm-software.github.io/CMSIS_6/latest/Driver/index.html">Guide</a> | <a href="https://github.com/ARM-software/CMSIS_6">GitHub</a> | <a href="https://www.keil.arm.com/packs/cmsis-arm/versions/">Pack</a></span>
   </div>
   <div class="tile" onclick="document.location='../RTOS2/index.html'">
-   <span class="tileh h2">CMSIS-RTOS2</span><span class="tiletxt">Common API for real-time operating systems</span><span class="tilelinks"><a href="https://arm-software.github.io/CMSIS_6/latest/RTOS2/html/index.html">Guide</a> | <a href="https://github.com/ARM-software/CMSIS_6">GitHub</a> | <a href="https://www.keil.arm.com/packs/cmsis-arm/versions/">Pack</a></span>
+   <span class="tileh h2">CMSIS-RTOS2</span><span class="tiletxt">Common API for real-time operating systems</span><span class="tilelinks"><a href="https://arm-software.github.io/CMSIS_6/latest/RTOS2/index.html">Guide</a> | <a href="https://github.com/ARM-software/CMSIS_6">GitHub</a> | <a href="https://www.keil.arm.com/packs/cmsis-arm/versions/">Pack</a></span>
   </div>
 </div>
 
