@@ -932,25 +932,25 @@ INPUT                  = ./src/mainpage.md \
                          ./src/core_files_in_packs.md \
                          ./src/misra.md \
                          ./src/register_mapping.md \
-                         ./src/Ref_DevCaps.txt \
-                         ./src/Ref_VersionControl.txt \
-                         ./src/Ref_CompilerControl.txt \
-                         ./src/Ref_Peripheral.txt \
-                         ./src/Ref_SystemAndClock.txt \
-                         ./src/Ref_NVIC.txt \
-                         ./src/Ref_CoreRegister.txt \
-                         ./src/Ref_cmInstr.txt \
-                         ./src/Ref_cm4_simd.txt \
-                         ./src/Ref_FPU.txt \
-                         ./src/Ref_MVE.txt \
-                         ./src/Ref_MPU.txt \
-                         ./src/Ref_MPU8.txt \
-                         ./src/Ref_PMU8.txt \
-                         ./src/Ref_Systick.txt \
-                         ./src/Ref_Debug.txt \
-                         ./src/Ref_Trustzone.txt \
-                         ./src/core_cm7.txt \
-                         ./src/Ref_DataStructs.txt
+                         ./src/ref_device_caps.txt \
+                         ./src/ref_version_ctrl.txt \
+                         ./src/ref_compiler_ctrl.txt \
+                         ./src/ref_peripheral.txt \
+                         ./src/ref_system_init.txt \
+                         ./src/ref_nvic.txt \
+                         ./src/ref_core_reg.txt \
+                         ./src/ref_cm_instr.txt \
+                         ./src/ref_cm4_simd.txt \
+                         ./src/ref_fpu.txt \
+                         ./src/ref_mve.txt \
+                         ./src/ref_mpu.txt \
+                         ./src/ref_mpu8.txt \
+                         ./src/ref_pmu8.txt \
+                         ./src/ref_systick.txt \
+                         ./src/ref_debug.txt \
+                         ./src/ref_trustzone.txt \
+                         ./src/ref_cm7_cache.txt \
+                         ./src/ref_data_structs.txt
 
 # This tag can be used to specify the character encoding of the source files
 # that doxygen parses. Internally doxygen uses the UTF-8 encoding. Doxygen uses

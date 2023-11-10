@@ -926,15 +926,15 @@ INPUT                  = ./src/mainpage.md \
                          ./../../../Core/Include/a-profile/cmsis_cp15.h \
                          ./../../../Core/Include/a-profile/irq_ctrl.h \
                          ./../../../Core/Source/irq_ctrl_gic.c \
-                         ./src/Ref_SystemAndClock.txt \
-                         ./src/Ref_GIC.txt \
-                         ./src/Ref_CoreRegister.txt \
-                         ./src/Ref_Cache.txt \
-                         ./src/Ref_Timer.txt \
-                         ./src/Ref_MMU.txt \
-                         ./src/core_ca.txt \
-                         ./src/Ref_CompilerControl.txt \
-                         ./src/Ref_IRQCtrl.txt \
+                         ./src/ref_system_init.txt \
+                         ./src/ref_gic.txt \
+                         ./src/ref_core_reg.txt \
+                         ./src/ref_cache.txt \
+                         ./src/ref_timer.txt \
+                         ./src/ref_mmu.txt \
+                         ./src/ref_core_ca.txt \
+                         ./src/ref_compiler_ctrl.txt \
+                         ./src/ref_irq_ctrl.txt \
 
 # This tag can be used to specify the character encoding of the source files
 # that doxygen parses. Internally doxygen uses the UTF-8 encoding. Doxygen uses

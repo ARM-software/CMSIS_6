@@ -928,19 +928,19 @@ INPUT                  = ./src/mainpage.md \
                          ./src/using.md \
                          ./src/processIsolation.md \
                          ./src/validation.md \
-                         ./src/cmsis_os2_Groups.txt \
-                         ./src/cmsis_os2_Kernel.txt \
-                         ./src/cmsis_os2_Thread.txt \
-                         ./src/cmsis_os2_ThreadFlags.txt \
-                         ./src/cmsis_os2_Event.txt \
-                         ./src/cmsis_os2_Wait.txt \
-                         ./src/cmsis_os2_Timer.txt \
-                         ./src/cmsis_os2_Mutex.txt \
-                         ./src/cmsis_os2_Sema.txt  \
-                         ./src/cmsis_os2_MemPool.txt \
-                         ./src/cmsis_os2_Message.txt \
-                         ./src/cmsis_os2_Status.txt \
-                         ./src/cmsis_os2_Tick.txt \
+                         ./src/ref_cmsis_os2_groups.txt \
+                         ./src/ref_cmsis_os2_kernel.txt \
+                         ./src/ref_cmsis_os2_thread.txt \
+                         ./src/ref_cmsis_os2_thread_flags.txt \
+                         ./src/ref_cmsis_os2_event.txt \
+                         ./src/ref_cmsis_os2_wait.txt \
+                         ./src/ref_cmsis_os2_timer.txt \
+                         ./src/ref_cmsis_os2_mutex.txt \
+                         ./src/ref_cmsis_os2_sema.txt  \
+                         ./src/ref_cmsis_os2_mem_pool.txt \
+                         ./src/ref_cmsis_os2_msg_queue.txt \
+                         ./src/ref_cmsis_os2_status.txt \
+                         ./src/ref_os_tick.txt \
                          ../../../RTOS2/Include/cmsis_os2.h \
                          ../../../RTOS2/Include/os_tick.h
 
