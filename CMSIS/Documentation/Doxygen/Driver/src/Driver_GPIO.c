@@ -139,8 +139,8 @@ int32_t ARM_GPIO_Setup (ARM_GPIO_Pin_t pin, ARM_GPIO_SignalEvent_t cb_event) {
 The function \b ARM_GPIO_Setup sets-up the specified \em pin as GPIO with default configuration.
 Pin is configured as input without pull-resistor and without event trigger.
 
-The parameter \em cb_event specifies a pointer to the \ref ARM_GPIO_SignalEvent callback function. 
-Use a NULL pointer when no callback events are required.
+The parameter \em cb_event specifies a pointer to the \ref ARM_GPIO_SignalEvent callback function to register. 
+Use a NULL pointer when no callback events are required or to deregister a callback function.
 **************************************************************************************************************************/
 
 int32_t ARM_GPIO_SetDirection (ARM_GPIO_Pin_t pin, ARM_GPIO_DIRECTION direction) {
@@ -200,6 +200,8 @@ Event trigger is specified with parameter \em trigger:
  - \ref ARM_GPIO_TRIGGER_RISING_EDGE : Rising-edge,
  - \ref ARM_GPIO_TRIGGER_FALLING_EDGE : Falling-edge,
  - \ref ARM_GPIO_TRIGGER_EITHER_EDGE : Either edge (rising and falling).
+
+\note To disable event trigger use trigger parameter \ref ARM_GPIO_TRIGGER_NONE.
 **************************************************************************************************************************/
 
 void ARM_GPIO_SetOutput (ARM_GPIO_Pin_t pin, uint32_t val) {
