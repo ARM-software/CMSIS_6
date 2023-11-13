@@ -664,7 +664,7 @@ Functions</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd><a class="el" href="group__execution__status.html">Status Error Codes</a></dd></dl>
 <p>The function <b>ARM_GPIO_Setup</b> sets-up the specified <em>pin</em> as GPIO with default configuration. Pin is configured as input without pull-resistor and without event trigger.</p>
-<p>The parameter <em>cb_event</em> specifies a pointer to the <a class="el" href="group__gpio__interface__gr.html#ga85dd1634405efb2eae2d3775ecdc6081">ARM_GPIO_SignalEvent</a> callback function. Use a NULL pointer when no callback events are required. </p>
+<p>The parameter <em>cb_event</em> specifies a pointer to the <a class="el" href="group__gpio__interface__gr.html#ga85dd1634405efb2eae2d3775ecdc6081">ARM_GPIO_SignalEvent</a> callback function to register. Use a NULL pointer when no callback events are required or to deregister a callback function. </p>
 
 </div>
 </div>
@@ -840,8 +840,9 @@ Functions</h2></td></tr>
 <li><a class="el" href="Driver__GPIO_8h.html#ga0df966ec6b2ebedd7880a3efc75976cda93171249f006c83b7661df73d976556d">ARM_GPIO_TRIGGER_NONE</a> : None (default),</li>
 <li><a class="el" href="Driver__GPIO_8h.html#ga0df966ec6b2ebedd7880a3efc75976cdaba20b1e31878cce514240db48ff72936">ARM_GPIO_TRIGGER_RISING_EDGE</a> : Rising-edge,</li>
 <li><a class="el" href="Driver__GPIO_8h.html#ga0df966ec6b2ebedd7880a3efc75976cdafa65dc9f0e518b4d640e69e194ffd847">ARM_GPIO_TRIGGER_FALLING_EDGE</a> : Falling-edge,</li>
-<li><a class="el" href="Driver__GPIO_8h.html#ga0df966ec6b2ebedd7880a3efc75976cdaf08214415e90ef3b65e3438b1b523873">ARM_GPIO_TRIGGER_EITHER_EDGE</a> : Either edge (rising and falling). </li>
+<li><a class="el" href="Driver__GPIO_8h.html#ga0df966ec6b2ebedd7880a3efc75976cdaf08214415e90ef3b65e3438b1b523873">ARM_GPIO_TRIGGER_EITHER_EDGE</a> : Either edge (rising and falling).</li>
 </ul>
+<dl class="section note"><dt>Note</dt><dd>To disable event trigger use trigger parameter <a class="el" href="Driver__GPIO_8h.html#ga0df966ec6b2ebedd7880a3efc75976cda93171249f006c83b7661df73d976556d">ARM_GPIO_TRIGGER_NONE</a>. </dd></dl>
 
 </div>
 </div>
