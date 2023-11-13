@@ -2,6 +2,10 @@ FROM  --platform=linux/amd64 ubuntu:22.04
 
 SHELL ["/bin/bash", "-c"]
 
+ARG USERNAME=user
+ARG USER_UID=1000
+ARG USER_GID=$USER_UID
+
 ARG DEBIAN_FRONTEND=noninteractive 
 
 RUN apt-get update && \
@@ -9,29 +13,47 @@ RUN apt-get update && \
         build-essential \
         curl \
         gdb \
+        gh \
+        git \
         less \
+        libncurses5 \
+        libtinfo5 \
+        llvm-15-tools \
+        locales \
+        nano \
         python3 \
         python3-pip \
         python-is-python3 \
-        git \
-        libtinfo5 \
-        llvm-15-tools \
+        software-properties-common \
+        sudo \
         unzip && \
     ln -s /usr/bin/FileCheck-15 /usr/bin/FileCheck
+
+RUN add-apt-repository ppa:deadsnakes/ppa && \
+    apt-get -y install libpython3.9
+
+RUN echo "en_US.UTF-8 UTF-8" >> /etc/locale.gen && \
+    locale-gen
 
 RUN pip install \
         lit \
         python-matrix-runner
 
-RUN bash -c "$(curl -fsSL https://raw.githubusercontent.com/ohmybash/oh-my-bash/master/tools/install.sh)" && \
-    sed -i 's/OSH_THEME="font"/OSH_THEME="powerline"/' ~/.bashrc
+# Create the user
+RUN groupadd --gid $USER_GID $USERNAME \
+    && useradd --uid $USER_UID --gid $USER_GID -m $USERNAME -s /bin/bash \
+    && echo $USERNAME ALL=\(root\) NOPASSWD:ALL > /etc/sudoers.d/$USERNAME \
+    && chmod 0440 /etc/sudoers.d/$USERNAME
 
-ADD vcpkg-configuration.json /root/
+RUN mkdir -p /workspaces && \
+    chown $USER_UID:$USER_GID /workspaces
 
-RUN pushd /root && \
-    . <(curl https://aka.ms/vcpkg-init.sh -L) && \
-    echo "\n# Initialize vcpkg\n. /root/.vcpkg/vcpkg-init" >> .bashrc && \
-    vcpkg x-update-registry --all && \
-    vcpkg activate
+ADD vcpkg-configuration.json /home/
+ADD postCreateCommand.sh /home/
+
+RUN chmod +x /home/postCreateCommand.sh
+
+USER $USERNAME
+WORKDIR /home/$USERNAME
 
 CMD ["/bin/bash"]
