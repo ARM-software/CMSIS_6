@@ -7,6 +7,6 @@ var searchData=
   ['non_5fsecure_4',['NON_SECURE',['../core__ca_8h.html#gac3d277641df9fb3bb3b555e2e79dd639a9e08ca26fdda38ef731f13e4f058ef6f',1,'core_ca.h']]],
   ['non_5fshared_5',['NON_SHARED',['../core__ca_8h.html#gab884a11fa8d094573ab77fb1c0f8d8a7a4a237208271e450df0a72c07169683b4',1,'core_ca.h']]],
   ['non_5fshared_5fdevice_6',['NON_SHARED_DEVICE',['../core__ca_8h.html#ga83ac8de9263f89879079da521e86d5f2a765e5cbb28da82e4d8f7e94fce32a7e0',1,'core_ca.h']]],
-  ['nonsecurephytimer_5firqn_7',['NonSecurePhyTimer_IRQn',['../group__irq__ctrl__gr.html#gga7e1129cd8a196f4284d41db3e82ad5c8aff0bcb9be41e2ba389f9bf1d5f403145',1,'Ref_IRQCtrl.txt']]],
+  ['nonsecurephytimer_5firqn_7',['NonSecurePhyTimer_IRQn',['../group__irq__ctrl__gr.html#gga7e1129cd8a196f4284d41db3e82ad5c8aff0bcb9be41e2ba389f9bf1d5f403145',1,'ref_irq_ctrl.txt']]],
   ['normal_8',['NORMAL',['../core__ca_8h.html#ga83ac8de9263f89879079da521e86d5f2a50d1448013c6f17125caee18aa418af7',1,'core_ca.h']]]
 ];

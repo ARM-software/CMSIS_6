@@ -6,14 +6,10 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
 <title>CMSIS-Core (Cortex-M): MPU Functions for Armv6-M/v7-M</title>
-<link href="doxygen.css" rel="stylesheet" type="text/css"/>
-<link href="tabs.css" rel="stylesheet" type="text/css"/>
-<link href="extra_navtree.css" rel="stylesheet" type="text/css"/>
-<link href="extra_stylesheet.css" rel="stylesheet" type="text/css"/>
-<link href="extra_search.css" rel="stylesheet" type="text/css"/>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
-<script type="text/javascript" src="printComponentTabs.js"></script>
+<script type="text/javascript" src="tabs.js"></script>
 <script type="text/javascript" src="footer.js"></script>
 <script type="text/javascript" src="navtree.js"></script>
 <link href="navtree.css" rel="stylesheet" type="text/css"/>
@@ -32,7 +28,8 @@
 <link href="extra_stylesheet.css" rel="stylesheet" type="text/css"/>
 <link href="extra_navtree.css" rel="stylesheet" type="text/css"/>
 <link href="extra_search.css" rel="stylesheet" type="text/css"/>
-<link href="version.css" rel="stylesheet" type="text/css" />
+<link href="extra_tabs.css" rel="stylesheet" type="text/css"/>
+<link href="version.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../version.js"></script>
 </head>
 <body>
@@ -202,7 +199,7 @@ Functions</h2></td></tr>
 <div class="ttc" id="agroup__mpu__functions_html_ga042ba1a6a1a58795231459ac0410b809"><div class="ttname"><a href="group__mpu__functions.html#ga042ba1a6a1a58795231459ac0410b809">ARM_MPU_SetRegionEx</a></div><div class="ttdeci">__STATIC_INLINE void ARM_MPU_SetRegionEx(uint32_t rnr, uint32_t rbar, uint32_t rasr)</div></div>
 <div class="ttc" id="agroup__mpu__functions_html_ga31406efd492ec9a091a70ffa2d8a42fb"><div class="ttname"><a href="group__mpu__functions.html#ga31406efd492ec9a091a70ffa2d8a42fb">ARM_MPU_Enable</a></div><div class="ttdeci">__STATIC_INLINE void ARM_MPU_Enable(uint32_t MPU_CTRL)</div><div class="ttdoc">Enable the memory protection unit (MPU) and.</div></div>
 <div class="ttc" id="agroup__mpu__functions_html_ga7cbc0a4a066ed90e85c8176228235d57"><div class="ttname"><a href="group__mpu__functions.html#ga7cbc0a4a066ed90e85c8176228235d57">ARM_MPU_Disable</a></div><div class="ttdeci">__STATIC_INLINE void ARM_MPU_Disable()</div></div>
-<div class="ttc" id="agroup__mpu__functions_html_ga96b93785c92e2dbcb3a2356c25bf2adc"><div class="ttname"><a href="group__mpu__functions.html#ga96b93785c92e2dbcb3a2356c25bf2adc">ARM_MPU_RASR</a></div><div class="ttdeci">#define ARM_MPU_RASR(DisableExec, AccessPermission, TypeExtField, IsShareable, IsCacheable, IsBufferable, SubRegionDisable, Size)</div><div class="ttdoc">MPU Region Attribute and Size Register Value.</div><div class="ttdef"><b>Definition:</b> Ref_MPU.txt:59</div></div>
+<div class="ttc" id="agroup__mpu__functions_html_ga96b93785c92e2dbcb3a2356c25bf2adc"><div class="ttname"><a href="group__mpu__functions.html#ga96b93785c92e2dbcb3a2356c25bf2adc">ARM_MPU_RASR</a></div><div class="ttdeci">#define ARM_MPU_RASR(DisableExec, AccessPermission, TypeExtField, IsShareable, IsCacheable, IsBufferable, SubRegionDisable, Size)</div><div class="ttdoc">MPU Region Attribute and Size Register Value.</div><div class="ttdef"><b>Definition:</b> ref_mpu.txt:59</div></div>
 </div><!-- fragment --> <h2 class="groupheader">Macro Definition Documentation</h2>
 <a id="ga96b93785c92e2dbcb3a2356c25bf2adc" name="ga96b93785c92e2dbcb3a2356c25bf2adc"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ga96b93785c92e2dbcb3a2356c25bf2adc">&#9670;&#160;</a></span>ARM_MPU_RASR</h2>
@@ -523,10 +520,10 @@ Functions</h2></td></tr>
 <div class="line">{</div>
 <div class="line">   <a class="code hl_function" href="group__mpu__functions.html#gafa27b26d5847fa8e465584e376b6078a">ARM_MPU_Load</a>(mpuTable[idx], 4);</div>
 <div class="line">}</div>
-<div class="ttc" id="agroup__mpu__functions_html_ga3fead12dc24a6d00ad53f55a042486ca"><div class="ttname"><a href="group__mpu__functions.html#ga3fead12dc24a6d00ad53f55a042486ca">ARM_MPU_RBAR</a></div><div class="ttdeci">#define ARM_MPU_RBAR(Region, BaseAddress)</div><div class="ttdoc">MPU Region Base Address Register Value.</div><div class="ttdef"><b>Definition:</b> Ref_MPU.txt:41</div></div>
+<div class="ttc" id="agroup__mpu__functions_html_ga3fead12dc24a6d00ad53f55a042486ca"><div class="ttname"><a href="group__mpu__functions.html#ga3fead12dc24a6d00ad53f55a042486ca">ARM_MPU_RBAR</a></div><div class="ttdeci">#define ARM_MPU_RBAR(Region, BaseAddress)</div><div class="ttdoc">MPU Region Base Address Register Value.</div><div class="ttdef"><b>Definition:</b> ref_mpu.txt:41</div></div>
 <div class="ttc" id="agroup__mpu__functions_html_gafa27b26d5847fa8e465584e376b6078a"><div class="ttname"><a href="group__mpu__functions.html#gafa27b26d5847fa8e465584e376b6078a">ARM_MPU_Load</a></div><div class="ttdeci">__STATIC_INLINE void ARM_MPU_Load(MPU_Region_t const *table, uint32_t cnt)</div></div>
-<div class="ttc" id="astructARM__MPU__Region__t_html"><div class="ttname"><a href="structARM__MPU__Region__t.html">ARM_MPU_Region_t</a></div><div class="ttdoc">Setup information of a single MPU Region.</div><div class="ttdef"><b>Definition:</b> Ref_MPU.txt:84</div></div>
-<div class="ttc" id="astructARM__MPU__Region__t_html_afe7a7721aa08988d915670efa432cdd2"><div class="ttname"><a href="structARM__MPU__Region__t.html#afe7a7721aa08988d915670efa432cdd2">ARM_MPU_Region_t::RBAR</a></div><div class="ttdeci">uint32_t RBAR</div><div class="ttdoc">The region base address register value (RBAR)</div><div class="ttdef"><b>Definition:</b> Ref_MPU.txt:85</div></div>
+<div class="ttc" id="astructARM__MPU__Region__t_html"><div class="ttname"><a href="structARM__MPU__Region__t.html">ARM_MPU_Region_t</a></div><div class="ttdoc">Setup information of a single MPU Region.</div><div class="ttdef"><b>Definition:</b> ref_mpu.txt:84</div></div>
+<div class="ttc" id="astructARM__MPU__Region__t_html_afe7a7721aa08988d915670efa432cdd2"><div class="ttname"><a href="structARM__MPU__Region__t.html#afe7a7721aa08988d915670efa432cdd2">ARM_MPU_Region_t::RBAR</a></div><div class="ttdeci">uint32_t RBAR</div><div class="ttdoc">The region base address register value (RBAR)</div><div class="ttdef"><b>Definition:</b> ref_mpu.txt:85</div></div>
 </div><!-- fragment --> 
 </div>
 </div>

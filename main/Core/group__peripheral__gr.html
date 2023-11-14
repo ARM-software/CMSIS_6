@@ -6,14 +6,10 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
 <title>CMSIS-Core (Cortex-M): Peripheral Access</title>
-<link href="doxygen.css" rel="stylesheet" type="text/css"/>
-<link href="tabs.css" rel="stylesheet" type="text/css"/>
-<link href="extra_navtree.css" rel="stylesheet" type="text/css"/>
-<link href="extra_stylesheet.css" rel="stylesheet" type="text/css"/>
-<link href="extra_search.css" rel="stylesheet" type="text/css"/>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
-<script type="text/javascript" src="printComponentTabs.js"></script>
+<script type="text/javascript" src="tabs.js"></script>
 <script type="text/javascript" src="footer.js"></script>
 <script type="text/javascript" src="navtree.js"></script>
 <link href="navtree.css" rel="stylesheet" type="text/css"/>
@@ -32,7 +28,8 @@
 <link href="extra_stylesheet.css" rel="stylesheet" type="text/css"/>
 <link href="extra_navtree.css" rel="stylesheet" type="text/css"/>
 <link href="extra_search.css" rel="stylesheet" type="text/css"/>
-<link href="version.css" rel="stylesheet" type="text/css" />
+<link href="extra_tabs.css" rel="stylesheet" type="text/css"/>
+<link href="version.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../version.js"></script>
 </head>
 <body>
@@ -236,7 +233,7 @@ Minimal Requirements</h1>
 <div class="line">  __IOM uint32_t VAL;                 <span class="comment">/* Offset: 0x008 (R/W)  SysTick Current Value Register      */</span></div>
 <div class="line">  __IM  uint32_t CALIB;               <span class="comment">/* Offset: 0x00C (R/ )  SysTick Calibration Register        */</span></div>
 <div class="line">} <a class="code hl_struct" href="structSysTick__Type.html">SysTick_Type</a>;</div>
-<div class="ttc" id="astructSysTick__Type_html"><div class="ttname"><a href="structSysTick__Type.html">SysTick_Type</a></div><div class="ttdoc">Structure type to access the System Timer (SysTick).</div><div class="ttdef"><b>Definition:</b> Ref_DataStructs.txt:164</div></div>
+<div class="ttc" id="astructSysTick__Type_html"><div class="ttname"><a href="structSysTick__Type.html">SysTick_Type</a></div><div class="ttdoc">Structure type to access the System Timer (SysTick).</div><div class="ttdef"><b>Definition:</b> ref_data_structs.txt:164</div></div>
 </div><!-- fragment --></li>
 <li><b>Base Address</b> for each peripheral (in case of multiple peripherals that use the same <b>register layout typedef</b> multiple base addresses are defined). <br  />
 <br  />
@@ -316,7 +313,7 @@ Register Bit Fields</h1>
 </dl>
 <p>The macro <a class="el" href="group__peripheral__gr.html#ga139b6e261c981f014f386927ca4a8444">_FLD2VAL</a> uses the #define's <em>_Pos</em> and <em>_Msk</em> of the related bit field to extract the value of a bit field from a register.</p>
 <p><b>Example:</b> </p><div class="fragment"><div class="line"><span class="keywordtype">id</span> = <a class="code hl_define" href="group__peripheral__gr.html#ga139b6e261c981f014f386927ca4a8444">_FLD2VAL</a>(SCB_CPUID_REVISION, SCB-&gt;CPUID);</div>
-<div class="ttc" id="agroup__peripheral__gr_html_ga139b6e261c981f014f386927ca4a8444"><div class="ttname"><a href="group__peripheral__gr.html#ga139b6e261c981f014f386927ca4a8444">_FLD2VAL</a></div><div class="ttdeci">#define _FLD2VAL(field, value)</div><div class="ttdoc">Extract from a peripheral register value the a bit field value.</div><div class="ttdef"><b>Definition:</b> Ref_Peripheral.txt:226</div></div>
+<div class="ttc" id="agroup__peripheral__gr_html_ga139b6e261c981f014f386927ca4a8444"><div class="ttname"><a href="group__peripheral__gr.html#ga139b6e261c981f014f386927ca4a8444">_FLD2VAL</a></div><div class="ttdeci">#define _FLD2VAL(field, value)</div><div class="ttdoc">Extract from a peripheral register value the a bit field value.</div><div class="ttdef"><b>Definition:</b> ref_peripheral.txt:226</div></div>
 </div><!-- fragment --> 
 </div>
 </div>
@@ -356,7 +353,7 @@ Register Bit Fields</h1>
 </dl>
 <p>The macro <a class="el" href="group__peripheral__gr.html#ga286e3b913dbd236c7f48ea70c8821f4e">_VAL2FLD</a> uses the #define's <em>_Pos</em> and <em>_Msk</em> of the related bit field to shift bit-field values for assigning to a register.</p>
 <p><b>Example:</b> </p><div class="fragment"><div class="line">SCB-&gt;CPUID = <a class="code hl_define" href="group__peripheral__gr.html#ga286e3b913dbd236c7f48ea70c8821f4e">_VAL2FLD</a>(SCB_CPUID_REVISION, 0x3) | <a class="code hl_define" href="group__peripheral__gr.html#ga286e3b913dbd236c7f48ea70c8821f4e">_VAL2FLD</a>(SCB_CPUID_VARIANT, 0x3);</div>
-<div class="ttc" id="agroup__peripheral__gr_html_ga286e3b913dbd236c7f48ea70c8821f4e"><div class="ttname"><a href="group__peripheral__gr.html#ga286e3b913dbd236c7f48ea70c8821f4e">_VAL2FLD</a></div><div class="ttdeci">#define _VAL2FLD(field, value)</div><div class="ttdoc">Mask and shift a bit field value for assigning the result to a peripheral register.</div><div class="ttdef"><b>Definition:</b> Ref_Peripheral.txt:209</div></div>
+<div class="ttc" id="agroup__peripheral__gr_html_ga286e3b913dbd236c7f48ea70c8821f4e"><div class="ttname"><a href="group__peripheral__gr.html#ga286e3b913dbd236c7f48ea70c8821f4e">_VAL2FLD</a></div><div class="ttdeci">#define _VAL2FLD(field, value)</div><div class="ttdoc">Mask and shift a bit field value for assigning the result to a peripheral register.</div><div class="ttdef"><b>Definition:</b> ref_peripheral.txt:209</div></div>
 </div><!-- fragment --> 
 </div>
 </div>

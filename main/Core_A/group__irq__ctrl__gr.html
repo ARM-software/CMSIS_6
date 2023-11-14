@@ -6,14 +6,10 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
 <title>CMSIS-Core (Cortex-A): Interrupts and Exceptions</title>
-<link href="doxygen.css" rel="stylesheet" type="text/css"/>
-<link href="tabs.css" rel="stylesheet" type="text/css"/>
-<link href="extra_navtree.css" rel="stylesheet" type="text/css"/>
-<link href="extra_stylesheet.css" rel="stylesheet" type="text/css"/>
-<link href="extra_search.css" rel="stylesheet" type="text/css"/>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
-<script type="text/javascript" src="printComponentTabs.js"></script>
+<script type="text/javascript" src="tabs.js"></script>
 <script type="text/javascript" src="footer.js"></script>
 <script type="text/javascript" src="navtree.js"></script>
 <link href="navtree.css" rel="stylesheet" type="text/css"/>
@@ -32,7 +28,8 @@
 <link href="extra_stylesheet.css" rel="stylesheet" type="text/css"/>
 <link href="extra_navtree.css" rel="stylesheet" type="text/css"/>
 <link href="extra_search.css" rel="stylesheet" type="text/css"/>
-<link href="version.css" rel="stylesheet" type="text/css" />
+<link href="extra_tabs.css" rel="stylesheet" type="text/css"/>
+<link href="version.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../version.js"></script>
 </head>
 <body>
@@ -329,7 +326,7 @@ Functions</h2></td></tr>
 <div class="ttc" id="agroup__irq__ctrl__gr_html_gaad6b03f73b3d3ea2ccbb122484e8bd36"><div class="ttname"><a href="group__irq__ctrl__gr.html#gaad6b03f73b3d3ea2ccbb122484e8bd36">IRQ_ClearPending</a></div><div class="ttdeci">int32_t IRQ_ClearPending(IRQn_ID_t irqn)</div><div class="ttdoc">Clear interrupt pending flag.</div></div>
 <div class="ttc" id="agroup__irq__ctrl__gr_html_gab35da69354d2e515931580a1308a3a85"><div class="ttname"><a href="group__irq__ctrl__gr.html#gab35da69354d2e515931580a1308a3a85">IRQ_SetMode</a></div><div class="ttdeci">int32_t IRQ_SetMode(IRQn_ID_t irqn, uint32_t mode)</div><div class="ttdoc">Configure interrupt request mode.</div></div>
 <div class="ttc" id="agroup__irq__ctrl__gr_html_gac1fcc16fb8e488d315cfa496f1d71db3"><div class="ttname"><a href="group__irq__ctrl__gr.html#gac1fcc16fb8e488d315cfa496f1d71db3">IRQ_SetHandler</a></div><div class="ttdeci">int32_t IRQ_SetHandler(IRQn_ID_t irqn, IRQHandler_t handler)</div><div class="ttdoc">Register interrupt handler.</div></div>
-<div class="ttc" id="agroup__irq__ctrl__gr_html_gga7e1129cd8a196f4284d41db3e82ad5c8a056f32088a9c8bdb9309b005dfeb648e"><div class="ttname"><a href="group__irq__ctrl__gr.html#gga7e1129cd8a196f4284d41db3e82ad5c8a056f32088a9c8bdb9309b005dfeb648e">SGI0_IRQn</a></div><div class="ttdeci">@ SGI0_IRQn</div><div class="ttdoc">Software Generated Interrupt 0.</div><div class="ttdef"><b>Definition:</b> Ref_IRQCtrl.txt:82</div></div>
+<div class="ttc" id="agroup__irq__ctrl__gr_html_gga7e1129cd8a196f4284d41db3e82ad5c8a056f32088a9c8bdb9309b005dfeb648e"><div class="ttname"><a href="group__irq__ctrl__gr.html#gga7e1129cd8a196f4284d41db3e82ad5c8a056f32088a9c8bdb9309b005dfeb648e">SGI0_IRQn</a></div><div class="ttdeci">@ SGI0_IRQn</div><div class="ttdoc">Software Generated Interrupt 0.</div><div class="ttdef"><b>Definition:</b> ref_irq_ctrl.txt:82</div></div>
 <div class="ttc" id="agroup__irq__mode__defs_html_ga99e0f3f6945991d50e766b19e71e0222"><div class="ttname"><a href="group__irq__mode__defs.html#ga99e0f3f6945991d50e766b19e71e0222">IRQ_MODE_TRIG_EDGE_FALLING</a></div><div class="ttdeci">#define IRQ_MODE_TRIG_EDGE_FALLING</div><div class="ttdoc">Trigger: falling edge triggered interrupt.</div></div>
 <div class="ttc" id="agroup__irq__mode__defs_html_gaa9a8e0968a4ccd57eb7544a16d05f24d"><div class="ttname"><a href="group__irq__mode__defs.html#gaa9a8e0968a4ccd57eb7544a16d05f24d">IRQ_MODE_TRIG_EDGE</a></div><div class="ttdeci">#define IRQ_MODE_TRIG_EDGE</div><div class="ttdoc">Trigger: edge triggered interrupt.</div></div>
 <div class="ttc" id="agroup__irq__mode__defs_html_gab0d022bbd15beb1a6578b5535d95f9cf"><div class="ttname"><a href="group__irq__mode__defs.html#gab0d022bbd15beb1a6578b5535d95f9cf">IRQ_MODE_TYPE_IRQ</a></div><div class="ttdeci">#define IRQ_MODE_TYPE_IRQ</div><div class="ttdoc">Type: interrupt source triggers CPU IRQ line.</div></div>
@@ -442,7 +439,7 @@ Functions</h2></td></tr>
 <div class="line">  <span class="keywordflow">return</span> (status);</div>
 <div class="line">}</div>
 <div class="ttc" id="agroup__GIC__functions_html_ga5ad17ad70f23d1ff36015ffac33d383d"><div class="ttname"><a href="group__GIC__functions.html#ga5ad17ad70f23d1ff36015ffac33d383d">GIC_ClearPendingIRQ</a></div><div class="ttdeci">__STATIC_INLINE void GIC_ClearPendingIRQ(IRQn_Type IRQn)</div><div class="ttdoc">Clears the given interrupt from being pending using GIC's ICPENDR register.</div><div class="ttdef"><b>Definition:</b> core_ca.h:1625</div></div>
-<div class="ttc" id="agroup__irq__ctrl__gr_html_ga7e1129cd8a196f4284d41db3e82ad5c8"><div class="ttname"><a href="group__irq__ctrl__gr.html#ga7e1129cd8a196f4284d41db3e82ad5c8">IRQn_Type</a></div><div class="ttdeci">IRQn_Type</div><div class="ttdoc">Definition of IRQn numbers.</div><div class="ttdef"><b>Definition:</b> Ref_IRQCtrl.txt:79</div></div>
+<div class="ttc" id="agroup__irq__ctrl__gr_html_ga7e1129cd8a196f4284d41db3e82ad5c8"><div class="ttname"><a href="group__irq__ctrl__gr.html#ga7e1129cd8a196f4284d41db3e82ad5c8">IRQn_Type</a></div><div class="ttdeci">IRQn_Type</div><div class="ttdoc">Definition of IRQn numbers.</div><div class="ttdef"><b>Definition:</b> ref_irq_ctrl.txt:79</div></div>
 </div><!-- fragment --> 
 </div>
 </div>

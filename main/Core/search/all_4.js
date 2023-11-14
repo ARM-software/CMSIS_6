@@ -4,7 +4,7 @@ var searchData=
   ['dcrdr_1',['DCRDR',['../structCoreDebug__Type.html#aab3cc92ef07bc1f04b3a3aa6db2c2d55',1,'CoreDebug_Type']]],
   ['dcrsr_2',['DCRSR',['../structCoreDebug__Type.html#af907cf64577eaf927dac6787df6dd98b',1,'CoreDebug_Type']]],
   ['debug_20access_3',['Debug Access',['../group__ITM__Debug__gr.html',1,'']]],
-  ['debugmonitor_5firqn_4',['DebugMonitor_IRQn',['../group__NVIC__gr.html#gga7e1129cd8a196f4284d41db3e82ad5c8a8e033fcef7aed98a31c60a7de206722c',1,'Ref_NVIC.txt']]],
+  ['debugmonitor_5firqn_4',['DebugMonitor_IRQn',['../group__NVIC__gr.html#gga7e1129cd8a196f4284d41db3e82ad5c8a8e033fcef7aed98a31c60a7de206722c',1,'ref_nvic.txt']]],
   ['define_20values_5',['Define values',['../group__mpu__defines.html',1,'']]],
   ['delivery_20in_20cmsis_2dpacks_6',['Delivery in CMSIS-Packs',['../cmsis_files_dfps.html',1,'cmsis_core_files']]],
   ['demcr_7',['DEMCR',['../structCoreDebug__Type.html#aeb3126abc4c258a858f21f356c0df6ee',1,'CoreDebug_Type']]],

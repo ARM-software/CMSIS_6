@@ -5511,39 +5511,6 @@
     <includes id="irq__ctrl_8h" name="irq_ctrl.h" local="yes" imported="no">irq_ctrl.h</includes>
   </compound>
   <compound kind="file">
-    <name>core_ca.txt</name>
-    <path>src/</path>
-    <filename>core__ca_8txt.html</filename>
-    <member kind="define">
-      <type>#define</type>
-      <name>_VAL2FLD</name>
-      <anchorfile>group__peripheral__gr.html</anchorfile>
-      <anchor>ga286e3b913dbd236c7f48ea70c8821f4e</anchor>
-      <arglist>(field, value)</arglist>
-    </member>
-    <member kind="define">
-      <type>#define</type>
-      <name>_FLD2VAL</name>
-      <anchorfile>group__peripheral__gr.html</anchorfile>
-      <anchor>ga139b6e261c981f014f386927ca4a8444</anchor>
-      <arglist>(field, value)</arglist>
-    </member>
-    <member kind="define">
-      <type>#define</type>
-      <name>__CA_REV</name>
-      <anchorfile>group__version__ctrl.html</anchorfile>
-      <anchor>ga8ebf37d3e9141ccae33bb6b1edf539bd</anchor>
-      <arglist></arglist>
-    </member>
-    <member kind="define">
-      <type>#define</type>
-      <name>__CORTEX_A</name>
-      <anchorfile>group__version__ctrl.html</anchorfile>
-      <anchor>ga74d176c89aefe783e9ce0712c4360537</anchor>
-      <arglist></arglist>
-    </member>
-  </compound>
-  <compound kind="file">
     <name>history.md</name>
     <path>src/</path>
     <filename>history_8md.html</filename>
@@ -5559,14 +5526,14 @@
     <filename>misra_8md.html</filename>
   </compound>
   <compound kind="file">
-    <name>Ref_Cache.txt</name>
+    <name>ref_cache.txt</name>
     <path>src/</path>
-    <filename>Ref__Cache_8txt.html</filename>
+    <filename>ref__cache_8txt.html</filename>
   </compound>
   <compound kind="file">
-    <name>Ref_CompilerControl.txt</name>
+    <name>ref_compiler_ctrl.txt</name>
     <path>src/</path>
-    <filename>Ref__CompilerControl_8txt.html</filename>
+    <filename>ref__compiler__ctrl_8txt.html</filename>
     <member kind="define">
       <type>#define</type>
       <name>__ARM_ARCH_7A__</name>
@@ -5667,19 +5634,52 @@
     </member>
   </compound>
   <compound kind="file">
-    <name>Ref_CoreRegister.txt</name>
+    <name>ref_core_ca.txt</name>
     <path>src/</path>
-    <filename>Ref__CoreRegister_8txt.html</filename>
+    <filename>ref__core__ca_8txt.html</filename>
+    <member kind="define">
+      <type>#define</type>
+      <name>_VAL2FLD</name>
+      <anchorfile>group__peripheral__gr.html</anchorfile>
+      <anchor>ga286e3b913dbd236c7f48ea70c8821f4e</anchor>
+      <arglist>(field, value)</arglist>
+    </member>
+    <member kind="define">
+      <type>#define</type>
+      <name>_FLD2VAL</name>
+      <anchorfile>group__peripheral__gr.html</anchorfile>
+      <anchor>ga139b6e261c981f014f386927ca4a8444</anchor>
+      <arglist>(field, value)</arglist>
+    </member>
+    <member kind="define">
+      <type>#define</type>
+      <name>__CA_REV</name>
+      <anchorfile>group__version__ctrl.html</anchorfile>
+      <anchor>ga8ebf37d3e9141ccae33bb6b1edf539bd</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="define">
+      <type>#define</type>
+      <name>__CORTEX_A</name>
+      <anchorfile>group__version__ctrl.html</anchorfile>
+      <anchor>ga74d176c89aefe783e9ce0712c4360537</anchor>
+      <arglist></arglist>
+    </member>
   </compound>
   <compound kind="file">
-    <name>Ref_GIC.txt</name>
+    <name>ref_core_reg.txt</name>
     <path>src/</path>
-    <filename>Ref__GIC_8txt.html</filename>
+    <filename>ref__core__reg_8txt.html</filename>
   </compound>
   <compound kind="file">
-    <name>Ref_IRQCtrl.txt</name>
+    <name>ref_gic.txt</name>
     <path>src/</path>
-    <filename>Ref__IRQCtrl_8txt.html</filename>
+    <filename>ref__gic_8txt.html</filename>
+  </compound>
+  <compound kind="file">
+    <name>ref_irq_ctrl.txt</name>
+    <path>src/</path>
+    <filename>ref__irq__ctrl_8txt.html</filename>
     <member kind="enumeration">
       <type></type>
       <name>IRQn_Type</name>
@@ -5827,14 +5827,14 @@
     </member>
   </compound>
   <compound kind="file">
-    <name>Ref_MMU.txt</name>
+    <name>ref_mmu.txt</name>
     <path>src/</path>
-    <filename>Ref__MMU_8txt.html</filename>
+    <filename>ref__mmu_8txt.html</filename>
   </compound>
   <compound kind="file">
-    <name>Ref_SystemAndClock.txt</name>
+    <name>ref_system_init.txt</name>
     <path>src/</path>
-    <filename>Ref__SystemAndClock_8txt.html</filename>
+    <filename>ref__system__init_8txt.html</filename>
     <member kind="function">
       <type>void</type>
       <name>SystemInit</name>
@@ -5858,9 +5858,9 @@
     </member>
   </compound>
   <compound kind="file">
-    <name>Ref_Timer.txt</name>
+    <name>ref_timer.txt</name>
     <path>src/</path>
-    <filename>Ref__Timer_8txt.html</filename>
+    <filename>ref__timer_8txt.html</filename>
     <class kind="union">CNTP_CTL_Type</class>
     <member kind="function">
       <type>__STATIC_INLINE void</type>

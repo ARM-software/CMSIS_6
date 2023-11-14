@@ -1,95 +1,6 @@
 <?xml version='1.0' encoding='UTF-8' standalone='yes' ?>
 <tagfile doxygen_version="1.9.6" doxygen_gitid="4586b5cfaa3d46d51f6a51882951d15644c49edf">
   <compound kind="file">
-    <name>core_cm7.txt</name>
-    <path>src/</path>
-    <filename>core__cm7_8txt.html</filename>
-    <member kind="function">
-      <type>__STATIC_FORCEINLINE void</type>
-      <name>SCB_EnableICache</name>
-      <anchorfile>group__Icache__functions__m7.html</anchorfile>
-      <anchor>ga980ffe52af778f2535ccc52f25f9a7de</anchor>
-      <arglist>(void)</arglist>
-    </member>
-    <member kind="function">
-      <type>__STATIC_FORCEINLINE void</type>
-      <name>SCB_DisableICache</name>
-      <anchorfile>group__Icache__functions__m7.html</anchorfile>
-      <anchor>ga56baa06298799dea5f207d4c12d9d4a6</anchor>
-      <arglist>(void)</arglist>
-    </member>
-    <member kind="function">
-      <type>__STATIC_FORCEINLINE void</type>
-      <name>SCB_InvalidateICache</name>
-      <anchorfile>group__Icache__functions__m7.html</anchorfile>
-      <anchor>ga62419cb7e6773e3d9236f14e458c1b05</anchor>
-      <arglist>(void)</arglist>
-    </member>
-    <member kind="function">
-      <type>__STATIC_FORCEINLINE void</type>
-      <name>SCB_InvalidateICache_by_Addr</name>
-      <anchorfile>group__Icache__functions__m7.html</anchorfile>
-      <anchor>gaeb1a2bf181afcfb837ce0502e6bfa4fb</anchor>
-      <arglist>(volatile void *addr, int32_t isize)</arglist>
-    </member>
-    <member kind="function">
-      <type>__STATIC_FORCEINLINE void</type>
-      <name>SCB_EnableDCache</name>
-      <anchorfile>group__Dcache__functions__m7.html</anchorfile>
-      <anchor>ga3861db932100ccb53f994e2cc68ed79c</anchor>
-      <arglist>(void)</arglist>
-    </member>
-    <member kind="function">
-      <type>__STATIC_FORCEINLINE void</type>
-      <name>SCB_DisableDCache</name>
-      <anchorfile>group__Dcache__functions__m7.html</anchorfile>
-      <anchor>gafe64b44d1a61483a947e44a77a9d3287</anchor>
-      <arglist>(void)</arglist>
-    </member>
-    <member kind="function">
-      <type>__STATIC_FORCEINLINE void</type>
-      <name>SCB_InvalidateDCache</name>
-      <anchorfile>group__Dcache__functions__m7.html</anchorfile>
-      <anchor>ga99fe43c224644881935de135ceaa2dd9</anchor>
-      <arglist>(void)</arglist>
-    </member>
-    <member kind="function">
-      <type>__STATIC_FORCEINLINE void</type>
-      <name>SCB_CleanDCache</name>
-      <anchorfile>group__Dcache__functions__m7.html</anchorfile>
-      <anchor>gaf5585be5547cc60585d702a6129f4c17</anchor>
-      <arglist>(void)</arglist>
-    </member>
-    <member kind="function">
-      <type>__STATIC_FORCEINLINE void</type>
-      <name>SCB_CleanInvalidateDCache</name>
-      <anchorfile>group__Dcache__functions__m7.html</anchorfile>
-      <anchor>ga5b22ca58709fadc326da83197a2f28bb</anchor>
-      <arglist>(void)</arglist>
-    </member>
-    <member kind="function">
-      <type>__STATIC_FORCEINLINE void</type>
-      <name>SCB_InvalidateDCache_by_Addr</name>
-      <anchorfile>group__Dcache__functions__m7.html</anchorfile>
-      <anchor>ga31c2439722ab4dbd0c67b196e3377ca7</anchor>
-      <arglist>(volatile void *addr, int32_t dsize)</arglist>
-    </member>
-    <member kind="function">
-      <type>__STATIC_FORCEINLINE void</type>
-      <name>SCB_CleanDCache_by_Addr</name>
-      <anchorfile>group__Dcache__functions__m7.html</anchorfile>
-      <anchor>gabc9e51347dca344c72948c3dba0364fd</anchor>
-      <arglist>(volatile void *addr, int32_t dsize)</arglist>
-    </member>
-    <member kind="function">
-      <type>__STATIC_FORCEINLINE void</type>
-      <name>SCB_CleanInvalidateDCache_by_Addr</name>
-      <anchorfile>group__Dcache__functions__m7.html</anchorfile>
-      <anchor>ga83fe294bcc60d3c4f1c279f13477dda7</anchor>
-      <arglist>(volatile void *addr, int32_t dsize)</arglist>
-    </member>
-  </compound>
-  <compound kind="file">
     <name>core_device_files.md</name>
     <path>src/</path>
     <filename>core__device__files_8md.html</filename>
@@ -145,9 +56,9 @@
     <filename>misra_8md.html</filename>
   </compound>
   <compound kind="file">
-    <name>Ref_cm4_simd.txt</name>
+    <name>ref_cm4_simd.txt</name>
     <path>src/</path>
-    <filename>Ref__cm4__simd_8txt.html</filename>
+    <filename>ref__cm4__simd_8txt.html</filename>
     <member kind="function">
       <type>uint32_t</type>
       <name>__SADD8</name>
@@ -598,9 +509,98 @@
     </member>
   </compound>
   <compound kind="file">
-    <name>Ref_cmInstr.txt</name>
+    <name>ref_cm7_cache.txt</name>
     <path>src/</path>
-    <filename>Ref__cmInstr_8txt.html</filename>
+    <filename>ref__cm7__cache_8txt.html</filename>
+    <member kind="function">
+      <type>__STATIC_FORCEINLINE void</type>
+      <name>SCB_EnableICache</name>
+      <anchorfile>group__Icache__functions__m7.html</anchorfile>
+      <anchor>ga980ffe52af778f2535ccc52f25f9a7de</anchor>
+      <arglist>(void)</arglist>
+    </member>
+    <member kind="function">
+      <type>__STATIC_FORCEINLINE void</type>
+      <name>SCB_DisableICache</name>
+      <anchorfile>group__Icache__functions__m7.html</anchorfile>
+      <anchor>ga56baa06298799dea5f207d4c12d9d4a6</anchor>
+      <arglist>(void)</arglist>
+    </member>
+    <member kind="function">
+      <type>__STATIC_FORCEINLINE void</type>
+      <name>SCB_InvalidateICache</name>
+      <anchorfile>group__Icache__functions__m7.html</anchorfile>
+      <anchor>ga62419cb7e6773e3d9236f14e458c1b05</anchor>
+      <arglist>(void)</arglist>
+    </member>
+    <member kind="function">
+      <type>__STATIC_FORCEINLINE void</type>
+      <name>SCB_InvalidateICache_by_Addr</name>
+      <anchorfile>group__Icache__functions__m7.html</anchorfile>
+      <anchor>gaeb1a2bf181afcfb837ce0502e6bfa4fb</anchor>
+      <arglist>(volatile void *addr, int32_t isize)</arglist>
+    </member>
+    <member kind="function">
+      <type>__STATIC_FORCEINLINE void</type>
+      <name>SCB_EnableDCache</name>
+      <anchorfile>group__Dcache__functions__m7.html</anchorfile>
+      <anchor>ga3861db932100ccb53f994e2cc68ed79c</anchor>
+      <arglist>(void)</arglist>
+    </member>
+    <member kind="function">
+      <type>__STATIC_FORCEINLINE void</type>
+      <name>SCB_DisableDCache</name>
+      <anchorfile>group__Dcache__functions__m7.html</anchorfile>
+      <anchor>gafe64b44d1a61483a947e44a77a9d3287</anchor>
+      <arglist>(void)</arglist>
+    </member>
+    <member kind="function">
+      <type>__STATIC_FORCEINLINE void</type>
+      <name>SCB_InvalidateDCache</name>
+      <anchorfile>group__Dcache__functions__m7.html</anchorfile>
+      <anchor>ga99fe43c224644881935de135ceaa2dd9</anchor>
+      <arglist>(void)</arglist>
+    </member>
+    <member kind="function">
+      <type>__STATIC_FORCEINLINE void</type>
+      <name>SCB_CleanDCache</name>
+      <anchorfile>group__Dcache__functions__m7.html</anchorfile>
+      <anchor>gaf5585be5547cc60585d702a6129f4c17</anchor>
+      <arglist>(void)</arglist>
+    </member>
+    <member kind="function">
+      <type>__STATIC_FORCEINLINE void</type>
+      <name>SCB_CleanInvalidateDCache</name>
+      <anchorfile>group__Dcache__functions__m7.html</anchorfile>
+      <anchor>ga5b22ca58709fadc326da83197a2f28bb</anchor>
+      <arglist>(void)</arglist>
+    </member>
+    <member kind="function">
+      <type>__STATIC_FORCEINLINE void</type>
+      <name>SCB_InvalidateDCache_by_Addr</name>
+      <anchorfile>group__Dcache__functions__m7.html</anchorfile>
+      <anchor>ga31c2439722ab4dbd0c67b196e3377ca7</anchor>
+      <arglist>(volatile void *addr, int32_t dsize)</arglist>
+    </member>
+    <member kind="function">
+      <type>__STATIC_FORCEINLINE void</type>
+      <name>SCB_CleanDCache_by_Addr</name>
+      <anchorfile>group__Dcache__functions__m7.html</anchorfile>
+      <anchor>gabc9e51347dca344c72948c3dba0364fd</anchor>
+      <arglist>(volatile void *addr, int32_t dsize)</arglist>
+    </member>
+    <member kind="function">
+      <type>__STATIC_FORCEINLINE void</type>
+      <name>SCB_CleanInvalidateDCache_by_Addr</name>
+      <anchorfile>group__Dcache__functions__m7.html</anchorfile>
+      <anchor>ga83fe294bcc60d3c4f1c279f13477dda7</anchor>
+      <arglist>(volatile void *addr, int32_t dsize)</arglist>
+    </member>
+  </compound>
+  <compound kind="file">
+    <name>ref_cm_instr.txt</name>
+    <path>src/</path>
+    <filename>ref__cm__instr_8txt.html</filename>
     <member kind="function">
       <type>void</type>
       <name>__NOP</name>
@@ -897,9 +897,9 @@
     </member>
   </compound>
   <compound kind="file">
-    <name>Ref_CompilerControl.txt</name>
+    <name>ref_compiler_ctrl.txt</name>
     <path>src/</path>
-    <filename>Ref__CompilerControl_8txt.html</filename>
+    <filename>ref__compiler__ctrl_8txt.html</filename>
     <member kind="define">
       <type>#define</type>
       <name>__ARM_ARCH_6M__</name>
@@ -1105,9 +1105,9 @@
     </member>
   </compound>
   <compound kind="file">
-    <name>Ref_CoreRegister.txt</name>
+    <name>ref_core_reg.txt</name>
     <path>src/</path>
-    <filename>Ref__CoreRegister_8txt.html</filename>
+    <filename>ref__core__reg_8txt.html</filename>
     <member kind="function">
       <type>uint32_t</type>
       <name>__get_CONTROL</name>
@@ -1292,9 +1292,9 @@
     </member>
   </compound>
   <compound kind="file">
-    <name>Ref_DataStructs.txt</name>
+    <name>ref_data_structs.txt</name>
     <path>src/</path>
-    <filename>Ref__DataStructs_8txt.html</filename>
+    <filename>ref__data__structs_8txt.html</filename>
     <class kind="union">APSR_Type</class>
     <class kind="union">IPSR_Type</class>
     <class kind="union">xPSR_Type</class>
@@ -1312,9 +1312,9 @@
     <class kind="struct">TPI_Type</class>
   </compound>
   <compound kind="file">
-    <name>Ref_Debug.txt</name>
+    <name>ref_debug.txt</name>
     <path>src/</path>
-    <filename>Ref__Debug_8txt.html</filename>
+    <filename>ref__debug_8txt.html</filename>
     <member kind="function">
       <type>uint32_t</type>
       <name>ITM_SendChar</name>
@@ -1345,9 +1345,9 @@
     </member>
   </compound>
   <compound kind="file">
-    <name>Ref_DevCaps.txt</name>
+    <name>ref_device_caps.txt</name>
     <path>src/</path>
-    <filename>Ref__DevCaps_8txt.html</filename>
+    <filename>ref__device__caps_8txt.html</filename>
     <member kind="define">
       <type>#define</type>
       <name>__CM0_REV</name>
@@ -1553,9 +1553,9 @@
     </member>
   </compound>
   <compound kind="file">
-    <name>Ref_FPU.txt</name>
+    <name>ref_fpu.txt</name>
     <path>src/</path>
-    <filename>Ref__FPU_8txt.html</filename>
+    <filename>ref__fpu_8txt.html</filename>
     <member kind="function">
       <type>__STATIC_INLINE uint32_t</type>
       <name>SCB_GetFPUType</name>
@@ -1565,9 +1565,9 @@
     </member>
   </compound>
   <compound kind="file">
-    <name>Ref_MPU.txt</name>
+    <name>ref_mpu.txt</name>
     <path>src/</path>
-    <filename>Ref__MPU_8txt.html</filename>
+    <filename>ref__mpu_8txt.html</filename>
     <class kind="struct">MPU_Type</class>
     <class kind="struct">ARM_MPU_Region_t</class>
     <member kind="define">
@@ -1670,9 +1670,9 @@
     </member>
   </compound>
   <compound kind="file">
-    <name>Ref_MPU8.txt</name>
+    <name>ref_mpu8.txt</name>
     <path>src/</path>
-    <filename>Ref__MPU8_8txt.html</filename>
+    <filename>ref__mpu8_8txt.html</filename>
     <class kind="struct">ARM_MPU_Region_t</class>
     <member kind="define">
       <type>#define</type>
@@ -2131,9 +2131,9 @@
     </member>
   </compound>
   <compound kind="file">
-    <name>Ref_MVE.txt</name>
+    <name>ref_mve.txt</name>
     <path>src/</path>
-    <filename>Ref__MVE_8txt.html</filename>
+    <filename>ref__mve_8txt.html</filename>
     <member kind="function">
       <type>__STATIC_INLINE uint32_t</type>
       <name>SCB_GetMVEType</name>
@@ -2143,9 +2143,9 @@
     </member>
   </compound>
   <compound kind="file">
-    <name>Ref_NVIC.txt</name>
+    <name>ref_nvic.txt</name>
     <path>src/</path>
-    <filename>Ref__NVIC_8txt.html</filename>
+    <filename>ref__nvic_8txt.html</filename>
     <member kind="define">
       <type>#define</type>
       <name>CMSIS_NVIC_VIRTUAL</name>
@@ -2374,9 +2374,9 @@
     </member>
   </compound>
   <compound kind="file">
-    <name>Ref_Peripheral.txt</name>
+    <name>ref_peripheral.txt</name>
     <path>src/</path>
-    <filename>Ref__Peripheral_8txt.html</filename>
+    <filename>ref__peripheral_8txt.html</filename>
     <member kind="define">
       <type>#define</type>
       <name>_VAL2FLD</name>
@@ -2393,9 +2393,9 @@
     </member>
   </compound>
   <compound kind="file">
-    <name>Ref_PMU8.txt</name>
+    <name>ref_pmu8.txt</name>
     <path>src/</path>
-    <filename>Ref__PMU8_8txt.html</filename>
+    <filename>ref__pmu8_8txt.html</filename>
     <class kind="struct">PMU_Type</class>
     <member kind="define">
       <type>#define</type>
@@ -3722,9 +3722,9 @@
     </member>
   </compound>
   <compound kind="file">
-    <name>Ref_SystemAndClock.txt</name>
+    <name>ref_system_init.txt</name>
     <path>src/</path>
-    <filename>Ref__SystemAndClock_8txt.html</filename>
+    <filename>ref__system__init_8txt.html</filename>
     <member kind="function">
       <type>void</type>
       <name>SystemInit</name>
@@ -3748,9 +3748,9 @@
     </member>
   </compound>
   <compound kind="file">
-    <name>Ref_Systick.txt</name>
+    <name>ref_systick.txt</name>
     <path>src/</path>
-    <filename>Ref__Systick_8txt.html</filename>
+    <filename>ref__systick_8txt.html</filename>
     <member kind="function">
       <type>uint32_t</type>
       <name>SysTick_Config</name>
@@ -3760,9 +3760,9 @@
     </member>
   </compound>
   <compound kind="file">
-    <name>Ref_Trustzone.txt</name>
+    <name>ref_trustzone.txt</name>
     <path>src/</path>
-    <filename>Ref__Trustzone_8txt.html</filename>
+    <filename>ref__trustzone_8txt.html</filename>
     <member kind="define">
       <type>#define</type>
       <name>__STACK_SEAL</name>
@@ -4045,9 +4045,9 @@
     </member>
   </compound>
   <compound kind="file">
-    <name>Ref_VersionControl.txt</name>
+    <name>ref_version_ctrl.txt</name>
     <path>src/</path>
-    <filename>Ref__VersionControl_8txt.html</filename>
+    <filename>ref__version__ctrl_8txt.html</filename>
     <member kind="define">
       <type>#define</type>
       <name>__CM_CMSIS_VERSION_MAIN</name>

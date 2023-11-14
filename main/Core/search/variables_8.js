@@ -18,6 +18,6 @@ var searchData=
   ['itatbctr0_15',['ITATBCTR0',['../structTPI__Type.html#aaa573b2e073e76e93c51ecec79c616d0',1,'TPI_Type']]],
   ['itatbctr2_16',['ITATBCTR2',['../structTPI__Type.html#ab358319b969d3fed0f89bbe33e9f1652',1,'TPI_Type']]],
   ['itctrl_17',['ITCTRL',['../structTPI__Type.html#aaa4c823c10f115f7517c82ef86a5a68d',1,'TPI_Type']]],
-  ['itm_5frxbuffer_18',['ITM_RxBuffer',['../group__ITM__Debug__gr.html#ga12e68e55a7badc271b948d6c7230b2a8',1,'Ref_Debug.txt']]],
+  ['itm_5frxbuffer_18',['ITM_RxBuffer',['../group__ITM__Debug__gr.html#ga12e68e55a7badc271b948d6c7230b2a8',1,'ref_debug.txt']]],
   ['iwr_19',['IWR',['../structITM__Type.html#aa9da04891e48d1a2f054de186e9c4c94',1,'ITM_Type']]]
 ];

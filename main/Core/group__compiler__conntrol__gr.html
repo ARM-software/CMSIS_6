@@ -6,14 +6,10 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
 <title>CMSIS-Core (Cortex-M): Compiler Control</title>
-<link href="doxygen.css" rel="stylesheet" type="text/css"/>
-<link href="tabs.css" rel="stylesheet" type="text/css"/>
-<link href="extra_navtree.css" rel="stylesheet" type="text/css"/>
-<link href="extra_stylesheet.css" rel="stylesheet" type="text/css"/>
-<link href="extra_search.css" rel="stylesheet" type="text/css"/>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
-<script type="text/javascript" src="printComponentTabs.js"></script>
+<script type="text/javascript" src="tabs.js"></script>
 <script type="text/javascript" src="footer.js"></script>
 <script type="text/javascript" src="navtree.js"></script>
 <link href="navtree.css" rel="stylesheet" type="text/css"/>
@@ -32,7 +28,8 @@
 <link href="extra_stylesheet.css" rel="stylesheet" type="text/css"/>
 <link href="extra_navtree.css" rel="stylesheet" type="text/css"/>
 <link href="extra_search.css" rel="stylesheet" type="text/css"/>
-<link href="version.css" rel="stylesheet" type="text/css" />
+<link href="extra_tabs.css" rel="stylesheet" type="text/css"/>
+<link href="version.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../version.js"></script>
 </head>
 <body>
@@ -246,8 +243,8 @@ Macros</h2></td></tr>
 <p>Creates a symbol as alias to another symbol. </p>
 <p><b>Code Example:</b> The example declares the function Interrupt0_Handler. By default it is just an alias pointing to Default_Handler. In combination with __WEAK modifier this allows giving the function definition at a later point if required.</p>
 <div class="fragment"><div class="line"><span class="keywordtype">void</span> Interrupt0_Handler     (<span class="keywordtype">void</span>) <a class="code hl_define" href="group__compiler__conntrol__gr.html#gac607bf387b29162be6a9b77fc7999539">__WEAK</a> <a class="code hl_define" href="group__compiler__conntrol__gr.html#gadc1a82527532aabbfa7d8eface645fb5">__ALIAS</a>(<span class="stringliteral">&quot;Default_Handler&quot;</span>);</div>
-<div class="ttc" id="agroup__compiler__conntrol__gr_html_gac607bf387b29162be6a9b77fc7999539"><div class="ttname"><a href="group__compiler__conntrol__gr.html#gac607bf387b29162be6a9b77fc7999539">__WEAK</a></div><div class="ttdeci">#define __WEAK</div><div class="ttdoc">Export a function or variable weakly to allow overwrites.</div><div class="ttdef"><b>Definition:</b> Ref_CompilerControl.txt:242</div></div>
-<div class="ttc" id="agroup__compiler__conntrol__gr_html_gadc1a82527532aabbfa7d8eface645fb5"><div class="ttname"><a href="group__compiler__conntrol__gr.html#gadc1a82527532aabbfa7d8eface645fb5">__ALIAS</a></div><div class="ttdeci">#define __ALIAS</div><div class="ttdoc">Creates a symbol as alias to another symbol.</div><div class="ttdef"><b>Definition:</b> Ref_CompilerControl.txt:461</div></div>
+<div class="ttc" id="agroup__compiler__conntrol__gr_html_gac607bf387b29162be6a9b77fc7999539"><div class="ttname"><a href="group__compiler__conntrol__gr.html#gac607bf387b29162be6a9b77fc7999539">__WEAK</a></div><div class="ttdeci">#define __WEAK</div><div class="ttdoc">Export a function or variable weakly to allow overwrites.</div><div class="ttdef"><b>Definition:</b> ref_compiler_ctrl.txt:242</div></div>
+<div class="ttc" id="agroup__compiler__conntrol__gr_html_gadc1a82527532aabbfa7d8eface645fb5"><div class="ttname"><a href="group__compiler__conntrol__gr.html#gadc1a82527532aabbfa7d8eface645fb5">__ALIAS</a></div><div class="ttdeci">#define __ALIAS</div><div class="ttdoc">Creates a symbol as alias to another symbol.</div><div class="ttdef"><b>Definition:</b> ref_compiler_ctrl.txt:461</div></div>
 </div><!-- fragment --> 
 </div>
 </div>
@@ -266,7 +263,7 @@ Macros</h2></td></tr>
 <p>Minimum alignment for a variable. </p>
 <p>Specifies a minimum alignment for a variable or structure field, measured in bytes.</p>
 <p><b>Code Example:</b> </p><div class="fragment"><div class="line">uint32_t stack_space[0x100] <a class="code hl_define" href="group__compiler__conntrol__gr.html#ga0c58caa5a273e2c21924509a45f8b849">__ALIGNED</a>(8);   <span class="comment">// 8-byte alignment required</span></div>
-<div class="ttc" id="agroup__compiler__conntrol__gr_html_ga0c58caa5a273e2c21924509a45f8b849"><div class="ttname"><a href="group__compiler__conntrol__gr.html#ga0c58caa5a273e2c21924509a45f8b849">__ALIGNED</a></div><div class="ttdeci">#define __ALIGNED</div><div class="ttdoc">Minimum alignment for a variable.</div><div class="ttdef"><b>Definition:</b> Ref_CompilerControl.txt:402</div></div>
+<div class="ttc" id="agroup__compiler__conntrol__gr_html_ga0c58caa5a273e2c21924509a45f8b849"><div class="ttname"><a href="group__compiler__conntrol__gr.html#ga0c58caa5a273e2c21924509a45f8b849">__ALIGNED</a></div><div class="ttdeci">#define __ALIGNED</div><div class="ttdoc">Minimum alignment for a variable.</div><div class="ttdef"><b>Definition:</b> ref_compiler_ctrl.txt:402</div></div>
 </div><!-- fragment --> 
 </div>
 </div>
@@ -378,8 +375,8 @@ Macros</h2></td></tr>
 <div class="line">   <a class="code hl_define" href="group__compiler__conntrol__gr.html#ga1378040bcf22428955c6e3ce9c2053cd">__ASM</a> <span class="keyword">volatile</span> (<span class="stringliteral">&quot;rbit %0, %1&quot;</span> : <span class="stringliteral">&quot;=r&quot;</span> (result) : <span class="stringliteral">&quot;r&quot;</span> (value) );</div>
 <div class="line">   <span class="keywordflow">return</span>(result);</div>
 <div class="line">}</div>
-<div class="ttc" id="agroup__compiler__conntrol__gr_html_ga1378040bcf22428955c6e3ce9c2053cd"><div class="ttname"><a href="group__compiler__conntrol__gr.html#ga1378040bcf22428955c6e3ce9c2053cd">__ASM</a></div><div class="ttdeci">#define __ASM</div><div class="ttdoc">Pass information from the compiler to the assembler.</div><div class="ttdef"><b>Definition:</b> Ref_CompilerControl.txt:84</div></div>
-<div class="ttc" id="agroup__compiler__conntrol__gr_html_gaba87361bfad2ae52cfe2f40c1a1dbf9c"><div class="ttname"><a href="group__compiler__conntrol__gr.html#gaba87361bfad2ae52cfe2f40c1a1dbf9c">__STATIC_INLINE</a></div><div class="ttdeci">#define __STATIC_INLINE</div><div class="ttdoc">Define a static function that may be inlined by the compiler.</div><div class="ttdef"><b>Definition:</b> Ref_CompilerControl.txt:130</div></div>
+<div class="ttc" id="agroup__compiler__conntrol__gr_html_ga1378040bcf22428955c6e3ce9c2053cd"><div class="ttname"><a href="group__compiler__conntrol__gr.html#ga1378040bcf22428955c6e3ce9c2053cd">__ASM</a></div><div class="ttdeci">#define __ASM</div><div class="ttdoc">Pass information from the compiler to the assembler.</div><div class="ttdef"><b>Definition:</b> ref_compiler_ctrl.txt:84</div></div>
+<div class="ttc" id="agroup__compiler__conntrol__gr_html_gaba87361bfad2ae52cfe2f40c1a1dbf9c"><div class="ttname"><a href="group__compiler__conntrol__gr.html#gaba87361bfad2ae52cfe2f40c1a1dbf9c">__STATIC_INLINE</a></div><div class="ttdeci">#define __STATIC_INLINE</div><div class="ttdoc">Define a static function that may be inlined by the compiler.</div><div class="ttdef"><b>Definition:</b> ref_compiler_ctrl.txt:130</div></div>
 <div class="ttc" id="agroup__intrinsic__CPU__gr_html_gad6f9f297f6b91a995ee199fbc796b863"><div class="ttname"><a href="group__intrinsic__CPU__gr.html#gad6f9f297f6b91a995ee199fbc796b863">__RBIT</a></div><div class="ttdeci">uint32_t __RBIT(uint32_t value)</div><div class="ttdoc">Reverse bit order of value.</div></div>
 </div><!-- fragment --> 
 </div>
@@ -448,7 +445,7 @@ Macros</h2></td></tr>
 <div class="line"> </div>
 <div class="line">  PTD-&gt;PCOR   = led_mask[led];</div>
 <div class="line">}</div>
-<div class="ttc" id="agroup__compiler__conntrol__gr_html_gade2d8d7118f8ff49547f60aa0c3382bb"><div class="ttname"><a href="group__compiler__conntrol__gr.html#gade2d8d7118f8ff49547f60aa0c3382bb">__INLINE</a></div><div class="ttdeci">#define __INLINE</div><div class="ttdoc">Recommend that function should be inlined by the compiler.</div><div class="ttdef"><b>Definition:</b> Ref_CompilerControl.txt:109</div></div>
+<div class="ttc" id="agroup__compiler__conntrol__gr_html_gade2d8d7118f8ff49547f60aa0c3382bb"><div class="ttname"><a href="group__compiler__conntrol__gr.html#gade2d8d7118f8ff49547f60aa0c3382bb">__INLINE</a></div><div class="ttdeci">#define __INLINE</div><div class="ttdoc">Recommend that function should be inlined by the compiler.</div><div class="ttdef"><b>Definition:</b> ref_compiler_ctrl.txt:109</div></div>
 </div><!-- fragment --> 
 </div>
 </div>
@@ -468,7 +465,7 @@ Macros</h2></td></tr>
 <p>This puts a symbol (such as a variable) into an uninitialized memory section (e.g, .bss.noinit).</p>
 <p><b>Code Example:</b> The EventBuffer in the example does not need to be copy- or zero-initialized. By adding __NO_INIT this variable is allocated into an uninitialized memory section.</p>
 <div class="fragment"><div class="line"><span class="keyword">static</span> EventRecord_t EventBuffer[EVENT_RECORD_COUNT] <a class="code hl_define" href="group__compiler__conntrol__gr.html#ga541e3bdeb73ef92c9a18ea2f7082bf5d">__NO_INIT</a> <a class="code hl_define" href="group__compiler__conntrol__gr.html#ga0c58caa5a273e2c21924509a45f8b849">__ALIGNED</a>(16);</div>
-<div class="ttc" id="agroup__compiler__conntrol__gr_html_ga541e3bdeb73ef92c9a18ea2f7082bf5d"><div class="ttname"><a href="group__compiler__conntrol__gr.html#ga541e3bdeb73ef92c9a18ea2f7082bf5d">__NO_INIT</a></div><div class="ttdeci">#define __NO_INIT</div><div class="ttdoc">Force symbol into uninitialized memory section.</div><div class="ttdef"><b>Definition:</b> Ref_CompilerControl.txt:444</div></div>
+<div class="ttc" id="agroup__compiler__conntrol__gr_html_ga541e3bdeb73ef92c9a18ea2f7082bf5d"><div class="ttname"><a href="group__compiler__conntrol__gr.html#ga541e3bdeb73ef92c9a18ea2f7082bf5d">__NO_INIT</a></div><div class="ttdeci">#define __NO_INIT</div><div class="ttdoc">Force symbol into uninitialized memory section.</div><div class="ttdef"><b>Definition:</b> ref_compiler_ctrl.txt:444</div></div>
 </div><!-- fragment --> 
 </div>
 </div>
@@ -489,7 +486,7 @@ Macros</h2></td></tr>
 <p><b>Code Example:</b> </p><div class="fragment"><div class="line"><span class="comment">// OS idle demon (running when no other thread is ready to run).</span></div>
 <div class="line"> </div>
 <div class="line"><a class="code hl_define" href="group__compiler__conntrol__gr.html#ga153a4a31b276a9758959580538720a51">__NO_RETURN</a> <span class="keywordtype">void</span> os_idle_demon (<span class="keywordtype">void</span>);</div>
-<div class="ttc" id="agroup__compiler__conntrol__gr_html_ga153a4a31b276a9758959580538720a51"><div class="ttname"><a href="group__compiler__conntrol__gr.html#ga153a4a31b276a9758959580538720a51">__NO_RETURN</a></div><div class="ttdeci">#define __NO_RETURN</div><div class="ttdoc">Inform the compiler that a function does not return.</div><div class="ttdef"><b>Definition:</b> Ref_CompilerControl.txt:171</div></div>
+<div class="ttc" id="agroup__compiler__conntrol__gr_html_ga153a4a31b276a9758959580538720a51"><div class="ttname"><a href="group__compiler__conntrol__gr.html#ga153a4a31b276a9758959580538720a51">__NO_RETURN</a></div><div class="ttdeci">#define __NO_RETURN</div><div class="ttdoc">Inform the compiler that a function does not return.</div><div class="ttdef"><b>Definition:</b> ref_compiler_ctrl.txt:171</div></div>
 </div><!-- fragment --> 
 </div>
 </div>
@@ -511,7 +508,7 @@ Macros</h2></td></tr>
 <div class="line">  uint8_t  u8;</div>
 <div class="line">  uint32_t u32[2] <a class="code hl_define" href="group__compiler__conntrol__gr.html#gabe8996d3d985ee1529475443cc635bf1">__PACKED</a>;</div>
 <div class="line">};</div>
-<div class="ttc" id="agroup__compiler__conntrol__gr_html_gabe8996d3d985ee1529475443cc635bf1"><div class="ttname"><a href="group__compiler__conntrol__gr.html#gabe8996d3d985ee1529475443cc635bf1">__PACKED</a></div><div class="ttdeci">#define __PACKED</div><div class="ttdoc">Request smallest possible alignment.</div><div class="ttdef"><b>Definition:</b> Ref_CompilerControl.txt:260</div></div>
+<div class="ttc" id="agroup__compiler__conntrol__gr_html_gabe8996d3d985ee1529475443cc635bf1"><div class="ttname"><a href="group__compiler__conntrol__gr.html#gabe8996d3d985ee1529475443cc635bf1">__PACKED</a></div><div class="ttdeci">#define __PACKED</div><div class="ttdoc">Request smallest possible alignment.</div><div class="ttdef"><b>Definition:</b> ref_compiler_ctrl.txt:260</div></div>
 </div><!-- fragment --> 
 </div>
 </div>
@@ -534,7 +531,7 @@ Macros</h2></td></tr>
 <div class="line">  uint32_t  u32;</div>
 <div class="line">  uint16_t  u16;</div>
 <div class="line">};</div>
-<div class="ttc" id="agroup__compiler__conntrol__gr_html_ga4dbb70fab85207c27b581ecb6532b314"><div class="ttname"><a href="group__compiler__conntrol__gr.html#ga4dbb70fab85207c27b581ecb6532b314">__PACKED_STRUCT</a></div><div class="ttdeci">#define __PACKED_STRUCT</div><div class="ttdoc">Request smallest possible alignment for a structure.</div><div class="ttdef"><b>Definition:</b> Ref_CompilerControl.txt:279</div></div>
+<div class="ttc" id="agroup__compiler__conntrol__gr_html_ga4dbb70fab85207c27b581ecb6532b314"><div class="ttname"><a href="group__compiler__conntrol__gr.html#ga4dbb70fab85207c27b581ecb6532b314">__PACKED_STRUCT</a></div><div class="ttdeci">#define __PACKED_STRUCT</div><div class="ttdoc">Request smallest possible alignment for a structure.</div><div class="ttdef"><b>Definition:</b> ref_compiler_ctrl.txt:279</div></div>
 </div><!-- fragment --> 
 </div>
 </div>
@@ -558,7 +555,7 @@ Macros</h2></td></tr>
 <div class="line">  <a class="code hl_function" href="group__system__init__gr.html#ga93f514700ccf00d08dbdcff7f1224eb2">SystemInit</a>();                             <span class="comment">/* CMSIS System Initialization */</span></div>
 <div class="line">  <a class="code hl_define" href="group__compiler__conntrol__gr.html#ga72db8b026c5e100254080fefabd9fd88">__PROGRAM_START</a>();                        <span class="comment">/* Enter PreMain (C library entry point) */</span></div>
 <div class="line">}</div>
-<div class="ttc" id="agroup__compiler__conntrol__gr_html_ga72db8b026c5e100254080fefabd9fd88"><div class="ttname"><a href="group__compiler__conntrol__gr.html#ga72db8b026c5e100254080fefabd9fd88">__PROGRAM_START</a></div><div class="ttdeci">#define __PROGRAM_START</div><div class="ttdoc">Entry function into the user application or library startup.</div><div class="ttdef"><b>Definition:</b> Ref_CompilerControl.txt:483</div></div>
+<div class="ttc" id="agroup__compiler__conntrol__gr_html_ga72db8b026c5e100254080fefabd9fd88"><div class="ttname"><a href="group__compiler__conntrol__gr.html#ga72db8b026c5e100254080fefabd9fd88">__PROGRAM_START</a></div><div class="ttdeci">#define __PROGRAM_START</div><div class="ttdoc">Entry function into the user application or library startup.</div><div class="ttdef"><b>Definition:</b> ref_compiler_ctrl.txt:483</div></div>
 <div class="ttc" id="agroup__system__init__gr_html_ga93f514700ccf00d08dbdcff7f1224eb2"><div class="ttname"><a href="group__system__init__gr.html#ga93f514700ccf00d08dbdcff7f1224eb2">SystemInit</a></div><div class="ttdeci">void SystemInit(void)</div><div class="ttdoc">Function to Initialize the system.</div></div>
 </div><!-- fragment --> 
 </div>
@@ -586,7 +583,7 @@ Macros</h2></td></tr>
 <div class="line">    dst[i] = src[i];   <span class="comment">// Since src is restrict, the compiler can assume that dst and src are not overlapping may load multiple values at a time</span></div>
 <div class="line">  }</div>
 <div class="line">}</div>
-<div class="ttc" id="agroup__compiler__conntrol__gr_html_ga378ac21329d33f561f90265eef89f564"><div class="ttname"><a href="group__compiler__conntrol__gr.html#ga378ac21329d33f561f90265eef89f564">__RESTRICT</a></div><div class="ttdeci">#define __RESTRICT</div><div class="ttdoc">restrict pointer qualifier to enable additional optimizations.</div><div class="ttdef"><b>Definition:</b> Ref_CompilerControl.txt:199</div></div>
+<div class="ttc" id="agroup__compiler__conntrol__gr_html_ga378ac21329d33f561f90265eef89f564"><div class="ttname"><a href="group__compiler__conntrol__gr.html#ga378ac21329d33f561f90265eef89f564">__RESTRICT</a></div><div class="ttdeci">#define __RESTRICT</div><div class="ttdoc">restrict pointer qualifier to enable additional optimizations.</div><div class="ttdef"><b>Definition:</b> ref_compiler_ctrl.txt:199</div></div>
 <div class="ttc" id="agroup__mpu__functions_html_gac1a949403bf84eecaf407003fb553ae7"><div class="ttname"><a href="group__mpu__functions.html#gac1a949403bf84eecaf407003fb553ae7">ARM_MPU_OrderedMemcpy</a></div><div class="ttdeci">__STATIC_INLINE void ARM_MPU_OrderedMemcpy(volatile uint32_t *dst, const uint32_t *__RESTRICT src, uint32_t len)</div></div>
 </div><!-- fragment --> 
 </div>
@@ -613,7 +610,7 @@ Macros</h2></td></tr>
 <div class="line">  <span class="comment">// :</span></div>
 <div class="line">}</div>
 <div class="ttc" id="agroup__Core__Register__gr_html_ga6809a07c5cb7410e361f3fba57f72172"><div class="ttname"><a href="group__Core__Register__gr.html#ga6809a07c5cb7410e361f3fba57f72172">__set_MSPLIM</a></div><div class="ttdeci">__set_MSPLIM(uint32_t MainStackPtrLimit)</div><div class="ttdoc">Set Main Stack Pointer Limit Devices without Armv8-M Main Extensions (i.e. Cortex-M23) lack the non-s...</div></div>
-<div class="ttc" id="agroup__compiler__conntrol__gr_html_ga84b0bad4aa39632d3faea46aa1e102a8"><div class="ttname"><a href="group__compiler__conntrol__gr.html#ga84b0bad4aa39632d3faea46aa1e102a8">__STACK_LIMIT</a></div><div class="ttdeci">#define __STACK_LIMIT</div><div class="ttdoc">Compiler/linker symbol specifying the limit of the main stack (MSP).</div><div class="ttdef"><b>Definition:</b> Ref_CompilerControl.txt:518</div></div>
+<div class="ttc" id="agroup__compiler__conntrol__gr_html_ga84b0bad4aa39632d3faea46aa1e102a8"><div class="ttname"><a href="group__compiler__conntrol__gr.html#ga84b0bad4aa39632d3faea46aa1e102a8">__STACK_LIMIT</a></div><div class="ttdeci">#define __STACK_LIMIT</div><div class="ttdoc">Compiler/linker symbol specifying the limit of the main stack (MSP).</div><div class="ttdef"><b>Definition:</b> ref_compiler_ctrl.txt:518</div></div>
 </div><!-- fragment --> 
 </div>
 </div>
@@ -638,9 +635,9 @@ Macros</h2></td></tr>
 <div class="line">    uint32_t *vectors = (uint32_t *) ((uintptr_t) SCB-&gt;VTOR);</div>
 <div class="line">    <span class="keywordflow">return</span> vectors[(int32_t)IRQn + NVIC_USER_IRQ_OFFSET];</div>
 <div class="line">}</div>
-<div class="ttc" id="agroup__NVIC__gr_html_ga7e1129cd8a196f4284d41db3e82ad5c8"><div class="ttname"><a href="group__NVIC__gr.html#ga7e1129cd8a196f4284d41db3e82ad5c8">IRQn_Type</a></div><div class="ttdeci">IRQn_Type</div><div class="ttdoc">Definition of IRQn numbers.</div><div class="ttdef"><b>Definition:</b> Ref_NVIC.txt:385</div></div>
+<div class="ttc" id="agroup__NVIC__gr_html_ga7e1129cd8a196f4284d41db3e82ad5c8"><div class="ttname"><a href="group__NVIC__gr.html#ga7e1129cd8a196f4284d41db3e82ad5c8">IRQn_Type</a></div><div class="ttdeci">IRQn_Type</div><div class="ttdoc">Definition of IRQn numbers.</div><div class="ttdef"><b>Definition:</b> ref_nvic.txt:385</div></div>
 <div class="ttc" id="agroup__NVIC__gr_html_gaebee9cad6724a5bac1857f0f1fb6d6af"><div class="ttname"><a href="group__NVIC__gr.html#gaebee9cad6724a5bac1857f0f1fb6d6af">NVIC_GetVector</a></div><div class="ttdeci">uint32_t NVIC_GetVector(IRQn_Type IRQn)</div><div class="ttdoc">Read Interrupt Vector [not for Cortex-M0, SC000].</div></div>
-<div class="ttc" id="agroup__compiler__conntrol__gr_html_gab904513442afdf77d4f8c74f23cbb040"><div class="ttname"><a href="group__compiler__conntrol__gr.html#gab904513442afdf77d4f8c74f23cbb040">__STATIC_FORCEINLINE</a></div><div class="ttdeci">#define __STATIC_FORCEINLINE</div><div class="ttdoc">Define a static function that should be always inlined by the compiler.</div><div class="ttdef"><b>Definition:</b> Ref_CompilerControl.txt:153</div></div>
+<div class="ttc" id="agroup__compiler__conntrol__gr_html_gab904513442afdf77d4f8c74f23cbb040"><div class="ttname"><a href="group__compiler__conntrol__gr.html#gab904513442afdf77d4f8c74f23cbb040">__STATIC_FORCEINLINE</a></div><div class="ttdeci">#define __STATIC_FORCEINLINE</div><div class="ttdoc">Define a static function that should be always inlined by the compiler.</div><div class="ttdef"><b>Definition:</b> ref_compiler_ctrl.txt:153</div></div>
 </div><!-- fragment --> 
 </div>
 </div>
@@ -686,7 +683,7 @@ Macros</h2></td></tr>
 <div class="line"><span class="keywordtype">void</span> test (uint8_t *ptr) {</div>
 <div class="line">   val16 = <a class="code hl_define" href="group__compiler__conntrol__gr.html#gabe8693a7200e573101551d49a1772fb9">__UNALIGNED_UINT16_READ</a>(ptr);</div>
 <div class="line">}</div>
-<div class="ttc" id="agroup__compiler__conntrol__gr_html_gabe8693a7200e573101551d49a1772fb9"><div class="ttname"><a href="group__compiler__conntrol__gr.html#gabe8693a7200e573101551d49a1772fb9">__UNALIGNED_UINT16_READ</a></div><div class="ttdeci">#define __UNALIGNED_UINT16_READ</div><div class="ttdoc">Pointer for unaligned read of a uint16_t variable.</div><div class="ttdef"><b>Definition:</b> Ref_CompilerControl.txt:324</div></div>
+<div class="ttc" id="agroup__compiler__conntrol__gr_html_gabe8693a7200e573101551d49a1772fb9"><div class="ttname"><a href="group__compiler__conntrol__gr.html#gabe8693a7200e573101551d49a1772fb9">__UNALIGNED_UINT16_READ</a></div><div class="ttdeci">#define __UNALIGNED_UINT16_READ</div><div class="ttdoc">Pointer for unaligned read of a uint16_t variable.</div><div class="ttdef"><b>Definition:</b> ref_compiler_ctrl.txt:324</div></div>
 </div><!-- fragment --> 
 </div>
 </div>
@@ -709,7 +706,7 @@ Macros</h2></td></tr>
 <div class="line"><span class="keywordtype">void</span> test (uint8_t *ptr) {</div>
 <div class="line">   <a class="code hl_define" href="group__compiler__conntrol__gr.html#gadb9cd73446f7e11e92383cd327a23407">__UNALIGNED_UINT16_WRITE</a>(ptr, val16);</div>
 <div class="line">}</div>
-<div class="ttc" id="agroup__compiler__conntrol__gr_html_gadb9cd73446f7e11e92383cd327a23407"><div class="ttname"><a href="group__compiler__conntrol__gr.html#gadb9cd73446f7e11e92383cd327a23407">__UNALIGNED_UINT16_WRITE</a></div><div class="ttdeci">#define __UNALIGNED_UINT16_WRITE</div><div class="ttdoc">Pointer for unaligned write of a uint16_t variable.</div><div class="ttdef"><b>Definition:</b> Ref_CompilerControl.txt:345</div></div>
+<div class="ttc" id="agroup__compiler__conntrol__gr_html_gadb9cd73446f7e11e92383cd327a23407"><div class="ttname"><a href="group__compiler__conntrol__gr.html#gadb9cd73446f7e11e92383cd327a23407">__UNALIGNED_UINT16_WRITE</a></div><div class="ttdeci">#define __UNALIGNED_UINT16_WRITE</div><div class="ttdoc">Pointer for unaligned write of a uint16_t variable.</div><div class="ttdef"><b>Definition:</b> ref_compiler_ctrl.txt:345</div></div>
 </div><!-- fragment --> 
 </div>
 </div>
@@ -733,7 +730,7 @@ Macros</h2></td></tr>
 <div class="line"><span class="keywordtype">void</span> test (uint8_t *ptr) {</div>
 <div class="line">  <a class="code hl_define" href="group__compiler__conntrol__gr.html#ga27fd2ec6767ca1ab66d36b5cc0103268">__UNALIGNED_UINT32</a>(ptr) = val32;</div>
 <div class="line">}</div>
-<div class="ttc" id="agroup__compiler__conntrol__gr_html_ga27fd2ec6767ca1ab66d36b5cc0103268"><div class="ttname"><a href="group__compiler__conntrol__gr.html#ga27fd2ec6767ca1ab66d36b5cc0103268">__UNALIGNED_UINT32</a></div><div class="ttdeci">#define __UNALIGNED_UINT32</div><div class="ttdoc">Pointer for unaligned access of a uint32_t variable.</div><div class="ttdef"><b>Definition:</b> Ref_CompilerControl.txt:303</div></div>
+<div class="ttc" id="agroup__compiler__conntrol__gr_html_ga27fd2ec6767ca1ab66d36b5cc0103268"><div class="ttname"><a href="group__compiler__conntrol__gr.html#ga27fd2ec6767ca1ab66d36b5cc0103268">__UNALIGNED_UINT32</a></div><div class="ttdeci">#define __UNALIGNED_UINT32</div><div class="ttdoc">Pointer for unaligned access of a uint32_t variable.</div><div class="ttdef"><b>Definition:</b> ref_compiler_ctrl.txt:303</div></div>
 </div><!-- fragment --> 
 </div>
 </div>
@@ -756,7 +753,7 @@ Macros</h2></td></tr>
 <div class="line"><span class="keywordtype">void</span> test (uint8_t *ptr) {</div>
 <div class="line">   val32 = <a class="code hl_define" href="group__compiler__conntrol__gr.html#ga254322c344d954c9f829719a50a88e87">__UNALIGNED_UINT32_READ</a>(ptr);</div>
 <div class="line">}</div>
-<div class="ttc" id="agroup__compiler__conntrol__gr_html_ga254322c344d954c9f829719a50a88e87"><div class="ttname"><a href="group__compiler__conntrol__gr.html#ga254322c344d954c9f829719a50a88e87">__UNALIGNED_UINT32_READ</a></div><div class="ttdeci">#define __UNALIGNED_UINT32_READ</div><div class="ttdoc">Pointer for unaligned read of a uint32_t variable.</div><div class="ttdef"><b>Definition:</b> Ref_CompilerControl.txt:366</div></div>
+<div class="ttc" id="agroup__compiler__conntrol__gr_html_ga254322c344d954c9f829719a50a88e87"><div class="ttname"><a href="group__compiler__conntrol__gr.html#ga254322c344d954c9f829719a50a88e87">__UNALIGNED_UINT32_READ</a></div><div class="ttdeci">#define __UNALIGNED_UINT32_READ</div><div class="ttdoc">Pointer for unaligned read of a uint32_t variable.</div><div class="ttdef"><b>Definition:</b> ref_compiler_ctrl.txt:366</div></div>
 </div><!-- fragment --> 
 </div>
 </div>
@@ -779,7 +776,7 @@ Macros</h2></td></tr>
 <div class="line"><span class="keywordtype">void</span> test (uint8_t *ptr) {</div>
 <div class="line">   <a class="code hl_define" href="group__compiler__conntrol__gr.html#gabb2180285c417aa9120a360c51f64b4b">__UNALIGNED_UINT32_WRITE</a>(ptr, val32);</div>
 <div class="line">}</div>
-<div class="ttc" id="agroup__compiler__conntrol__gr_html_gabb2180285c417aa9120a360c51f64b4b"><div class="ttname"><a href="group__compiler__conntrol__gr.html#gabb2180285c417aa9120a360c51f64b4b">__UNALIGNED_UINT32_WRITE</a></div><div class="ttdeci">#define __UNALIGNED_UINT32_WRITE</div><div class="ttdoc">Pointer for unaligned write of a uint32_t variable.</div><div class="ttdef"><b>Definition:</b> Ref_CompilerControl.txt:387</div></div>
+<div class="ttc" id="agroup__compiler__conntrol__gr_html_gabb2180285c417aa9120a360c51f64b4b"><div class="ttname"><a href="group__compiler__conntrol__gr.html#gabb2180285c417aa9120a360c51f64b4b">__UNALIGNED_UINT32_WRITE</a></div><div class="ttdeci">#define __UNALIGNED_UINT32_WRITE</div><div class="ttdoc">Pointer for unaligned write of a uint32_t variable.</div><div class="ttdef"><b>Definition:</b> ref_compiler_ctrl.txt:387</div></div>
 </div><!-- fragment --> 
 </div>
 </div>
@@ -802,7 +799,7 @@ Macros</h2></td></tr>
 <div class="line"><a class="code hl_define" href="group__compiler__conntrol__gr.html#ga3e40e4c553fc11588f7a4c2a19e789e0">__USED</a> uint32_t <span class="keyword">const</span> CMSIS_RTOS_RTX_Version = osCMSIS_RTX;</div>
 <div class="line"><a class="code hl_define" href="group__compiler__conntrol__gr.html#ga3e40e4c553fc11588f7a4c2a19e789e0">__USED</a> uint32_t <span class="keyword">const</span> os_clockrate = OS_TICK;</div>
 <div class="line"><a class="code hl_define" href="group__compiler__conntrol__gr.html#ga3e40e4c553fc11588f7a4c2a19e789e0">__USED</a> uint32_t <span class="keyword">const</span> os_timernum  = 0;</div>
-<div class="ttc" id="agroup__compiler__conntrol__gr_html_ga3e40e4c553fc11588f7a4c2a19e789e0"><div class="ttname"><a href="group__compiler__conntrol__gr.html#ga3e40e4c553fc11588f7a4c2a19e789e0">__USED</a></div><div class="ttdeci">#define __USED</div><div class="ttdoc">Inform that a variable shall be retained in executable image.</div><div class="ttdef"><b>Definition:</b> Ref_CompilerControl.txt:218</div></div>
+<div class="ttc" id="agroup__compiler__conntrol__gr_html_ga3e40e4c553fc11588f7a4c2a19e789e0"><div class="ttname"><a href="group__compiler__conntrol__gr.html#ga3e40e4c553fc11588f7a4c2a19e789e0">__USED</a></div><div class="ttdeci">#define __USED</div><div class="ttdoc">Inform that a variable shall be retained in executable image.</div><div class="ttdef"><b>Definition:</b> ref_compiler_ctrl.txt:218</div></div>
 </div><!-- fragment --> 
 </div>
 </div>

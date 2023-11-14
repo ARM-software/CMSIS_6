@@ -15,7 +15,7 @@ var searchData=
   ['intrinsic_20functions_20for_20simd_20instructions_12',['Intrinsic Functions for SIMD Instructions',['../group__intrinsic__SIMD__gr.html',1,'']]],
   ['ip_13',['IP',['../structNVIC__Type.html#a7ff7364a4260df67a2784811e8da4efd',1,'NVIC_Type']]],
   ['ipsr_5ftype_14',['IPSR_Type',['../unionIPSR__Type.html',1,'']]],
-  ['irqn_5ftype_15',['IRQn_Type',['../group__NVIC__gr.html#ga7e1129cd8a196f4284d41db3e82ad5c8',1,'Ref_NVIC.txt']]],
+  ['irqn_5ftype_15',['IRQn_Type',['../group__NVIC__gr.html#ga7e1129cd8a196f4284d41db3e82ad5c8',1,'ref_nvic.txt']]],
   ['irr_16',['IRR',['../structITM__Type.html#a66eb82a070953f09909f39b8e516fb91',1,'ITM_Type']]],
   ['isar_17',['ISAR',['../structSCB__Type.html#ae0136a2d2d3c45f016b2c449e92b2066',1,'SCB_Type']]],
   ['iser_18',['ISER',['../structNVIC__Type.html#a9fccef5a60a0d5e81fcd7869a6274f47',1,'NVIC_Type']]],
@@ -25,10 +25,10 @@ var searchData=
   ['itatbctr0_22',['ITATBCTR0',['../structTPI__Type.html#aaa573b2e073e76e93c51ecec79c616d0',1,'TPI_Type']]],
   ['itatbctr2_23',['ITATBCTR2',['../structTPI__Type.html#ab358319b969d3fed0f89bbe33e9f1652',1,'TPI_Type']]],
   ['itctrl_24',['ITCTRL',['../structTPI__Type.html#aaa4c823c10f115f7517c82ef86a5a68d',1,'TPI_Type']]],
-  ['itm_5fcheckchar_25',['ITM_CheckChar',['../group__ITM__Debug__gr.html#ga7f9bbabd9756d1a7eafb2d9bf27e0535',1,'Ref_Debug.txt']]],
-  ['itm_5freceivechar_26',['ITM_ReceiveChar',['../group__ITM__Debug__gr.html#ga37b8f41cae703b5ff6947e271065558c',1,'Ref_Debug.txt']]],
-  ['itm_5frxbuffer_27',['ITM_RxBuffer',['../group__ITM__Debug__gr.html#ga12e68e55a7badc271b948d6c7230b2a8',1,'Ref_Debug.txt']]],
-  ['itm_5fsendchar_28',['ITM_SendChar',['../group__ITM__Debug__gr.html#gaaa7c716331f74d644bf6bf25cd3392d1',1,'Ref_Debug.txt']]],
+  ['itm_5fcheckchar_25',['ITM_CheckChar',['../group__ITM__Debug__gr.html#ga7f9bbabd9756d1a7eafb2d9bf27e0535',1,'ref_debug.txt']]],
+  ['itm_5freceivechar_26',['ITM_ReceiveChar',['../group__ITM__Debug__gr.html#ga37b8f41cae703b5ff6947e271065558c',1,'ref_debug.txt']]],
+  ['itm_5frxbuffer_27',['ITM_RxBuffer',['../group__ITM__Debug__gr.html#ga12e68e55a7badc271b948d6c7230b2a8',1,'ref_debug.txt']]],
+  ['itm_5fsendchar_28',['ITM_SendChar',['../group__ITM__Debug__gr.html#gaaa7c716331f74d644bf6bf25cd3392d1',1,'ref_debug.txt']]],
   ['itm_5ftype_29',['ITM_Type',['../structITM__Type.html',1,'']]],
   ['iwr_30',['IWR',['../structITM__Type.html#aa9da04891e48d1a2f054de186e9c4c94',1,'ITM_Type']]]
 ];

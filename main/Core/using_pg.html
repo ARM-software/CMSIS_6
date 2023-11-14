@@ -6,14 +6,10 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
 <title>CMSIS-Core (Cortex-M): Using CMSIS-Core</title>
-<link href="doxygen.css" rel="stylesheet" type="text/css"/>
-<link href="tabs.css" rel="stylesheet" type="text/css"/>
-<link href="extra_navtree.css" rel="stylesheet" type="text/css"/>
-<link href="extra_stylesheet.css" rel="stylesheet" type="text/css"/>
-<link href="extra_search.css" rel="stylesheet" type="text/css"/>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
-<script type="text/javascript" src="printComponentTabs.js"></script>
+<script type="text/javascript" src="tabs.js"></script>
 <script type="text/javascript" src="footer.js"></script>
 <script type="text/javascript" src="navtree.js"></script>
 <link href="navtree.css" rel="stylesheet" type="text/css"/>
@@ -32,7 +28,8 @@
 <link href="extra_stylesheet.css" rel="stylesheet" type="text/css"/>
 <link href="extra_navtree.css" rel="stylesheet" type="text/css"/>
 <link href="extra_search.css" rel="stylesheet" type="text/css"/>
-<link href="version.css" rel="stylesheet" type="text/css" />
+<link href="extra_tabs.css" rel="stylesheet" type="text/css"/>
+<link href="version.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../version.js"></script>
 </head>
 <body>
@@ -255,7 +252,7 @@ Basic CMSIS Example</h2>
 <div class="ttc" id="agroup__NVIC__gr_html_ga5bb7f43ad92937c039dee3d36c3c2798"><div class="ttname"><a href="group__NVIC__gr.html#ga5bb7f43ad92937c039dee3d36c3c2798">NVIC_SetPriority</a></div><div class="ttdeci">void NVIC_SetPriority(IRQn_Type IRQn, uint32_t priority)</div><div class="ttdoc">Set the priority for an interrupt.</div></div>
 <div class="ttc" id="agroup__SysTick__gr_html_gabe47de40e9b0ad465b752297a9d9f427"><div class="ttname"><a href="group__SysTick__gr.html#gabe47de40e9b0ad465b752297a9d9f427">SysTick_Config</a></div><div class="ttdeci">uint32_t SysTick_Config(uint32_t ticks)</div><div class="ttdoc">System Tick Timer Configuration.</div></div>
 <div class="ttc" id="agroup__intrinsic__CPU__gr_html_gad3efec76c3bfa2b8528ded530386c563"><div class="ttname"><a href="group__intrinsic__CPU__gr.html#gad3efec76c3bfa2b8528ded530386c563">__WFE</a></div><div class="ttdeci">void __WFE(void)</div><div class="ttdoc">Wait For Event.</div></div>
-<div class="ttc" id="agroup__system__init__gr_html_gaa3cd3e43291e81e795d642b79b6088e6"><div class="ttname"><a href="group__system__init__gr.html#gaa3cd3e43291e81e795d642b79b6088e6">SystemCoreClock</a></div><div class="ttdeci">uint32_t SystemCoreClock</div><div class="ttdoc">Variable to hold the system core clock value.</div><div class="ttdef"><b>Definition:</b> Ref_SystemAndClock.txt:68</div></div>
+<div class="ttc" id="agroup__system__init__gr_html_gaa3cd3e43291e81e795d642b79b6088e6"><div class="ttname"><a href="group__system__init__gr.html#gaa3cd3e43291e81e795d642b79b6088e6">SystemCoreClock</a></div><div class="ttdeci">uint32_t SystemCoreClock</div><div class="ttdoc">Variable to hold the system core clock value.</div><div class="ttdef"><b>Definition:</b> ref_system_init.txt:68</div></div>
 </div><!-- fragment --><h2><a class="anchor" id="using_vtor"></a>
 Using Interrupt Vector Remap</h2>
 <p>Most Cortex-M processors provide VTOR register for remapping interrupt vectors. The following example shows a typical use case where the interrupt vectors are copied to RAM and the <code>SysTick_Handler</code> is replaced.</p>
@@ -312,8 +309,8 @@ Using Interrupt Vector Remap</h2>
 <div class="line">   </div>
 <div class="line">  <span class="keywordflow">while</span>(1);</div>
 <div class="line">}</div>
-<div class="ttc" id="agroup__NVIC__gr_html_gga7e1129cd8a196f4284d41db3e82ad5c8a6dbff8f8543325f3474cbae2446776e7"><div class="ttname"><a href="group__NVIC__gr.html#gga7e1129cd8a196f4284d41db3e82ad5c8a6dbff8f8543325f3474cbae2446776e7">SysTick_IRQn</a></div><div class="ttdeci">@ SysTick_IRQn</div><div class="ttdoc">Exception 15: System Tick Interrupt.</div><div class="ttdef"><b>Definition:</b> Ref_NVIC.txt:398</div></div>
-<div class="ttc" id="agroup__compiler__conntrol__gr_html_gab94ebeb20055f1848d7b707d3c7cfc5d"><div class="ttname"><a href="group__compiler__conntrol__gr.html#gab94ebeb20055f1848d7b707d3c7cfc5d">__VECTOR_TABLE</a></div><div class="ttdeci">#define __VECTOR_TABLE</div><div class="ttdoc">Symbol name used for the (static) interrupt vector table.</div><div class="ttdef"><b>Definition:</b> Ref_CompilerControl.txt:531</div></div>
+<div class="ttc" id="agroup__NVIC__gr_html_gga7e1129cd8a196f4284d41db3e82ad5c8a6dbff8f8543325f3474cbae2446776e7"><div class="ttname"><a href="group__NVIC__gr.html#gga7e1129cd8a196f4284d41db3e82ad5c8a6dbff8f8543325f3474cbae2446776e7">SysTick_IRQn</a></div><div class="ttdeci">@ SysTick_IRQn</div><div class="ttdoc">Exception 15: System Tick Interrupt.</div><div class="ttdef"><b>Definition:</b> ref_nvic.txt:398</div></div>
+<div class="ttc" id="agroup__compiler__conntrol__gr_html_gab94ebeb20055f1848d7b707d3c7cfc5d"><div class="ttname"><a href="group__compiler__conntrol__gr.html#gab94ebeb20055f1848d7b707d3c7cfc5d">__VECTOR_TABLE</a></div><div class="ttdeci">#define __VECTOR_TABLE</div><div class="ttdoc">Symbol name used for the (static) interrupt vector table.</div><div class="ttdef"><b>Definition:</b> ref_compiler_ctrl.txt:531</div></div>
 <div class="ttc" id="agroup__intrinsic__CPU__gr_html_gacb2a8ca6eae1ba4b31161578b720c199"><div class="ttname"><a href="group__intrinsic__CPU__gr.html#gacb2a8ca6eae1ba4b31161578b720c199">__DSB</a></div><div class="ttdeci">void __DSB(void)</div><div class="ttdoc">Data Synchronization Barrier.</div></div>
 <div class="ttc" id="agroup__system__init__gr_html_gae0c36a9591fe6e9c45ecb21a794f0f0f"><div class="ttname"><a href="group__system__init__gr.html#gae0c36a9591fe6e9c45ecb21a794f0f0f">SystemCoreClockUpdate</a></div><div class="ttdeci">void SystemCoreClockUpdate(void)</div><div class="ttdoc">Function to update the variable SystemCoreClock.</div></div>
 </div><!-- fragment --><h2><a class="anchor" id="using_arm"></a>

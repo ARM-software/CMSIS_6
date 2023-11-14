@@ -6,14 +6,10 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
 <title>CMSIS-Core (Cortex-M): PMU Functions for Armv8.1-M</title>
-<link href="doxygen.css" rel="stylesheet" type="text/css"/>
-<link href="tabs.css" rel="stylesheet" type="text/css"/>
-<link href="extra_navtree.css" rel="stylesheet" type="text/css"/>
-<link href="extra_stylesheet.css" rel="stylesheet" type="text/css"/>
-<link href="extra_search.css" rel="stylesheet" type="text/css"/>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
-<script type="text/javascript" src="printComponentTabs.js"></script>
+<script type="text/javascript" src="tabs.js"></script>
 <script type="text/javascript" src="footer.js"></script>
 <script type="text/javascript" src="navtree.js"></script>
 <link href="navtree.css" rel="stylesheet" type="text/css"/>
@@ -32,7 +28,8 @@
 <link href="extra_stylesheet.css" rel="stylesheet" type="text/css"/>
 <link href="extra_navtree.css" rel="stylesheet" type="text/css"/>
 <link href="extra_search.css" rel="stylesheet" type="text/css"/>
-<link href="version.css" rel="stylesheet" type="text/css" />
+<link href="extra_tabs.css" rel="stylesheet" type="text/css"/>
+<link href="version.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../version.js"></script>
 </head>
 <body>
@@ -252,8 +249,8 @@ Functions</h2></td></tr>
 <div class="line">instructions_retired_count = instructions_retired_count + <a class="code hl_function" href="group__pmu8__functions.html#ga9768cbaffcf2c0b31febe96db91a85d8">ARM_PMU_Get_EVCNTR</a>(0);</div>
 <div class="line">l1_dcache_miss_count = l1_dcache_miss_count + <a class="code hl_function" href="group__pmu8__functions.html#ga9768cbaffcf2c0b31febe96db91a85d8">ARM_PMU_Get_EVCNTR</a>(1);      <span class="comment">// Note: D-Cache must be enabled using</span></div>
 <div class="line">                                                                          <span class="comment">// SCB_EnableDCache() for meaningful result.</span></div>
-<div class="ttc" id="agroup__pmu8__events__armv81_html_ga4687d5d7efc6f49db2db9acc25b590f6"><div class="ttname"><a href="group__pmu8__events__armv81.html#ga4687d5d7efc6f49db2db9acc25b590f6">ARM_PMU_L1D_CACHE_MISS_RD</a></div><div class="ttdeci">#define ARM_PMU_L1D_CACHE_MISS_RD</div><div class="ttdoc">Level 1 data cache read miss.</div><div class="ttdef"><b>Definition:</b> Ref_PMU8.txt:106</div></div>
-<div class="ttc" id="agroup__pmu8__events__armv81_html_ga8a5e60eee460addfc66e275a2c4c4800"><div class="ttname"><a href="group__pmu8__events__armv81.html#ga8a5e60eee460addfc66e275a2c4c4800">ARM_PMU_INST_RETIRED</a></div><div class="ttdeci">#define ARM_PMU_INST_RETIRED</div><div class="ttdoc">Instruction architecturally executed.</div><div class="ttdef"><b>Definition:</b> Ref_PMU8.txt:71</div></div>
+<div class="ttc" id="agroup__pmu8__events__armv81_html_ga4687d5d7efc6f49db2db9acc25b590f6"><div class="ttname"><a href="group__pmu8__events__armv81.html#ga4687d5d7efc6f49db2db9acc25b590f6">ARM_PMU_L1D_CACHE_MISS_RD</a></div><div class="ttdeci">#define ARM_PMU_L1D_CACHE_MISS_RD</div><div class="ttdoc">Level 1 data cache read miss.</div><div class="ttdef"><b>Definition:</b> ref_pmu8.txt:106</div></div>
+<div class="ttc" id="agroup__pmu8__events__armv81_html_ga8a5e60eee460addfc66e275a2c4c4800"><div class="ttname"><a href="group__pmu8__events__armv81.html#ga8a5e60eee460addfc66e275a2c4c4800">ARM_PMU_INST_RETIRED</a></div><div class="ttdeci">#define ARM_PMU_INST_RETIRED</div><div class="ttdoc">Instruction architecturally executed.</div><div class="ttdef"><b>Definition:</b> ref_pmu8.txt:71</div></div>
 <div class="ttc" id="agroup__pmu8__functions_html_ga22e481855ab257180e24f01a38623887"><div class="ttname"><a href="group__pmu8__functions.html#ga22e481855ab257180e24f01a38623887">ARM_PMU_CNTR_Enable</a></div><div class="ttdeci">__STATIC_INLINE void ARM_PMU_CNTR_Enable(uint32_t mask)</div><div class="ttdoc">Enable counters.</div></div>
 <div class="ttc" id="agroup__pmu8__functions_html_ga4288c08039886cd24eb2dd4e743fb97e"><div class="ttname"><a href="group__pmu8__functions.html#ga4288c08039886cd24eb2dd4e743fb97e">ARM_PMU_CYCCNT_Reset</a></div><div class="ttdeci">__STATIC_INLINE void ARM_PMU_CYCCNT_Reset(void)</div><div class="ttdoc">Reset cycle counter.</div></div>
 <div class="ttc" id="agroup__pmu8__functions_html_ga618e7140a774ac2a31a59db4b7d13abc"><div class="ttname"><a href="group__pmu8__functions.html#ga618e7140a774ac2a31a59db4b7d13abc">ARM_PMU_Enable</a></div><div class="ttdeci">__STATIC_INLINE void ARM_PMU_Enable(void)</div><div class="ttdoc">Enable the PMU.</div></div>
@@ -278,7 +275,7 @@ Functions</h2></td></tr>
 <p>PMU configuration struct. </p>
 <p>This macro can be used to access the PMU registers, directly. For the common tasks one should prefer using the control functions.</p>
 <p>Example: <b>Example:</b> </p><div class="fragment"><div class="line"><a class="code hl_define" href="group__pmu8__functions.html#gad19c25be8565f2791aca1a96d1847516">PMU</a>-&gt;CTRL |= PMU_CTRL_ENABLE_Msk; <span class="comment">// Enable PMU</span></div>
-<div class="ttc" id="agroup__pmu8__functions_html_gad19c25be8565f2791aca1a96d1847516"><div class="ttname"><a href="group__pmu8__functions.html#gad19c25be8565f2791aca1a96d1847516">PMU</a></div><div class="ttdeci">#define PMU</div><div class="ttdoc">PMU configuration struct.</div><div class="ttdef"><b>Definition:</b> Ref_PMU8.txt:326</div></div>
+<div class="ttc" id="agroup__pmu8__functions_html_gad19c25be8565f2791aca1a96d1847516"><div class="ttname"><a href="group__pmu8__functions.html#gad19c25be8565f2791aca1a96d1847516">PMU</a></div><div class="ttdeci">#define PMU</div><div class="ttdoc">PMU configuration struct.</div><div class="ttdef"><b>Definition:</b> ref_pmu8.txt:326</div></div>
 </div><!-- fragment --> 
 </div>
 </div>

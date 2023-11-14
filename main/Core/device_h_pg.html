@@ -6,14 +6,10 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
 <title>CMSIS-Core (Cortex-M): Device Header File &lt;Device.h&gt;</title>
-<link href="doxygen.css" rel="stylesheet" type="text/css"/>
-<link href="tabs.css" rel="stylesheet" type="text/css"/>
-<link href="extra_navtree.css" rel="stylesheet" type="text/css"/>
-<link href="extra_stylesheet.css" rel="stylesheet" type="text/css"/>
-<link href="extra_search.css" rel="stylesheet" type="text/css"/>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
-<script type="text/javascript" src="printComponentTabs.js"></script>
+<script type="text/javascript" src="tabs.js"></script>
 <script type="text/javascript" src="footer.js"></script>
 <script type="text/javascript" src="navtree.js"></script>
 <link href="navtree.css" rel="stylesheet" type="text/css"/>
@@ -32,7 +28,8 @@
 <link href="extra_stylesheet.css" rel="stylesheet" type="text/css"/>
 <link href="extra_navtree.css" rel="stylesheet" type="text/css"/>
 <link href="extra_search.css" rel="stylesheet" type="text/css"/>
-<link href="version.css" rel="stylesheet" type="text/css" />
+<link href="extra_tabs.css" rel="stylesheet" type="text/css"/>
+<link href="version.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../version.js"></script>
 </head>
 <body>
@@ -162,12 +159,12 @@ Interrupt Number Definition</h1>
 <div class="line">  EINT1_IRQn                    = 30,       </div>
 <div class="line">  EINT0_IRQn                    = 31,       </div>
 <div class="line">} <a class="code hl_enumeration" href="group__NVIC__gr.html#ga7e1129cd8a196f4284d41db3e82ad5c8">IRQn_Type</a>;</div>
-<div class="ttc" id="agroup__NVIC__gr_html_ga7e1129cd8a196f4284d41db3e82ad5c8"><div class="ttname"><a href="group__NVIC__gr.html#ga7e1129cd8a196f4284d41db3e82ad5c8">IRQn_Type</a></div><div class="ttdeci">IRQn_Type</div><div class="ttdoc">Definition of IRQn numbers.</div><div class="ttdef"><b>Definition:</b> Ref_NVIC.txt:385</div></div>
-<div class="ttc" id="agroup__NVIC__gr_html_gga7e1129cd8a196f4284d41db3e82ad5c8a03c3cc89984928816d81793fc7bce4a2"><div class="ttname"><a href="group__NVIC__gr.html#gga7e1129cd8a196f4284d41db3e82ad5c8a03c3cc89984928816d81793fc7bce4a2">PendSV_IRQn</a></div><div class="ttdeci">@ PendSV_IRQn</div><div class="ttdoc">Exception 14: Pend SV Interrupt [not on Cortex-M0 variants].</div><div class="ttdef"><b>Definition:</b> Ref_NVIC.txt:397</div></div>
-<div class="ttc" id="agroup__NVIC__gr_html_gga7e1129cd8a196f4284d41db3e82ad5c8a4ce820b3cc6cf3a796b41aadc0cf1237"><div class="ttname"><a href="group__NVIC__gr.html#gga7e1129cd8a196f4284d41db3e82ad5c8a4ce820b3cc6cf3a796b41aadc0cf1237">SVCall_IRQn</a></div><div class="ttdeci">@ SVCall_IRQn</div><div class="ttdoc">Exception 11: SVC Interrupt.</div><div class="ttdef"><b>Definition:</b> Ref_NVIC.txt:395</div></div>
-<div class="ttc" id="agroup__NVIC__gr_html_gga7e1129cd8a196f4284d41db3e82ad5c8a6dbff8f8543325f3474cbae2446776e7"><div class="ttname"><a href="group__NVIC__gr.html#gga7e1129cd8a196f4284d41db3e82ad5c8a6dbff8f8543325f3474cbae2446776e7">SysTick_IRQn</a></div><div class="ttdeci">@ SysTick_IRQn</div><div class="ttdoc">Exception 15: System Tick Interrupt.</div><div class="ttdef"><b>Definition:</b> Ref_NVIC.txt:398</div></div>
-<div class="ttc" id="agroup__NVIC__gr_html_gga7e1129cd8a196f4284d41db3e82ad5c8ab1a222a34a32f0ef5ac65e714efc1f85"><div class="ttname"><a href="group__NVIC__gr.html#gga7e1129cd8a196f4284d41db3e82ad5c8ab1a222a34a32f0ef5ac65e714efc1f85">HardFault_IRQn</a></div><div class="ttdeci">@ HardFault_IRQn</div><div class="ttdoc">Exception 3: Hard Fault Interrupt.</div><div class="ttdef"><b>Definition:</b> Ref_NVIC.txt:388</div></div>
-<div class="ttc" id="agroup__NVIC__gr_html_gga7e1129cd8a196f4284d41db3e82ad5c8ade177d9c70c89e084093024b932a4e30"><div class="ttname"><a href="group__NVIC__gr.html#gga7e1129cd8a196f4284d41db3e82ad5c8ade177d9c70c89e084093024b932a4e30">NonMaskableInt_IRQn</a></div><div class="ttdeci">@ NonMaskableInt_IRQn</div><div class="ttdoc">Exception 2: Non Maskable Interrupt.</div><div class="ttdef"><b>Definition:</b> Ref_NVIC.txt:387</div></div>
+<div class="ttc" id="agroup__NVIC__gr_html_ga7e1129cd8a196f4284d41db3e82ad5c8"><div class="ttname"><a href="group__NVIC__gr.html#ga7e1129cd8a196f4284d41db3e82ad5c8">IRQn_Type</a></div><div class="ttdeci">IRQn_Type</div><div class="ttdoc">Definition of IRQn numbers.</div><div class="ttdef"><b>Definition:</b> ref_nvic.txt:385</div></div>
+<div class="ttc" id="agroup__NVIC__gr_html_gga7e1129cd8a196f4284d41db3e82ad5c8a03c3cc89984928816d81793fc7bce4a2"><div class="ttname"><a href="group__NVIC__gr.html#gga7e1129cd8a196f4284d41db3e82ad5c8a03c3cc89984928816d81793fc7bce4a2">PendSV_IRQn</a></div><div class="ttdeci">@ PendSV_IRQn</div><div class="ttdoc">Exception 14: Pend SV Interrupt [not on Cortex-M0 variants].</div><div class="ttdef"><b>Definition:</b> ref_nvic.txt:397</div></div>
+<div class="ttc" id="agroup__NVIC__gr_html_gga7e1129cd8a196f4284d41db3e82ad5c8a4ce820b3cc6cf3a796b41aadc0cf1237"><div class="ttname"><a href="group__NVIC__gr.html#gga7e1129cd8a196f4284d41db3e82ad5c8a4ce820b3cc6cf3a796b41aadc0cf1237">SVCall_IRQn</a></div><div class="ttdeci">@ SVCall_IRQn</div><div class="ttdoc">Exception 11: SVC Interrupt.</div><div class="ttdef"><b>Definition:</b> ref_nvic.txt:395</div></div>
+<div class="ttc" id="agroup__NVIC__gr_html_gga7e1129cd8a196f4284d41db3e82ad5c8a6dbff8f8543325f3474cbae2446776e7"><div class="ttname"><a href="group__NVIC__gr.html#gga7e1129cd8a196f4284d41db3e82ad5c8a6dbff8f8543325f3474cbae2446776e7">SysTick_IRQn</a></div><div class="ttdeci">@ SysTick_IRQn</div><div class="ttdoc">Exception 15: System Tick Interrupt.</div><div class="ttdef"><b>Definition:</b> ref_nvic.txt:398</div></div>
+<div class="ttc" id="agroup__NVIC__gr_html_gga7e1129cd8a196f4284d41db3e82ad5c8ab1a222a34a32f0ef5ac65e714efc1f85"><div class="ttname"><a href="group__NVIC__gr.html#gga7e1129cd8a196f4284d41db3e82ad5c8ab1a222a34a32f0ef5ac65e714efc1f85">HardFault_IRQn</a></div><div class="ttdeci">@ HardFault_IRQn</div><div class="ttdoc">Exception 3: Hard Fault Interrupt.</div><div class="ttdef"><b>Definition:</b> ref_nvic.txt:388</div></div>
+<div class="ttc" id="agroup__NVIC__gr_html_gga7e1129cd8a196f4284d41db3e82ad5c8ade177d9c70c89e084093024b932a4e30"><div class="ttname"><a href="group__NVIC__gr.html#gga7e1129cd8a196f4284d41db3e82ad5c8ade177d9c70c89e084093024b932a4e30">NonMaskableInt_IRQn</a></div><div class="ttdeci">@ NonMaskableInt_IRQn</div><div class="ttdoc">Exception 2: Non Maskable Interrupt.</div><div class="ttdef"><b>Definition:</b> ref_nvic.txt:387</div></div>
 </div><!-- fragment --><h1><a class="anchor" id="core_config_sect"></a>
 Configuration of the Processor and Core Peripherals</h1>
 <p>The <a class="el" href="device_h_pg.html">Device Header File &lt;Device.h&gt;</a> configures the Cortex-M or SecurCore processors and the core peripherals with <code>#define</code> directives that are set prior to including the file <code>core_&lt;cpu&gt;.h</code>.</p>

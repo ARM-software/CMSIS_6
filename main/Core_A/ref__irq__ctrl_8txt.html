@@ -5,15 +5,11 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>CMSIS-Core (Cortex-A): Ref_SystemAndClock.txt File Reference</title>
-<link href="doxygen.css" rel="stylesheet" type="text/css"/>
-<link href="tabs.css" rel="stylesheet" type="text/css"/>
-<link href="extra_navtree.css" rel="stylesheet" type="text/css"/>
-<link href="extra_stylesheet.css" rel="stylesheet" type="text/css"/>
-<link href="extra_search.css" rel="stylesheet" type="text/css"/>
+<title>CMSIS-Core (Cortex-A): ref_irq_ctrl.txt File Reference</title>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
-<script type="text/javascript" src="printComponentTabs.js"></script>
+<script type="text/javascript" src="tabs.js"></script>
 <script type="text/javascript" src="footer.js"></script>
 <script type="text/javascript" src="navtree.js"></script>
 <link href="navtree.css" rel="stylesheet" type="text/css"/>
@@ -32,7 +28,8 @@
 <link href="extra_stylesheet.css" rel="stylesheet" type="text/css"/>
 <link href="extra_navtree.css" rel="stylesheet" type="text/css"/>
 <link href="extra_search.css" rel="stylesheet" type="text/css"/>
-<link href="version.css" rel="stylesheet" type="text/css" />
+<link href="extra_tabs.css" rel="stylesheet" type="text/css"/>
+<link href="version.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../version.js"></script>
 </head>
 <body>
@@ -101,7 +98,7 @@ var searchBox = new SearchBox("searchBox", "search/",'.html');
 </div>
 <script type="text/javascript">
 /* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
-$(document).ready(function(){initNavTree('Ref__SystemAndClock_8txt.html',''); initResizable(); });
+$(document).ready(function(){initNavTree('ref__irq__ctrl_8txt.html',''); initResizable(); });
 /* @license-end */
 </script>
 <div id="doc-content">
@@ -128,33 +125,70 @@ $(document).ready(function(){initNavTree('Ref__SystemAndClock_8txt.html',''); in
 
 <div class="header">
   <div class="summary">
-<a href="#func-members">Functions</a> &#124;
-<a href="#var-members">Variables</a>  </div>
-  <div class="headertitle"><div class="title">Ref_SystemAndClock.txt File Reference</div></div>
+<a href="#enum-members">Enumerations</a>  </div>
+  <div class="headertitle"><div class="title">ref_irq_ctrl.txt File Reference</div></div>
 </div><!--header-->
 <div class="contents">
 <table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
-Functions</h2></td></tr>
-<tr class="memitem:ga93f514700ccf00d08dbdcff7f1224eb2"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__system__init__gr.html#ga93f514700ccf00d08dbdcff7f1224eb2">SystemInit</a> (void)</td></tr>
-<tr class="memdesc:ga93f514700ccf00d08dbdcff7f1224eb2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Function to Initialize the system.  <br /></td></tr>
-<tr class="separator:ga93f514700ccf00d08dbdcff7f1224eb2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gae0c36a9591fe6e9c45ecb21a794f0f0f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__system__init__gr.html#gae0c36a9591fe6e9c45ecb21a794f0f0f">SystemCoreClockUpdate</a> (void)</td></tr>
-<tr class="memdesc:gae0c36a9591fe6e9c45ecb21a794f0f0f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Function to update the variable <a class="el" href="group__system__init__gr.html#gaa3cd3e43291e81e795d642b79b6088e6">SystemCoreClock</a>.  <br /></td></tr>
-<tr class="separator:gae0c36a9591fe6e9c45ecb21a794f0f0f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="var-members" name="var-members"></a>
-Variables</h2></td></tr>
-<tr class="memitem:gaa3cd3e43291e81e795d642b79b6088e6"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__system__init__gr.html#gaa3cd3e43291e81e795d642b79b6088e6">SystemCoreClock</a></td></tr>
-<tr class="memdesc:gaa3cd3e43291e81e795d642b79b6088e6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Variable to hold the system core clock value.  <br /></td></tr>
-<tr class="separator:gaa3cd3e43291e81e795d642b79b6088e6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="enum-members" name="enum-members"></a>
+Enumerations</h2></td></tr>
+<tr class="memitem:ga7e1129cd8a196f4284d41db3e82ad5c8"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__irq__ctrl__gr.html#ga7e1129cd8a196f4284d41db3e82ad5c8">IRQn_Type</a> { <br />
+&#160;&#160;<a class="el" href="group__irq__ctrl__gr.html#gga7e1129cd8a196f4284d41db3e82ad5c8a056f32088a9c8bdb9309b005dfeb648e">SGI0_IRQn</a> = 0
+, <br />
+&#160;&#160;<a class="el" href="group__irq__ctrl__gr.html#gga7e1129cd8a196f4284d41db3e82ad5c8ab335b8b84021cd5714807d6cd2404c3b">SGI1_IRQn</a> = 1
+, <br />
+&#160;&#160;<a class="el" href="group__irq__ctrl__gr.html#gga7e1129cd8a196f4284d41db3e82ad5c8a2a1cc64c0a2dc0e7f339fbf21c9a2b07">SGI2_IRQn</a> = 2
+, <br />
+&#160;&#160;<a class="el" href="group__irq__ctrl__gr.html#gga7e1129cd8a196f4284d41db3e82ad5c8a310ac1f78af36e0e3b9f6b4f15bd9b68">SGI3_IRQn</a> = 3
+, <br />
+&#160;&#160;<a class="el" href="group__irq__ctrl__gr.html#gga7e1129cd8a196f4284d41db3e82ad5c8ac5c03a99c620ff116bafa4cf03dd9a07">SGI4_IRQn</a> = 4
+, <br />
+&#160;&#160;<a class="el" href="group__irq__ctrl__gr.html#gga7e1129cd8a196f4284d41db3e82ad5c8adb8d49885011a278ed3c671904da7e6e">SGI5_IRQn</a> = 5
+, <br />
+&#160;&#160;<a class="el" href="group__irq__ctrl__gr.html#gga7e1129cd8a196f4284d41db3e82ad5c8a5f9b1989d051c60ad69147e644853a44">SGI6_IRQn</a> = 6
+, <br />
+&#160;&#160;<a class="el" href="group__irq__ctrl__gr.html#gga7e1129cd8a196f4284d41db3e82ad5c8aa1bcd760176e11cdece4386818022631">SGI7_IRQn</a> = 7
+, <br />
+&#160;&#160;<a class="el" href="group__irq__ctrl__gr.html#gga7e1129cd8a196f4284d41db3e82ad5c8aabbb7ca9433c474bfeade468e8c66455">SGI8_IRQn</a> = 8
+, <br />
+&#160;&#160;<a class="el" href="group__irq__ctrl__gr.html#gga7e1129cd8a196f4284d41db3e82ad5c8afa5f21d9fd3df5817a0f871b72bde681">SGI9_IRQn</a> = 9
+, <br />
+&#160;&#160;<a class="el" href="group__irq__ctrl__gr.html#gga7e1129cd8a196f4284d41db3e82ad5c8a12993bed484c7a70e6281b102d0e27e9">SGI10_IRQn</a> = 10
+, <br />
+&#160;&#160;<a class="el" href="group__irq__ctrl__gr.html#gga7e1129cd8a196f4284d41db3e82ad5c8a7826ded51cd379774bb076819ff93cdb">SGI11_IRQn</a> = 11
+, <br />
+&#160;&#160;<a class="el" href="group__irq__ctrl__gr.html#gga7e1129cd8a196f4284d41db3e82ad5c8a3425bbf0a6da4d0398e63b48a1345d37">SGI12_IRQn</a> = 12
+, <br />
+&#160;&#160;<a class="el" href="group__irq__ctrl__gr.html#gga7e1129cd8a196f4284d41db3e82ad5c8ace710506c7be1b3b7f9d4a1db2f75391">SGI13_IRQn</a> = 13
+, <br />
+&#160;&#160;<a class="el" href="group__irq__ctrl__gr.html#gga7e1129cd8a196f4284d41db3e82ad5c8ae57c57a817378102db7bc66351c912f1">SGI14_IRQn</a> = 14
+, <br />
+&#160;&#160;<a class="el" href="group__irq__ctrl__gr.html#gga7e1129cd8a196f4284d41db3e82ad5c8ac6958eebc9d41a42c739de555cad2321">SGI15_IRQn</a> = 15
+, <br />
+&#160;&#160;<a class="el" href="group__irq__ctrl__gr.html#gga7e1129cd8a196f4284d41db3e82ad5c8a1d0271c3b3a369c16a9c05ab4ea72ca5">VirtualMaintenanceInterrupt_IRQn</a> = 25
+, <br />
+&#160;&#160;<a class="el" href="group__irq__ctrl__gr.html#gga7e1129cd8a196f4284d41db3e82ad5c8acc86d3c23264d2038fd8de56b65059f6">HypervisorTimer_IRQn</a> = 26
+, <br />
+&#160;&#160;<a class="el" href="group__irq__ctrl__gr.html#gga7e1129cd8a196f4284d41db3e82ad5c8a2dde3bb4fc49f71c15bba2c4f0cda2cd">VirtualTimer_IRQn</a> = 27
+, <br />
+&#160;&#160;<a class="el" href="group__irq__ctrl__gr.html#gga7e1129cd8a196f4284d41db3e82ad5c8ac286832ada11ea1575a98149404d8aa7">Legacy_nFIQ_IRQn</a> = 28
+, <br />
+&#160;&#160;<a class="el" href="group__irq__ctrl__gr.html#gga7e1129cd8a196f4284d41db3e82ad5c8a82e7e80a1d7d70bbe65b380bcda3f309">SecurePhyTimer_IRQn</a> = 29
+, <br />
+&#160;&#160;<a class="el" href="group__irq__ctrl__gr.html#gga7e1129cd8a196f4284d41db3e82ad5c8aff0bcb9be41e2ba389f9bf1d5f403145">NonSecurePhyTimer_IRQn</a> = 30
+, <br />
+&#160;&#160;<a class="el" href="group__irq__ctrl__gr.html#gga7e1129cd8a196f4284d41db3e82ad5c8a1718b510599bbe8ebe34aee5c5aa3214">Legacy_nIRQ_IRQn</a> = 31
+<br />
+ }</td></tr>
+<tr class="memdesc:ga7e1129cd8a196f4284d41db3e82ad5c8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Definition of IRQn numbers.  <a href="group__irq__ctrl__gr.html#ga7e1129cd8a196f4284d41db3e82ad5c8">More...</a><br /></td></tr>
+<tr class="separator:ga7e1129cd8a196f4284d41db3e82ad5c8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 </div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="Ref__SystemAndClock_8txt.html">Ref_SystemAndClock.txt</a></li>
+    <li class="navelem"><a class="el" href="ref__irq__ctrl_8txt.html">ref_irq_ctrl.txt</a></li>
     <li class="footer">
       <script type="text/javascript">
         <!--

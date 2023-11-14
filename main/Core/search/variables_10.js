@@ -9,5 +9,5 @@ var searchData=
   ['sspsr_6',['SSPSR',['../structTPI__Type.html#a7b72598e20066133e505bb781690dc22',1,'TPI_Type']]],
   ['stir_7',['STIR',['../structNVIC__Type.html#a37de89637466e007171c6b135299bc75',1,'NVIC_Type']]],
   ['swinc_8',['SWINC',['../structPMU__Type.html#a2add0abae68f27801299d6dd4bfcde66',1,'PMU_Type']]],
-  ['systemcoreclock_9',['SystemCoreClock',['../group__system__init__gr.html#gaa3cd3e43291e81e795d642b79b6088e6',1,'Ref_SystemAndClock.txt']]]
+  ['systemcoreclock_9',['SystemCoreClock',['../group__system__init__gr.html#gaa3cd3e43291e81e795d642b79b6088e6',1,'ref_system_init.txt']]]
 ];
