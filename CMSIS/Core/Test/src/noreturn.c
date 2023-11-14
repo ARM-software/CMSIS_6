@@ -3,13 +3,9 @@
 #include "cmsis_compiler.h"
 
 __NO_RETURN
-static void func() {
-    while(1);
-}
-
 void noreturn() {
     // CHECK-LABEL: <noreturn>:
     // CHECK: b 0x0 <noreturn>
-    func();
+    while(1);
     // CHECK-NOT: bx lr
 }

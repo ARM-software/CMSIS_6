@@ -39,6 +39,15 @@ RUN pip install \
         lit \
         python-matrix-runner
 
+RUN pushd /root && \
+    curl -LO http://files.iar.com/ftp/pub/box/bxarm-9.40.2.deb && \
+    dpkg -i bxarm-9.40.2.deb && \
+    rm bxarm-9.40.2.deb
+
+ENV PATH=$PATH:/opt/iarsystems/bxarm/arm/bin
+ENV IAR_TOOLCHAIN_9_40_2=/opt/iarsystems/bxarm/arm/bin
+ENV IAR_LMS_SETTINGS_DIR=/home/$USERNAME/.iarlm
+
 # Create the user
 RUN groupadd --gid $USER_GID $USERNAME \
     && useradd --uid $USER_UID --gid $USER_GID -m $USERNAME -s /bin/bash \
