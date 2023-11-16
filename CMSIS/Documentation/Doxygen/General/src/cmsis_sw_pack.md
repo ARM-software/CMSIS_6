@@ -1,6 +1,6 @@
 ## CMSIS Software Pack {#cmsis_pack}
 
-The CMSIS Base Components are maintained in the same [CMSIS 6 GitHub repository](https://github.com/ARM-software/CMSIS_6) and released as a bundle in [CMSIS-Pack](https://open-cmsis-pack.github.io/Open-CMSIS-Pack-Spec/main/html/index.html) format.
+The **CMSIS Base Components** are actively maintained in the [**CMSIS 6 GitHub repository**](https://github.com/ARM-software/CMSIS_6) and are released together in the [**CMSIS pack**](https://www.keil.arm.com/packs/cmsis-arm/) that follows the [Open-CMSIS-Pack format](https://open-cmsis-pack.github.io/Open-CMSIS-Pack-Spec/main/html/index.html).
 
 The table below shows the high-level structure of the **ARM::CMSIS** pack. Details about component folders can be found in the referenced component documentations.
 
