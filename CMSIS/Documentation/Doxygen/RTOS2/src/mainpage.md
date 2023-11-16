@@ -48,6 +48,10 @@ Many popular RTOS kernels include support for CMSIS-RTOS2 API:
  - [Using embOS in CMSIS-Pack projects](https://wiki.segger.com/Using_embOS_in_CMSIS-Pack_projects)
  - [CMSIS-embOS pack](https://www.keil.arm.com/packs/cmsis-embos-segger/versions/)
 
+**Azure ThreadX RTOS for STM32**: is an integration of Azure RTOS into STM32 middleware provided by STMicroelectronics.
+
+ - [CMSIS-RTOS API support in ThreadX for STM32](https://wiki.st.com/stm32mcu/wiki/Introduction_to_THREADX#CMSIS-RTOS_API_Support)
+
 **Micrium OS** is developed and maintained by Silicon Labs.
 
  - [Micrium OS overview and comparison](https://www.silabs.com/developers/rtos)
