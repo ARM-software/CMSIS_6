@@ -1,7 +1,8 @@
 # Overview {#mainpage}
 
-CMSIS-Core (Cortex-A) implements the basic run-time system for a Cortex-A device and gives the user access to the processor core and the device peripherals.
+The **CMSIS-Core (Cortex-A)** component implements the basic run-time system for a Cortex-A device and gives the user access to the processor core and the device peripherals.
 In detail it defines:
+
  - **Hardware Abstraction Layer (HAL)** for Cortex-A processor registers with standardized  definitions for the GIC, FPU, MMU, Cache, and core access functions.
  - **System exception names** to interface to system exceptions without having compatibility issues.
  - **Methods to organize header files** that makes it easy to learn new Cortex-A microcontroller products and improve software portability. This includes naming conventions for device-specific interrupts.
@@ -10,15 +11,16 @@ In detail it defines:
  - A variable to determine the **system clock frequency** which simplifies the setup of the system timers.
 
 The following sections provide details about the CMSIS-Core (Cortex-A):
+
  - \ref using_pg describes the project setup and shows a simple program example.
  - \ref templates_pg describes the files of the CMSIS-Core (Cortex-A) in detail and explains how to adapt template files provided by Arm to silicon vendor devices.
  - \ref coreMISRA_Exceptions_pg describes the violations to the MISRA standard.
- - [API Reference](modules.html) describes the features and functions of the \ref device_h_pg in detail.
- - [Data Structures](annotated.html) describe the data structures of the \ref device_h_pg in detail.
+ - [**API Reference**](modules.html) describes the features and functions of the \ref device_h_pg in detail.
+ - [**Data Structures**](annotated.html) describe the data structures of the \ref device_h_pg in detail.
 
 ## Access to CMSIS-Core (Cortex-A)
 
-CMSIS-Core is actively maintained in [CMSIS 6 GitHub repository](https://github.com/ARM-software/CMSIS_6) and released as part of the [CMSIS Software Pack](../General/cmsis_pack.html).
+CMSIS-Core is actively maintained in the [**CMSIS 6 GitHub repository**](https://github.com/ARM-software/CMSIS_6) and released as part of the [**CMSIS Software Pack**](../General/cmsis_pack.html).
 
 The following directories and files relevant to CMSIS-Core (Cortex-A) are present in the **ARM::CMSIS** Pack:
 
@@ -39,15 +41,17 @@ CMSIS supports a selected subset of [Cortex-A processors](https://www.arm.com/pr
 **Cortex-A Technical Reference Manuals**
 
 The following Technical Reference Manuals describe the various Arm Cortex-A processors:
+
  - [Cortex-A5](https://developer.arm.com/documentation/ddi0433) (Armv7-A architecture)
  - [Cortex-A7](https://developer.arm.com/documentation/ddi0464) (Armv7-A architecture)
  - [Cortex-A9](https://developer.arm.com/documentation/100511) (Armv7-A architecture)
 
 ## Tested and Verified Toolchains {#tested_tools_sec}
 
-The \ref templates_pg supplied by Arm have been tested and verified with the following toolchains:
- - Arm: Arm Compiler 5.06 update 7
- - Arm: Arm Compiler 6.16
- - Arm: Arm Compiler 6.6.4
- - GNU: GNU Arm Embedded Toolchain 10-2020-q4-major (10.2.1 20201103)
- - IAR: IAR ANSI C/C++ Compiler for Arm 8.20.1.14183
+The \ref templates_pg delivered with this CMSIS-Core release have been tested and verified with the following toolchains:
+
+ - Arm Compiler for Embedded 6.21
+ - IAR C/C++ Compiler for Arm 9.40
+ - GNU Arm Embedded Toolchain 12.2.1
+ - LLVM/Clang 17.0.1
+ 
