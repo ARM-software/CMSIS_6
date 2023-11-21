@@ -314,12 +314,23 @@ __STATIC_FORCEINLINE void __TZ_set_STACKSEAL_S (uint32_t* stackTop) {
 
   #include "iccarm_builtin.h"
 
-  #define __disable_fault_irq __iar_builtin_disable_fiq
   #define __disable_irq       __iar_builtin_disable_interrupt
-  #define __enable_fault_irq  __iar_builtin_enable_fiq
   #define __enable_irq        __iar_builtin_enable_interrupt
   #define __arm_rsr           __iar_builtin_rsr
   #define __arm_wsr           __iar_builtin_wsr
+
+
+  #if (defined(__ARM_ARCH_ISA_THUMB) && __ARM_ARCH_ISA_THUMB >= 2)
+    __IAR_FT void __disable_fault_irq()
+    {
+      __ASM volatile ("CPSID F" ::: "memory");
+    }
+
+    __IAR_FT void __enable_fault_irq()
+    {
+      __ASM volatile ("CPSIE F" ::: "memory");
+    }
+  #endif
 
 
   #define __get_APSR()                (__arm_rsr("APSR"))
@@ -648,9 +659,15 @@ __STATIC_FORCEINLINE void __TZ_set_CONTROL_NS(uint32_t control)
       __asm volatile("MSR      BASEPRI_MAX,%0"::"r" (value));
     }
 
+    __IAR_FT void __disable_fault_irq()
+    {
+      __ASM volatile ("CPSID F" ::: "memory");
+    }
 
-    #define __enable_fault_irq  __enable_fiq
-    #define __disable_fault_irq __disable_fiq
+    __IAR_FT void __enable_fault_irq()
+    {
+      __ASM volatile ("CPSIE F" ::: "memory");
+    }
 
 
   #endif /* (__CORTEX_M >= 0x03) */
