@@ -32,7 +32,7 @@ Directory                         | Content
  &emsp;&nbsp; ┣ 📂 Include        | \ref CMSIS_Processor_files.
  &emsp;&emsp;&nbsp; ┗ 📂 a-profile| Header files specific for Arm A-Profile.
  &emsp;&nbsp; ┗ 📂 Template       | \ref template_files_sec
- 
+
 ## Processor Support {#ref_v7A}
 
 CMSIS supports a selected subset of [Cortex-A processors](https://www.arm.com/products/silicon-ip-cpu?families=cortex-m&showall=true).
@@ -50,8 +50,7 @@ The following Technical Reference Manuals describe the various Arm Cortex-A proc
 
 The \ref templates_pg delivered with this CMSIS-Core release have been tested and verified with the following toolchains:
 
- - Arm Compiler for Embedded 6.21
+ - Arm Compiler for Embedded 6.20
  - IAR C/C++ Compiler for Arm 9.40
  - GNU Arm Embedded Toolchain 12.2.1
  - LLVM/Clang 17.0.1
- 

@@ -80,7 +80,7 @@ More information about Armv8.1-M architecture is available under [Arm Helium tec
 
 The \ref cmsis_core_files delivered with this CMSIS-Core release have been tested and verified with the following toolchains:
 
- - Arm Compiler for Embedded 6.21
+ - Arm Compiler for Embedded 6.20
  - IAR C/C++ Compiler for Arm 9.40
  - GNU Arm Embedded Toolchain 12.2.1
  - LLVM/Clang 17.0.1
