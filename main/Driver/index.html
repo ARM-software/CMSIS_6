@@ -127,8 +127,8 @@ $(document).ready(function(){initNavTree('index.html',''); initResizable(); });
   <div class="headertitle"><div class="title">Overview </div></div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><p><a class="anchor" id="mainpage"></a> The <b>CMSIS-Driver</b> specifies generic driver interfaces for peripherals commonly used in embedded systems with Arm® Cortex® processors.</p>
-<p>User applications and middleware components can control such peripherals using the <a href="modules.html">CMSIS-Driver API</a> and so achieve better code reuse and simpler integration in various ecosystems. The API is designed to be generic and independent of a specific RTOS making it reusable across a wide range of supported microcontroller devices.</p>
+<div class="textblock"><p><a class="anchor" id="mainpage"></a> <b>CMSIS-Driver</b> specifies generic driver interfaces for peripherals commonly used in embedded systems with Arm® Cortex® processors.</p>
+<p>User applications and middleware components can control such peripherals using the <a href="modules.html"><b>CMSIS-Driver API</b></a> and so achieve better code reuse and simpler integration in various ecosystems. The API is designed to be generic and independent of a specific RTOS making it reusable across a wide range of supported microcontroller devices.</p>
 <p>The following block diagram shows an exemplary set up for various drivers.</p>
 <div class="image">
 <img src="driver.png" alt=""/>
@@ -167,7 +167,7 @@ Covered Interfaces</h1>
 <p>A list of current CMSIS-Driver implementations is available <a class="el" href="listOfImplementations.html">here</a>.</p>
 <h1><a class="anchor" id="cmsis_driver_pack"></a>
 Access to CMSIS-Driver</h1>
-<p>CMSIS-Driver intefaces are actively maintained in <a href="https://github.com/ARM-software/CMSIS_6">CMSIS 6 GitHub repository</a> and released as part of the <a href="../General/cmsis_pack.html">CMSIS Software Pack</a>.</p>
+<p>CMSIS-Driver intefaces are actively maintained in the <a href="https://github.com/ARM-software/CMSIS_6"><b>CMSIS 6 GitHub repository</b></a> and released as part of the <a href="../General/cmsis_pack.html"><b>CMSIS Software Pack</b></a>.</p>
 <p>The CMSIS Software Pack publishes the API Interface under the Component Class <b>CMSIS Driver</b> with header files and a documentation. These header files are the reference for the implementation of the standardized peripheral driver interfaces.</p>
 <p>These implementations are published typically in the Device Family Pack of a related microcontroller family under the Component Class <b>CMSIS Driver</b>. A Device Family Pack may contain additional interfaces in the Component Class <b>Device</b> to extend the standard Peripheral Drivers covered by this CMSIS-Driver specification with additional device specific interfaces for example for Memory BUS, GPIO, or DMA.</p>
 <p>The following directories and files relevant to CMSIS-Driver are present in the <b>ARM::CMSIS</b> Pack:</p>

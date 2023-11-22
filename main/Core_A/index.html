@@ -127,7 +127,8 @@ $(document).ready(function(){initNavTree('index.html',''); initResizable(); });
   <div class="headertitle"><div class="title">Overview </div></div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><p><a class="anchor" id="mainpage"></a> CMSIS-Core (Cortex-A) implements the basic run-time system for a Cortex-A device and gives the user access to the processor core and the device peripherals. In detail it defines:</p><ul>
+<div class="textblock"><p><a class="anchor" id="mainpage"></a> The <b>CMSIS-Core (Cortex-A)</b> component implements the basic run-time system for a Cortex-A device and gives the user access to the processor core and the device peripherals. In detail it defines:</p>
+<ul>
 <li><b>Hardware Abstraction Layer (HAL)</b> for Cortex-A processor registers with standardized definitions for the GIC, FPU, MMU, Cache, and core access functions.</li>
 <li><b>System exception names</b> to interface to system exceptions without having compatibility issues.</li>
 <li><b>Methods to organize header files</b> that makes it easy to learn new Cortex-A microcontroller products and improve software portability. This includes naming conventions for device-specific interrupts.</li>
@@ -135,16 +136,17 @@ $(document).ready(function(){initNavTree('index.html',''); initResizable(); });
 <li><b>Intrinsic functions</b> used to generate CPU instructions that are not supported by standard C functions.</li>
 <li>A variable to determine the <b>system clock frequency</b> which simplifies the setup of the system timers.</li>
 </ul>
-<p>The following sections provide details about the CMSIS-Core (Cortex-A):</p><ul>
+<p>The following sections provide details about the CMSIS-Core (Cortex-A):</p>
+<ul>
 <li><a class="el" href="using_pg.html">Using CMSIS in Embedded Applications</a> describes the project setup and shows a simple program example.</li>
 <li><a class="el" href="templates_pg.html">CMSIS-Core Device Templates</a> describes the files of the CMSIS-Core (Cortex-A) in detail and explains how to adapt template files provided by Arm to silicon vendor devices.</li>
 <li><a class="el" href="coreMISRA_Exceptions_pg.html">MISRA-C Deviations</a> describes the violations to the MISRA standard.</li>
-<li><a href="modules.html">API Reference</a> describes the features and functions of the <a class="el" href="device_h_pg.html">Device Header File &lt;Device.h&gt;</a> in detail.</li>
-<li><a href="annotated.html">Data Structures</a> describe the data structures of the <a class="el" href="device_h_pg.html">Device Header File &lt;Device.h&gt;</a> in detail.</li>
+<li><a href="modules.html"><b>API Reference</b></a> describes the features and functions of the <a class="el" href="device_h_pg.html">Device Header File &lt;Device.h&gt;</a> in detail.</li>
+<li><a href="annotated.html"><b>Data Structures</b></a> describe the data structures of the <a class="el" href="device_h_pg.html">Device Header File &lt;Device.h&gt;</a> in detail.</li>
 </ul>
 <h1><a class="anchor" id="autotoc_md0"></a>
 Access to CMSIS-Core (Cortex-A)</h1>
-<p>CMSIS-Core is actively maintained in <a href="https://github.com/ARM-software/CMSIS_6">CMSIS 6 GitHub repository</a> and released as part of the <a href="../General/cmsis_pack.html">CMSIS Software Pack</a>.</p>
+<p>CMSIS-Core is actively maintained in the <a href="https://github.com/ARM-software/CMSIS_6"><b>CMSIS 6 GitHub repository</b></a> and released as part of the <a href="../General/cmsis_pack.html"><b>CMSIS Software Pack</b></a>.</p>
 <p>The following directories and files relevant to CMSIS-Core (Cortex-A) are present in the <b>ARM::CMSIS</b> Pack:</p>
 <table class="markdownTable">
 <tr class="markdownTableHead">
@@ -166,19 +168,20 @@ Access to CMSIS-Core (Cortex-A)</h1>
 Processor Support</h1>
 <p>CMSIS supports a selected subset of <a href="https://www.arm.com/products/silicon-ip-cpu?families=cortex-m&amp;showall=true">Cortex-A processors</a>.</p>
 <p><a class="anchor" id="ref_man_ca_sec"></a><b>Cortex-A Technical Reference Manuals</b></p>
-<p>The following Technical Reference Manuals describe the various Arm Cortex-A processors:</p><ul>
+<p>The following Technical Reference Manuals describe the various Arm Cortex-A processors:</p>
+<ul>
 <li><a href="https://developer.arm.com/documentation/ddi0433">Cortex-A5</a> (Armv7-A architecture)</li>
 <li><a href="https://developer.arm.com/documentation/ddi0464">Cortex-A7</a> (Armv7-A architecture)</li>
 <li><a href="https://developer.arm.com/documentation/100511">Cortex-A9</a> (Armv7-A architecture)</li>
 </ul>
 <h1><a class="anchor" id="tested_tools_sec"></a>
 Tested and Verified Toolchains</h1>
-<p>The <a class="el" href="templates_pg.html">CMSIS-Core Device Templates</a> supplied by Arm have been tested and verified with the following toolchains:</p><ul>
-<li>Arm: Arm Compiler 5.06 update 7</li>
-<li>Arm: Arm Compiler 6.16</li>
-<li>Arm: Arm Compiler 6.6.4</li>
-<li>GNU: GNU Arm Embedded Toolchain 10-2020-q4-major (10.2.1 20201103)</li>
-<li>IAR: IAR ANSI C/C++ Compiler for Arm 8.20.1.14183 </li>
+<p>The <a class="el" href="templates_pg.html">CMSIS-Core Device Templates</a> delivered with this CMSIS-Core release have been tested and verified with the following toolchains:</p>
+<ul>
+<li>Arm Compiler for Embedded 6.20</li>
+<li>IAR C/C++ Compiler for Arm 9.40</li>
+<li>GNU Arm Embedded Toolchain 12.2.1</li>
+<li>LLVM/Clang 17.0.1 </li>
 </ul>
 </div></div><!-- PageDoc -->
 </div><!-- contents -->
