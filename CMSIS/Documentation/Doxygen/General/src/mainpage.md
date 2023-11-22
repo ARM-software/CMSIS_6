@@ -54,7 +54,7 @@ CMSIS has been created to help the industry in standardization. It enables consi
     <span class="tileh h2">CMSIS-Toolbox</span><span class="tiletxt">A set of command-line tools to work with software packs</span><span class="tilelinks"><a href="https://github.com/Open-CMSIS-Pack/cmsis-toolbox/blob/main/README.md">Guide</a> | <a href="https://github.com/Open-CMSIS-Pack/cmsis-toolbox">GitHub</a></span>
   </div>
   <div class="tile" onclick="document.location='../Stream/index.html'">
-    <span class="tileh h2">CMSIS-Stream</span><span class="tiletxt">Peripheral description of a device for debug view</span><span class="tilelinks"><a href="https://github.com/ARM-software/CMSIS-Stream/blob/main/README.md">Guide</a> | <a href="https://github.com/ARM-software/cmsis-stream">GitHub</a></span>
+    <span class="tileh h2">CMSIS-Stream</span><span class="tiletxt">Tools and methods for optimizing DSP/ML block data streams</span><span class="tilelinks"><a href="https://github.com/ARM-software/CMSIS-Stream/blob/main/README.md">Guide</a> | <a href="https://github.com/ARM-software/cmsis-stream">GitHub</a></span>
   </div>
   <div class="tile" onclick="document.location='../DAP/index.html'">
     <span class="tileh h2">CMSIS-DAP</span><span class="tiletxt">Firmware for debug units interfacing to CoreSight Debug Access Port</span><span class="tilelinks"><a href="https://arm-software.github.io/CMSIS-DAP/latest/">Guide</a> | <a href="https://github.com/ARM-software/CMSIS-DAP">GitHub</a></span>

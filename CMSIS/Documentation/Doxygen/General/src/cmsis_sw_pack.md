@@ -14,3 +14,5 @@ File/Directory        | Content
    ┗ 📂 RTOS2          | API header files and OS tick implementations for the [CMSIS-RTOS2](../RTOS2/index.html)
 📄 ARM.CMSIS.pdsc      | Package description file in CMSIS-Pack format
 📄 LICENSE             | CMSIS License Agreement (Apache 2.0)
+
+Section \ref cmsis_components provides links to CMSIS packs and repositories of other CMSIS components that are delivered separately and are not part of ARM::CMSIS pack.

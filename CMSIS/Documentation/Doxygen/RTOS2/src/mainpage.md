@@ -2,7 +2,7 @@
 
 Modern embedded applications often need to concurrently execute multiple activities such as sensor readings, connectivity, machine-learning algorithms, graphics display and others. A real-time operating system (RTOS) equips users with necessary mechanisms that simplify implementation of complex programs and ensure their reliable operation with deterministic timing.
 
-The **CMSIS-RTOS2** specifies a generic RTOS interface over real-time OS kernels running on Arm&reg; Cortex&reg; processor-based devices. Applications and middleware components can \ref usingOS2 "use CMSIS_RTOS2 API" for better code reuse and simpler integration in various software ecosystems.
+**CMSIS-RTOS2** specifies a generic RTOS interface over real-time OS kernels running on Arm&reg; Cortex&reg; processor-based devices. Applications and middleware components can \ref usingOS2 "use CMSIS_RTOS2 API" for better code reuse and simpler integration in various software ecosystems.
 
 CMSIS-RTOS2 also specifies a standard \ref CMSIS_RTOS_TickAPI "OS Tick interface" for use by RTOS kernels. It provides several OS tick implementations for simple kernel porting to different Cortex-M and Cortex-A processors.
 
@@ -58,7 +58,7 @@ Many popular RTOS kernels include support for CMSIS-RTOS2 API:
 
 ## Access to CMSIS-RTOS2 {#rtos2_access}
 
-CMSIS-RTOS2 and OS Tick intefaces are actively maintained in [**CMSIS 6 GitHub repository**](https://github.com/ARM-software/CMSIS_6) and provided as part of the [CMSIS Software Pack](../General/cmsis_pack.html).
+CMSIS-RTOS2 and OS Tick intefaces are actively maintained in the [**CMSIS 6 GitHub repository**](https://github.com/ARM-software/CMSIS_6) and provided as part of the [**CMSIS Software Pack**](../General/cmsis_pack.html).
 
 The following files and directories relevant to CMSIS-RTOS2 are present in the **ARM::CMSIS** Pack:
 

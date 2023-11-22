@@ -1,6 +1,9 @@
 # CMSIS-Toolbox {#mainpage}
 
-The **CMSIS-Toolbox** provides command-line tools for:
+The **CMSIS-Toolbox** is developed as part of the [Open-CMSIS-Pack](https://www.open-cmsis-pack.org/) project in collaboration with Arm, NXP, and STMicroelectronics.
+It is an integral part of next generation software tools and unifies development flows with popular embedded toolchains (Arm, GCC, IAR, and LLVM compiler).
+
+The CMSIS-Toolbox provides command-line tools for:
 
  - Project creation and build of embedded applications utilizing [Software Packs](https://www.keil.arm.com/packs/) with support for multiple compilation tools.
  - Software Pack creation, maintenance, and distribution utilizing the [CMSIS-Pack format](https://open-cmsis-pack.github.io/Open-CMSIS-Pack-Spec/main/html/index.html).
@@ -45,7 +48,7 @@ The diagram below provides an overview of the **build information** used by the 
 
 ## Software Pack Creation
 
-The following tools support the creation of Software Packs in [CMSIS-Pack format](https://open-cmsis-pack.github.io/Open-CMSIS-Pack-Spec/main/html/index.html):
+The following tools support the creation of Software Packs in [**CMSIS-Pack format**](https://open-cmsis-pack.github.io/Open-CMSIS-Pack-Spec/main/html/index.html):
 
 Tool           | Description
 :--------------|:-------------

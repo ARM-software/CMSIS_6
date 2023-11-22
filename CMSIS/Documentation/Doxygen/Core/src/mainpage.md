@@ -1,6 +1,6 @@
 # Overview {#mainpage}
 
-CMSIS-Core (Cortex-M) implements the basic run-time system for a Cortex-M device and gives the user access to the processor core and the device peripherals.
+The **CMSIS-Core (Cortex-M)** component implements the basic run-time system for Arm Cortex-M devices and gives the user access to the processor core and the device peripherals.
 
 In detail it defines:
 
@@ -20,12 +20,12 @@ The following sections provide details about the CMSIS-Core (Cortex-M):
 \endif
  - \ref cmsis_core_files describes the files of the CMSIS-Core (Cortex-M) in detail and explains how to adapt template files provided by Arm to silicon vendor devices.
  - \ref coreMISRA_Exceptions_pg describes the violations to the MISRA standard.
- - [API Reference](modules.html) describes the features and functions of the \ref device_h_pg in detail.
- - [Data Structures](annotated.html) describe the data structures of the \ref device_h_pg in detail.
+ - [**API Reference**](modules.html) describes the features and functions of the \ref device_h_pg in detail.
+ - [**Data Structures**](annotated.html) describe the data structures of the \ref device_h_pg in detail.
 
 ## Access to CMSIS-Core (Cortex-M)
 
-CMSIS-Core is actively maintained in [CMSIS 6 GitHub repository](https://github.com/ARM-software/CMSIS_6) and released as part of the [CMSIS Software Pack](../General/cmsis_pack.html).
+CMSIS-Core is actively maintained in the [**CMSIS 6 GitHub repository**](https://github.com/ARM-software/CMSIS_6) and released as part of the [**CMSIS Software Pack**](../General/cmsis_pack.html).
 
 The following directories and files relevant to CMSIS-Core (Cortex-M) are present in the **ARM::CMSIS** Pack:
 
@@ -46,6 +46,7 @@ CMSIS-Core supports the complete range of [Cortex-M processors](https://www.arm.
 **Cortex-M Generic User Guides**
 
 Following Cortex-M Device Generic User Guides contain the programmers model and detailed information about the core peripherals:
+
  - [Cortex-M0 Devices Generic User Guide (Armv6-M architecture)](https://developer.arm.com/documentation/dui0497/latest/)
  - [Cortex-M0+ Devices Generic User Guide (Armv6-M architecture)](https://developer.arm.com/documentation/dui0662/latest/)
  - [Cortex-M3 Devices Generic User Guide (Armv7-M architecture)](https://developer.arm.com/documentation/dui0552/latest/)
@@ -57,11 +58,12 @@ Following Cortex-M Device Generic User Guides contain the programmers model and 
  - [Cortex-M85 Devices Generic User Guide (Armv8.1-M architecture)](https://developer.arm.com/documentation/101928/latest/)
 
 CMSIS-Core also supports the following Cortex-M processor variants:
-- [Cortex-M1](https://developer.arm.com/Processors/Cortex-M1) is a processor designed specifically for implementation in FPGAs (Armv6-M architecture).
-- [SecurCore SC000](https://developer.arm.com/Processors/SecurCore%20SC000) is designed specifically for smartcard and security applications (Armv6-M architecture).
-- [SecurCore SC300](https://developer.arm.com/Processors/SecurCore%20SC300) is designed specifically for smartcard and security applications (Armv7-M architecture).
-- [Cortex-M35P](https://developer.arm.com/Processors/Cortex-M35P) is a tamper resistant Cortex-M processor with optional software isolation using TrustZone for Armv8-M.
-- [STAR-MC1](https://www.armchina.com/mountain?infoId=160) is a variant of Armv8-M with TrustZone designed by Arm China.
+
+ - [Cortex-M1](https://developer.arm.com/Processors/Cortex-M1) is a processor designed specifically for implementation in FPGAs (Armv6-M architecture).
+ - [SecurCore SC000](https://developer.arm.com/Processors/SecurCore%20SC000) is designed specifically for smartcard and security applications (Armv6-M architecture).
+ - [SecurCore SC300](https://developer.arm.com/Processors/SecurCore%20SC300) is designed specifically for smartcard and security applications (Armv7-M architecture).
+ - [Cortex-M35P](https://developer.arm.com/Processors/Cortex-M35P) is a tamper resistant Cortex-M processor with optional software isolation using TrustZone for Armv8-M.
+ - [STAR-MC1](https://www.armchina.com/mountain?infoId=160) is a variant of Armv8-M with TrustZone designed by Arm China.
 
 \anchor ARMv8M
 **Armv8-M and Armv8.1-M Architecture**
@@ -76,10 +78,9 @@ More information about Armv8.1-M architecture is available under [Arm Helium tec
 
 ##  Tested and Verified Toolchains {#tested_tools_sec}
 
-The \ref cmsis_core_files supplied by Arm have been tested and verified with the following toolchains:
+The \ref cmsis_core_files delivered with this CMSIS-Core release have been tested and verified with the following toolchains:
 
- - Arm: Arm Compiler 5.06 update 7 (not for Cortex-M23/33/35P/55/85, Armv8-M, Armv8.1-M)
- - Arm: Arm Compiler 6.16
- - Arm: Arm Compiler 6.6.4 (not for Cortex-M0/23/33/35P/55/85, Armv8-M, Armv8.1-M)
- - GNU: GNU Arm Embedded Toolchain 10-2020-q4-major (10.2.1 20201103)
- - IAR: IAR ANSI C/C++ Compiler for Arm 8.20.1.14183
+ - Arm Compiler for Embedded 6.20
+ - IAR C/C++ Compiler for Arm 9.40
+ - GNU Arm Embedded Toolchain 12.2.1
+ - LLVM/Clang 17.0.1
