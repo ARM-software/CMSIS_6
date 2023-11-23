@@ -2,7 +2,7 @@
  * @file     cmsis_tiarmclang_m.h
  * @brief    CMSIS compiler tiarmclang header file
  * @version  V1.1.0
- * @date     27. July 2023
+ * @date     23. November 2023
  ******************************************************************************/
 /*
  * Copyright (c) 2023 Arm Limited. All rights reserved.
@@ -102,7 +102,7 @@
   #define __COMPILER_BARRIER()                   __ASM volatile("":::"memory")
 #endif
 #ifndef __NO_INIT
-  #define __NO_INIT                              __attribute__ ((section (".bss.noinit")))
+  #define __NO_INIT                              __attribute__ ((section (".noinit")))
 #endif
 #ifndef __ALIAS
   #define __ALIAS(x)                             __attribute__ ((alias(x)))
