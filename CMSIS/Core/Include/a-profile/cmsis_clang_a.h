@@ -1,9 +1,3 @@
-/**************************************************************************//**
- * @file     cmsis_clang_a.h
- * @brief    CMSIS compiler Clang header file
- * @version  V0.1.0
- * @date     24. October 2023
- ******************************************************************************/
 /*
  * Copyright (c) 2023 Arm Limited. All rights reserved.
  *
@@ -20,6 +14,10 @@
  * WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  * See the License for the specific language governing permissions and
  * limitations under the License.
+ */
+
+/*
+ * CMSIS-Core(A) Compiler LLVM/Clang Header File
  */
 
 #ifndef __CMSIS_CLANG_A_H
@@ -112,6 +110,7 @@
   \details No Operation does nothing. This instruction can be used for code alignment purposes.
  */
 #define __NOP()                             __ASM volatile ("nop")
+
 
 /**
   \brief   Wait For Interrupt
@@ -284,6 +283,7 @@ __STATIC_FORCEINLINE uint8_t __CLZ(uint32_t value)
   }
   return __builtin_clz(value);
 }
+
 
 /**
   \brief   LDR Exclusive (8 bit)
@@ -600,7 +600,8 @@ __STATIC_FORCEINLINE void __set_FPSCR(uint32_t fpscr)
 
 /* ###################  Compiler specific Intrinsics  ########################### */
 
-#if (__ARM_FEATURE_DSP == 1)
+#if (defined (__ARM_FEATURE_DSP) && (__ARM_FEATURE_DSP == 1))
+
 #define     __SADD8                 __builtin_arm_sadd8
 #define     __QADD8                 __builtin_arm_qadd8
 #define     __SHADD8                __builtin_arm_shadd8

@@ -1,9 +1,3 @@
-/**************************************************************************//**
- * @file     cmsis_armclang_a.h
- * @brief    CMSIS compiler armclang (Arm Compiler 6) header file
- * @version  V1.2.3
- * @date     11. October 2023
- ******************************************************************************/
 /*
  * Copyright (c) 2009-2023 Arm Limited. All rights reserved.
  *
@@ -20,6 +14,10 @@
  * WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  * See the License for the specific language governing permissions and
  * limitations under the License.
+ */
+
+/*
+ * CMSIS-Core(A) Compiler ARMClang (Arm Compiler 6) Header File
  */
 
 #ifndef __CMSIS_ARMCLANG_A_H
@@ -102,12 +100,14 @@
   #define __COMPILER_BARRIER()                   __ASM volatile("":::"memory")
 #endif
 
+
 /* ##########################  Core Instruction Access  ######################### */
 /**
   \brief   No Operation
   \details No Operation does nothing. This instruction can be used for code alignment purposes.
  */
 #define __NOP                             __builtin_arm_nop
+
 
 /**
   \brief   Wait For Interrupt
@@ -218,6 +218,7 @@ __STATIC_FORCEINLINE uint32_t __ROR(uint32_t op1, uint32_t op2)
  */
 #define __RBIT          __builtin_arm_rbit
 
+
 /**
   \brief   Count leading zeros
   \details Counts the number of leading zeros of a data value.
@@ -241,6 +242,7 @@ __STATIC_FORCEINLINE uint8_t __CLZ(uint32_t value)
   }
   return __builtin_clz(value);
 }
+
 
 /**
   \brief   LDR Exclusive (8 bit)
@@ -502,7 +504,7 @@ __STATIC_FORCEINLINE int32_t __SMMLA (int32_t op1, int32_t op2, int32_t op3)
   int32_t result;
 
   __ASM volatile ("smmla %0, %1, %2, %3" : "=r" (result): "r"  (op1), "r" (op2), "r" (op3) );
-  return(result);
+  return (result);
 }
 
 #endif /* (__ARM_FEATURE_DSP == 1) */
@@ -707,23 +709,23 @@ __STATIC_FORCEINLINE void __set_FPEXC(uint32_t fpexc)
 __STATIC_INLINE void __FPU_Enable(void)
 {
   __ASM volatile(
-    //Permit access to VFP/NEON, registers by modifying CPACR
+    // Permit access to VFP/NEON, registers by modifying CPACR
     "        MRC     p15,0,R1,c1,c0,2  \n"
     "        ORR     R1,R1,#0x00F00000 \n"
     "        MCR     p15,0,R1,c1,c0,2  \n"
 
-    //Ensure that subsequent instructions occur in the context of VFP/NEON access permitted
+    // Ensure that subsequent instructions occur in the context of VFP/NEON access permitted
     "        ISB                       \n"
 
-    //Enable VFP/NEON
+    // Enable VFP/NEON
     "        VMRS    R1,FPEXC          \n"
     "        ORR     R1,R1,#0x40000000 \n"
     "        VMSR    FPEXC,R1          \n"
 
-    //Initialise VFP/NEON registers to 0
+    // Initialise VFP/NEON registers to 0
     "        MOV     R2,#0             \n"
 
-    //Initialise D16 registers to 0
+    // Initialise D16 registers to 0
     "        VMOV    D0, R2,R2         \n"
     "        VMOV    D1, R2,R2         \n"
     "        VMOV    D2, R2,R2         \n"
@@ -742,7 +744,7 @@ __STATIC_INLINE void __FPU_Enable(void)
     "        VMOV    D15,R2,R2         \n"
 
 #if (defined(__ARM_NEON) && (__ARM_NEON == 1))
-    //Initialise D32 registers to 0
+    // Initialise D32 registers to 0
     "        VMOV    D16,R2,R2         \n"
     "        VMOV    D17,R2,R2         \n"
     "        VMOV    D18,R2,R2         \n"
@@ -761,7 +763,7 @@ __STATIC_INLINE void __FPU_Enable(void)
     "        VMOV    D31,R2,R2         \n"
 #endif
 
-    //Initialise FPSCR to a known state
+  // Initialise FPSCR to a known state
     "        VMRS    R1,FPSCR          \n"
     "        LDR     R2,=0x00086060    \n" //Mask off all bits that do not have to be preserved. Non-preserved bits can/should be zero.
     "        AND     R1,R1,R2          \n"
