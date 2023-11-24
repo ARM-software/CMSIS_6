@@ -58,18 +58,20 @@ class OptimizationAxis(Enum):
     SIZE = ('size')
 
 
-@matrix_action
-def lit(config):
-    """Run tests for the selected configurations using llvm's lit."""
-    yield run_lit(config.compiler[0], config.device[1], config.optimize[0])
-
-
 def timestamp():
     return datetime.now().strftime('%Y%m%d%H%M%S')
 
-@matrix_command()
+
+@matrix_action
+def lit(config, results):
+    """Run tests for the selected configurations using llvm's lit."""
+    yield run_lit(config.compiler[0], config.device[1], config.optimize[0])
+    results[0].test_report.write(f"lit-{config.compiler[0]}-{config.optimize[0]}-{config.device[1]}-{timestamp()}.xunit")
+
+
+@matrix_command(test_report=FileReport(f"lit.xunit") | JUnitReport())
 def run_lit(toolchain, device, optimize):
-    return ["lit", "--xunit-xml-output", f"lit-{toolchain}-{optimize}-{device}.xunit", "-D", f"toolchain={toolchain}", "-D", f"device={device}", "-D", f"optimize={optimize}", "." ]
+    return ["lit", "--xunit-xml-output", f"lit.xunit", "-D", f"toolchain={toolchain}", "-D", f"device={device}", "-D", f"optimize={optimize}", "src" ]
 
 @matrix_filter
 def filter_iar(config):
