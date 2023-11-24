@@ -1334,16 +1334,6 @@ __STATIC_FORCEINLINE void L1C_CleanInvalidateCache(uint32_t op) {
   }
 }
 
-/** \brief  Clean and Invalidate the entire data or unified cache
-* Generic mechanism for cleaning/invalidating the entire data or unified cache to the point of coherency
-* \param [in] op 0 - invalidate, 1 - clean, otherwise - invalidate and clean
-* \deprecated Use generic L1C_CleanInvalidateCache instead.
-*/
-CMSIS_DEPRECATED
-__STATIC_FORCEINLINE void __L1C_CleanInvalidateCache(uint32_t op) {
-  L1C_CleanInvalidateCache(op);
-}
-
 /** \brief  Invalidate the whole data cache.
 */
 __STATIC_FORCEINLINE void L1C_InvalidateDCacheAll(void) {
@@ -1476,7 +1466,7 @@ __STATIC_INLINE void L2C_CleanInvPa (void *pa)
 /* ##########################  GIC functions  ###################################### */
 #if (defined(__GIC_PRESENT) && (__GIC_PRESENT == 1U)) || \
      defined(DOXYGEN)
-  
+
 /** \brief  Enable the interrupt distributor using the GIC's CTLR register.
 */
 __STATIC_INLINE void GIC_EnableDistributor(void)
@@ -1863,7 +1853,7 @@ __STATIC_INLINE void GIC_Enable(void)
 /* ##########################  Generic Timer functions  ############################ */
 #if (defined(__TIM_PRESENT) && (__TIM_PRESENT == 1U)) || \
     defined(DOXYGEN)
-  
+
 /* PL1 Physical Timer */
 #if (__CORTEX_A == 7U) || defined(DOXYGEN)
 

@@ -17,7 +17,7 @@
  */
 
 /*
- * CMSIS Core Version definitions
+ * CMSIS Core Version Definitions
  */
 
 #if   defined ( __ICCARM__ )

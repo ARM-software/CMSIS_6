@@ -884,9 +884,6 @@ typedef struct
 #define SCB_CACR_FORCEWT_Pos                2U                                            /*!< SCB CACR: FORCEWT Position */
 #define SCB_CACR_FORCEWT_Msk               (1UL << SCB_CACR_FORCEWT_Pos)                  /*!< SCB CACR: FORCEWT Mask */
 
-#define SCB_CACR_ECCEN_Pos                  1U                                            /*!< \deprecated SCB CACR: ECCEN Position */
-#define SCB_CACR_ECCEN_Msk                 (1UL << SCB_CACR_ECCEN_Pos)                    /*!< \deprecated SCB CACR: ECCEN Mask */
-
 #define SCB_CACR_ECCDIS_Pos                 1U                                            /*!< SCB CACR: ECCDIS Position */
 #define SCB_CACR_ECCDIS_Msk                (1UL << SCB_CACR_ECCDIS_Pos)                   /*!< SCB CACR: ECCDIS Mask */
 

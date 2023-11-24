@@ -1,9 +1,3 @@
-/**************************************************************************//**
- * @file     irq_ctrl.h
- * @brief    Interrupt Controller API header file
- * @version  V1.1.0
- * @date     03. March 2020
- ******************************************************************************/
 /*
  * Copyright (c) 2017-2020 ARM Limited. All rights reserved.
  *
@@ -22,13 +16,17 @@
  * limitations under the License.
  */
 
+/*
+ * CMSIS-Core(A) Interrupt Controller API Header File
+ */
+
 #ifndef IRQ_CTRL_H_
 #define IRQ_CTRL_H_
 
 #if   defined ( __ICCARM__ )
   #pragma system_include         /* treat file as system include file for MISRA check */
 #elif defined (__clang__)
-  #pragma clang system_header   /* treat file as system include file */
+  #pragma clang system_header    /* treat file as system include file */
 #endif
 
 #include <stdint.h>

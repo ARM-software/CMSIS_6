@@ -1,9 +1,3 @@
-/**************************************************************************//**
- * @file     core_sc300.h
- * @brief    CMSIS SC300 Core Peripheral Access Layer Header File
- * @version  V6.0.0
- * @date     16. October 2023
- ******************************************************************************/
 /*
  * Copyright (c) 2009-2023 Arm Limited. All rights reserved.
  *
@@ -20,6 +14,10 @@
  * WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  * See the License for the specific language governing permissions and
  * limitations under the License.
+ */
+
+/*
+ * CMSIS SC300 Core Peripheral Access Layer Header File
  */
 
 #if   defined ( __ICCARM__ )

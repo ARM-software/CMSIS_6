@@ -1,9 +1,3 @@
-/**************************************************************************//**
- * @file     cmsis_gcc_m.h
- * @brief    CMSIS compiler GCC header file
- * @version  V6.0.1
- * @date     23. November 2023
- ******************************************************************************/
 /*
  * Copyright (c) 2009-2023 Arm Limited. All rights reserved.
  *
@@ -20,6 +14,10 @@
  * WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  * See the License for the specific language governing permissions and
  * limitations under the License.
+ */
+
+/*
+ * CMSIS-Core(M) Compiler GCC Header File
  */
 
 #ifndef __CMSIS_GCC_M_H
@@ -1342,7 +1340,7 @@ __STATIC_FORCEINLINE uint32_t __get_PSPLIM(void)
 {
 #if (((__ARM_ARCH_8M_MAIN__   < 1) && \
       (__ARM_ARCH_8_1M_MAIN__ < 1)    ) && \
-	 (__ARM_FEATURE_CMSE < 3)              )
+     (__ARM_FEATURE_CMSE < 3)              )
   /* without main extensions, the non-secure PSPLIM is RAZ/WI */
   return (0U);
 #else
@@ -1389,7 +1387,7 @@ __STATIC_FORCEINLINE void __set_PSPLIM(uint32_t ProcStackPtrLimit)
 {
 #if (((__ARM_ARCH_8M_MAIN__   < 1) && \
       (__ARM_ARCH_8_1M_MAIN__ < 1)    ) && \
-	 (__ARM_FEATURE_CMSE < 3)              )
+     (__ARM_FEATURE_CMSE < 3)              )
   /* without main extensions, the non-secure PSPLIM is RAZ/WI */
   (void)ProcStackPtrLimit;
 #else
@@ -1432,7 +1430,7 @@ __STATIC_FORCEINLINE uint32_t __get_MSPLIM(void)
 {
 #if (((__ARM_ARCH_8M_MAIN__   < 1) && \
       (__ARM_ARCH_8_1M_MAIN__ < 1)    ) && \
-	 (__ARM_FEATURE_CMSE < 3)              )
+     (__ARM_FEATURE_CMSE < 3)              )
   /* without main extensions, the non-secure MSPLIM is RAZ/WI */
   return (0U);
 #else
@@ -1479,7 +1477,7 @@ __STATIC_FORCEINLINE void __set_MSPLIM(uint32_t MainStackPtrLimit)
 {
 #if (((__ARM_ARCH_8M_MAIN__   < 1) && \
       (__ARM_ARCH_8_1M_MAIN__ < 1)    ) && \
-	 (__ARM_FEATURE_CMSE < 3)              )
+     (__ARM_FEATURE_CMSE < 3)              )
   /* without main extensions, the non-secure MSPLIM is RAZ/WI */
   (void)MainStackPtrLimit;
 #else
