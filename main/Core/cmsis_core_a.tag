@@ -4895,13 +4895,6 @@
       <arglist>(uint32_t op)</arglist>
     </member>
     <member kind="function">
-      <type>CMSIS_DEPRECATED __STATIC_FORCEINLINE void</type>
-      <name>__L1C_CleanInvalidateCache</name>
-      <anchorfile>group__L1__cache__functions.html</anchorfile>
-      <anchor>ga722ceb077e491bb4befcfbb3aee9b20b</anchor>
-      <arglist>(uint32_t op)</arglist>
-    </member>
-    <member kind="function">
       <type>__STATIC_FORCEINLINE void</type>
       <name>L1C_InvalidateDCacheAll</name>
       <anchorfile>group__L1__cache__functions.html</anchorfile>
@@ -9527,13 +9520,6 @@
       <anchorfile>group__L1__cache__functions.html</anchorfile>
       <anchor>ga92b5babf7317abe3815f61a2731735c3</anchor>
       <arglist>(void)</arglist>
-    </member>
-    <member kind="function">
-      <type>CMSIS_DEPRECATED __STATIC_FORCEINLINE void</type>
-      <name>__L1C_CleanInvalidateCache</name>
-      <anchorfile>group__L1__cache__functions.html</anchorfile>
-      <anchor>ga722ceb077e491bb4befcfbb3aee9b20b</anchor>
-      <arglist>(uint32_t op)</arglist>
     </member>
   </compound>
   <compound kind="group">

@@ -346,7 +346,7 @@ Macros</h2></td></tr>
 <div class="line">  uint32_t  u32;</div>
 <div class="line">  uint16_t  u16;</div>
 <div class="line">};</div>
-<div class="ttc" id="acmsis__armclang__a_8h_html_a4dbb70fab85207c27b581ecb6532b314"><div class="ttname"><a href="cmsis__armclang__a_8h.html#a4dbb70fab85207c27b581ecb6532b314">__PACKED_STRUCT</a></div><div class="ttdeci">#define __PACKED_STRUCT</div><div class="ttdef"><b>Definition:</b> cmsis_armclang_a.h:62</div></div>
+<div class="ttc" id="acmsis__armclang__a_8h_html_a4dbb70fab85207c27b581ecb6532b314"><div class="ttname"><a href="cmsis__armclang__a_8h.html#a4dbb70fab85207c27b581ecb6532b314">__PACKED_STRUCT</a></div><div class="ttdeci">#define __PACKED_STRUCT</div><div class="ttdef"><b>Definition:</b> cmsis_armclang_a.h:60</div></div>
 </div><!-- fragment --> 
 </div>
 </div>
@@ -371,7 +371,7 @@ Macros</h2></td></tr>
 <div class="line">    uint32_t *vectors = (uint32_t *) ((uintptr_t) SCB-&gt;VTOR);</div>
 <div class="line">    <span class="keywordflow">return</span> vectors[(int32_t)IRQn + NVIC_USER_IRQ_OFFSET];</div>
 <div class="line">}</div>
-<div class="ttc" id="acmsis__armclang__a_8h_html_ab904513442afdf77d4f8c74f23cbb040"><div class="ttname"><a href="cmsis__armclang__a_8h.html#ab904513442afdf77d4f8c74f23cbb040">__STATIC_FORCEINLINE</a></div><div class="ttdeci">#define __STATIC_FORCEINLINE</div><div class="ttdef"><b>Definition:</b> cmsis_armclang_a.h:44</div></div>
+<div class="ttc" id="acmsis__armclang__a_8h_html_ab904513442afdf77d4f8c74f23cbb040"><div class="ttname"><a href="cmsis__armclang__a_8h.html#ab904513442afdf77d4f8c74f23cbb040">__STATIC_FORCEINLINE</a></div><div class="ttdeci">#define __STATIC_FORCEINLINE</div><div class="ttdef"><b>Definition:</b> cmsis_armclang_a.h:42</div></div>
 <div class="ttc" id="agroup__irq__ctrl__gr_html_ga7e1129cd8a196f4284d41db3e82ad5c8"><div class="ttname"><a href="group__irq__ctrl__gr.html#ga7e1129cd8a196f4284d41db3e82ad5c8">IRQn_Type</a></div><div class="ttdeci">IRQn_Type</div><div class="ttdoc">Definition of IRQn numbers.</div><div class="ttdef"><b>Definition:</b> ref_irq_ctrl.txt:79</div></div>
 </div><!-- fragment --> 
 </div>
@@ -394,7 +394,7 @@ Macros</h2></td></tr>
 <div class="line">{</div>
 <div class="line">  <span class="keywordflow">return</span>((uint32_t)<a class="code hl_define" href="group__GIC__functions.html#ga82e193c0016a9377274756b2673464a6">GICDistributor</a>-&gt;D_IPRIORITYR[((uint32_t)(int32_t)IRQn)]);</div>
 <div class="line">}</div>
-<div class="ttc" id="agroup__GIC__functions_html_ga397048004654f792649742f95bf8ae67"><div class="ttname"><a href="group__GIC__functions.html#ga397048004654f792649742f95bf8ae67">GIC_GetPriority</a></div><div class="ttdeci">__STATIC_INLINE uint32_t GIC_GetPriority(IRQn_Type IRQn)</div><div class="ttdoc">Read the current interrupt priority from GIC's IPRIORITYR register.</div><div class="ttdef"><b>Definition:</b> core_ca.h:1675</div></div>
+<div class="ttc" id="agroup__GIC__functions_html_ga397048004654f792649742f95bf8ae67"><div class="ttname"><a href="group__GIC__functions.html#ga397048004654f792649742f95bf8ae67">GIC_GetPriority</a></div><div class="ttdeci">__STATIC_INLINE uint32_t GIC_GetPriority(IRQn_Type IRQn)</div><div class="ttdoc">Read the current interrupt priority from GIC's IPRIORITYR register.</div><div class="ttdef"><b>Definition:</b> core_ca.h:1665</div></div>
 <div class="ttc" id="agroup__GIC__functions_html_ga82e193c0016a9377274756b2673464a6"><div class="ttname"><a href="group__GIC__functions.html#ga82e193c0016a9377274756b2673464a6">GICDistributor</a></div><div class="ttdeci">#define GICDistributor</div><div class="ttdoc">GIC Distributor register set access pointer.</div></div>
 </div><!-- fragment --> 
 </div>
@@ -418,7 +418,7 @@ Macros</h2></td></tr>
 <div class="line"><span class="keywordtype">void</span> test (uint8_t *ptr) {</div>
 <div class="line">   val16 = <a class="code hl_define" href="cmsis__armclang__a_8h.html#ab71b66e5ce403158d3dee62a59f9175f">__UNALIGNED_UINT16_READ</a>(ptr);</div>
 <div class="line">}</div>
-<div class="ttc" id="acmsis__armclang__a_8h_html_ab71b66e5ce403158d3dee62a59f9175f"><div class="ttname"><a href="cmsis__armclang__a_8h.html#ab71b66e5ce403158d3dee62a59f9175f">__UNALIGNED_UINT16_READ</a></div><div class="ttdeci">#define __UNALIGNED_UINT16_READ(addr)</div><div class="ttdef"><b>Definition:</b> cmsis_armclang_a.h:78</div></div>
+<div class="ttc" id="acmsis__armclang__a_8h_html_ab71b66e5ce403158d3dee62a59f9175f"><div class="ttname"><a href="cmsis__armclang__a_8h.html#ab71b66e5ce403158d3dee62a59f9175f">__UNALIGNED_UINT16_READ</a></div><div class="ttdeci">#define __UNALIGNED_UINT16_READ(addr)</div><div class="ttdef"><b>Definition:</b> cmsis_armclang_a.h:76</div></div>
 </div><!-- fragment --> 
 </div>
 </div>
@@ -441,7 +441,7 @@ Macros</h2></td></tr>
 <div class="line"><span class="keywordtype">void</span> test (uint8_t *ptr) {</div>
 <div class="line">   <a class="code hl_define" href="cmsis__armclang__a_8h.html#a5103fb373cae9837cc4a384be55dc87f">__UNALIGNED_UINT16_WRITE</a>(ptr, val16);</div>
 <div class="line">}</div>
-<div class="ttc" id="acmsis__armclang__a_8h_html_a5103fb373cae9837cc4a384be55dc87f"><div class="ttname"><a href="cmsis__armclang__a_8h.html#a5103fb373cae9837cc4a384be55dc87f">__UNALIGNED_UINT16_WRITE</a></div><div class="ttdeci">#define __UNALIGNED_UINT16_WRITE(addr, val)</div><div class="ttdef"><b>Definition:</b> cmsis_armclang_a.h:70</div></div>
+<div class="ttc" id="acmsis__armclang__a_8h_html_a5103fb373cae9837cc4a384be55dc87f"><div class="ttname"><a href="cmsis__armclang__a_8h.html#a5103fb373cae9837cc4a384be55dc87f">__UNALIGNED_UINT16_WRITE</a></div><div class="ttdeci">#define __UNALIGNED_UINT16_WRITE(addr, val)</div><div class="ttdef"><b>Definition:</b> cmsis_armclang_a.h:68</div></div>
 </div><!-- fragment --> 
 </div>
 </div>
@@ -458,7 +458,7 @@ Macros</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Pointer for unaligned access of a uint32_t variable. </p>
-<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000002">Deprecated:</a></b></dt><dd>Do not use this macro. It has been superseded by <a class="el" href="cmsis__armclang__a_8h.html#a3b931f0b051b8c1a6377a3dcc7559b5e">__UNALIGNED_UINT32_READ</a>, <a class="el" href="cmsis__armclang__a_8h.html#a203f593d140ed88b81bc189edc861110">__UNALIGNED_UINT32_WRITE</a> and will be removed in the future. </dd></dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000001">Deprecated:</a></b></dt><dd>Do not use this macro. It has been superseded by <a class="el" href="cmsis__armclang__a_8h.html#a3b931f0b051b8c1a6377a3dcc7559b5e">__UNALIGNED_UINT32_READ</a>, <a class="el" href="cmsis__armclang__a_8h.html#a203f593d140ed88b81bc189edc861110">__UNALIGNED_UINT32_WRITE</a> and will be removed in the future. </dd></dl>
 <p>Defines a pointer to a uint32_t from an address that does not need to be aligned. This can then be used in read/write operations. The compiler will generate the appropriate access (aligned or non-aligned) depending on the underlying Arm processor core and compiler settings.</p>
 <p><b> Code Example:</b> </p><div class="fragment"><div class="line">uint32_t val32;</div>
 <div class="line"> </div>
@@ -488,7 +488,7 @@ Macros</h2></td></tr>
 <div class="line"><span class="keywordtype">void</span> test (uint8_t *ptr) {</div>
 <div class="line">   val32 = <a class="code hl_define" href="cmsis__armclang__a_8h.html#a3b931f0b051b8c1a6377a3dcc7559b5e">__UNALIGNED_UINT32_READ</a>(ptr);</div>
 <div class="line">}</div>
-<div class="ttc" id="acmsis__armclang__a_8h_html_a3b931f0b051b8c1a6377a3dcc7559b5e"><div class="ttname"><a href="cmsis__armclang__a_8h.html#a3b931f0b051b8c1a6377a3dcc7559b5e">__UNALIGNED_UINT32_READ</a></div><div class="ttdeci">#define __UNALIGNED_UINT32_READ(addr)</div><div class="ttdef"><b>Definition:</b> cmsis_armclang_a.h:93</div></div>
+<div class="ttc" id="acmsis__armclang__a_8h_html_a3b931f0b051b8c1a6377a3dcc7559b5e"><div class="ttname"><a href="cmsis__armclang__a_8h.html#a3b931f0b051b8c1a6377a3dcc7559b5e">__UNALIGNED_UINT32_READ</a></div><div class="ttdeci">#define __UNALIGNED_UINT32_READ(addr)</div><div class="ttdef"><b>Definition:</b> cmsis_armclang_a.h:91</div></div>
 </div><!-- fragment --> 
 </div>
 </div>
@@ -511,7 +511,7 @@ Macros</h2></td></tr>
 <div class="line"><span class="keywordtype">void</span> test (uint8_t *ptr) {</div>
 <div class="line">   <a class="code hl_define" href="cmsis__armclang__a_8h.html#a203f593d140ed88b81bc189edc861110">__UNALIGNED_UINT32_WRITE</a>(ptr, val32);</div>
 <div class="line">}</div>
-<div class="ttc" id="acmsis__armclang__a_8h_html_a203f593d140ed88b81bc189edc861110"><div class="ttname"><a href="cmsis__armclang__a_8h.html#a203f593d140ed88b81bc189edc861110">__UNALIGNED_UINT32_WRITE</a></div><div class="ttdeci">#define __UNALIGNED_UINT32_WRITE(addr, val)</div><div class="ttdef"><b>Definition:</b> cmsis_armclang_a.h:86</div></div>
+<div class="ttc" id="acmsis__armclang__a_8h_html_a203f593d140ed88b81bc189edc861110"><div class="ttname"><a href="cmsis__armclang__a_8h.html#a203f593d140ed88b81bc189edc861110">__UNALIGNED_UINT32_WRITE</a></div><div class="ttdeci">#define __UNALIGNED_UINT32_WRITE(addr, val)</div><div class="ttdef"><b>Definition:</b> cmsis_armclang_a.h:84</div></div>
 </div><!-- fragment --> 
 </div>
 </div>

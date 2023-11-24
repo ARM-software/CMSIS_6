@@ -331,7 +331,7 @@ Functions</h2></td></tr>
 <div class="ttc" id="agroup__irq__mode__defs_html_gaa9a8e0968a4ccd57eb7544a16d05f24d"><div class="ttname"><a href="group__irq__mode__defs.html#gaa9a8e0968a4ccd57eb7544a16d05f24d">IRQ_MODE_TRIG_EDGE</a></div><div class="ttdeci">#define IRQ_MODE_TRIG_EDGE</div><div class="ttdoc">Trigger: edge triggered interrupt.</div></div>
 <div class="ttc" id="agroup__irq__mode__defs_html_gab0d022bbd15beb1a6578b5535d95f9cf"><div class="ttname"><a href="group__irq__mode__defs.html#gab0d022bbd15beb1a6578b5535d95f9cf">IRQ_MODE_TYPE_IRQ</a></div><div class="ttdeci">#define IRQ_MODE_TYPE_IRQ</div><div class="ttdoc">Type: interrupt source triggers CPU IRQ line.</div></div>
 <div class="ttc" id="agroup__irq__mode__defs_html_gacb276aa0488a9bf1aa56e1072d2a15a5"><div class="ttname"><a href="group__irq__mode__defs.html#gacb276aa0488a9bf1aa56e1072d2a15a5">IRQ_MODE_CPU_0</a></div><div class="ttdeci">#define IRQ_MODE_CPU_0</div><div class="ttdoc">CPU: interrupt targets CPU 0.</div></div>
-<div class="ttc" id="airq__ctrl_8h_html_ac62964c04a7fed2c84aeea9e34f415e2"><div class="ttname"><a href="irq__ctrl_8h.html#ac62964c04a7fed2c84aeea9e34f415e2">IRQn_ID_t</a></div><div class="ttdeci">int32_t IRQn_ID_t</div><div class="ttdoc">Interrupt ID number data type.</div><div class="ttdef"><b>Definition:</b> irq_ctrl.h:45</div></div>
+<div class="ttc" id="airq__ctrl_8h_html_ac62964c04a7fed2c84aeea9e34f415e2"><div class="ttname"><a href="irq__ctrl_8h.html#ac62964c04a7fed2c84aeea9e34f415e2">IRQn_ID_t</a></div><div class="ttdeci">int32_t IRQn_ID_t</div><div class="ttdoc">Interrupt ID number data type.</div><div class="ttdef"><b>Definition:</b> irq_ctrl.h:43</div></div>
 </div><!-- fragment --> <h2 class="groupheader">Enumeration Type Documentation</h2>
 <a id="ga7e1129cd8a196f4284d41db3e82ad5c8" name="ga7e1129cd8a196f4284d41db3e82ad5c8"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ga7e1129cd8a196f4284d41db3e82ad5c8">&#9670;&#160;</a></span>IRQn_Type</h2>
@@ -438,7 +438,7 @@ Functions</h2></td></tr>
 <div class="line"> </div>
 <div class="line">  <span class="keywordflow">return</span> (status);</div>
 <div class="line">}</div>
-<div class="ttc" id="agroup__GIC__functions_html_ga5ad17ad70f23d1ff36015ffac33d383d"><div class="ttname"><a href="group__GIC__functions.html#ga5ad17ad70f23d1ff36015ffac33d383d">GIC_ClearPendingIRQ</a></div><div class="ttdeci">__STATIC_INLINE void GIC_ClearPendingIRQ(IRQn_Type IRQn)</div><div class="ttdoc">Clears the given interrupt from being pending using GIC's ICPENDR register.</div><div class="ttdef"><b>Definition:</b> core_ca.h:1625</div></div>
+<div class="ttc" id="agroup__GIC__functions_html_ga5ad17ad70f23d1ff36015ffac33d383d"><div class="ttname"><a href="group__GIC__functions.html#ga5ad17ad70f23d1ff36015ffac33d383d">GIC_ClearPendingIRQ</a></div><div class="ttdeci">__STATIC_INLINE void GIC_ClearPendingIRQ(IRQn_Type IRQn)</div><div class="ttdoc">Clears the given interrupt from being pending using GIC's ICPENDR register.</div><div class="ttdef"><b>Definition:</b> core_ca.h:1615</div></div>
 <div class="ttc" id="agroup__irq__ctrl__gr_html_ga7e1129cd8a196f4284d41db3e82ad5c8"><div class="ttname"><a href="group__irq__ctrl__gr.html#ga7e1129cd8a196f4284d41db3e82ad5c8">IRQn_Type</a></div><div class="ttdeci">IRQn_Type</div><div class="ttdoc">Definition of IRQn numbers.</div><div class="ttdef"><b>Definition:</b> ref_irq_ctrl.txt:79</div></div>
 </div><!-- fragment --> 
 </div>
@@ -481,7 +481,7 @@ Functions</h2></td></tr>
 <div class="line"> </div>
 <div class="line">  <span class="keywordflow">return</span> (status);</div>
 <div class="line">}</div>
-<div class="ttc" id="agroup__GIC__functions_html_ga2102399d255690c0674209a6faeec13d"><div class="ttname"><a href="group__GIC__functions.html#ga2102399d255690c0674209a6faeec13d">GIC_DisableIRQ</a></div><div class="ttdeci">__STATIC_INLINE void GIC_DisableIRQ(IRQn_Type IRQn)</div><div class="ttdoc">Disables the given interrupt using GIC's ICENABLER register.</div><div class="ttdef"><b>Definition:</b> core_ca.h:1579</div></div>
+<div class="ttc" id="agroup__GIC__functions_html_ga2102399d255690c0674209a6faeec13d"><div class="ttname"><a href="group__GIC__functions.html#ga2102399d255690c0674209a6faeec13d">GIC_DisableIRQ</a></div><div class="ttdeci">__STATIC_INLINE void GIC_DisableIRQ(IRQn_Type IRQn)</div><div class="ttdoc">Disables the given interrupt using GIC's ICENABLER register.</div><div class="ttdef"><b>Definition:</b> core_ca.h:1569</div></div>
 </div><!-- fragment --> 
 </div>
 </div>
@@ -523,7 +523,7 @@ Functions</h2></td></tr>
 <div class="line"> </div>
 <div class="line">  <span class="keywordflow">return</span> (status);</div>
 <div class="line">}</div>
-<div class="ttc" id="agroup__GIC__functions_html_gaeba215d9c4ec3599e0a168800288c3f3"><div class="ttname"><a href="group__GIC__functions.html#gaeba215d9c4ec3599e0a168800288c3f3">GIC_EnableIRQ</a></div><div class="ttdeci">__STATIC_INLINE void GIC_EnableIRQ(IRQn_Type IRQn)</div><div class="ttdoc">Enables the given interrupt using GIC's ISENABLER register.</div><div class="ttdef"><b>Definition:</b> core_ca.h:1562</div></div>
+<div class="ttc" id="agroup__GIC__functions_html_gaeba215d9c4ec3599e0a168800288c3f3"><div class="ttname"><a href="group__GIC__functions.html#gaeba215d9c4ec3599e0a168800288c3f3">GIC_EnableIRQ</a></div><div class="ttdeci">__STATIC_INLINE void GIC_EnableIRQ(IRQn_Type IRQn)</div><div class="ttdoc">Enables the given interrupt using GIC's ISENABLER register.</div><div class="ttdef"><b>Definition:</b> core_ca.h:1552</div></div>
 </div><!-- fragment --> 
 </div>
 </div>
@@ -571,7 +571,7 @@ Functions</h2></td></tr>
 <div class="line"> </div>
 <div class="line">  <span class="keywordflow">return</span> (status);</div>
 <div class="line">}</div>
-<div class="ttc" id="agroup__GIC__functions_html_gac23f090f572a058b4a737f6613ded9cd"><div class="ttname"><a href="group__GIC__functions.html#gac23f090f572a058b4a737f6613ded9cd">GIC_EndInterrupt</a></div><div class="ttdeci">__STATIC_INLINE void GIC_EndInterrupt(IRQn_Type IRQn)</div><div class="ttdoc">Writes the given interrupt number to the CPU's EOIR register.</div><div class="ttdef"><b>Definition:</b> core_ca.h:1554</div></div>
+<div class="ttc" id="agroup__GIC__functions_html_gac23f090f572a058b4a737f6613ded9cd"><div class="ttname"><a href="group__GIC__functions.html#gac23f090f572a058b4a737f6613ded9cd">GIC_EndInterrupt</a></div><div class="ttdeci">__STATIC_INLINE void GIC_EndInterrupt(IRQn_Type IRQn)</div><div class="ttdoc">Writes the given interrupt number to the CPU's EOIR register.</div><div class="ttdef"><b>Definition:</b> core_ca.h:1544</div></div>
 <div class="ttc" id="agroup__irq__ctrl__gr_html_ga55638c35efdc7a197b51165929ef0c10"><div class="ttname"><a href="group__irq__ctrl__gr.html#ga55638c35efdc7a197b51165929ef0c10">IRQ_EndOfInterrupt</a></div><div class="ttdeci">int32_t IRQ_EndOfInterrupt(IRQn_ID_t irqn)</div><div class="ttdoc">Signal end of interrupt processing.</div></div>
 </div><!-- fragment --> 
 </div>
@@ -631,7 +631,7 @@ Functions</h2></td></tr>
 <div class="line"> </div>
 <div class="line">  <span class="keywordflow">return</span> (irqn);</div>
 <div class="line">}</div>
-<div class="ttc" id="agroup__GIC__functions_html_gafc08bbc58b25fef0d24003313fd16eb8"><div class="ttname"><a href="group__GIC__functions.html#gafc08bbc58b25fef0d24003313fd16eb8">GIC_AcknowledgePending</a></div><div class="ttdeci">__STATIC_INLINE IRQn_Type GIC_AcknowledgePending(void)</div><div class="ttdoc">Read the CPU's IAR register.</div><div class="ttdef"><b>Definition:</b> core_ca.h:1546</div></div>
+<div class="ttc" id="agroup__GIC__functions_html_gafc08bbc58b25fef0d24003313fd16eb8"><div class="ttname"><a href="group__GIC__functions.html#gafc08bbc58b25fef0d24003313fd16eb8">GIC_AcknowledgePending</a></div><div class="ttdeci">__STATIC_INLINE IRQn_Type GIC_AcknowledgePending(void)</div><div class="ttdoc">Read the CPU's IAR register.</div><div class="ttdef"><b>Definition:</b> core_ca.h:1536</div></div>
 <div class="ttc" id="agroup__irq__ctrl__gr_html_ga1664e9fc682c3ace4b721906d6ce2b3d"><div class="ttname"><a href="group__irq__ctrl__gr.html#ga1664e9fc682c3ace4b721906d6ce2b3d">IRQ_GetActiveIRQ</a></div><div class="ttdeci">IRQn_ID_t IRQ_GetActiveIRQ(void)</div><div class="ttdoc">Get ID number of current interrupt request (IRQ).</div></div>
 </div><!-- fragment --> 
 </div>
@@ -674,7 +674,7 @@ Functions</h2></td></tr>
 <div class="line"> </div>
 <div class="line">  <span class="keywordflow">return</span> (enable);</div>
 <div class="line">}</div>
-<div class="ttc" id="acore__ca_8h_html_abcd7d576ea634b1a708db9fda95d09df"><div class="ttname"><a href="core__ca_8h.html#abcd7d576ea634b1a708db9fda95d09df">GIC_GetEnableIRQ</a></div><div class="ttdeci">__STATIC_INLINE uint32_t GIC_GetEnableIRQ(IRQn_Type IRQn)</div><div class="ttdoc">Get interrupt enable status using GIC's ISENABLER register.</div><div class="ttdef"><b>Definition:</b> core_ca.h:1571</div></div>
+<div class="ttc" id="acore__ca_8h_html_abcd7d576ea634b1a708db9fda95d09df"><div class="ttname"><a href="core__ca_8h.html#abcd7d576ea634b1a708db9fda95d09df">GIC_GetEnableIRQ</a></div><div class="ttdeci">__STATIC_INLINE uint32_t GIC_GetEnableIRQ(IRQn_Type IRQn)</div><div class="ttdoc">Get interrupt enable status using GIC's ISENABLER register.</div><div class="ttdef"><b>Definition:</b> core_ca.h:1561</div></div>
 <div class="ttc" id="agroup__irq__ctrl__gr_html_ga8913613a9075a35410af0eb7b275d9e2"><div class="ttname"><a href="group__irq__ctrl__gr.html#ga8913613a9075a35410af0eb7b275d9e2">IRQ_GetEnableState</a></div><div class="ttdeci">uint32_t IRQ_GetEnableState(IRQn_ID_t irqn)</div><div class="ttdoc">Get interrupt enable state.</div></div>
 </div><!-- fragment --> 
 </div>
@@ -717,7 +717,7 @@ Functions</h2></td></tr>
 <div class="line">  <span class="keywordflow">return</span> (h);</div>
 <div class="line">}</div>
 <div class="ttc" id="agroup__irq__ctrl__gr_html_gaa2a2df8fbc7bad465ada49bd690f65d5"><div class="ttname"><a href="group__irq__ctrl__gr.html#gaa2a2df8fbc7bad465ada49bd690f65d5">IRQ_GetHandler</a></div><div class="ttdeci">IRQHandler_t IRQ_GetHandler(IRQn_ID_t irqn)</div><div class="ttdoc">Get the registered interrupt handler.</div></div>
-<div class="ttc" id="airq__ctrl_8h_html_a27589275c894aa295615df4764404b98"><div class="ttname"><a href="irq__ctrl_8h.html#a27589275c894aa295615df4764404b98">IRQHandler_t</a></div><div class="ttdeci">void(* IRQHandler_t)(void)</div><div class="ttdoc">Interrupt handler data type.</div><div class="ttdef"><b>Definition:</b> irq_ctrl.h:39</div></div>
+<div class="ttc" id="airq__ctrl_8h_html_a27589275c894aa295615df4764404b98"><div class="ttname"><a href="irq__ctrl_8h.html#a27589275c894aa295615df4764404b98">IRQHandler_t</a></div><div class="ttdeci">void(* IRQHandler_t)(void)</div><div class="ttdoc">Interrupt handler data type.</div><div class="ttdef"><b>Definition:</b> irq_ctrl.h:37</div></div>
 </div><!-- fragment --> 
 </div>
 </div>
@@ -774,12 +774,12 @@ Functions</h2></td></tr>
 <div class="line"> </div>
 <div class="line">  <span class="keywordflow">return</span> (mode);</div>
 <div class="line">}</div>
-<div class="ttc" id="acore__ca_8h_html_a43cfac7327b49e2a89d63abc99b6b06a"><div class="ttname"><a href="core__ca_8h.html#a43cfac7327b49e2a89d63abc99b6b06a">GIC_GetConfiguration</a></div><div class="ttdeci">__STATIC_INLINE uint32_t GIC_GetConfiguration(IRQn_Type IRQn)</div><div class="ttdoc">Get the interrupt configuration from the GIC's ICFGR register.</div><div class="ttdef"><b>Definition:</b> core_ca.h:1657</div></div>
-<div class="ttc" id="agroup__GIC__functions_html_gafccf881f9517592f30489bcabcb738a8"><div class="ttname"><a href="group__GIC__functions.html#gafccf881f9517592f30489bcabcb738a8">GIC_GetTarget</a></div><div class="ttdeci">__STATIC_INLINE uint32_t GIC_GetTarget(IRQn_Type IRQn)</div><div class="ttdoc">Read the GIC's ITARGETSR register.</div><div class="ttdef"><b>Definition:</b> core_ca.h:1524</div></div>
+<div class="ttc" id="acore__ca_8h_html_a43cfac7327b49e2a89d63abc99b6b06a"><div class="ttname"><a href="core__ca_8h.html#a43cfac7327b49e2a89d63abc99b6b06a">GIC_GetConfiguration</a></div><div class="ttdeci">__STATIC_INLINE uint32_t GIC_GetConfiguration(IRQn_Type IRQn)</div><div class="ttdoc">Get the interrupt configuration from the GIC's ICFGR register.</div><div class="ttdef"><b>Definition:</b> core_ca.h:1647</div></div>
+<div class="ttc" id="agroup__GIC__functions_html_gafccf881f9517592f30489bcabcb738a8"><div class="ttname"><a href="group__GIC__functions.html#gafccf881f9517592f30489bcabcb738a8">GIC_GetTarget</a></div><div class="ttdeci">__STATIC_INLINE uint32_t GIC_GetTarget(IRQn_Type IRQn)</div><div class="ttdoc">Read the GIC's ITARGETSR register.</div><div class="ttdef"><b>Definition:</b> core_ca.h:1514</div></div>
 <div class="ttc" id="agroup__irq__ctrl__gr_html_gadba142ee49ae8f52f76b603c926ad711"><div class="ttname"><a href="group__irq__ctrl__gr.html#gadba142ee49ae8f52f76b603c926ad711">IRQ_GetMode</a></div><div class="ttdeci">uint32_t IRQ_GetMode(IRQn_ID_t irqn)</div><div class="ttdoc">Get interrupt mode configuration.</div></div>
 <div class="ttc" id="agroup__irq__mode__defs_html_gaacb93ae158e548c54698a7230647804a"><div class="ttname"><a href="group__irq__mode__defs.html#gaacb93ae158e548c54698a7230647804a">IRQ_MODE_ERROR</a></div><div class="ttdeci">#define IRQ_MODE_ERROR</div><div class="ttdoc">Bit indicating mode value error.</div></div>
 <div class="ttc" id="agroup__irq__mode__defs_html_gabc31ba71612436a6ccc49342f35fec58"><div class="ttname"><a href="group__irq__mode__defs.html#gabc31ba71612436a6ccc49342f35fec58">IRQ_MODE_TRIG_LEVEL</a></div><div class="ttdeci">#define IRQ_MODE_TRIG_LEVEL</div><div class="ttdoc">Trigger: level triggered interrupt.</div></div>
-<div class="ttc" id="airq__ctrl_8h_html_ab7527409c193021e65aaf4d519caea46"><div class="ttname"><a href="irq__ctrl_8h.html#ab7527409c193021e65aaf4d519caea46">IRQ_MODE_CPU_Pos</a></div><div class="ttdeci">#define IRQ_MODE_CPU_Pos</div><div class="ttdef"><b>Definition:</b> irq_ctrl.h:69</div></div>
+<div class="ttc" id="airq__ctrl_8h_html_ab7527409c193021e65aaf4d519caea46"><div class="ttname"><a href="irq__ctrl_8h.html#ab7527409c193021e65aaf4d519caea46">IRQ_MODE_CPU_Pos</a></div><div class="ttdeci">#define IRQ_MODE_CPU_Pos</div><div class="ttdef"><b>Definition:</b> irq_ctrl.h:67</div></div>
 </div><!-- fragment --> 
 </div>
 </div>
@@ -821,7 +821,7 @@ Functions</h2></td></tr>
 <div class="line"> </div>
 <div class="line">  <span class="keywordflow">return</span> (pending &amp; 1U);</div>
 <div class="line">}</div>
-<div class="ttc" id="acore__ca_8h_html_ab726a01df6ee9a480cc73910a06ddfb7"><div class="ttname"><a href="core__ca_8h.html#ab726a01df6ee9a480cc73910a06ddfb7">GIC_GetPendingIRQ</a></div><div class="ttdeci">__STATIC_INLINE uint32_t GIC_GetPendingIRQ(IRQn_Type IRQn)</div><div class="ttdoc">Get interrupt pending status from GIC's ISPENDR register.</div><div class="ttdef"><b>Definition:</b> core_ca.h:1588</div></div>
+<div class="ttc" id="acore__ca_8h_html_ab726a01df6ee9a480cc73910a06ddfb7"><div class="ttname"><a href="core__ca_8h.html#ab726a01df6ee9a480cc73910a06ddfb7">GIC_GetPendingIRQ</a></div><div class="ttdeci">__STATIC_INLINE uint32_t GIC_GetPendingIRQ(IRQn_Type IRQn)</div><div class="ttdoc">Get interrupt pending status from GIC's ISPENDR register.</div><div class="ttdef"><b>Definition:</b> core_ca.h:1578</div></div>
 <div class="ttc" id="agroup__irq__ctrl__gr_html_gaa399f9169f136b3930f0d50247aa22fc"><div class="ttname"><a href="group__irq__ctrl__gr.html#gaa399f9169f136b3930f0d50247aa22fc">IRQ_GetPending</a></div><div class="ttdeci">uint32_t IRQ_GetPending(IRQn_ID_t irqn)</div><div class="ttdoc">Get interrupt pending flag.</div></div>
 </div><!-- fragment --> 
 </div>
@@ -864,7 +864,7 @@ Functions</h2></td></tr>
 <div class="line"> </div>
 <div class="line">  <span class="keywordflow">return</span> (priority);</div>
 <div class="line">}</div>
-<div class="ttc" id="agroup__GIC__functions_html_ga397048004654f792649742f95bf8ae67"><div class="ttname"><a href="group__GIC__functions.html#ga397048004654f792649742f95bf8ae67">GIC_GetPriority</a></div><div class="ttdeci">__STATIC_INLINE uint32_t GIC_GetPriority(IRQn_Type IRQn)</div><div class="ttdoc">Read the current interrupt priority from GIC's IPRIORITYR register.</div><div class="ttdef"><b>Definition:</b> core_ca.h:1675</div></div>
+<div class="ttc" id="agroup__GIC__functions_html_ga397048004654f792649742f95bf8ae67"><div class="ttname"><a href="group__GIC__functions.html#ga397048004654f792649742f95bf8ae67">GIC_GetPriority</a></div><div class="ttdeci">__STATIC_INLINE uint32_t GIC_GetPriority(IRQn_Type IRQn)</div><div class="ttdoc">Read the current interrupt priority from GIC's IPRIORITYR register.</div><div class="ttdef"><b>Definition:</b> core_ca.h:1665</div></div>
 <div class="ttc" id="agroup__irq__ctrl__gr_html_ga0a6a18c8fa2bc3183598439b56c507c3"><div class="ttname"><a href="group__irq__ctrl__gr.html#ga0a6a18c8fa2bc3183598439b56c507c3">IRQ_GetPriority</a></div><div class="ttdeci">uint32_t IRQ_GetPriority(IRQn_ID_t irqn)</div><div class="ttdoc">Get interrupt priority.</div></div>
 <div class="ttc" id="agroup__irq__priority__defs_html_ga47b19866dc05c58c6923c313b371f881"><div class="ttname"><a href="group__irq__priority__defs.html#ga47b19866dc05c58c6923c313b371f881">IRQ_PRIORITY_ERROR</a></div><div class="ttdeci">#define IRQ_PRIORITY_ERROR</div><div class="ttdoc">Bit indicating priority value error.</div></div>
 </div><!-- fragment --> 
@@ -898,7 +898,7 @@ Functions</h2></td></tr>
 <div class="line"> </div>
 <div class="line">  <span class="keywordflow">return</span> (7U - bp);</div>
 <div class="line">}</div>
-<div class="ttc" id="agroup__GIC__functions_html_gaa7046d8206ddd4696716726e68f85906"><div class="ttname"><a href="group__GIC__functions.html#gaa7046d8206ddd4696716726e68f85906">GIC_GetBinaryPoint</a></div><div class="ttdeci">__STATIC_INLINE uint32_t GIC_GetBinaryPoint(void)</div><div class="ttdoc">Read the current group priority and subpriority split point from CPU's BPR register.</div><div class="ttdef"><b>Definition:</b> core_ca.h:1707</div></div>
+<div class="ttc" id="agroup__GIC__functions_html_gaa7046d8206ddd4696716726e68f85906"><div class="ttname"><a href="group__GIC__functions.html#gaa7046d8206ddd4696716726e68f85906">GIC_GetBinaryPoint</a></div><div class="ttdeci">__STATIC_INLINE uint32_t GIC_GetBinaryPoint(void)</div><div class="ttdoc">Read the current group priority and subpriority split point from CPU's BPR register.</div><div class="ttdef"><b>Definition:</b> core_ca.h:1697</div></div>
 </div><!-- fragment --> 
 </div>
 </div>
@@ -926,7 +926,7 @@ Functions</h2></td></tr>
 <div class="fragment"><div class="line">uint32_t <a class="code hl_function" href="group__irq__ctrl__gr.html#ga77632ae73f1ba46c4a9a0c12e6bc4869">IRQ_GetPriorityMask</a> (<span class="keywordtype">void</span>) {</div>
 <div class="line">  <span class="keywordflow">return</span> <a class="code hl_function" href="group__GIC__functions.html#ga2c5f9e5637560fc9d5c29d772580a728">GIC_GetInterfacePriorityMask</a>();</div>
 <div class="line">}</div>
-<div class="ttc" id="agroup__GIC__functions_html_ga2c5f9e5637560fc9d5c29d772580a728"><div class="ttname"><a href="group__GIC__functions.html#ga2c5f9e5637560fc9d5c29d772580a728">GIC_GetInterfacePriorityMask</a></div><div class="ttdeci">__STATIC_INLINE uint32_t GIC_GetInterfacePriorityMask(void)</div><div class="ttdoc">Read the current interrupt priority mask from CPU's PMR register.</div><div class="ttdef"><b>Definition:</b> core_ca.h:1691</div></div>
+<div class="ttc" id="agroup__GIC__functions_html_ga2c5f9e5637560fc9d5c29d772580a728"><div class="ttname"><a href="group__GIC__functions.html#ga2c5f9e5637560fc9d5c29d772580a728">GIC_GetInterfacePriorityMask</a></div><div class="ttdeci">__STATIC_INLINE uint32_t GIC_GetInterfacePriorityMask(void)</div><div class="ttdoc">Read the current interrupt priority mask from CPU's PMR register.</div><div class="ttdef"><b>Definition:</b> core_ca.h:1681</div></div>
 <div class="ttc" id="agroup__irq__ctrl__gr_html_ga77632ae73f1ba46c4a9a0c12e6bc4869"><div class="ttname"><a href="group__irq__ctrl__gr.html#ga77632ae73f1ba46c4a9a0c12e6bc4869">IRQ_GetPriorityMask</a></div><div class="ttdeci">uint32_t IRQ_GetPriorityMask(void)</div><div class="ttdoc">Get priority masking threshold.</div></div>
 </div><!-- fragment --> 
 </div>
@@ -968,7 +968,7 @@ Functions</h2></td></tr>
 <div class="line">  <a class="code hl_function" href="group__GIC__functions.html#ga818881f69aae3eef6eb996bee6f6c63e">GIC_Enable</a>();</div>
 <div class="line">  <span class="keywordflow">return</span> (0);</div>
 <div class="line">}</div>
-<div class="ttc" id="agroup__GIC__functions_html_ga818881f69aae3eef6eb996bee6f6c63e"><div class="ttname"><a href="group__GIC__functions.html#ga818881f69aae3eef6eb996bee6f6c63e">GIC_Enable</a></div><div class="ttdeci">__STATIC_INLINE void GIC_Enable(void)</div><div class="ttdoc">Initialize and enable the GIC.</div><div class="ttdef"><b>Definition:</b> core_ca.h:1856</div></div>
+<div class="ttc" id="agroup__GIC__functions_html_ga818881f69aae3eef6eb996bee6f6c63e"><div class="ttname"><a href="group__GIC__functions.html#ga818881f69aae3eef6eb996bee6f6c63e">GIC_Enable</a></div><div class="ttdeci">__STATIC_INLINE void GIC_Enable(void)</div><div class="ttdoc">Initialize and enable the GIC.</div><div class="ttdef"><b>Definition:</b> core_ca.h:1846</div></div>
 </div><!-- fragment --> 
 </div>
 </div>
@@ -1128,16 +1128,16 @@ Functions</h2></td></tr>
 <div class="line"> </div>
 <div class="line">  <span class="keywordflow">return</span> (status);</div>
 <div class="line">}</div>
-<div class="ttc" id="acore__ca_8h_html_a5dffcd04b18d2c3ee5a410e185ce5108"><div class="ttname"><a href="core__ca_8h.html#a5dffcd04b18d2c3ee5a410e185ce5108">GIC_SetConfiguration</a></div><div class="ttdeci">__STATIC_INLINE void GIC_SetConfiguration(IRQn_Type IRQn, uint32_t int_config)</div><div class="ttdoc">Sets the interrupt configuration using GIC's ICFGR register.</div><div class="ttdef"><b>Definition:</b> core_ca.h:1640</div></div>
-<div class="ttc" id="acore__ca_8h_html_ab875d63dc51a75149802945bb00e2695"><div class="ttname"><a href="core__ca_8h.html#ab875d63dc51a75149802945bb00e2695">GIC_SetGroup</a></div><div class="ttdeci">__STATIC_INLINE void GIC_SetGroup(IRQn_Type IRQn, uint32_t group)</div><div class="ttdoc">Set the interrupt group from the GIC's IGROUPR register.</div><div class="ttdef"><b>Definition:</b> core_ca.h:1756</div></div>
-<div class="ttc" id="agroup__GIC__functions_html_ga7d93d39736ef5e379e6511430ee6e75f"><div class="ttname"><a href="group__GIC__functions.html#ga7d93d39736ef5e379e6511430ee6e75f">GIC_DistributorInfo</a></div><div class="ttdeci">__STATIC_INLINE uint32_t GIC_DistributorInfo(void)</div><div class="ttdoc">Read the GIC's TYPER register.</div><div class="ttdef"><b>Definition:</b> core_ca.h:1497</div></div>
-<div class="ttc" id="agroup__GIC__functions_html_gae86bba705d0d4ef812b84d29d7b3ca2b"><div class="ttname"><a href="group__GIC__functions.html#gae86bba705d0d4ef812b84d29d7b3ca2b">GIC_SetTarget</a></div><div class="ttdeci">__STATIC_INLINE void GIC_SetTarget(IRQn_Type IRQn, uint32_t cpu_target)</div><div class="ttdoc">Sets the GIC's ITARGETSR register for the given interrupt.</div><div class="ttdef"><b>Definition:</b> core_ca.h:1514</div></div>
+<div class="ttc" id="acore__ca_8h_html_a5dffcd04b18d2c3ee5a410e185ce5108"><div class="ttname"><a href="core__ca_8h.html#a5dffcd04b18d2c3ee5a410e185ce5108">GIC_SetConfiguration</a></div><div class="ttdeci">__STATIC_INLINE void GIC_SetConfiguration(IRQn_Type IRQn, uint32_t int_config)</div><div class="ttdoc">Sets the interrupt configuration using GIC's ICFGR register.</div><div class="ttdef"><b>Definition:</b> core_ca.h:1630</div></div>
+<div class="ttc" id="acore__ca_8h_html_ab875d63dc51a75149802945bb00e2695"><div class="ttname"><a href="core__ca_8h.html#ab875d63dc51a75149802945bb00e2695">GIC_SetGroup</a></div><div class="ttdeci">__STATIC_INLINE void GIC_SetGroup(IRQn_Type IRQn, uint32_t group)</div><div class="ttdoc">Set the interrupt group from the GIC's IGROUPR register.</div><div class="ttdef"><b>Definition:</b> core_ca.h:1746</div></div>
+<div class="ttc" id="agroup__GIC__functions_html_ga7d93d39736ef5e379e6511430ee6e75f"><div class="ttname"><a href="group__GIC__functions.html#ga7d93d39736ef5e379e6511430ee6e75f">GIC_DistributorInfo</a></div><div class="ttdeci">__STATIC_INLINE uint32_t GIC_DistributorInfo(void)</div><div class="ttdoc">Read the GIC's TYPER register.</div><div class="ttdef"><b>Definition:</b> core_ca.h:1487</div></div>
+<div class="ttc" id="agroup__GIC__functions_html_gae86bba705d0d4ef812b84d29d7b3ca2b"><div class="ttname"><a href="group__GIC__functions.html#gae86bba705d0d4ef812b84d29d7b3ca2b">GIC_SetTarget</a></div><div class="ttdeci">__STATIC_INLINE void GIC_SetTarget(IRQn_Type IRQn, uint32_t cpu_target)</div><div class="ttdoc">Sets the GIC's ITARGETSR register for the given interrupt.</div><div class="ttdef"><b>Definition:</b> core_ca.h:1504</div></div>
 <div class="ttc" id="agroup__irq__mode__defs_html_ga7498851a6a7f3e2c5e087041617f5be7"><div class="ttname"><a href="group__irq__mode__defs.html#ga7498851a6a7f3e2c5e087041617f5be7">IRQ_MODE_DOMAIN_NONSECURE</a></div><div class="ttdeci">#define IRQ_MODE_DOMAIN_NONSECURE</div><div class="ttdoc">Domain: interrupt is targeting non-secure domain.</div></div>
 <div class="ttc" id="agroup__irq__mode__defs_html_gad3d0505689768247c67495b7359e147f"><div class="ttname"><a href="group__irq__mode__defs.html#gad3d0505689768247c67495b7359e147f">IRQ_MODE_CPU_ALL</a></div><div class="ttdeci">#define IRQ_MODE_CPU_ALL</div><div class="ttdoc">CPU: interrupt targets all CPUs.</div></div>
-<div class="ttc" id="airq__ctrl_8h_html_a2fafbaf2f6da5241ad97af6c493fa218"><div class="ttname"><a href="irq__ctrl_8h.html#a2fafbaf2f6da5241ad97af6c493fa218">IRQ_MODE_TRIG_Msk</a></div><div class="ttdeci">#define IRQ_MODE_TRIG_Msk</div><div class="ttdef"><b>Definition:</b> irq_ctrl.h:50</div></div>
-<div class="ttc" id="airq__ctrl_8h_html_a7b0581db3736a143cd582cd2457bf3cc"><div class="ttname"><a href="irq__ctrl_8h.html#a7b0581db3736a143cd582cd2457bf3cc">IRQ_MODE_TYPE_Msk</a></div><div class="ttdeci">#define IRQ_MODE_TYPE_Msk</div><div class="ttdef"><b>Definition:</b> irq_ctrl.h:60</div></div>
-<div class="ttc" id="airq__ctrl_8h_html_a96f739279c27f3e56ede4f28de4a48d8"><div class="ttname"><a href="irq__ctrl_8h.html#a96f739279c27f3e56ede4f28de4a48d8">IRQ_MODE_CPU_Msk</a></div><div class="ttdeci">#define IRQ_MODE_CPU_Msk</div><div class="ttdef"><b>Definition:</b> irq_ctrl.h:70</div></div>
-<div class="ttc" id="airq__ctrl_8h_html_afdc87f9fda2bafac2b0399ebdb39bf3e"><div class="ttname"><a href="irq__ctrl_8h.html#afdc87f9fda2bafac2b0399ebdb39bf3e">IRQ_MODE_DOMAIN_Msk</a></div><div class="ttdeci">#define IRQ_MODE_DOMAIN_Msk</div><div class="ttdef"><b>Definition:</b> irq_ctrl.h:65</div></div>
+<div class="ttc" id="airq__ctrl_8h_html_a2fafbaf2f6da5241ad97af6c493fa218"><div class="ttname"><a href="irq__ctrl_8h.html#a2fafbaf2f6da5241ad97af6c493fa218">IRQ_MODE_TRIG_Msk</a></div><div class="ttdeci">#define IRQ_MODE_TRIG_Msk</div><div class="ttdef"><b>Definition:</b> irq_ctrl.h:48</div></div>
+<div class="ttc" id="airq__ctrl_8h_html_a7b0581db3736a143cd582cd2457bf3cc"><div class="ttname"><a href="irq__ctrl_8h.html#a7b0581db3736a143cd582cd2457bf3cc">IRQ_MODE_TYPE_Msk</a></div><div class="ttdeci">#define IRQ_MODE_TYPE_Msk</div><div class="ttdef"><b>Definition:</b> irq_ctrl.h:58</div></div>
+<div class="ttc" id="airq__ctrl_8h_html_a96f739279c27f3e56ede4f28de4a48d8"><div class="ttname"><a href="irq__ctrl_8h.html#a96f739279c27f3e56ede4f28de4a48d8">IRQ_MODE_CPU_Msk</a></div><div class="ttdeci">#define IRQ_MODE_CPU_Msk</div><div class="ttdef"><b>Definition:</b> irq_ctrl.h:68</div></div>
+<div class="ttc" id="airq__ctrl_8h_html_afdc87f9fda2bafac2b0399ebdb39bf3e"><div class="ttname"><a href="irq__ctrl_8h.html#afdc87f9fda2bafac2b0399ebdb39bf3e">IRQ_MODE_DOMAIN_Msk</a></div><div class="ttdeci">#define IRQ_MODE_DOMAIN_Msk</div><div class="ttdef"><b>Definition:</b> irq_ctrl.h:63</div></div>
 </div><!-- fragment --> 
 </div>
 </div>
@@ -1179,7 +1179,7 @@ Functions</h2></td></tr>
 <div class="line"> </div>
 <div class="line">  <span class="keywordflow">return</span> (status);</div>
 <div class="line">}</div>
-<div class="ttc" id="agroup__GIC__functions_html_ga18fbddf7f3594df141c97f61a71da47c"><div class="ttname"><a href="group__GIC__functions.html#ga18fbddf7f3594df141c97f61a71da47c">GIC_SetPendingIRQ</a></div><div class="ttdeci">__STATIC_INLINE void GIC_SetPendingIRQ(IRQn_Type IRQn)</div><div class="ttdoc">Sets the given interrupt as pending using GIC's ISPENDR register.</div><div class="ttdef"><b>Definition:</b> core_ca.h:1611</div></div>
+<div class="ttc" id="agroup__GIC__functions_html_ga18fbddf7f3594df141c97f61a71da47c"><div class="ttname"><a href="group__GIC__functions.html#ga18fbddf7f3594df141c97f61a71da47c">GIC_SetPendingIRQ</a></div><div class="ttdeci">__STATIC_INLINE void GIC_SetPendingIRQ(IRQn_Type IRQn)</div><div class="ttdoc">Sets the given interrupt as pending using GIC's ISPENDR register.</div><div class="ttdef"><b>Definition:</b> core_ca.h:1601</div></div>
 </div><!-- fragment --> 
 </div>
 </div>
@@ -1234,7 +1234,7 @@ Functions</h2></td></tr>
 <div class="line"> </div>
 <div class="line">  <span class="keywordflow">return</span> (status);</div>
 <div class="line">}</div>
-<div class="ttc" id="agroup__GIC__functions_html_ga27b9862b58290276851ec669cabf0f71"><div class="ttname"><a href="group__GIC__functions.html#ga27b9862b58290276851ec669cabf0f71">GIC_SetPriority</a></div><div class="ttdeci">__STATIC_INLINE void GIC_SetPriority(IRQn_Type IRQn, uint32_t priority)</div><div class="ttdoc">Set the priority for the given interrupt in the GIC's IPRIORITYR register.</div><div class="ttdef"><b>Definition:</b> core_ca.h:1666</div></div>
+<div class="ttc" id="agroup__GIC__functions_html_ga27b9862b58290276851ec669cabf0f71"><div class="ttname"><a href="group__GIC__functions.html#ga27b9862b58290276851ec669cabf0f71">GIC_SetPriority</a></div><div class="ttdeci">__STATIC_INLINE void GIC_SetPriority(IRQn_Type IRQn, uint32_t priority)</div><div class="ttdoc">Set the priority for the given interrupt in the GIC's IPRIORITYR register.</div><div class="ttdef"><b>Definition:</b> core_ca.h:1656</div></div>
 </div><!-- fragment --> 
 </div>
 </div>
@@ -1281,7 +1281,7 @@ Functions</h2></td></tr>
 <div class="line"> </div>
 <div class="line">  <span class="keywordflow">return</span> (status);</div>
 <div class="line">}</div>
-<div class="ttc" id="agroup__GIC__functions_html_ga5dfedeb5403656a77e0fef4e1cc2c0c6"><div class="ttname"><a href="group__GIC__functions.html#ga5dfedeb5403656a77e0fef4e1cc2c0c6">GIC_SetBinaryPoint</a></div><div class="ttdeci">__STATIC_INLINE void GIC_SetBinaryPoint(uint32_t binary_point)</div><div class="ttdoc">Configures the group priority and subpriority split point using CPU's BPR register.</div><div class="ttdef"><b>Definition:</b> core_ca.h:1699</div></div>
+<div class="ttc" id="agroup__GIC__functions_html_ga5dfedeb5403656a77e0fef4e1cc2c0c6"><div class="ttname"><a href="group__GIC__functions.html#ga5dfedeb5403656a77e0fef4e1cc2c0c6">GIC_SetBinaryPoint</a></div><div class="ttdeci">__STATIC_INLINE void GIC_SetBinaryPoint(uint32_t binary_point)</div><div class="ttdoc">Configures the group priority and subpriority split point using CPU's BPR register.</div><div class="ttdef"><b>Definition:</b> core_ca.h:1689</div></div>
 <div class="ttc" id="agroup__irq__ctrl__gr_html_gabaa4074988ea9e30523f7ed5a86953c2"><div class="ttname"><a href="group__irq__ctrl__gr.html#gabaa4074988ea9e30523f7ed5a86953c2">IRQ_SetPriorityGroupBits</a></div><div class="ttdeci">int32_t IRQ_SetPriorityGroupBits(uint32_t bits)</div><div class="ttdoc">Set priority grouping field split point.</div></div>
 <div class="ttc" id="agroup__irq__priority__defs_html_gabaa4e91ab84dbe5f669080af6d0d81fa"><div class="ttname"><a href="group__irq__priority__defs.html#gabaa4e91ab84dbe5f669080af6d0d81fa">IRQ_PRIORITY_Msk</a></div><div class="ttdeci">#define IRQ_PRIORITY_Msk</div><div class="ttdoc">Interrupt priority value bit-mask.</div></div>
 </div><!-- fragment --> 
@@ -1318,7 +1318,7 @@ Functions</h2></td></tr>
 <div class="line">  <a class="code hl_function" href="group__GIC__functions.html#gaa5eb0e76dbc89596e1ce47ddb9edc4a0">GIC_SetInterfacePriorityMask</a> (priority);</div>
 <div class="line">  <span class="keywordflow">return</span> (0);</div>
 <div class="line">}</div>
-<div class="ttc" id="agroup__GIC__functions_html_gaa5eb0e76dbc89596e1ce47ddb9edc4a0"><div class="ttname"><a href="group__GIC__functions.html#gaa5eb0e76dbc89596e1ce47ddb9edc4a0">GIC_SetInterfacePriorityMask</a></div><div class="ttdeci">__STATIC_INLINE void GIC_SetInterfacePriorityMask(uint32_t priority)</div><div class="ttdoc">Set the interrupt priority mask using CPU's PMR register.</div><div class="ttdef"><b>Definition:</b> core_ca.h:1683</div></div>
+<div class="ttc" id="agroup__GIC__functions_html_gaa5eb0e76dbc89596e1ce47ddb9edc4a0"><div class="ttname"><a href="group__GIC__functions.html#gaa5eb0e76dbc89596e1ce47ddb9edc4a0">GIC_SetInterfacePriorityMask</a></div><div class="ttdeci">__STATIC_INLINE void GIC_SetInterfacePriorityMask(uint32_t priority)</div><div class="ttdoc">Set the interrupt priority mask using CPU's PMR register.</div><div class="ttdef"><b>Definition:</b> core_ca.h:1673</div></div>
 <div class="ttc" id="agroup__irq__ctrl__gr_html_ga3a79888f72bd1db45f0b9a59dbaa2337"><div class="ttname"><a href="group__irq__ctrl__gr.html#ga3a79888f72bd1db45f0b9a59dbaa2337">IRQ_SetPriorityMask</a></div><div class="ttdeci">int32_t IRQ_SetPriorityMask(uint32_t priority)</div><div class="ttdoc">Set priority masking threshold.</div></div>
 </div><!-- fragment --> 
 </div>

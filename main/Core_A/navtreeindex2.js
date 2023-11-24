@@ -1,6 +1,5 @@
 var NAVTREEINDEX2 =
 {
-"group__irq__mode__defs.html#gad3d0505689768247c67495b7359e147f":[6,7,0,8],
 "group__irq__mode__defs.html#gadb512fc8a31bc771c3ce0d006b821bb9":[6,7,0,6],
 "group__irq__mode__defs.html#gaec01a80010bc42b1482388ce3ae4d2a3":[6,7,0,19],
 "group__irq__mode__defs.html#gafeb539b2a564ca35abc57f87d71e7206":[6,7,0,17],
@@ -249,5 +248,6 @@ var NAVTREEINDEX2 =
 "unionSCTLR__Type.html#a122a4dde5ab1a27855ddad88bb3f9f78":[6,1,18,1,4],
 "unionSCTLR__Type.html#a1ca6569db52bca6250afbbd565d05449":[6,1,18,1,16],
 "unionSCTLR__Type.html#a25d4c4cf4df168a30cc4600a130580ab":[6,1,18,1,14],
-"unionSCTLR__Type.html#a32873e90e6814c3a2fc1b1c79c0bc8c8":[6,1,18,1,17]
+"unionSCTLR__Type.html#a32873e90e6814c3a2fc1b1c79c0bc8c8":[6,1,18,1,17],
+"unionSCTLR__Type.html#a37f6910db32361f44a268f93b9ff7b20":[6,1,18,1,22]
 };
