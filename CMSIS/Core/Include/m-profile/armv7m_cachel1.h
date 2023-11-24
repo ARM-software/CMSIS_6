@@ -1,9 +1,3 @@
-/******************************************************************************
- * @file     armv7m_cachel1.h
- * @brief    CMSIS Level 1 Cache API for Armv7-M and later
- * @version  V1.0.3
- * @date     17. March 2023
- ******************************************************************************/
 /*
  * Copyright (c) 2020-2021 Arm Limited. All rights reserved.
  *
@@ -20,6 +14,10 @@
  * WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  * See the License for the specific language governing permissions and
  * limitations under the License.
+ */
+
+/*
+ * CMSIS-Core(M) Level 1 Cache API for Armv7-M and later
  */
 
 #ifndef ARM_ARMV7M_CACHEL1_H

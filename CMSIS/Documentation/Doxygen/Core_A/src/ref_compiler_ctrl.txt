@@ -1,10 +1,4 @@
-/**************************************************************************//**
- * @file     Ref_CompilerControl.txt
- * @brief    CMSIS compiler specific macros, functions, instructions
- * @version  V1.00
- * @date     22. Feb 2017
- ******************************************************************************/
-/* CMSIS compiler control architecture macros */
+/* ##########################  Compiler control architecture macros  ################################# */
 /**
 \defgroup comp_cntrl_gr Compiler Control
 \brief Compiler agnostic \#define symbols for generic C/C++ source code

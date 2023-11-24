@@ -12,12 +12,13 @@
       }
     ],
     "requires": {
+      "microsoft:tools/kitware/cmake": "^3.25.2",
       "microsoft:ninja": "^1.10.2",
       "arm:compilers/arm/armclang":"^6.20.0",
       "arm:compilers/arm/arm-none-eabi-gcc": "^12.2.1-0",
       "arm:compilers/arm/llvm-embedded": "^17.0.1-0",
       "arm:tools/open-cmsis-pack/cmsis-toolbox": "^2.1.0-0",
-      "arm:models/arm/avh": "^11.21.15",
+      "arm:models/arm/avh-fvp": "^11.22.39",
       "arm:debuggers/arm/armdbg": "^6.0.0"
     }
   }

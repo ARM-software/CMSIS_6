@@ -1,9 +1,3 @@
-/**************************************************************************//**
- * @file     cmsis_compiler.h
- * @brief    CMSIS compiler generic header file
- * @version  V6.0.0
- * @date     27. July 2023
- ******************************************************************************/
 /*
  * Copyright (c) 2009-2023 Arm Limited. All rights reserved.
  *
@@ -20,6 +14,10 @@
  * WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  * See the License for the specific language governing permissions and
  * limitations under the License.
+ */
+
+/*
+ * CMSIS Compiler Generic Header File
  */
 
 #ifndef __CMSIS_COMPILER_H
@@ -137,10 +135,6 @@
   #ifndef   __PACKED_UNION
     #define __PACKED_UNION                         union __attribute__((packed))
   #endif
-  #ifndef   __UNALIGNED_UINT32        /* deprecated */
-    struct __attribute__((packed)) T_UINT32 { uint32_t v; };
-    #define __UNALIGNED_UINT32(x)                  (((struct T_UINT32 *)(x))->v)
-  #endif
   #ifndef   __UNALIGNED_UINT16_WRITE
     __PACKED_STRUCT T_UINT16_WRITE { uint16_t v; };
     #define __UNALIGNED_UINT16_WRITE(addr, val)    (void)((((struct T_UINT16_WRITE *)(void*)(addr))->v) = (val))
@@ -168,7 +162,7 @@
     #define __COMPILER_BARRIER()                   (void)0
   #endif
   #ifndef __NO_INIT
-    #define __NO_INIT                              __attribute__ ((section (".bss.noinit")))
+    #define __NO_INIT                              __attribute__ ((section (".noinit")))
   #endif
   #ifndef __ALIAS
     #define __ALIAS(x)                             __attribute__ ((alias(x)))
@@ -214,10 +208,6 @@
   #ifndef   __PACKED_UNION
     #define __PACKED_UNION                         union __packed__
   #endif
-  #ifndef   __UNALIGNED_UINT32        /* deprecated */
-    struct __packed__ T_UINT32 { uint32_t v; };
-    #define __UNALIGNED_UINT32(x)                  (((struct T_UINT32 *)(x))->v)
-  #endif
   #ifndef   __UNALIGNED_UINT16_WRITE
     __PACKED_STRUCT T_UINT16_WRITE { uint16_t v; };
     #define __UNALIGNED_UINT16_WRITE(addr, val)    (void)((((struct T_UINT16_WRITE *)(void *)(addr))->v) = (val))
@@ -246,7 +236,7 @@
     #define __COMPILER_BARRIER()                   (void)0
   #endif
   #ifndef __NO_INIT
-    #define __NO_INIT                              __attribute__ ((section (".bss.noinit")))
+    #define __NO_INIT                              __attribute__ ((section (".noinit")))
   #endif
   #ifndef __ALIAS
     #define __ALIAS(x)                             __attribute__ ((alias(x)))
@@ -290,10 +280,6 @@
   #ifndef   __PACKED_UNION
     #define __PACKED_UNION                         @packed union
   #endif
-  #ifndef   __UNALIGNED_UINT32        /* deprecated */
-    @packed struct T_UINT32 { uint32_t v; };
-    #define __UNALIGNED_UINT32(x)                  (((struct T_UINT32 *)(x))->v)
-  #endif
   #ifndef   __UNALIGNED_UINT16_WRITE
     __PACKED_STRUCT T_UINT16_WRITE { uint16_t v; };
     #define __UNALIGNED_UINT16_WRITE(addr, val)    (void)((((struct T_UINT16_WRITE *)(void *)(addr))->v) = (val))
@@ -323,7 +309,7 @@
     #define __COMPILER_BARRIER()                   (void)0
   #endif
   #ifndef __NO_INIT
-    #define __NO_INIT                              __attribute__ ((section (".bss.noinit")))
+    #define __NO_INIT                              __attribute__ ((section (".noinit")))
   #endif
   #ifndef __ALIAS
     #define __ALIAS(x)                             __attribute__ ((alias(x)))

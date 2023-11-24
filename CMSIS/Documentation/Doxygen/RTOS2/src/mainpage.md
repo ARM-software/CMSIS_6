@@ -2,7 +2,7 @@
 
 Modern embedded applications often need to concurrently execute multiple activities such as sensor readings, connectivity, machine-learning algorithms, graphics display and others. A real-time operating system (RTOS) equips users with necessary mechanisms that simplify implementation of complex programs and ensure their reliable operation with deterministic timing.
 
-The **CMSIS-RTOS2** specifies a generic RTOS interface over real-time OS kernels running on Arm&reg; Cortex&reg; processor-based devices. Applications and middleware components can \ref usingOS2 "use CMSIS_RTOS2 API" for better code reuse and simpler integration in various software ecosystems.
+**CMSIS-RTOS2** specifies a generic RTOS interface over real-time OS kernels running on Arm&reg; Cortex&reg; processor-based devices. Applications and middleware components can \ref usingOS2 "use CMSIS_RTOS2 API" for better code reuse and simpler integration in various software ecosystems.
 
 CMSIS-RTOS2 also specifies a standard \ref CMSIS_RTOS_TickAPI "OS Tick interface" for use by RTOS kernels. It provides several OS tick implementations for simple kernel porting to different Cortex-M and Cortex-A processors.
 
@@ -48,13 +48,17 @@ Many popular RTOS kernels include support for CMSIS-RTOS2 API:
  - [Using embOS in CMSIS-Pack projects](https://wiki.segger.com/Using_embOS_in_CMSIS-Pack_projects)
  - [CMSIS-embOS pack](https://www.keil.arm.com/packs/cmsis-embos-segger/versions/)
 
+**Azure ThreadX RTOS for STM32**: is an integration of Azure RTOS into STM32 middleware provided by STMicroelectronics.
+
+ - [CMSIS-RTOS API support in ThreadX for STM32](https://wiki.st.com/stm32mcu/wiki/Introduction_to_THREADX#CMSIS-RTOS_API_Support)
+
 **Micrium OS** is developed and maintained by Silicon Labs.
 
  - [Micrium OS overview and comparison](https://www.silabs.com/developers/rtos)
 
 ## Access to CMSIS-RTOS2 {#rtos2_access}
 
-CMSIS-RTOS2 and OS Tick intefaces are actively maintained in [**CMSIS 6 GitHub repository**](https://github.com/ARM-software/CMSIS_6) and provided as part of the [CMSIS Software Pack](../General/cmsis_pack.html).
+CMSIS-RTOS2 and OS Tick intefaces are actively maintained in the [**CMSIS 6 GitHub repository**](https://github.com/ARM-software/CMSIS_6) and provided as part of the [**CMSIS Software Pack**](../General/cmsis_pack.html).
 
 The following files and directories relevant to CMSIS-RTOS2 are present in the **ARM::CMSIS** Pack:
 

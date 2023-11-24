@@ -1,9 +1,3 @@
-/**************************************************************************//**
- * @file     cmsis_cp15.h
- * @brief    CMSIS compiler specific macros, functions, instructions
- * @version  V1.0.2
- * @date     19. December 2022
- ******************************************************************************/
 /*
  * Copyright (c) 2009-2017 ARM Limited. All rights reserved.
  *
@@ -22,13 +16,17 @@
  * limitations under the License.
  */
 
+/*
+ * CMSIS-Core(A) Compiler Specific Macros, Functions, Instructions
+ */
+
 #ifndef __CMSIS_CP15_H
 #define __CMSIS_CP15_H
 
 #if   defined ( __ICCARM__ )
   #pragma system_include         /* treat file as system include file for MISRA check */
 #elif defined (__clang__)
-  #pragma clang system_header   /* treat file as system include file */
+  #pragma clang system_header    /* treat file as system include file */
 #endif
 
 /** \brief  Get ACTLR

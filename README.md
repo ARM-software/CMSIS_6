@@ -1,27 +1,27 @@
 # CMSIS Version 6 - Preview (Work in Progress)
 
-[![Version](https://img.shields.io/github/v/release/arm-software/CMSIS_6)](https://github.com/ARM-software/CMSIS_6/releases/latest) [![License](https://img.shields.io/github/license/arm-software/CMSIS_6)](https://arm-software.github.io/CMSIS_6/General/html/LICENSE)
+[![Version](https://img.shields.io/github/v/release/arm-software/CMSIS_6)](https://github.com/ARM-software/CMSIS_6/releases/latest) [![License](https://img.shields.io/github/license/arm-software/CMSIS_6)](https://arm-software.github.io/CMSIS_6/General/html/LICENSE) 
 
-The branch *main* of this GitHub repository contains ![Version](https://img.shields.io/github/v/release/arm-software/CMSIS_6?display_name=release&label=%20&sort=semver).
+> **Note:** The branch *main* of this GitHub repository contains ![Version](https://img.shields.io/github/v/release/arm-software/CMSIS_6?display_name=release&label=%20&sort=semver). It reflects our current state of development and gives you contiguous access to the CMSIS development for review, feedback, and contributions via pull requests.
 
-The [documentation](https://arm-software.github.io/CMSIS_6/) is available under https://arm-software.github.io/CMSIS_6/
-For a list of all CMSIS components refer to [**CMSIS Components**](https://arm-software.github.io/CMSIS_6/latest/General/html/index.html#cmsis_components)
+## Useful Links
 
-Use [Issues](https://github.com/ARM-software/CMSIS_6#issues-and-labels) to provide feedback and report problems for CMSIS Version 6.
-
-**Note:** The branch *main* of this GitHub repository reflects our current state of development and is constantly updated. It gives our users and partners contiguous access to the CMSIS development. It allows you to review the work and provide feedback or create pull requests for contributions. A [pre-built documentation](https://arm-software.github.io/CMSIS_5/develop/General/html/index.html) is updated from time to time, but may be also generated using the instructions under [Generate CMSIS Pack for Release](https://github.com/ARM-software/CMSIS_5#generate-cmsis-pack-for-release).
-
-For a list of all CMSIS components refer to [**Introduction - CMSIS Components**](./CMSIS/Documentation/Doxygen/General/src/introduction.md#structure)
+ - [**Documentation of latest release**](https://arm-software.github.io/CMSIS_6/) -  access to the CMSIS user's manual.
+ - [**CMSIS Components**](https://arm-software.github.io/CMSIS_6/latest/General/index.html#cmsis_components) - overview of software, tools, and specification.
+ - [**Raise Issues**](https://github.com/ARM-software/CMSIS_6#issues-and-labels) - to provide feedback or report problems.
+ - [**Documentation of development branch**](https://arm-software.github.io/CMSIS_6/develop/General/index.html) - updated from time to time (use [Generate CMSIS Pack for Release](https://github.com/ARM-software/CMSIS_6#generate-cmsis-pack-for-release) for local generation).
 
 ## Other related GitHub repositories
 
 | Repository                  | Description                                               |
 |:--------------------------- |:--------------------------------------------------------- |
-| [cmsis-pack-eclipse](https://github.com/ARM-software/cmsis-pack-eclipse)    |  CMSIS-Pack Management for Eclipse reference implementation Pack support  |
-| [CMSIS-FreeRTOS](https://github.com/arm-software/CMSIS-FreeRTOS)            | CMSIS-RTOS adoption of FreeRTOS                                                      |
+| [CMSIS-DSP](https://github.com/ARM-software/CMSIS-DSP)                      | Compute library for various data types: fixed-point (fractional q7, q15, q31) and single precision floating-point (32-bit).
+| [CMSIS-NN](https://github.com/ARM-software/CMSIS-NN)                        | Software library of efficient neural network kernels optimized for Arm Cortex-M processors.
+| [CMSIS-FreeRTOS](https://github.com/arm-software/CMSIS-FreeRTOS)            | CMSIS adoption of FreeRTOS including CMSIS-RTOS2 API layer.                                                      
+| [CMSIS-RTX](https://github.com/arm-software/CMSIS-rtx)                      | Keil RTX Real-Time Operating System (CMSIS-RTOS2 native implementation).
 | [CMSIS-Driver](https://github.com/arm-software/CMSIS-Driver)                | Generic MCU driver implementations and templates for Ethernet MAC/PHY and Flash.  |
 | [CMSIS-Driver_Validation](https://github.com/ARM-software/CMSIS-Driver_Validation) | CMSIS-Driver Validation can be used to verify CMSIS-Driver in a user system |
-| [CMSIS-DSP](https://github.com/ARM-software/CMSIS-DSP)                      | DSP library collection with hundreds of functions for various data types: fixed-point (fractional q7, q15, q31) and single precision floating-point (32-bit). Implementations optimized for the SIMD instruction set are available for Armv7E-M and later devices. |
+| [cmsis-pack-eclipse](https://github.com/ARM-software/cmsis-pack-eclipse)    | CMSIS-Pack Management for Eclipse reference implementation Pack support  |
 | [CMSIS-Zone](https://github.com/ARM-software/CMSIS-Zone)                    | CMSIS-Zone Utility along with example projects and FreeMarker templates         |
 | [NXP_LPC](https://github.com/ARM-software/NXP_LPC)                          | CMSIS Driver Implementations for the NXP LPC Microcontroller Series       |
 | [mdk-packs](https://github.com/mdk-packs)                                   | IoT cloud connectors as trail implementations for MDK (help us to make it generic)|
@@ -29,12 +29,13 @@ For a list of all CMSIS components refer to [**Introduction - CMSIS Components**
 
 ## Directory Structure
 
-Directory            | Content
-:------------------- |:---------------------------------------------------------
-CMSIS/Core           | CMSIS-Core related files (for release)
-CMSIS/CoreValidation | Validation for Core(M) and Core(A) (NOT part of release)  
-CMSIS/Driver         | CMSIS-Driver API headers and template files
-CMSIS/RTOS2          | RTOS v2 related files (for Cortex-M & Armv8-M)
+Directory                                      | Content
+:----------------------------------------------|:---------------------------------------------------------
+[CMSIS/Core](./CMSIS/Core)                     | CMSIS-Core related files (for release)
+[CMSIS/CoreValidation](./CMSIS/CoreValidation) | Validation for Core(M) and Core(A) (NOT part of pack release)  
+[CMSIS/Driver](./CMSIS/Driver)                 | CMSIS-Driver API headers and template files
+[CMSIS/RTOS2](./CMSIS/RTOS2)                   | RTOS v2 related files (for Cortex-M & Armv8-M)
+[CMSIS/Documentation](./CMSIS/Documentation)   | Doxygen source of the users guide (NOT part of pack release)  
 
 ## Generate CMSIS Pack for Release
 
@@ -64,7 +65,7 @@ Contributions are accepted under Apache 2.0. Only submit contributions where you
 
 ### Issues and Labels
 
-Please feel free to raise an [issue on GitHub](https://github.com/ARM-software/CMSIS_5/issues)
+Please feel free to raise an [issue on GitHub](https://github.com/ARM-software/CMSIS_6/issues)
 to report misbehavior (i.e. bugs) or start discussions about enhancements. This
 is your best way to interact directly with the maintenance team and the community.
 We encourage you to append implementation suggestions as this helps to decrease the

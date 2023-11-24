@@ -1,9 +1,3 @@
-/**************************************************************************//**
- * @file     cmsis_tiarmclang_m.h
- * @brief    CMSIS compiler tiarmclang header file
- * @version  V1.1.0
- * @date     27. July 2023
- ******************************************************************************/
 /*
  * Copyright (c) 2023 Arm Limited. All rights reserved.
  *
@@ -20,6 +14,10 @@
  * WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  * See the License for the specific language governing permissions and
  * limitations under the License.
+ */
+
+/*
+ * CMSIS-Core(M) Compiler TIARMClang Header File
  */
 
 #ifndef __CMSIS_TIARMCLANG_M_H
@@ -102,7 +100,7 @@
   #define __COMPILER_BARRIER()                   __ASM volatile("":::"memory")
 #endif
 #ifndef __NO_INIT
-  #define __NO_INIT                              __attribute__ ((section (".bss.noinit")))
+  #define __NO_INIT                              __attribute__ ((section (".noinit")))
 #endif
 #ifndef __ALIAS
   #define __ALIAS(x)                             __attribute__ ((alias(x)))
@@ -1158,7 +1156,7 @@ __STATIC_FORCEINLINE uint32_t __get_PSPLIM(void)
 {
 #if (((__ARM_ARCH_8M_MAIN__   < 1) && \
       (__ARM_ARCH_8_1M_MAIN__ < 1)    ) && \
-	 (__ARM_FEATURE_CMSE < 3)              )
+     (__ARM_FEATURE_CMSE < 3)              )
   /* without main extensions, the non-secure PSPLIM is RAZ/WI */
   return (0U);
 #else
@@ -1205,7 +1203,7 @@ __STATIC_FORCEINLINE void __set_PSPLIM(uint32_t ProcStackPtrLimit)
 {
 #if (((__ARM_ARCH_8M_MAIN__   < 1) && \
       (__ARM_ARCH_8_1M_MAIN__ < 1)    ) && \
-	 (__ARM_FEATURE_CMSE < 3)              )
+     (__ARM_FEATURE_CMSE < 3)              )
   /* without main extensions, the non-secure PSPLIM is RAZ/WI */
   (void)ProcStackPtrLimit;
 #else
@@ -1248,7 +1246,7 @@ __STATIC_FORCEINLINE uint32_t __get_MSPLIM(void)
 {
 #if (((__ARM_ARCH_8M_MAIN__   < 1) && \
       (__ARM_ARCH_8_1M_MAIN__ < 1)    ) && \
-	 (__ARM_FEATURE_CMSE < 3)              )
+     (__ARM_FEATURE_CMSE < 3)              )
   /* without main extensions, the non-secure MSPLIM is RAZ/WI */
   return (0U);
 #else
@@ -1295,7 +1293,7 @@ __STATIC_FORCEINLINE void __set_MSPLIM(uint32_t MainStackPtrLimit)
 {
 #if (((__ARM_ARCH_8M_MAIN__   < 1) && \
       (__ARM_ARCH_8_1M_MAIN__ < 1)    ) && \
-	 (__ARM_FEATURE_CMSE < 3)              )
+     (__ARM_FEATURE_CMSE < 3)              )
   /* without main extensions, the non-secure MSPLIM is RAZ/WI */
   (void)MainStackPtrLimit;
 #else

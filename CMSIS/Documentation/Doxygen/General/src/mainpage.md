@@ -8,7 +8,7 @@ CMSIS has been created to help the industry in standardization. It enables consi
 
 ## CMSIS Components {#cmsis_components}
 
-![CMSIS Structure](./images/cmsis_components.png)
+![CMSIS Components Overview](./images/cmsis_components.png)
 
 <h2>CMSIS Base Software Components</h2>
 
@@ -16,13 +16,13 @@ CMSIS has been created to help the industry in standardization. It enables consi
  - Maintained in the same GitHub repository and delivered as one \ref cmsis_pack with the name `Arm::CMSIS`.
 <div class="tiles">
   <div class="tile" onclick="document.location='../Core/index.html'">
-    <span class="tileh h2">CMSIS-Core</span><span class="tiletxt">Standardized access to Arm Cortex processor cores</span><span class="tilelinks"><a href="https://arm-software.github.io/CMSIS_6/latest/Core/html/index.html">Guide</a> | <a href="https://github.com/ARM-software/CMSIS_6">GitHub</a> | <a href="https://www.keil.arm.com/packs/cmsis-arm/versions/">Pack</a></span>
+    <span class="tileh h2">CMSIS-Core</span><span class="tiletxt">Standardized access to Arm Cortex processor cores</span><span class="tilelinks"><a href="https://arm-software.github.io/CMSIS_6/latest/Core/index.html">Guide</a> | <a href="https://github.com/ARM-software/CMSIS_6">GitHub</a> | <a href="https://www.keil.arm.com/packs/cmsis-arm/versions/">Pack</a></span>
   </div>
 <div class="tile" onclick="document.location='../Driver/index.html'">
-    <span class="tileh h2">CMSIS-Driver</span><span class="tiletxt">Generic peripheral driver interfaces for middleware</span><span class="tilelinks"><a href="https://arm-software.github.io/CMSIS_6/latest/Driver/html/index.html">Guide</a> | <a href="https://github.com/ARM-software/CMSIS_6">GitHub</a> | <a href="https://www.keil.arm.com/packs/cmsis-arm/versions/">Pack</a></span>
+    <span class="tileh h2">CMSIS-Driver</span><span class="tiletxt">Generic peripheral driver interfaces for middleware</span><span class="tilelinks"><a href="https://arm-software.github.io/CMSIS_6/latest/Driver/index.html">Guide</a> | <a href="https://github.com/ARM-software/CMSIS_6">GitHub</a> | <a href="https://www.keil.arm.com/packs/cmsis-arm/versions/">Pack</a></span>
   </div>
   <div class="tile" onclick="document.location='../RTOS2/index.html'">
-   <span class="tileh h2">CMSIS-RTOS2</span><span class="tiletxt">Common API for real-time operating systems</span><span class="tilelinks"><a href="https://arm-software.github.io/CMSIS_6/latest/RTOS2/html/index.html">Guide</a> | <a href="https://github.com/ARM-software/CMSIS_6">GitHub</a> | <a href="https://www.keil.arm.com/packs/cmsis-arm/versions/">Pack</a></span>
+   <span class="tileh h2">CMSIS-RTOS2</span><span class="tiletxt">Common API for real-time operating systems</span><span class="tilelinks"><a href="https://arm-software.github.io/CMSIS_6/latest/RTOS2/index.html">Guide</a> | <a href="https://github.com/ARM-software/CMSIS_6">GitHub</a> | <a href="https://www.keil.arm.com/packs/cmsis-arm/versions/">Pack</a></span>
   </div>
 </div>
 
@@ -54,7 +54,7 @@ CMSIS has been created to help the industry in standardization. It enables consi
     <span class="tileh h2">CMSIS-Toolbox</span><span class="tiletxt">A set of command-line tools to work with software packs</span><span class="tilelinks"><a href="https://github.com/Open-CMSIS-Pack/cmsis-toolbox/blob/main/README.md">Guide</a> | <a href="https://github.com/Open-CMSIS-Pack/cmsis-toolbox">GitHub</a></span>
   </div>
   <div class="tile" onclick="document.location='../Stream/index.html'">
-    <span class="tileh h2">CMSIS-Stream</span><span class="tiletxt">Peripheral description of a device for debug view</span><span class="tilelinks"><a href="https://github.com/ARM-software/CMSIS-Stream/blob/main/README.md">Guide</a> | <a href="https://github.com/ARM-software/cmsis-stream">GitHub</a></span>
+    <span class="tileh h2">CMSIS-Stream</span><span class="tiletxt">Tools and methods for optimizing DSP/ML block data streams</span><span class="tilelinks"><a href="https://github.com/ARM-software/CMSIS-Stream/blob/main/README.md">Guide</a> | <a href="https://github.com/ARM-software/cmsis-stream">GitHub</a></span>
   </div>
   <div class="tile" onclick="document.location='../DAP/index.html'">
     <span class="tileh h2">CMSIS-DAP</span><span class="tiletxt">Firmware for debug units interfacing to CoreSight Debug Access Port</span><span class="tilelinks"><a href="https://arm-software.github.io/CMSIS-DAP/latest/">Guide</a> | <a href="https://github.com/ARM-software/CMSIS-DAP">GitHub</a></span>
@@ -142,6 +142,15 @@ CMSIS components are compatible with a range of C and C++ language standards. Th
 As CMSIS defines API interfaces and functions that scale to a wide range of processors and devices, the scope of the run-time test coverage is limited. However, several components are validated using dedicated test suites ([CMSIS-Driver](../Driver/driverValidation.html), and [CMSIS-RTOS v2](../RTOS2/rtosValidation.html)).
 
 The CMSIS source code is checked for MISRA C:2012 conformance. MISRA deviations are documented with reasonable effort, however Arm does not claim MISRA compliance as there is today for example no guideline enforcement plan. The CMSIS source code is not checked for MISRA C++:2008 conformance as there is a risk that it is incompatible with C language standards, specifically warnings that may be generated by the various C compilers.
+
+## Migration from CMSIS v5 {#migration_cmsis5}
+
+The functionality of invidivdual CMSIS v6 software components is kept primarily same as in CMSIS v5.9.0. However, some CMSIS components are now delivered in their standalone CMSIS packs and may also have different naming, structure and dependencies.
+
+While use of CMSIS-Pack concept greatly helps to abstract many of this changes from users, there are still some simple adaptation required to fully enable CMSIS v6 support in software developed based on CMSIS v5 structure. Following migration guides explain necessary steps for such porting:
+
+ - [Migrating CMSIS-based projects from CMSIS v5 to CMSIS v6](https://learn.arm.com/learning-paths/microcontrollers/project-migration-cmsis-v6)
+ - [CMSIS-Pack Migration Guide](https://learn.arm.com/learning-paths/microcontrollers/pack-migration-cmsis-v6)
 
 ## License {#License}
 

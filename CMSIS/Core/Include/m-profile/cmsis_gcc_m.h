@@ -1,9 +1,3 @@
-/**************************************************************************//**
- * @file     cmsis_gcc_m.h
- * @brief    CMSIS compiler GCC header file
- * @version  V6.0.1
- * @date     11. October 2023
- ******************************************************************************/
 /*
  * Copyright (c) 2009-2023 Arm Limited. All rights reserved.
  *
@@ -20,6 +14,10 @@
  * WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  * See the License for the specific language governing permissions and
  * limitations under the License.
+ */
+
+/*
+ * CMSIS-Core(M) Compiler GCC Header File
  */
 
 #ifndef __CMSIS_GCC_M_H
@@ -111,7 +109,7 @@
   #define __COMPILER_BARRIER()                   __ASM volatile("":::"memory")
 #endif
 #ifndef __NO_INIT
-  #define __NO_INIT                              __attribute__ ((section (".bss.noinit")))
+  #define __NO_INIT                              __attribute__ ((section (".noinit")))
 #endif
 #ifndef __ALIAS
   #define __ALIAS(x)                             __attribute__ ((alias(x)))

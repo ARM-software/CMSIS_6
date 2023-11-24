@@ -1,30 +1,25 @@
-/**************************************************************************//**
- * @file     cmsis_iccarm_a.h
- * @brief    CMSIS compiler ICCARM (IAR Compiler for Arm) header file
- * @version  V5.0.8
- * @date     13. November 2022
- ******************************************************************************/
+/*
+ * Copyright (c) 2017-2018 IAR Systems
+ * Copyright (c) 2018-2023 Arm Limited. All rights reserved.
+ *
+ * SPDX-License-Identifier: Apache-2.0
+ *
+ * Licensed under the Apache License, Version 2.0 (the License); you may
+ * not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ * www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an AS IS BASIS, WITHOUT
+ * WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
 
-//------------------------------------------------------------------------------
-//
-// Copyright (c) 2017-2018 IAR Systems
-// Copyright (c) 2018-2019 Arm Limited 
-//
-// SPDX-License-Identifier: Apache-2.0
-//
-// Licensed under the Apache License, Version 2.0 (the "License")
-// you may not use this file except in compliance with the License.
-// You may obtain a copy of the License at
-//     http://www.apache.org/licenses/LICENSE-2.0
-//
-// Unless required by applicable law or agreed to in writing, software
-// distributed under the License is distributed on an "AS IS" BASIS,
-// WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-// See the License for the specific language governing permissions and
-// limitations under the License.
-//
-//------------------------------------------------------------------------------
-
+/*
+ * CMSIS-Core(A) Compiler ICCARM (IAR Compiler for Arm) Header File
+ */
 
 #ifndef __CMSIS_ICCARM_A_H__
 #define __CMSIS_ICCARM_A_H__
@@ -183,16 +178,6 @@
   }
   #pragma language=restore
   #define __UNALIGNED_UINT32_WRITE(PTR,VAL) __iar_uint32_write(PTR,VAL)
-#endif
-
-#if 0
-#ifndef __UNALIGNED_UINT32   /* deprecated */
-  #pragma language=save
-  #pragma language=extended
-  __packed struct  __iar_u32 { uint32_t v; };
-  #pragma language=restore
-  #define __UNALIGNED_UINT32(PTR) (((struct __iar_u32 *)(PTR))->v)
-#endif
 #endif
 
 #ifndef   __USED
