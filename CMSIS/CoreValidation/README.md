@@ -19,7 +19,7 @@ Currently, the following build configurations are provided:
 1. Compiler
    - Arm Compiler 6 (AC6)
    - GNU Compiler (GCC)
-   - IAR Compiler (IAR)
+   - LLVM/Clang (Clang)
 2. Devices
    - Cortex-M0
    - Cortex-M0+
@@ -56,46 +56,35 @@ Currently, the following build configurations are provided:
    - Cortex-A9
      - w/o NEON extensions
 3. Optimization Levels
-   - Low
-     - AC6: `-O1`
-     - GCC: `-O1`
-     - IAR: `-Ol`
-   - Mid
-     - AC6: `-O2`
-     - GCC: `-O2`
-     - IAR: `-Om`
-   - High
-     - AC6: `-O3`
-     - GCC: `-O3`
-     - IAR: `-Oh`
-   - Size
-     - AC6: `-Os`
-     - GCC: `-Os`
-     - IAR: `-Ohz`
-   - Tiny
-     - AC6: `-Oz`
-     - GCC: `-Ofast`
-     - IAR: `-Ohs`
+   - none
+   - balanced
+   - size
+   - speed
 
 ## Prerequisites
 
 The following tools are required to build and run the CoreValidation tests:
 
-- [CMSIS-Toolbox](https://github.com/Open-CMSIS-Pack/cmsis-toolbox/releases) 1.3.0 or higher
-- CMake
-- Ninja build
-- Arm Compiler 6
-- GNU Compiler
-- IAR Compiler
-- Python 3.8 or higher
-- Arm Virtual Hardware Models
+- [CMSIS-Toolbox 2.1.0](https://artifacts.keil.arm.com/cmsis-toolbox/2.1.0/)*
+- [CMake 3.25.2](https://cmake.org/download/)*
+- [Ninja 1.10.2](https://github.com/ninja-build/ninja/releases)*
+- [Arm Compiler 6.20](https://artifacts.keil.arm.com/arm-compiler/6.20/21/)*
+- [GCC Compiler 13.2.1](https://artifacts.keil.arm.com/arm-none-eabi-gcc/13.2.1/)*
+- [Clang Compiler 17.0.1](https://github.com/ARM-software/LLVM-embedded-toolchain-for-Arm/releases/tag/release-17.0.1)*
+- [Arm Virtual Hardware for Cortex-M based on FastModels 11.22.39](https://artifacts.keil.arm.com/avh/11.22.39/)*
+- [Python 3.9](https://www.python.org/downloads/)
 
 The executables need to be present on the `PATH`.
+For tools distributed via vcpkg (*) this can be achieved automatically:
+
+```bash
+ ./CMSIS/CoreValidation/Project $ vcpkg activate
+```
 
 Install the Python packages required by `build.py`:
 
 ```bash
-CMSIS_5/CMSIS/CoreValidation/Project $ pip install -r requirements.txt
+ ./CMSIS/CoreValidation/Project $ pip install -r requirements.txt
 ```
 
 ## Build and run
@@ -104,29 +93,29 @@ To build and run the CoreValidation tests for one or more configurations use the
 Select the `<compiler>`, `<device>`, and `optimize` level to `build` and `run` for.
 
 ```bash
-CMSIS_5/CMSIS/CoreValidation/Project $ ./build.py -c <compiler> -d <device> -o <optimize> [build] [run]
+ ./CMSIS/CoreValidation/Project $ ./build.py -c <compiler> -d <device> -o <optimize> [build] [run]
 ```
 
 For example, build and run the tests using GCC for Cortex-M3 with low optimization, execute:
 
 ```bash
-CMSIS_5/CMSIS/CoreValidation/Project $ ./build.py -c GCC -d CM3 -o low build run
-[GCC][Cortex-M3][low](build:csolution) csolution convert -s Validation.csolution.yml -c Validation.GCC_low+CM3
-[GCC][Cortex-M3][low](build:csolution) csolution succeeded with exit code 0
-[GCC][Cortex-M3][low](build:cbuild) cbuild Validation.GCC_low+CM3/Validation.GCC_low+CM3.cprj
-[GCC][Cortex-M3][low](build:cbuild) cbuild succeeded with exit code 0
-[GCC][Cortex-M3][low](run:model_exec) VHT_MPS2_Cortex-M3 -q --simlimit 100 -f ../Layer/Target/CM3/model_config.txt -a Validation.GCC_low+CM3/Validation.GCC_low+CM3_outdir/Validation.GCC_low+CM3.elf
-[GCC][Cortex-M3][low](run:model_exec) VHT_MPS2_Cortex-M3 succeeded with exit code 0
+ ./CMSIS/CoreValidation/Project $ ./build.py -c GCC -d CM3 -o none build run
+[GCC][Cortex-M3][none](build:csolution) csolution convert -s Validation.csolution.yml -c Validation.GCC_low+CM3
+[GCC][Cortex-M3][none](build:csolution) csolution succeeded with exit code 0
+[GCC][Cortex-M3][none](build:cbuild) cbuild Validation.GCC_low+CM3/Validation.GCC_low+CM3.cprj
+[GCC][Cortex-M3][none](build:cbuild) cbuild succeeded with exit code 0
+[GCC][Cortex-M3][none](run:model_exec) VHT_MPS2_Cortex-M3 -q --simlimit 100 -f ../Layer/Target/CM3/model_config.txt -a Validation.GCC_low+CM3/Validation.GCC_low+CM3_outdir/Validation.GCC_low+CM3.elf
+[GCC][Cortex-M3][none](run:model_exec) VHT_MPS2_Cortex-M3 succeeded with exit code 0
 
 Matrix Summary
 ==============
 
 compiler    device     optimize    build    clean    extract    run
 ----------  ---------  ----------  -------  -------  ---------  -----
-GCC         Cortex-M3  low         success  (skip)   (skip)     35/35
+GCC         Cortex-M3  none        success  (skip)   (skip)     35/35
 ```
 
-The full test report is written to `Core_Validation-GCC-low-CM3-<timestamp>.junit` file.
+The full test report is written to `Core_Validation-GCC-none-CM3-<timestamp>.junit` file.
 
 ## License
 

@@ -102,36 +102,31 @@ class OptimizationAxis(Enum):
     SIZE = ('size')
 
 
-@matrix_axis("model", "m", "Model variant(s) to be considered.")
-class ModelAxis(Enum):
-    VHT = ('VHT')
-    FVP = ('FVP')
-
 MODEL_EXECUTABLE = {
-    DeviceAxis.CM0: ("_MPS2_Cortex-M0", []),
-    DeviceAxis.CM0plus: ("_MPS2_Cortex-M0plus", []),
-    DeviceAxis.CM3: ("_MPS2_Cortex-M3", []),
-    DeviceAxis.CM4: ("_MPS2_Cortex-M4", []),
-    DeviceAxis.CM4FP: ("_MPS2_Cortex-M4", []),
-    DeviceAxis.CM7: ("_MPS2_Cortex-M7", []),
-    DeviceAxis.CM7DP: ("_MPS2_Cortex-M7", []),
-    DeviceAxis.CM7SP: ("_MPS2_Cortex-M7", []),
-    DeviceAxis.CM23: ("_MPS2_Cortex-M23", []),
-    DeviceAxis.CM23S: ("_MPS2_Cortex-M23", []),
-    DeviceAxis.CM23NS: ("_MPS2_Cortex-M23", []),
-    DeviceAxis.CM33: ("_MPS2_Cortex-M33", []),
-    DeviceAxis.CM33S: ("_MPS2_Cortex-M33", []),
-    DeviceAxis.CM33NS: ("_MPS2_Cortex-M33", []),
-    DeviceAxis.CM35P: ("_MPS2_Cortex-M35P", []),
-    DeviceAxis.CM35PS: ("_MPS2_Cortex-M35P", []),
-    DeviceAxis.CM35PNS: ("_MPS2_Cortex-M35P", []),
-    DeviceAxis.CM55S: ("_MPS2_Cortex-M55", []),
-    DeviceAxis.CM55NS: ("_MPS2_Cortex-M55", []),
-    DeviceAxis.CM85S: ("_MPS2_Cortex-M85", []),
-    DeviceAxis.CM85NS: ("_MPS2_Cortex-M85", []),
-    DeviceAxis.CA5: ("_VE_Cortex-A5x1", []),
-    DeviceAxis.CA7: ("_VE_Cortex-A7x1", []),
-    DeviceAxis.CA9: ("_VE_Cortex-A9x1", []),
+    DeviceAxis.CM0: ("FVP_MPS2_Cortex-M0", []),
+    DeviceAxis.CM0plus: ("FVP_MPS2_Cortex-M0plus", []),
+    DeviceAxis.CM3: ("FVP_MPS2_Cortex-M3", []),
+    DeviceAxis.CM4: ("FVP_MPS2_Cortex-M4", []),
+    DeviceAxis.CM4FP: ("FVP_MPS2_Cortex-M4", []),
+    DeviceAxis.CM7: ("FVP_MPS2_Cortex-M7", []),
+    DeviceAxis.CM7DP: ("FVP_MPS2_Cortex-M7", []),
+    DeviceAxis.CM7SP: ("FVP_MPS2_Cortex-M7", []),
+    DeviceAxis.CM23: ("FVP_MPS2_Cortex-M23", []),
+    DeviceAxis.CM23S: ("FVP_MPS2_Cortex-M23", []),
+    DeviceAxis.CM23NS: ("FVP_MPS2_Cortex-M23", []),
+    DeviceAxis.CM33: ("FVP_MPS2_Cortex-M33", []),
+    DeviceAxis.CM33S: ("FVP_MPS2_Cortex-M33", []),
+    DeviceAxis.CM33NS: ("FVP_MPS2_Cortex-M33", []),
+    DeviceAxis.CM35P: ("FVP_MPS2_Cortex-M35P", []),
+    DeviceAxis.CM35PS: ("FVP_MPS2_Cortex-M35P", []),
+    DeviceAxis.CM35PNS: ("FVP_MPS2_Cortex-M35P", []),
+    DeviceAxis.CM55S: ("FVP_MPS2_Cortex-M55", []),
+    DeviceAxis.CM55NS: ("FVP_MPS2_Cortex-M55", []),
+    DeviceAxis.CM85S: ("FVP_MPS2_Cortex-M85", []),
+    DeviceAxis.CM85NS: ("FVP_MPS2_Cortex-M85", []),
+    DeviceAxis.CA5: ("FVP_VE_Cortex-A5x1", []),
+    DeviceAxis.CA7: ("FVP_VE_Cortex-A7x1", []),
+    DeviceAxis.CA9: ("FVP_VE_Cortex-A9x1", []),
 #    DeviceAxis.CA5NEON: ("_VE_Cortex-A5x1", []),
 #    DeviceAxis.CA7NEON: ("_VE_Cortex-A7x1", []),
 #    DeviceAxis.CA9NEON: ("_VE_Cortex-A9x1", [])
@@ -245,7 +240,7 @@ def cbuild(config):
                                                                     f"{result.command.config.device}."
                                                                     f"{title}"))
 def model_exec(config):
-    cmdline = [f"{config.model}{MODEL_EXECUTABLE[config.device][0]}", "-q", "--simlimit", 100, "-f", model_config(config)]
+    cmdline = [MODEL_EXECUTABLE[config.device][0], "-q", "--simlimit", 100, "-f", model_config(config)]
     cmdline += MODEL_EXECUTABLE[config.device][1]
     cmdline += ["-a", f"{build_dir(config)}/{output_dir(config)}/Validation.{config.compiler.image_ext}"]
     if config.device.has_bl():
@@ -256,11 +251,6 @@ def model_exec(config):
 @matrix_filter
 def filter_iar(config):
     return config.compiler == CompilerAxis.IAR
-
-
-@matrix_filter
-def filter_gcc_cm85(config):
-    return config.compiler == CompilerAxis.GCC and config.device.match('CM85*')
 
 
 if __name__ == "__main__":

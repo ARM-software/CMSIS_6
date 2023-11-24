@@ -82,5 +82,5 @@ The \ref cmsis_core_files delivered with this CMSIS-Core release have been teste
 
  - Arm Compiler for Embedded 6.20
  - IAR C/C++ Compiler for Arm 9.40
- - GNU Arm Embedded Toolchain 12.2.1
+ - GNU Arm Embedded Toolchain 13.2.1
  - LLVM/Clang 17.0.1
