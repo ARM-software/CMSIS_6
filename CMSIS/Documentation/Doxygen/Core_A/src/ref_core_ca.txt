@@ -230,57 +230,40 @@ The macro \ref _FLD2VAL uses the \#define's <i>_Pos</i> and <i>_Msk</i> of the r
  *                 CMSIS definitions
  ******************************************************************************/
 /**
-\defgroup version_ctrl Version Control
-\brief Version symbols for CMSIS release specific C/C++ source code. 
- 
+\defgroup   version_control_gr    Version Control
+\brief      Version \#define symbols for CMSIS release specific C/C++ source code
+\details
+
 @{
 */
 
-/*  CMSIS CA definitions */
 /**
-\def __CA_CMSIS_VERSION_MAIN
-\details
-Use this define to query the major version of CMSIS-Core(A) component. 
+\brief Contains the CMSIS version
+\details The CMSIS version is a combination of the \ref __CA_CMSIS_VERSION_MAIN (bits 31..16) and \ref __CA_CMSIS_VERSION_SUB (bits 15..0).
 
-\b Example:
+<b>Code Example:</b>
 \code
-#if __CA_CMSIS_VERSION_MAIN < 5
-#error This code needs at least CMSIS-Core(A) version 5!
-#endif
-\endcode
-
-\def __CA_CMSIS_VERSION_SUB
-\details
-Use this define to query the minor version of CMSIS-Core(A) component. 
-
-\b Example:
-\code
-#if __CA_CMSIS_VERSION_MAIN < 5
-#error This code needs at least CMSIS-Core(A) version 5!
+#if defined(__CA_CMSIS_VERSION) && \
+    (__CA_CMSIS_VERSION >= 0x00060000)
+#error Yes, we have CMSIS 6.0 or later
 #else
-#if __CA_CMSIS_VERSION_SUB < 1
-#warning Using CMSIS-Core(A) version 5.0 compatibility functions.
-#endif
-#endif
-\endcode
-
-\def __CA_CMSIS_VERSION
-\details
-Use this define to query the full version of CMSIS-Core(A) component. 
-
-| Bits    | Name          | Function                |
-| :------ | :------------ | :-----------------------|
-| [31:16] | MAIN          | __CA_CMSIS_VERSION_MAIN |
-| [15:0]  | SUB           | __CA_CMSIS_VERSION_SUB  |
-
-
-\b Example:
-\code
-#if __CA_CMSIS_VERSION < 0x00050001
-#error This code needs at least CMSIS-Core(A) version 5.1!
+#error We need CMSIS 6.0 or later!
 #endif
 \endcode
 */
+#define __CA_CMSIS_VERSION
+
+/**
+\brief Contains the CMSIS major version
+\details The CMSIS major version can be used to differentiate between CMSIS major releases.
+*/
+#define __CA_CMSIS_VERSION_MAIN
+
+/**
+\brief Contains the CMSIS minor version
+\details The CMSIS minor version can be used to query a CMSIS release update level.
+*/
+#define __CA_CMSIS_VERSION_SUB
 
 /**
 \brief Contains the core revision for a Cortex-A class device.
