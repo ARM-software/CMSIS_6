@@ -90,7 +90,7 @@ Install the Python packages required by `build.py`:
 ## Build and run
 
 To build and run the CoreValidation tests for one or more configurations use the following command line.
-Select the `<compiler>`, `<device>`, and `optimize` level to `build` and `run` for.
+Select the `<compiler>`, `<device>`, and `<optimize>` level to `build` and `run` for.
 
 ```bash
  ./CMSIS/CoreValidation/Project $ ./build.py -c <compiler> -d <device> -o <optimize> [build] [run]
