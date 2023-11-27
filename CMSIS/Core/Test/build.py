@@ -50,6 +50,7 @@ class CompilerAxis(Enum):
     IAR = ('IAR')
     CLANG = ('Clang')
 
+
 @matrix_axis("optimize", "o", "Optimization level(s) to be considered.")
 class OptimizationAxis(Enum):
     NONE = ('none')
@@ -69,17 +70,19 @@ def lit(config, results):
     results[0].test_report.write(f"lit-{config.compiler[0]}-{config.optimize[0]}-{config.device[1]}-{timestamp()}.xunit")
 
 
-@matrix_command(test_report=FileReport(f"lit.xunit") | JUnitReport())
+def timestamp():
+    return datetime.now().strftime('%Y%m%d%H%M%S')
+
+
+@matrix_command(test_report=FileReport(f"lit.xml") | JUnitReport())
 def run_lit(toolchain, device, optimize):
-    return ["lit", "--xunit-xml-output", f"lit.xunit", "-D", f"toolchain={toolchain}", "-D", f"device={device}", "-D", f"optimize={optimize}", "src" ]
+    return ["lit", "--xunit-xml-output", f"lit.xml", "-D", f"toolchain={toolchain}", "-D", f"device={device}", "-D", f"optimize={optimize}", "src" ]
+
 
 @matrix_filter
 def filter_iar(config):
     return config.compiler == CompilerAxis.IAR
 
-@matrix_filter
-def filter_gcc_cm85(config):
-    return config.compiler == CompilerAxis.GCC and config.device.match('CM85*')
 
 if __name__ == "__main__":
     main()

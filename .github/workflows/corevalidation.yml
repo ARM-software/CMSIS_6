@@ -109,7 +109,7 @@ jobs:
           cpackget add /home/runner/Cortex_DFP/ARM.Cortex_DFP.pdsc
 
           echo "Build test projects ..."
-          ./build.py --verbose -m FVP -c ${{ matrix.compiler }} build || echo "::warning::=== Some configurations failed to build! ==="
+          ./build.py --verbose -c ${{ matrix.compiler }} build || echo "::warning::=== Some configurations failed to build! ==="
 
       - name: Perform CodeQL Analysis
         if: ${{ !cancelled() && matrix.compiler == 'GCC' }}
@@ -123,7 +123,7 @@ jobs:
           vcpkg activate
       
           echo "Run test projects ..."
-          ./build.py --verbose -m FVP -c ${{ matrix.compiler }} -d "CM[047]*" -d "CM3" -d "CM[23]3*" run || echo "::warning::==== Some configurations failed to run! ==="
+          ./build.py --verbose -c ${{ matrix.compiler }} -d "CM*" run || echo "::warning::==== Some configurations failed to run! ==="
 
       - name: Deactivate Arm tool license
         if: always()
