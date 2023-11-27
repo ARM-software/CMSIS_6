@@ -15,21 +15,11 @@
 \fn __STATIC_INLINE void L1C_InvalidateDCacheMVA(void *va) 
 \fn __STATIC_INLINE void L1C_CleanInvalidateDCacheMVA(void *va) 
 
-\fn __STATIC_INLINE void L1C_CleanInvalidateCache(uint32_t op) 
-\details
-Generic mechanism for cleaning/invalidating the entire data or unified cache to the point of coherency.
-
+\fn __STATIC_INLINE void L1C_CleanInvalidateCache(uint32_t op)
+\details Generic mechanism for cleaning/invalidating the entire data or unified cache to the point of coherency.
 \fn __STATIC_INLINE void L1C_InvalidateDCacheAll(void) 
 \fn __STATIC_INLINE void L1C_CleanDCacheAll(void) 
 \fn __STATIC_INLINE void L1C_CleanInvalidateDCacheAll(void) 
-\fn __STATIC_INLINE __ASM void __L1C_CleanInvalidateCache(uint32_t op)
-\details
-Generic mechanism for cleaning/invalidating the entire data or unified cache to the point of coherency.
-
-The parameter \b op defines which cleaning/invalidation strategy should be used:
- - 0 - Cache is invalidated using DCISW register.
- - 1 - Cache is cleaned using DCCSW register.
- - other - Cache is invalidated and cleaned using DCCISW register.
 @}
 */
 
