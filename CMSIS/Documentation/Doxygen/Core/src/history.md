@@ -13,7 +13,7 @@ The table below provides information about the changes delivered with specific v
       <td>V5.7.0</td>
       <td>
         <ul>
-          <li>Added: Added new compiler macros __ALIAS and __NO_INIT</li>
+          <li>Added: Added new compiler macros \ref __ALIAS and \ref __NO_INIT</li>
         </ul>
       </td>
     </tr>
@@ -48,7 +48,7 @@ The table below provides information about the changes delivered with specific v
           <li>Added: Cortex-M55 cpu support</li>
           <li>Enhanced: MVE support for Armv8.1-MML</li>
           <li>Fixed: Device config define checks</li>
-          <li>Added: L1 Cache functions for Armv7-M and later</li>
+          <li>Added: \ref cache_functions_m7 for Armv7-M and later</li>
         </ul>
       </td>
     </tr>
@@ -84,7 +84,7 @@ The table below provides information about the changes delivered with specific v
       <td>
         <ul>
           <li>Removed using get/set built-ins FPSCR in GCC >= 7.2 due to shortcomings.</li>
-          <li>Added __NO_RETURN to __NVIC_SystemReset() to silence compiler warnings.</li>
+          <li>Added __NO_RETURN to  __NVIC_SystemReset() to silence compiler warnings.</li>
           <li>Added support for Cortex-M1 (beta).</li>
           <li>Removed usage of register keyword.</li>
           <li>Added defines for EXC_RETURN, FNC_RETURN and integrity signature values.</li>
@@ -116,7 +116,7 @@ The table below provides information about the changes delivered with specific v
         <ul>
           <li>Added macros  \ref \__UNALIGNED_UINT16_READ,  \ref \__UNALIGNED_UINT16_WRITE.</li>
           <li>Added macros  \ref \__UNALIGNED_UINT32_READ,  \ref \__UNALIGNED_UINT32_WRITE.</li>
-          <li>Deprecated macro  \ref \__UNALIGNED_UINT32.</li>
+          <li>Deprecated macro __UNALIGNED_UINT32.</li>
           <li>Changed \ref version_control_gr macros to be core agnostic.</li>
           <li>Added \ref mpu_functions for Cortex-M0+/M3/M4/M7.</li>
         </ul>

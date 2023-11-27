@@ -1,4 +1,4 @@
-# Revision History of CMSIS-Core (Cortex-A) {#rev_histCoreA}
+# Revision History {#rev_histCoreA}
 
 CMSIS-Core (A) component is maintaned with own versioning that gets incremented together with the [CMSIS Software Pack](../General/cmsis_pack.html) releases.
 
@@ -21,7 +21,7 @@ The table below provides information about the changes delivered with specific v
       <td>V1.2.0</td>
       <td>
         <ul>
-          <li>Fixed GIC_SetPendingIRQ to use GICD_SGIR instead of GICD_SPENDSGIR
+          <li>Fixed \ref GIC_SetPendingIRQ to use GICD_SGIR instead of GICD_SPENDSGIR
               for compliance with all GIC specification versions.</li>
           <li>Added missing DSP intrinsics.</li>
           <li>Reworked assembly intrinsics: volatile, barriers and clobbers.</li>
@@ -40,7 +40,7 @@ The table below provides information about the changes delivered with specific v
       <td>V1.1.3</td>
       <td>
         <ul>
-          <li>Fixed __get_SP_usr()/__set_SP_usr() for ArmClang.</li>
+          <li>Fixed __get_SP_usr() / __set_SP_usr() for ArmClang.</li>
           <li>Fixed zero argument handling in __CLZ() .</li>
         </ul>
       </td>
