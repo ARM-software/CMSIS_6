@@ -135,7 +135,7 @@ generate "Zone"
 
 cp -f "${DIRNAME}/index.html" "${DIRNAME}/../html/"
 
-[[ ${RUN_LINKCHECKER} != 0 ]] && check_links "${DIRNAME}/../html/index.html" "${DIRNAME}"
+[[ ${RUN_LINKCHECKER} != 0 ]] && check_links --timeout 120 "${DIRNAME}/../html/index.html" "${DIRNAME}"
 
 popd > /dev/null || exit 1
 
