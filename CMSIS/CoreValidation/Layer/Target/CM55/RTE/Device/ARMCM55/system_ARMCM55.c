@@ -1,12 +1,12 @@
 /**************************************************************************//**
- * @file     system_ARMCM7.c
+ * @file     system_ARMCM55.c
  * @brief    CMSIS Device System Source File for
- *           ARMCM7 Device
- * @version  V2.0.0
- * @date     06. April 2023
+ *           ARMCM55 Device
+ * @version  V1.1.0
+ * @date     28. March 2022
  ******************************************************************************/
 /*
- * Copyright (c) 2009-2023 Arm Limited. All rights reserved.
+ * Copyright (c) 2009-2022 Arm Limited. All rights reserved.
  *
  * SPDX-License-Identifier: Apache-2.0
  *
@@ -23,29 +23,34 @@
  * limitations under the License.
  */
 
-#if defined (ARMCM7)
-  #include "ARMCM7.h"
+#if defined (ARMCM55)
+  #include "ARMCM55.h"
 #else
   #error device not specified!
+#endif
+
+#if defined (__ARM_FEATURE_CMSE) &&  (__ARM_FEATURE_CMSE == 3U)
+  #include "partition_ARMCM55.h"
 #endif
 
 /*----------------------------------------------------------------------------
   Define clocks
  *----------------------------------------------------------------------------*/
-#define  XTAL            (50000000UL)     /* Oscillator frequency */
+#define  XTAL            ( 5000000UL)      /* Oscillator frequency */
 
-#define  SYSTEM_CLOCK    (XTAL / 2U)
+#define  SYSTEM_CLOCK    (5U * XTAL)
+
 
 /*----------------------------------------------------------------------------
   Exception / Interrupt Vector table
  *----------------------------------------------------------------------------*/
-extern const VECTOR_TABLE_Type __VECTOR_TABLE[240];
+extern const VECTOR_TABLE_Type __VECTOR_TABLE[496];
 
 
 /*----------------------------------------------------------------------------
   System Core Clock Variable
  *----------------------------------------------------------------------------*/
-uint32_t SystemCoreClock = SYSTEM_CLOCK;  /* System Core Clock Frequency */
+uint32_t SystemCoreClock = SYSTEM_CLOCK;
 
 
 /*----------------------------------------------------------------------------
@@ -63,16 +68,39 @@ void SystemInit (void)
 {
 
 #if defined (__VTOR_PRESENT) && (__VTOR_PRESENT == 1U)
-  SCB->VTOR = (uint32_t) &(__VECTOR_TABLE[0]);
+  SCB->VTOR = (uint32_t)(&__VECTOR_TABLE[0]);
 #endif
 
-#if defined (__FPU_USED) && (__FPU_USED == 1U)
+#if (defined (__FPU_USED) && (__FPU_USED == 1U)) || \
+    (defined (__ARM_FEATURE_MVE) && (__ARM_FEATURE_MVE > 0U))
   SCB->CPACR |= ((3U << 10U*2U) |           /* enable CP10 Full Access */
                  (3U << 11U*2U)  );         /* enable CP11 Full Access */
+
+  /* Set low-power state for PDEPU                */
+  /*  0b00  | ON, PDEPU is not in low-power state */
+  /*  0b01  | ON, but the clock is off            */
+  /*  0b10  | RET(ention)                         */
+  /*  0b11  | OFF                                 */
+
+  /* Clear ELPSTATE, value is 0b11 on Cold reset */
+  PWRMODCTL->CPDLPSTATE &= ~(PWRMODCTL_CPDLPSTATE_ELPSTATE_Msk);
+
+  /* Favor best FP/MVE performance by default, avoid EPU switch-ON delays */
+  /* PDEPU ON, Clock OFF */
+  PWRMODCTL->CPDLPSTATE |= 0x1 << PWRMODCTL_CPDLPSTATE_ELPSTATE_Pos;
 #endif
 
 #ifdef UNALIGNED_SUPPORT_DISABLE
   SCB->CCR |= SCB_CCR_UNALIGN_TRP_Msk;
+#endif
+
+  /* Enable Loop and branch info cache */
+  SCB->CCR |= SCB_CCR_LOB_Msk;
+  __DSB();
+  __ISB();
+
+#if defined (__ARM_FEATURE_CMSE) && (__ARM_FEATURE_CMSE == 3U)
+  TZ_SAU_Setup();
 #endif
 
   SystemCoreClock = SYSTEM_CLOCK;

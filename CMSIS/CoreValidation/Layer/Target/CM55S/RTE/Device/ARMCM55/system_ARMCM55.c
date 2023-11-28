@@ -29,9 +29,9 @@
   #error device not specified!
 #endif
 
-  #if defined (__ARM_FEATURE_CMSE) &&  (__ARM_FEATURE_CMSE == 3U)
-    #include "partition_ARMCM55.h"
-  #endif
+#if defined (__ARM_FEATURE_CMSE) &&  (__ARM_FEATURE_CMSE == 3U)
+  #include "partition_ARMCM55.h"
+#endif
 
 /*----------------------------------------------------------------------------
   Define clocks

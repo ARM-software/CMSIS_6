@@ -1,11 +1,11 @@
 /******************************************************************************
- * @file     startup_ARMCM7.c
- * @brief    CMSIS-Core(M) Device Startup File for a Cortex-M7 Device
- * @version  V3.0.0
- * @date     06. April 2023
+ * @file     startup_ARMCM55.c
+ * @brief    CMSIS-Core Device Startup File for Cortex-M55 Device
+ * @version  V1.1.0
+ * @date     16. December 2020
  ******************************************************************************/
 /*
- * Copyright (c) 2009-2023 Arm Limited. All rights reserved.
+ * Copyright (c) 2020 Arm Limited. All rights reserved.
  *
  * SPDX-License-Identifier: Apache-2.0
  *
@@ -22,8 +22,8 @@
  * limitations under the License.
  */
 
-#if defined (ARMCM7)
-  #include "ARMCM7.h"
+#if defined (ARMCM55)
+  #include "ARMCM55.h"
 #else
   #error device not specified!
 #endif
@@ -32,6 +32,10 @@
   External References
  *----------------------------------------------------------------------------*/
 extern uint32_t __INITIAL_SP;
+extern uint32_t __STACK_LIMIT;
+#if defined (__ARM_FEATURE_CMSE) && (__ARM_FEATURE_CMSE == 3U)
+extern uint32_t __STACK_SEAL;
+#endif
 
 extern __NO_RETURN void __PROGRAM_START(void);
 
@@ -50,6 +54,7 @@ void HardFault_Handler      (void) __attribute__ ((weak));
 void MemManage_Handler      (void) __attribute__ ((weak, alias("Default_Handler")));
 void BusFault_Handler       (void) __attribute__ ((weak, alias("Default_Handler")));
 void UsageFault_Handler     (void) __attribute__ ((weak, alias("Default_Handler")));
+void SecureFault_Handler    (void) __attribute__ ((weak, alias("Default_Handler")));
 void SVC_Handler            (void) __attribute__ ((weak, alias("Default_Handler")));
 void DebugMon_Handler       (void) __attribute__ ((weak, alias("Default_Handler")));
 void PendSV_Handler         (void) __attribute__ ((weak, alias("Default_Handler")));
@@ -76,8 +81,8 @@ void Interrupt9_Handler     (void) __attribute__ ((weak, alias("Default_Handler"
 #pragma GCC diagnostic ignored "-Wpedantic"
 #endif
 
-extern const VECTOR_TABLE_Type __VECTOR_TABLE[240];
-       const VECTOR_TABLE_Type __VECTOR_TABLE[240] __VECTOR_TABLE_ATTRIBUTE = {
+extern const VECTOR_TABLE_Type __VECTOR_TABLE[496];
+       const VECTOR_TABLE_Type __VECTOR_TABLE[496] __VECTOR_TABLE_ATTRIBUTE = {
   (VECTOR_TABLE_Type)(&__INITIAL_SP),       /*     Initial Stack Pointer */
   Reset_Handler,                            /*     Reset Handler */
   NMI_Handler,                              /* -14 NMI Handler */
@@ -85,7 +90,7 @@ extern const VECTOR_TABLE_Type __VECTOR_TABLE[240];
   MemManage_Handler,                        /* -12 MPU Fault Handler */
   BusFault_Handler,                         /* -11 Bus Fault Handler */
   UsageFault_Handler,                       /* -10 Usage Fault Handler */
-  0,                                        /*     Reserved */
+  SecureFault_Handler,                      /*  -9 Secure Fault Handler */
   0,                                        /*     Reserved */
   0,                                        /*     Reserved */
   0,                                        /*     Reserved */
@@ -106,7 +111,7 @@ extern const VECTOR_TABLE_Type __VECTOR_TABLE[240];
   Interrupt7_Handler,                       /*   7 Interrupt 7 */
   Interrupt8_Handler,                       /*   8 Interrupt 8 */
   Interrupt9_Handler                        /*   9 Interrupt 9 */
-                                            /* Interrupts 10 .. 223 are left out */
+                                            /* Interrupts 10 .. 480 are left out */
 };
 
 #if defined ( __GNUC__ )
@@ -118,6 +123,15 @@ extern const VECTOR_TABLE_Type __VECTOR_TABLE[240];
  *----------------------------------------------------------------------------*/
 __NO_RETURN void Reset_Handler(void)
 {
+  __set_PSP((uint32_t)(&__INITIAL_SP));
+
+  __set_MSPLIM((uint32_t)(&__STACK_LIMIT));
+  __set_PSPLIM((uint32_t)(&__STACK_LIMIT));
+
+#if defined (__ARM_FEATURE_CMSE) && (__ARM_FEATURE_CMSE == 3U)
+  __TZ_set_STACKSEAL_S((uint32_t *)(&__STACK_SEAL));
+#endif
+
   SystemInit();                             /* CMSIS System Initialization */
   __PROGRAM_START();                        /* Enter PreMain (C library entry point) */
 }

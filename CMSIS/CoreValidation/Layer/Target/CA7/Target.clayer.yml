@@ -1,11 +1,11 @@
-
-
 layer:
-  # type: Target
-  description: Target setup
+  type: Target
+  description: CA7 target components and files
 
-  # packs:
-  #   - pack: ARM::CMSIS
+  packs:
+    - pack: ARM::Cortex_DFP
+
+  device: ARMCA7
 
   components:
     # [Cvendor::] Cclass [&Cbundle] :Cgroup [:Csub] [&Cvariant] [@[>=]Cversion]
@@ -37,6 +37,6 @@ layer:
         - CLANG
 
   groups:
-    - group: VHT/FVP
+    - group: FVP
       files:
         - file: ./model_config.txt

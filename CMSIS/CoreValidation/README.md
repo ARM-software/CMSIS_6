@@ -24,13 +24,8 @@ Currently, the following build configurations are provided:
    - Cortex-M0
    - Cortex-M0+
    - Cortex-M3
-   - Cortex-M4
-     - w/o FPU
-     - with FPU
-   - Cortex-M7
-     - w/o FPU
-     - with SP FPU
-     - with DP FPU
+   - Cortex-M4 (with FPU)
+   - Cortex-M7 (with DP FPU)
    - Cortex-M23
      - w/o security extensions (TrustZone)
      - in secure mode
@@ -44,9 +39,11 @@ Currently, the following build configurations are provided:
      - in secure mode
      - in non-secure mode
    - Cortex-M55 (with FPU and DSP extensions)
+     - w/o security extensions (TrustZone)
      - in secure mode
      - in non-secure mode
    - Cortex-M85 (with FPU and DSP extensions)
+     - w/o security extensions (TrustZone)
      - in secure mode
      - in non-secure mode
    - Cortex-A5

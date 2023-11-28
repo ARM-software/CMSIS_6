@@ -1,8 +1,5 @@
-
-
 layer:
-  # type: App
-  # name: CMSIS-Core_Validation
+  type: App
   description: Validation of CMSIS-Core implementation
 
   # packs:

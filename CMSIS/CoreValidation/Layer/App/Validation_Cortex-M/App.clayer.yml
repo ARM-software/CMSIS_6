@@ -1,8 +1,5 @@
-
-
 layer:
-  # type: App
-  # name: CMSIS-Core_Validation
+  type: App
   description: Validation of CMSIS-Core implementation
 
   # packs:
@@ -61,8 +58,10 @@ layer:
             - +CM35P
             - +CM35PS
             - +CM35PNS
+            - +CM55
             - +CM55S
             - +CM55NS
+            - +CM85
             - +CM85S
             - +CM85NS
 
