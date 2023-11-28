@@ -1007,13 +1007,6 @@
     </member>
     <member kind="define">
       <type>#define</type>
-      <name>__UNALIGNED_UINT32</name>
-      <anchorfile>group__compiler__conntrol__gr.html</anchorfile>
-      <anchor>ga27fd2ec6767ca1ab66d36b5cc0103268</anchor>
-      <arglist></arglist>
-    </member>
-    <member kind="define">
-      <type>#define</type>
       <name>__UNALIGNED_UINT16_READ</name>
       <anchorfile>group__compiler__conntrol__gr.html</anchorfile>
       <anchor>gabe8693a7200e573101551d49a1772fb9</anchor>
@@ -4050,6 +4043,13 @@
     <filename>ref__version__ctrl_8txt.html</filename>
     <member kind="define">
       <type>#define</type>
+      <name>__CM_CMSIS_VERSION</name>
+      <anchorfile>group__version__control__gr.html</anchorfile>
+      <anchor>ga39f3d64ff95fb58feccc7639e537ff89</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="define">
+      <type>#define</type>
       <name>__CM_CMSIS_VERSION_MAIN</name>
       <anchorfile>group__version__control__gr.html</anchorfile>
       <anchor>ga85987c5fcc1e012d7ac01369ee6ca2b5</anchor>
@@ -4060,13 +4060,6 @@
       <name>__CM_CMSIS_VERSION_SUB</name>
       <anchorfile>group__version__control__gr.html</anchorfile>
       <anchor>ga22083cbe7f0606cfd538ec12b2e41608</anchor>
-      <arglist></arglist>
-    </member>
-    <member kind="define">
-      <type>#define</type>
-      <name>__CM_CMSIS_VERSION</name>
-      <anchorfile>group__version__control__gr.html</anchorfile>
-      <anchor>ga39f3d64ff95fb58feccc7639e537ff89</anchor>
       <arglist></arglist>
     </member>
     <member kind="define">
@@ -5760,6 +5753,13 @@
     <filename>group__version__control__gr.html</filename>
     <member kind="define">
       <type>#define</type>
+      <name>__CM_CMSIS_VERSION</name>
+      <anchorfile>group__version__control__gr.html</anchorfile>
+      <anchor>ga39f3d64ff95fb58feccc7639e537ff89</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="define">
+      <type>#define</type>
       <name>__CM_CMSIS_VERSION_MAIN</name>
       <anchorfile>group__version__control__gr.html</anchorfile>
       <anchor>ga85987c5fcc1e012d7ac01369ee6ca2b5</anchor>
@@ -5770,13 +5770,6 @@
       <name>__CM_CMSIS_VERSION_SUB</name>
       <anchorfile>group__version__control__gr.html</anchorfile>
       <anchor>ga22083cbe7f0606cfd538ec12b2e41608</anchor>
-      <arglist></arglist>
-    </member>
-    <member kind="define">
-      <type>#define</type>
-      <name>__CM_CMSIS_VERSION</name>
-      <anchorfile>group__version__control__gr.html</anchorfile>
-      <anchor>ga39f3d64ff95fb58feccc7639e537ff89</anchor>
       <arglist></arglist>
     </member>
     <member kind="define">
@@ -5908,13 +5901,6 @@
       <name>__PACKED_STRUCT</name>
       <anchorfile>group__compiler__conntrol__gr.html</anchorfile>
       <anchor>ga4dbb70fab85207c27b581ecb6532b314</anchor>
-      <arglist></arglist>
-    </member>
-    <member kind="define">
-      <type>#define</type>
-      <name>__UNALIGNED_UINT32</name>
-      <anchorfile>group__compiler__conntrol__gr.html</anchorfile>
-      <anchor>ga27fd2ec6767ca1ab66d36b5cc0103268</anchor>
       <arglist></arglist>
     </member>
     <member kind="define">

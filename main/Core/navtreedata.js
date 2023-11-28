@@ -47,7 +47,6 @@ var NAVTREE =
     [ "CMSIS-Core Files", "cmsis_core_files.html", "cmsis_core_files" ],
     [ "MISRA-C Deviations", "coreMISRA_Exceptions_pg.html", null ],
     [ "Register Mapping", "regMap_pg.html", null ],
-    [ "Deprecated List", "deprecated.html", null ],
     [ "API Reference", "modules.html", "modules" ],
     [ "Data Structures", "annotated.html", [
       [ "Data Structures", "annotated.html", "annotated_dup" ]
@@ -58,9 +57,9 @@ var NAVTREE =
 var NAVTREEINDEX =
 [
 "annotated.html",
-"group__intrinsic__SIMD__gr.html#ga5845084fd99c872e98cf5553d554de2a",
-"group__pmu8__events__armv81.html#ga7d669378441408fc21aa551e483866cb",
-"structPMU__Type.html#aac8b7bca579afd4969d8bfffa61afbed"
+"group__intrinsic__SIMD__gr.html#ga5eff3ae5eabcd73f3049996ca391becb",
+"group__pmu8__events__armv81.html#ga7e76060791618f9b4d49ad493cfb6ba9",
+"structPMU__Type.html#aba9bddd6b49c88e38f4bb79d32002c3c"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

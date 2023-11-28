@@ -13,7 +13,7 @@ var searchData=
   ['ref_5fsystem_5finit_2etxt_10',['ref_system_init.txt',['../ref__system__init_8txt.html',1,'']]],
   ['ref_5ftimer_2etxt_11',['ref_timer.txt',['../ref__timer_8txt.html',1,'']]],
   ['reserved_12',['RESERVED',['../core__ca_8h.html#af7f66fda711fd46e157dbb6c1af88e04',1,'core_ca.h']]],
-  ['revision_20history_20of_20cmsis_2dcore_20_28cortex_2da_29_13',['Revision History of CMSIS-Core (Cortex-A)',['../rev_histCoreA.html',1,'']]],
+  ['revision_20history_13',['Revision History',['../rev_histCoreA.html',1,'']]],
   ['rg_5ft_14',['rg_t',['../structmmu__region__attributes__Type.html#a3f9d884c340aca62d3287b91809ac262',1,'mmu_region_attributes_Type']]],
   ['rpr_15',['RPR',['../structGICInterface__Type.html#a37762d42768ecb3d1302f34abc7f2821',1,'GICInterface_Type']]],
   ['rr_16',['RR',['../unionSCTLR__Type.html#a10212a8d038bb1e076cbd06a5ba0b055',1,'SCTLR_Type']]],

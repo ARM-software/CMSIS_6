@@ -98,7 +98,7 @@ var searchBox = new SearchBox("searchBox", "search/",'.html');
 </div>
 <script type="text/javascript">
 /* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
-$(document).ready(function(){initNavTree('group__version__ctrl.html',''); initResizable(); });
+$(document).ready(function(){initNavTree('group__version__control__gr.html',''); initResizable(); });
 /* @license-end */
 </script>
 <div id="doc-content">
@@ -130,21 +130,87 @@ $(document).ready(function(){initNavTree('group__version__ctrl.html',''); initRe
 </div><!--header-->
 <div class="contents">
 
-<p>Version symbols for CMSIS release specific C/C++ source code.  
+<p>Version #define symbols for CMSIS release specific C/C++ source code.  
 <a href="#details">More...</a></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="define-members" name="define-members"></a>
 Macros</h2></td></tr>
-<tr class="memitem:ga8ebf37d3e9141ccae33bb6b1edf539bd"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__version__ctrl.html#ga8ebf37d3e9141ccae33bb6b1edf539bd">__CA_REV</a>&#160;&#160;&#160;0x0000</td></tr>
+<tr class="memitem:ga60199f17babba1ac0cf233e59043b23b"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__version__control__gr.html#ga60199f17babba1ac0cf233e59043b23b">__CA_CMSIS_VERSION</a></td></tr>
+<tr class="memdesc:ga60199f17babba1ac0cf233e59043b23b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Contains the CMSIS version.  <br /></td></tr>
+<tr class="separator:ga60199f17babba1ac0cf233e59043b23b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga519092cc80304900838f3d79a1a04e36"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__version__control__gr.html#ga519092cc80304900838f3d79a1a04e36">__CA_CMSIS_VERSION_MAIN</a></td></tr>
+<tr class="memdesc:ga519092cc80304900838f3d79a1a04e36"><td class="mdescLeft">&#160;</td><td class="mdescRight">Contains the CMSIS major version.  <br /></td></tr>
+<tr class="separator:ga519092cc80304900838f3d79a1a04e36"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaca4690227a53e24645758cdab9a00cdf"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__version__control__gr.html#gaca4690227a53e24645758cdab9a00cdf">__CA_CMSIS_VERSION_SUB</a></td></tr>
+<tr class="memdesc:gaca4690227a53e24645758cdab9a00cdf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Contains the CMSIS minor version.  <br /></td></tr>
+<tr class="separator:gaca4690227a53e24645758cdab9a00cdf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga8ebf37d3e9141ccae33bb6b1edf539bd"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__version__control__gr.html#ga8ebf37d3e9141ccae33bb6b1edf539bd">__CA_REV</a>&#160;&#160;&#160;0x0000</td></tr>
 <tr class="memdesc:ga8ebf37d3e9141ccae33bb6b1edf539bd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Contains the core revision for a Cortex-A class device.  <br /></td></tr>
 <tr class="separator:ga8ebf37d3e9141ccae33bb6b1edf539bd"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga74d176c89aefe783e9ce0712c4360537"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__version__ctrl.html#ga74d176c89aefe783e9ce0712c4360537">__CORTEX_A</a>&#160;&#160;&#160;0x0000</td></tr>
+<tr class="memitem:ga74d176c89aefe783e9ce0712c4360537"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__version__control__gr.html#ga74d176c89aefe783e9ce0712c4360537">__CORTEX_A</a>&#160;&#160;&#160;0x0000</td></tr>
 <tr class="memdesc:ga74d176c89aefe783e9ce0712c4360537"><td class="mdescLeft">&#160;</td><td class="mdescRight">Contains the core family for a Cortex-A class device.  <br /></td></tr>
 <tr class="separator:ga74d176c89aefe783e9ce0712c4360537"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Description</h2>
-<p>Version symbols for CMSIS release specific C/C++ source code. </p>
+<p>Version #define symbols for CMSIS release specific C/C++ source code. </p>
 <h2 class="groupheader">Macro Definition Documentation</h2>
+<a id="ga60199f17babba1ac0cf233e59043b23b" name="ga60199f17babba1ac0cf233e59043b23b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga60199f17babba1ac0cf233e59043b23b">&#9670;&#160;</a></span>__CA_CMSIS_VERSION</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define __CA_CMSIS_VERSION</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Contains the CMSIS version. </p>
+<p>The CMSIS version is a combination of the <a class="el" href="group__version__control__gr.html#ga519092cc80304900838f3d79a1a04e36">__CA_CMSIS_VERSION_MAIN</a> (bits 31..16) and <a class="el" href="group__version__control__gr.html#gaca4690227a53e24645758cdab9a00cdf">__CA_CMSIS_VERSION_SUB</a> (bits 15..0).</p>
+<p><b>Code Example:</b> </p><div class="fragment"><div class="line"><span class="preprocessor">#if defined(__CA_CMSIS_VERSION) &amp;&amp; \</span></div>
+<div class="line"><span class="preprocessor">    (__CA_CMSIS_VERSION &gt;= 0x00060000)</span></div>
+<div class="line"><span class="preprocessor">#error Yes, we have CMSIS 6.0 or later</span></div>
+<div class="line"><span class="preprocessor">#else</span></div>
+<div class="line"><span class="preprocessor">#error We need CMSIS 6.0 or later!</span></div>
+<div class="line"><span class="preprocessor">#endif</span></div>
+</div><!-- fragment --> 
+</div>
+</div>
+<a id="ga519092cc80304900838f3d79a1a04e36" name="ga519092cc80304900838f3d79a1a04e36"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga519092cc80304900838f3d79a1a04e36">&#9670;&#160;</a></span>__CA_CMSIS_VERSION_MAIN</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define __CA_CMSIS_VERSION_MAIN</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Contains the CMSIS major version. </p>
+<p>The CMSIS major version can be used to differentiate between CMSIS major releases. </p>
+
+</div>
+</div>
+<a id="gaca4690227a53e24645758cdab9a00cdf" name="gaca4690227a53e24645758cdab9a00cdf"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gaca4690227a53e24645758cdab9a00cdf">&#9670;&#160;</a></span>__CA_CMSIS_VERSION_SUB</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define __CA_CMSIS_VERSION_SUB</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Contains the CMSIS minor version. </p>
+<p>The CMSIS minor version can be used to query a CMSIS release update level. </p>
+
+</div>
+</div>
 <a id="ga8ebf37d3e9141ccae33bb6b1edf539bd" name="ga8ebf37d3e9141ccae33bb6b1edf539bd"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ga8ebf37d3e9141ccae33bb6b1edf539bd">&#9670;&#160;</a></span>__CA_REV</h2>
 

@@ -5550,13 +5550,6 @@
     </member>
     <member kind="define">
       <type>#define</type>
-      <name>__UNALIGNED_UINT32</name>
-      <anchorfile>group__comp__cntrl__gr.html</anchorfile>
-      <anchor>ga27fd2ec6767ca1ab66d36b5cc0103268</anchor>
-      <arglist></arglist>
-    </member>
-    <member kind="define">
-      <type>#define</type>
       <name>__UNALIGNED_UINT16_READ</name>
       <anchorfile>group__comp__cntrl__gr.html</anchorfile>
       <anchor>gabe8693a7200e573101551d49a1772fb9</anchor>
@@ -5646,15 +5639,36 @@
     </member>
     <member kind="define">
       <type>#define</type>
+      <name>__CA_CMSIS_VERSION</name>
+      <anchorfile>group__version__control__gr.html</anchorfile>
+      <anchor>ga60199f17babba1ac0cf233e59043b23b</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="define">
+      <type>#define</type>
+      <name>__CA_CMSIS_VERSION_MAIN</name>
+      <anchorfile>group__version__control__gr.html</anchorfile>
+      <anchor>ga519092cc80304900838f3d79a1a04e36</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="define">
+      <type>#define</type>
+      <name>__CA_CMSIS_VERSION_SUB</name>
+      <anchorfile>group__version__control__gr.html</anchorfile>
+      <anchor>gaca4690227a53e24645758cdab9a00cdf</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="define">
+      <type>#define</type>
       <name>__CA_REV</name>
-      <anchorfile>group__version__ctrl.html</anchorfile>
+      <anchorfile>group__version__control__gr.html</anchorfile>
       <anchor>ga8ebf37d3e9141ccae33bb6b1edf539bd</anchor>
       <arglist></arglist>
     </member>
     <member kind="define">
       <type>#define</type>
       <name>__CORTEX_A</name>
-      <anchorfile>group__version__ctrl.html</anchorfile>
+      <anchorfile>group__version__control__gr.html</anchorfile>
       <anchor>ga74d176c89aefe783e9ce0712c4360537</anchor>
       <arglist></arglist>
     </member>
@@ -10222,20 +10236,41 @@
     <docanchor file="group__peripheral__gr.html" title="Register Bit Fields">core_cmsis_pal_bitfields</docanchor>
   </compound>
   <compound kind="group">
-    <name>version_ctrl</name>
+    <name>version_control_gr</name>
     <title>Version Control</title>
-    <filename>group__version__ctrl.html</filename>
+    <filename>group__version__control__gr.html</filename>
+    <member kind="define">
+      <type>#define</type>
+      <name>__CA_CMSIS_VERSION</name>
+      <anchorfile>group__version__control__gr.html</anchorfile>
+      <anchor>ga60199f17babba1ac0cf233e59043b23b</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="define">
+      <type>#define</type>
+      <name>__CA_CMSIS_VERSION_MAIN</name>
+      <anchorfile>group__version__control__gr.html</anchorfile>
+      <anchor>ga519092cc80304900838f3d79a1a04e36</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="define">
+      <type>#define</type>
+      <name>__CA_CMSIS_VERSION_SUB</name>
+      <anchorfile>group__version__control__gr.html</anchorfile>
+      <anchor>gaca4690227a53e24645758cdab9a00cdf</anchor>
+      <arglist></arglist>
+    </member>
     <member kind="define">
       <type>#define</type>
       <name>__CA_REV</name>
-      <anchorfile>group__version__ctrl.html</anchorfile>
+      <anchorfile>group__version__control__gr.html</anchorfile>
       <anchor>ga8ebf37d3e9141ccae33bb6b1edf539bd</anchor>
       <arglist></arglist>
     </member>
     <member kind="define">
       <type>#define</type>
       <name>__CORTEX_A</name>
-      <anchorfile>group__version__ctrl.html</anchorfile>
+      <anchorfile>group__version__control__gr.html</anchorfile>
       <anchor>ga74d176c89aefe783e9ce0712c4360537</anchor>
       <arglist></arglist>
     </member>
@@ -10343,13 +10378,6 @@
       <name>__PACKED_STRUCT</name>
       <anchorfile>group__comp__cntrl__gr.html</anchorfile>
       <anchor>ga4dbb70fab85207c27b581ecb6532b314</anchor>
-      <arglist></arglist>
-    </member>
-    <member kind="define">
-      <type>#define</type>
-      <name>__UNALIGNED_UINT32</name>
-      <anchorfile>group__comp__cntrl__gr.html</anchorfile>
-      <anchor>ga27fd2ec6767ca1ab66d36b5cc0103268</anchor>
       <arglist></arglist>
     </member>
     <member kind="define">
@@ -10949,7 +10977,7 @@
   </compound>
   <compound kind="page">
     <name>rev_histCoreA</name>
-    <title>Revision History of CMSIS-Core (Cortex-A)</title>
+    <title>Revision History</title>
     <filename>rev_histCoreA.html</filename>
     <docanchor file="rev_histCoreA.html">md_src_history</docanchor>
   </compound>

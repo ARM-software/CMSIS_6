@@ -135,15 +135,15 @@ $(document).ready(function(){initNavTree('group__version__control__gr.html','');
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="define-members" name="define-members"></a>
 Macros</h2></td></tr>
+<tr class="memitem:ga39f3d64ff95fb58feccc7639e537ff89"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__version__control__gr.html#ga39f3d64ff95fb58feccc7639e537ff89">__CM_CMSIS_VERSION</a></td></tr>
+<tr class="memdesc:ga39f3d64ff95fb58feccc7639e537ff89"><td class="mdescLeft">&#160;</td><td class="mdescRight">Contains the CMSIS version.  <br /></td></tr>
+<tr class="separator:ga39f3d64ff95fb58feccc7639e537ff89"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga85987c5fcc1e012d7ac01369ee6ca2b5"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__version__control__gr.html#ga85987c5fcc1e012d7ac01369ee6ca2b5">__CM_CMSIS_VERSION_MAIN</a></td></tr>
 <tr class="memdesc:ga85987c5fcc1e012d7ac01369ee6ca2b5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Contains the CMSIS major version.  <br /></td></tr>
 <tr class="separator:ga85987c5fcc1e012d7ac01369ee6ca2b5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga22083cbe7f0606cfd538ec12b2e41608"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__version__control__gr.html#ga22083cbe7f0606cfd538ec12b2e41608">__CM_CMSIS_VERSION_SUB</a></td></tr>
 <tr class="memdesc:ga22083cbe7f0606cfd538ec12b2e41608"><td class="mdescLeft">&#160;</td><td class="mdescRight">Contains the CMSIS minor version.  <br /></td></tr>
 <tr class="separator:ga22083cbe7f0606cfd538ec12b2e41608"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga39f3d64ff95fb58feccc7639e537ff89"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__version__control__gr.html#ga39f3d64ff95fb58feccc7639e537ff89">__CM_CMSIS_VERSION</a></td></tr>
-<tr class="memdesc:ga39f3d64ff95fb58feccc7639e537ff89"><td class="mdescLeft">&#160;</td><td class="mdescRight">Contains the CMSIS version.  <br /></td></tr>
-<tr class="separator:ga39f3d64ff95fb58feccc7639e537ff89"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga63ea62503c88acab19fcf3d5743009e3"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__version__control__gr.html#ga63ea62503c88acab19fcf3d5743009e3">__CORTEX_M</a></td></tr>
 <tr class="memdesc:ga63ea62503c88acab19fcf3d5743009e3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Contains the core version for a Cortex-M class controller.  <br /></td></tr>
 <tr class="separator:ga63ea62503c88acab19fcf3d5743009e3"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -156,14 +156,10 @@ Macros</h2></td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Description</h2>
 <p>Version #define symbols for CMSIS release specific C/C++ source code. </p>
-<p>The header file <b>cmsis_version.h</b> is included by each core header so that these definitions are available.</p>
-<p><b>Code Example:</b> </p><div class="fragment"><div class="line"><span class="preprocessor">#if defined(__CM_CMSIS_VERSION) &amp;&amp; \</span></div>
-<div class="line"><span class="preprocessor">    (__CM_CMSIS_VERSION &gt;= 0x00050001)</span></div>
-<div class="line"><span class="preprocessor">#error Yes, we have CMSIS 5.1 or later</span></div>
-<div class="line"><span class="preprocessor">#else</span></div>
-<div class="line"><span class="preprocessor">#error We need CMSIS 5.1 or later!</span></div>
-<div class="line"><span class="preprocessor">#endif</span></div>
-</div><!-- fragment --> <h2 class="groupheader">Macro Definition Documentation</h2>
+<p><a class="el" href="cmsis_core_files.html#cmsis_processor_files">CMSIS-Core Processor Files</a> contain macros <a class="el" href="group__version__control__gr.html#ga63ea62503c88acab19fcf3d5743009e3">__CORTEX_M</a> , <a class="el" href="group__version__control__gr.html#gaeaaf66c86e5ae02a0e1fe542cb7f4d8c">__CORTEX_SC</a> or <a class="el" href="group__version__control__gr.html#ga9db417c20fe833187e2f2b8aeb14e94e">__STAR_MC</a> that identify the processor core variant described in the file.</p>
+<p>Additionally each processor header file includes the <b>cmsis_version.h</b> file with <a class="el" href="group__version__control__gr.html#ga39f3d64ff95fb58feccc7639e537ff89">__CM_CMSIS_VERSION</a> define that identifies the CMSIS version used.</p>
+<p>This allows application code and middleware components to verify the target processor and the CMSIS version that CMSIS-Core component implies. </p>
+<h2 class="groupheader">Macro Definition Documentation</h2>
 <a id="ga39f3d64ff95fb58feccc7639e537ff89" name="ga39f3d64ff95fb58feccc7639e537ff89"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ga39f3d64ff95fb58feccc7639e537ff89">&#9670;&#160;</a></span>__CM_CMSIS_VERSION</h2>
 
@@ -177,8 +173,14 @@ Macros</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Contains the CMSIS version. </p>
-<p>The CMSIS version is a combination of the <a class="el" href="group__version__control__gr.html#ga85987c5fcc1e012d7ac01369ee6ca2b5">__CM_CMSIS_VERSION_MAIN</a> (bits 31..15) and <a class="el" href="group__version__control__gr.html#ga22083cbe7f0606cfd538ec12b2e41608">__CM_CMSIS_VERSION_SUB</a> (bits 14..0). </p>
-
+<p>The CMSIS version is a combination of the <a class="el" href="group__version__control__gr.html#ga85987c5fcc1e012d7ac01369ee6ca2b5">__CM_CMSIS_VERSION_MAIN</a> (bits 31..16) and <a class="el" href="group__version__control__gr.html#ga22083cbe7f0606cfd538ec12b2e41608">__CM_CMSIS_VERSION_SUB</a> (bits 15..0).</p>
+<p><b>Code Example:</b> </p><div class="fragment"><div class="line"><span class="preprocessor">#if defined(__CM_CMSIS_VERSION) &amp;&amp; \</span></div>
+<div class="line"><span class="preprocessor">    (__CM_CMSIS_VERSION &gt;= 0x00060000)</span></div>
+<div class="line"><span class="preprocessor">#error Yes, we have CMSIS 6.0 or later</span></div>
+<div class="line"><span class="preprocessor">#else</span></div>
+<div class="line"><span class="preprocessor">#error We need CMSIS 6.0 or later!</span></div>
+<div class="line"><span class="preprocessor">#endif</span></div>
+</div><!-- fragment --> 
 </div>
 </div>
 <a id="ga85987c5fcc1e012d7ac01369ee6ca2b5" name="ga85987c5fcc1e012d7ac01369ee6ca2b5"></a>
