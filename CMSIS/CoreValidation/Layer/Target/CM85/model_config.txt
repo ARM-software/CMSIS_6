@@ -26,5 +26,5 @@ cpu0.LOCK_SAU=0                                       # (bool  , init-time) defa
 cpu0.LOCK_S_MPU=0                                     # (bool  , init-time) default = '0'      : Lock down of Secure MPU registers write
 cpu0.LOCK_NS_MPU=0                                    # (bool  , init-time) default = '0'      : Lock down of Non-Secure MPU registers write
 cpu0.CPIF=1                                           # (bool  , init-time) default = '1'      : Specifies whether the external coprocessor interface is included
-cpu0.SECEXT=1                                         # (bool  , init-time) default = '1'      : Whether the ARMv8-M Security Extensions are included
+cpu0.SECEXT=0                                         # (bool  , init-time) default = '1'      : Whether the ARMv8-M Security Extensions are included
 #----------------------------------------------------------------------------------------------

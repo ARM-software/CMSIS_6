@@ -1,6 +1,11 @@
 layer:
-  # type: Target
-  description: Target setup
+  type: Target
+  description: CM33 target components and files
+
+  packs:
+    - pack: ARM::Cortex_DFP
+
+  device: ARMCM33
 
   processor:
     trustzone: off
@@ -11,7 +16,7 @@ layer:
     - component: Device:Startup&C Startup
 
   groups:
-    - group: VHT/FVP
+    - group: FVP
       files:
         - file: ./model_config.txt
 
@@ -28,4 +33,3 @@ layer:
     - for-compiler: IAR
       script: RTE/Device/$Dname$/iar_linker_script.icf
       regions: RTE/Device/$Dname$/regions_$Dname$.h
-

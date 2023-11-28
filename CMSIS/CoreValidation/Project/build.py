@@ -21,10 +21,7 @@ class DeviceAxis(Enum):
     CM0plus = ('Cortex-M0plus', 'CM0plus')
     CM3 = ('Cortex-M3', 'CM3')
     CM4 = ('Cortex-M4', 'CM4')
-    CM4FP = ('Cortex-M4FP', 'CM4FP')
     CM7 = ('Cortex-M7', 'CM7')
-    CM7SP = ('Cortex-M7SP', 'CM7SP')
-    CM7DP = ('Cortex-M7DP', 'CM7DP')
     CM23 = ('Cortex-M23', 'CM23')
     CM23S = ('Cortex-M23S', 'CM23S')
     CM23NS = ('Cortex-M23NS', 'CM23NS')
@@ -34,8 +31,10 @@ class DeviceAxis(Enum):
     CM35P = ('Cortex-M35P', 'CM35P')
     CM35PS = ('Cortex-M35PS', 'CM35PS')
     CM35PNS = ('Cortex-M35PNS', 'CM35PNS')
+    CM55 = ('Cortex-M55', 'CM55')
     CM55S = ('Cortex-M55S', 'CM55S')
     CM55NS = ('Cortex-M55NS', 'CM55NS')
+    CM85 = ('Cortex-M85', 'CM85')
     CM85S = ('Cortex-M85S', 'CM85S')
     CM85NS = ('Cortex-M85NS', 'CM85NS')
     CA5 = ('Cortex-A5', 'CA5')
@@ -107,10 +106,7 @@ MODEL_EXECUTABLE = {
     DeviceAxis.CM0plus: ("FVP_MPS2_Cortex-M0plus", []),
     DeviceAxis.CM3: ("FVP_MPS2_Cortex-M3", []),
     DeviceAxis.CM4: ("FVP_MPS2_Cortex-M4", []),
-    DeviceAxis.CM4FP: ("FVP_MPS2_Cortex-M4", []),
     DeviceAxis.CM7: ("FVP_MPS2_Cortex-M7", []),
-    DeviceAxis.CM7DP: ("FVP_MPS2_Cortex-M7", []),
-    DeviceAxis.CM7SP: ("FVP_MPS2_Cortex-M7", []),
     DeviceAxis.CM23: ("FVP_MPS2_Cortex-M23", []),
     DeviceAxis.CM23S: ("FVP_MPS2_Cortex-M23", []),
     DeviceAxis.CM23NS: ("FVP_MPS2_Cortex-M23", []),
@@ -120,8 +116,10 @@ MODEL_EXECUTABLE = {
     DeviceAxis.CM35P: ("FVP_MPS2_Cortex-M35P", []),
     DeviceAxis.CM35PS: ("FVP_MPS2_Cortex-M35P", []),
     DeviceAxis.CM35PNS: ("FVP_MPS2_Cortex-M35P", []),
+    DeviceAxis.CM55: ("FVP_MPS2_Cortex-M55", []),
     DeviceAxis.CM55S: ("FVP_MPS2_Cortex-M55", []),
     DeviceAxis.CM55NS: ("FVP_MPS2_Cortex-M55", []),
+    DeviceAxis.CM85: ("FVP_MPS2_Cortex-M85", []),
     DeviceAxis.CM85S: ("FVP_MPS2_Cortex-M85", []),
     DeviceAxis.CM85NS: ("FVP_MPS2_Cortex-M85", []),
     DeviceAxis.CA5: ("FVP_VE_Cortex-A5x1", []),
