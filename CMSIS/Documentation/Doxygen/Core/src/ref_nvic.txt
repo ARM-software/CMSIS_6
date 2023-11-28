@@ -419,7 +419,7 @@ typedef enum IRQn
 
     \sa
         - \ref NVIC_GetPriorityGrouping; NVIC_SetPriority; SCB_Type
-        - \ref ref_man_sec
+        - \ref ref_man_sec "Cortex-M Generic User Guides"
 */
 void NVIC_SetPriorityGrouping(uint32_t PriorityGroup);
 
@@ -438,7 +438,7 @@ void NVIC_SetPriorityGrouping(uint32_t PriorityGroup);
 
     \sa
         - \ref NVIC_SetPriorityGrouping; NVIC_GetPriority; SCB_Type
-        - \ref ref_man_sec
+        - \ref ref_man_sec "Cortex-M Generic User Guides"
 
 */
 uint32_t NVIC_GetPriorityGrouping(void);
@@ -466,7 +466,7 @@ uint32_t NVIC_GetPriorityGrouping(void);
 
     \sa
         - \ref NVIC_DisableIRQ; SCnSCB_Type;
-        - \ref ref_man_sec
+        - \ref ref_man_sec "Cortex-M Generic User Guides"
 */
 void NVIC_EnableIRQ(IRQn_Type IRQn);
 
@@ -490,7 +490,7 @@ void NVIC_EnableIRQ(IRQn_Type IRQn);
 
     \sa
         - \ref NVIC_EnableIRQ; NVIC_DisableIRQ;
-        - \ref ref_man_sec
+        - \ref ref_man_sec "Cortex-M Generic User Guides"
 */
 uint32_t NVIC_GetEnableIRQ(IRQn_Type IRQn);
 
@@ -511,7 +511,7 @@ uint32_t NVIC_GetEnableIRQ(IRQn_Type IRQn);
 
     \sa
         - \ref NVIC_EnableIRQ
-        - \ref ref_man_sec
+        - \ref ref_man_sec "Cortex-M Generic User Guides"
 */
 void NVIC_DisableIRQ(IRQn_Type IRQn);
 
@@ -534,7 +534,7 @@ void NVIC_DisableIRQ(IRQn_Type IRQn);
 
     \sa
         - \ref NVIC_SetPendingIRQ; NVIC_ClearPendingIRQ
-        - \ref ref_man_sec
+        - \ref ref_man_sec "Cortex-M Generic User Guides"
 */
 uint32_t NVIC_GetPendingIRQ(IRQn_Type IRQn);
 
@@ -554,7 +554,7 @@ uint32_t NVIC_GetPendingIRQ(IRQn_Type IRQn);
 
     \sa
         - \ref NVIC_GetPendingIRQ; NVIC_ClearPendingIRQ
-        - \ref ref_man_sec
+        - \ref ref_man_sec "Cortex-M Generic User Guides"
 */
 void NVIC_SetPendingIRQ(IRQn_Type IRQn);
 
@@ -575,7 +575,7 @@ void NVIC_SetPendingIRQ(IRQn_Type IRQn);
 
     \sa
         - \ref NVIC_SetPendingIRQ; NVIC_GetPendingIRQ
-        - \ref ref_man_sec
+        - \ref ref_man_sec "Cortex-M Generic User Guides"
 */
 void NVIC_ClearPendingIRQ(IRQn_Type IRQn);
 
@@ -602,7 +602,7 @@ void NVIC_ClearPendingIRQ(IRQn_Type IRQn);
         previous interrupt is still defined as active.
 
     \sa
-        - \ref ref_man_sec
+        - \ref ref_man_sec "Cortex-M Generic User Guides"
 
 */
 uint32_t NVIC_GetActive(IRQn_Type IRQn);
@@ -643,7 +643,7 @@ uint32_t NVIC_GetActive(IRQn_Type IRQn);
 
     \sa
         - \ref NVIC_GetPriority;  NVIC_SetPriorityGrouping; __set_BASEPRI;
-        - \ref ref_man_sec
+        - \ref ref_man_sec "Cortex-M Generic User Guides"
 */
 void NVIC_SetPriority(IRQn_Type IRQn, uint32_t priority);
 
@@ -668,7 +668,7 @@ void NVIC_SetPriority(IRQn_Type IRQn, uint32_t priority);
 
     \sa
         - \ref NVIC_SetPriority;  NVIC_GetPriorityGrouping; __get_BASEPRI;
-        - \ref ref_man_sec
+        - \ref ref_man_sec "Cortex-M Generic User Guides"
 */
 uint32_t NVIC_GetPriority(IRQn_Type IRQn);
 
@@ -694,7 +694,7 @@ uint32_t NVIC_GetPriority(IRQn_Type IRQn);
 
     \sa
         - \ref NVIC_DecodePriority;  NVIC_SetPriority;
-        - \ref ref_man_sec
+        - \ref ref_man_sec "Cortex-M Generic User Guides"
 */
 uint32_t NVIC_EncodePriority (uint32_t PriorityGroup, uint32_t PreemptPriority, uint32_t SubPriority);
 
@@ -719,7 +719,7 @@ uint32_t NVIC_EncodePriority (uint32_t PriorityGroup, uint32_t PreemptPriority, 
 
     \sa
         - \ref NVIC_EncodePriority;  NVIC_GetPriority; NVIC_GetPriorityGrouping;
-        - \ref ref_man_sec
+        - \ref ref_man_sec "Cortex-M Generic User Guides"
 */
 void NVIC_DecodePriority (uint32_t Priority, uint32_t PriorityGroup, uint32_t* pPreemptPriority, uint32_t* pSubPriority);
 
@@ -739,7 +739,7 @@ void NVIC_DecodePriority (uint32_t Priority, uint32_t PriorityGroup, uint32_t* p
 
     \sa
         - \ref NVIC_SetVector
-        - \ref ref_man_sec
+        - \ref ref_man_sec "Cortex-M Generic User Guides"
 */
 uint32_t NVIC_GetVector(IRQn_Type IRQn);
 
@@ -759,7 +759,7 @@ uint32_t NVIC_GetVector(IRQn_Type IRQn);
 
     \sa
         - \ref NVIC_GetVector
-        - \ref ref_man_sec
+        - \ref ref_man_sec "Cortex-M Generic User Guides"
 */
 void NVIC_SetVector(IRQn_Type IRQn, uint32_t vector);
 
@@ -775,7 +775,7 @@ void NVIC_SetVector(IRQn_Type IRQn, uint32_t vector);
         most parts of the system, but should not affect the debug system.
 
     \sa
-        - \ref ref_man_sec
+        - \ref ref_man_sec "Cortex-M Generic User Guides"
 */
 void NVIC_SystemReset (void);
 

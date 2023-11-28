@@ -280,30 +280,6 @@ __PACKED_STRUCT foo {
 
 /**************************************************************************************************/
 /**
-\def __UNALIGNED_UINT32
-\brief Pointer for unaligned access of a uint32_t variable.
-\deprecated
-Do not use this macro.
-It has been superseded by \ref __UNALIGNED_UINT32_READ, \ref __UNALIGNED_UINT32_WRITE and will be removed in the future.
-\details
-Defines a pointer to a uint32_t from an address that does not need to be aligned. This can then be used in read/write
-operations. The compiler will generate the appropriate access (aligned or non-aligned) depending on the underlying Arm
-processor core and compiler settings.
-
-<b>Code Example:</b>
-\code
-uint32_t val32;
-
-void test (uint8_t *ptr) {
-  __UNALIGNED_UINT32(ptr) = val32;
-}
-\endcode
-
-*/
-#define __UNALIGNED_UINT32
-
-/**************************************************************************************************/
-/**
 \def __UNALIGNED_UINT16_READ
 \brief Pointer for unaligned read of a uint16_t variable.
 \details
