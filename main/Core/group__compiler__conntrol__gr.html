@@ -199,7 +199,7 @@ Macros</h2></td></tr>
 <tr class="memdesc:ga6f053389e2958b5a239a54d4e4047bf5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Barrier to prevent compiler from reordering instructions.  <br /></td></tr>
 <tr class="separator:ga6f053389e2958b5a239a54d4e4047bf5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga541e3bdeb73ef92c9a18ea2f7082bf5d"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__compiler__conntrol__gr.html#ga541e3bdeb73ef92c9a18ea2f7082bf5d">__NO_INIT</a></td></tr>
-<tr class="memdesc:ga541e3bdeb73ef92c9a18ea2f7082bf5d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Force symbol into uninitialized memory section.  <br /></td></tr>
+<tr class="memdesc:ga541e3bdeb73ef92c9a18ea2f7082bf5d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Specifies a section name for a variable to simplify variable placement into a non-initialized memory.  <br /></td></tr>
 <tr class="separator:ga541e3bdeb73ef92c9a18ea2f7082bf5d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:gadc1a82527532aabbfa7d8eface645fb5"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__compiler__conntrol__gr.html#gadc1a82527532aabbfa7d8eface645fb5">__ALIAS</a></td></tr>
 <tr class="memdesc:gadc1a82527532aabbfa7d8eface645fb5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a symbol as alias to another symbol.  <br /></td></tr>
@@ -241,7 +241,7 @@ Macros</h2></td></tr>
 <p><b>Code Example:</b> The example declares the function Interrupt0_Handler. By default it is just an alias pointing to Default_Handler. In combination with __WEAK modifier this allows giving the function definition at a later point if required.</p>
 <div class="fragment"><div class="line"><span class="keywordtype">void</span> Interrupt0_Handler     (<span class="keywordtype">void</span>) <a class="code hl_define" href="group__compiler__conntrol__gr.html#gac607bf387b29162be6a9b77fc7999539">__WEAK</a> <a class="code hl_define" href="group__compiler__conntrol__gr.html#gadc1a82527532aabbfa7d8eface645fb5">__ALIAS</a>(<span class="stringliteral">&quot;Default_Handler&quot;</span>);</div>
 <div class="ttc" id="agroup__compiler__conntrol__gr_html_gac607bf387b29162be6a9b77fc7999539"><div class="ttname"><a href="group__compiler__conntrol__gr.html#gac607bf387b29162be6a9b77fc7999539">__WEAK</a></div><div class="ttdeci">#define __WEAK</div><div class="ttdoc">Export a function or variable weakly to allow overwrites.</div><div class="ttdef"><b>Definition:</b> ref_compiler_ctrl.txt:242</div></div>
-<div class="ttc" id="agroup__compiler__conntrol__gr_html_gadc1a82527532aabbfa7d8eface645fb5"><div class="ttname"><a href="group__compiler__conntrol__gr.html#gadc1a82527532aabbfa7d8eface645fb5">__ALIAS</a></div><div class="ttdeci">#define __ALIAS</div><div class="ttdoc">Creates a symbol as alias to another symbol.</div><div class="ttdef"><b>Definition:</b> ref_compiler_ctrl.txt:437</div></div>
+<div class="ttc" id="agroup__compiler__conntrol__gr_html_gadc1a82527532aabbfa7d8eface645fb5"><div class="ttname"><a href="group__compiler__conntrol__gr.html#gadc1a82527532aabbfa7d8eface645fb5">__ALIAS</a></div><div class="ttdeci">#define __ALIAS</div><div class="ttdoc">Creates a symbol as alias to another symbol.</div><div class="ttdef"><b>Definition:</b> ref_compiler_ctrl.txt:439</div></div>
 </div><!-- fragment --> 
 </div>
 </div>
@@ -458,11 +458,11 @@ Macros</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Force symbol into uninitialized memory section. </p>
-<p>This puts a symbol (such as a variable) into an uninitialized memory section (e.g, .bss.noinit).</p>
-<p><b>Code Example:</b> The EventBuffer in the example does not need to be copy- or zero-initialized. By adding __NO_INIT this variable is allocated into an uninitialized memory section.</p>
+<p>Specifies a section name for a variable to simplify variable placement into a non-initialized memory. </p>
+<p>Specifies a section name (e.g, .bss.noinit or .noinit) for a variable that can be used by a linker-script to position that variable into a non-initialized memory.</p>
+<p><b>Code Example:</b> The EventBuffer in the example must not be copy- or zero-initialized. By adding __NO_INIT at variable declaration/definition, and with appropriate linker-script, this variable is positioned into a non-initialized memory.</p>
 <div class="fragment"><div class="line"><span class="keyword">static</span> EventRecord_t EventBuffer[EVENT_RECORD_COUNT] <a class="code hl_define" href="group__compiler__conntrol__gr.html#ga541e3bdeb73ef92c9a18ea2f7082bf5d">__NO_INIT</a> <a class="code hl_define" href="group__compiler__conntrol__gr.html#ga0c58caa5a273e2c21924509a45f8b849">__ALIGNED</a>(16);</div>
-<div class="ttc" id="agroup__compiler__conntrol__gr_html_ga541e3bdeb73ef92c9a18ea2f7082bf5d"><div class="ttname"><a href="group__compiler__conntrol__gr.html#ga541e3bdeb73ef92c9a18ea2f7082bf5d">__NO_INIT</a></div><div class="ttdeci">#define __NO_INIT</div><div class="ttdoc">Force symbol into uninitialized memory section.</div><div class="ttdef"><b>Definition:</b> ref_compiler_ctrl.txt:420</div></div>
+<div class="ttc" id="agroup__compiler__conntrol__gr_html_ga541e3bdeb73ef92c9a18ea2f7082bf5d"><div class="ttname"><a href="group__compiler__conntrol__gr.html#ga541e3bdeb73ef92c9a18ea2f7082bf5d">__NO_INIT</a></div><div class="ttdeci">#define __NO_INIT</div><div class="ttdoc">Specifies a section name for a variable to simplify variable placement into a non-initialized memory.</div><div class="ttdef"><b>Definition:</b> ref_compiler_ctrl.txt:422</div></div>
 </div><!-- fragment --> 
 </div>
 </div>
@@ -552,7 +552,7 @@ Macros</h2></td></tr>
 <div class="line">  <a class="code hl_function" href="group__system__init__gr.html#ga93f514700ccf00d08dbdcff7f1224eb2">SystemInit</a>();                             <span class="comment">/* CMSIS System Initialization */</span></div>
 <div class="line">  <a class="code hl_define" href="group__compiler__conntrol__gr.html#ga72db8b026c5e100254080fefabd9fd88">__PROGRAM_START</a>();                        <span class="comment">/* Enter PreMain (C library entry point) */</span></div>
 <div class="line">}</div>
-<div class="ttc" id="agroup__compiler__conntrol__gr_html_ga72db8b026c5e100254080fefabd9fd88"><div class="ttname"><a href="group__compiler__conntrol__gr.html#ga72db8b026c5e100254080fefabd9fd88">__PROGRAM_START</a></div><div class="ttdeci">#define __PROGRAM_START</div><div class="ttdoc">Entry function into the user application or library startup.</div><div class="ttdef"><b>Definition:</b> ref_compiler_ctrl.txt:459</div></div>
+<div class="ttc" id="agroup__compiler__conntrol__gr_html_ga72db8b026c5e100254080fefabd9fd88"><div class="ttname"><a href="group__compiler__conntrol__gr.html#ga72db8b026c5e100254080fefabd9fd88">__PROGRAM_START</a></div><div class="ttdeci">#define __PROGRAM_START</div><div class="ttdoc">Entry function into the user application or library startup.</div><div class="ttdef"><b>Definition:</b> ref_compiler_ctrl.txt:461</div></div>
 <div class="ttc" id="agroup__system__init__gr_html_ga93f514700ccf00d08dbdcff7f1224eb2"><div class="ttname"><a href="group__system__init__gr.html#ga93f514700ccf00d08dbdcff7f1224eb2">SystemInit</a></div><div class="ttdeci">void SystemInit(void)</div><div class="ttdoc">Function to Initialize the system.</div></div>
 </div><!-- fragment --> 
 </div>
@@ -607,7 +607,7 @@ Macros</h2></td></tr>
 <div class="line">  <span class="comment">// :</span></div>
 <div class="line">}</div>
 <div class="ttc" id="agroup__Core__Register__gr_html_ga6809a07c5cb7410e361f3fba57f72172"><div class="ttname"><a href="group__Core__Register__gr.html#ga6809a07c5cb7410e361f3fba57f72172">__set_MSPLIM</a></div><div class="ttdeci">__set_MSPLIM(uint32_t MainStackPtrLimit)</div><div class="ttdoc">Set Main Stack Pointer Limit Devices without Armv8-M Main Extensions (i.e. Cortex-M23) lack the non-s...</div></div>
-<div class="ttc" id="agroup__compiler__conntrol__gr_html_ga84b0bad4aa39632d3faea46aa1e102a8"><div class="ttname"><a href="group__compiler__conntrol__gr.html#ga84b0bad4aa39632d3faea46aa1e102a8">__STACK_LIMIT</a></div><div class="ttdeci">#define __STACK_LIMIT</div><div class="ttdoc">Compiler/linker symbol specifying the limit of the main stack (MSP).</div><div class="ttdef"><b>Definition:</b> ref_compiler_ctrl.txt:494</div></div>
+<div class="ttc" id="agroup__compiler__conntrol__gr_html_ga84b0bad4aa39632d3faea46aa1e102a8"><div class="ttname"><a href="group__compiler__conntrol__gr.html#ga84b0bad4aa39632d3faea46aa1e102a8">__STACK_LIMIT</a></div><div class="ttdeci">#define __STACK_LIMIT</div><div class="ttdoc">Compiler/linker symbol specifying the limit of the main stack (MSP).</div><div class="ttdef"><b>Definition:</b> ref_compiler_ctrl.txt:496</div></div>
 </div><!-- fragment --> 
 </div>
 </div>
