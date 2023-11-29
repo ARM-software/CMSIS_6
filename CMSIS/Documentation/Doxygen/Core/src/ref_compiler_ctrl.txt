@@ -404,13 +404,15 @@ void test (uint8_t *ptr) {
 /**************************************************************************************************/
 /**
 \def __NO_INIT
-\brief Force symbol into uninitialized memory section
+\brief Specifies a section name for a variable to simplify variable placement into a non-initialized memory
 \details
-This puts a symbol (such as a variable) into an uninitialized memory section (e.g, .bss.noinit).
+Specifies a section name (e.g, .bss.noinit or .noinit) for a variable that can be used by a linker-script
+to position that variable into a non-initialized memory.
 
 <b>Code Example:</b>
-The EventBuffer in the example does not need to be copy- or zero-initialized. By adding
-__NO_INIT this variable is allocated into an uninitialized memory section.
+The EventBuffer in the example must not be copy- or zero-initialized. By adding
+__NO_INIT at variable declaration/definition, and with appropriate linker-script, this variable is
+positioned into a non-initialized memory.
 
 \code
 static EventRecord_t EventBuffer[EVENT_RECORD_COUNT] __NO_INIT __ALIGNED(16);
