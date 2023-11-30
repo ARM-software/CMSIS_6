@@ -4,15 +4,15 @@
 
 //-------- <<< Use Configuration Wizard in Context Menu >>> --------------------
 
-// <n>Device pack:   ARM.CMSIS_DFP.0.0.0
+// <n>Device pack:   ARM::Cortex_DFP@1.0.0-dev16
 // <i>Device pack used to generate this file
 
 // <h>ROM Configuration
 // =======================
-// <h> IROM1=<__ROM0>
+// <h> ROM_S=<__ROM0>
 //   <o> Base address <0x0-0xFFFFFFFF:8>
 //   <i> Defines base address of memory region.
-//   <i> Default: 0x10000000
+//   <i> Default: 0x00000000
 #define __ROM0_BASE 0x00000000
 //   <o> Region size [bytes] <0x0-0xFFFFFFFF:8>
 //   <i> Defines size of memory region.
@@ -26,10 +26,10 @@
 #define __ROM0_STARTUP 1
 // </h>
 
-// <h> IROM2=<__ROM1>
+// <h> ROM_NS=<__ROM1>
 //   <o> Base address <0x0-0xFFFFFFFF:8>
 //   <i> Defines base address of memory region.
-//   <i> Default: 0x00000000
+//   <i> Default: 0x00200000
 #define __ROM1_BASE 0x00200000
 //   <o> Region size [bytes] <0x0-0xFFFFFFFF:8>
 //   <i> Defines size of memory region.
@@ -47,10 +47,10 @@
 
 // <h>RAM Configuration
 // =======================
-// <h> IRAM1=<__RAM0>
+// <h> RAM_S=<__RAM0>
 //   <o> Base address <0x0-0xFFFFFFFF:8>
 //   <i> Defines base address of memory region.
-//   <i> Default: 0x30000000
+//   <i> Default: 0x20000000
 #define __RAM0_BASE 0x20000000
 //   <o> Region size [bytes] <0x0-0xFFFFFFFF:8>
 //   <i> Defines size of memory region.
@@ -64,10 +64,10 @@
 #define __RAM0_NOINIT 0
 // </h>
 
-// <h> IRAM2=<__RAM1>
+// <h> RAM_NS=<__RAM1>
 //   <o> Base address <0x0-0xFFFFFFFF:8>
 //   <i> Defines base address of memory region.
-//   <i> Default: 0x20000000
+//   <i> Default: 0x20200000
 #define __RAM1_BASE 0x20200000
 //   <o> Region size [bytes] <0x0-0xFFFFFFFF:8>
 //   <i> Defines size of memory region.

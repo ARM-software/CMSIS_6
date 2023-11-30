@@ -3,20 +3,31 @@
 \defgroup   version_control_gr    Version Control
 \brief      Version \#define symbols for CMSIS release specific C/C++ source code
 \details
-The header file <b>cmsis_version.h</b> is included by each core header so that these definitions are available. 
+
+\ref cmsis_processor_files contain macros \ref __CORTEX_M , \ref __CORTEX_SC or \ref __STAR_MC that identify the processor core variant described in the file.
+
+Additionally each processor header file includes the <b>cmsis_version.h</b> file with \ref __CM_CMSIS_VERSION define that identifies the CMSIS version used.
+
+This allows application code and middleware components to verify the target processor and the CMSIS version that CMSIS-Core component implies.
+
+@{
+*/
+
+/**
+\brief Contains the CMSIS version
+\details The CMSIS version is a combination of the \ref __CM_CMSIS_VERSION_MAIN (bits 31..16) and \ref __CM_CMSIS_VERSION_SUB (bits 15..0).
 
 <b>Code Example:</b>
 \code
 #if defined(__CM_CMSIS_VERSION) && \
-    (__CM_CMSIS_VERSION >= 0x00050001)
-#error Yes, we have CMSIS 5.1 or later
+    (__CM_CMSIS_VERSION >= 0x00060000)
+#error Yes, we have CMSIS 6.0 or later
 #else
-#error We need CMSIS 5.1 or later!
+#error We need CMSIS 6.0 or later!
 #endif
 \endcode
-
-@{
 */
+#define __CM_CMSIS_VERSION
 
 /**
 \brief Contains the CMSIS major version
@@ -29,12 +40,6 @@ The header file <b>cmsis_version.h</b> is included by each core header so that t
 \details The CMSIS minor version can be used to query a CMSIS release update level.
 */
 #define __CM_CMSIS_VERSION_SUB
-
-/**
-\brief Contains the CMSIS version
-\details The CMSIS version is a combination of the \ref __CM_CMSIS_VERSION_MAIN (bits 31..15) and \ref __CM_CMSIS_VERSION_SUB (bits 14..0).
-*/
-#define __CM_CMSIS_VERSION
 
 /**
 \brief Contains the core version for a Cortex-M class controller.

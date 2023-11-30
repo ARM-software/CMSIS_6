@@ -1,11 +1,11 @@
-
-
 layer:
-  # type: Target
-  description: Target setup
+  type: Target
+  description: CA5 target components and files
 
-  # packs:
-  #   - pack: ARM::CMSIS
+  packs:
+    - pack: ARM::Cortex_DFP
+
+  device: ARMCA5
 
   components:
     # [Cvendor::] Cclass [&Cbundle] :Cgroup [:Csub] [&Cvariant] [@[>=]Cversion]

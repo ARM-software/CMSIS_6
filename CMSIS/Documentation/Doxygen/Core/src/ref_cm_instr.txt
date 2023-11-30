@@ -4,7 +4,7 @@
 \brief Functions that generate specific Cortex-M CPU Instructions.
 \details
 The following functions generate specific Cortex-M instructions that cannot be directly accessed by the C/C++ Compiler.
-Refer to the \ref ref_man_sec for detailed information about these Cortex-M instructions.
+Refer to the \ref ref_man_sec "Cortex-M Generic User Guides" for detailed information about these Cortex-M instructions.
 
 \note
 When using the <b>Arm Compiler Version 5 Toolchain</b> the following \ref intrinsic_CPU_gr are implemented using the Embedded Assembler.

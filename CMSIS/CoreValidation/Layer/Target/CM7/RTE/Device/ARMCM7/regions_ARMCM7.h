@@ -4,12 +4,12 @@
 
 //-------- <<< Use Configuration Wizard in Context Menu >>> --------------------
 
-// <n>Device pack:   ARM.CMSIS_DFP.0.0.0
+// <n>Device pack:   ARM::Cortex_DFP@1.0.0-dev16
 // <i>Device pack used to generate this file
 
 // <h>ROM Configuration
 // =======================
-// <h> IROM1=<__ROM0>
+// <h> ROM=<__ROM0>
 //   <o> Base address <0x0-0xFFFFFFFF:8>
 //   <i> Defines base address of memory region.
 //   <i> Default: 0x00000000
@@ -30,7 +30,7 @@
 
 // <h>RAM Configuration
 // =======================
-// <h> IRAM1=<__RAM0>
+// <h> RAM=<__RAM0>
 //   <o> Base address <0x0-0xFFFFFFFF:8>
 //   <i> Defines base address of memory region.
 //   <i> Default: 0x20000000

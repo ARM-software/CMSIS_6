@@ -1,8 +1,5 @@
-
-
 layer:
-  # type: App
-  # name: CMSIS-Core_Validation (Bootloader)
+  type: App
   description: Validation of CMSIS-Core implementation (Bootloader part)
 
   # packs:

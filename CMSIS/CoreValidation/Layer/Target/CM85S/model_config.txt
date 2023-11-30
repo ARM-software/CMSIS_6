@@ -2,6 +2,7 @@
 # instance.parameter=value       #(type, mode) default = 'def value' : description : [min..max]
 #----------------------------------------------------------------------------------------------
 fvp_mps2.mps2_visualisation.disable-visualisation=1   # (bool  , init-time) default = '0'      : Enable/disable visualisation
+fvp_mps2.DISABLE_GATING=1                             # (bool  , init-time) default = '0'      : Disable Memory gating logic
 cpu0.FPU=1                                            # (bool  , init-time) default = '1'      : Set whether the model has VFP support
 cpu0.MVE=1                                            # (int   , init-time) default = '0x1'    : Set whether the model has MVE support. If FPU = 0: 0=MVE not included, 1=Integer subset of MVE included. If FPU = 1: 0=MVE not included, 1=Integer subset of MVE included, 2=Integer and half and single precision floating point MVE included
 cpu0.ID_ISAR5.PACBTI=1                                # (int   , init-time) default = '0x0'    : 0: PAC/BTI not implemented, 1: PAC implemented using the QARMA5 algorithm with BTI, 2: PAC implemented using an IMP DEF algorithm with BTI, 4: PAC implemented using the QARMA3 algorithm with BTI
@@ -26,5 +27,4 @@ cpu0.LOCK_S_MPU=0                                     # (bool  , init-time) defa
 cpu0.LOCK_NS_MPU=0                                    # (bool  , init-time) default = '0'      : Lock down of Non-Secure MPU registers write
 cpu0.CPIF=1                                           # (bool  , init-time) default = '1'      : Specifies whether the external coprocessor interface is included
 cpu0.SECEXT=1                                         # (bool  , init-time) default = '1'      : Whether the ARMv8-M Security Extensions are included
-fvp_mps2.DISABLE_GATING=1                             # (bool  , init-time) default = '0'      : Disable Memory gating logic
 #----------------------------------------------------------------------------------------------

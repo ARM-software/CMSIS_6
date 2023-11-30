@@ -1317,7 +1317,6 @@ __STATIC_FORCEINLINE void __L1C_MaintainDCacheSetWay(uint32_t level, uint32_t ma
 }
 
 /** \brief  Clean and Invalidate the entire data or unified cache
-* Generic mechanism for cleaning/invalidating the entire data or unified cache to the point of coherency
 * \param [in] op 0 - invalidate, 1 - clean, otherwise - invalidate and clean
 */
 __STATIC_FORCEINLINE void L1C_CleanInvalidateCache(uint32_t op) {
