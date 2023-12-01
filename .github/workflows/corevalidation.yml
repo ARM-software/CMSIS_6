@@ -15,13 +15,16 @@ concurrency:
   group: ${{ github.workflow }}-${{ github.ref }}
   cancel-in-progress: true
 
+env:
+  IAR_VERSION: '9.40.2'
+
 jobs:
   build-and-run:
     
     strategy:
       fail-fast: true
       matrix:
-        compiler: [AC6, GCC, Clang]
+        compiler: [AC6, GCC, Clang, IAR]
     
     runs-on: ubuntu-latest
 
@@ -77,6 +80,26 @@ jobs:
           . <(curl https://aka.ms/vcpkg-init.sh -L)
           vcpkg x-update-registry --all
           vcpkg activate
+
+      - name: Cache IAR Toolchain
+        uses: actions/cache@v3
+        if: matrix.compiler == 'IAR'
+        with:
+          key: bxarm-${{env.IAR_VERSION}}-${{ runner.os }}-${{ runner.arch }}-${{ github.run_id }}
+          restore-keys: |
+            bxarm-${{env.IAR_VERSION}}-${{ runner.os }}-${{ runner.arch }}-
+          path: bxarm-${{env.IAR_VERSION}}.deb
+
+      - name: Install IAR Toolchain
+        if: matrix.compiler == 'IAR'
+        run: |
+          if [ ! -f bxarm-${{env.IAR_VERSION}}.deb ]; then
+            curl -LO http://files.iar.com/ftp/pub/box/bxarm-${{env.IAR_VERSION}}.deb
+          fi
+          sudo dpkg -i bxarm-${{env.IAR_VERSION}}.deb
+          echo "/opt/iarsystems/bxarm/arm/bin" >> "$GITHUB_PATH"
+          echo "IAR_TOOLCHAIN_${IAR_VERSION//./_}=/opt/iarsystems/bxarm/arm/bin" >> "$GITHUB_ENV"
+          # TODO: activate license
 
       - name: Activate Arm tool license
         working-directory: ./CMSIS/CoreValidation/Project

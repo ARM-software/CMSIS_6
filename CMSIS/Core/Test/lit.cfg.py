@@ -117,7 +117,7 @@ DEVICES = {
         'triple': 'thumbv7-em',
         'abi': 'eabi',
         'mcpu': 'cortex-m7',
-        'mfpu': 'fpv4-sp-d16',
+        'mfpu': 'fpv5-sp-d16',
         'mpu': True,
         'features': ['thumbv6m', 'thumbv7m', 'dsp', 'thumb-2', 'sat', 'ldrex', 'clz'],
         'header': 'core_cm7.h',
@@ -640,6 +640,11 @@ config.suffixes = [
 # test_source_root: The root path where tests are located.
 config.test_source_root = os.path.dirname(__file__)
 
+# environment
+preserv_env_vars = ['IAR_LMS_SETTINGS_DIR']
+for var in preserv_env_vars:
+    if var in os.environ:
+        config.environment[var] = os.environ[var]
 
 # clang_path = get_toolchain_from_env('CLANG')
 
@@ -717,6 +722,7 @@ class Toolchain_GCC(Toolchain):
         ccflags += list(sum([('-D', f'{define}={value}') for (define, value) in DEVICES[self.device]['defines'].items()], ()))
         return ccflags
 
+
 class Toolchain_Clang(Toolchain):
     TARGET = {
         'CM0': 'thumbv6m-none-unknown-eabi',
@@ -772,6 +778,73 @@ class Toolchain_Clang(Toolchain):
 
         return ccflags
     
+
+class Toolchain_IAR(Toolchain):
+    OPTIMIZE = {
+        'none': '-Ol',
+        'balanced': '-Oh',
+        'speed': '-Ohs',
+        'size': '-Ohz'
+    }
+
+    CPU = {
+        'CM0': 'cortex-m0',
+        'CM0plus': 'cortex-m0+',
+        'CM3': 'cortex-m3',
+        'CM4': 'cortex-m4',
+        'CM4FP': 'cortex-m4.fp.sp',
+        'CM7': 'cortex-m7',
+        'CM7SP': 'cortex-m7.fp.sp',
+        'CM7DP': 'cortex-m7.fp.dp',
+        'CM23': 'cortex-m.no_se',
+        'CM23S': 'cortex-m',
+        'CM23NS': 'cortex-m',
+        'CM33': 'cortex-m.no_se',
+        'CM33S': 'cortex-m',
+        'CM33NS': 'cortex-m',
+        'CM35P': 'cortex-m.no_se',
+        'CM35PS': 'cortex-m',
+        'CM35PNS': 'cortex-m',
+        'CM55': 'cortex-m.no_se',
+        'CM55S': 'cortex-m',
+        'CM55NS': 'cortex-m',
+        'CM85': 'cortex-m.no_se',
+        'CM85S': 'cortex-m',
+        'CM85NS': 'cortex-m',
+        'CA5': 'cortex-a5',
+        'CA5neon': 'cortex-a5.neon',
+        'CA7': 'cortex-a7.no_neon.no_vfp',
+        'CA7neon': 'cortex-a7',
+        'CA9': 'cortex-a9.no_neon.no_vfp',
+        'CA9neon': 'cortex-a9'
+    }
+
+    FPU = {
+        'none': 'none',
+        'fpv3-d16': 'vfpv3_d16',
+        'fpv4-sp-d16': 'vfpv4-sp',
+        'fpv5-sp-d16': 'vfpv5-sp',
+        'fpv5-d16': 'vfpv5_d16',
+        'neon-vfpv3': 'vfpv3',
+        'neon-vfpv4': 'vfpv4'
+    }
+
+    def __init__(self, **args):
+        super().__init__('IAR', **args)
+
+    def get_cc(self):
+        return os.path.join(self.get_root(), 'iccarm')
+
+    def get_ccflags(self):
+        ccflags = [
+            '-e', f'--cpu={self.CPU[self.device]}', f'--fpu={self.FPU[DEVICES[self.device]["mfpu"]]}', 
+            self.OPTIMIZE[self.optimize], '-I', '../Include', '-c', '-D', f'CORE_HEADER=\\"{DEVICES[device]["header"]}\\"']
+        if device.endswith('S') and not device.endswith('NS'):
+            ccflags += ["--cmse"]
+        ccflags += list(sum([('-D', f'{define}={value}') for (define, value) in DEVICES[self.device]['defines'].items()], ()))
+        return ccflags
+
+
 tc = None
 if toolchain == 'AC6':
     tc = Toolchain_AC6(device=device, optimize=optimize)
@@ -779,6 +852,8 @@ elif toolchain == 'GCC':
     tc = Toolchain_GCC(device=device, optimize=optimize)
 elif toolchain == 'Clang':
     tc = Toolchain_Clang(device=device, optimize=optimize)
+elif toolchain == 'IAR':
+    tc = Toolchain_IAR(device=device, optimize=optimize)
 
 prefixes = ['CHECK']
 if device.endswith('NS'):
