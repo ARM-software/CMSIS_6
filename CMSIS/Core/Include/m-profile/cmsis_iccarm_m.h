@@ -327,8 +327,7 @@ __STATIC_FORCEINLINE void __TZ_set_STACKSEAL_S (uint32_t* stackTop) {
   #define __get_CONTROL()             (__arm_rsr("CONTROL"))
   #define __get_FAULTMASK()           (__arm_rsr("FAULTMASK"))
 
-  #if ((defined (__FPU_PRESENT) && (__FPU_PRESENT == 1U)) && \
-       (defined (__FPU_USED   ) && (__FPU_USED    == 1U))     )
+  #if (defined (__ARM_FP)      && (__ARM_FP >= 1)) 
     #define __get_FPSCR()             (__arm_rsr("FPSCR"))
     #define __set_FPSCR(VALUE)        (__arm_wsr("FPSCR", (VALUE)))
   #else
@@ -602,8 +601,7 @@ __STATIC_FORCEINLINE void __TZ_set_CONTROL_NS(uint32_t control)
 
   #endif
 
-  #if (!((defined (__FPU_PRESENT) && (__FPU_PRESENT == 1U)) && \
-         (defined (__FPU_USED   ) && (__FPU_USED    == 1U))     ))
+  #if !((defined (__ARM_FP)      && (__ARM_FP >= 1)) 
     #undef __get_FPSCR
     #undef __set_FPSCR
     #define __get_FPSCR()       (0)
