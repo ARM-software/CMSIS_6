@@ -439,7 +439,13 @@ __STATIC_FORCEINLINE void __TZ_set_CONTROL_NS(uint32_t control)
   #define __NOP     __iar_builtin_no_operation
 
   #define __CLZ     __iar_builtin_CLZ
-  #define __CLREX   __iar_builtin_CLREX
+
+  /*
+   * __iar_builtin_CLREX can be reordered w.r.t. STREX during high optimizations.
+   * As a workaround we use inline assembly and a memory barrier.
+   * (IAR issue EWARM-11901)
+   */
+  #define __CLREX()  (__ASM volatile ("CLREX" ::: "memory"))
 
   #define __DMB     __iar_builtin_DMB
   #define __DSB     __iar_builtin_DSB
