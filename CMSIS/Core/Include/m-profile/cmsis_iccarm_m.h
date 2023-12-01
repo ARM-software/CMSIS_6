@@ -986,21 +986,21 @@ __STATIC_FORCEINLINE void __TZ_set_CONTROL_NS(uint32_t control)
   __IAR_FT uint32_t __STLEXB(uint8_t value, volatile uint8_t *ptr)
   {
     uint32_t res;
-    __ASM volatile ("STLEXB %0, %2, [%1]" : "=r" (res) : "r" (ptr), "r" (value) : "memory");
+    __ASM volatile ("STLEXB %0, %2, [%1]" : "=&r" (res) : "r" (ptr), "r" (value) : "memory");
     return res;
   }
 
   __IAR_FT uint32_t __STLEXH(uint16_t value, volatile uint16_t *ptr)
   {
     uint32_t res;
-    __ASM volatile ("STLEXH %0, %2, [%1]" : "=r" (res) : "r" (ptr), "r" (value) : "memory");
+    __ASM volatile ("STLEXH %0, %2, [%1]" : "=&r" (res) : "r" (ptr), "r" (value) : "memory");
     return res;
   }
 
   __IAR_FT uint32_t __STLEX(uint32_t value, volatile uint32_t *ptr)
   {
     uint32_t res;
-    __ASM volatile ("STLEX %0, %2, [%1]" : "=r" (res) : "r" (ptr), "r" (value) : "memory");
+    __ASM volatile ("STLEX %0, %2, [%1]" : "=&r" (res) : "r" (ptr), "r" (value) : "memory");
     return res;
   }
 
