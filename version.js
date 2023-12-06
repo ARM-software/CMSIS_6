@@ -1,13 +1,15 @@
 //--- list of versions ---
 const versions = {
     "General": {
-        "main": "6.0.0-dev97",
+        "main": "6.0.0-dev98",
         "latest": "6.0.0-dev84"
     },
     "Core": {
+        "main": "6.0.0",
         "latest": "5.7.0"
     },
     "Core_A": {
+        "main": "6.0.0",
         "latest": "1.2.1"
     },
     "Driver": {
