@@ -168,7 +168,6 @@ typedef struct _ARM_FLASH_STATUS {
   \fn          void ARM_Flash_SignalEvent (uint32_t event)
   \brief       Signal Flash event.
   \param[in]   event  Event notification mask
-  \return      none
 */
 
 typedef void (*ARM_Flash_SignalEvent_t) (uint32_t event);    ///< Pointer to \ref ARM_Flash_SignalEvent : Signal Flash Event.

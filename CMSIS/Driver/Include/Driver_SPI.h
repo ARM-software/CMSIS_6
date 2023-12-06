@@ -210,7 +210,6 @@ typedef struct _ARM_SPI_STATUS {
   \fn          void ARM_SPI_SignalEvent (uint32_t event)
   \brief       Signal SPI Events.
   \param[in]   event \ref SPI_events notification mask
-  \return      none
 */
 
 typedef void (*ARM_SPI_SignalEvent_t) (uint32_t event);  ///< Pointer to \ref ARM_SPI_SignalEvent : Signal SPI Event.

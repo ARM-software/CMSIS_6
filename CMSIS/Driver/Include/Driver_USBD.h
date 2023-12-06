@@ -216,7 +216,6 @@ typedef struct _ARM_USBD_STATE {
   \fn          void ARM_USBD_SignalDeviceEvent (uint32_t event)
   \brief       Signal USB Device Event.
   \param[in]   event \ref USBD_dev_events
-  \return      none
 */
 /**
   \fn          void ARM_USBD_SignalEndpointEvent (uint8_t ep_addr, uint32_t event)
@@ -225,7 +224,6 @@ typedef struct _ARM_USBD_STATE {
                 - ep_addr.0..3: Address
                 - ep_addr.7:    Direction
   \param[in]   event \ref USBD_ep_events
-  \return      none
 */
 
 typedef void (*ARM_USBD_SignalDeviceEvent_t)   (uint32_t event);                    ///< Pointer to \ref ARM_USBD_SignalDeviceEvent : Signal USB Device Event.
