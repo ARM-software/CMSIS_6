@@ -266,7 +266,6 @@ typedef struct _ARM_SAI_STATUS {
   \fn          void ARM_SAI_SignalEvent (uint32_t event)
   \brief       Signal SAI Events.
   \param[in]   event \ref SAI_events notification mask
-  \return      none
 */
 
 typedef void (*ARM_SAI_SignalEvent_t) (uint32_t event);  ///< Pointer to \ref ARM_SAI_SignalEvent : Signal SAI Event.

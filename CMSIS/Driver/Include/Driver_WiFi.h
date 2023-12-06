@@ -595,7 +595,6 @@ typedef struct ARM_WIFI_NET_INFO_s {
   \brief         Signal WiFi Events.
   \param[in]     event    \ref wifi_event notification mask
   \param[in]     arg      Pointer to argument of signaled event
-  \return        none
 */
 
 typedef void (*ARM_WIFI_SignalEvent_t) (uint32_t event, void *arg); ///< Pointer to \ref ARM_WIFI_SignalEvent : Signal WiFi Event.

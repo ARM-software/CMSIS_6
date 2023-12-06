@@ -291,7 +291,6 @@ typedef struct _ARM_MCI_STATUS {
   \fn            void ARM_MCI_SignalEvent (uint32_t event)
   \brief         Callback function that signals a MCI Card Event.
   \param[in]     event \ref mci_event_gr
-  \return        none
 */
 
 typedef void (*ARM_MCI_SignalEvent_t) (uint32_t event);  ///< Pointer to \ref ARM_MCI_SignalEvent : Signal MCI Card Event.
