@@ -790,8 +790,8 @@ reserved: 27</td>
 <div class="line">}</div>
 <div class="ttc" id="agroup__common__drv__gr_html_ad180da20fbde1d3dafc074af87c19540"><div class="ttname"><a href="group__common__drv__gr.html#ad180da20fbde1d3dafc074af87c19540">ARM_DRIVER_VERSION::api</a></div><div class="ttdeci">uint16_t api</div><div class="ttdoc">API version.</div><div class="ttdef"><b>Definition:</b> Driver_Common.h:47</div></div>
 <div class="ttc" id="agroup__common__drv__gr_html_structARM__DRIVER__VERSION"><div class="ttname"><a href="group__common__drv__gr.html#structARM__DRIVER__VERSION">ARM_DRIVER_VERSION</a></div><div class="ttdoc">Driver Version.</div><div class="ttdef"><b>Definition:</b> Driver_Common.h:46</div></div>
-<div class="ttc" id="agroup__sai__interface__gr_html_a30afd9cb3113c037b5f1926f5ef93b59"><div class="ttname"><a href="group__sai__interface__gr.html#a30afd9cb3113c037b5f1926f5ef93b59">ARM_DRIVER_SAI::GetVersion</a></div><div class="ttdeci">ARM_DRIVER_VERSION(* GetVersion)(void)</div><div class="ttdoc">Pointer to ARM_SAI_GetVersion : Get driver version.</div><div class="ttdef"><b>Definition:</b> Driver_SAI.h:298</div></div>
-<div class="ttc" id="agroup__sai__interface__gr_html_structARM__DRIVER__SAI"><div class="ttname"><a href="group__sai__interface__gr.html#structARM__DRIVER__SAI">ARM_DRIVER_SAI</a></div><div class="ttdoc">Access structure of the SAI Driver.</div><div class="ttdef"><b>Definition:</b> Driver_SAI.h:297</div></div>
+<div class="ttc" id="agroup__sai__interface__gr_html_a30afd9cb3113c037b5f1926f5ef93b59"><div class="ttname"><a href="group__sai__interface__gr.html#a30afd9cb3113c037b5f1926f5ef93b59">ARM_DRIVER_SAI::GetVersion</a></div><div class="ttdeci">ARM_DRIVER_VERSION(* GetVersion)(void)</div><div class="ttdoc">Pointer to ARM_SAI_GetVersion : Get driver version.</div><div class="ttdef"><b>Definition:</b> Driver_SAI.h:297</div></div>
+<div class="ttc" id="agroup__sai__interface__gr_html_structARM__DRIVER__SAI"><div class="ttname"><a href="group__sai__interface__gr.html#structARM__DRIVER__SAI">ARM_DRIVER_SAI</a></div><div class="ttdoc">Access structure of the SAI Driver.</div><div class="ttdef"><b>Definition:</b> Driver_SAI.h:296</div></div>
 </div><!-- fragment --> 
 </div>
 </div>
@@ -825,8 +825,8 @@ reserved: 27</td>
 <div class="line">  <span class="comment">// interrogate capabilities</span></div>
 <div class="line"> </div>
 <div class="line">}</div>
-<div class="ttc" id="agroup__sai__interface__gr_html_aec1182b4c3d0fec4e022ee09ca9afd13"><div class="ttname"><a href="group__sai__interface__gr.html#aec1182b4c3d0fec4e022ee09ca9afd13">ARM_DRIVER_SAI::GetCapabilities</a></div><div class="ttdeci">ARM_SAI_CAPABILITIES(* GetCapabilities)(void)</div><div class="ttdoc">Pointer to ARM_SAI_GetCapabilities : Get driver capabilities.</div><div class="ttdef"><b>Definition:</b> Driver_SAI.h:299</div></div>
-<div class="ttc" id="agroup__sai__interface__gr_html_structARM__SAI__CAPABILITIES"><div class="ttname"><a href="group__sai__interface__gr.html#structARM__SAI__CAPABILITIES">ARM_SAI_CAPABILITIES</a></div><div class="ttdoc">SAI Driver Capabilities.</div><div class="ttdef"><b>Definition:</b> Driver_SAI.h:278</div></div>
+<div class="ttc" id="agroup__sai__interface__gr_html_aec1182b4c3d0fec4e022ee09ca9afd13"><div class="ttname"><a href="group__sai__interface__gr.html#aec1182b4c3d0fec4e022ee09ca9afd13">ARM_DRIVER_SAI::GetCapabilities</a></div><div class="ttdeci">ARM_SAI_CAPABILITIES(* GetCapabilities)(void)</div><div class="ttdoc">Pointer to ARM_SAI_GetCapabilities : Get driver capabilities.</div><div class="ttdef"><b>Definition:</b> Driver_SAI.h:298</div></div>
+<div class="ttc" id="agroup__sai__interface__gr_html_structARM__SAI__CAPABILITIES"><div class="ttname"><a href="group__sai__interface__gr.html#structARM__SAI__CAPABILITIES">ARM_SAI_CAPABILITIES</a></div><div class="ttdoc">SAI Driver Capabilities.</div><div class="ttdef"><b>Definition:</b> Driver_SAI.h:277</div></div>
 </div><!-- fragment --> 
 </div>
 </div>
@@ -1247,7 +1247,7 @@ The parameter <em>arg2</em> provides, depending on the operation and/or <em>arg1
 <div class="ttc" id="agroup__sai__controls_html_gaa40390b6dd0df3b140fdc45bb7b1439d"><div class="ttname"><a href="group__sai__controls.html#gaa40390b6dd0df3b140fdc45bb7b1439d">ARM_SAI_CONTROL_RX</a></div><div class="ttdeci">#define ARM_SAI_CONTROL_RX</div><div class="ttdoc">Control Receiver; arg1.0: 0=disable (default), 1=enable.</div></div>
 <div class="ttc" id="agroup__sai__controls_html_gaba3e824e022fe2a5736de5dcbbd3d291"><div class="ttname"><a href="group__sai__controls.html#gaba3e824e022fe2a5736de5dcbbd3d291">ARM_SAI_CONFIGURE_RX</a></div><div class="ttdeci">#define ARM_SAI_CONFIGURE_RX</div><div class="ttdoc">Configure Receiver; arg1 and arg2 provide additional configuration.</div></div>
 <div class="ttc" id="agroup__sai__data__bits__control_html_ga1a7529e4b46d69dbd57ccef84552a3f4"><div class="ttname"><a href="group__sai__data__bits__control.html#ga1a7529e4b46d69dbd57ccef84552a3f4">ARM_SAI_DATA_SIZE</a></div><div class="ttdeci">#define ARM_SAI_DATA_SIZE(n)</div><div class="ttdoc">Data size in bits (8..32)</div></div>
-<div class="ttc" id="agroup__sai__interface__gr_html_a35af88ef40558504080c3f2a1d5af55a"><div class="ttname"><a href="group__sai__interface__gr.html#a35af88ef40558504080c3f2a1d5af55a">ARM_DRIVER_SAI::Control</a></div><div class="ttdeci">int32_t(* Control)(uint32_t control, uint32_t arg1, uint32_t arg2)</div><div class="ttdoc">Pointer to ARM_SAI_Control : Control SAI Interface.</div><div class="ttdef"><b>Definition:</b> Driver_SAI.h:307</div></div>
+<div class="ttc" id="agroup__sai__interface__gr_html_a35af88ef40558504080c3f2a1d5af55a"><div class="ttname"><a href="group__sai__interface__gr.html#a35af88ef40558504080c3f2a1d5af55a">ARM_DRIVER_SAI::Control</a></div><div class="ttdeci">int32_t(* Control)(uint32_t control, uint32_t arg1, uint32_t arg2)</div><div class="ttdoc">Pointer to ARM_SAI_Control : Control SAI Interface.</div><div class="ttdef"><b>Definition:</b> Driver_SAI.h:306</div></div>
 <div class="ttc" id="agroup__sai__mode__control_html_ga5bedff714ea0f90139665b72d44daddc"><div class="ttname"><a href="group__sai__mode__control.html#ga5bedff714ea0f90139665b72d44daddc">ARM_SAI_MODE_MASTER</a></div><div class="ttdeci">#define ARM_SAI_MODE_MASTER</div><div class="ttdoc">Master Mode.</div></div>
 <div class="ttc" id="agroup__sai__protocol__control_html_gaaaf423bbe59920b3c7813e22ce083ddc"><div class="ttname"><a href="group__sai__protocol__control.html#gaaaf423bbe59920b3c7813e22ce083ddc">ARM_SAI_PROTOCOL_I2S</a></div><div class="ttdeci">#define ARM_SAI_PROTOCOL_I2S</div><div class="ttdoc">I2S.</div></div>
 <div class="ttc" id="agroup__sai__sync__control_html_gad123537cb6ab9eefd6feab193ed74655"><div class="ttname"><a href="group__sai__sync__control.html#gad123537cb6ab9eefd6feab193ed74655">ARM_SAI_ASYNCHRONOUS</a></div><div class="ttdeci">#define ARM_SAI_ASYNCHRONOUS</div><div class="ttdoc">Asynchronous (default)</div></div>
@@ -1295,11 +1295,10 @@ The parameter <em>arg2</em> provides, depending on the operation and/or <em>arg1
 <p>Signal SAI Events. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">event</td><td><a class="el" href="group__SAI__events.html">SAI Events</a> notification mask </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">event</td><td><a class="el" href="group__SAI__events.html">SAI Events</a> notification mask</td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>none</dd></dl>
 <p>The function <b>ARM_SAI_SignalEvent</b> is a callback function registered by the function <a class="el" href="group__sai__interface__gr.html#ga89622a02ca1e7affb1a01eefacb6f54c">ARM_SAI_Initialize</a>.</p>
 <p>The parameter <em>event</em> indicates one or more events that occurred during driver operation. Each event is encoded in a separate bit and therefore it is possible to signal multiple events within the same call.</p>
 <p>The following events can be generated:</p>

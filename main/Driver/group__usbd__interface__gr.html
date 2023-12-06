@@ -793,8 +793,8 @@ reserved: 28</td>
 <div class="line">}</div>
 <div class="ttc" id="agroup__common__drv__gr_html_ad180da20fbde1d3dafc074af87c19540"><div class="ttname"><a href="group__common__drv__gr.html#ad180da20fbde1d3dafc074af87c19540">ARM_DRIVER_VERSION::api</a></div><div class="ttdeci">uint16_t api</div><div class="ttdoc">API version.</div><div class="ttdef"><b>Definition:</b> Driver_Common.h:47</div></div>
 <div class="ttc" id="agroup__common__drv__gr_html_structARM__DRIVER__VERSION"><div class="ttname"><a href="group__common__drv__gr.html#structARM__DRIVER__VERSION">ARM_DRIVER_VERSION</a></div><div class="ttdoc">Driver Version.</div><div class="ttdef"><b>Definition:</b> Driver_Common.h:46</div></div>
-<div class="ttc" id="agroup__usbd__interface__gr_html_a30afd9cb3113c037b5f1926f5ef93b59"><div class="ttname"><a href="group__usbd__interface__gr.html#a30afd9cb3113c037b5f1926f5ef93b59">ARM_DRIVER_USBD::GetVersion</a></div><div class="ttdeci">ARM_DRIVER_VERSION(* GetVersion)(void)</div><div class="ttdoc">Pointer to ARM_USBD_GetVersion : Get driver version.</div><div class="ttdef"><b>Definition:</b> Driver_USBD.h:250</div></div>
-<div class="ttc" id="agroup__usbd__interface__gr_html_structARM__DRIVER__USBD"><div class="ttname"><a href="group__usbd__interface__gr.html#structARM__DRIVER__USBD">ARM_DRIVER_USBD</a></div><div class="ttdoc">Access structure of the USB Device Driver.</div><div class="ttdef"><b>Definition:</b> Driver_USBD.h:249</div></div>
+<div class="ttc" id="agroup__usbd__interface__gr_html_a30afd9cb3113c037b5f1926f5ef93b59"><div class="ttname"><a href="group__usbd__interface__gr.html#a30afd9cb3113c037b5f1926f5ef93b59">ARM_DRIVER_USBD::GetVersion</a></div><div class="ttdeci">ARM_DRIVER_VERSION(* GetVersion)(void)</div><div class="ttdoc">Pointer to ARM_USBD_GetVersion : Get driver version.</div><div class="ttdef"><b>Definition:</b> Driver_USBD.h:248</div></div>
+<div class="ttc" id="agroup__usbd__interface__gr_html_structARM__DRIVER__USBD"><div class="ttname"><a href="group__usbd__interface__gr.html#structARM__DRIVER__USBD">ARM_DRIVER_USBD</a></div><div class="ttdoc">Access structure of the USB Device Driver.</div><div class="ttdef"><b>Definition:</b> Driver_USBD.h:247</div></div>
 </div><!-- fragment --> 
 </div>
 </div>
@@ -828,8 +828,8 @@ reserved: 28</td>
 <div class="line">  <span class="comment">// interrogate capabilities</span></div>
 <div class="line"> </div>
 <div class="line">}</div>
-<div class="ttc" id="agroup__usbd__interface__gr_html_a1de7fb4fa3f8ba93ce288af961d22124"><div class="ttname"><a href="group__usbd__interface__gr.html#a1de7fb4fa3f8ba93ce288af961d22124">ARM_DRIVER_USBD::GetCapabilities</a></div><div class="ttdeci">ARM_USBD_CAPABILITIES(* GetCapabilities)(void)</div><div class="ttdoc">Pointer to ARM_USBD_GetCapabilities : Get driver capabilities.</div><div class="ttdef"><b>Definition:</b> Driver_USBD.h:251</div></div>
-<div class="ttc" id="agroup__usbd__interface__gr_html_structARM__USBD__CAPABILITIES"><div class="ttname"><a href="group__usbd__interface__gr.html#structARM__USBD__CAPABILITIES">ARM_USBD_CAPABILITIES</a></div><div class="ttdoc">USB Device Driver Capabilities.</div><div class="ttdef"><b>Definition:</b> Driver_USBD.h:238</div></div>
+<div class="ttc" id="agroup__usbd__interface__gr_html_a1de7fb4fa3f8ba93ce288af961d22124"><div class="ttname"><a href="group__usbd__interface__gr.html#a1de7fb4fa3f8ba93ce288af961d22124">ARM_DRIVER_USBD::GetCapabilities</a></div><div class="ttdeci">ARM_USBD_CAPABILITIES(* GetCapabilities)(void)</div><div class="ttdoc">Pointer to ARM_USBD_GetCapabilities : Get driver capabilities.</div><div class="ttdef"><b>Definition:</b> Driver_USBD.h:249</div></div>
+<div class="ttc" id="agroup__usbd__interface__gr_html_structARM__USBD__CAPABILITIES"><div class="ttname"><a href="group__usbd__interface__gr.html#structARM__USBD__CAPABILITIES">ARM_USBD_CAPABILITIES</a></div><div class="ttdoc">USB Device Driver Capabilities.</div><div class="ttdef"><b>Definition:</b> Driver_USBD.h:236</div></div>
 </div><!-- fragment --> 
 </div>
 </div>
@@ -1388,11 +1388,10 @@ The parameter <em>num</em> is the number of bytes to transfer (must be multiple 
 <p>Signal USB Device Event. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">event</td><td><a class="el" href="group__USBD__dev__events.html">USBD Device Events</a> </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">event</td><td><a class="el" href="group__USBD__dev__events.html">USBD Device Events</a></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>none</dd></dl>
 <p>The function <b>ARM_USBD_SignalDeviceEvent</b> is a callback function registered by the function <a class="el" href="group__usbd__interface__gr.html#ga60b95c9c0c6767ff5938464cfd748f81">ARM_USBD_Initialize</a>.</p>
 <p>The parameter <em>event</em> indicates one or more events that occurred during driver operation. Each event is encoded in a separate bit and therefore it is possible to signal multiple events within the same call.</p>
 <p>Not every event is necessarily generated by the driver. This depends on the implemented capabilities stored in the data fields of the structure <a class="el" href="group__usbd__interface__gr.html#structARM__USBD__CAPABILITIES">ARM_USBD_CAPABILITIES</a>, which can be retrieved with the function <a class="el" href="group__usbd__interface__gr.html#ga178d01ab7896e1c675b90bbccfe8ea7d">ARM_USBD_GetCapabilities</a>.</p>
@@ -1450,11 +1449,10 @@ The parameter <em>num</em> is the number of bytes to transfer (must be multiple 
 <li>ep_addr.7: Direction </li>
 </ul>
 </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">event</td><td><a class="el" href="group__USBD__ep__events.html">USBD Endpoint Events</a> </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">event</td><td><a class="el" href="group__USBD__ep__events.html">USBD Endpoint Events</a></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>none</dd></dl>
 <p>The function <b>ARM_USBD_SignalEndpointEvent</b> is a callback function registered by the function <a class="el" href="group__usbd__interface__gr.html#ga60b95c9c0c6767ff5938464cfd748f81">ARM_USBD_Initialize</a>.</p>
 <p>The argument <em>ep_addr</em> specifies the endpoint. <br  />
 The parameter <em>event</em> indicates one or more events that occurred during driver operation. Each event is encoded in a separate bit and therefore it is possible to signal multiple events within the same call.</p>

@@ -799,8 +799,8 @@ Seconds. </td></tr>
 <div class="line">}</div>
 <div class="ttc" id="agroup__common__drv__gr_html_ad180da20fbde1d3dafc074af87c19540"><div class="ttname"><a href="group__common__drv__gr.html#ad180da20fbde1d3dafc074af87c19540">ARM_DRIVER_VERSION::api</a></div><div class="ttdeci">uint16_t api</div><div class="ttdoc">API version.</div><div class="ttdef"><b>Definition:</b> Driver_Common.h:47</div></div>
 <div class="ttc" id="agroup__common__drv__gr_html_structARM__DRIVER__VERSION"><div class="ttname"><a href="group__common__drv__gr.html#structARM__DRIVER__VERSION">ARM_DRIVER_VERSION</a></div><div class="ttdoc">Driver Version.</div><div class="ttdef"><b>Definition:</b> Driver_Common.h:46</div></div>
-<div class="ttc" id="agroup__eth__mac__interface__gr_html_a30afd9cb3113c037b5f1926f5ef93b59"><div class="ttname"><a href="group__eth__mac__interface__gr.html#a30afd9cb3113c037b5f1926f5ef93b59">ARM_DRIVER_ETH_MAC::GetVersion</a></div><div class="ttdeci">ARM_DRIVER_VERSION(* GetVersion)(void)</div><div class="ttdoc">Pointer to ARM_ETH_MAC_GetVersion : Get driver version.</div><div class="ttdef"><b>Definition:</b> Driver_ETH_MAC.h:287</div></div>
-<div class="ttc" id="agroup__eth__mac__interface__gr_html_structARM__DRIVER__ETH__MAC"><div class="ttname"><a href="group__eth__mac__interface__gr.html#structARM__DRIVER__ETH__MAC">ARM_DRIVER_ETH_MAC</a></div><div class="ttdoc">Access structure of the Ethernet MAC Driver.</div><div class="ttdef"><b>Definition:</b> Driver_ETH_MAC.h:286</div></div>
+<div class="ttc" id="agroup__eth__mac__interface__gr_html_a30afd9cb3113c037b5f1926f5ef93b59"><div class="ttname"><a href="group__eth__mac__interface__gr.html#a30afd9cb3113c037b5f1926f5ef93b59">ARM_DRIVER_ETH_MAC::GetVersion</a></div><div class="ttdeci">ARM_DRIVER_VERSION(* GetVersion)(void)</div><div class="ttdoc">Pointer to ARM_ETH_MAC_GetVersion : Get driver version.</div><div class="ttdef"><b>Definition:</b> Driver_ETH_MAC.h:286</div></div>
+<div class="ttc" id="agroup__eth__mac__interface__gr_html_structARM__DRIVER__ETH__MAC"><div class="ttname"><a href="group__eth__mac__interface__gr.html#structARM__DRIVER__ETH__MAC">ARM_DRIVER_ETH_MAC</a></div><div class="ttdoc">Access structure of the Ethernet MAC Driver.</div><div class="ttdef"><b>Definition:</b> Driver_ETH_MAC.h:285</div></div>
 </div><!-- fragment --> 
 </div>
 </div>
@@ -834,8 +834,8 @@ Seconds. </td></tr>
 <div class="line">  <span class="comment">// interrogate capabilities</span></div>
 <div class="line"> </div>
 <div class="line">}</div>
-<div class="ttc" id="agroup__eth__mac__interface__gr_html_a738cc36f2a26e9737578feed6a2b6371"><div class="ttname"><a href="group__eth__mac__interface__gr.html#a738cc36f2a26e9737578feed6a2b6371">ARM_DRIVER_ETH_MAC::GetCapabilities</a></div><div class="ttdeci">ARM_ETH_MAC_CAPABILITIES(* GetCapabilities)(void)</div><div class="ttdoc">Pointer to ARM_ETH_MAC_GetCapabilities : Get driver capabilities.</div><div class="ttdef"><b>Definition:</b> Driver_ETH_MAC.h:288</div></div>
-<div class="ttc" id="agroup__eth__mac__interface__gr_html_structARM__ETH__MAC__CAPABILITIES"><div class="ttname"><a href="group__eth__mac__interface__gr.html#structARM__ETH__MAC__CAPABILITIES">ARM_ETH_MAC_CAPABILITIES</a></div><div class="ttdoc">Ethernet MAC Capabilities.</div><div class="ttdef"><b>Definition:</b> Driver_ETH_MAC.h:262</div></div>
+<div class="ttc" id="agroup__eth__mac__interface__gr_html_a738cc36f2a26e9737578feed6a2b6371"><div class="ttname"><a href="group__eth__mac__interface__gr.html#a738cc36f2a26e9737578feed6a2b6371">ARM_DRIVER_ETH_MAC::GetCapabilities</a></div><div class="ttdeci">ARM_ETH_MAC_CAPABILITIES(* GetCapabilities)(void)</div><div class="ttdoc">Pointer to ARM_ETH_MAC_GetCapabilities : Get driver capabilities.</div><div class="ttdef"><b>Definition:</b> Driver_ETH_MAC.h:287</div></div>
+<div class="ttc" id="agroup__eth__mac__interface__gr_html_structARM__ETH__MAC__CAPABILITIES"><div class="ttname"><a href="group__eth__mac__interface__gr.html#structARM__ETH__MAC__CAPABILITIES">ARM_ETH_MAC_CAPABILITIES</a></div><div class="ttdoc">Ethernet MAC Capabilities.</div><div class="ttdef"><b>Definition:</b> Driver_ETH_MAC.h:261</div></div>
 </div><!-- fragment --> 
 </div>
 </div>
@@ -1550,11 +1550,10 @@ The parameter <em>time</em> is pointer to a structure that holds time informatio
 <p>Callback function that signals a Ethernet Event. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">event</td><td>event notification mask </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">event</td><td>event notification mask</td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>none</dd></dl>
 <p>The function <b>ARM_ETH_MAC_SignalEvent</b> is a callback function registered by the function <a class="el" href="group__eth__mac__interface__gr.html#gacf42d11b171cd032f0ec1de6db2b6832">ARM_ETH_MAC_Initialize</a>. This function is typically called from interrupt service routines (ISR) to indicate that a frame is processed or a special event occurred.</p>
 <p>The parameter <em>event</em> indicates one or more events that occurred during driver operation. Each event is encoded in a separate bit and therefore it is possible to signal multiple events within the same call.</p>
 <p>Not every event is necessarily generated by the driver. This depends on the implemented capabilities stored in the data fields of the structure <a class="el" href="group__eth__mac__interface__gr.html#structARM__ETH__MAC__CAPABILITIES">ARM_ETH_MAC_CAPABILITIES</a>, which can be retrieved with the function <a class="el" href="group__eth__mac__interface__gr.html#ga2b13b230502736d8c7679b359dff20d0">ARM_ETH_MAC_GetCapabilities</a>.</p>

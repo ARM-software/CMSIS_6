@@ -817,8 +817,8 @@ reserved: 28</td>
 <div class="line">}</div>
 <div class="ttc" id="agroup__common__drv__gr_html_ad180da20fbde1d3dafc074af87c19540"><div class="ttname"><a href="group__common__drv__gr.html#ad180da20fbde1d3dafc074af87c19540">ARM_DRIVER_VERSION::api</a></div><div class="ttdeci">uint16_t api</div><div class="ttdoc">API version.</div><div class="ttdef"><b>Definition:</b> Driver_Common.h:47</div></div>
 <div class="ttc" id="agroup__common__drv__gr_html_structARM__DRIVER__VERSION"><div class="ttname"><a href="group__common__drv__gr.html#structARM__DRIVER__VERSION">ARM_DRIVER_VERSION</a></div><div class="ttdoc">Driver Version.</div><div class="ttdef"><b>Definition:</b> Driver_Common.h:46</div></div>
-<div class="ttc" id="agroup__usbh__host__gr_html_a30afd9cb3113c037b5f1926f5ef93b59"><div class="ttname"><a href="group__usbh__host__gr.html#a30afd9cb3113c037b5f1926f5ef93b59">ARM_DRIVER_USBH::GetVersion</a></div><div class="ttdeci">ARM_DRIVER_VERSION(* GetVersion)(void)</div><div class="ttdoc">Pointer to ARM_USBH_GetVersion : Get driver version.</div><div class="ttdef"><b>Definition:</b> Driver_USBH.h:310</div></div>
-<div class="ttc" id="agroup__usbh__host__gr_html_structARM__DRIVER__USBH"><div class="ttname"><a href="group__usbh__host__gr.html#structARM__DRIVER__USBH">ARM_DRIVER_USBH</a></div><div class="ttdoc">Access structure of USB Host Driver.</div><div class="ttdef"><b>Definition:</b> Driver_USBH.h:309</div></div>
+<div class="ttc" id="agroup__usbh__host__gr_html_a30afd9cb3113c037b5f1926f5ef93b59"><div class="ttname"><a href="group__usbh__host__gr.html#a30afd9cb3113c037b5f1926f5ef93b59">ARM_DRIVER_USBH::GetVersion</a></div><div class="ttdeci">ARM_DRIVER_VERSION(* GetVersion)(void)</div><div class="ttdoc">Pointer to ARM_USBH_GetVersion : Get driver version.</div><div class="ttdef"><b>Definition:</b> Driver_USBH.h:308</div></div>
+<div class="ttc" id="agroup__usbh__host__gr_html_structARM__DRIVER__USBH"><div class="ttname"><a href="group__usbh__host__gr.html#structARM__DRIVER__USBH">ARM_DRIVER_USBH</a></div><div class="ttdoc">Access structure of USB Host Driver.</div><div class="ttdef"><b>Definition:</b> Driver_USBH.h:307</div></div>
 </div><!-- fragment --> 
 </div>
 </div>
@@ -852,8 +852,8 @@ reserved: 28</td>
 <div class="line">  <span class="comment">// interrogate capabilities</span></div>
 <div class="line"> </div>
 <div class="line">}</div>
-<div class="ttc" id="agroup__usbh__host__gr_html_a20c55f083ed276d37e70c2aff09b48ac"><div class="ttname"><a href="group__usbh__host__gr.html#a20c55f083ed276d37e70c2aff09b48ac">ARM_DRIVER_USBH::GetCapabilities</a></div><div class="ttdeci">ARM_USBH_CAPABILITIES(* GetCapabilities)(void)</div><div class="ttdoc">Pointer to ARM_USBH_GetCapabilities : Get driver capabilities.</div><div class="ttdef"><b>Definition:</b> Driver_USBH.h:311</div></div>
-<div class="ttc" id="agroup__usbh__host__gr_html_structARM__USBH__CAPABILITIES"><div class="ttname"><a href="group__usbh__host__gr.html#structARM__USBH__CAPABILITIES">ARM_USBH_CAPABILITIES</a></div><div class="ttdoc">USB Host Driver Capabilities.</div><div class="ttdef"><b>Definition:</b> Driver_USBH.h:296</div></div>
+<div class="ttc" id="agroup__usbh__host__gr_html_a20c55f083ed276d37e70c2aff09b48ac"><div class="ttname"><a href="group__usbh__host__gr.html#a20c55f083ed276d37e70c2aff09b48ac">ARM_DRIVER_USBH::GetCapabilities</a></div><div class="ttdeci">ARM_USBH_CAPABILITIES(* GetCapabilities)(void)</div><div class="ttdoc">Pointer to ARM_USBH_GetCapabilities : Get driver capabilities.</div><div class="ttdef"><b>Definition:</b> Driver_USBH.h:309</div></div>
+<div class="ttc" id="agroup__usbh__host__gr_html_structARM__USBH__CAPABILITIES"><div class="ttname"><a href="group__usbh__host__gr.html#structARM__USBH__CAPABILITIES">ARM_USBH_CAPABILITIES</a></div><div class="ttdoc">USB Host Driver Capabilities.</div><div class="ttdef"><b>Definition:</b> Driver_USBH.h:294</div></div>
 </div><!-- fragment --> 
 </div>
 </div>
@@ -1500,11 +1500,10 @@ reserved: 28</td>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">port</td><td>Root HUB Port Number </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">event</td><td><a class="el" href="group__USBH__port__events.html">USBH Port Events</a> </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">event</td><td><a class="el" href="group__USBH__port__events.html">USBH Port Events</a></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>none</dd></dl>
 <p>The function <b>ARM_USBH_SignalPortEvent</b> is a callback function registered by the function <a class="el" href="group__usbh__host__gr.html#gad1e73f778c95dd46d4396e7741a97f0b">ARM_USBH_Initialize</a>.</p>
 <p>The parameter <em>port</em> specifies the root hub port number. <br  />
 The parameter <em>event</em> indicates one or more events that occurred during driver operation. Each event is encoded in a separate bit and therefore it is possible to signal multiple events within the same call.</p>
@@ -1561,11 +1560,10 @@ The parameter <em>event</em> indicates one or more events that occurred during d
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">pipe_hndl</td><td>Pipe Handle </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">event</td><td><a class="el" href="group__USBH__pipe__events.html">USBH Pipe Events</a> </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">event</td><td><a class="el" href="group__USBH__pipe__events.html">USBH Pipe Events</a></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>none</dd></dl>
 <p>The function <b>ARM_USBH_SignalPipeEvent</b> is a callback function registered by the function <a class="el" href="group__usbh__host__gr.html#gad1e73f778c95dd46d4396e7741a97f0b">ARM_USBH_Initialize</a>.</p>
 <p>The parameter <em>pipe_hndl</em> specifies the pipe handle. <br  />
 The parameter <em>event</em> indicates one or more events that occurred during driver operation. Each event is encoded in a separate bit and therefore it is possible to signal multiple events within the same call.</p>
