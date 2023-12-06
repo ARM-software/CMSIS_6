@@ -10,10 +10,13 @@ The table below provides information about the changes delivered with specific v
       <th>Description</th>
     </tr>
     <tr>
-      <td>V5.7.0</td>
+      <td>V6.0.0</td>
       <td>
         <ul>
-          <li>Added: Added new compiler macros \ref __ALIAS and \ref __NO_INIT</li>
+          <li>Core(M) and Core(A) joined into single Core component</li>
+          <li>Core header files reworked, aligned with TRMs</li>
+          <li>Previously deprecated features removed</li>
+          <li>Dropped support for Arm Compiler 5</li>
         </ul>
       </td>
     </tr>

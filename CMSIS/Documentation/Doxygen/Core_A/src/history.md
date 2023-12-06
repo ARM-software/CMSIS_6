@@ -1,13 +1,24 @@
 # Revision History {#rev_histCoreA}
 
-CMSIS-Core (A) component is maintaned with own versioning that gets incremented together with the [CMSIS Software Pack](../General/cmsis_pack.html) releases.
+CMSIS-Core(A) component is maintaned with own versioning that gets incremented together with the [CMSIS Software Pack](../General/cmsis_pack.html) releases.
 
-The table below provides information about the changes delivered with specific versions of CMSIS-Core (A) updates.
+The table below provides information about the changes delivered with specific versions of CMSIS-Core(A) updates.
 
 <table class="cmtable" summary="Revision History">
     <tr>
       <th>Version</th>
       <th>Description</th>
+    </tr>
+    <tr>
+      <td>V6.0.0</td>
+      <td>
+        <ul>
+          <li>Core(M) and Core(A) joined into single Core component</li>
+          <li>Core header files reworked, aligned with TRMs</li>
+          <li>Previously deprecated features removed</li>
+          <li>Dropped support for Arm Compiler 5</li>
+        </ul>
+      </td>
     </tr>
     <tr>
       <td>V1.2.1</td>
