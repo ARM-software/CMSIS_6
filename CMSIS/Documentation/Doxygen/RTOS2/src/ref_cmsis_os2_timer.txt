@@ -93,27 +93,6 @@ use ISR callable functions from the timer callback.
 \details
 Specifies the following attributes for the \ref osTimerNew function.
 
-\var osTimerAttr_t::attr_bits
-\details
-Reserved for future use (must be set to '0' for future compatibility).
-
-\var osTimerAttr_t::cb_mem
-\details
-Pointer to a memory for the timer control block object. Refer to \ref CMSIS_RTOS_MemoryMgmt_Manual for more information.
-
-Default: \token{NULL} to use \ref CMSIS_RTOS_MemoryMgmt_Automatic for the timer control block.
-
-\var osTimerAttr_t::cb_size
-\details
-The size (in bytes) of memory block passed with \ref cb_mem. Required value depends on the underlying kernel implementation.
-
-Default: \token{0} as the default is no memory provided with \ref cb_mem.
-
-\var osTimerAttr_t::name
-\details
-Pointer to a constant string with a human readable name (displayed during debugging) of the timer object.
-
-Default: \token{NULL} no name specified.
 */
 
 
@@ -308,4 +287,29 @@ void TimerDelete_example (void) {
 
 /**
 @}
+*/
+
+// these struct members must stay outside the group to avoid double entries in documentation
+/**
+\var osTimerAttr_t::attr_bits
+\details
+Reserved for future use (must be set to '0' for future compatibility).
+
+\var osTimerAttr_t::cb_mem
+\details
+Pointer to a memory for the timer control block object. Refer to \ref CMSIS_RTOS_MemoryMgmt_Manual for more information.
+
+Default: \token{NULL} to use \ref CMSIS_RTOS_MemoryMgmt_Automatic for the timer control block.
+
+\var osTimerAttr_t::cb_size
+\details
+The size (in bytes) of memory block passed with \ref cb_mem. Required value depends on the underlying kernel implementation.
+
+Default: \token{0} as the default is no memory provided with \ref cb_mem.
+
+\var osTimerAttr_t::name
+\details
+Pointer to a constant string with a human readable name (displayed during debugging) of the timer object.
+
+Default: \token{NULL} no name specified.
 */
