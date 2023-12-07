@@ -269,28 +269,28 @@
       <type>const char *</type>
       <name>name</name>
       <anchorfile>group__CMSIS__RTOS__TimerMgmt.html</anchorfile>
-      <anchor>gab74e6bf80237ddc4109968cedc58c151</anchor>
+      <anchor>ab74e6bf80237ddc4109968cedc58c151</anchor>
       <arglist></arglist>
     </member>
     <member kind="variable">
       <type>uint32_t</type>
       <name>attr_bits</name>
       <anchorfile>group__CMSIS__RTOS__TimerMgmt.html</anchorfile>
-      <anchor>ga6e93b49cb79c12f768d72580c7731f30</anchor>
+      <anchor>a6e93b49cb79c12f768d72580c7731f30</anchor>
       <arglist></arglist>
     </member>
     <member kind="variable">
       <type>void *</type>
       <name>cb_mem</name>
       <anchorfile>group__CMSIS__RTOS__TimerMgmt.html</anchorfile>
-      <anchor>ga1e100dc33d403841ed3c344e3397868e</anchor>
+      <anchor>a1e100dc33d403841ed3c344e3397868e</anchor>
       <arglist></arglist>
     </member>
     <member kind="variable">
       <type>uint32_t</type>
       <name>cb_size</name>
       <anchorfile>group__CMSIS__RTOS__TimerMgmt.html</anchorfile>
-      <anchor>gaa55a4335d12dc2785dc00fdc292d1159</anchor>
+      <anchor>aa55a4335d12dc2785dc00fdc292d1159</anchor>
       <arglist></arglist>
     </member>
   </compound>
@@ -1021,34 +1021,6 @@
       <anchorfile>group__CMSIS__RTOS__TimerMgmt.html</anchorfile>
       <anchor>gad0001dd74721ab461789324806db2453</anchor>
       <arglist>(osTimerId_t timer_id)</arglist>
-    </member>
-    <member kind="variable">
-      <type>uint32_t</type>
-      <name>osTimerAttr_t::attr_bits</name>
-      <anchorfile>group__CMSIS__RTOS__TimerMgmt.html</anchorfile>
-      <anchor>ga6e93b49cb79c12f768d72580c7731f30</anchor>
-      <arglist></arglist>
-    </member>
-    <member kind="variable">
-      <type>void *</type>
-      <name>osTimerAttr_t::cb_mem</name>
-      <anchorfile>group__CMSIS__RTOS__TimerMgmt.html</anchorfile>
-      <anchor>ga1e100dc33d403841ed3c344e3397868e</anchor>
-      <arglist></arglist>
-    </member>
-    <member kind="variable">
-      <type>uint32_t</type>
-      <name>osTimerAttr_t::cb_size</name>
-      <anchorfile>group__CMSIS__RTOS__TimerMgmt.html</anchorfile>
-      <anchor>gaa55a4335d12dc2785dc00fdc292d1159</anchor>
-      <arglist></arglist>
-    </member>
-    <member kind="variable">
-      <type>const char *</type>
-      <name>osTimerAttr_t::name</name>
-      <anchorfile>group__CMSIS__RTOS__TimerMgmt.html</anchorfile>
-      <anchor>gab74e6bf80237ddc4109968cedc58c151</anchor>
-      <arglist></arglist>
     </member>
   </compound>
   <compound kind="group">

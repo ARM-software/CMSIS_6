@@ -128,8 +128,7 @@ $(document).ready(function(){initNavTree('group__CMSIS__RTOS__TimerMgmt.html',''
 <a href="#nested-classes">Data Structures</a> &#124;
 <a href="#typedef-members">Typedefs</a> &#124;
 <a href="#enum-members">Enumerations</a> &#124;
-<a href="#func-members">Functions</a> &#124;
-<a href="#var-members">Variables</a>  </div>
+<a href="#func-members">Functions</a>  </div>
   <div class="headertitle"><div class="title">Timer Management<div class="ingroups"><a class="el" href="group__CMSIS__RTOS.html">CMSIS-RTOS2 API</a></div></div></div>
 </div><!--header-->
 <div class="contents">
@@ -182,21 +181,6 @@ Functions</h2></td></tr>
 <tr class="memitem:gad0001dd74721ab461789324806db2453"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__CMSIS__RTOS__Definitions.html#ga6c0dbe6069e4e7f47bb4cd32ae2b813e">osStatus_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CMSIS__RTOS__TimerMgmt.html#gad0001dd74721ab461789324806db2453">osTimerDelete</a> (<a class="el" href="group__CMSIS__RTOS__TimerMgmt.html#gaad5409379689ee27bb0a0b56ea4a4b34">osTimerId_t</a> timer_id)</td></tr>
 <tr class="memdesc:gad0001dd74721ab461789324806db2453"><td class="mdescLeft">&#160;</td><td class="mdescRight">Delete a timer.  <br /></td></tr>
 <tr class="separator:gad0001dd74721ab461789324806db2453"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="var-members" name="var-members"></a>
-Variables</h2></td></tr>
-<tr class="memitem:ga6e93b49cb79c12f768d72580c7731f30"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CMSIS__RTOS__TimerMgmt.html#ga6e93b49cb79c12f768d72580c7731f30">attr_bits</a></td></tr>
-<tr class="memdesc:ga6e93b49cb79c12f768d72580c7731f30"><td class="mdescLeft">&#160;</td><td class="mdescRight">attribute bits  <br /></td></tr>
-<tr class="separator:ga6e93b49cb79c12f768d72580c7731f30"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga1e100dc33d403841ed3c344e3397868e"><td class="memItemLeft" align="right" valign="top">void *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CMSIS__RTOS__TimerMgmt.html#ga1e100dc33d403841ed3c344e3397868e">cb_mem</a></td></tr>
-<tr class="memdesc:ga1e100dc33d403841ed3c344e3397868e"><td class="mdescLeft">&#160;</td><td class="mdescRight">memory for control block  <br /></td></tr>
-<tr class="separator:ga1e100dc33d403841ed3c344e3397868e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gaa55a4335d12dc2785dc00fdc292d1159"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CMSIS__RTOS__TimerMgmt.html#gaa55a4335d12dc2785dc00fdc292d1159">cb_size</a></td></tr>
-<tr class="memdesc:gaa55a4335d12dc2785dc00fdc292d1159"><td class="mdescLeft">&#160;</td><td class="mdescRight">size of provided memory for control block  <br /></td></tr>
-<tr class="separator:gaa55a4335d12dc2785dc00fdc292d1159"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gab74e6bf80237ddc4109968cedc58c151"><td class="memItemLeft" align="right" valign="top">const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CMSIS__RTOS__TimerMgmt.html#gab74e6bf80237ddc4109968cedc58c151">name</a></td></tr>
-<tr class="memdesc:gab74e6bf80237ddc4109968cedc58c151"><td class="mdescLeft">&#160;</td><td class="mdescRight">name of the timer  <br /></td></tr>
-<tr class="separator:gab74e6bf80237ddc4109968cedc58c151"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Description</h2>
 <p>Create and control timer and timer callback functions. </p>
@@ -255,7 +239,7 @@ Working with Timers</h2>
 </div><table class="fieldtable">
 <tr><th colspan="3">Data Fields</th></tr>
 <tr><td class="fieldtype">
-<a id="gab74e6bf80237ddc4109968cedc58c151" name="gab74e6bf80237ddc4109968cedc58c151"></a>const char *</td>
+<a id="ab74e6bf80237ddc4109968cedc58c151" name="ab74e6bf80237ddc4109968cedc58c151"></a>const char *</td>
 <td class="fieldname">
 name</td>
 <td class="fielddoc">
@@ -263,14 +247,14 @@ name of the timer <p>Pointer to a constant string with a human readable name (di
 <p>Default: <span class="XML-Token">NULL</span> no name specified. </p>
 </td></tr>
 <tr><td class="fieldtype">
-<a id="ga6e93b49cb79c12f768d72580c7731f30" name="ga6e93b49cb79c12f768d72580c7731f30"></a>uint32_t</td>
+<a id="a6e93b49cb79c12f768d72580c7731f30" name="a6e93b49cb79c12f768d72580c7731f30"></a>uint32_t</td>
 <td class="fieldname">
 attr_bits</td>
 <td class="fielddoc">
 attribute bits <p>Reserved for future use (must be set to '0' for future compatibility). </p>
 </td></tr>
 <tr><td class="fieldtype">
-<a id="ga1e100dc33d403841ed3c344e3397868e" name="ga1e100dc33d403841ed3c344e3397868e"></a>void *</td>
+<a id="a1e100dc33d403841ed3c344e3397868e" name="a1e100dc33d403841ed3c344e3397868e"></a>void *</td>
 <td class="fieldname">
 cb_mem</td>
 <td class="fielddoc">
@@ -278,12 +262,12 @@ memory for control block <p>Pointer to a memory for the timer control block obje
 <p>Default: <span class="XML-Token">NULL</span> to use <a class="el" href="usingOS2.html#CMSIS_RTOS_MemoryMgmt_Automatic">Automatic Dynamic Allocation</a> for the timer control block. </p>
 </td></tr>
 <tr><td class="fieldtype">
-<a id="gaa55a4335d12dc2785dc00fdc292d1159" name="gaa55a4335d12dc2785dc00fdc292d1159"></a>uint32_t</td>
+<a id="aa55a4335d12dc2785dc00fdc292d1159" name="aa55a4335d12dc2785dc00fdc292d1159"></a>uint32_t</td>
 <td class="fieldname">
 cb_size</td>
 <td class="fielddoc">
-size of provided memory for control block <p>The size (in bytes) of memory block passed with <a class="el" href="group__CMSIS__RTOS__TimerMgmt.html#ga1e100dc33d403841ed3c344e3397868e">cb_mem</a>. Required value depends on the underlying kernel implementation.</p>
-<p>Default: <span class="XML-Token">0</span> as the default is no memory provided with <a class="el" href="group__CMSIS__RTOS__TimerMgmt.html#ga1e100dc33d403841ed3c344e3397868e">cb_mem</a>. </p>
+size of provided memory for control block <p>The size (in bytes) of memory block passed with <a class="el" href="group__CMSIS__RTOS__TimerMgmt.html#a1e100dc33d403841ed3c344e3397868e">cb_mem</a>. Required value depends on the underlying kernel implementation.</p>
+<p>Default: <span class="XML-Token">0</span> as the default is no memory provided with <a class="el" href="group__CMSIS__RTOS__TimerMgmt.html#a1e100dc33d403841ed3c344e3397868e">cb_mem</a>. </p>
 </td></tr>
 </table>
 
@@ -687,78 +671,6 @@ Returned by:</p><ul>
 <div class="line">  ;</div>
 <div class="line">}</div>
 </div><!-- fragment --> 
-</div>
-</div>
-<h2 class="groupheader">Variable Documentation</h2>
-<a id="ga6e93b49cb79c12f768d72580c7731f30" name="ga6e93b49cb79c12f768d72580c7731f30"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga6e93b49cb79c12f768d72580c7731f30">&#9670;&#160;</a></span>attr_bits</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">attr_bits</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>attribute bits </p>
-<p>Reserved for future use (must be set to '0' for future compatibility). </p>
-
-</div>
-</div>
-<a id="ga1e100dc33d403841ed3c344e3397868e" name="ga1e100dc33d403841ed3c344e3397868e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga1e100dc33d403841ed3c344e3397868e">&#9670;&#160;</a></span>cb_mem</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">cb_mem</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>memory for control block </p>
-<p>Pointer to a memory for the timer control block object. Refer to <a class="el" href="usingOS2.html#CMSIS_RTOS_MemoryMgmt_Manual">Manual User-defined Allocation</a> for more information.</p>
-<p>Default: <span class="XML-Token">NULL</span> to use <a class="el" href="usingOS2.html#CMSIS_RTOS_MemoryMgmt_Automatic">Automatic Dynamic Allocation</a> for the timer control block. </p>
-
-</div>
-</div>
-<a id="gaa55a4335d12dc2785dc00fdc292d1159" name="gaa55a4335d12dc2785dc00fdc292d1159"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#gaa55a4335d12dc2785dc00fdc292d1159">&#9670;&#160;</a></span>cb_size</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">cb_size</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>size of provided memory for control block </p>
-<p>The size (in bytes) of memory block passed with <a class="el" href="group__CMSIS__RTOS__TimerMgmt.html#ga1e100dc33d403841ed3c344e3397868e">cb_mem</a>. Required value depends on the underlying kernel implementation.</p>
-<p>Default: <span class="XML-Token">0</span> as the default is no memory provided with <a class="el" href="group__CMSIS__RTOS__TimerMgmt.html#ga1e100dc33d403841ed3c344e3397868e">cb_mem</a>. </p>
-
-</div>
-</div>
-<a id="gab74e6bf80237ddc4109968cedc58c151" name="gab74e6bf80237ddc4109968cedc58c151"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#gab74e6bf80237ddc4109968cedc58c151">&#9670;&#160;</a></span>name</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">name</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>name of the timer </p>
-<p>Pointer to a constant string with a human readable name (displayed during debugging) of the timer object.</p>
-<p>Default: <span class="XML-Token">NULL</span> no name specified. </p>
-
 </div>
 </div>
 </div><!-- contents -->

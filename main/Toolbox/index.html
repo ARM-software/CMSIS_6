@@ -132,9 +132,19 @@ Access to CMSIS-Toolbox</h1>
 <ul>
 <li><a href="https://github.com/Open-CMSIS-Pack/cmsis-toolbox"><b>CMSIS-Toolbox GitHub Repo</b></a> - contains the source code and releases.</li>
 <li><a href="https://github.com/Open-CMSIS-Pack/cmsis-toolbox/blob/main/docs/README.md"><b>CMSIS-Toolbox User Guide</b></a> - provides user documentation for the CMSIS-Toolbox.</li>
+<li><a href="https://artifacts.keil.arm.com/cmsis-toolbox/"><b>CMSIS-Toolbox Artifacts</b></a> - pre-built utilities for integration into IDEs and CI workflows.</li>
 </ul>
 <h1><a class="anchor" id="autotoc_md1"></a>
-Benefits</h1>
+Overall Workflow</h1>
+<p>The CMSIS-Toolbox uses <a href="https://www.keil.arm.com/packs/">Software Packs</a> for device/board support and access reusable software components.</p>
+<p>The overall operation is controlled with intuitive <a href="https://github.com/ReinhardKeil/cmsis-toolbox/blob/main/docs/YML-Input-Format.md">User Input files in YAML format</a>. The application is defined in the <code>*.csolution.yml</code> file and contains one or more projects that can utilize pre-configured software layers. The build engine CMake/Ninja calls the C/C++ compiler toolchain that generates the Build Output.</p>
+<p>The <code>cbuild</code> command orchestrates the overall build process and calls individual command line tools to generate the target application binary image or library.</p>
+<div class="image">
+<img src="tool-overview.png" alt=""/>
+<div class="caption">
+Overview of Project Definition</div></div>
+    <h1><a class="anchor" id="autotoc_md2"></a>
+Key Features and Benefits</h1>
 <ul>
 <li>Flexible CLI tools that can be used stand-alone or integrated into <a href="https://marketplace.visualstudio.com/items?itemName=Arm.keil-studio-pack">VS Code</a> or DevOps systems for Continuous Integration (CI).</li>
 <li>Stand-alone tools that are available for all host platforms (Windows, Mac, Linux) and flexible deployable.</li>
@@ -144,50 +154,10 @@ Benefits</h1>
 <li>Software layers enable code reuse across similar applications with a pre-configured set of source files and software components.</li>
 <li>Multiple hardware targets allow application deployment to different hardware (test board, production hardware, virtual hardware, etc.).</li>
 <li>Multiple build types support software testing and verification (debug build, test build, release build, ect.).</li>
+<li>Support for multiple toolchains, even within the same set of project files and command line options to select different toolchains during verification.</li>
+<li>Linker Script Management utilizes device and board information to define the available memory and allows flexible control of the linker operation.</li>
+<li>Uses a CMake backend for the build process that integrates with other tools such as VS Code intellisense. </li>
 </ul>
-<h1><a class="anchor" id="autotoc_md2"></a>
-Project Creation</h1>
-<p>The following tools support the creation of build information for embedded applications:</p>
-<table class="markdownTable">
-<tr class="markdownTableHead">
-<th class="markdownTableHeadLeft">Tool   </th><th class="markdownTableHeadLeft">Description    </th></tr>
-<tr class="markdownTableRowOdd">
-<td class="markdownTableBodyLeft"><b>cpackget</b>   </td><td class="markdownTableBodyLeft"><b>Pack Manager:</b> install and manage software packs in the development environment.    </td></tr>
-<tr class="markdownTableRowEven">
-<td class="markdownTableBodyLeft"><b>csolution</b>   </td><td class="markdownTableBodyLeft"><b>Project Manager:</b> create build information for embedded applications that consist of one or more related projects.    </td></tr>
-<tr class="markdownTableRowOdd">
-<td class="markdownTableBodyLeft"><b>cbuild</b>   </td><td class="markdownTableBodyLeft"><b>Build Invocation:</b> orchestrate the build steps utilizing CMSIS tools and a CMake compilation process.   </td></tr>
-</table>
-<p>The build information is defined with <b>User Input Files</b> in YAML format. It starts with a <code>*.csolution.yml</code> file that refers related, but independent projects defined with <code>*.cproject.yml</code> files. A <code>*.cproject.yml</code> may refer one or more <code>*.clayer.yml</code> files that define re-usable project parts that may be shared across projects.</p>
-<p>The build information can refer to <b>Software Packs</b> that define Device and Board information and provide access to re-usable software components such as drivers and middleware. A <code>cdefault.yml</code> file provides a common setup for various compilers and generic translation controls enable compiler agonistic projects; compiler toolchain specific controls may be used when required.</p>
-<p>The <b>Output Files</b> contain detailed build information and manage the configuration files for software components.</p>
-<p>The diagram below provides an overview of the <b>build information</b> used by the CMSIS-Toolbox.</p>
-<div class="image">
-<img src="csolution-overview.png" alt=""/>
-<div class="caption">
-Overview of Project Definition</div></div>
-    <h1><a class="anchor" id="autotoc_md3"></a>
-Software Pack Creation</h1>
-<p>The following tools support the creation of Software Packs in <a href="https://open-cmsis-pack.github.io/Open-CMSIS-Pack-Spec/main/html/index.html"><b>CMSIS-Pack format</b></a>:</p>
-<table class="markdownTable">
-<tr class="markdownTableHead">
-<th class="markdownTableHeadLeft">Tool   </th><th class="markdownTableHeadLeft">Description    </th></tr>
-<tr class="markdownTableRowOdd">
-<td class="markdownTableBodyLeft"><b>packchk</b>   </td><td class="markdownTableBodyLeft"><b>Pack Validation:</b> installs and manages software packs in the local development environment.    </td></tr>
-<tr class="markdownTableRowEven">
-<td class="markdownTableBodyLeft"><b>svdconv</b>   </td><td class="markdownTableBodyLeft"><b>SVD Check / Convert:</b> validate and/or convert System View Description (SVD) files.   </td></tr>
-</table>
-<p>In addition several scripts are provided that simplify pack creation with desktop or cloud workflows. This is described in several hands-on tutorials:</p>
-<table class="markdownTable">
-<tr class="markdownTableHead">
-<th class="markdownTableHeadLeft">Hands-on Tutorial   </th><th class="markdownTableHeadLeft">Description    </th></tr>
-<tr class="markdownTableRowOdd">
-<td class="markdownTableBodyLeft"><a href="https://github.com/Open-CMSIS-Pack/SW-Pack-HandsOn"><b>SW-Pack-HandsOn</b></a>   </td><td class="markdownTableBodyLeft">Explains the steps to create a simple software pack using the Open-CMSIS-Pack technology.    </td></tr>
-<tr class="markdownTableRowEven">
-<td class="markdownTableBodyLeft"><a href="https://github.com/Open-CMSIS-Pack/DFP-Pack-HandsOn"><b>DFP-Pack-HandsOn</b></a>   </td><td class="markdownTableBodyLeft">Explains the structure and creation of a Device Family Pack (DFP).    </td></tr>
-<tr class="markdownTableRowOdd">
-<td class="markdownTableBodyLeft"><a href="https://github.com/Open-CMSIS-Pack/DFP-Pack-HandsOn"><b>BSP-Pack-HandsOn</b></a>   </td><td class="markdownTableBodyLeft">Explains the structure and creation of a Board Support Pack (BSP).   </td></tr>
-</table>
 </div></div><!-- PageDoc -->
 </div><!-- contents -->
 </div><!-- doc-content -->
