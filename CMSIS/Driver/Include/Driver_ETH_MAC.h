@@ -250,7 +250,6 @@ typedef struct _ARM_ETH_MAC_TIME {
   \fn          void ARM_ETH_MAC_SignalEvent (uint32_t event)
   \brief       Callback function that signals a Ethernet Event.
   \param[in]   event  event notification mask
-  \return      none
 */
 
 typedef void (*ARM_ETH_MAC_SignalEvent_t) (uint32_t event);  ///< Pointer to \ref ARM_ETH_MAC_SignalEvent : Signal Ethernet Event.

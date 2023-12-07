@@ -283,7 +283,6 @@ typedef struct _ARM_USART_MODEM_STATUS {
   \fn          void ARM_USART_SignalEvent (uint32_t event)
   \brief       Signal USART Events.
   \param[in]   event  \ref USART_events notification mask
-  \return      none
 */
 
 typedef void (*ARM_USART_SignalEvent_t) (uint32_t event);  ///< Pointer to \ref ARM_USART_SignalEvent : Signal USART Event.

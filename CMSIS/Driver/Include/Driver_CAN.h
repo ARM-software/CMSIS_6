@@ -318,13 +318,11 @@ typedef struct _ARM_CAN_STATUS {
   \fn          void ARM_CAN_SignalUnitEvent (uint32_t event)
   \brief       Signal CAN unit event.
   \param[in]   event \ref CAN_unit_events
-  \return      none
 
   \fn          void ARM_CAN_SignalObjectEvent (uint32_t obj_idx, uint32_t event)
   \brief       Signal CAN object event.
   \param[in]   obj_idx  Object index
   \param[in]   event \ref CAN_events
-  \return      none
 */
 
 typedef void (*ARM_CAN_SignalUnitEvent_t)   (uint32_t event);                   ///< Pointer to \ref ARM_CAN_SignalUnitEvent   : Signal CAN Unit Event.

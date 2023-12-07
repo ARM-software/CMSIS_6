@@ -357,7 +357,6 @@ typedef struct _ARM_NAND_STATUS {
   \brief         Signal NAND event.
   \param[in]     dev_num  Device number
   \param[in]     event    Event notification mask
-  \return        none
 */
 
 typedef void (*ARM_NAND_SignalEvent_t) (uint32_t dev_num, uint32_t event);    ///< Pointer to \ref ARM_NAND_SignalEvent : Signal NAND Event.

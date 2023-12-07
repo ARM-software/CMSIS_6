@@ -275,14 +275,12 @@ typedef uint32_t ARM_USBH_PIPE_HANDLE;
   \brief       Signal Root HUB Port Event.
   \param[in]   port  Root HUB Port Number
   \param[in]   event \ref USBH_port_events
-  \return      none
 */
 /**
   \fn          void ARM_USBH_SignalPipeEvent (ARM_USBH_PIPE_HANDLE pipe_hndl, uint32_t event)
   \brief       Signal Pipe Event.
   \param[in]   pipe_hndl  Pipe Handle
   \param[in]   event  \ref USBH_pipe_events
-  \return      none
 */
 
 typedef void (*ARM_USBH_SignalPortEvent_t) (uint8_t port, uint32_t event);                    ///< Pointer to \ref ARM_USBH_SignalPortEvent : Signal Root HUB Port Event.
@@ -387,7 +385,6 @@ typedef struct _ARM_DRIVER_USBH {
 /**
   \fn          void ARM_USBH_HCI_Interrupt (void)
   \brief       USB Host HCI Interrupt Handler.
-  \return      none
 */
 
 typedef void (*ARM_USBH_HCI_Interrupt_t) (void);  ///< Pointer to Interrupt Handler Routine.

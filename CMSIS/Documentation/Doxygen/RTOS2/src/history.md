@@ -12,6 +12,8 @@ The table below provides information about the changes delivered with specific v
     <tr>
       <td>V2.3.0</td>
       <td>
+         Changed:
+         - OS Tick API moved from Device to CMSIS class
          Added:
          - Provisional support for processor affinity in SMP systems:
            - \ref osThreadAttr_t :: affinity_mask

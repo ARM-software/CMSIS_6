@@ -47,7 +47,7 @@ PROJECT_NAME           = "CMSIS-Core (Cortex-A)"
 # could be handy for archiving the generated documentation or if some version
 # control system is used.
 
-PROJECT_NUMBER         = "Version 1.2.1"
+PROJECT_NUMBER         = "Version 6.0.0"
 
 # Using the PROJECT_BRIEF tag one can provide an optional one line description
 # for a project that appears at the top of each page and should give viewer a
@@ -2450,7 +2450,7 @@ TAGFILES               =
 # tag file that is based on the input files it reads. See section "Linking to
 # external documentation" for more information about the usage of tag files.
 
-GENERATE_TAGFILE       = ../../html/Core/cmsis_core_a.tag
+GENERATE_TAGFILE       = ../../html/Core_A/cmsis_core_a.tag
 
 # If the ALLEXTERNALS tag is set to YES, all external class will be listed in
 # the class index. If set to NO, only the inherited external classes will be
