@@ -254,7 +254,7 @@ If the thread watchdog is not restarted during the specified amount of ticks the
 
 Figure below explains the concept with an example:
 
-!["Example use of Thread Watchdogs](./images/thread_watchdogs.png)
+![Example use of Thread Watchdogs](./images/thread_watchdogs.png)
 
 \ref rtos_process_isolation_faults provides more details on the available possibilities for system recovery.
 
