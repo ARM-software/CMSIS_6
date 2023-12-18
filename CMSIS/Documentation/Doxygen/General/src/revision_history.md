@@ -26,7 +26,7 @@ Release history of other CMSIS components and tools can be found in their docume
        - CMSIS-DSP: moved into separate pack
        - CMSIS-NN: moved into separate pack
        - CMSIS-RTOS: deprecated and removed
-        - RTX4 is deprecated and removed
+         - RTX4 is deprecated and removed
        - CMSIS-RTOS2: 2.3.0
          - OS Tick API moved from Device to CMSIS class
          - Added provisional support for processor affinity in SMP systems
