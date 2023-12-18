@@ -139,7 +139,7 @@ jobs:
 
       - name: Archive Test Reports
         if: ${{ !cancelled() && env.ARM_UBL_ACTIVATION_CODE }}
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: test-results-${{ matrix.compiler }}
           path: ./CMSIS/CoreValidation/Project/build/*.junit
@@ -150,7 +150,7 @@ jobs:
     steps:
       - name: Archive event file
         if: ${{ !cancelled() }}
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: EventFile
           path: ${{ github.event_path }}
