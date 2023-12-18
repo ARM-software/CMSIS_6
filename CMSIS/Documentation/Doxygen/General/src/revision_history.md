@@ -4,8 +4,7 @@ The table on this page provides high-level overview of the CMSIS Base Software r
 
 In addition, each component of the CMSIS Base software has its own release history listed on following pages:
 
- - [**CMSIS-Core (Cortex-M) Revision History**](../Core/core_revisionHistory.html)
- - [**CMSIS-Core (Cortex-A) Revision History**](../Core_A/rev_histCoreA.html)
+ - [**CMSIS-Core Revision History**](../Core/core_revisionHistory.html)
  - [**CMSIS-Driver Revision History**](../Driver/driver_revisionHistory.html)
  - [**CMSIS-RTOS2 Revision History**](../RTOS2/rtos_revisionHistory.html)
 
@@ -17,15 +16,29 @@ Release history of other CMSIS components and tools can be found in their docume
       <th>Description</th>
     </tr>
     <tr>
-      <td>6.0.0-dev</td>
+      <td>6.0.0</td>
       <td>
-       In development.
-
-       - CMSIS-Core(A): 
-       - CMSIS-Core(M): 
-       - CMSIS-Driver: 
-       - CMSIS-RTOS2: 
-          - RTX 
+       - CMSIS-Core: 6.0.0
+         - Core(M) and Core(A) joined into single Core component
+         - Core header files reworked, aligned with TRMs
+         - Previously deprecated features removed
+         - Dropped support for Arm Compiler 5
+       - CMSIS-DSP: moved into separate pack
+       - CMSIS-NN: moved into separate pack
+       - CMSIS-RTOS: deprecated and removed
+        - RTX4 is deprecated and removed
+       - CMSIS-RTOS2: 2.3.0
+         - OS Tick API moved from Device to CMSIS class
+         - Added provisional support for processor affinity in SMP systems
+         - RTX5 is moved into separate CMSIS-RTX pack
+       - CMSIS-Driver: 2.9.0
+         - Updated VIO API 1.0.0
+         - Added GPIO Driver API 1.0.0
+       - CMSIS-Pack: moved into Open-CMSIS-Pack project
+       - CMSIS-SVD: moved into Open-CMSIS-Pack project
+       - CMSIS-DAP: moved into separate repository
+       - Devices: moved into separate Cortex_DFP pack
+       - Utilities: moved into CMSIS-Toolbox project
       </td>
     </tr>
     <tr>
