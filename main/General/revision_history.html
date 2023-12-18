@@ -130,8 +130,7 @@ $(document).ready(function(){initNavTree('revision_history.html',''); initResiza
 <div class="textblock"><p><a class="anchor" id="md_src_revision_history"></a> The table on this page provides high-level overview of the CMSIS Base Software release history.</p>
 <p>In addition, each component of the CMSIS Base software has its own release history listed on following pages:</p>
 <ul>
-<li><a href="../Core/core_revisionHistory.html"><b>CMSIS-Core (Cortex-M) Revision History</b></a></li>
-<li><a href="../Core_A/rev_histCoreA.html"><b>CMSIS-Core (Cortex-A) Revision History</b></a></li>
+<li><a href="../Core/core_revisionHistory.html"><b>CMSIS-Core Revision History</b></a></li>
 <li><a href="../Driver/driver_revisionHistory.html"><b>CMSIS-Driver Revision History</b></a></li>
 <li><a href="../RTOS2/rtos_revisionHistory.html"><b>CMSIS-RTOS2 Revision History</b></a></li>
 </ul>
@@ -140,15 +139,36 @@ $(document).ready(function(){initNavTree('revision_history.html',''); initResiza
 <tr>
 <th>Version </th><th>Description  </th></tr>
 <tr>
-<td>6.0.0-dev </td><td><p class="starttd">In development.</p>
-<ul>
-<li>CMSIS-Core(A):</li>
-<li>CMSIS-Core(M):</li>
-<li>CMSIS-Driver:</li>
-<li>CMSIS-RTOS2:<ul>
-<li>RTX   </li>
+<td>6.0.0 </td><td><ul>
+<li>CMSIS-Core: 6.0.0<ul>
+<li>Core(M) and Core(A) joined into single Core component</li>
+<li>Core header files reworked, aligned with TRMs</li>
+<li>Previously deprecated features removed</li>
+<li>Dropped support for Arm Compiler 5</li>
 </ul>
 </li>
+<li>CMSIS-DSP: moved into separate pack</li>
+<li>CMSIS-NN: moved into separate pack</li>
+<li>CMSIS-RTOS: deprecated and removed<ul>
+<li>RTX4 is deprecated and removed</li>
+</ul>
+</li>
+<li>CMSIS-RTOS2: 2.3.0<ul>
+<li>OS Tick API moved from Device to CMSIS class</li>
+<li>Added provisional support for processor affinity in SMP systems</li>
+<li>RTX5 is moved into separate CMSIS-RTX pack</li>
+</ul>
+</li>
+<li>CMSIS-Driver: 2.9.0<ul>
+<li>Updated VIO API 1.0.0</li>
+<li>Added GPIO Driver API 1.0.0</li>
+</ul>
+</li>
+<li>CMSIS-Pack: moved into Open-CMSIS-Pack project</li>
+<li>CMSIS-SVD: moved into Open-CMSIS-Pack project</li>
+<li>CMSIS-DAP: moved into separate repository</li>
+<li>Devices: moved into separate Cortex_DFP pack</li>
+<li>Utilities: moved into CMSIS-Toolbox project   </li>
 </ul>
 </td></tr>
 <tr>

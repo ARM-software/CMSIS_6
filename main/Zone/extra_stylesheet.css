@@ -1246,7 +1246,7 @@ address {
 blockquote.doxtable {
     margin-left:-7px;
     margin-bottom: 6px;
-    padding-left: 3px;
+    padding-left: 8px;
     border-left:4px solid;
     border-color: #D0C000;
     background-color: var(--page-background-color);
@@ -1489,7 +1489,7 @@ dl.section
 dl.note
 {
     margin-left:-7px;
-    padding-left: 3px;
+    padding-left: 8px;
     border-left:4px solid;
     border-color: #D0C000;
 }
@@ -1497,7 +1497,7 @@ dl.note
 dl.warning, dl.attention
 {
     margin-left:-7px;
-    padding-left: 3px;
+    padding-left: 8px;
     border-left:4px solid;
     border-color: #FF0000;
 }
@@ -1513,7 +1513,7 @@ dl.pre, dl.post, dl.invariant
 dl.deprecated
 {
     margin-left:-7px;
-    padding-left: 3px;
+    padding-left: 8px;
     border-left:4px solid;
     border-color: #505050;
 }
@@ -1521,7 +1521,7 @@ dl.deprecated
 dl.todo
 {
     margin-left:-7px;
-    padding-left: 3px;
+    padding-left: 8px;
     border-left:4px solid;
     border-color: #00C0E0;
 }
@@ -1529,7 +1529,7 @@ dl.todo
 dl.test
 {
     margin-left:-7px;
-    padding-left: 3px;
+    padding-left: 8px;
     border-left:4px solid;
     border-color: #3030E0;
 }
@@ -1537,7 +1537,7 @@ dl.test
 dl.bug
 {
         margin-left:-7px;
-        padding-left: 3px;
+        padding-left: 8px;
         border-left:4px solid;
         border-color: #C08050;
 }
@@ -1545,7 +1545,7 @@ dl.bug
 dl.safety
 {
         margin-left:-7px;
-        padding-left: 3px;
+        padding-left: 8px;
         border-left:4px solid;
         border-color: #008000;
 }

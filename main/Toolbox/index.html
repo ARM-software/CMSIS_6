@@ -130,9 +130,9 @@ $(document).ready(function(){initNavTree('index.html',''); initResizable(); });
 Access to CMSIS-Toolbox</h1>
 <p>CMSIS-Toolbox is actively maintained in a dedicated GitHub repository and released as a set of binary utilities.</p>
 <ul>
-<li><a href="https://github.com/Open-CMSIS-Pack/cmsis-toolbox"><b>CMSIS-Toolbox GitHub Repo</b></a> - contains the source code and releases.</li>
 <li><a href="https://github.com/Open-CMSIS-Pack/cmsis-toolbox/blob/main/docs/README.md"><b>CMSIS-Toolbox User Guide</b></a> - provides user documentation for the CMSIS-Toolbox.</li>
 <li><a href="https://artifacts.keil.arm.com/cmsis-toolbox/"><b>CMSIS-Toolbox Artifacts</b></a> - pre-built utilities for integration into IDEs and CI workflows.</li>
+<li><a href="https://github.com/Open-CMSIS-Pack/cmsis-toolbox"><b>CMSIS-Toolbox GitHub Repo</b></a> - contains the source code and releases.</li>
 </ul>
 <h1><a class="anchor" id="autotoc_md1"></a>
 Overall Workflow</h1>
@@ -148,13 +148,13 @@ Key Features and Benefits</h1>
 <ul>
 <li>Flexible CLI tools that can be used stand-alone or integrated into <a href="https://marketplace.visualstudio.com/items?itemName=Arm.keil-studio-pack">VS Code</a> or DevOps systems for Continuous Integration (CI).</li>
 <li>Stand-alone tools that are available for all host platforms (Windows, Mac, Linux) and flexible deployable.</li>
+<li>Support for multiple toolchains (Arm, GCC, IAR, and LLVM compiler), even within the same set of project files and command line options to select different toolchains during verification.</li>
 <li><a href="https://www.keil.arm.com/packs/">Software Packs</a> simplify tool setup with <code>device:</code> or <code>board:</code> selection and project creation with access to reusable software components.</li>
 <li>Organize solutions with projects that are independently managed simplifies a wide range of use cases including multi-processor applications or unit testing.</li>
 <li>Provisions for product lifecycle management (PLM) with versioned software packs that are easy to update and management for configuration files.</li>
 <li>Software layers enable code reuse across similar applications with a pre-configured set of source files and software components.</li>
 <li>Multiple hardware targets allow application deployment to different hardware (test board, production hardware, virtual hardware, etc.).</li>
 <li>Multiple build types support software testing and verification (debug build, test build, release build, ect.).</li>
-<li>Support for multiple toolchains, even within the same set of project files and command line options to select different toolchains during verification.</li>
 <li>Linker Script Management utilizes device and board information to define the available memory and allows flexible control of the linker operation.</li>
 <li>Uses a CMake backend for the build process that integrates with other tools such as VS Code intellisense. </li>
 </ul>
