@@ -91,7 +91,7 @@ jobs:
         
       - name: Initialize CodeQL
         if: matrix.compiler == 'GCC'
-        uses: github/codeql-action/init@v2
+        uses: github/codeql-action/init@v3
         with:
           languages: cpp
           queries: security-and-quality
@@ -113,7 +113,7 @@ jobs:
 
       - name: Perform CodeQL Analysis
         if: ${{ !cancelled() && matrix.compiler == 'GCC' }}
-        uses: github/codeql-action/analyze@v2
+        uses: github/codeql-action/analyze@v3
 
       - name: Execute
         if: ${{ env.ARM_UBL_ACTIVATION_CODE }}
