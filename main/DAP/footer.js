@@ -1,7 +1,7 @@
 function writeHeader() {
-    document.write('Version 8cf732db');
+    document.write('Version 1b0f5161');
 };
 
 function writeFooter()  {
-    document.write('Generated on Wed Dec 20 2023 09:09:38 for CMSIS-DAP 8cf732db. Copyright &copy; 2023 Arm Limited (or its affiliates). All rights reserved.');
+    document.write('Generated on Wed Dec 20 2023 09:22:50 for CMSIS-DAP 1b0f5161. Copyright &copy; 2023 Arm Limited (or its affiliates). All rights reserved.');
 };
