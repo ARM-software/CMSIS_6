@@ -1517,7 +1517,7 @@ __STATIC_FORCEINLINE void __TZ_set_MSPLIM_NS(uint32_t MainStackPtrLimit)
  */
 __STATIC_FORCEINLINE uint32_t __get_FPSCR(void)
 {
-#if (__ARM_FP >= 1)
+#if (defined(__ARM_FP) && (__ARM_FP >= 1))
   return (__builtin_arm_get_fpscr());
 #else
   return (0U);
@@ -1532,7 +1532,7 @@ __STATIC_FORCEINLINE uint32_t __get_FPSCR(void)
  */
 __STATIC_FORCEINLINE void __set_FPSCR(uint32_t fpscr)
 {
-#if (__ARM_FP >= 1)
+#if (defined(__ARM_FP) && (__ARM_FP >= 1))
   __builtin_arm_set_fpscr(fpscr);
 #else
   (void)fpscr;
