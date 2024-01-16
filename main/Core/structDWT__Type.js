@@ -19,8 +19,5 @@ var structDWT__Type =
     [ "MASK2", "structDWT__Type.html#a00ac4d830dfe0070a656cda9baed170f", null ],
     [ "MASK3", "structDWT__Type.html#a2a509d8505c37a3b64f6b24993df5f3f", null ],
     [ "PCSR", "structDWT__Type.html#a6353ca1d1ad9bc1be05d3b5632960113", null ],
-    [ "RESERVED0", "structDWT__Type.html#addd893d655ed90d40705b20170daac59", null ],
-    [ "RESERVED1", "structDWT__Type.html#a069871233a8c1df03521e6d7094f1de4", null ],
-    [ "RESERVED2", "structDWT__Type.html#a8556ca1c32590517602d92fe0cd55738", null ],
     [ "SLEEPCNT", "structDWT__Type.html#a416a54e2084ce66e5ca74f152a5ecc70", null ]
 ];

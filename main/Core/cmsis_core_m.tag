@@ -1300,9 +1300,12 @@
     <class kind="struct">ITM_Type</class>
     <class kind="struct">MPU_Type</class>
     <class kind="struct">FPU_Type</class>
-    <class kind="struct">CoreDebug_Type</class>
+    <class kind="struct">DCB_Type</class>
     <class kind="struct">DWT_Type</class>
-    <class kind="struct">TPI_Type</class>
+    <class kind="struct">TPIU_Type</class>
+    <class kind="struct">PMU_Type</class>
+    <class kind="struct">EWIC_Type</class>
+    <class kind="struct">DIB_Type</class>
   </compound>
   <compound kind="file">
     <name>ref_debug.txt</name>
@@ -4231,34 +4234,80 @@
     </member>
   </compound>
   <compound kind="struct">
-    <name>CoreDebug_Type</name>
-    <filename>structCoreDebug__Type.html</filename>
+    <name>DCB_Type</name>
+    <filename>structDCB__Type.html</filename>
     <member kind="variable">
       <type>__IOM uint32_t</type>
       <name>DHCSR</name>
-      <anchorfile>structCoreDebug__Type.html</anchorfile>
-      <anchor>ad63554e4650da91a8e79929cbb63db66</anchor>
+      <anchorfile>structDCB__Type.html</anchorfile>
+      <anchor>a6ed4cd7471c9f3c437a5d2cbaccceda7</anchor>
       <arglist></arglist>
     </member>
     <member kind="variable">
       <type>__OM uint32_t</type>
       <name>DCRSR</name>
-      <anchorfile>structCoreDebug__Type.html</anchorfile>
-      <anchor>af907cf64577eaf927dac6787df6dd98b</anchor>
+      <anchorfile>structDCB__Type.html</anchorfile>
+      <anchor>addab25d3439fda1a7eff9ef21a8c3686</anchor>
       <arglist></arglist>
     </member>
     <member kind="variable">
       <type>__IOM uint32_t</type>
       <name>DCRDR</name>
-      <anchorfile>structCoreDebug__Type.html</anchorfile>
-      <anchor>aab3cc92ef07bc1f04b3a3aa6db2c2d55</anchor>
+      <anchorfile>structDCB__Type.html</anchorfile>
+      <anchor>a91568edfba4a40c3f90196b7cda6f0ab</anchor>
       <arglist></arglist>
     </member>
     <member kind="variable">
       <type>__IOM uint32_t</type>
       <name>DEMCR</name>
-      <anchorfile>structCoreDebug__Type.html</anchorfile>
-      <anchor>aeb3126abc4c258a858f21f356c0df6ee</anchor>
+      <anchorfile>structDCB__Type.html</anchorfile>
+      <anchor>a63c69742b24aa1a7d335426811e6e9be</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable">
+      <type>__OM uint32_t</type>
+      <name>DSCEMCR</name>
+      <anchorfile>structDCB__Type.html</anchorfile>
+      <anchor>ab55b3a94d700bb1021a92a36e4381efb</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable">
+      <type>__IOM uint32_t</type>
+      <name>DAUTHCTRL</name>
+      <anchorfile>structDCB__Type.html</anchorfile>
+      <anchor>acdf02aeb2b7c1eb26a0cbb8b0d51d1d4</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable">
+      <type>__IOM uint32_t</type>
+      <name>DSCSR</name>
+      <anchorfile>structDCB__Type.html</anchorfile>
+      <anchor>a1937b89622a7aa02eef8a182587aa657</anchor>
+      <arglist></arglist>
+    </member>
+  </compound>
+  <compound kind="struct">
+    <name>DIB_Type</name>
+    <filename>structDIB__Type.html</filename>
+    <member kind="variable">
+      <type>__IM uint32_t</type>
+      <name>DAUTHSTATUS</name>
+      <anchorfile>structDIB__Type.html</anchorfile>
+      <anchor>ad8b3172c16ef6aaa1691d88b61b47993</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable">
+      <type>__IM uint32_t</type>
+      <name>DDEVARCH</name>
+      <anchorfile>structDIB__Type.html</anchorfile>
+      <anchor>ad1dc5d943a3ad1623cb25e208110b946</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable">
+      <type>__IM uint32_t</type>
+      <name>DDEVTYPE</name>
+      <anchorfile>structDIB__Type.html</anchorfile>
+      <anchor>a8b30614f34e71ec9a9f16879dba6c8db</anchor>
       <arglist></arglist>
     </member>
   </compound>
@@ -4343,13 +4392,6 @@
       <arglist></arglist>
     </member>
     <member kind="variable">
-      <type>uint32_t</type>
-      <name>RESERVED0</name>
-      <anchorfile>structDWT__Type.html</anchorfile>
-      <anchor>addd893d655ed90d40705b20170daac59</anchor>
-      <arglist>[1]</arglist>
-    </member>
-    <member kind="variable">
       <type>__IOM uint32_t</type>
       <name>COMP1</name>
       <anchorfile>structDWT__Type.html</anchorfile>
@@ -4371,13 +4413,6 @@
       <arglist></arglist>
     </member>
     <member kind="variable">
-      <type>uint32_t</type>
-      <name>RESERVED1</name>
-      <anchorfile>structDWT__Type.html</anchorfile>
-      <anchor>a069871233a8c1df03521e6d7094f1de4</anchor>
-      <arglist>[1]</arglist>
-    </member>
-    <member kind="variable">
       <type>__IOM uint32_t</type>
       <name>COMP2</name>
       <anchorfile>structDWT__Type.html</anchorfile>
@@ -4397,13 +4432,6 @@
       <anchorfile>structDWT__Type.html</anchorfile>
       <anchor>ab1b60d6600c38abae515bab8e86a188f</anchor>
       <arglist></arglist>
-    </member>
-    <member kind="variable">
-      <type>uint32_t</type>
-      <name>RESERVED2</name>
-      <anchorfile>structDWT__Type.html</anchorfile>
-      <anchor>a8556ca1c32590517602d92fe0cd55738</anchor>
-      <arglist>[1]</arglist>
     </member>
     <member kind="variable">
       <type>__IOM uint32_t</type>
@@ -4428,15 +4456,75 @@
     </member>
   </compound>
   <compound kind="struct">
+    <name>EWIC_Type</name>
+    <filename>structEWIC__Type.html</filename>
+    <member kind="variable">
+      <type>__IOM uint32_t</type>
+      <name>EWIC_CR</name>
+      <anchorfile>structEWIC__Type.html</anchorfile>
+      <anchor>a7c7281f790e62f58d165676fc13708a9</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable">
+      <type>__IOM uint32_t</type>
+      <name>EWIC_ASCR</name>
+      <anchorfile>structEWIC__Type.html</anchorfile>
+      <anchor>aca4321112715e20cc60200f6d0e99fe6</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable">
+      <type>__OM uint32_t</type>
+      <name>EWIC_CLRMASK</name>
+      <anchorfile>structEWIC__Type.html</anchorfile>
+      <anchor>a2b3da501df448b3cb0e50984a34fcfac</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable">
+      <type>__IM uint32_t</type>
+      <name>EWIC_NUMID</name>
+      <anchorfile>structEWIC__Type.html</anchorfile>
+      <anchor>ad37d81cbb8db45658227e849dca086b6</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable">
+      <type>__IOM uint32_t</type>
+      <name>EWIC_MASKA</name>
+      <anchorfile>structEWIC__Type.html</anchorfile>
+      <anchor>a73089942903eb53a19eff91a5a7dd3ef</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable">
+      <type>__IOM uint32_t</type>
+      <name>EWIC_MASKn</name>
+      <anchorfile>structEWIC__Type.html</anchorfile>
+      <anchor>ac7114deb556584c4561957af9ab9b6cf</anchor>
+      <arglist>[15]</arglist>
+    </member>
+    <member kind="variable">
+      <type>__IM uint32_t</type>
+      <name>EWIC_PENDA</name>
+      <anchorfile>structEWIC__Type.html</anchorfile>
+      <anchor>a206893e0f5a96f511d37763cf3404827</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable">
+      <type>__IOM uint32_t</type>
+      <name>EWIC_PENDn</name>
+      <anchorfile>structEWIC__Type.html</anchorfile>
+      <anchor>a4057e8a00b5c86d8a3a1205a79a11584</anchor>
+      <arglist>[15]</arglist>
+    </member>
+    <member kind="variable">
+      <type>__IM uint32_t</type>
+      <name>EWIC_PSR</name>
+      <anchorfile>structEWIC__Type.html</anchorfile>
+      <anchor>af43d1dca00351a7686b1d04590d91bd5</anchor>
+      <arglist></arglist>
+    </member>
+  </compound>
+  <compound kind="struct">
     <name>FPU_Type</name>
     <filename>structFPU__Type.html</filename>
-    <member kind="variable">
-      <type>uint32_t</type>
-      <name>RESERVED0</name>
-      <anchorfile>structFPU__Type.html</anchorfile>
-      <anchor>a7b2967b069046c8544adbbc1db143a36</anchor>
-      <arglist>[1]</arglist>
-    </member>
     <member kind="variable">
       <type>__IOM uint32_t</type>
       <name>FPCCR</name>
@@ -4631,90 +4719,6 @@
       <anchor>a2372a4ebb63e36d1eb3fcf83a74fd537</anchor>
       <arglist></arglist>
     </member>
-    <member kind="variable">
-      <type>__IM uint32_t</type>
-      <name>PID4</name>
-      <anchorfile>structITM__Type.html</anchorfile>
-      <anchor>aad5e11dd4baf6d941bd6c7450f60a158</anchor>
-      <arglist></arglist>
-    </member>
-    <member kind="variable">
-      <type>__IM uint32_t</type>
-      <name>PID5</name>
-      <anchorfile>structITM__Type.html</anchorfile>
-      <anchor>af9085648bf18f69b5f9d1136d45e1d37</anchor>
-      <arglist></arglist>
-    </member>
-    <member kind="variable">
-      <type>__IM uint32_t</type>
-      <name>PID6</name>
-      <anchorfile>structITM__Type.html</anchorfile>
-      <anchor>ad34dbe6b1072c77d36281049c8b169f6</anchor>
-      <arglist></arglist>
-    </member>
-    <member kind="variable">
-      <type>__IM uint32_t</type>
-      <name>PID7</name>
-      <anchorfile>structITM__Type.html</anchorfile>
-      <anchor>a2bcec6803f28f30d5baf5e20e3517d3d</anchor>
-      <arglist></arglist>
-    </member>
-    <member kind="variable">
-      <type>__IM uint32_t</type>
-      <name>PID0</name>
-      <anchorfile>structITM__Type.html</anchorfile>
-      <anchor>ab4a4cc97ad658e9c46cf17490daffb8a</anchor>
-      <arglist></arglist>
-    </member>
-    <member kind="variable">
-      <type>__IM uint32_t</type>
-      <name>PID1</name>
-      <anchorfile>structITM__Type.html</anchorfile>
-      <anchor>a89ea1d805a668d6589b22d8e678eb6a4</anchor>
-      <arglist></arglist>
-    </member>
-    <member kind="variable">
-      <type>__IM uint32_t</type>
-      <name>PID2</name>
-      <anchorfile>structITM__Type.html</anchorfile>
-      <anchor>a8471c4d77b7107cf580587509da69f38</anchor>
-      <arglist></arglist>
-    </member>
-    <member kind="variable">
-      <type>__IM uint32_t</type>
-      <name>PID3</name>
-      <anchorfile>structITM__Type.html</anchorfile>
-      <anchor>af317d5e2d946d70e6fb67c02b92cc8a3</anchor>
-      <arglist></arglist>
-    </member>
-    <member kind="variable">
-      <type>__IM uint32_t</type>
-      <name>CID0</name>
-      <anchorfile>structITM__Type.html</anchorfile>
-      <anchor>a30bb2b166b1723867da4a708935677ba</anchor>
-      <arglist></arglist>
-    </member>
-    <member kind="variable">
-      <type>__IM uint32_t</type>
-      <name>CID1</name>
-      <anchorfile>structITM__Type.html</anchorfile>
-      <anchor>ac40df2c3a6cef02f90b4e82c8204756f</anchor>
-      <arglist></arglist>
-    </member>
-    <member kind="variable">
-      <type>__IM uint32_t</type>
-      <name>CID2</name>
-      <anchorfile>structITM__Type.html</anchorfile>
-      <anchor>a8000b92e4e528ae7ac4cb8b8d9f6757d</anchor>
-      <arglist></arglist>
-    </member>
-    <member kind="variable">
-      <type>__IM uint32_t</type>
-      <name>CID3</name>
-      <anchorfile>structITM__Type.html</anchorfile>
-      <anchor>a43451f43f514108d9eaed5b017f8d921</anchor>
-      <arglist></arglist>
-    </member>
   </compound>
   <compound kind="struct">
     <name>MPU_Type</name>
@@ -4872,9 +4876,9 @@
     </member>
     <member kind="variable">
       <type>__IOM uint8_t</type>
-      <name>IP</name>
+      <name>IPR</name>
       <anchorfile>structNVIC__Type.html</anchorfile>
-      <anchor>a7ff7364a4260df67a2784811e8da4efd</anchor>
+      <anchor>abf48a4a221085427dec0bd3ab26fd7aa</anchor>
       <arglist>[240]</arglist>
     </member>
     <member kind="variable">
@@ -4899,7 +4903,7 @@
       <type>__IOM uint32_t</type>
       <name>EVCNTR</name>
       <anchorfile>structPMU__Type.html</anchorfile>
-      <anchor>a08f877e8edcb1c19b81ebcf95f85e2f7</anchor>
+      <anchor>a285b0f016db518bb7666832db116d89f</anchor>
       <arglist>[__PMU_NUM_EVENTCNT]</arglist>
     </member>
     <member kind="variable">
@@ -4913,7 +4917,7 @@
       <type>__IOM uint32_t</type>
       <name>EVTYPER</name>
       <anchorfile>structPMU__Type.html</anchorfile>
-      <anchor>a27682a8d2fe09d2052a4295d5b4a243b</anchor>
+      <anchor>a26e42ed55178b2bfcd2ef0b38dd16105</anchor>
       <arglist>[__PMU_NUM_EVENTCNT]</arglist>
     </member>
     <member kind="variable">
@@ -5118,10 +5122,10 @@
     </member>
     <member kind="variable">
       <type>__IOM uint8_t</type>
-      <name>SHP</name>
+      <name>SHPR</name>
       <anchorfile>structSCB__Type.html</anchorfile>
-      <anchor>a85768f4b3dbbc41fd760041ee1202162</anchor>
-      <arglist>[12]</arglist>
+      <anchor>afdab23abd301033bb318c7b188b377db</anchor>
+      <arglist>[12U]</arglist>
     </member>
     <member kind="variable">
       <type>__IOM uint32_t</type>
@@ -5174,51 +5178,51 @@
     </member>
     <member kind="variable">
       <type>__IM uint32_t</type>
-      <name>PFR</name>
+      <name>ID_PFR</name>
       <anchorfile>structSCB__Type.html</anchorfile>
-      <anchor>a681c9d9e518b217976bef38c2423d83d</anchor>
-      <arglist>[2]</arglist>
+      <anchor>ab35c6b650d3bb2d11259c0a0285d0d00</anchor>
+      <arglist>[2U]</arglist>
     </member>
     <member kind="variable">
       <type>__IM uint32_t</type>
-      <name>DFR</name>
+      <name>ID_DFR</name>
       <anchorfile>structSCB__Type.html</anchorfile>
-      <anchor>a85dd6fe77aab17e7ea89a52c59da6004</anchor>
+      <anchor>ada1d3119c020983fdc949c2ccd406caa</anchor>
       <arglist></arglist>
     </member>
     <member kind="variable">
       <type>__IM uint32_t</type>
-      <name>ADR</name>
+      <name>ID_AFR</name>
       <anchorfile>structSCB__Type.html</anchorfile>
-      <anchor>af084e1b2dad004a88668efea1dfe7fa1</anchor>
+      <anchor>a9c9a1d805f8e99b9fd3ab4f455b6333a</anchor>
       <arglist></arglist>
     </member>
     <member kind="variable">
       <type>__IM uint32_t</type>
-      <name>MMFR</name>
+      <name>ID_MMFR</name>
       <anchorfile>structSCB__Type.html</anchorfile>
-      <anchor>aa11887804412bda283cc85a83fdafa7c</anchor>
-      <arglist>[4]</arglist>
+      <anchor>ae121ba55695c67210c155af3be26dd2b</anchor>
+      <arglist>[4U]</arglist>
     </member>
     <member kind="variable">
       <type>__IM uint32_t</type>
-      <name>ISAR</name>
+      <name>ID_ISAR</name>
       <anchorfile>structSCB__Type.html</anchorfile>
-      <anchor>ae0136a2d2d3c45f016b2c449e92b2066</anchor>
-      <arglist>[5]</arglist>
-    </member>
-    <member kind="variable">
-      <type>uint32_t</type>
-      <name>RESERVED0</name>
-      <anchorfile>structSCB__Type.html</anchorfile>
-      <anchor>ac89a5d9901e3748d22a7090bfca2bee6</anchor>
-      <arglist>[5]</arglist>
+      <anchor>ac729a357cdd968020fdb5c35bdfc4916</anchor>
+      <arglist>[5U]</arglist>
     </member>
     <member kind="variable">
       <type>__IOM uint32_t</type>
       <name>CPACR</name>
       <anchorfile>structSCB__Type.html</anchorfile>
       <anchor>ac6a860c1b8d8154a1f00d99d23b67764</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable">
+      <type>__OM uint32_t</type>
+      <name>STIR</name>
+      <anchorfile>structSCB__Type.html</anchorfile>
+      <anchor>ad70825dd0869b7ccd07fb2b8680fcdb6</anchor>
       <arglist></arglist>
     </member>
   </compound>
@@ -5287,174 +5291,125 @@
     </member>
   </compound>
   <compound kind="struct">
-    <name>TPI_Type</name>
-    <filename>structTPI__Type.html</filename>
+    <name>TPIU_Type</name>
+    <filename>structTPIU__Type.html</filename>
     <member kind="variable">
       <type>__IOM uint32_t</type>
       <name>SSPSR</name>
-      <anchorfile>structTPI__Type.html</anchorfile>
-      <anchor>a7b72598e20066133e505bb781690dc22</anchor>
+      <anchorfile>structTPIU__Type.html</anchorfile>
+      <anchor>a527a8d1d23f64b647cfc1266b1ff721a</anchor>
       <arglist></arglist>
     </member>
     <member kind="variable">
       <type>__IOM uint32_t</type>
       <name>CSPSR</name>
-      <anchorfile>structTPI__Type.html</anchorfile>
-      <anchor>a8826aa84e5806053395a742d38d59d0f</anchor>
+      <anchorfile>structTPIU__Type.html</anchorfile>
+      <anchor>a6362b723d89dd97aa71d72e3ce94465b</anchor>
       <arglist></arglist>
-    </member>
-    <member kind="variable">
-      <type>uint32_t</type>
-      <name>RESERVED0</name>
-      <anchorfile>structTPI__Type.html</anchorfile>
-      <anchor>af143c5e8fc9a3b2be2878e9c1f331aa9</anchor>
-      <arglist>[2]</arglist>
     </member>
     <member kind="variable">
       <type>__IOM uint32_t</type>
       <name>ACPR</name>
-      <anchorfile>structTPI__Type.html</anchorfile>
-      <anchor>a9e5e4421ef9c3d5b7ff8b24abd4e99b3</anchor>
+      <anchorfile>structTPIU__Type.html</anchorfile>
+      <anchor>a7d6b32aac67b18ded927392a83245ace</anchor>
       <arglist></arglist>
-    </member>
-    <member kind="variable">
-      <type>uint32_t</type>
-      <name>RESERVED1</name>
-      <anchorfile>structTPI__Type.html</anchorfile>
-      <anchor>ac3956fe93987b725d89d3be32738da12</anchor>
-      <arglist>[55]</arglist>
     </member>
     <member kind="variable">
       <type>__IOM uint32_t</type>
       <name>SPPR</name>
-      <anchorfile>structTPI__Type.html</anchorfile>
-      <anchor>a12f79d4e3ddc69893ba8bff890d04cc5</anchor>
+      <anchorfile>structTPIU__Type.html</anchorfile>
+      <anchor>a7a1690d4e23b47430627cae1fdc73e5a</anchor>
       <arglist></arglist>
-    </member>
-    <member kind="variable">
-      <type>uint32_t</type>
-      <name>RESERVED2</name>
-      <anchorfile>structTPI__Type.html</anchorfile>
-      <anchor>ac7bbb92e6231b9b38ac483f7d161a096</anchor>
-      <arglist>[131]</arglist>
     </member>
     <member kind="variable">
       <type>__IM uint32_t</type>
       <name>FFSR</name>
-      <anchorfile>structTPI__Type.html</anchorfile>
-      <anchor>a6c47a0b4c7ffc66093ef993d36bb441c</anchor>
+      <anchorfile>structTPIU__Type.html</anchorfile>
+      <anchor>a72599d9a15ce1965a2df71d10817f5f8</anchor>
       <arglist></arglist>
     </member>
     <member kind="variable">
       <type>__IOM uint32_t</type>
       <name>FFCR</name>
-      <anchorfile>structTPI__Type.html</anchorfile>
-      <anchor>a3f68b6e73561b4849ebf953a894df8d2</anchor>
+      <anchorfile>structTPIU__Type.html</anchorfile>
+      <anchor>aa151f4dedec63032b8d66830529bdbd4</anchor>
       <arglist></arglist>
     </member>
     <member kind="variable">
       <type>__IM uint32_t</type>
       <name>FSCR</name>
-      <anchorfile>structTPI__Type.html</anchorfile>
-      <anchor>ad6901bfd8a0089ca7e8a20475cf494a8</anchor>
+      <anchorfile>structTPIU__Type.html</anchorfile>
+      <anchor>a55906c9c7da8aebe414f7af4fbba867e</anchor>
       <arglist></arglist>
-    </member>
-    <member kind="variable">
-      <type>uint32_t</type>
-      <name>RESERVED3</name>
-      <anchorfile>structTPI__Type.html</anchorfile>
-      <anchor>a31700c8cdd26e4c094db72af33d9f24c</anchor>
-      <arglist>[759]</arglist>
     </member>
     <member kind="variable">
       <type>__IM uint32_t</type>
       <name>TRIGGER</name>
-      <anchorfile>structTPI__Type.html</anchorfile>
-      <anchor>a4d4cd2357f72333a82a1313228287bbd</anchor>
+      <anchorfile>structTPIU__Type.html</anchorfile>
+      <anchor>a2b6dc203a24b2d2ce46935cec1b073ec</anchor>
       <arglist></arglist>
     </member>
     <member kind="variable">
       <type>__IM uint32_t</type>
       <name>FIFO0</name>
-      <anchorfile>structTPI__Type.html</anchorfile>
-      <anchor>aa4d7b5cf39dff9f53bf7f69bc287a814</anchor>
+      <anchorfile>structTPIU__Type.html</anchorfile>
+      <anchor>a7cbdb3712481e3545cd557c4707e04ba</anchor>
       <arglist></arglist>
     </member>
     <member kind="variable">
       <type>__IM uint32_t</type>
       <name>ITATBCTR2</name>
-      <anchorfile>structTPI__Type.html</anchorfile>
-      <anchor>ab358319b969d3fed0f89bbe33e9f1652</anchor>
+      <anchorfile>structTPIU__Type.html</anchorfile>
+      <anchor>a20011f46af07ce925f0426acc37aa54e</anchor>
       <arglist></arglist>
-    </member>
-    <member kind="variable">
-      <type>uint32_t</type>
-      <name>RESERVED4</name>
-      <anchorfile>structTPI__Type.html</anchorfile>
-      <anchor>a684071216fafee4e80be6aaa932cec46</anchor>
-      <arglist>[1]</arglist>
     </member>
     <member kind="variable">
       <type>__IM uint32_t</type>
       <name>ITATBCTR0</name>
-      <anchorfile>structTPI__Type.html</anchorfile>
-      <anchor>aaa573b2e073e76e93c51ecec79c616d0</anchor>
+      <anchorfile>structTPIU__Type.html</anchorfile>
+      <anchor>aa5ad72117900f908adc6191a50b473c4</anchor>
       <arglist></arglist>
     </member>
     <member kind="variable">
       <type>__IM uint32_t</type>
       <name>FIFO1</name>
-      <anchorfile>structTPI__Type.html</anchorfile>
-      <anchor>a061372fcd72f1eea871e2d9c1be849bc</anchor>
+      <anchorfile>structTPIU__Type.html</anchorfile>
+      <anchor>ae37fa30720fb17ecb4329088107370da</anchor>
       <arglist></arglist>
     </member>
     <member kind="variable">
       <type>__IOM uint32_t</type>
       <name>ITCTRL</name>
-      <anchorfile>structTPI__Type.html</anchorfile>
-      <anchor>aaa4c823c10f115f7517c82ef86a5a68d</anchor>
+      <anchorfile>structTPIU__Type.html</anchorfile>
+      <anchor>a2b5bae5fdb65f5a9a40277872b140199</anchor>
       <arglist></arglist>
-    </member>
-    <member kind="variable">
-      <type>uint32_t</type>
-      <name>RESERVED5</name>
-      <anchorfile>structTPI__Type.html</anchorfile>
-      <anchor>a3f80dd93f6bab6524603a7aa58de9a30</anchor>
-      <arglist>[39]</arglist>
     </member>
     <member kind="variable">
       <type>__IOM uint32_t</type>
       <name>CLAIMSET</name>
-      <anchorfile>structTPI__Type.html</anchorfile>
-      <anchor>af8b7d15fa5252b733dd4b11fa1b5730a</anchor>
+      <anchorfile>structTPIU__Type.html</anchorfile>
+      <anchor>acc42ffa5fe661df6339dc3e9a61f57d7</anchor>
       <arglist></arglist>
     </member>
     <member kind="variable">
       <type>__IOM uint32_t</type>
       <name>CLAIMCLR</name>
-      <anchorfile>structTPI__Type.html</anchorfile>
-      <anchor>a0e10e292cb019a832b03ddd055b2f6ac</anchor>
+      <anchorfile>structTPIU__Type.html</anchorfile>
+      <anchor>a65a5db46df2d49e4b7d0cb2a91f362fc</anchor>
       <arglist></arglist>
-    </member>
-    <member kind="variable">
-      <type>uint32_t</type>
-      <name>RESERVED7</name>
-      <anchorfile>structTPI__Type.html</anchorfile>
-      <anchor>a476ca23fbc9480f1697fbec871130550</anchor>
-      <arglist>[8]</arglist>
     </member>
     <member kind="variable">
       <type>__IM uint32_t</type>
       <name>DEVID</name>
-      <anchorfile>structTPI__Type.html</anchorfile>
-      <anchor>abc0ecda8a5446bc754080276bad77514</anchor>
+      <anchorfile>structTPIU__Type.html</anchorfile>
+      <anchor>afc5d82ae575c1437b46d7b3928357dc3</anchor>
       <arglist></arglist>
     </member>
     <member kind="variable">
       <type>__IM uint32_t</type>
       <name>DEVTYPE</name>
-      <anchorfile>structTPI__Type.html</anchorfile>
-      <anchor>ad98855854a719bbea33061e71529a472</anchor>
+      <anchorfile>structTPIU__Type.html</anchorfile>
+      <anchor>a06cd44ff1439b93aff76a8d155d7b465</anchor>
       <arglist></arglist>
     </member>
   </compound>
@@ -9632,6 +9587,7 @@
     <title>Revision History</title>
     <filename>core_revisionHistory.html</filename>
     <docanchor file="core_revisionHistory.html">md_src_history</docanchor>
+    <docanchor file="core_revisionHistory.html">core6_changes</docanchor>
   </compound>
   <compound kind="page">
     <name>using_pg</name>

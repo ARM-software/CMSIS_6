@@ -59,7 +59,7 @@ var NAVTREEINDEX =
 "annotated.html",
 "group__intrinsic__SIMD__gr.html#ga5eff3ae5eabcd73f3049996ca391becb",
 "group__pmu8__events__armv81.html#ga7e76060791618f9b4d49ad493cfb6ba9",
-"structPMU__Type.html#aba9bddd6b49c88e38f4bb79d32002c3c"
+"structPMU__Type.html#aaff7d5f3246c641d1f503d74a5adb0ee"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

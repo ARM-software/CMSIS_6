@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['xpsr_5ftype_0',['xPSR_Type',['../unionxPSR__Type.html',1,'']]]
+  ['tpiu_5ftype_0',['TPIU_Type',['../structTPIU__Type.html',1,'']]]
 ];

@@ -153,9 +153,9 @@ Data Fields</h2></td></tr>
 <tr class="memitem:a2d6653b0b70faac936046a02809b577f"><td class="memItemLeft" align="right" valign="top">__IOM uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structSCB__Type.html#a2d6653b0b70faac936046a02809b577f">CCR</a></td></tr>
 <tr class="memdesc:a2d6653b0b70faac936046a02809b577f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Offset: 0x014 (R/W) Configuration Control Register.  <br /></td></tr>
 <tr class="separator:a2d6653b0b70faac936046a02809b577f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a85768f4b3dbbc41fd760041ee1202162"><td class="memItemLeft" align="right" valign="top">__IOM uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structSCB__Type.html#a85768f4b3dbbc41fd760041ee1202162">SHP</a> [12]</td></tr>
-<tr class="memdesc:a85768f4b3dbbc41fd760041ee1202162"><td class="mdescLeft">&#160;</td><td class="mdescRight">Offset: 0x018 (R/W) System Handlers Priority Registers (4-7, 8-11, 12-15)  <br /></td></tr>
-<tr class="separator:a85768f4b3dbbc41fd760041ee1202162"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afdab23abd301033bb318c7b188b377db"><td class="memItemLeft" align="right" valign="top">__IOM uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structSCB__Type.html#afdab23abd301033bb318c7b188b377db">SHPR</a> [12U]</td></tr>
+<tr class="memdesc:afdab23abd301033bb318c7b188b377db"><td class="mdescLeft">&#160;</td><td class="mdescRight">Offset: 0x018 (R/W) System Handlers Priority Registers (4-7, 8-11, 12-15)  <br /></td></tr>
+<tr class="separator:afdab23abd301033bb318c7b188b377db"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7b5ae9741a99808043394c4743b635c4"><td class="memItemLeft" align="right" valign="top">__IOM uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structSCB__Type.html#a7b5ae9741a99808043394c4743b635c4">SHCSR</a></td></tr>
 <tr class="memdesc:a7b5ae9741a99808043394c4743b635c4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Offset: 0x024 (R/W) System Handler Control and State Register.  <br /></td></tr>
 <tr class="separator:a7b5ae9741a99808043394c4743b635c4"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -177,47 +177,31 @@ Data Fields</h2></td></tr>
 <tr class="memitem:ab65372404ce64b0f0b35e2709429404e"><td class="memItemLeft" align="right" valign="top">__IOM uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structSCB__Type.html#ab65372404ce64b0f0b35e2709429404e">AFSR</a></td></tr>
 <tr class="memdesc:ab65372404ce64b0f0b35e2709429404e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Offset: 0x03C (R/W) Auxiliary Fault Status Register.  <br /></td></tr>
 <tr class="separator:ab65372404ce64b0f0b35e2709429404e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a681c9d9e518b217976bef38c2423d83d"><td class="memItemLeft" align="right" valign="top">__IM uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structSCB__Type.html#a681c9d9e518b217976bef38c2423d83d">PFR</a> [2]</td></tr>
-<tr class="memdesc:a681c9d9e518b217976bef38c2423d83d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Offset: 0x040 (R/ ) Processor Feature Register.  <br /></td></tr>
-<tr class="separator:a681c9d9e518b217976bef38c2423d83d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a85dd6fe77aab17e7ea89a52c59da6004"><td class="memItemLeft" align="right" valign="top">__IM uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structSCB__Type.html#a85dd6fe77aab17e7ea89a52c59da6004">DFR</a></td></tr>
-<tr class="memdesc:a85dd6fe77aab17e7ea89a52c59da6004"><td class="mdescLeft">&#160;</td><td class="mdescRight">Offset: 0x048 (R/ ) Debug Feature Register.  <br /></td></tr>
-<tr class="separator:a85dd6fe77aab17e7ea89a52c59da6004"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af084e1b2dad004a88668efea1dfe7fa1"><td class="memItemLeft" align="right" valign="top">__IM uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structSCB__Type.html#af084e1b2dad004a88668efea1dfe7fa1">ADR</a></td></tr>
-<tr class="memdesc:af084e1b2dad004a88668efea1dfe7fa1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Offset: 0x04C (R/ ) Auxiliary Feature Register.  <br /></td></tr>
-<tr class="separator:af084e1b2dad004a88668efea1dfe7fa1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa11887804412bda283cc85a83fdafa7c"><td class="memItemLeft" align="right" valign="top">__IM uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structSCB__Type.html#aa11887804412bda283cc85a83fdafa7c">MMFR</a> [4]</td></tr>
-<tr class="memdesc:aa11887804412bda283cc85a83fdafa7c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Offset: 0x050 (R/ ) Memory Model Feature Register.  <br /></td></tr>
-<tr class="separator:aa11887804412bda283cc85a83fdafa7c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae0136a2d2d3c45f016b2c449e92b2066"><td class="memItemLeft" align="right" valign="top">__IM uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structSCB__Type.html#ae0136a2d2d3c45f016b2c449e92b2066">ISAR</a> [5]</td></tr>
-<tr class="memdesc:ae0136a2d2d3c45f016b2c449e92b2066"><td class="mdescLeft">&#160;</td><td class="mdescRight">Offset: 0x060 (R/ ) Instruction Set Attributes Register.  <br /></td></tr>
-<tr class="separator:ae0136a2d2d3c45f016b2c449e92b2066"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac89a5d9901e3748d22a7090bfca2bee6"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structSCB__Type.html#ac89a5d9901e3748d22a7090bfca2bee6">RESERVED0</a> [5]</td></tr>
-<tr class="memdesc:ac89a5d9901e3748d22a7090bfca2bee6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reserved.  <br /></td></tr>
-<tr class="separator:ac89a5d9901e3748d22a7090bfca2bee6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab35c6b650d3bb2d11259c0a0285d0d00"><td class="memItemLeft" align="right" valign="top">__IM uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structSCB__Type.html#ab35c6b650d3bb2d11259c0a0285d0d00">ID_PFR</a> [2U]</td></tr>
+<tr class="memdesc:ab35c6b650d3bb2d11259c0a0285d0d00"><td class="mdescLeft">&#160;</td><td class="mdescRight">Offset: 0x040 (R/ ) Processor Feature Register.  <br /></td></tr>
+<tr class="separator:ab35c6b650d3bb2d11259c0a0285d0d00"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ada1d3119c020983fdc949c2ccd406caa"><td class="memItemLeft" align="right" valign="top">__IM uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structSCB__Type.html#ada1d3119c020983fdc949c2ccd406caa">ID_DFR</a></td></tr>
+<tr class="memdesc:ada1d3119c020983fdc949c2ccd406caa"><td class="mdescLeft">&#160;</td><td class="mdescRight">Offset: 0x048 (R/ ) Debug Feature Register.  <br /></td></tr>
+<tr class="separator:ada1d3119c020983fdc949c2ccd406caa"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9c9a1d805f8e99b9fd3ab4f455b6333a"><td class="memItemLeft" align="right" valign="top">__IM uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structSCB__Type.html#a9c9a1d805f8e99b9fd3ab4f455b6333a">ID_AFR</a></td></tr>
+<tr class="memdesc:a9c9a1d805f8e99b9fd3ab4f455b6333a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Offset: 0x04C (R/ ) Auxiliary Feature Register.  <br /></td></tr>
+<tr class="separator:a9c9a1d805f8e99b9fd3ab4f455b6333a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae121ba55695c67210c155af3be26dd2b"><td class="memItemLeft" align="right" valign="top">__IM uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structSCB__Type.html#ae121ba55695c67210c155af3be26dd2b">ID_MMFR</a> [4U]</td></tr>
+<tr class="memdesc:ae121ba55695c67210c155af3be26dd2b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Offset: 0x050 (R/ ) Memory Model Feature Register.  <br /></td></tr>
+<tr class="separator:ae121ba55695c67210c155af3be26dd2b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac729a357cdd968020fdb5c35bdfc4916"><td class="memItemLeft" align="right" valign="top">__IM uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structSCB__Type.html#ac729a357cdd968020fdb5c35bdfc4916">ID_ISAR</a> [5U]</td></tr>
+<tr class="memdesc:ac729a357cdd968020fdb5c35bdfc4916"><td class="mdescLeft">&#160;</td><td class="mdescRight">Offset: 0x060 (R/ ) Instruction Set Attributes Register.  <br /></td></tr>
+<tr class="separator:ac729a357cdd968020fdb5c35bdfc4916"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac6a860c1b8d8154a1f00d99d23b67764"><td class="memItemLeft" align="right" valign="top">__IOM uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structSCB__Type.html#ac6a860c1b8d8154a1f00d99d23b67764">CPACR</a></td></tr>
 <tr class="memdesc:ac6a860c1b8d8154a1f00d99d23b67764"><td class="mdescLeft">&#160;</td><td class="mdescRight">Offset: 0x088 (R/W) Coprocessor Access Control Register.  <br /></td></tr>
 <tr class="separator:ac6a860c1b8d8154a1f00d99d23b67764"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad70825dd0869b7ccd07fb2b8680fcdb6"><td class="memItemLeft" align="right" valign="top">__OM uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structSCB__Type.html#ad70825dd0869b7ccd07fb2b8680fcdb6">STIR</a></td></tr>
+<tr class="memdesc:ad70825dd0869b7ccd07fb2b8680fcdb6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Offset: 0x200 ( /W) Software Triggered Interrupt Register.  <br /></td></tr>
+<tr class="separator:ad70825dd0869b7ccd07fb2b8680fcdb6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Description</h2>
 <div class="textblock"><p>Structure type to access the System Control Block (SCB). </p>
 </div><h2 class="groupheader">Field Documentation</h2>
-<a id="af084e1b2dad004a88668efea1dfe7fa1" name="af084e1b2dad004a88668efea1dfe7fa1"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af084e1b2dad004a88668efea1dfe7fa1">&#9670;&#160;</a></span>ADR</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">__IM uint32_t SCB_Type::ADR</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Offset: 0x04C (R/ ) Auxiliary Feature Register. </p>
-
-</div>
-</div>
 <a id="ab65372404ce64b0f0b35e2709429404e" name="ab65372404ce64b0f0b35e2709429404e"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ab65372404ce64b0f0b35e2709429404e">&#9670;&#160;</a></span>AFSR</h2>
 
@@ -330,22 +314,6 @@ Data Fields</h2></td></tr>
 
 </div>
 </div>
-<a id="a85dd6fe77aab17e7ea89a52c59da6004" name="a85dd6fe77aab17e7ea89a52c59da6004"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a85dd6fe77aab17e7ea89a52c59da6004">&#9670;&#160;</a></span>DFR</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">__IM uint32_t SCB_Type::DFR</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Offset: 0x048 (R/ ) Debug Feature Register. </p>
-
-</div>
-</div>
 <a id="a191579bde0d21ff51d30a714fd887033" name="a191579bde0d21ff51d30a714fd887033"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a191579bde0d21ff51d30a714fd887033">&#9670;&#160;</a></span>DFSR</h2>
 
@@ -394,19 +362,83 @@ Data Fields</h2></td></tr>
 
 </div>
 </div>
-<a id="ae0136a2d2d3c45f016b2c449e92b2066" name="ae0136a2d2d3c45f016b2c449e92b2066"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae0136a2d2d3c45f016b2c449e92b2066">&#9670;&#160;</a></span>ISAR</h2>
+<a id="a9c9a1d805f8e99b9fd3ab4f455b6333a" name="a9c9a1d805f8e99b9fd3ab4f455b6333a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9c9a1d805f8e99b9fd3ab4f455b6333a">&#9670;&#160;</a></span>ID_AFR</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">__IM uint32_t SCB_Type::ISAR[5]</td>
+          <td class="memname">__IM uint32_t SCB_Type::ID_AFR</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Offset: 0x04C (R/ ) Auxiliary Feature Register. </p>
+
+</div>
+</div>
+<a id="ada1d3119c020983fdc949c2ccd406caa" name="ada1d3119c020983fdc949c2ccd406caa"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ada1d3119c020983fdc949c2ccd406caa">&#9670;&#160;</a></span>ID_DFR</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">__IM uint32_t SCB_Type::ID_DFR</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Offset: 0x048 (R/ ) Debug Feature Register. </p>
+
+</div>
+</div>
+<a id="ac729a357cdd968020fdb5c35bdfc4916" name="ac729a357cdd968020fdb5c35bdfc4916"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac729a357cdd968020fdb5c35bdfc4916">&#9670;&#160;</a></span>ID_ISAR</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">__IM uint32_t SCB_Type::ID_ISAR[5U]</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
 <p>Offset: 0x060 (R/ ) Instruction Set Attributes Register. </p>
+
+</div>
+</div>
+<a id="ae121ba55695c67210c155af3be26dd2b" name="ae121ba55695c67210c155af3be26dd2b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae121ba55695c67210c155af3be26dd2b">&#9670;&#160;</a></span>ID_MMFR</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">__IM uint32_t SCB_Type::ID_MMFR[4U]</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Offset: 0x050 (R/ ) Memory Model Feature Register. </p>
+
+</div>
+</div>
+<a id="ab35c6b650d3bb2d11259c0a0285d0d00" name="ab35c6b650d3bb2d11259c0a0285d0d00"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab35c6b650d3bb2d11259c0a0285d0d00">&#9670;&#160;</a></span>ID_PFR</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">__IM uint32_t SCB_Type::ID_PFR[2U]</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Offset: 0x040 (R/ ) Processor Feature Register. </p>
 
 </div>
 </div>
@@ -423,54 +455,6 @@ Data Fields</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Offset: 0x034 (R/W) MemManage Fault Address Register. </p>
-
-</div>
-</div>
-<a id="aa11887804412bda283cc85a83fdafa7c" name="aa11887804412bda283cc85a83fdafa7c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa11887804412bda283cc85a83fdafa7c">&#9670;&#160;</a></span>MMFR</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">__IM uint32_t SCB_Type::MMFR[4]</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Offset: 0x050 (R/ ) Memory Model Feature Register. </p>
-
-</div>
-</div>
-<a id="a681c9d9e518b217976bef38c2423d83d" name="a681c9d9e518b217976bef38c2423d83d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a681c9d9e518b217976bef38c2423d83d">&#9670;&#160;</a></span>PFR</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">__IM uint32_t SCB_Type::PFR[2]</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Offset: 0x040 (R/ ) Processor Feature Register. </p>
-
-</div>
-</div>
-<a id="ac89a5d9901e3748d22a7090bfca2bee6" name="ac89a5d9901e3748d22a7090bfca2bee6"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ac89a5d9901e3748d22a7090bfca2bee6">&#9670;&#160;</a></span>RESERVED0</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">uint32_t SCB_Type::RESERVED0[5]</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Reserved. </p>
 
 </div>
 </div>
@@ -506,19 +490,35 @@ Data Fields</h2></td></tr>
 
 </div>
 </div>
-<a id="a85768f4b3dbbc41fd760041ee1202162" name="a85768f4b3dbbc41fd760041ee1202162"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a85768f4b3dbbc41fd760041ee1202162">&#9670;&#160;</a></span>SHP</h2>
+<a id="afdab23abd301033bb318c7b188b377db" name="afdab23abd301033bb318c7b188b377db"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afdab23abd301033bb318c7b188b377db">&#9670;&#160;</a></span>SHPR</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">__IOM uint8_t SCB_Type::SHP[12]</td>
+          <td class="memname">__IOM uint8_t SCB_Type::SHPR[12U]</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
 <p>Offset: 0x018 (R/W) System Handlers Priority Registers (4-7, 8-11, 12-15) </p>
+
+</div>
+</div>
+<a id="ad70825dd0869b7ccd07fb2b8680fcdb6" name="ad70825dd0869b7ccd07fb2b8680fcdb6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad70825dd0869b7ccd07fb2b8680fcdb6">&#9670;&#160;</a></span>STIR</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">__OM uint32_t SCB_Type::STIR</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Offset: 0x200 ( /W) Software Triggered Interrupt Register. </p>
 
 </div>
 </div>

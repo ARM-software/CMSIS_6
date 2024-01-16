@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['fpu_5ftype_0',['FPU_Type',['../structFPU__Type.html',1,'']]]
+  ['ewic_5ftype_0',['EWIC_Type',['../structEWIC__Type.html',1,'']]]
 ];
