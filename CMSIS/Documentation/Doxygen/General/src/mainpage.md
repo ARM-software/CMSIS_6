@@ -152,6 +152,9 @@ While use of CMSIS-Pack concept greatly helps to abstract many of this changes f
  - [Migrating CMSIS-based projects from CMSIS v5 to CMSIS v6](https://learn.arm.com/learning-paths/microcontrollers/project-migration-cmsis-v6)
  - [CMSIS-Pack Migration Guide](https://learn.arm.com/learning-paths/microcontrollers/pack-migration-cmsis-v6)
 
+> **Note**
+> - In the version 6.0.0, the CMSIS-Core header files for Cortex-M devices have received some modifications that are incompatible with previous CMSIS-Core versions. Refer to the [CMSIS-Core Revision History](../Core/core_revisionHistory.html) for more information.
+
 ## License {#License}
 
 CMSIS is provided free of charge by Arm under the [Apache 2.0 License](https://raw.githubusercontent.com/ARM-software/CMSIS_6/main/LICENSE).
