@@ -34,7 +34,7 @@ jobs:
           pip install -r ./CMSIS/Core/Test/requirements.txt
 
       - name: Cache vcpkg
-        uses: actions/cache@v3
+        uses: actions/cache@v4
         with:
           key: vcpkg-${{ runner.os }}-${{ runner.arch }}-${{ github.run_id }}-${{ matrix.compiler }}
           restore-keys: |
