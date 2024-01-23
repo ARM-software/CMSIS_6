@@ -726,6 +726,55 @@
     </member>
     <member kind="function">
       <type>__STATIC_FORCEINLINE void</type>
+      <name>__set_CNTV_TVAL</name>
+      <anchorfile>cmsis__cp15_8h.html</anchorfile>
+      <anchor>a137fda83ee1596602df74adc40adfad0</anchor>
+      <arglist>(uint32_t value)</arglist>
+    </member>
+    <member kind="function">
+      <type>__STATIC_FORCEINLINE uint32_t</type>
+      <name>__get_CNTV_TVAL</name>
+      <anchorfile>cmsis__cp15_8h.html</anchorfile>
+      <anchor>a5f5c0ac3241b9a2b1250466946adf5bb</anchor>
+      <arglist>(void)</arglist>
+    </member>
+    <member kind="function">
+      <type>__STATIC_FORCEINLINE uint64_t</type>
+      <name>__get_CNTVCT</name>
+      <anchorfile>cmsis__cp15_8h.html</anchorfile>
+      <anchor>a0b35adbe417dcde3998165c3e724d231</anchor>
+      <arglist>(void)</arglist>
+    </member>
+    <member kind="function">
+      <type>__STATIC_FORCEINLINE void</type>
+      <name>__set_CNTV_CVAL</name>
+      <anchorfile>cmsis__cp15_8h.html</anchorfile>
+      <anchor>aa70bbea2ed61240a8fb2770a1ba5709f</anchor>
+      <arglist>(uint64_t value)</arglist>
+    </member>
+    <member kind="function">
+      <type>__STATIC_FORCEINLINE uint64_t</type>
+      <name>__get_CNTV_CVAL</name>
+      <anchorfile>cmsis__cp15_8h.html</anchorfile>
+      <anchor>a1f69179b034693866e02e1c7a6ca19d5</anchor>
+      <arglist>(void)</arglist>
+    </member>
+    <member kind="function">
+      <type>__STATIC_FORCEINLINE void</type>
+      <name>__set_CNTV_CTL</name>
+      <anchorfile>cmsis__cp15_8h.html</anchorfile>
+      <anchor>a6d09d63ee42c0abdc9c36555b62e8909</anchor>
+      <arglist>(uint32_t value)</arglist>
+    </member>
+    <member kind="function">
+      <type>__STATIC_FORCEINLINE uint32_t</type>
+      <name>__get_CNTV_CTL</name>
+      <anchorfile>cmsis__cp15_8h.html</anchorfile>
+      <anchor>ae7f8833d111c2435ad9dce6b46bdad57</anchor>
+      <arglist>(void)</arglist>
+    </member>
+    <member kind="function">
+      <type>__STATIC_FORCEINLINE void</type>
       <name>__set_TLBIALL</name>
       <anchorfile>group__CMSIS__TLB.html</anchorfile>
       <anchor>gafe73539914fa96265067bec49a3ed4ea</anchor>
@@ -5270,6 +5319,55 @@
       <name>PL1_GetControl</name>
       <anchorfile>group__PL1__timer__functions.html</anchorfile>
       <anchor>gaf7fda3fe3452565fbe46cb0ea53a9f8a</anchor>
+      <arglist>(void)</arglist>
+    </member>
+    <member kind="function">
+      <type>__STATIC_INLINE void</type>
+      <name>VL1_SetCurrentTimerValue</name>
+      <anchorfile>core__ca_8h.html</anchorfile>
+      <anchor>aead4ebf7c19a2edb6643a88a948015b9</anchor>
+      <arglist>(uint32_t value)</arglist>
+    </member>
+    <member kind="function">
+      <type>__STATIC_INLINE uint32_t</type>
+      <name>VL1_GetCurrentTimerValue</name>
+      <anchorfile>core__ca_8h.html</anchorfile>
+      <anchor>a6eb9e1aae071d51af457899a6ff2c7b6</anchor>
+      <arglist>(void)</arglist>
+    </member>
+    <member kind="function">
+      <type>__STATIC_INLINE uint64_t</type>
+      <name>VL1_GetCurrentCountValue</name>
+      <anchorfile>core__ca_8h.html</anchorfile>
+      <anchor>af3ebcde97e7b5d2096516b06f4ab70be</anchor>
+      <arglist>(void)</arglist>
+    </member>
+    <member kind="function">
+      <type>__STATIC_INLINE void</type>
+      <name>VL1_SetTimerCompareValue</name>
+      <anchorfile>core__ca_8h.html</anchorfile>
+      <anchor>a85248310b22171e66951267124f2ff85</anchor>
+      <arglist>(uint64_t value)</arglist>
+    </member>
+    <member kind="function">
+      <type>__STATIC_INLINE uint64_t</type>
+      <name>VL1_GetTimerCompareValue</name>
+      <anchorfile>core__ca_8h.html</anchorfile>
+      <anchor>aa317cc419b7ed37b2e6e86d23152caeb</anchor>
+      <arglist>(void)</arglist>
+    </member>
+    <member kind="function">
+      <type>__STATIC_INLINE void</type>
+      <name>VL1_SetControl</name>
+      <anchorfile>core__ca_8h.html</anchorfile>
+      <anchor>ae1fa0c37d9bea7d4a2d039be754d1676</anchor>
+      <arglist>(uint32_t value)</arglist>
+    </member>
+    <member kind="function">
+      <type>__STATIC_INLINE uint32_t</type>
+      <name>VL1_GetControl</name>
+      <anchorfile>core__ca_8h.html</anchorfile>
+      <anchor>af7e103fe79be50a7f314cdcac33612ef</anchor>
       <arglist>(void)</arglist>
     </member>
     <member kind="function">
