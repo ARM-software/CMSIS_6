@@ -36,13 +36,13 @@
   #define __ASM                                  __asm
 #endif
 #ifndef   __INLINE
-  #define __INLINE                               __inline
+  #define __INLINE                               inline
 #endif
 #ifndef   __STATIC_INLINE
-  #define __STATIC_INLINE                        static __inline
+  #define __STATIC_INLINE                        static inline
 #endif
 #ifndef   __STATIC_FORCEINLINE
-  #define __STATIC_FORCEINLINE                   __attribute__((always_inline)) static __inline
+  #define __STATIC_FORCEINLINE                   __attribute__((always_inline)) static inline
 #endif
 #ifndef   __NO_RETURN
   #define __NO_RETURN                            __attribute__((__noreturn__))

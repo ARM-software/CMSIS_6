@@ -30,22 +30,16 @@
   #define __ASM                                  __asm
 #endif
 #ifndef   __INLINE
-  #define __INLINE                               __inline
-#endif
-#ifndef   __FORCEINLINE
-  #define __FORCEINLINE                          __attribute__((always_inline))
+  #define __INLINE                               inline
 #endif
 #ifndef   __STATIC_INLINE
-  #define __STATIC_INLINE                        static __inline
+  #define __STATIC_INLINE                        static inline
 #endif
 #ifndef   __STATIC_FORCEINLINE
-  #define __STATIC_FORCEINLINE                   __attribute__((always_inline)) static __inline
+  #define __STATIC_FORCEINLINE                   __attribute__((always_inline)) static inline
 #endif
 #ifndef   __NO_RETURN
   #define __NO_RETURN                            __attribute__((__noreturn__))
-#endif
-#ifndef   CMSIS_DEPRECATED
-  #define CMSIS_DEPRECATED                       __attribute__((deprecated))
 #endif
 #ifndef   __USED
   #define __USED                                 __attribute__((used))
@@ -59,10 +53,12 @@
 #ifndef   __PACKED_STRUCT
   #define __PACKED_STRUCT                        struct __attribute__((packed, aligned(1)))
 #endif
+#ifndef   __PACKED_UNION
+  #define __PACKED_UNION                         union __attribute__((packed, aligned(1)))
+#endif
 #ifndef   __UNALIGNED_UINT16_WRITE
   #pragma clang diagnostic push
   #pragma clang diagnostic ignored "-Wpacked"
-/*lint -esym(9058, T_UINT16_WRITE)*/ /* disable MISRA 2012 Rule 2.4 for T_UINT16_WRITE */
   __PACKED_STRUCT T_UINT16_WRITE { uint16_t v; };
   #pragma clang diagnostic pop
   #define __UNALIGNED_UINT16_WRITE(addr, val)    (void)((((struct T_UINT16_WRITE *)(void *)(addr))->v) = (val))
@@ -70,7 +66,6 @@
 #ifndef   __UNALIGNED_UINT16_READ
   #pragma clang diagnostic push
   #pragma clang diagnostic ignored "-Wpacked"
-/*lint -esym(9058, T_UINT16_READ)*/ /* disable MISRA 2012 Rule 2.4 for T_UINT16_READ */
   __PACKED_STRUCT T_UINT16_READ { uint16_t v; };
   #pragma clang diagnostic pop
   #define __UNALIGNED_UINT16_READ(addr)          (((const struct T_UINT16_READ *)(const void *)(addr))->v)
@@ -78,7 +73,6 @@
 #ifndef   __UNALIGNED_UINT32_WRITE
   #pragma clang diagnostic push
   #pragma clang diagnostic ignored "-Wpacked"
-/*lint -esym(9058, T_UINT32_WRITE)*/ /* disable MISRA 2012 Rule 2.4 for T_UINT32_WRITE */
   __PACKED_STRUCT T_UINT32_WRITE { uint32_t v; };
   #pragma clang diagnostic pop
   #define __UNALIGNED_UINT32_WRITE(addr, val)    (void)((((struct T_UINT32_WRITE *)(void *)(addr))->v) = (val))
@@ -93,8 +87,8 @@
 #ifndef   __ALIGNED
   #define __ALIGNED(x)                           __attribute__((aligned(x)))
 #endif
-#ifndef   __PACKED
-  #define __PACKED                               __attribute__((packed))
+#ifndef   __RESTRICT
+  #define __RESTRICT                             __restrict
 #endif
 #ifndef   __COMPILER_BARRIER
   #define __COMPILER_BARRIER()                   __ASM volatile("":::"memory")
@@ -106,14 +100,14 @@
   \brief   No Operation
   \details No Operation does nothing. This instruction can be used for code alignment purposes.
  */
-#define __NOP                             __builtin_arm_nop
+#define __NOP           __builtin_arm_nop
 
 
 /**
   \brief   Wait For Interrupt
   \details Wait For Interrupt is a hint instruction that suspends execution until one of a number of events occurs.
  */
-#define __WFI                             __builtin_arm_wfi
+#define __WFI           __builtin_arm_wfi
 
 
 /**
@@ -121,14 +115,14 @@
   \details Wait For Event is a hint instruction that permits the processor to enter
            a low-power state until one of a number of events occurs.
  */
-#define __WFE                             __builtin_arm_wfe
+#define __WFE           __builtin_arm_wfe
 
 
 /**
   \brief   Send Event
   \details Send Event is a hint instruction. It causes an event to be signaled to the CPU.
  */
-#define __SEV                             __builtin_arm_sev
+#define __SEV           __builtin_arm_sev
 
 
 /**
@@ -137,14 +131,15 @@
            so that all instructions following the ISB are fetched from cache or memory,
            after the instruction has been completed.
  */
-#define __ISB()                           __builtin_arm_isb(0xF)
+#define __ISB()         __builtin_arm_isb(0xF)
+
 
 /**
   \brief   Data Synchronization Barrier
   \details Acts as a special kind of Data Memory Barrier.
            It completes when all explicit memory accesses before this instruction complete.
  */
-#define __DSB()                           __builtin_arm_dsb(0xF)
+#define __DSB()         __builtin_arm_dsb(0xF)
 
 
 /**
@@ -152,7 +147,7 @@
   \details Ensures the apparent order of the explicit memory operations before
            and after the instruction, without ensuring their completion.
  */
-#define __DMB()                           __builtin_arm_dmb(0xF)
+#define __DMB()         __builtin_arm_dmb(0xF)
 
 
 /**
@@ -161,7 +156,7 @@
   \param [in]    value  Value to reverse
   \return               Reversed value
  */
-#define __REV(value)   __builtin_bswap32(value)
+#define __REV(value)    __builtin_bswap32(value)
 
 
 /**
@@ -170,7 +165,7 @@
   \param [in]    value  Value to reverse
   \return               Reversed value
  */
-#define __REV16(value) __ROR(__REV(value), 16)
+#define __REV16(value)  __ROR(__REV(value), 16)
 
 
 /**
@@ -245,6 +240,33 @@ __STATIC_FORCEINLINE uint8_t __CLZ(uint32_t value)
 
 
 /**
+  \brief   Signed Saturate
+  \details Saturates a signed value.
+  \param [in]  value  Value to be saturated
+  \param [in]    sat  Bit position to saturate to (1..32)
+  \return             Saturated value
+ */
+#define __SSAT          __builtin_arm_ssat
+
+
+/**
+  \brief   Unsigned Saturate
+  \details Saturates an unsigned value.
+  \param [in]  value  Value to be saturated
+  \param [in]    sat  Bit position to saturate to (0..31)
+  \return             Saturated value
+ */
+#define __USAT          __builtin_arm_usat
+
+
+/**
+  \brief   Remove the exclusive lock
+  \details Removes the exclusive lock which is created by LDREX.
+ */
+#define __CLREX         __builtin_arm_clrex
+
+
+/**
   \brief   LDR Exclusive (8 bit)
   \details Executes a exclusive LDR instruction for 8 bit value.
   \param [in]    ptr  Pointer to data
@@ -303,31 +325,6 @@ __STATIC_FORCEINLINE uint8_t __CLZ(uint32_t value)
  */
 #define __STREXW        (uint32_t)__builtin_arm_strex
 
-
-/**
-  \brief   Remove the exclusive lock
-  \details Removes the exclusive lock which is created by LDREX.
- */
-#define __CLREX             __builtin_arm_clrex
-
-/**
-  \brief   Signed Saturate
-  \details Saturates a signed value.
-  \param [in]  value  Value to be saturated
-  \param [in]    sat  Bit position to saturate to (1..32)
-  \return             Saturated value
- */
-#define __SSAT             __builtin_arm_ssat
-
-
-/**
-  \brief   Unsigned Saturate
-  \details Saturates an unsigned value.
-  \param [in]  value  Value to be saturated
-  \param [in]    sat  Bit position to saturate to (0..31)
-  \return             Saturated value
- */
-#define __USAT             __builtin_arm_usat
 
 /**
   \brief   Rotate Right with Extend (32 bit)
@@ -425,7 +422,93 @@ __STATIC_FORCEINLINE void __STRT(uint32_t value, volatile uint32_t *ptr)
   __ASM volatile ("strt %1, %0, #0" : "=Q" (*ptr) : "r" (value) );
 }
 
+/* ###########################  Core Function Access  ########################### */
+/** \ingroup  CMSIS_Core_FunctionInterface
+    \defgroup CMSIS_Core_RegAccFunctions CMSIS Core Register Access Functions
+  @{
+ */
+
+/**
+  \brief   Enable IRQ Interrupts
+  \details Enables IRQ interrupts by clearing the I-bit in the CPSR.
+           Can only be executed in Privileged modes.
+ */
+__STATIC_FORCEINLINE void __enable_irq(void)
+{
+  __ASM volatile ("cpsie i" : : : "memory");
+}
+
+
+/**
+  \brief   Disable IRQ Interrupts
+  \details Disables IRQ interrupts by setting the I-bit in the CPSR.
+  Can only be executed in Privileged modes.
+ */
+__STATIC_FORCEINLINE void __disable_irq(void)
+{
+  __ASM volatile ("cpsid i" : : : "memory");
+}
+
+/**
+  \brief   Enable FIQ
+  \details Enables FIQ interrupts by clearing special-purpose register FAULTMASK.
+           Can only be executed in Privileged modes.
+ */
+__STATIC_FORCEINLINE void __enable_fault_irq(void)
+{
+  __ASM volatile ("cpsie f" : : : "memory");
+}
+
+
+/**
+  \brief   Disable FIQ
+  \details Disables FIQ interrupts by setting special-purpose register FAULTMASK.
+           Can only be executed in Privileged modes.
+ */
+__STATIC_FORCEINLINE void __disable_fault_irq(void)
+{
+  __ASM volatile ("cpsid f" : : : "memory");
+}
+
+
+/**
+  \brief   Get FPSCR
+  \details Returns the current value of the Floating Point Status/Control register.
+  \return               Floating Point Status/Control register value
+ */
+__STATIC_FORCEINLINE uint32_t __get_FPSCR(void)
+{
+#if (defined(__ARM_FP) && (__ARM_FP >= 1))
+  return __builtin_arm_get_fpscr();
+#else
+  return(0U);
+#endif
+}
+
+
+/**
+  \brief   Set FPSCR
+  \details Assigns the given value to the Floating Point Status/Control register.
+  \param [in]    fpscr  Floating Point Status/Control value to set
+ */
+__STATIC_FORCEINLINE void __set_FPSCR(uint32_t fpscr)
+{
+#if (defined(__ARM_FP) && (__ARM_FP >= 1))
+  __builtin_arm_set_fpscr(fpscr);
+#else
+  (void)fpscr;
+#endif
+}
+
+
+/*@} end of CMSIS_Core_RegAccFunctions */
+
+
 /* ###################  Compiler specific Intrinsics  ########################### */
+/** \defgroup CMSIS_SIMD_intrinsics CMSIS SIMD Intrinsics
+  Access to dedicated SIMD instructions
+  @{
+*/
 
 #if (defined (__ARM_FEATURE_DSP) && (__ARM_FEATURE_DSP == 1))
 
@@ -489,15 +572,52 @@ __STATIC_FORCEINLINE void __STRT(uint32_t value, volatile uint32_t *ptr)
 #define     __QADD                  __builtin_arm_qadd
 #define     __QSUB                  __builtin_arm_qsub
 
-#define __PKHBT(ARG1,ARG2,ARG3)          ( ((((uint32_t)(ARG1))          ) & 0x0000FFFFUL) |  \
-                                           ((((uint32_t)(ARG2)) << (ARG3)) & 0xFFFF0000UL)  )
+#define __PKHBT(ARG1,ARG2,ARG3) \
+__extension__ \
+({                          \
+  uint32_t __RES, __ARG1 = (ARG1), __ARG2 = (ARG2); \
+  __ASM ("pkhbt %0, %1, %2, lsl %3" : "=r" (__RES) :  "r" (__ARG1), "r" (__ARG2), "I" (ARG3)  ); \
+  __RES; \
+ })
 
-#define __PKHTB(ARG1,ARG2,ARG3)          ( ((((uint32_t)(ARG1))          ) & 0xFFFF0000UL) |  \
-                                           ((((uint32_t)(ARG2)) >> (ARG3)) & 0x0000FFFFUL)  )
+#define __PKHTB(ARG1,ARG2,ARG3) \
+__extension__ \
+({                          \
+  uint32_t __RES, __ARG1 = (ARG1), __ARG2 = (ARG2); \
+  if (ARG3 == 0) \
+    __ASM ("pkhtb %0, %1, %2" : "=r" (__RES) :  "r" (__ARG1), "r" (__ARG2)  ); \
+  else \
+    __ASM ("pkhtb %0, %1, %2, asr %3" : "=r" (__RES) :  "r" (__ARG1), "r" (__ARG2), "I" (ARG3)  ); \
+  __RES; \
+ })
 
-#define __SXTB16_RORn(ARG1, ARG2)        __SXTB16(__ROR(ARG1, ARG2))
+__STATIC_FORCEINLINE uint32_t __SXTB16_RORn(uint32_t op1, uint32_t rotate)
+{
+    uint32_t result;
+    if (__builtin_constant_p(rotate) && ((rotate == 8U) || (rotate == 16U) || (rotate == 24U)))
+    {
+        __ASM volatile("sxtb16 %0, %1, ROR %2" : "=r"(result) : "r"(op1), "i"(rotate));
+    }
+    else
+    {
+        result = __SXTB16(__ROR(op1, rotate));
+    }
+    return result;
+}
 
-#define __SXTAB16_RORn(ARG1, ARG2, ARG3) __SXTAB16(ARG1, __ROR(ARG2, ARG3))
+__STATIC_FORCEINLINE uint32_t __SXTAB16_RORn(uint32_t op1, uint32_t op2, uint32_t rotate)
+{
+    uint32_t result;
+    if (__builtin_constant_p(rotate) && ((rotate == 8U) || (rotate == 16U) || (rotate == 24U)))
+    {
+        __ASM volatile("sxtab16 %0, %1, %2, ROR %3" : "=r"(result) : "r"(op1), "r"(op2), "i"(rotate));
+    }
+    else
+    {
+        result = __SXTAB16(op1, __ROR(op2, rotate));
+    }
+    return result;
+}
 
 __STATIC_FORCEINLINE int32_t __SMMLA (int32_t op1, int32_t op2, int32_t op3)
 {
@@ -508,80 +628,12 @@ __STATIC_FORCEINLINE int32_t __SMMLA (int32_t op1, int32_t op2, int32_t op3)
 }
 
 #endif /* (__ARM_FEATURE_DSP == 1) */
+/** @} end of group CMSIS_SIMD_intrinsics */
 
-/* ###########################  Core Function Access  ########################### */
-
-/**
-  \brief   Enable IRQ Interrupts
-  \details Enables IRQ interrupts by clearing the I-bit in the CPSR.
-           Can only be executed in Privileged modes.
- */
-__STATIC_FORCEINLINE void __enable_irq(void)
-{
-  __ASM volatile ("cpsie i" : : : "memory");
-}
-
-/**
-  \brief   Disable IRQ Interrupts
-  \details Disables IRQ interrupts by setting the I-bit in the CPSR.
-  Can only be executed in Privileged modes.
- */
-__STATIC_FORCEINLINE void __disable_irq(void)
-{
-  __ASM volatile ("cpsid i" : : : "memory");
-}
-
-/**
-  \brief   Enable FIQ
-  \details Enables FIQ interrupts by clearing special-purpose register FAULTMASK.
-           Can only be executed in Privileged modes.
- */
-__STATIC_FORCEINLINE void __enable_fault_irq(void)
-{
-  __ASM volatile ("cpsie f" : : : "memory");
-}
-
-
-/**
-  \brief   Disable FIQ
-  \details Disables FIQ interrupts by setting special-purpose register FAULTMASK.
-           Can only be executed in Privileged modes.
- */
-__STATIC_FORCEINLINE void __disable_fault_irq(void)
-{
-  __ASM volatile ("cpsid f" : : : "memory");
-}
-
-
-/**
-  \brief   Get FPSCR
-  \details Returns the current value of the Floating Point Status/Control register.
-  \return               Floating Point Status/Control register value
- */
-__STATIC_FORCEINLINE  uint32_t __get_FPSCR(void)
-{
-#if (defined(__ARM_FP) && (__ARM_FP >= 1))
-  return __builtin_arm_get_fpscr();
-#else
-  return(0U);
-#endif
-}
-
-
-/**
-  \brief   Set FPSCR
-  \details Assigns the given value to the Floating Point Status/Control register.
-  \param [in]    fpscr  Floating Point Status/Control value to set
- */
-__STATIC_FORCEINLINE void __set_FPSCR(uint32_t fpscr)
-{
-#if (defined(__ARM_FP) && (__ARM_FP >= 1))
-  __builtin_arm_set_fpscr(fpscr);
-#else
-  (void)fpscr;
-#endif
-}
-
+/** \defgroup CMSIS_Core_intrinsics CMSIS Core Intrinsics
+  Access to dedicated SIMD instructions
+  @{
+*/
 
 /** \brief  Get CPSR Register
     \return               CPSR Register value
@@ -771,5 +823,7 @@ __STATIC_INLINE void __FPU_Enable(void)
     : : : "cc", "r1", "r2"
   );
 }
+
+/*@} end of group CMSIS_Core_intrinsics */
 
 #endif /* __CMSIS_ARMCLANG_A_H */
