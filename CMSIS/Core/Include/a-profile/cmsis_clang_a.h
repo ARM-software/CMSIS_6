@@ -31,15 +31,17 @@
   #error Compiler must support ACLE V2.0
 #endif /* (__ARM_ACLE >= 200) */
 
+/* Fallback for __has_builtin */
+#ifndef __has_builtin
+  #define __has_builtin(x) (0)
+#endif
+
 /* CMSIS compiler specific defines */
 #ifndef   __ASM
   #define __ASM                                  __asm
 #endif
 #ifndef   __INLINE
   #define __INLINE                               inline
-#endif
-#ifndef   __FORCEINLINE
-  #define __FORCEINLINE                          __attribute__((always_inline))
 #endif
 #ifndef   __STATIC_INLINE
   #define __STATIC_INLINE                        static inline
@@ -49,9 +51,6 @@
 #endif
 #ifndef   __NO_RETURN
   #define __NO_RETURN                            __attribute__((__noreturn__))
-#endif
-#ifndef   CMSIS_DEPRECATED
-  #define CMSIS_DEPRECATED                       __attribute__((deprecated))
 #endif
 #ifndef   __USED
   #define __USED                                 __attribute__((used))
@@ -64,6 +63,9 @@
 #endif
 #ifndef   __PACKED_STRUCT
   #define __PACKED_STRUCT                        struct __attribute__((packed, aligned(1)))
+#endif
+#ifndef   __PACKED_UNION
+  #define __PACKED_UNION                         union __attribute__((packed, aligned(1)))
 #endif
 #ifndef   __UNALIGNED_UINT16_WRITE
   #pragma clang diagnostic push
@@ -109,14 +111,14 @@
   \brief   No Operation
   \details No Operation does nothing. This instruction can be used for code alignment purposes.
  */
-#define __NOP()                             __ASM volatile ("nop")
+#define __NOP()         __nop()
 
 
 /**
   \brief   Wait For Interrupt
   \details Wait For Interrupt is a hint instruction that suspends execution until one of a number of events occurs.
  */
-#define __WFI()                             __ASM volatile ("wfi":::"memory")
+#define __WFI()         __wfi()
 
 
 /**
@@ -124,14 +126,14 @@
   \details Wait For Event is a hint instruction that permits the processor to enter
            a low-power state until one of a number of events occurs.
  */
-#define __WFE()                             __ASM volatile ("wfe":::"memory")
+#define __WFE()         __wfe()
 
 
 /**
   \brief   Send Event
   \details Send Event is a hint instruction. It causes an event to be signaled to the CPU.
  */
-#define __SEV()                             __ASM volatile ("sev")
+#define __SEV()         __sev()
 
 
 /**
@@ -140,10 +142,7 @@
            so that all instructions following the ISB are fetched from cache or memory,
            after the instruction has been completed.
  */
-__STATIC_FORCEINLINE  void __ISB(void)
-{
-  __ASM volatile ("isb 0xF":::"memory");
-}
+#define __ISB()         __isb(0xF)
 
 
 /**
@@ -151,10 +150,7 @@ __STATIC_FORCEINLINE  void __ISB(void)
   \details Acts as a special kind of Data Memory Barrier.
            It completes when all explicit memory accesses before this instruction complete.
  */
-__STATIC_FORCEINLINE  void __DSB(void)
-{
-  __ASM volatile ("dsb 0xF":::"memory");
-}
+#define __DSB()         __dsb(0xF)
 
 
 /**
@@ -162,10 +158,7 @@ __STATIC_FORCEINLINE  void __DSB(void)
   \details Ensures the apparent order of the explicit memory operations before
            and after the instruction, without ensuring their completion.
  */
-__STATIC_FORCEINLINE  void __DMB(void)
-{
-  __ASM volatile ("dmb 0xF":::"memory");
-}
+#define __DMB()         __dmb(0xF)
 
 
 /**
@@ -174,17 +167,7 @@ __STATIC_FORCEINLINE  void __DMB(void)
   \param [in]    value  Value to reverse
   \return               Reversed value
  */
-__STATIC_FORCEINLINE  uint32_t __REV(uint32_t value)
-{
-#if (__GNUC__ > 4) || (__GNUC__ == 4 && __GNUC_MINOR__ >= 5)
-  return __builtin_bswap32(value);
-#else
-  uint32_t result;
-
-  __ASM ("rev %0, %1" : "=r" (result) : "r" (value) );
-  return result;
-#endif
-}
+#define __REV(value)    __rev(value)
 
 
 /**
@@ -193,12 +176,7 @@ __STATIC_FORCEINLINE  uint32_t __REV(uint32_t value)
   \param [in]    value  Value to reverse
   \return               Reversed value
  */
-__STATIC_FORCEINLINE uint32_t __REV16(uint32_t value)
-{
-  uint32_t result;
-  __ASM ("rev16 %0, %1" : "=r" (result) : "r" (value));
-  return result;
-}
+#define __REV16(value)  __rev16(value)
 
 
 /**
@@ -207,17 +185,7 @@ __STATIC_FORCEINLINE uint32_t __REV16(uint32_t value)
   \param [in]    value  Value to reverse
   \return               Reversed value
  */
-__STATIC_FORCEINLINE  int16_t __REVSH(int16_t value)
-{
-#if (__GNUC__ > 4) || (__GNUC__ == 4 && __GNUC_MINOR__ >= 8)
-  return (int16_t)__builtin_bswap16(value);
-#else
-  int16_t result;
-
-  __ASM ("revsh %0, %1" : "=r" (result) : "r" (value) );
-  return result;
-#endif
-}
+#define __REVSH(value)  __revsh(value)
 
 
 /**
@@ -227,15 +195,7 @@ __STATIC_FORCEINLINE  int16_t __REVSH(int16_t value)
   \param [in]    op2  Number of Bits to rotate
   \return               Rotated value
  */
-__STATIC_FORCEINLINE uint32_t __ROR(uint32_t op1, uint32_t op2)
-{
-  op2 %= 32U;
-  if (op2 == 0U)
-  {
-    return op1;
-  }
-  return (op1 >> op2) | (op1 << (32U - op2));
-}
+#define __ROR(op1, op2) __ror(op1, op2)
 
 
 /**
@@ -254,12 +214,7 @@ __STATIC_FORCEINLINE uint32_t __ROR(uint32_t op1, uint32_t op2)
   \param [in]    value  Value to reverse
   \return               Reversed value
  */
-__STATIC_FORCEINLINE  uint32_t __RBIT(uint32_t value)
-{
-  uint32_t result;
-   __ASM ("rbit %0, %1" : "=r" (result) : "r" (value) );
-  return result;
-}
+#define __RBIT(value)   __rbit(value)
 
 
 /**
@@ -268,21 +223,34 @@ __STATIC_FORCEINLINE  uint32_t __RBIT(uint32_t value)
   \param [in]  value  Value to count the leading zeros
   \return             number of leading zeros in value
  */
-__STATIC_FORCEINLINE uint8_t __CLZ(uint32_t value)
-{
-  /* Even though __builtin_clz produces a CLZ instruction on ARM, formally
-     __builtin_clz(0) is undefined behaviour, so handle this case specially.
-     This guarantees ARM-compatible results if happening to compile on a non-ARM
-     target, and ensures the compiler doesn't decide to activate any
-     optimisations using the logic "value was passed to __builtin_clz, so it
-     is non-zero".
-   */
-  if (value == 0U)
-  {
-    return 32U;
-  }
-  return __builtin_clz(value);
-}
+#define __CLZ(value)    __clz(value)
+
+
+/**
+  \brief   Signed Saturate
+  \details Saturates a signed value.
+  \param [in]  value  Value to be saturated
+  \param [in]    sat  Bit position to saturate to (1..32)
+  \return             Saturated value
+ */
+#define __SSAT(value, sat) __ssat(value, sat)
+
+
+/**
+  \brief   Unsigned Saturate
+  \details Saturates an unsigned value.
+  \param [in]  value  Value to be saturated
+  \param [in]    sat  Bit position to saturate to (0..31)
+  \return             Saturated value
+ */
+#define __USAT(value, sat) __usat(value, sat)
+
+
+/**
+  \brief   Remove the exclusive lock
+  \details Removes the exclusive lock which is created by LDREX.
+ */
+#define __CLREX             __builtin_arm_clrex
 
 
 /**
@@ -291,13 +259,7 @@ __STATIC_FORCEINLINE uint8_t __CLZ(uint32_t value)
   \param [in]    ptr  Pointer to data
   \return             value of type uint8_t at (*ptr)
  */
-__STATIC_FORCEINLINE  uint8_t __LDREXB(volatile uint8_t *addr)
-{
-    uint32_t result;
-
-   __ASM volatile ("ldrexb %0, %1" : "=r" (result) : "Q" (*addr) );
-   return ((uint8_t) result);    /* Add explicit type cast here */
-}
+#define __LDREXB        (uint8_t)__builtin_arm_ldrex
 
 
 /**
@@ -306,13 +268,7 @@ __STATIC_FORCEINLINE  uint8_t __LDREXB(volatile uint8_t *addr)
   \param [in]    ptr  Pointer to data
   \return        value of type uint16_t at (*ptr)
  */
-__STATIC_FORCEINLINE  uint16_t __LDREXH(volatile uint16_t *addr)
-{
-    uint32_t result;
-
-   __ASM volatile ("ldrexh %0, %1" : "=r" (result) : "Q" (*addr) );
-   return ((uint16_t) result);    /* Add explicit type cast here */
-}
+#define __LDREXH        (uint16_t)__builtin_arm_ldrex
 
 
 /**
@@ -321,13 +277,7 @@ __STATIC_FORCEINLINE  uint16_t __LDREXH(volatile uint16_t *addr)
   \param [in]    ptr  Pointer to data
   \return        value of type uint32_t at (*ptr)
  */
-__STATIC_FORCEINLINE  uint32_t __LDREXW(volatile uint32_t *addr)
-{
-    uint32_t result;
-
-   __ASM volatile ("ldrex %0, %1" : "=r" (result) : "Q" (*addr) );
-   return(result);
-}
+#define __LDREXW        (uint32_t)__builtin_arm_ldrex
 
 
 /**
@@ -338,13 +288,7 @@ __STATIC_FORCEINLINE  uint32_t __LDREXW(volatile uint32_t *addr)
   \return          0  Function succeeded
   \return          1  Function failed
  */
-__STATIC_FORCEINLINE  uint32_t __STREXB(uint8_t value, volatile uint8_t *addr)
-{
-   uint32_t result;
-
-   __ASM volatile ("strexb %0, %2, %1" : "=&r" (result), "=Q" (*addr) : "r" ((uint32_t)value) );
-   return(result);
-}
+#define __STREXB        (uint32_t)__builtin_arm_strex
 
 
 /**
@@ -355,13 +299,7 @@ __STATIC_FORCEINLINE  uint32_t __STREXB(uint8_t value, volatile uint8_t *addr)
   \return          0  Function succeeded
   \return          1  Function failed
  */
-__STATIC_FORCEINLINE  uint32_t __STREXH(uint16_t value, volatile uint16_t *addr)
-{
-   uint32_t result;
-
-   __ASM volatile ("strexh %0, %2, %1" : "=&r" (result), "=Q" (*addr) : "r" ((uint32_t)value) );
-   return(result);
-}
+#define __STREXH        (uint32_t)__builtin_arm_strex
 
 
 /**
@@ -372,54 +310,8 @@ __STATIC_FORCEINLINE  uint32_t __STREXH(uint16_t value, volatile uint16_t *addr)
   \return          0  Function succeeded
   \return          1  Function failed
  */
-__STATIC_FORCEINLINE  uint32_t __STREXW(uint32_t value, volatile uint32_t *addr)
-{
-   uint32_t result;
+#define __STREXW        (uint32_t)__builtin_arm_strex
 
-   __ASM volatile ("strex %0, %2, %1" : "=&r" (result), "=Q" (*addr) : "r" (value) );
-   return(result);
-}
-
-
-/**
-  \brief   Remove the exclusive lock
-  \details Removes the exclusive lock which is created by LDREX.
- */
-__STATIC_FORCEINLINE  void __CLREX(void)
-{
-  __ASM volatile ("clrex" ::: "memory");
-}
-
-/**
-  \brief   Signed Saturate
-  \details Saturates a signed value.
-  \param [in]  ARG1  Value to be saturated
-  \param [in]  ARG2  Bit position to saturate to (1..32)
-  \return             Saturated value
- */
-#define __SSAT(ARG1, ARG2) \
-__extension__ \
-({                          \
-  int32_t __RES, __ARG1 = (ARG1); \
-  __ASM volatile ("ssat %0, %1, %2" : "=r" (__RES) :  "I" (ARG2), "r" (__ARG1) : "cc" ); \
-  __RES; \
- })
-
-
-/**
-  \brief   Unsigned Saturate
-  \details Saturates an unsigned value.
-  \param [in]  ARG1  Value to be saturated
-  \param [in]  ARG2  Bit position to saturate to (0..31)
-  \return             Saturated value
- */
-#define __USAT(ARG1, ARG2) \
-__extension__ \
-({                          \
-  uint32_t __RES, __ARG1 = (ARG1); \
-  __ASM volatile ("usat %0, %1, %2" : "=r" (__RES) :  "I" (ARG2), "r" (__ARG1) : "cc" ); \
-  __RES; \
- })
 
 /**
   \brief   Rotate Right with Extend (32 bit)
@@ -537,7 +429,7 @@ __STATIC_FORCEINLINE void __enable_irq(void)
 /**
   \brief   Disable IRQ Interrupts
   \details Disables IRQ interrupts by setting special-purpose register PRIMASK.
-  Can only be executed in Privileged modes.
+           Can only be executed in Privileged modes.
  */
 __STATIC_FORCEINLINE void __disable_irq(void)
 {
@@ -565,12 +457,13 @@ __STATIC_FORCEINLINE void __disable_fault_irq(void)
   __ASM volatile ("cpsid f" : : : "memory");
 }
 
+
 /**
   \brief   Get FPSCR
   \details Returns the current value of the Floating Point Status/Control register.
   \return               Floating Point Status/Control register value
  */
-__STATIC_FORCEINLINE  uint32_t __get_FPSCR(void)
+__STATIC_FORCEINLINE uint32_t __get_FPSCR(void)
 {
 #if (defined(__ARM_FP) && (__ARM_FP >= 1))
   return __builtin_arm_get_fpscr();
@@ -599,6 +492,10 @@ __STATIC_FORCEINLINE void __set_FPSCR(uint32_t fpscr)
 
 
 /* ###################  Compiler specific Intrinsics  ########################### */
+/** \defgroup CMSIS_SIMD_intrinsics CMSIS SIMD Intrinsics
+  Access to dedicated SIMD instructions
+  @{
+*/
 
 #if (defined (__ARM_FEATURE_DSP) && (__ARM_FEATURE_DSP == 1))
 
