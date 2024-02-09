@@ -136,7 +136,7 @@ In case of failing test cases, one can run a single test case with verbose outpu
 PASS: CMSIS-Core :: src/apsr.c (1 of 1)
 Script:
 --
-: 'RUN: at line 2';   arm-none-eabi-gcc -mcpu=cortex-m3 -mfloat-abi=soft -O1 -I ../Include -D CORE_HEADER=\"core_cm3.h\" -c -D __CM3_REV=0x0000U -D __MPU_PRESENT=1U -D __VTOR_PRESENT=1U -D __NVIC_PRIO_BITS=3U -D __Vendor_SysTickConfig=0U -o ./src/Output/apsr.c.o ./src/apsr.c; llvm-objdump --mcpu=cortex-m3 -d ./src/Output/apsr.c.o | FileCheck --allow-unused-prefixes --check-prefixes CHECK,CHECK-THUMB ./src/apsr.c
+: 'RUN: at line 2';   arm-none-eabi-gcc -mcpu=cortex-m3 -mfloat-abi=soft -O1 -I ../Include -D CORE_HEADER="core_cm3.h" -c -D __CM3_REV=0x0000U -D __MPU_PRESENT=1U -D __VTOR_PRESENT=1U -D __NVIC_PRIO_BITS=3U -D __Vendor_SysTickConfig=0U -o ./src/Output/apsr.c.o ./src/apsr.c; llvm-objdump --mcpu=cortex-m3 -d ./src/Output/apsr.c.o | FileCheck --allow-unused-prefixes --check-prefixes CHECK,CHECK-THUMB ./src/apsr.c
 --
 Exit Code: 0
  :
