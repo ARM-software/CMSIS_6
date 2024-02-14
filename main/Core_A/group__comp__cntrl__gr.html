@@ -141,10 +141,10 @@ Macros</h2></td></tr>
 <tr class="memitem:ga1378040bcf22428955c6e3ce9c2053cd"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__comp__cntrl__gr.html#ga1378040bcf22428955c6e3ce9c2053cd">__ASM</a>&#160;&#160;&#160;__asm</td></tr>
 <tr class="memdesc:ga1378040bcf22428955c6e3ce9c2053cd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Pass information from the compiler to the assembler.  <br /></td></tr>
 <tr class="separator:ga1378040bcf22428955c6e3ce9c2053cd"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gade2d8d7118f8ff49547f60aa0c3382bb"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__comp__cntrl__gr.html#gade2d8d7118f8ff49547f60aa0c3382bb">__INLINE</a>&#160;&#160;&#160;__inline</td></tr>
+<tr class="memitem:gade2d8d7118f8ff49547f60aa0c3382bb"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__comp__cntrl__gr.html#gade2d8d7118f8ff49547f60aa0c3382bb">__INLINE</a>&#160;&#160;&#160;inline</td></tr>
 <tr class="memdesc:gade2d8d7118f8ff49547f60aa0c3382bb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Recommend that function should be inlined by the compiler.  <br /></td></tr>
 <tr class="separator:gade2d8d7118f8ff49547f60aa0c3382bb"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gaba87361bfad2ae52cfe2f40c1a1dbf9c"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__comp__cntrl__gr.html#gaba87361bfad2ae52cfe2f40c1a1dbf9c">__STATIC_INLINE</a>&#160;&#160;&#160;static __inline</td></tr>
+<tr class="memitem:gaba87361bfad2ae52cfe2f40c1a1dbf9c"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__comp__cntrl__gr.html#gaba87361bfad2ae52cfe2f40c1a1dbf9c">__STATIC_INLINE</a>&#160;&#160;&#160;static inline</td></tr>
 <tr class="memdesc:gaba87361bfad2ae52cfe2f40c1a1dbf9c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Define a static function should be inlined by the compiler.  <br /></td></tr>
 <tr class="separator:gaba87361bfad2ae52cfe2f40c1a1dbf9c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:gab904513442afdf77d4f8c74f23cbb040"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__comp__cntrl__gr.html#gab904513442afdf77d4f8c74f23cbb040">__STATIC_FORCEINLINE</a></td></tr>
@@ -248,7 +248,7 @@ Macros</h2></td></tr>
 <div class="line">   <a class="code hl_define" href="group__comp__cntrl__gr.html#ga1378040bcf22428955c6e3ce9c2053cd">__ASM</a> <span class="keyword">volatile</span> (<span class="stringliteral">&quot;rbit %0, %1&quot;</span> : <span class="stringliteral">&quot;=r&quot;</span> (result) : <span class="stringliteral">&quot;r&quot;</span> (value) );</div>
 <div class="line">   <span class="keywordflow">return</span>(result);</div>
 <div class="line">}</div>
-<div class="ttc" id="acmsis__armclang__a_8h_html_ab83768933a612816fad669db5488366f"><div class="ttname"><a href="cmsis__armclang__a_8h.html#ab83768933a612816fad669db5488366f">__RBIT</a></div><div class="ttdeci">#define __RBIT</div><div class="ttdoc">Reverse bit order of value.</div><div class="ttdef"><b>Definition:</b> cmsis_armclang_a.h:219</div></div>
+<div class="ttc" id="acmsis__armclang__a_8h_html_ab83768933a612816fad669db5488366f"><div class="ttname"><a href="cmsis__armclang__a_8h.html#ab83768933a612816fad669db5488366f">__RBIT</a></div><div class="ttdeci">#define __RBIT</div><div class="ttdoc">Reverse bit order of value.</div><div class="ttdef"><b>Definition:</b> cmsis_armclang_a.h:214</div></div>
 <div class="ttc" id="agroup__comp__cntrl__gr_html_ga1378040bcf22428955c6e3ce9c2053cd"><div class="ttname"><a href="group__comp__cntrl__gr.html#ga1378040bcf22428955c6e3ce9c2053cd">__ASM</a></div><div class="ttdeci">#define __ASM</div><div class="ttdoc">Pass information from the compiler to the assembler.</div></div>
 <div class="ttc" id="agroup__comp__cntrl__gr_html_gaba87361bfad2ae52cfe2f40c1a1dbf9c"><div class="ttname"><a href="group__comp__cntrl__gr.html#gaba87361bfad2ae52cfe2f40c1a1dbf9c">__STATIC_INLINE</a></div><div class="ttdeci">#define __STATIC_INLINE</div><div class="ttdoc">Define a static function should be inlined by the compiler.</div></div>
 </div><!-- fragment --> 
@@ -261,7 +261,7 @@ Macros</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define __INLINE&#160;&#160;&#160;__inline</td>
+          <td class="memname">#define __INLINE&#160;&#160;&#160;inline</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -343,7 +343,7 @@ Macros</h2></td></tr>
 <div class="line">  uint32_t  u32;</div>
 <div class="line">  uint16_t  u16;</div>
 <div class="line">};</div>
-<div class="ttc" id="acmsis__armclang__a_8h_html_a4dbb70fab85207c27b581ecb6532b314"><div class="ttname"><a href="cmsis__armclang__a_8h.html#a4dbb70fab85207c27b581ecb6532b314">__PACKED_STRUCT</a></div><div class="ttdeci">#define __PACKED_STRUCT</div><div class="ttdef"><b>Definition:</b> cmsis_armclang_a.h:60</div></div>
+<div class="ttc" id="acmsis__armclang__a_8h_html_a4dbb70fab85207c27b581ecb6532b314"><div class="ttname"><a href="cmsis__armclang__a_8h.html#a4dbb70fab85207c27b581ecb6532b314">__PACKED_STRUCT</a></div><div class="ttdeci">#define __PACKED_STRUCT</div><div class="ttdef"><b>Definition:</b> cmsis_armclang_a.h:54</div></div>
 </div><!-- fragment --> 
 </div>
 </div>
@@ -368,7 +368,7 @@ Macros</h2></td></tr>
 <div class="line">    uint32_t *vectors = (uint32_t *) ((uintptr_t) SCB-&gt;VTOR);</div>
 <div class="line">    <span class="keywordflow">return</span> vectors[(int32_t)IRQn + NVIC_USER_IRQ_OFFSET];</div>
 <div class="line">}</div>
-<div class="ttc" id="acmsis__armclang__a_8h_html_ab904513442afdf77d4f8c74f23cbb040"><div class="ttname"><a href="cmsis__armclang__a_8h.html#ab904513442afdf77d4f8c74f23cbb040">__STATIC_FORCEINLINE</a></div><div class="ttdeci">#define __STATIC_FORCEINLINE</div><div class="ttdef"><b>Definition:</b> cmsis_armclang_a.h:42</div></div>
+<div class="ttc" id="acmsis__armclang__a_8h_html_ab904513442afdf77d4f8c74f23cbb040"><div class="ttname"><a href="cmsis__armclang__a_8h.html#ab904513442afdf77d4f8c74f23cbb040">__STATIC_FORCEINLINE</a></div><div class="ttdeci">#define __STATIC_FORCEINLINE</div><div class="ttdef"><b>Definition:</b> cmsis_armclang_a.h:39</div></div>
 <div class="ttc" id="agroup__irq__ctrl__gr_html_ga7e1129cd8a196f4284d41db3e82ad5c8"><div class="ttname"><a href="group__irq__ctrl__gr.html#ga7e1129cd8a196f4284d41db3e82ad5c8">IRQn_Type</a></div><div class="ttdeci">IRQn_Type</div><div class="ttdoc">Definition of IRQn numbers.</div><div class="ttdef"><b>Definition:</b> ref_irq_ctrl.txt:79</div></div>
 </div><!-- fragment --> 
 </div>
@@ -380,7 +380,7 @@ Macros</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define __STATIC_INLINE&#160;&#160;&#160;static __inline</td>
+          <td class="memname">#define __STATIC_INLINE&#160;&#160;&#160;static inline</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -415,7 +415,7 @@ Macros</h2></td></tr>
 <div class="line"><span class="keywordtype">void</span> test (uint8_t *ptr) {</div>
 <div class="line">   val16 = <a class="code hl_define" href="cmsis__armclang__a_8h.html#ab71b66e5ce403158d3dee62a59f9175f">__UNALIGNED_UINT16_READ</a>(ptr);</div>
 <div class="line">}</div>
-<div class="ttc" id="acmsis__armclang__a_8h_html_ab71b66e5ce403158d3dee62a59f9175f"><div class="ttname"><a href="cmsis__armclang__a_8h.html#ab71b66e5ce403158d3dee62a59f9175f">__UNALIGNED_UINT16_READ</a></div><div class="ttdeci">#define __UNALIGNED_UINT16_READ(addr)</div><div class="ttdef"><b>Definition:</b> cmsis_armclang_a.h:76</div></div>
+<div class="ttc" id="acmsis__armclang__a_8h_html_ab71b66e5ce403158d3dee62a59f9175f"><div class="ttname"><a href="cmsis__armclang__a_8h.html#ab71b66e5ce403158d3dee62a59f9175f">__UNALIGNED_UINT16_READ</a></div><div class="ttdeci">#define __UNALIGNED_UINT16_READ(addr)</div><div class="ttdef"><b>Definition:</b> cmsis_armclang_a.h:71</div></div>
 </div><!-- fragment --> 
 </div>
 </div>
@@ -438,7 +438,7 @@ Macros</h2></td></tr>
 <div class="line"><span class="keywordtype">void</span> test (uint8_t *ptr) {</div>
 <div class="line">   <a class="code hl_define" href="cmsis__armclang__a_8h.html#a5103fb373cae9837cc4a384be55dc87f">__UNALIGNED_UINT16_WRITE</a>(ptr, val16);</div>
 <div class="line">}</div>
-<div class="ttc" id="acmsis__armclang__a_8h_html_a5103fb373cae9837cc4a384be55dc87f"><div class="ttname"><a href="cmsis__armclang__a_8h.html#a5103fb373cae9837cc4a384be55dc87f">__UNALIGNED_UINT16_WRITE</a></div><div class="ttdeci">#define __UNALIGNED_UINT16_WRITE(addr, val)</div><div class="ttdef"><b>Definition:</b> cmsis_armclang_a.h:68</div></div>
+<div class="ttc" id="acmsis__armclang__a_8h_html_a5103fb373cae9837cc4a384be55dc87f"><div class="ttname"><a href="cmsis__armclang__a_8h.html#a5103fb373cae9837cc4a384be55dc87f">__UNALIGNED_UINT16_WRITE</a></div><div class="ttdeci">#define __UNALIGNED_UINT16_WRITE(addr, val)</div><div class="ttdef"><b>Definition:</b> cmsis_armclang_a.h:64</div></div>
 </div><!-- fragment --> 
 </div>
 </div>
@@ -461,7 +461,7 @@ Macros</h2></td></tr>
 <div class="line"><span class="keywordtype">void</span> test (uint8_t *ptr) {</div>
 <div class="line">   val32 = <a class="code hl_define" href="cmsis__armclang__a_8h.html#a3b931f0b051b8c1a6377a3dcc7559b5e">__UNALIGNED_UINT32_READ</a>(ptr);</div>
 <div class="line">}</div>
-<div class="ttc" id="acmsis__armclang__a_8h_html_a3b931f0b051b8c1a6377a3dcc7559b5e"><div class="ttname"><a href="cmsis__armclang__a_8h.html#a3b931f0b051b8c1a6377a3dcc7559b5e">__UNALIGNED_UINT32_READ</a></div><div class="ttdeci">#define __UNALIGNED_UINT32_READ(addr)</div><div class="ttdef"><b>Definition:</b> cmsis_armclang_a.h:91</div></div>
+<div class="ttc" id="acmsis__armclang__a_8h_html_a3b931f0b051b8c1a6377a3dcc7559b5e"><div class="ttname"><a href="cmsis__armclang__a_8h.html#a3b931f0b051b8c1a6377a3dcc7559b5e">__UNALIGNED_UINT32_READ</a></div><div class="ttdeci">#define __UNALIGNED_UINT32_READ(addr)</div><div class="ttdef"><b>Definition:</b> cmsis_armclang_a.h:85</div></div>
 </div><!-- fragment --> 
 </div>
 </div>
@@ -484,7 +484,7 @@ Macros</h2></td></tr>
 <div class="line"><span class="keywordtype">void</span> test (uint8_t *ptr) {</div>
 <div class="line">   <a class="code hl_define" href="cmsis__armclang__a_8h.html#a203f593d140ed88b81bc189edc861110">__UNALIGNED_UINT32_WRITE</a>(ptr, val32);</div>
 <div class="line">}</div>
-<div class="ttc" id="acmsis__armclang__a_8h_html_a203f593d140ed88b81bc189edc861110"><div class="ttname"><a href="cmsis__armclang__a_8h.html#a203f593d140ed88b81bc189edc861110">__UNALIGNED_UINT32_WRITE</a></div><div class="ttdeci">#define __UNALIGNED_UINT32_WRITE(addr, val)</div><div class="ttdef"><b>Definition:</b> cmsis_armclang_a.h:84</div></div>
+<div class="ttc" id="acmsis__armclang__a_8h_html_a203f593d140ed88b81bc189edc861110"><div class="ttname"><a href="cmsis__armclang__a_8h.html#a203f593d140ed88b81bc189edc861110">__UNALIGNED_UINT32_WRITE</a></div><div class="ttdeci">#define __UNALIGNED_UINT32_WRITE(addr, val)</div><div class="ttdef"><b>Definition:</b> cmsis_armclang_a.h:78</div></div>
 </div><!-- fragment --> 
 </div>
 </div>

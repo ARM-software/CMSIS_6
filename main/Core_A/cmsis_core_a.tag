@@ -21,13 +21,6 @@
     </member>
     <member kind="define">
       <type>#define</type>
-      <name>__FORCEINLINE</name>
-      <anchorfile>cmsis__armclang__a_8h.html</anchorfile>
-      <anchor>a2ecb43ce8e7aa73d32f50afa67b42c76</anchor>
-      <arglist></arglist>
-    </member>
-    <member kind="define">
-      <type>#define</type>
       <name>__STATIC_INLINE</name>
       <anchorfile>group__comp__cntrl__gr.html</anchorfile>
       <anchor>gaba87361bfad2ae52cfe2f40c1a1dbf9c</anchor>
@@ -45,13 +38,6 @@
       <name>__NO_RETURN</name>
       <anchorfile>group__comp__cntrl__gr.html</anchorfile>
       <anchor>ga153a4a31b276a9758959580538720a51</anchor>
-      <arglist></arglist>
-    </member>
-    <member kind="define">
-      <type>#define</type>
-      <name>CMSIS_DEPRECATED</name>
-      <anchorfile>cmsis__armclang__a_8h.html</anchorfile>
-      <anchor>acdc36c1b3d3e16c17a73889b7d06d0d2</anchor>
       <arglist></arglist>
     </member>
     <member kind="define">
@@ -80,6 +66,13 @@
       <name>__PACKED_STRUCT</name>
       <anchorfile>cmsis__armclang__a_8h.html</anchorfile>
       <anchor>a4dbb70fab85207c27b581ecb6532b314</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="define">
+      <type>#define</type>
+      <name>__PACKED_UNION</name>
+      <anchorfile>cmsis__armclang__a_8h.html</anchorfile>
+      <anchor>a6fba34d08b0a526830b4231d2ea0b89a</anchor>
       <arglist></arglist>
     </member>
     <member kind="define">
@@ -116,6 +109,13 @@
       <anchorfile>group__comp__cntrl__gr.html</anchorfile>
       <anchor>gaa65ef8f7a5e8b7a6ea6c1d48b4c78e55</anchor>
       <arglist>(x)</arglist>
+    </member>
+    <member kind="define">
+      <type>#define</type>
+      <name>__RESTRICT</name>
+      <anchorfile>cmsis__armclang__a_8h.html</anchorfile>
+      <anchor>a378ac21329d33f561f90265eef89f564</anchor>
+      <arglist></arglist>
     </member>
     <member kind="define">
       <type>#define</type>
@@ -210,6 +210,27 @@
     </member>
     <member kind="define">
       <type>#define</type>
+      <name>__SSAT</name>
+      <anchorfile>cmsis__armclang__a_8h.html</anchorfile>
+      <anchor>a3c013c2ed76ebc48c283c8bae17b9ab8</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="define">
+      <type>#define</type>
+      <name>__USAT</name>
+      <anchorfile>cmsis__armclang__a_8h.html</anchorfile>
+      <anchor>ad0e4fa951d563740462d837bb6ddd7bb</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="define">
+      <type>#define</type>
+      <name>__CLREX</name>
+      <anchorfile>cmsis__armclang__a_8h.html</anchorfile>
+      <anchor>a7f7b66103530fadcce226375af3c2c03</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="define">
+      <type>#define</type>
       <name>__LDREXB</name>
       <anchorfile>cmsis__armclang__a_8h.html</anchorfile>
       <anchor>a7d50fe10ca4fb48c076c45e607361ada</anchor>
@@ -252,51 +273,30 @@
     </member>
     <member kind="define">
       <type>#define</type>
-      <name>__CLREX</name>
-      <anchorfile>cmsis__armclang__a_8h.html</anchorfile>
-      <anchor>a7f7b66103530fadcce226375af3c2c03</anchor>
-      <arglist></arglist>
-    </member>
-    <member kind="define">
-      <type>#define</type>
-      <name>__SSAT</name>
-      <anchorfile>cmsis__armclang__a_8h.html</anchorfile>
-      <anchor>a3c013c2ed76ebc48c283c8bae17b9ab8</anchor>
-      <arglist></arglist>
-    </member>
-    <member kind="define">
-      <type>#define</type>
-      <name>__USAT</name>
-      <anchorfile>cmsis__armclang__a_8h.html</anchorfile>
-      <anchor>ad0e4fa951d563740462d837bb6ddd7bb</anchor>
-      <arglist></arglist>
-    </member>
-    <member kind="define">
-      <type>#define</type>
       <name>__get_CP</name>
-      <anchorfile>cmsis__armclang__a_8h.html</anchorfile>
-      <anchor>ad2a4e5d85d92189d574854b2fbfff057</anchor>
+      <anchorfile>group__CMSIS__Core__intrinsics.html</anchorfile>
+      <anchor>gad2a4e5d85d92189d574854b2fbfff057</anchor>
       <arglist>(cp, op1, Rt, CRn, CRm, op2)</arglist>
     </member>
     <member kind="define">
       <type>#define</type>
       <name>__set_CP</name>
-      <anchorfile>cmsis__armclang__a_8h.html</anchorfile>
-      <anchor>a5e4710ddc910c7feee1de7f118b84ad1</anchor>
+      <anchorfile>group__CMSIS__Core__intrinsics.html</anchorfile>
+      <anchor>ga5e4710ddc910c7feee1de7f118b84ad1</anchor>
       <arglist>(cp, op1, Rt, CRn, CRm, op2)</arglist>
     </member>
     <member kind="define">
       <type>#define</type>
       <name>__get_CP64</name>
-      <anchorfile>cmsis__armclang__a_8h.html</anchorfile>
-      <anchor>a96a3cccabb5bcaf41115a5dfb3fc6723</anchor>
+      <anchorfile>group__CMSIS__Core__intrinsics.html</anchorfile>
+      <anchor>ga96a3cccabb5bcaf41115a5dfb3fc6723</anchor>
       <arglist>(cp, op1, Rt, CRm)</arglist>
     </member>
     <member kind="define">
       <type>#define</type>
       <name>__set_CP64</name>
-      <anchorfile>cmsis__armclang__a_8h.html</anchorfile>
-      <anchor>af23b5ae27930ef8d9f62a2cf19338003</anchor>
+      <anchorfile>group__CMSIS__Core__intrinsics.html</anchorfile>
+      <anchor>gaf23b5ae27930ef8d9f62a2cf19338003</anchor>
       <arglist>(cp, op1, Rt, CRm)</arglist>
     </member>
     <member kind="function">
@@ -365,119 +365,119 @@
     <member kind="function">
       <type>__STATIC_FORCEINLINE void</type>
       <name>__enable_irq</name>
-      <anchorfile>cmsis__armclang__a_8h.html</anchorfile>
-      <anchor>ae84bf4e95944e61937f4ed2453e5ef23</anchor>
+      <anchorfile>group__CMSIS__Core__RegAccFunctions.html</anchorfile>
+      <anchor>gae84bf4e95944e61937f4ed2453e5ef23</anchor>
       <arglist>(void)</arglist>
     </member>
     <member kind="function">
       <type>__STATIC_FORCEINLINE void</type>
       <name>__disable_irq</name>
-      <anchorfile>cmsis__armclang__a_8h.html</anchorfile>
-      <anchor>a2299877e4ba3e162ca9dbabd6e0abef6</anchor>
+      <anchorfile>group__CMSIS__Core__RegAccFunctions.html</anchorfile>
+      <anchor>ga2299877e4ba3e162ca9dbabd6e0abef6</anchor>
       <arglist>(void)</arglist>
     </member>
     <member kind="function">
       <type>__STATIC_FORCEINLINE void</type>
       <name>__enable_fault_irq</name>
-      <anchorfile>cmsis__armclang__a_8h.html</anchorfile>
-      <anchor>adccd32ddc2337a9a944c2da9c485a81d</anchor>
+      <anchorfile>group__CMSIS__Core__RegAccFunctions.html</anchorfile>
+      <anchor>gadccd32ddc2337a9a944c2da9c485a81d</anchor>
       <arglist>(void)</arglist>
     </member>
     <member kind="function">
       <type>__STATIC_FORCEINLINE void</type>
       <name>__disable_fault_irq</name>
-      <anchorfile>cmsis__armclang__a_8h.html</anchorfile>
-      <anchor>a6f1d7bf2b8b84502e8de12f0c288e117</anchor>
+      <anchorfile>group__CMSIS__Core__RegAccFunctions.html</anchorfile>
+      <anchor>ga6f1d7bf2b8b84502e8de12f0c288e117</anchor>
       <arglist>(void)</arglist>
     </member>
     <member kind="function">
       <type>__STATIC_FORCEINLINE uint32_t</type>
       <name>__get_FPSCR</name>
-      <anchorfile>group__CMSIS__FPSCR.html</anchorfile>
+      <anchorfile>group__CMSIS__Core__RegAccFunctions.html</anchorfile>
       <anchor>ga6a275172e274ea7ce6c22030d07c6c64</anchor>
       <arglist>(void)</arglist>
     </member>
     <member kind="function">
       <type>__STATIC_FORCEINLINE void</type>
       <name>__set_FPSCR</name>
-      <anchorfile>group__CMSIS__FPSCR.html</anchorfile>
+      <anchorfile>group__CMSIS__Core__RegAccFunctions.html</anchorfile>
       <anchor>ga17c6ff443c52c74125fefef7de5fee1d</anchor>
       <arglist>(uint32_t fpscr)</arglist>
     </member>
     <member kind="function">
       <type>__STATIC_FORCEINLINE uint32_t</type>
       <name>__get_CPSR</name>
-      <anchorfile>group__CMSIS__CPSR.html</anchorfile>
+      <anchorfile>group__CMSIS__Core__intrinsics.html</anchorfile>
       <anchor>gaa4bddbd2091b8fb234ae43d290e69e78</anchor>
       <arglist>(void)</arglist>
     </member>
     <member kind="function">
       <type>__STATIC_FORCEINLINE void</type>
       <name>__set_CPSR</name>
-      <anchorfile>group__CMSIS__CPSR.html</anchorfile>
+      <anchorfile>group__CMSIS__Core__intrinsics.html</anchorfile>
       <anchor>ga48f0cfea7413b74bd90986762383c1cd</anchor>
       <arglist>(uint32_t cpsr)</arglist>
     </member>
     <member kind="function">
       <type>__STATIC_FORCEINLINE uint32_t</type>
       <name>__get_mode</name>
-      <anchorfile>cmsis__armclang__a_8h.html</anchorfile>
-      <anchor>a4cf62691d82a3f3a0d844ae94718a5a9</anchor>
+      <anchorfile>group__CMSIS__Core__intrinsics.html</anchorfile>
+      <anchor>ga4cf62691d82a3f3a0d844ae94718a5a9</anchor>
       <arglist>(void)</arglist>
     </member>
     <member kind="function">
       <type>__STATIC_FORCEINLINE void</type>
       <name>__set_mode</name>
-      <anchorfile>cmsis__armclang__a_8h.html</anchorfile>
-      <anchor>a7ad5710bc622794ffed1d31740f6be55</anchor>
+      <anchorfile>group__CMSIS__Core__intrinsics.html</anchorfile>
+      <anchor>ga7ad5710bc622794ffed1d31740f6be55</anchor>
       <arglist>(uint32_t mode)</arglist>
     </member>
     <member kind="function">
       <type>__STATIC_FORCEINLINE uint32_t</type>
       <name>__get_SP</name>
-      <anchorfile>cmsis__armclang__a_8h.html</anchorfile>
-      <anchor>aebea89632181454327b3dc0cf29ec358</anchor>
+      <anchorfile>group__CMSIS__Core__intrinsics.html</anchorfile>
+      <anchor>gaebea89632181454327b3dc0cf29ec358</anchor>
       <arglist>(void)</arglist>
     </member>
     <member kind="function">
       <type>__STATIC_FORCEINLINE void</type>
       <name>__set_SP</name>
-      <anchorfile>group__CMSIS__SP.html</anchorfile>
+      <anchorfile>group__CMSIS__Core__intrinsics.html</anchorfile>
       <anchor>ga6d25d5770874bf1c824f892739bfdf41</anchor>
       <arglist>(uint32_t stack)</arglist>
     </member>
     <member kind="function">
       <type>__STATIC_FORCEINLINE uint32_t</type>
       <name>__get_SP_usr</name>
-      <anchorfile>cmsis__armclang__a_8h.html</anchorfile>
-      <anchor>a7009688fca7a35b5e3ba6cf11cc74869</anchor>
+      <anchorfile>group__CMSIS__Core__intrinsics.html</anchorfile>
+      <anchor>ga7009688fca7a35b5e3ba6cf11cc74869</anchor>
       <arglist>(void)</arglist>
     </member>
     <member kind="function">
       <type>__STATIC_FORCEINLINE void</type>
       <name>__set_SP_usr</name>
-      <anchorfile>group__CMSIS__SP.html</anchorfile>
+      <anchorfile>group__CMSIS__Core__intrinsics.html</anchorfile>
       <anchor>gaabb67304694380b52a86cdc77efdfbf9</anchor>
       <arglist>(uint32_t topOfProcStack)</arglist>
     </member>
     <member kind="function">
       <type>__STATIC_FORCEINLINE uint32_t</type>
       <name>__get_FPEXC</name>
-      <anchorfile>group__CMSIS__FPEXC.html</anchorfile>
+      <anchorfile>group__CMSIS__Core__intrinsics.html</anchorfile>
       <anchor>gadde57667b9f81c468a49268513624b90</anchor>
       <arglist>(void)</arglist>
     </member>
     <member kind="function">
       <type>__STATIC_FORCEINLINE void</type>
       <name>__set_FPEXC</name>
-      <anchorfile>group__CMSIS__FPEXC.html</anchorfile>
+      <anchorfile>group__CMSIS__Core__intrinsics.html</anchorfile>
       <anchor>ga14ba90beb9b4712454f35ac453c45f5d</anchor>
       <arglist>(uint32_t fpexc)</arglist>
     </member>
     <member kind="function">
       <type>__STATIC_INLINE void</type>
       <name>__FPU_Enable</name>
-      <anchorfile>group__FPU__functions.html</anchorfile>
+      <anchorfile>group__CMSIS__Core__intrinsics.html</anchorfile>
       <anchor>ga1e4728985ee8b4fa89cc01c032f69565</anchor>
       <arglist>(void)</arglist>
     </member>
@@ -7603,6 +7603,170 @@
     </member>
   </compound>
   <compound kind="group">
+    <name>CMSIS_Core_RegAccFunctions</name>
+    <title>CMSIS Core Register Access Functions</title>
+    <filename>group__CMSIS__Core__RegAccFunctions.html</filename>
+    <subgroup>CMSIS_SIMD_intrinsics</subgroup>
+    <subgroup>CMSIS_Core_intrinsics</subgroup>
+    <member kind="function">
+      <type>__STATIC_FORCEINLINE void</type>
+      <name>__enable_irq</name>
+      <anchorfile>group__CMSIS__Core__RegAccFunctions.html</anchorfile>
+      <anchor>gae84bf4e95944e61937f4ed2453e5ef23</anchor>
+      <arglist>(void)</arglist>
+    </member>
+    <member kind="function">
+      <type>__STATIC_FORCEINLINE void</type>
+      <name>__disable_irq</name>
+      <anchorfile>group__CMSIS__Core__RegAccFunctions.html</anchorfile>
+      <anchor>ga2299877e4ba3e162ca9dbabd6e0abef6</anchor>
+      <arglist>(void)</arglist>
+    </member>
+    <member kind="function">
+      <type>__STATIC_FORCEINLINE void</type>
+      <name>__enable_fault_irq</name>
+      <anchorfile>group__CMSIS__Core__RegAccFunctions.html</anchorfile>
+      <anchor>gadccd32ddc2337a9a944c2da9c485a81d</anchor>
+      <arglist>(void)</arglist>
+    </member>
+    <member kind="function">
+      <type>__STATIC_FORCEINLINE void</type>
+      <name>__disable_fault_irq</name>
+      <anchorfile>group__CMSIS__Core__RegAccFunctions.html</anchorfile>
+      <anchor>ga6f1d7bf2b8b84502e8de12f0c288e117</anchor>
+      <arglist>(void)</arglist>
+    </member>
+    <member kind="function">
+      <type>__STATIC_FORCEINLINE uint32_t</type>
+      <name>__get_FPSCR</name>
+      <anchorfile>group__CMSIS__Core__RegAccFunctions.html</anchorfile>
+      <anchor>ga6a275172e274ea7ce6c22030d07c6c64</anchor>
+      <arglist>(void)</arglist>
+    </member>
+    <member kind="function">
+      <type>__STATIC_FORCEINLINE void</type>
+      <name>__set_FPSCR</name>
+      <anchorfile>group__CMSIS__Core__RegAccFunctions.html</anchorfile>
+      <anchor>ga17c6ff443c52c74125fefef7de5fee1d</anchor>
+      <arglist>(uint32_t fpscr)</arglist>
+    </member>
+  </compound>
+  <compound kind="group">
+    <name>CMSIS_SIMD_intrinsics</name>
+    <title>CMSIS SIMD Intrinsics</title>
+    <filename>group__CMSIS__SIMD__intrinsics.html</filename>
+  </compound>
+  <compound kind="group">
+    <name>CMSIS_Core_intrinsics</name>
+    <title>CMSIS Core Intrinsics</title>
+    <filename>group__CMSIS__Core__intrinsics.html</filename>
+    <member kind="define">
+      <type>#define</type>
+      <name>__get_CP</name>
+      <anchorfile>group__CMSIS__Core__intrinsics.html</anchorfile>
+      <anchor>gad2a4e5d85d92189d574854b2fbfff057</anchor>
+      <arglist>(cp, op1, Rt, CRn, CRm, op2)</arglist>
+    </member>
+    <member kind="define">
+      <type>#define</type>
+      <name>__set_CP</name>
+      <anchorfile>group__CMSIS__Core__intrinsics.html</anchorfile>
+      <anchor>ga5e4710ddc910c7feee1de7f118b84ad1</anchor>
+      <arglist>(cp, op1, Rt, CRn, CRm, op2)</arglist>
+    </member>
+    <member kind="define">
+      <type>#define</type>
+      <name>__get_CP64</name>
+      <anchorfile>group__CMSIS__Core__intrinsics.html</anchorfile>
+      <anchor>ga96a3cccabb5bcaf41115a5dfb3fc6723</anchor>
+      <arglist>(cp, op1, Rt, CRm)</arglist>
+    </member>
+    <member kind="define">
+      <type>#define</type>
+      <name>__set_CP64</name>
+      <anchorfile>group__CMSIS__Core__intrinsics.html</anchorfile>
+      <anchor>gaf23b5ae27930ef8d9f62a2cf19338003</anchor>
+      <arglist>(cp, op1, Rt, CRm)</arglist>
+    </member>
+    <member kind="function">
+      <type>__STATIC_FORCEINLINE uint32_t</type>
+      <name>__get_CPSR</name>
+      <anchorfile>group__CMSIS__Core__intrinsics.html</anchorfile>
+      <anchor>gaa4bddbd2091b8fb234ae43d290e69e78</anchor>
+      <arglist>(void)</arglist>
+    </member>
+    <member kind="function">
+      <type>__STATIC_FORCEINLINE void</type>
+      <name>__set_CPSR</name>
+      <anchorfile>group__CMSIS__Core__intrinsics.html</anchorfile>
+      <anchor>ga48f0cfea7413b74bd90986762383c1cd</anchor>
+      <arglist>(uint32_t cpsr)</arglist>
+    </member>
+    <member kind="function">
+      <type>__STATIC_FORCEINLINE uint32_t</type>
+      <name>__get_mode</name>
+      <anchorfile>group__CMSIS__Core__intrinsics.html</anchorfile>
+      <anchor>ga4cf62691d82a3f3a0d844ae94718a5a9</anchor>
+      <arglist>(void)</arglist>
+    </member>
+    <member kind="function">
+      <type>__STATIC_FORCEINLINE void</type>
+      <name>__set_mode</name>
+      <anchorfile>group__CMSIS__Core__intrinsics.html</anchorfile>
+      <anchor>ga7ad5710bc622794ffed1d31740f6be55</anchor>
+      <arglist>(uint32_t mode)</arglist>
+    </member>
+    <member kind="function">
+      <type>__STATIC_FORCEINLINE uint32_t</type>
+      <name>__get_SP</name>
+      <anchorfile>group__CMSIS__Core__intrinsics.html</anchorfile>
+      <anchor>gaebea89632181454327b3dc0cf29ec358</anchor>
+      <arglist>(void)</arglist>
+    </member>
+    <member kind="function">
+      <type>__STATIC_FORCEINLINE void</type>
+      <name>__set_SP</name>
+      <anchorfile>group__CMSIS__Core__intrinsics.html</anchorfile>
+      <anchor>ga6d25d5770874bf1c824f892739bfdf41</anchor>
+      <arglist>(uint32_t stack)</arglist>
+    </member>
+    <member kind="function">
+      <type>__STATIC_FORCEINLINE uint32_t</type>
+      <name>__get_SP_usr</name>
+      <anchorfile>group__CMSIS__Core__intrinsics.html</anchorfile>
+      <anchor>ga7009688fca7a35b5e3ba6cf11cc74869</anchor>
+      <arglist>(void)</arglist>
+    </member>
+    <member kind="function">
+      <type>__STATIC_FORCEINLINE void</type>
+      <name>__set_SP_usr</name>
+      <anchorfile>group__CMSIS__Core__intrinsics.html</anchorfile>
+      <anchor>gaabb67304694380b52a86cdc77efdfbf9</anchor>
+      <arglist>(uint32_t topOfProcStack)</arglist>
+    </member>
+    <member kind="function">
+      <type>__STATIC_FORCEINLINE uint32_t</type>
+      <name>__get_FPEXC</name>
+      <anchorfile>group__CMSIS__Core__intrinsics.html</anchorfile>
+      <anchor>gadde57667b9f81c468a49268513624b90</anchor>
+      <arglist>(void)</arglist>
+    </member>
+    <member kind="function">
+      <type>__STATIC_FORCEINLINE void</type>
+      <name>__set_FPEXC</name>
+      <anchorfile>group__CMSIS__Core__intrinsics.html</anchorfile>
+      <anchor>ga14ba90beb9b4712454f35ac453c45f5d</anchor>
+      <arglist>(uint32_t fpexc)</arglist>
+    </member>
+    <member kind="function">
+      <type>__STATIC_INLINE void</type>
+      <name>__FPU_Enable</name>
+      <anchorfile>group__CMSIS__Core__intrinsics.html</anchorfile>
+      <anchor>ga1e4728985ee8b4fa89cc01c032f69565</anchor>
+      <arglist>(void)</arglist>
+    </member>
+  </compound>
+  <compound kind="group">
     <name>system_init_gr</name>
     <title>System and Clock Configuration</title>
     <filename>group__system__init__gr.html</filename>
@@ -8333,20 +8497,6 @@
     <subgroup>CMSIS_CPSR_BITS</subgroup>
     <subgroup>CMSIS_CPSR_M</subgroup>
     <class kind="struct">CPSR_Type</class>
-    <member kind="function">
-      <type>__STATIC_FORCEINLINE uint32_t</type>
-      <name>__get_CPSR</name>
-      <anchorfile>group__CMSIS__CPSR.html</anchorfile>
-      <anchor>gaa4bddbd2091b8fb234ae43d290e69e78</anchor>
-      <arglist>(void)</arglist>
-    </member>
-    <member kind="function">
-      <type>__STATIC_FORCEINLINE void</type>
-      <name>__set_CPSR</name>
-      <anchorfile>group__CMSIS__CPSR.html</anchorfile>
-      <anchor>ga48f0cfea7413b74bd90986762383c1cd</anchor>
-      <arglist>(uint32_t cpsr)</arglist>
-    </member>
   </compound>
   <compound kind="group">
     <name>CMSIS_CPSR_BITS</name>
@@ -8839,20 +8989,6 @@
     <name>CMSIS_FPEXC</name>
     <title>Floating-Point Exception Control register (FPEXC)</title>
     <filename>group__CMSIS__FPEXC.html</filename>
-    <member kind="function">
-      <type>__STATIC_FORCEINLINE uint32_t</type>
-      <name>__get_FPEXC</name>
-      <anchorfile>group__CMSIS__FPEXC.html</anchorfile>
-      <anchor>gadde57667b9f81c468a49268513624b90</anchor>
-      <arglist>(void)</arglist>
-    </member>
-    <member kind="function">
-      <type>__STATIC_FORCEINLINE void</type>
-      <name>__set_FPEXC</name>
-      <anchorfile>group__CMSIS__FPEXC.html</anchorfile>
-      <anchor>ga14ba90beb9b4712454f35ac453c45f5d</anchor>
-      <arglist>(uint32_t fpexc)</arglist>
-    </member>
   </compound>
   <compound kind="group">
     <name>CMSIS_FPSCR</name>
@@ -8860,20 +8996,6 @@
     <filename>group__CMSIS__FPSCR.html</filename>
     <subgroup>CMSIS_FPSCR_BITS</subgroup>
     <class kind="struct">FPSCR_Type</class>
-    <member kind="function">
-      <type>__STATIC_FORCEINLINE uint32_t</type>
-      <name>__get_FPSCR</name>
-      <anchorfile>group__CMSIS__FPSCR.html</anchorfile>
-      <anchor>ga6a275172e274ea7ce6c22030d07c6c64</anchor>
-      <arglist>(void)</arglist>
-    </member>
-    <member kind="function">
-      <type>__STATIC_FORCEINLINE void</type>
-      <name>__set_FPSCR</name>
-      <anchorfile>group__CMSIS__FPSCR.html</anchorfile>
-      <anchor>ga17c6ff443c52c74125fefef7de5fee1d</anchor>
-      <arglist>(uint32_t fpscr)</arglist>
-    </member>
   </compound>
   <compound kind="group">
     <name>CMSIS_FPSCR_BITS</name>
@@ -9134,20 +9256,6 @@
     <name>CMSIS_SP</name>
     <title>Stack Pointer (SP/R13)</title>
     <filename>group__CMSIS__SP.html</filename>
-    <member kind="function">
-      <type>__STATIC_FORCEINLINE void</type>
-      <name>__set_SP</name>
-      <anchorfile>group__CMSIS__SP.html</anchorfile>
-      <anchor>ga6d25d5770874bf1c824f892739bfdf41</anchor>
-      <arglist>(uint32_t stack)</arglist>
-    </member>
-    <member kind="function">
-      <type>__STATIC_FORCEINLINE void</type>
-      <name>__set_SP_usr</name>
-      <anchorfile>group__CMSIS__SP.html</anchorfile>
-      <anchor>gaabb67304694380b52a86cdc77efdfbf9</anchor>
-      <arglist>(uint32_t topOfProcStack)</arglist>
-    </member>
   </compound>
   <compound kind="group">
     <name>CMSIS_SCTLR</name>
@@ -10377,6 +10485,7 @@
     <name>CMSIS_Core_FunctionInterface</name>
     <title>Core Peripherals</title>
     <filename>group__CMSIS__Core__FunctionInterface.html</filename>
+    <subgroup>CMSIS_Core_RegAccFunctions</subgroup>
     <subgroup>GIC_functions</subgroup>
     <subgroup>L1_cache_functions</subgroup>
     <subgroup>L2_cache_functions</subgroup>
@@ -10389,13 +10498,6 @@
     <name>FPU_functions</name>
     <title>Floating Point Unit Functions</title>
     <filename>group__FPU__functions.html</filename>
-    <member kind="function">
-      <type>__STATIC_INLINE void</type>
-      <name>__FPU_Enable</name>
-      <anchorfile>group__FPU__functions.html</anchorfile>
-      <anchor>ga1e4728985ee8b4fa89cc01c032f69565</anchor>
-      <arglist>(void)</arglist>
-    </member>
   </compound>
   <compound kind="group">
     <name>comp_cntrl_gr</name>

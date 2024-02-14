@@ -5,7 +5,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>CMSIS-Core (Cortex-A): Revision History</title>
+<title>CMSIS-Core (Cortex-A): CMSIS SIMD Intrinsics</title>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -98,7 +98,7 @@ var searchBox = new SearchBox("searchBox", "search/",'.html');
 </div>
 <script type="text/javascript">
 /* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
-$(document).ready(function(){initNavTree('rev_histCoreA.html',''); initResizable(); });
+$(document).ready(function(){initNavTree('group__CMSIS__SIMD__intrinsics.html',''); initResizable(); });
 /* @license-end */
 </script>
 <div id="doc-content">
@@ -123,90 +123,12 @@ $(document).ready(function(){initNavTree('rev_histCoreA.html',''); initResizable
 </div>
 </div>
 
-<div><div class="header">
-  <div class="headertitle"><div class="title">Revision History </div></div>
+<div class="header">
+  <div class="headertitle"><div class="title">CMSIS SIMD Intrinsics<div class="ingroups"><a class="el" href="group__CMSIS__Core__FunctionInterface.html">Core Peripherals</a> &raquo; <a class="el" href="group__CMSIS__Core__RegAccFunctions.html">CMSIS Core Register Access Functions</a></div></div></div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><p><a class="anchor" id="md_src_history"></a> CMSIS-Core(A) component is maintaned with own versioning that gets incremented together with the <a href="../General/cmsis_pack.html">CMSIS Software Pack</a> releases.</p>
-<p>The table below provides information about the changes delivered with specific versions of CMSIS-Core(A) updates.</p>
-<table class="cmtable" summary="Revision History">
-<tr>
-<th>Version </th><th>Description  </th></tr>
-<tr>
-<td>V6.0.0 </td><td><ul>
-<li>
-Core(M) and Core(A) joined into single Core component </li>
-<li>
-Core header files reworked, aligned with TRMs </li>
-<li>
-Previously deprecated features removed </li>
-<li>
-Dropped support for Arm Compiler 5 </li>
-</ul>
-</td></tr>
-<tr>
-<td>V1.2.1 </td><td><ul>
-<li>
-Bugfixes for Cortex-A32 </li>
-</ul>
-</td></tr>
-<tr>
-<td>V1.2.0 </td><td><ul>
-<li>
-Fixed <a class="el" href="group__GIC__functions.html#ga18fbddf7f3594df141c97f61a71da47c">GIC_SetPendingIRQ</a> to use GICD_SGIR instead of GICD_SPENDSGIR for compliance with all GIC specification versions. </li>
-<li>
-Added missing DSP intrinsics. </li>
-<li>
-Reworked assembly intrinsics: volatile, barriers and clobbers. </li>
-</ul>
-</td></tr>
-<tr>
-<td>V1.1.4 </td><td><ul>
-<li>
-Fixed <a class="el" href="group__CMSIS__Core__intrinsics.html#ga1e4728985ee8b4fa89cc01c032f69565" title="Enable Floating Point Unit.">__FPU_Enable()</a>. </li>
-</ul>
-</td></tr>
-<tr>
-<td>V1.1.3 </td><td><ul>
-<li>
-Fixed <a class="el" href="group__CMSIS__Core__intrinsics.html#ga7009688fca7a35b5e3ba6cf11cc74869" title="Get USR/SYS Stack Pointer.">__get_SP_usr()</a> / <a class="el" href="group__CMSIS__Core__intrinsics.html#gaabb67304694380b52a86cdc77efdfbf9" title="Set USR/SYS Stack Pointer.">__set_SP_usr()</a> for ArmClang. </li>
-<li>
-Fixed zero argument handling in <a class="el" href="group__CMSIS__Core__InstructionInterface.html#ga90884c591ac5d73d6069334eba9d6c02" title="Count leading zeros.">__CLZ()</a> . </li>
-</ul>
-</td></tr>
-<tr>
-<td>V1.1.2 </td><td><ul>
-<li>
-Removed using get/set built-ins FPSCR in GCC &gt;= 7.2 due to shortcomings. </li>
-<li>
-Fixed co-processor register access macros for Arm Compiler 5. </li>
-</ul>
-</td></tr>
-<tr>
-<td>V1.1.1 </td><td><ul>
-<li>
-Refactored L1 cache maintenance to be compiler agnostic. </li>
-</ul>
-</td></tr>
-<tr>
-<td>V1.1.0 </td><td><ul>
-<li>
-Added compiler_iccarm.h for IAR compiler. </li>
-<li>
-Added missing core access functions for Arm Compiler 5. </li>
-<li>
-Aligned access function to coprocessor 15. </li>
-<li>
-Additional generic Timer functions. </li>
-<li>
-Bug fixes and minor enhancements. </li>
-</ul>
-</td></tr>
-<tr>
-<td>V1.0.0 </td><td>Initial Release for Cortex-A5/A7/A9 processors.  </td></tr>
-</table>
-</div></div><!-- contents -->
-</div><!-- PageDoc -->
+<p>Access to dedicated SIMD instructions </p>
+</div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->

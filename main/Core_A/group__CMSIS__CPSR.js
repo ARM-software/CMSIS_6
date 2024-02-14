@@ -20,7 +20,5 @@ var group__CMSIS__CPSR =
       [ "V", "unionCPSR__Type.html#aba74c9da04be21f1266d3816af79f8c3", null ],
       [ "w", "unionCPSR__Type.html#afd5ed10bab25f324a6fbb3e124d16fc9", null ],
       [ "Z", "unionCPSR__Type.html#a790f1950658257a87ac58d132eca9849", null ]
-    ] ],
-    [ "__get_CPSR", "group__CMSIS__CPSR.html#gaa4bddbd2091b8fb234ae43d290e69e78", null ],
-    [ "__set_CPSR", "group__CMSIS__CPSR.html#ga48f0cfea7413b74bd90986762383c1cd", null ]
+    ] ]
 ];

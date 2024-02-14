@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['cmsis_5fdeprecated_0',['CMSIS_DEPRECATED',['../cmsis__armclang__a_8h.html#acdc36c1b3d3e16c17a73889b7d06d0d2',1,'cmsis_armclang_a.h']]]
+  ['descriptor_5ffault_0',['DESCRIPTOR_FAULT',['../core__ca_8h.html#aba92665a24bc2ba8c49b9a0881c9df8a',1,'core_ca.h']]]
 ];
