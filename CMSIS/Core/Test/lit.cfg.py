@@ -346,7 +346,6 @@ DEVICES = {
             '__VTOR_PRESENT': '1U',
             '__PMU_PRESENT': '1U',
             '__PMU_NUM_EVENTCNT': '8U',
-            '__DSP_PRESENT': '1U',
             '__NVIC_PRIO_BITS': '3U',
             '__Vendor_SysTickConfig': '0U'
         }
@@ -372,7 +371,6 @@ DEVICES = {
             '__VTOR_PRESENT': '1U',
             '__PMU_PRESENT': '1U',
             '__PMU_NUM_EVENTCNT': '8U',
-            '__DSP_PRESENT': '1U',
             '__NVIC_PRIO_BITS': '3U',
             '__Vendor_SysTickConfig': '0U'
         }
@@ -398,7 +396,6 @@ DEVICES = {
             '__VTOR_PRESENT': '1U',
             '__PMU_PRESENT': '1U',
             '__PMU_NUM_EVENTCNT': '8U',
-            '__DSP_PRESENT': '1U',
             '__NVIC_PRIO_BITS': '3U',
             '__Vendor_SysTickConfig': '0U'
         }
@@ -424,7 +421,6 @@ DEVICES = {
             '__VTOR_PRESENT': '1U',
             '__PMU_PRESENT': '1U',
             '__PMU_NUM_EVENTCNT': '8U',
-            '__DSP_PRESENT': '1U',
             '__NVIC_PRIO_BITS': '3U',
             '__Vendor_SysTickConfig': '0U'
         }
@@ -450,7 +446,6 @@ DEVICES = {
             '__VTOR_PRESENT': '1U',
             '__PMU_PRESENT': '1U',
             '__PMU_NUM_EVENTCNT': '8U',
-            '__DSP_PRESENT': '1U',
             '__NVIC_PRIO_BITS': '3U',
             '__Vendor_SysTickConfig': '0U'
         }
@@ -476,7 +471,6 @@ DEVICES = {
             '__VTOR_PRESENT': '1U',
             '__PMU_PRESENT': '1U',
             '__PMU_NUM_EVENTCNT': '8U',
-            '__DSP_PRESENT': '1U',
             '__NVIC_PRIO_BITS': '3U',
             '__Vendor_SysTickConfig': '0U'
         }
