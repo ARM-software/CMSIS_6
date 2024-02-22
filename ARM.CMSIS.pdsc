@@ -598,6 +598,7 @@
     <condition id="ARMv81-MML Device">
       <description>Armv8.1-M main line architecture based device</description>
       <accept Dcore="ARMV81MML"/>
+      <accept Dcore="Cortex-M52"/>
       <accept Dcore="Cortex-M55"/>
       <accept Dcore="Cortex-M85"/>
     </condition>
