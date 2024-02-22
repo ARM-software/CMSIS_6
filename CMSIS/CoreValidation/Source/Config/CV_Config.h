@@ -2,7 +2,7 @@
  *      Name:         CV_Config.h
  *      Purpose:      CV Config header
  *----------------------------------------------------------------------------
- *      Copyright (c) 2017 - 2018 Arm Limited. All rights reserved.
+ *      Copyright (c) 2017 - 2024 Arm Limited. All rights reserved.
  *----------------------------------------------------------------------------*/
 #ifndef __CV_CONFIG_H
 #define __CV_CONFIG_H
@@ -14,7 +14,8 @@
 #define RTE_CV_COREFUNC  1
 #define RTE_CV_CORESIMD  1
 #define RTE_CV_MPUFUNC   (__MPU_PRESENT)
-#if defined __ICACHE_PRESENT || defined __DCACHE_PRESENT
+#if ((defined (__ICACHE_PRESENT) && (__ICACHE_PRESENT == 1U)) || \
+     (defined (__DCACHE_PRESENT) && (__DCACHE_PRESENT == 1U)))
 #define RTE_CV_L1CACHE   (__ICACHE_PRESENT || __DCACHE_PRESENT)
 #endif
 
