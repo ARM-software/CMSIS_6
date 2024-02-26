@@ -141,7 +141,7 @@ $(document).ready(function(){initNavTree('using_pg.html',''); initResizable(); }
 </blockquote>
 <p>The <code>Reset_Handler</code> defined in <a class="el" href="startup_c_pg.html">Startup File startup_&lt;Device&gt;.c</a> is executed after reset. The default initialization sequence is</p><ul>
 <li>set the vector base address register (<a class="el" href="group__CMSIS__VBAR.html#ga582f9a60f7b090ae5a4e8f60ef3b79f8">__set_VBAR</a>),</li>
-<li>set stacks for each exception mode (<a class="el" href="group__CMSIS__Core__intrinsics.html#ga7ad5710bc622794ffed1d31740f6be55">__set_mode</a>, <a class="el" href="group__CMSIS__Core__intrinsics.html#ga6d25d5770874bf1c824f892739bfdf41">__set_SP</a>),</li>
+<li>set stacks for each exception mode (<a class="el" href="group__CMSIS__Core__RegAccFunctions.html#ga7ad5710bc622794ffed1d31740f6be55">__set_mode</a>, <a class="el" href="group__CMSIS__Core__RegAccFunctions.html#ga6d25d5770874bf1c824f892739bfdf41">__set_SP</a>),</li>
 <li>call <a class="el" href="group__system__init__gr.html#ga93f514700ccf00d08dbdcff7f1224eb2">SystemInit</a>.</li>
 </ul>
 <p>After the system initialization control is transferred to the C/C++ run-time library which performs initialization and calls the <b>main</b> function in the user code. In addition the <a class="el" href="startup_c_pg.html">Startup File startup_&lt;Device&gt;.c</a> contains a weak default handler implementation for every exception. It may also contain stack and heap configurations for the user application.</p>
@@ -209,7 +209,7 @@ CMSIS Basic Example</h1>
 <div class="line"><span class="keywordtype">void</span> Delay(uint32_t ticks)  {</div>
 <div class="line">  uint32_t tgtTicks = msTicks + ticks;             <span class="comment">// target tick count to delay execution to</span></div>
 <div class="line">  <span class="keywordflow">while</span> (msTicks == tgtTicks)  {</div>
-<div class="line">    <a class="code hl_define" href="group__CMSIS__Core__InstructionInterface.html#gaac6cc7dd4325d9cb40d3290fa5244b3d">__WFE</a> ();                                      <span class="comment">// Power-Down until next Event/Interrupt</span></div>
+<div class="line">    __WFE ();                                      <span class="comment">// Power-Down until next Event/Interrupt</span></div>
 <div class="line">  }</div>
 <div class="line">}</div>
 <div class="line"> </div>
@@ -229,7 +229,6 @@ CMSIS Basic Example</h1>
 <div class="line">    Delay(500);</div>
 <div class="line">  }</div>
 <div class="line">}</div>
-<div class="ttc" id="agroup__CMSIS__Core__InstructionInterface_html_gaac6cc7dd4325d9cb40d3290fa5244b3d"><div class="ttname"><a href="group__CMSIS__Core__InstructionInterface.html#gaac6cc7dd4325d9cb40d3290fa5244b3d">__WFE</a></div><div class="ttdeci">#define __WFE</div><div class="ttdoc">Wait For Event.</div></div>
 <div class="ttc" id="agroup__GIC__functions_html_ga397048004654f792649742f95bf8ae67"><div class="ttname"><a href="group__GIC__functions.html#ga397048004654f792649742f95bf8ae67">GIC_GetPriority</a></div><div class="ttdeci">__STATIC_INLINE uint32_t GIC_GetPriority(IRQn_Type IRQn)</div><div class="ttdoc">Read the current interrupt priority from GIC's IPRIORITYR register.</div><div class="ttdef"><b>Definition:</b> core_ca.h:1664</div></div>
 <div class="ttc" id="agroup__PTM__timer__functions_html_ga30516fed24977be8eecf3efd8b6a2fea"><div class="ttname"><a href="group__PTM__timer__functions.html#ga30516fed24977be8eecf3efd8b6a2fea">PTIM_SetLoadValue</a></div><div class="ttdeci">__STATIC_INLINE void PTIM_SetLoadValue(uint32_t value)</div><div class="ttdoc">Set the load value to timers LOAD register.</div><div class="ttdef"><b>Definition:</b> core_ca.h:2009</div></div>
 <div class="ttc" id="agroup__PTM__timer__functions_html_ga34f0ceea142a4be1479cb552bf8bc4d1"><div class="ttname"><a href="group__PTM__timer__functions.html#ga34f0ceea142a4be1479cb552bf8bc4d1">PTIM_GetControl</a></div><div class="ttdeci">__STATIC_INLINE uint32_t PTIM_GetControl(void)</div><div class="ttdef"><b>Definition:</b> core_ca.h:2048</div></div>

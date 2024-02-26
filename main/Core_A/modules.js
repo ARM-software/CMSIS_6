@@ -1,5 +1,6 @@
 var modules =
 [
+    [ "CMSIS SIMD Intrinsics", "group__CMSIS__SIMD__intrinsics.html", null ],
     [ "System and Clock Configuration", "group__system__init__gr.html", "group__system__init__gr" ],
     [ "Core Register Access", "group__CMSIS__core__register.html", "group__CMSIS__core__register" ],
     [ "Peripheral Access", "group__peripheral__gr.html", "group__peripheral__gr" ],

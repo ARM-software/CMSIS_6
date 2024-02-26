@@ -1,11 +1,13 @@
 var group__CMSIS__Core__RegAccFunctions =
 [
-    [ "CMSIS SIMD Intrinsics", "group__CMSIS__SIMD__intrinsics.html", null ],
-    [ "CMSIS Core Intrinsics", "group__CMSIS__Core__intrinsics.html", "group__CMSIS__Core__intrinsics" ],
-    [ "__disable_fault_irq", "group__CMSIS__Core__RegAccFunctions.html#ga6f1d7bf2b8b84502e8de12f0c288e117", null ],
-    [ "__disable_irq", "group__CMSIS__Core__RegAccFunctions.html#ga2299877e4ba3e162ca9dbabd6e0abef6", null ],
-    [ "__enable_fault_irq", "group__CMSIS__Core__RegAccFunctions.html#gadccd32ddc2337a9a944c2da9c485a81d", null ],
-    [ "__enable_irq", "group__CMSIS__Core__RegAccFunctions.html#gae84bf4e95944e61937f4ed2453e5ef23", null ],
-    [ "__get_FPSCR", "group__CMSIS__Core__RegAccFunctions.html#ga6a275172e274ea7ce6c22030d07c6c64", null ],
-    [ "__set_FPSCR", "group__CMSIS__Core__RegAccFunctions.html#ga17c6ff443c52c74125fefef7de5fee1d", null ]
+    [ "__get_CPSR", "group__CMSIS__Core__RegAccFunctions.html#gaa4bddbd2091b8fb234ae43d290e69e78", null ],
+    [ "__get_FPEXC", "group__CMSIS__Core__RegAccFunctions.html#gadde57667b9f81c468a49268513624b90", null ],
+    [ "__get_mode", "group__CMSIS__Core__RegAccFunctions.html#ga4cf62691d82a3f3a0d844ae94718a5a9", null ],
+    [ "__get_SP", "group__CMSIS__Core__RegAccFunctions.html#gaebea89632181454327b3dc0cf29ec358", null ],
+    [ "__get_SP_usr", "group__CMSIS__Core__RegAccFunctions.html#ga7009688fca7a35b5e3ba6cf11cc74869", null ],
+    [ "__set_CPSR", "group__CMSIS__Core__RegAccFunctions.html#ga48f0cfea7413b74bd90986762383c1cd", null ],
+    [ "__set_FPEXC", "group__CMSIS__Core__RegAccFunctions.html#ga14ba90beb9b4712454f35ac453c45f5d", null ],
+    [ "__set_mode", "group__CMSIS__Core__RegAccFunctions.html#ga7ad5710bc622794ffed1d31740f6be55", null ],
+    [ "__set_SP", "group__CMSIS__Core__RegAccFunctions.html#ga6d25d5770874bf1c824f892739bfdf41", null ],
+    [ "__set_SP_usr", "group__CMSIS__Core__RegAccFunctions.html#gaabb67304694380b52a86cdc77efdfbf9", null ]
 ];
