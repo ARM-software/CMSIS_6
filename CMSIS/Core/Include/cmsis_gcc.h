@@ -25,8 +25,6 @@
 #ifndef __CMSIS_GCC_H
 #define __CMSIS_GCC_H
 
-#pragma clang system_header   /* treat file as system include file */
-
 #include <arm_acle.h>
 
 /* Fallback for __has_builtin */
