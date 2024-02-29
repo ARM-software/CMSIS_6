@@ -7,6 +7,7 @@ solution:
     - for-compiler: GCC
       C-CPP:
         - -masm-syntax-unified
+        - -Wall
 
   packs:
     - pack: ARM::CMSIS
