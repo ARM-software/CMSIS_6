@@ -130,6 +130,14 @@ MODEL_EXECUTABLE = {
 #    DeviceAxis.CA9NEON: ("_VE_Cortex-A9x1", [])
 }
 
+QEMU_MACHINE = {
+    DeviceAxis.CM3: ("mps2-an385"),
+    DeviceAxis.CM4: ("mps2-an386"),
+    DeviceAxis.CM7: ("mps2-an500"),
+    DeviceAxis.CM33: ("mps2-an505"),
+    DeviceAxis.CM55: ("mps3-an547")
+}
+
 def config_suffix(config, timestamp=True):
     suffix = f"{config.compiler[0]}-{config.optimize[0]}-{config.device[1]}"
     if timestamp:
@@ -208,6 +216,16 @@ def run(config, results):
             logging.exception(ex)
 
 
+@matrix_action
+def qemu(config, results):
+    """Run the selected configurations."""
+    if not config.device in QEMU_MACHINE:
+        logging.error("Qemu doesn't support target device '%s'!", config.device)
+        return
+    logging.info("Running Core Validation on Qemu ...")
+    yield qemu_exec(config)
+
+
 @matrix_command()
 def cbuild_clean(project):
     return ["cbuild", "-c", project]
@@ -245,6 +263,19 @@ def model_exec(config):
         cmdline += ["-a", f"{build_dir(config)}/{bl_output_dir(config)}/Bootloader.{config.compiler.image_ext}"]
     return cmdline
 
+
+@matrix_command(test_report=ConsoleReport() |
+                            CropReport('<\?xml version="1.0"\?>', '</report>') |
+                            TransformReport('validation.xsl') |
+                            JUnitReport(title=lambda title, result: f"{result.command.config.compiler}."
+                                                                    f"{result.command.config.optimize}."
+                                                                    f"{result.command.config.device}."
+                                                                    f"{title}"))
+def qemu_exec(config):
+    cmdline = ["qemu-system-arm", "-semihosting-config", "enable=on", "-monitor", "none", "-serial", "none", "-nographic"]
+    cmdline += ["-machine", QEMU_MACHINE[config.device]]
+    cmdline += ["-kernel", f"{build_dir(config)}/{output_dir(config)}/Validation.{config.compiler.image_ext}"]
+    return cmdline
 
 @matrix_filter
 def filter_iar(config):
