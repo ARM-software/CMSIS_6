@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2009-2017 ARM Limited. All rights reserved.
+ * Copyright (c) 2009-2024 ARM Limited. All rights reserved.
  *
  * SPDX-License-Identifier: Apache-2.0
  *
@@ -362,10 +362,10 @@ __STATIC_FORCEINLINE uint32_t __get_CNTP_CTL(void)
 
 /******************************* VIRTUAL TIMER *******************************/
 /** see [ARM DDI 0406C.d] :
-    . §B4.1.31 "CNTV_CTL, Counter-timer Virtual Timer Control register"
-    . §B4.1.32 "CNTV_CVAL, Counter-timer Virtual Timer CompareValue register"
-    . §B4.1.33 "CNTV_TVAL, Counter-timer Virtual Timer TimerValue register"
-    . §B4.1.34 "CNTVCT, Counter-timer Virtual Count register"
+    * B4.1.31 "CNTV_CTL, Counter-timer Virtual Timer Control register"
+    * B4.1.32 "CNTV_CVAL, Counter-timer Virtual Timer CompareValue register"
+    * B4.1.33 "CNTV_TVAL, Counter-timer Virtual Timer TimerValue register"
+    * B4.1.34 "CNTVCT, Counter-timer Virtual Count register"
 **/
 /** \brief  Set CNTV_TVAL
   This function assigns the given value to VL1 Virtual Timer Value Register (CNTV_TVAL).

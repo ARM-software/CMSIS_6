@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2009-2024 ARM Limited. All rights reserved.
+ * Copyright (c) 2017-2022 Arm Limited. All rights reserved.
  *
  * SPDX-License-Identifier: Apache-2.0
  *
@@ -16,12 +16,5 @@
  * limitations under the License.
  */
 
-
-#ifndef __CORE_CA_H
-#define __CORE_CA_H
-
-
-#include "./a-profile/armv7a.h"
-
-
-#endif /* __CORE_CA_H */
+// The gic-interface is located in the profile folder for cortex-a devices
+#include "../a-profile/gicv2.h"
