@@ -249,7 +249,7 @@ def cbuild(config):
 
 
 @matrix_command(test_report=ConsoleReport() |
-                            CropReport('<\?xml version="1.0"\?>', '</report>') |
+                            CropReport('<?xml version="1.0"?>', '</report>') |
                             TransformReport('validation.xsl') |
                             JUnitReport(title=lambda title, result: f"{result.command.config.compiler}."
                                                                     f"{result.command.config.optimize}."
