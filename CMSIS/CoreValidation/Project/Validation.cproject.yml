@@ -17,6 +17,9 @@ project:
         - +CM35P
         - +CM35PS
         - +CM35PNS
+        - +CM52
+        - +CM52S
+        - +CM52NS
         - +CM55
         - +CM55S
         - +CM55NS
@@ -100,6 +103,21 @@ project:
     - layer: ../Layer/Target/CM35PNS/Target.clayer.yml
       for-context:
         - +CM35PNS
+
+    #Target: CM52
+    - layer: ../Layer/Target/CM52/Target.clayer.yml
+      for-context:
+        - +CM52
+
+    #Target: CM52S
+    - layer: ../Layer/Target/CM52S/Target.clayer.yml
+      for-context:
+        - +CM52S
+
+    #Target: CM52NS
+    - layer: ../Layer/Target/CM52NS/Target.clayer.yml
+      for-context:
+        - +CM52NS
 
     #Target: CM55
     - layer: ../Layer/Target/CM55/Target.clayer.yml

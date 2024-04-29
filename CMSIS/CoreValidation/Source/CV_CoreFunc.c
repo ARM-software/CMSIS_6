@@ -295,6 +295,7 @@ void TC_CoreFunc_IPSR (void) {
   __enable_irq();
 
   NVIC_SetPendingIRQ(Interrupt0_IRQn);
+  __ISB();
   for(uint32_t i = 10U; i > 0U; --i) {__NOP();}
 
   __disable_irq();

@@ -462,6 +462,7 @@ static void TC_CoreInstr_LoadStoreExclusive_IRQPend(void) {
 #else
   #error __CORTEX_M or __CORTEX_A must be defined!
 #endif
+  __ISB();
   for(uint32_t i = 10U; i > 0U; --i) {}
 }
 

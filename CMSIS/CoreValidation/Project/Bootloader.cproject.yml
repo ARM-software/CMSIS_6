@@ -16,6 +16,10 @@ project:
       for-context:
         - +CM35PNS
 
+    - layer: ../Layer/Target/CM52S/Target.clayer.yml
+      for-context:
+        - +CM52NS
+
     - layer: ../Layer/Target/CM55S/Target.clayer.yml
       for-context:
         - +CM55NS
