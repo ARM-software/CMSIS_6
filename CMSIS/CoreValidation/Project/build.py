@@ -257,7 +257,7 @@ def cbuild(config):
 
 
 @matrix_command(test_report=ConsoleReport() |
-                            CropReport('<?xml version="1.0"?>', '</report>') |
+                            CropReport('<\\?xml version="1.0"\\?>', '</report>') |
                             TransformReport('validation.xsl') |
                             JUnitReport(title=lambda title, result: f"{result.command.config.compiler}."
                                                                     f"{result.command.config.optimize}."
@@ -273,7 +273,7 @@ def model_exec(config):
 
 
 @matrix_command(test_report=ConsoleReport() |
-                            CropReport('<\?xml version="1.0"\?>', '</report>') |
+                            CropReport('<\\?xml version="1.0"\\?>', '</report>') |
                             TransformReport('validation.xsl') |
                             JUnitReport(title=lambda title, result: f"{result.command.config.compiler}."
                                                                     f"{result.command.config.optimize}."
@@ -289,6 +289,11 @@ def qemu_exec(config):
 def filter_iar(config):
     return config.compiler == CompilerAxis.IAR
 
+@matrix_filter
+def filter_cm52(config):
+    device = config.device.match('CM52*')
+    compiler = config.compiler != CompilerAxis.AC6
+    return device and compiler
 
 if __name__ == "__main__":
     main()
