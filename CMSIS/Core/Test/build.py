@@ -29,6 +29,9 @@ class DeviceAxis(Enum):
     CM35P = ('Cortex-M35P', 'CM35P')
     CM35PS = ('Cortex-M35PS', 'CM35PS')
     CM35PNS = ('Cortex-M35PNS', 'CM35PNS')
+    CM52 = ('Cortex-M52', 'CM52')
+    CM52S = ('Cortex-M52S', 'CM52S')
+    CM52NS = ('Cortex-M52NS', 'CM52NS')
     CM55 = ('Cortex-M55', 'CM55')
     CM55S = ('Cortex-M55S', 'CM55S')
     CM55NS = ('Cortex-M55NS', 'CM55NS')
@@ -82,6 +85,13 @@ def run_lit(toolchain, device, optimize):
 @matrix_filter
 def filter_iar(config):
     return config.compiler == CompilerAxis.IAR
+
+
+@matrix_filter
+def filter_gcc_cm52(config):
+    device = config.device.match('CM52*')
+    compiler = config.compiler == CompilerAxis.GCC
+    return device and compiler
 
 
 if __name__ == "__main__":

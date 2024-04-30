@@ -2,5 +2,5 @@
 #
 # Python requirements for build.py script
 #
-python-matrix-runner~=1.0
+python-matrix-runner~=1.2
 lit~=17.0
