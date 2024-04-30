@@ -3,10 +3,7 @@
 #----------------------------------------------------------------------------------------------
 fvp_mps2.mps2_visualisation.disable-visualisation=1   # (bool  , init-time) default = '0'      : Enable/disable visualisation
 fvp_mps2.DISABLE_GATING=1                             # (bool  , init-time) default = '0'      : Disable Memory gating logic
-cpu0.FPU=1                                            # (bool  , init-time) default = '1'      : Set whether the model has VFP support
-cpu0.MVE=1                                            # (int   , init-time) default = '0x1'    : Set whether the model has MVE support. If FPU = 0: 0=MVE not included, 1=Integer subset of MVE included. If FPU = 1: 0=MVE not included, 1=Integer subset of MVE included, 2=Integer and half and single precision floating point MVE included
-cpu0.ID_ISAR5.PACBTI=1                                # (int   , init-time) default = '0x0'    : 0: PAC/BTI not implemented, 1: PAC implemented using the QARMA5 algorithm with BTI, 2: PAC implemented using an IMP DEF algorithm with BTI, 4: PAC implemented using the QARMA3 algorithm with BTI
-# cpu0.CFGPACBTI=1                                      # (bool  , init-time) default = '0'      : Enables support for the Pointer Authentication and Branch Target Identification (PACBTI) Extension. FALSE: Disabled, TRUE:PAC implemented using the QARMA5 algorithm with BTI
+cpu0.FPMVE=5                                          # (int   , init-time) default = '0x5'    : Set whether the model has FP and / or MVE support. 0: No FP and MVE support. 1: FP half and single precision. 2: FP half, single and double precision. 3: MVE integer. 4: FP half and single precision and MVE integer. 5: FP half, single and double precision and MVE floating point.
 cpu0.semihosting-enable=1                             # (bool  , init-time) default = '1'      : Enable semihosting SVC traps. Applications that do not use semihosting must set this parameter to false.
 cpu0.semihosting-Thumb_SVC=0xAB                       # (int   , init-time) default = '0xAB'   : T32 SVC number for semihosting : [0x0..0xFF]
 cpu0.semihosting-cmd_line=""                          # (string, init-time) default = ''       : Command line available to semihosting SVC calls

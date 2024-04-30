@@ -31,6 +31,9 @@ class DeviceAxis(Enum):
     CM35P = ('Cortex-M35P', 'CM35P')
     CM35PS = ('Cortex-M35PS', 'CM35PS')
     CM35PNS = ('Cortex-M35PNS', 'CM35PNS')
+    CM52 = ('Cortex-M52', 'CM52')
+    CM52S = ('Cortex-M52S', 'CM52S')
+    CM52NS = ('Cortex-M52NS', 'CM52NS')
     CM55 = ('Cortex-M55', 'CM55')
     CM55S = ('Cortex-M55S', 'CM55S')
     CM55NS = ('Cortex-M55NS', 'CM55NS')
@@ -49,6 +52,7 @@ class DeviceAxis(Enum):
             DeviceAxis.CM23NS,
             DeviceAxis.CM33NS,
             DeviceAxis.CM35PNS,
+            DeviceAxis.CM52NS,
             DeviceAxis.CM55NS,
             DeviceAxis.CM85NS
         ]
@@ -59,6 +63,7 @@ class DeviceAxis(Enum):
             DeviceAxis.CM23NS: 'CM23S',
             DeviceAxis.CM33NS: 'CM33S',
             DeviceAxis.CM35PNS: 'CM35PS',
+            DeviceAxis.CM52NS: 'CM52S',
             DeviceAxis.CM55NS: 'CM55S',
             DeviceAxis.CM85NS: 'CM85S'
         }
@@ -116,6 +121,9 @@ MODEL_EXECUTABLE = {
     DeviceAxis.CM35P: ("FVP_MPS2_Cortex-M35P", []),
     DeviceAxis.CM35PS: ("FVP_MPS2_Cortex-M35P", []),
     DeviceAxis.CM35PNS: ("FVP_MPS2_Cortex-M35P", []),
+    DeviceAxis.CM52: ("FVP_MPS2_Cortex-M52", []),
+    DeviceAxis.CM52S: ("FVP_MPS2_Cortex-M52", []),
+    DeviceAxis.CM52NS: ("FVP_MPS2_Cortex-M52", []),
     DeviceAxis.CM55: ("FVP_MPS2_Cortex-M55", []),
     DeviceAxis.CM55S: ("FVP_MPS2_Cortex-M55", []),
     DeviceAxis.CM55NS: ("FVP_MPS2_Cortex-M55", []),
@@ -228,7 +236,7 @@ def qemu(config, results):
 
 @matrix_command()
 def cbuild_clean(project):
-    return ["cbuild", "-c", project]
+    return ["cbuild", "-C", project]
 
 
 @matrix_command()
@@ -249,7 +257,7 @@ def cbuild(config):
 
 
 @matrix_command(test_report=ConsoleReport() |
-                            CropReport('<?xml version="1.0"?>', '</report>') |
+                            CropReport('<\\?xml version="1.0"\\?>', '</report>') |
                             TransformReport('validation.xsl') |
                             JUnitReport(title=lambda title, result: f"{result.command.config.compiler}."
                                                                     f"{result.command.config.optimize}."
@@ -265,7 +273,7 @@ def model_exec(config):
 
 
 @matrix_command(test_report=ConsoleReport() |
-                            CropReport('<\?xml version="1.0"\?>', '</report>') |
+                            CropReport('<\\?xml version="1.0"\\?>', '</report>') |
                             TransformReport('validation.xsl') |
                             JUnitReport(title=lambda title, result: f"{result.command.config.compiler}."
                                                                     f"{result.command.config.optimize}."
@@ -281,6 +289,11 @@ def qemu_exec(config):
 def filter_iar(config):
     return config.compiler == CompilerAxis.IAR
 
+@matrix_filter
+def filter_cm52(config):
+    device = config.device.match('CM52*')
+    compiler = config.compiler != CompilerAxis.AC6
+    return device and compiler
 
 if __name__ == "__main__":
     main()
