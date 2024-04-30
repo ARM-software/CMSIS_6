@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2009-2023 Arm Limited.
+ * Copyright (c) 2009-2024 Arm Limited.
  * Copyright (c) 2018-2022 Arm China.
  * All rights reserved.
  * SPDX-License-Identifier: Apache-2.0
@@ -653,8 +653,8 @@ typedef struct
 #define SCB_AIRCR_VECTKEYSTAT_Pos          16U                                            /*!< SCB AIRCR: VECTKEYSTAT Position */
 #define SCB_AIRCR_VECTKEYSTAT_Msk          (0xFFFFUL << SCB_AIRCR_VECTKEYSTAT_Pos)        /*!< SCB AIRCR: VECTKEYSTAT Mask */
 
-#define SCB_AIRCR_ENDIANESS_Pos            15U                                            /*!< SCB AIRCR: ENDIANESS Position */
-#define SCB_AIRCR_ENDIANESS_Msk            (1UL << SCB_AIRCR_ENDIANESS_Pos)               /*!< SCB AIRCR: ENDIANESS Mask */
+#define SCB_AIRCR_ENDIANNESS_Pos           15U                                            /*!< SCB AIRCR: ENDIANNESS Position */
+#define SCB_AIRCR_ENDIANNESS_Msk           (1UL << SCB_AIRCR_ENDIANNESS_Pos)              /*!< SCB AIRCR: ENDIANNESS Mask */
 
 #define SCB_AIRCR_PRIS_Pos                 14U                                            /*!< SCB AIRCR: PRIS Position */
 #define SCB_AIRCR_PRIS_Msk                 (1UL << SCB_AIRCR_PRIS_Pos)                    /*!< SCB AIRCR: PRIS Mask */
@@ -2199,6 +2199,9 @@ typedef struct
   @{
  */
 
+#define SCB_AIRCR_ENDIANESS_Pos            SCB_AIRCR_ENDIANNESS_Pos
+#define SCB_AIRCR_ENDIANESS_Msk            SCB_AIRCR_ENDIANNESS_Msk
+
 /*@} */
 
 
@@ -2924,6 +2927,7 @@ __STATIC_INLINE uint32_t SCB_GetFPUType(void)
     return 0U;           /* No FPU */
   }
 }
+
 
 /*@} end of CMSIS_Core_FpuFunctions */
 
