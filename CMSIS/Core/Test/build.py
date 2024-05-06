@@ -77,7 +77,7 @@ def timestamp():
     return datetime.now().strftime('%Y%m%d%H%M%S')
 
 
-@matrix_command(test_report=FileReport(f"lit.xml") | JUnitReport())
+@matrix_command(exit_code=[0, 1], test_report=FileReport(f"lit.xml") | JUnitReport())
 def run_lit(toolchain, device, optimize):
     return ["lit", "--xunit-xml-output", f"lit.xml", "-D", f"toolchain={toolchain}", "-D", f"device={device}", "-D", f"optimize={optimize}", "src" ]
 

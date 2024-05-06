@@ -50,7 +50,7 @@ The following Technical Reference Manuals describe the various Arm Cortex-A proc
 
 The \ref templates_pg delivered with this CMSIS-Core release have been tested and verified with the following toolchains:
 
- - Arm Compiler for Embedded 6.20
+ - Arm Compiler for Embedded 6.22
  - IAR C/C++ Compiler for Arm 9.40
  - GNU Arm Embedded Toolchain 13.2.1
- - LLVM/Clang 17.0.1
+ - LLVM/Clang 18.3.1

@@ -1,6 +1,6 @@
 # Revision History {#core_revisionHistory}
 
-CMSIS-Core (M) component is maintained with its own versioning that gets offically updated upon releases of the [CMSIS Software Pack](../General/cmsis_pack.html).
+CMSIS-Core (M) component is maintained with its own versioning that gets officially updated upon releases of the [CMSIS Software Pack](../General/cmsis_pack.html).
 
 The table below provides information about the changes delivered with specific versions of CMSIS-Core (M).
 
@@ -8,6 +8,16 @@ The table below provides information about the changes delivered with specific v
     <tr>
       <th>Version</th>
       <th>Description</th>
+    </tr>
+    <tr>
+      <td>V6.1.0</td>
+      <td>
+        <ul>
+          <li>Added support for Cortex-M52</li>
+          <li>Added deprecated CoreDebug symbols for CMSIS 5 compatibility</li>
+          <li>Added define CMSIS_DISABLE_DEPRECATED to hide deprecated symbols</li>
+        </ul>
+      </td>
     </tr>
     <tr>
       <td>V6.0.0</td>
@@ -368,104 +378,105 @@ The table below provides information about the changes delivered with specific v
     </tr>
 </table>
 
-
 \anchor core6_changes
 <h1>Breaking changes in CMSIS-Core v6 header files</h1>
 
 \ref cmsis_standard_files in CMSIS-Core v6.0.0 have received a number of changes that are incompatible with CMSIS-Core v5.6.0.
 
 In summary, following types of incompatible changes are present:
- - struct member is renamed in an existing structure (e.g. NVIC->PR -> NVIC->IPR)
- - struct name is changed (e.g. CoreDebug_Type -> DCB_Type)
- - define name is changed (e.g. CoreDebug_DEMCR_TRCENA_Msk -> DCB_DEMCR_TRCENA_Msk)
+
+- struct member is renamed in an existing structure (e.g. NVIC->PR -> NVIC->IPR)
+- struct name is changed (e.g. CoreDebug_Type -> DCB_Type)
+- define name is changed (e.g. CoreDebug_DEMCR_TRCENA_Msk -> DCB_DEMCR_TRCENA_Msk)
 
 [GitHub issue #122](https://github.com/ARM-software/CMSIS_6/issues/122) discusses how to resolve such incompatibilities.
 
 Below is detailed information about the changes relevant for each Cortex-M core.
 
 **Cortex-M0, Cortex-M0+, Cortex-M1:**
- - struct NVIC_Type
-   - member IP renamed to IPR
- - struct SCB_Type
-   - member SHP renamed to SHPR
 
+- struct NVIC_Type
+  - member IP renamed to IPR
+- struct SCB_Type
+  - member SHP renamed to SHPR
 
 **Cortex-M3, Cortex-M4:**
- - struct NVIC_Type
-   - member IP renamed to IPR
- - struct SCB_Type
-   - member SHP renamed to SHPR
-   - member PFR renamed to ID_PFR
-   - member PFR renamed to ID_PFR
-   - member DFR renamed to ID_PFR
-   - member ADR renamed to ID_AFR
-   - member MMFR renamed to ID_MMFR
-   - member ISAR renamed to ID_ISAR
-   - member STIR added
- - struct ITM_Type:
-   - members PIDx and CIDx removed
- - define names for ITM_TCR_* changed
- - define names for ITM_LSR_* changed
- - struct TPI_Type renamed to TPIU_Type
- - define names for TPI_* renamed to TPIU_*
- - define names for FPU_MVFR0/1_* changed (Cortex-M4)
- - struct CoreDebug_Type renamed to DCB_Type
- - defines for CoreDebug_* renamed to DCB_*
 
+- struct NVIC_Type
+  - member IP renamed to IPR
+- struct SCB_Type
+  - member SHP renamed to SHPR
+  - member PFR renamed to ID_PFR
+  - member PFR renamed to ID_PFR
+  - member DFR renamed to ID_PFR
+  - member ADR renamed to ID_AFR
+  - member MMFR renamed to ID_MMFR
+  - member ISAR renamed to ID_ISAR
+  - member STIR added
+- struct ITM_Type:
+  - members PIDx and CIDx removed
+- define names for ITM_TCR_* changed
+- define names for ITM_LSR_* changed
+- struct TPI_Type renamed to TPIU_Type
+- define names for TPI_*renamed to TPIU_*
+- define names for FPU_MVFR0/1_* changed (Cortex-M4)
+- struct CoreDebug_Type renamed to DCB_Type
+- defines for CoreDebug_*renamed to DCB_*
 
 **Cortex-M7:**
- - struct NVIC_Type
-   - member IP renamed to IPR
- - struct SCB_Type
-   - member ID_MFR renamed to ID_MMFR
- - struct ITM_Type:
-   - members PIDx and CIDx removed
- - define names for ITM_TCR_* changed
- - define names for ITM_LSR_* changed
- - struct TPI_Type renamed to TPIU_Type
- - define names for TPI_* renamed to TPIU_*
- - define names for FPU_MVFR0/1_* changed
- - struct CoreDebug_Type renamed to DCB_Type
- - defines for CoreDebug_* renamed to DCB_*
 
+- struct NVIC_Type
+  - member IP renamed to IPR
+- struct SCB_Type
+  - member ID_MFR renamed to ID_MMFR
+- struct ITM_Type:
+  - members PIDx and CIDx removed
+- define names for ITM_TCR_* changed
+- define names for ITM_LSR_* changed
+- struct TPI_Type renamed to TPIU_Type
+- define names for TPI_*renamed to TPIU_*
+- define names for FPU_MVFR0/1_* changed
+- struct CoreDebug_Type renamed to DCB_Type
+- defines for CoreDebug_*renamed to DCB_*
 
 **Cortex-M23:**
- - struct DWT_Type
-   - member RESERVED0[6] replaced by CYCCNT, CPICNT, EXCCNT, SLEEPCNT, LSUCNT, FOLDCNT
-   - other RESERVED members mainly removed
- - struct TPI_Type renamed to TPIU_Type
- - define names for TPI_* renamed to TPIU_*
- - struct CoreDebug_Type removed (struct DCB_Type already existed)
- - defines CoreDebug_ removed (defines DCB_ already existed)
 
+- struct DWT_Type
+  - member RESERVED0[6] replaced by CYCCNT, CPICNT, EXCCNT, SLEEPCNT, LSUCNT, FOLDCNT
+  - other RESERVED members mainly removed
+- struct TPI_Type renamed to TPIU_Type
+- define names for TPI_*renamed to TPIU_*
+- struct CoreDebug_Type removed (struct DCB_Type already existed)
+- defines CoreDebug_removed (defines DCB_ already existed)
 
 **Cortex-M33:**
- - struct ITM_Type:
-   - members LAR, LSR removed
-   - members PIDx and CIDx removed
- - struct TPI_Type renamed to TPIU_Type
- - define names for TPI_* renamed to TPIU_*
- - define names for FPU_MVFR0/1_* changed
- - struct CoreDebug_Type removed (struct DCB_Type already existed)
- - defines CoreDebug_ removed (defines DCB_ already existed)
 
+- struct ITM_Type:
+  - members LAR, LSR removed
+  - members PIDx and CIDx removed
+- struct TPI_Type renamed to TPIU_Type
+- define names for TPI_*renamed to TPIU_*
+- define names for FPU_MVFR0/1_* changed
+- struct CoreDebug_Type removed (struct DCB_Type already existed)
+- defines CoreDebug_removed (defines DCB_ already existed)
 
 **Cortex-M55, Cortex-M85:**
- - struct ITM_Type:
-   - members LAR, LSR removed
-   - members PIDx and CIDx removed
- - struct DWT_Type:
-   - members PIDx and CIDx removed
- - struct EWIC_Type
-   - all members renamed
- - define names EWIC_* changed
- - struct TPI_Type renamed to TPIU_Type
-   - members LAR, LSR replaced
- - define names for TPI_* renamed to TPIU_*
- - struct PMU_Type
-   - members PIDx and CIDx removed
- - struct CoreDebug_Type removed (struct DCB_Type already existed)
- - defines CoreDebug_ removed (defines DCB_ already existed)
- - struct DIB_Type
-   - members DLAR, DLSR removed (replaced by RESERVED0[2])
- - defines for DIB_DLAR_* and DIB_DLSR_* removed
+
+- struct ITM_Type:
+  - members LAR, LSR removed
+  - members PIDx and CIDx removed
+- struct DWT_Type:
+  - members PIDx and CIDx removed
+- struct EWIC_Type
+  - all members renamed
+- define names EWIC_* changed
+- struct TPI_Type renamed to TPIU_Type
+  - members LAR, LSR replaced
+- define names for TPI_*renamed to TPIU_*
+- struct PMU_Type
+  - members PIDx and CIDx removed
+- struct CoreDebug_Type removed (struct DCB_Type already existed)
+- defines CoreDebug_removed (defines DCB_ already existed)
+- struct DIB_Type
+  - members DLAR, DLSR removed (replaced by RESERVED0[2])
+- defines for DIB_DLAR_*and DIB_DLSR_* removed

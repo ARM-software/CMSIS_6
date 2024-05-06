@@ -13,28 +13,12 @@
   <url>https://www.keil.com/pack/</url>
 
   <releases>
-    <release version="6.0.0">
+    <release version="6.1.0">
       Active development ...
-      CMSIS-Core: 6.0.0
-        - Core(M) and Core(A) joined into single Core component
-        - Core header files reworked, aligned with TRMs
-        - Previously deprecated features removed
-        - Dropped support for Arm Compiler 5
-      CMSIS-DSP: Moved into separate pack!
-      CMSIS-NN: Moved into separate pack!
-      CMSIS-RTOS: Deprecated and removed!
-        - RTX4 Deprecated and removed!
-      CMSIS-RTOS2: 2.3.0 (see revision history for details)
-        - OS Tick moved from Device to CMSIS class
-        - Provisional support for processor affinity in SMP systems
-        - RTX5 Moved into separate pack!
-      CMSIS-Driver: 2.9.0 (see revision history for details)
-        - Updated VIO API 1.0.0
-        - Added GPIO Driver API 1.0.0
-      CMSIS-DAP: Moved into separate pack!
-      CMSIS-Pack: Moved to Open-CMSIS-Pack!
-      CMSIS-SVD: Moved to Open-CMSIS-Pack!
-      Utilities: Moved to CMSIS-Toolbox!
+      CMSIS-Core: 6.1.0
+        - Added support for Cortex-M52
+        - Added deprecated CoreDebug symbols for CMSIS 5 compatibility
+        - Added define CMSIS_DISABLE_DEPRECATED to hide deprecated symbols
     </release>
     <release version="5.9.0" date="2022-05-02">
       CMSIS-Core(M): 5.6.0

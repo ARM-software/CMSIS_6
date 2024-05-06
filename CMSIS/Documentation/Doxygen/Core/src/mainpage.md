@@ -54,6 +54,7 @@ Following Cortex-M Device Generic User Guides contain the programmers model and 
  - [Cortex-M7 Devices Generic User Guide (Armv7-M architecture)](https://developer.arm.com/documentation/dui0646/latest/)
  - [Cortex-M23 Devices Generic User Guide (Armv8-M architecture)](https://developer.arm.com/documentation/dui1095/latest/)
  - [Cortex-M33 Devices Generic User Guide (Armv8-M architecture)](https://developer.arm.com/documentation/100235/latest/)
+ - [Cortex-M52 Devices Generic User Guide (Armv8.1-M architecture)](https://developer.arm.com/documentation/102776/latest/)
  - [Cortex-M55 Devices Generic User Guide (Armv8.1-M architecture)](https://developer.arm.com/documentation/101273/latest/)
  - [Cortex-M85 Devices Generic User Guide (Armv8.1-M architecture)](https://developer.arm.com/documentation/101928/latest/)
 
@@ -80,7 +81,7 @@ More information about Armv8.1-M architecture is available under [Arm Helium tec
 
 The \ref cmsis_core_files delivered with this CMSIS-Core release have been tested and verified with the following toolchains:
 
- - Arm Compiler for Embedded 6.20
+ - Arm Compiler for Embedded 6.22
  - IAR C/C++ Compiler for Arm 9.40
  - GNU Arm Embedded Toolchain 13.2.1
- - LLVM/Clang 17.0.1
+ - LLVM/Clang 18.3.1

@@ -1390,6 +1390,8 @@ typedef struct
 #define SCB_AIRCR_ENDIANESS_Pos            SCB_AIRCR_ENDIANNESS_Pos
 #define SCB_AIRCR_ENDIANESS_Msk            SCB_AIRCR_ENDIANNESS_Msk
 
+#ifndef CMSIS_DISABLE_DEPRECATED
+
 /* deprecated, CMSIS_5 backward compatibility */
 typedef struct
 {
@@ -1483,7 +1485,9 @@ typedef struct
 #define CoreDebug_DEMCR_VC_CORERESET_Pos   DCB_DEMCR_VC_CORERESET_Pos
 #define CoreDebug_DEMCR_VC_CORERESET_Msk   DCB_DEMCR_VC_CORERESET_Msk
 
-  #define CoreDebug           ((CoreDebug_Type *)     DCB_BASE)
+#define CoreDebug           ((CoreDebug_Type *)     DCB_BASE)
+
+#endif // CMSIS_DISABLE_DEPRECATED
 
 /*@} */
 

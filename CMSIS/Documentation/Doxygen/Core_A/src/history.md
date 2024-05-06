@@ -10,6 +10,15 @@ The table below provides information about the changes delivered with specific v
       <th>Description</th>
     </tr>
     <tr>
+      <td>V6.1.0</td>
+      <td>
+        <ul>
+          <li>Added support for Cortex-M52</li>
+          <li>Added deprecated CoreDebug symbols for CMSIS 5 compatibility</li>
+          <li>Added define CMSIS_DISABLE_DEPRECATED to hide deprecated symbols</li>
+        </ul>
+      </td>
+    </tr>    <tr>
       <td>V6.0.0</td>
       <td>
         <ul>
