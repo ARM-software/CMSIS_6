@@ -33,14 +33,6 @@ jobs:
         run: |
           pip install -r ./CMSIS/Core/Test/requirements.txt
 
-      - name: Cache vcpkg
-        uses: actions/cache@v4
-        with:
-          key: vcpkg-${{ runner.os }}-${{ runner.arch }}-${{ github.run_id }}-${{ matrix.compiler }}
-          restore-keys: |
-            vcpkg-${{ runner.os }}-${{ runner.arch }}-
-          path: /home/runner/.vcpkg
-
       - name: Install LLVM dependencies and tools
         working-directory: /home/runner
         run: |
@@ -48,48 +40,25 @@ jobs:
           sudo apt-get install libtinfo5 llvm-15-tools
           sudo ln -s /usr/bin/FileCheck-15 /usr/bin/FileCheck
     
-      - name: Prepare vcpkg env
-        working-directory: ./CMSIS/Core/Test
-        run: |
-          . <(curl https://aka.ms/vcpkg-init.sh -L)
-          vcpkg x-update-registry --all
-          vcpkg activate
+      - name: Activate vcpkg environment
+        uses: ARM-software/cmsis-actions/vcpkg@v1
+        with:
+          config: ./CMSIS/Core/Test/vcpkg-configuration.json
           
       - name: Activate Arm tool license
-        working-directory: ./CMSIS/Core/Test
-        run: |
-          . /home/runner/.vcpkg/vcpkg-init
-          vcpkg activate
-          if [[ -n "${{ env.ARM_UBL_ACTIVATION_CODE }}" ]]; then
-            armlm activate --code ${{ env.ARM_UBL_ACTIVATION_CODE }}
-          else
-            armlm activate --server https://mdk-preview.keil.arm.com --product KEMDK-COM0
-          fi
+        uses: ARM-software/cmsis-actions/armlm@v1
+        with:
+          code: "${{ env.ARM_UBL_ACTIVATION_CODE }}"
 
       - uses: ammaraskar/gcc-problem-matcher@master
 
       - name: Run LIT
         working-directory: ./CMSIS/Core/Test
         run: |
-          . /home/runner/.vcpkg/vcpkg-init
-          vcpkg activate
-
           ./build.py lit
 
-      - name: Deactivate Arm tool license
-        if: always()
-        working-directory: ./CMSIS/Core/Test
-        run: |
-          . /home/runner/.vcpkg/vcpkg-init
-          vcpkg activate
-          if [[ -n "${{ env.ARM_UBL_ACTIVATION_CODE }}" ]]; then
-            armlm deactivate --code ${{ env.ARM_UBL_ACTIVATION_CODE }}
-          else
-            armlm deactivate --product KEMDK-COM0
-          fi
-
       - name: Publish Test Results
-        if: ${{ !cancelled() && env.ARM_UBL_ACTIVATION_CODE }}
+        if: ${{ !cancelled() }}
         uses: EnricoMi/publish-unit-test-result-action@v2
         with:
           report_individual_runs: true
