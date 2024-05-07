@@ -76,9 +76,9 @@ The following tools are required to build and run the CoreValidation tests:
 - [CMSIS-Toolbox 2.1.0](https://artifacts.keil.arm.com/cmsis-toolbox/2.1.0/)*
 - [CMake 3.25.2](https://cmake.org/download/)*
 - [Ninja 1.10.2](https://github.com/ninja-build/ninja/releases)*
-- [Arm Compiler 6.20](https://artifacts.keil.arm.com/arm-compiler/6.20/21/)*
+- [Arm Compiler 6.22](https://artifacts.tools.arm.com/arm-compiler/6.22/45/)*
 - [GCC Compiler 13.2.1](https://artifacts.keil.arm.com/arm-none-eabi-gcc/13.2.1/)*
-- [Clang Compiler 17.0.1](https://github.com/ARM-software/LLVM-embedded-toolchain-for-Arm/releases/tag/release-17.0.1)*
+- [Clang Compiler 18.1.3](https://github.com/ARM-software/LLVM-embedded-toolchain-for-Arm/releases/tag/release-18.1.3)*
 - [Arm Virtual Hardware for Cortex-M based on FastModels 11.22.39](https://artifacts.keil.arm.com/avh/11.22.39/)*
 - [Python 3.9](https://www.python.org/downloads/)
 - [LLVM FileCheck](https://github.com/llvm/llvm-project/releases/)
