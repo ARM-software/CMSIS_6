@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2023 Arm Limited. All rights reserved.
+ * Copyright (c) 2023-2024 Arm Limited. All rights reserved.
  *
  * SPDX-License-Identifier: Apache-2.0
  *
@@ -25,7 +25,7 @@ define memory mem with size = 4G;
 #endif
 
 #if __ROM1_SIZE > 0
-  define region ROM1_region = mem:[from __ROM1_BASE to (__ROM0_BASE+__ROM1_SIZE-1)];
+  define region ROM1_region = mem:[from __ROM1_BASE to (__ROM1_BASE+__ROM1_SIZE-1)];
 #else
   define region ROM1_region = [];
 #endif
@@ -51,7 +51,7 @@ define region ROM_region = ROM0_region |  ROM1_region | ROM2_region | ROM3_regio
 #endif
 
 #if __RAM1_SIZE > 0
-  define region RAM1_region = mem:[from __RAM1_BASE to (__RAM0_BASE+__RAM1_SIZE-1)];
+  define region RAM1_region = mem:[from __RAM1_BASE to (__RAM1_BASE+__RAM1_SIZE-1)];
 #else
   define region RAM1_region = [];
 #endif
