@@ -1,7 +1,7 @@
 function writeHeader() {
-    document.write('Version 0c84a51e');
+    document.write('Version 0df68997');
 };
 
 function writeFooter()  {
-    document.write('Generated on Mon May  6 2024 11:00:50 for CMSIS-Zone 0c84a51e. Copyright &copy; 2024 Arm Limited (or its affiliates). All rights reserved.');
+    document.write('Generated on Tue May  7 2024 11:24:27 for CMSIS-Zone 0df68997. Copyright &copy; 2024 Arm Limited (or its affiliates). All rights reserved.');
 };
