@@ -3635,6 +3635,8 @@ typedef struct
   @{
  */
 
+#ifndef CMSIS_DISABLE_DEPRECATED
+
 #define SCB_AIRCR_ENDIANESS_Pos            SCB_AIRCR_ENDIANNESS_Pos
 #define SCB_AIRCR_ENDIANESS_Msk            SCB_AIRCR_ENDIANNESS_Msk
 
