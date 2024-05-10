@@ -12,7 +12,7 @@ The header file <b>cmsis_compiler.h</b> is also included by each \ref device_h_p
 
 /**
 \def __ARM_ARCH_6M__
-\brief Set to 1 when generating code for Armv6-M (Cortex-M0, Cortex-M1)
+\brief Set to 1 when generating code for Armv6-M architecture
 \details
 The <b>\#define __ARM_ARCH_6M__</b> is set to 1 when generating code for the Armv6-M architecture. This architecture is for example used by the Cortex-M0, Cortex-M0+, and Cortex-M1 processor.
 */
@@ -20,7 +20,7 @@ The <b>\#define __ARM_ARCH_6M__</b> is set to 1 when generating code for the Arm
 
 /**
 \def __ARM_ARCH_7M__
-\brief Set to 1 when generating code for Armv7-M (Cortex-M3)
+\brief Set to 1 when generating code for Armv7-M architecture
 \details
 The <b>\#define __ARM_ARCH_7M__</b> is set to 1 when generating code for the Armv7-M architecture. This architecture is for example used by the Cortex-M3 processor.
 */
@@ -28,9 +28,9 @@ The <b>\#define __ARM_ARCH_7M__</b> is set to 1 when generating code for the Arm
 
 /**
 \def __ARM_ARCH_7EM__
-\brief Set to 1 when generating code for Armv7-M (Cortex-M4) with FPU
+\brief Set to 1 when generating code for Armv7-M architecture with FPU
 \details
-The <b>\#define __ARM_ARCH_7EM__</b> is set to 1 when generating code for the Armv7-M architecture with floating point extension. This architecture is for example used by the Cortex-M4 processor with FPU
+The <b>\#define __ARM_ARCH_7EM__</b> is set to 1 when generating code for the Armv7-M architecture with floating point extension. This architecture is for example implemented by the Cortex-M4 processor with FPU.
 */
 #define __ARM_ARCH_7EM__
 
@@ -40,19 +40,30 @@ The <b>\#define __ARM_ARCH_7EM__</b> is set to 1 when generating code for the Ar
 
 /**
 \def __ARM_ARCH_8M_BASE__
-\brief Set to 1 when generating code for Armv8-M Baseline
+\brief Set to 1 when generating code for Armv8-M Baseline architecture
 \details
 The <b>\#define __ARM_ARCH_8M_BASE__</b> is set to 1 when generating code for the Armv8-M architecture baseline variant.
+This architecture is for example implemented by the Cortex-M23 processor.
 */
 #define __ARM_ARCH_8M_BASE__
 
 /**
 \def __ARM_ARCH_8M_MAIN__
-\brief Set to 1 when generating code for Armv8-M Mainline
+\brief Set to 1 when generating code for Armv8-M Mainline architecture
 \details
 The <b>\#define __ARM_ARCH_8M_MAIN__</b> is set to 1 when generating code for the Armv8-M architecture mainline variant.
+This architecture is for example implemented by the Cortex-M33 processor.
 */
 #define __ARM_ARCH_8M_MAIN__
+
+/**
+\def __ARM_ARCH_8_1M_MAIN__
+\brief Set to 1 when generating code for Armv8.1-M architecture
+\details
+The <b>\#define __ARM_ARCH_8_1M_MAIN__</b> is set to 1 when generating code for the Armv8.1-M architecture.
+This architecture is for example implemented by the Cortex-M55 processor.
+*/
+#define __ARM_ARCH_8_1M_MAIN__
 
 /**
 \endcond
