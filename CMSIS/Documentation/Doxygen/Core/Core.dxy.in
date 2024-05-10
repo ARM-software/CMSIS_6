@@ -669,7 +669,7 @@ SORT_MEMBER_DOCS       = YES
 # this will also influence the order of the classes in the class list.
 # The default value is: NO.
 
-SORT_BRIEF_DOCS        = NO
+SORT_BRIEF_DOCS        = YES
 
 # If the SORT_MEMBERS_CTORS_1ST tag is set to YES then doxygen will sort the
 # (brief and detailed) documentation of class members so that constructors and
@@ -950,6 +950,7 @@ INPUT                  = ./src/mainpage.md \
                          ./src/ref_debug.txt \
                          ./src/ref_trustzone.txt \
                          ./src/ref_cm7_cache.txt \
+                         ./src/ref_deprecated.txt \
                          ./src/ref_data_structs.txt
 
 # This tag can be used to specify the character encoding of the source files
