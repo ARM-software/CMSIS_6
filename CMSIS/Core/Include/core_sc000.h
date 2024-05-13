@@ -681,14 +681,17 @@ typedef struct
 
 
 /**
-  \ingroup    CMSIS_core_register
-  \defgroup   CMSIS_register_aliases     Backwards Compatibility Aliases
-  \brief      Register alias definitions for backwards compatibility.
+  \defgroup   CMSIS_deprecated_aliases     Backwards Compatibility Aliases
+  \brief      Alias definitions present for backwards compatibility for deprecated symbols.
   @{
  */
 
+#ifndef CMSIS_DISABLE_DEPRECATED
+
 #define SCB_AIRCR_ENDIANESS_Pos            SCB_AIRCR_ENDIANNESS_Pos
 #define SCB_AIRCR_ENDIANESS_Msk            SCB_AIRCR_ENDIANNESS_Msk
+
+#endif // CMSIS_DISABLE_DEPRECATED
 
 /*@} */
 

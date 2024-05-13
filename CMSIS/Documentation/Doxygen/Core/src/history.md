@@ -378,18 +378,19 @@ The table below provides information about the changes delivered with specific v
     </tr>
 </table>
 
-\anchor core6_changes
-<h1>Breaking changes in CMSIS-Core v6 header files</h1>
+\section core6_changes Breaking changes in CMSIS-Core 6
 
 \ref cmsis_standard_files in CMSIS-Core v6.0.0 have received a number of changes that are incompatible with CMSIS-Core v5.6.0.
 
 In summary, following types of incompatible changes are present:
 
-- struct member is renamed in an existing structure (e.g. NVIC->PR -> NVIC->IPR)
-- struct name is changed (e.g. CoreDebug_Type -> DCB_Type)
-- define name is changed (e.g. CoreDebug_DEMCR_TRCENA_Msk -> DCB_DEMCR_TRCENA_Msk)
+ - struct member is renamed in an existing structure (e.g. NVIC->PR -> NVIC->IPR)
+ - struct name is changed (e.g. CoreDebug_Type -> DCB_Type)
+ - define name is changed (e.g. CoreDebug_DEMCR_TRCENA_Msk -> DCB_DEMCR_TRCENA_Msk)
 
-[GitHub issue #122](https://github.com/ARM-software/CMSIS_6/issues/122) discusses how to resolve such incompatibilities.
+For the latest two types, CMSIS-Core v6.1 and higher provide also the original CMSIS 5 symbols as deprecated and so improve the backward compatibility. See section \ref deprecated_gr.
+
+Additionally, the [GitHub issue #122](https://github.com/ARM-software/CMSIS_6/issues/122) discusses how to resolve such incompatibilities.
 
 Below is detailed information about the changes relevant for each Cortex-M core.
 
@@ -418,10 +419,10 @@ Below is detailed information about the changes relevant for each Cortex-M core.
 - define names for ITM_TCR_* changed
 - define names for ITM_LSR_* changed
 - struct TPI_Type renamed to TPIU_Type
-- define names for TPI_*renamed to TPIU_*
+- define names for TPI_* renamed to TPIU_*
 - define names for FPU_MVFR0/1_* changed (Cortex-M4)
 - struct CoreDebug_Type renamed to DCB_Type
-- defines for CoreDebug_*renamed to DCB_*
+- defines for CoreDebug_* renamed to DCB_*
 
 **Cortex-M7:**
 
@@ -434,10 +435,10 @@ Below is detailed information about the changes relevant for each Cortex-M core.
 - define names for ITM_TCR_* changed
 - define names for ITM_LSR_* changed
 - struct TPI_Type renamed to TPIU_Type
-- define names for TPI_*renamed to TPIU_*
+- define names for TPI_* renamed to TPIU_*
 - define names for FPU_MVFR0/1_* changed
 - struct CoreDebug_Type renamed to DCB_Type
-- defines for CoreDebug_*renamed to DCB_*
+- defines for CoreDebug_* renamed to DCB_*
 
 **Cortex-M23:**
 
@@ -445,9 +446,9 @@ Below is detailed information about the changes relevant for each Cortex-M core.
   - member RESERVED0[6] replaced by CYCCNT, CPICNT, EXCCNT, SLEEPCNT, LSUCNT, FOLDCNT
   - other RESERVED members mainly removed
 - struct TPI_Type renamed to TPIU_Type
-- define names for TPI_*renamed to TPIU_*
+- define names for TPI_* renamed to TPIU_*
 - struct CoreDebug_Type removed (struct DCB_Type already existed)
-- defines CoreDebug_removed (defines DCB_ already existed)
+- defines CoreDebug_* removed (defines DCB_* already existed)
 
 **Cortex-M33:**
 
@@ -455,10 +456,10 @@ Below is detailed information about the changes relevant for each Cortex-M core.
   - members LAR, LSR removed
   - members PIDx and CIDx removed
 - struct TPI_Type renamed to TPIU_Type
-- define names for TPI_*renamed to TPIU_*
+- define names for TPI_* renamed to TPIU_*
 - define names for FPU_MVFR0/1_* changed
 - struct CoreDebug_Type removed (struct DCB_Type already existed)
-- defines CoreDebug_removed (defines DCB_ already existed)
+- defines CoreDebug_* removed (defines DCB_* already existed)
 
 **Cortex-M55, Cortex-M85:**
 
@@ -472,11 +473,11 @@ Below is detailed information about the changes relevant for each Cortex-M core.
 - define names EWIC_* changed
 - struct TPI_Type renamed to TPIU_Type
   - members LAR, LSR replaced
-- define names for TPI_*renamed to TPIU_*
+- define names for TPI_* renamed to TPIU_*
 - struct PMU_Type
   - members PIDx and CIDx removed
 - struct CoreDebug_Type removed (struct DCB_Type already existed)
-- defines CoreDebug_removed (defines DCB_ already existed)
+- defines CoreDebug_* removed (defines DCB_* already existed)
 - struct DIB_Type
   - members DLAR, DLSR removed (replaced by RESERVED0[2])
-- defines for DIB_DLAR_*and DIB_DLSR_* removed
+- defines for DIB_DLAR_* and DIB_DLSR_* removed
