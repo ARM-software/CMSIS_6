@@ -61,7 +61,7 @@ var NAVTREEINDEX =
 "group__nand__driver__ecc__codes.html#ga15c79a12200c16f953936635f930df1d",
 "group__spi__interface__gr.html#a50c88f3c1d787773e2ac1b59533f034a",
 "group__usbd__interface__gr.html#a5ce2b3d7a3a07099bf07d1eb253e92e3",
-"group__wifi__management__gr.html#structARM__WIFI__CONFIG__t"
+"group__wifi__soc__func.html#ga695aa5c5329602d9465fbc6c22fc9978"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

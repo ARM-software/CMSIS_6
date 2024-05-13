@@ -71,7 +71,7 @@ var searchData=
   ['socketsendto_68',['SocketSendTo',['../group__wifi__interface__gr.html#a3f82c726a8ee51e0e87de2aebba4025f',1,'ARM_DRIVER_WIFI']]],
   ['socketsetopt_69',['SocketSetOpt',['../group__wifi__interface__gr.html#acc1d2021f95fea959902e5e85f793d34',1,'ARM_DRIVER_WIFI']]],
   ['software_5fattacks_70',['software_attacks',['../Driver__Storage_8h.html#a1b6a0329dd65f25a0ab22496ab708306',1,'ARM_STORAGE_SECURITY_FEATURES']]],
-  ['speed_71',['speed',['../group__eth__interface__gr.html#a220859a8b5da0232739a11cbe7f79fc5',1,'ARM_ETH_LINK_INFO::speed()'],['../group__usbd__interface__gr.html#a220859a8b5da0232739a11cbe7f79fc5',1,'ARM_USBD_STATE::speed()'],['../group__usbh__host__gr.html#a220859a8b5da0232739a11cbe7f79fc5',1,'ARM_USBH_PORT_STATE::speed()']]],
+  ['speed_71',['speed',['../group__eth__interface__gr.html#a220859a8b5da0232739a11cbe7f79fc5',1,'ARM_ETH_LINK_INFO::speed()'],['../group__usbd__interface__gr.html#a220859a8b5da0232739a11cbe7f79fc5',1,'ARM_USBD_STATE::speed()'],['../group__usbh__interface__gr.html#a220859a8b5da0232739a11cbe7f79fc5',1,'ARM_USBH_PORT_STATE::speed()']]],
   ['spi_20bit_20order_72',['SPI Bit Order',['../group__spi__bit__order__ctrls.html',1,'']]],
   ['spi_20control_20codes_73',['SPI Control Codes',['../group__SPI__control.html',1,'']]],
   ['spi_20data_20bits_74',['SPI Data Bits',['../group__spi__data__bits__ctrls.html',1,'']]],

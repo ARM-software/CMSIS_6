@@ -13,5 +13,5 @@ var searchData=
   ['asynchronous_10',['asynchronous',['../group__sai__interface__gr.html#a75ba2507ea29601a309393e794f4413d',1,'ARM_SAI_CAPABILITIES::asynchronous()'],['../group__usart__interface__gr.html#a75ba2507ea29601a309393e794f4413d',1,'ARM_USART_CAPABILITIES::asynchronous()']]],
   ['asynchronous_5fops_11',['asynchronous_ops',['../group__storage__interface__gr.html#a15ade4ca762bc6ce72d435a16febb4cc',1,'ARM_STORAGE_CAPABILITIES']]],
   ['attributes_12',['attributes',['../group__storage__interface__gr.html#ade62c905888479b4f6d078d45cec5830',1,'ARM_STORAGE_BLOCK']]],
-  ['auto_5fsplit_13',['auto_split',['../group__usbh__host__gr.html#a37eab684b9a8aa496bfec9fede42fe27',1,'ARM_USBH_CAPABILITIES']]]
+  ['auto_5fsplit_13',['auto_split',['../group__usbh__interface__gr.html#a37eab684b9a8aa496bfec9fede42fe27',1,'ARM_USBH_CAPABILITIES']]]
 ];
