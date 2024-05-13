@@ -18,6 +18,10 @@ Release history of other CMSIS components and tools can be found in their docume
     <tr>
       <td>6.1.0</td>
       <td>
+       - CMSIS-Core: 6.1.0
+         - Added support for Cortex-M52
+         - Added deprecated CoreDebug symbols for CMSIS 5 compatibility
+         - Added define CMSIS_DISABLE_DEPRECATED to hide deprecated symbols
        - CMSIS-Driver: 2.10.0
          - Updated USB Host API 2.4.0
       </td>
