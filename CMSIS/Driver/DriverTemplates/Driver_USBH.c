@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2013-2020 Arm Limited. All rights reserved.
+ * Copyright (c) 2013-2024 Arm Limited. All rights reserved.
  *
  * SPDX-License-Identifier: Apache-2.0
  *
@@ -29,7 +29,7 @@ static const ARM_DRIVER_VERSION usbh_driver_version = {
 };
 
 /* Driver Capabilities */
-static const ARM_USBH_CAPABILITIES usbd_driver_capabilities = {
+static const ARM_USBH_CAPABILITIES usbh_driver_capabilities = {
     0x0001, /* Root HUB available Ports Mask   */
     0,      /* Automatic SPLIT packet handling */
     0,      /* Signal Connect event */
@@ -49,7 +49,7 @@ static ARM_DRIVER_VERSION ARM_USBH_GetVersion(void)
 
 static ARM_USBH_CAPABILITIES ARM_USBH_GetCapabilities(void)
 {
-  return usbd_driver_capabilities;
+  return usbh_driver_capabilities;
 }
 
 static int32_t ARM_USBH_Initialize(ARM_USBH_SignalPortEvent_t cb_port_event,

@@ -1,20 +1,13 @@
 /**
-\defgroup usbh_interface_gr USB Host Interface
-\ingroup usb_interface_gr
-\brief  Driver API for USB Host Peripheral (%Driver_USBH.h)
-*/
-
-/**
-\defgroup usbh_host_gr USB Host
-\ingroup usbh_interface_gr
-\brief  Driver API for USB Host
-
+\defgroup   usbh_interface_gr USB Host Interface
+\ingroup    usb_interface_gr
+\brief      Driver API for USB Host Peripheral (%Driver_USBH.h)
 @{
 */
 
 /** 
-\struct ARM_DRIVER_USBH
-\details 
+\struct     ARM_DRIVER_USBH
+\details
 The functions of the USB Host driver are accessed by function pointers. Refer to \ref DriverFunctions for 
 overview information.
 
@@ -31,7 +24,7 @@ The default is \token{0}, which connects a middleware to the first instance of a
 *****************************************************************************************************************/
 
 /**
-\struct ARM_USBH_CAPABILITIES 
+\struct     ARM_USBH_CAPABILITIES 
 \details  
 A USB Host driver can be implemented with different capabilities.
 The data fields of this structure encode the capabilities implemented by this driver.
@@ -44,7 +37,7 @@ The data fields of this structure encode the capabilities implemented by this dr
 
 /**
 \struct     ARM_USBH_PORT_STATE 
-\details  
+\details
 This structure stores information about the state of the USB Host Port. The data fields encode whether a device 
 is connected to the port, if port overcurrent is detected, and the port speed.
 
@@ -175,7 +168,7 @@ ARM_DRIVER_VERSION ARM_USBH_GetVersion (void)  {
   return { 0, 0 };
 }
 /**
-\fn       ARM_DRIVER_VERSION ARM_USBH_GetVersion (void)
+\fn     ARM_DRIVER_VERSION ARM_USBH_GetVersion (void)
 \details
 The function \b ARM_USBH_GetVersion returns version information of the driver implementation in \ref ARM_DRIVER_VERSION
  - API version is the version of the CMSIS-Driver specification used to implement this driver.
@@ -485,194 +478,6 @@ Parameter \em event                       | Bit| Description
 
 <b>See also:</b>
  - ARM_USBH_PipeCreate
-*****************************************************************************************************************/
-
-/**
-@}
-*/ 
-
-
-
-/**
-\defgroup usbh_hci_gr USB OHCI/EHCI
-\ingroup usbh_interface_gr
-\brief  Driver API for USB OHCI/EHCI
-\details
-OHCI and EHCI compliant interfaces have memory mapped registers that are used to control the USB host.
-
-Only certain functionalities (interrupts, VBUS control, power control) require device specific interface which is provided through functions
-of the struct \ref ARM_DRIVER_USBH_HCI (functionality accessed with the struct \ref ARM_DRIVER_USBH is not needed). 
-@{
-*/
-
-/** 
-\struct ARM_DRIVER_USBH_HCI
-\details
-The functions of the USB Host HCI (OHCI/EHCI) driver are accessed by function pointers. Refer to \ref DriverFunctions for 
-overview information.
-
-Each instance of an USBH provides such an access struct. The instance is indicated by
-a postfix in the symbol name of the access struct, for example:
- - \b Driver_USBH0_HCI is the name of the access struct of the first instance (no. 0).
- - \b Driver_USBH1_HCI is the name of the access struct of the second instance (no. 1).
-
-
-A configuration setting in the middleware allows connecting the middleware to a specific driver instance <b>Driver_USBH<i>n</i>_HCI</b>.
-The default is \token{0}, which connects a middleware to the first instance of a driver.
-
-\note    The struct must remain unchanged.
-*/
-
-
-/**
-\struct ARM_USBH_HCI_CAPABILITIES
-\details
-A USB Host HCI (OHCI/EHCI) driver can be implemented with different capabilities.
-The data fields of this structure encode the capabilities implemented by this driver.
-
-<b>Returned by:</b>
-  - \ref ARM_USBH_HCI_GetCapabilities
-
-\note    The struct must remain unchanged.
-*****************************************************************************************************************/
-
-/**
-\typedef    ARM_USBH_HCI_Interrupt_t
-\details
-Provides the typedef for the interrupt handler \ref ARM_USBH_HCI_Interrupt.
-
-<b>Parameter for:</b>
-  - \ref ARM_USBH_HCI_Initialize
-*******************************************************************************************************************/
-
-
-//
-// Functions
-//
-
-ARM_DRIVER_VERSION ARM_USBH_HCI_GetVersion (void)  {
-  return { 0, 0 };
-}
-/**
-\fn       ARM_DRIVER_VERSION ARM_USBH_HCI_GetVersion (void)
-\details
-The function \b ARM_USBH_HCI_GetVersion returns version information of the driver implementation in \ref ARM_DRIVER_VERSION
- - API version is the version of the CMSIS-Driver specification used to implement this driver.
- - Driver version is source code version of the actual driver implementation.
-
-Example:
-\code
-extern ARM_DRIVER_USBH Driver_USBH0_HCI;
-ARM_DRIVER_USBH *drv_info;
- 
-void setup_usbh (void)  {
-  ARM_DRIVER_VERSION  version;
- 
-  drv_info = &Driver_USBH0_HCI;  
-  version = drv_info->GetVersion ();
-  if (version.api < 0x10A)   {      // requires at minimum API version 1.10 or higher
-    // error handling
-    return;
-  }
-}
-\endcode
-*****************************************************************************************************************/
-
-ARM_USBH_HCI_CAPABILITIES ARM_USBH_HCI_GetCapabilities (void)  {
-  return { 0 };
-}
-/**
-\fn       ARM_USBH_HCI_CAPABILITIES ARM_USBH_HCI_GetCapabilities (void)
-\details
-The function \b ARM_USBH_HCI_GetCapabilities returns information about capabilities in this driver implementation.
-The data fields of the structure \ref ARM_USBH_HCI_CAPABILITIES encode various capabilities, for example
-available HUB ports.
- 
-Example:
-\code
-extern ARM_DRIVER_USBH_HCI Driver_USBH0_HCI;
-ARM_DRIVER_USBH_HCI *drv_info;
-  
-void read_capabilities (void)  {
-  ARM_USBH_HCI_CAPABILITIES drv_capabilities;
- 
-  drv_info = &Driver_USBH0_HCI;  
-  drv_capabilities = drv_info->GetCapabilities ();
-  // interrogate capabilities
- 
-}
-\endcode
-*****************************************************************************************************************/
-
-int32_t ARM_USBH_HCI_Initialize (ARM_USBH_HCI_Interrupt_t *cb_interrupt)  {
-  return ARM_DRIVER_OK;
-}
-/**
-\fn       int32_t ARM_USBH_HCI_Initialize (ARM_USBH_HCI_Interrupt_t *cb_interrupt)
-\details
-The function \b ARM_USBH_HCI_Initialize initializes the USB Host HCI (OHCI/EHCI) interface. 
-It is called when the middleware component starts operation.
-
-The function performs the following operations:
-  - Initializes the resources needed for the USBH interface.
-  - Registers the \ref ARM_USBH_HCI_Interrupt interrupt handler.
-
-The parameter \em cb_interrupt is a pointer to the interrupt routine of the OHCI/EHCI peripheral
-that needs to be registered. This function is called as ECHI Interrupt Service Handler.
-
-\b Example:
- - see \ref usbh_interface_gr - Driver Functions
-
-*****************************************************************************************************************/
-
-int32_t ARM_USBH_HCI_Uninitialize (void) {
-  return ARM_DRIVER_OK;
-}
-/**
-\fn       int32_t ARM_USBH_HCI_Uninitialize (void)
-\details
-The function \ref ARM_USBH_HCI_Uninitialize de-initializes the resources of USB Host HCI (OHCI/EHCI) interface.
-
-It is called when the middleware component stops operation and releases the software resources used by the interface.
-*****************************************************************************************************************/
-
-int32_t ARM_USBH_HCI_PowerControl (ARM_POWER_STATE state)  {
-  return ARM_DRIVER_OK;
-}
-/**
-\fn int32_t ARM_USBH_HCI_PowerControl (ARM_POWER_STATE state)
-\details
-The function \b ARM_USBH_HCI_PowerControl operates the power modes of the USB Host HCI (OHCI/EHCI) interface.  
-
-The parameter \em state sets the operation and can have the following values:
-  - \ref ARM_POWER_FULL : set-up peripheral for data transfers, enable interrupts (NVIC) and optionally DMA. 
-                          Can be called multiple times. If the peripheral is already in this mode the function performs 
-						  no operation and returns with \ref ARM_DRIVER_OK.
-  - \ref ARM_POWER_LOW : may use power saving. Returns \ref ARM_DRIVER_ERROR_UNSUPPORTED when not implemented.
-  - \ref ARM_POWER_OFF : terminates any pending data transfers, disables peripheral, disables related interrupts and DMA.
-      
-Refer to \ref CallSequence for more information.
-*****************************************************************************************************************/
-
-int32_t ARM_USBH_HCI_PortVbusOnOff (uint8_t port, bool vbus)  {
-  return ARM_DRIVER_OK;
-}
-/**
-\fn int32_t ARM_USBH_HCI_PortVbusOnOff (uint8_t port, bool vbus)
-\details
-The function \b  ARM_USBH_HCI_PortVbusOnOff controls the VBUS signal of the specified port.
-Most HCI complained USB Host controllers do not require this optional function.
-It is only required when a external VBUS interface (for example via I/O pin) is required.
-
-*****************************************************************************************************************/
-
-void ARM_USBH_HCI_Interrupt (void)  {
-  // function body
-}
-/**
-\fn void ARM_USBH_HCI_Interrupt (void)
-\details
-The function \b ARM_USBH_HCI_Interrupt is called from the USBH HCI Interrupt Handler.
 *****************************************************************************************************************/
 
 /**

@@ -10,6 +10,13 @@ The table below provides information about the changes delivered with specific v
       <th>Description</th>
     </tr>
     <tr>
+      <td>2.10.0</td>
+      <td>
+        - Updated USB Host API 2.4.0:
+          - deprecated: API for OHCI/EHCI Host Controller Interface (HCI)
+      </td>
+    </tr>
+    <tr>
       <td>2.9.0</td>
       <td>
         - Updated VIO API 1.0.0:
