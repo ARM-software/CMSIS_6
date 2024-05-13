@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<package schemaVersion="1.7.31" xmlns:xs="http://www.w3.org/2001/XMLSchema-instance" xs:noNamespaceSchemaLocation="https://raw.githubusercontent.com/Open-CMSIS-Pack/Open-CMSIS-Pack-Spec/v1.7.31/schema/PACK.xsd">
+<package schemaVersion="1.7.36" xmlns:xs="http://www.w3.org/2001/XMLSchema-instance" xs:noNamespaceSchemaLocation="https://raw.githubusercontent.com/Open-CMSIS-Pack/Open-CMSIS-Pack-Spec/v1.7.36/schema/PACK.xsd">
   <name>CMSIS</name>
-  <description>CMSIS (Common Microcontroller Software Interface Standard)</description>
+  <description overview="./CMSIS/Documentation/Overview.md">CMSIS (Common Microcontroller Software Interface Standard)</description>
   <vendor>ARM</vendor>
   <license>LICENSE</license>
   <licenseSets>
@@ -15,6 +15,7 @@
   <releases>
     <release version="6.1.0">
       Active development ...
+      Added Overview.md for display on web index service
       CMSIS-Core: 6.1.0
         - Added support for Cortex-M52
         - Added deprecated CoreDebug symbols for CMSIS 5 compatibility
