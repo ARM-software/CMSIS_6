@@ -1,5 +1,10 @@
 var NAVTREEINDEX1 =
 {
+"group__intrinsic__SIMD__gr.html#ga5290ce5564770ad124910d2583dc0a9e":[7,8,25],
+"group__intrinsic__SIMD__gr.html#ga5611f7314e0c8f53da377918dfbf42ee":[7,8,26],
+"group__intrinsic__SIMD__gr.html#ga578a082747436772c482c96d7a58e45e":[7,8,59],
+"group__intrinsic__SIMD__gr.html#ga5845084fd99c872e98cf5553d554de2a":[7,8,12],
+"group__intrinsic__SIMD__gr.html#ga5ec4e2e231d15e5c692233feb3806187":[7,8,54],
 "group__intrinsic__SIMD__gr.html#ga5eff3ae5eabcd73f3049996ca391becb":[7,8,52],
 "group__intrinsic__SIMD__gr.html#ga753493a65493880c28baa82c151a0d61":[7,8,9],
 "group__intrinsic__SIMD__gr.html#ga83e69ef81057d3cbd06863d729385187":[7,8,27],
@@ -157,8 +162,8 @@ var NAVTREEINDEX1 =
 "group__pmu8__events__armcm55.html#ga8b005f5e47bc8bf9ee8d84a43b798ca9":[7,13,1,2],
 "group__pmu8__events__armcm55.html#ga8e3f50182b0fdacab4b09bb0e4007136":[7,13,1,1],
 "group__pmu8__events__armcm55.html#gaa644074ec71c49e7e7a45d001bbdfb00":[7,13,1,5],
-"group__pmu8__events__armcm55.html#gaadf0341d6a67cd30481201e7a3c7e77b":[7,13,1,21],
 "group__pmu8__events__armcm55.html#gaadf0341d6a67cd30481201e7a3c7e77b":[7,13,1,20],
+"group__pmu8__events__armcm55.html#gaadf0341d6a67cd30481201e7a3c7e77b":[7,13,1,21],
 "group__pmu8__events__armcm55.html#gab3f4da2771d4ca5edc9822d9a5353994":[7,13,1,14],
 "group__pmu8__events__armcm55.html#gab423c79d244d071407afb49dfcfb6e05":[7,13,1,4],
 "group__pmu8__events__armcm55.html#gabe33023adf35df68a949d13212c379eb":[7,13,1,10],
@@ -244,10 +249,5 @@ var NAVTREEINDEX1 =
 "group__pmu8__events__armv81.html#ga7065b7f0aea461858b72912d22c329f2":[7,13,0,81],
 "group__pmu8__events__armv81.html#ga74aaa0fa0571f74168ee9608d5a02403":[7,13,0,17],
 "group__pmu8__events__armv81.html#ga7505ae74c1d905f01b05dd5466c1efc0":[7,13,0,27],
-"group__pmu8__events__armv81.html#ga76057cbda353b4ad6fbc3b6a63c193a5":[7,13,0,92],
-"group__pmu8__events__armv81.html#ga77fad5ad424271ed63fec98af071bb79":[7,13,0,107],
-"group__pmu8__events__armv81.html#ga78a6f89ab30ed01f7d8388eda697b4f8":[7,13,0,74],
-"group__pmu8__events__armv81.html#ga7a05420b7fae6f5c3d35e12a9846c7e2":[7,13,0,14],
-"group__pmu8__events__armv81.html#ga7d669378441408fc21aa551e483866cb":[7,13,0,79],
-"group__pmu8__events__armv81.html#ga7d7d465a6c64400c49f93b6c8152296f":[7,13,0,83]
+"group__pmu8__events__armv81.html#ga76057cbda353b4ad6fbc3b6a63c193a5":[7,13,0,92]
 };

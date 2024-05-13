@@ -1,6 +1,11 @@
 var group__mpu__functions =
 [
     [ "Define values", "group__mpu__defines.html", "group__mpu__defines" ],
+    [ "ARM_MPU_Region_t", "structARM__MPU__Region__t.html", [
+      [ "RASR", "structARM__MPU__Region__t.html#a6a3e404b403c8df611f27d902d745d8d", null ],
+      [ "RBAR", "structARM__MPU__Region__t.html#afe7a7721aa08988d915670efa432cdd2", null ],
+      [ "RLAR", "structARM__MPU__Region__t.html#ab5d3a650dbffd0b272bf7df5b140e8a8", null ]
+    ] ],
     [ "MPU_Type", "structMPU__Type.html", [
       [ "CTRL", "structMPU__Type.html#a769178ef949f0d5d8f18ddbd9e4e926f", null ],
       [ "RASR", "structMPU__Type.html#a8f00c4a5e31b0a8d103ed3b0732c17a3", null ],
@@ -13,11 +18,6 @@ var group__mpu__functions =
       [ "RBAR_A3", "structMPU__Type.html#a207f6e9c3af753367554cc06df300a55", null ],
       [ "RNR", "structMPU__Type.html#a2f7a117a12cb661c76edc4765453f05c", null ],
       [ "TYPE", "structMPU__Type.html#aba02af87f77577c725cf73879cabb609", null ]
-    ] ],
-    [ "ARM_MPU_Region_t", "structARM__MPU__Region__t.html", [
-      [ "RASR", "structARM__MPU__Region__t.html#a6a3e404b403c8df611f27d902d745d8d", null ],
-      [ "RBAR", "structARM__MPU__Region__t.html#afe7a7721aa08988d915670efa432cdd2", null ],
-      [ "RLAR", "structARM__MPU__Region__t.html#ab5d3a650dbffd0b272bf7df5b140e8a8", null ]
     ] ],
     [ "ARM_MPU_RASR", "group__mpu__functions.html#ga96b93785c92e2dbcb3a2356c25bf2adc", null ],
     [ "ARM_MPU_RASR_EX", "group__mpu__functions.html#ga332ed5f8969dd4df6b61c6ae32ec36dc", null ],

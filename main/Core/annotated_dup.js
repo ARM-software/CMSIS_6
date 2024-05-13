@@ -3,6 +3,7 @@ var annotated_dup =
     [ "APSR_Type", "unionAPSR__Type.html", "unionAPSR__Type" ],
     [ "ARM_MPU_Region_t", "structARM__MPU__Region__t.html", "structARM__MPU__Region__t" ],
     [ "CONTROL_Type", "unionCONTROL__Type.html", "unionCONTROL__Type" ],
+    [ "CoreDebug_Type", "structCoreDebug__Type.html", "structCoreDebug__Type" ],
     [ "DCB_Type", "structDCB__Type.html", "structDCB__Type" ],
     [ "DIB_Type", "structDIB__Type.html", "structDIB__Type" ],
     [ "DWT_Type", "structDWT__Type.html", "structDWT__Type" ],

@@ -26,7 +26,9 @@ var NAVTREE =
 [
   [ "CMSIS-Core (Cortex-M)", "index.html", [
     [ "Overview", "index.html", "index" ],
-    [ "Revision History", "core_revisionHistory.html", null ],
+    [ "Revision History", "core_revisionHistory.html", [
+      [ "Breaking changes in CMSIS-Core 6", "core_revisionHistory.html#core6_changes", null ]
+    ] ],
     [ "Using CMSIS-Core", "using_pg.html", [
       [ "Usage in CMSIS-Packs", "using_pg.html#using_packs", null ],
       [ "Usage Examples", "using_pg.html#usage_examples", [
@@ -57,9 +59,9 @@ var NAVTREE =
 var NAVTREEINDEX =
 [
 "annotated.html",
-"group__intrinsic__SIMD__gr.html#ga5eff3ae5eabcd73f3049996ca391becb",
-"group__pmu8__events__armv81.html#ga7e76060791618f9b4d49ad493cfb6ba9",
-"structPMU__Type.html#aaff7d5f3246c641d1f503d74a5adb0ee"
+"group__intrinsic__SIMD__gr.html#ga5290ce5564770ad124910d2583dc0a9e",
+"group__pmu8__events__armv81.html#ga77fad5ad424271ed63fec98af071bb79",
+"structPMU__Type.html#a2acdf96dc7f60ad5a384d1f47e0bb8e0"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

@@ -5,7 +5,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>CMSIS-Core (Cortex-M): DCB_Type Struct Reference</title>
+<title>CMSIS-Core (Cortex-M): CoreDebug_Type Struct Reference</title>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -98,7 +98,7 @@ var searchBox = new SearchBox("searchBox", "search/",'.html');
 </div>
 <script type="text/javascript">
 /* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
-$(document).ready(function(){initNavTree('structDCB__Type.html',''); initResizable(); });
+$(document).ready(function(){initNavTree('structCoreDebug__Type.html',''); initResizable(); });
 /* @license-end */
 </script>
 <div id="doc-content">
@@ -126,48 +126,49 @@ $(document).ready(function(){initNavTree('structDCB__Type.html',''); initResizab
 <div class="header">
   <div class="summary">
 <a href="#pub-attribs">Data Fields</a>  </div>
-  <div class="headertitle"><div class="title">DCB_Type Struct Reference</div></div>
+  <div class="headertitle"><div class="title">CoreDebug_Type Struct Reference<div class="ingroups"><a class="el" href="group__deprecated__gr.html">Deprecated Symbols</a></div></div></div>
 </div><!--header-->
 <div class="contents">
 
-<p>Structure type to access the Debug Control Block Registers (DCB).  
- <a href="structDCB__Type.html#details">More...</a></p>
+<p><b>[Deprecated]</b> Structure type to access the Core Debug Register.  
+ <a href="structCoreDebug__Type.html#details">More...</a></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
 Data Fields</h2></td></tr>
-<tr class="memitem:acdf02aeb2b7c1eb26a0cbb8b0d51d1d4"><td class="memItemLeft" align="right" valign="top">__IOM uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structDCB__Type.html#acdf02aeb2b7c1eb26a0cbb8b0d51d1d4">DAUTHCTRL</a></td></tr>
-<tr class="memdesc:acdf02aeb2b7c1eb26a0cbb8b0d51d1d4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Offset: 0x014 (R/W) Debug Authentication Control Register (Armv8-M only)  <br /></td></tr>
-<tr class="separator:acdf02aeb2b7c1eb26a0cbb8b0d51d1d4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a91568edfba4a40c3f90196b7cda6f0ab"><td class="memItemLeft" align="right" valign="top">__IOM uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structDCB__Type.html#a91568edfba4a40c3f90196b7cda6f0ab">DCRDR</a></td></tr>
-<tr class="memdesc:a91568edfba4a40c3f90196b7cda6f0ab"><td class="mdescLeft">&#160;</td><td class="mdescRight">Offset: 0x008 (R/W) Debug Core Register Data Register.  <br /></td></tr>
-<tr class="separator:a91568edfba4a40c3f90196b7cda6f0ab"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:addab25d3439fda1a7eff9ef21a8c3686"><td class="memItemLeft" align="right" valign="top">__OM uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structDCB__Type.html#addab25d3439fda1a7eff9ef21a8c3686">DCRSR</a></td></tr>
-<tr class="memdesc:addab25d3439fda1a7eff9ef21a8c3686"><td class="mdescLeft">&#160;</td><td class="mdescRight">Offset: 0x004 ( /W) Debug Core Register Selector Register.  <br /></td></tr>
-<tr class="separator:addab25d3439fda1a7eff9ef21a8c3686"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a63c69742b24aa1a7d335426811e6e9be"><td class="memItemLeft" align="right" valign="top">__IOM uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structDCB__Type.html#a63c69742b24aa1a7d335426811e6e9be">DEMCR</a></td></tr>
-<tr class="memdesc:a63c69742b24aa1a7d335426811e6e9be"><td class="mdescLeft">&#160;</td><td class="mdescRight">Offset: 0x00C (R/W) Debug Exception and Monitor Control Register.  <br /></td></tr>
-<tr class="separator:a63c69742b24aa1a7d335426811e6e9be"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6ed4cd7471c9f3c437a5d2cbaccceda7"><td class="memItemLeft" align="right" valign="top">__IOM uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structDCB__Type.html#a6ed4cd7471c9f3c437a5d2cbaccceda7">DHCSR</a></td></tr>
-<tr class="memdesc:a6ed4cd7471c9f3c437a5d2cbaccceda7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Offset: 0x000 (R/W) Debug Halting Control and Status Register.  <br /></td></tr>
-<tr class="separator:a6ed4cd7471c9f3c437a5d2cbaccceda7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab55b3a94d700bb1021a92a36e4381efb"><td class="memItemLeft" align="right" valign="top">__OM uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structDCB__Type.html#ab55b3a94d700bb1021a92a36e4381efb">DSCEMCR</a></td></tr>
-<tr class="memdesc:ab55b3a94d700bb1021a92a36e4381efb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Offset: 0x010 ( /W) Debug Set Clear Exception and Monitor Control Register (Armv8.1-M only)  <br /></td></tr>
-<tr class="separator:ab55b3a94d700bb1021a92a36e4381efb"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1937b89622a7aa02eef8a182587aa657"><td class="memItemLeft" align="right" valign="top">__IOM uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structDCB__Type.html#a1937b89622a7aa02eef8a182587aa657">DSCSR</a></td></tr>
-<tr class="memdesc:a1937b89622a7aa02eef8a182587aa657"><td class="mdescLeft">&#160;</td><td class="mdescRight">Offset: 0x018 (R/W) Debug Security Control and Status Register (Armv8-M only)  <br /></td></tr>
-<tr class="separator:a1937b89622a7aa02eef8a182587aa657"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1b319a8279b9ff2572ab5391dba5bb88"><td class="memItemLeft" align="right" valign="top">__IOM uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structCoreDebug__Type.html#a1b319a8279b9ff2572ab5391dba5bb88">DAUTHCTRL</a></td></tr>
+<tr class="memdesc:a1b319a8279b9ff2572ab5391dba5bb88"><td class="mdescLeft">&#160;</td><td class="mdescRight">Offset: 0x014 (R/W) Debug Authentication Control Register (Armv8-M only)  <br /></td></tr>
+<tr class="separator:a1b319a8279b9ff2572ab5391dba5bb88"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aab3cc92ef07bc1f04b3a3aa6db2c2d55"><td class="memItemLeft" align="right" valign="top">__IOM uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structCoreDebug__Type.html#aab3cc92ef07bc1f04b3a3aa6db2c2d55">DCRDR</a></td></tr>
+<tr class="memdesc:aab3cc92ef07bc1f04b3a3aa6db2c2d55"><td class="mdescLeft">&#160;</td><td class="mdescRight">Offset: 0x008 (R/W) Debug Core Register Data Register.  <br /></td></tr>
+<tr class="separator:aab3cc92ef07bc1f04b3a3aa6db2c2d55"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af907cf64577eaf927dac6787df6dd98b"><td class="memItemLeft" align="right" valign="top">__OM uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structCoreDebug__Type.html#af907cf64577eaf927dac6787df6dd98b">DCRSR</a></td></tr>
+<tr class="memdesc:af907cf64577eaf927dac6787df6dd98b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Offset: 0x004 ( /W) Debug Core Register Selector Register.  <br /></td></tr>
+<tr class="separator:af907cf64577eaf927dac6787df6dd98b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aeb3126abc4c258a858f21f356c0df6ee"><td class="memItemLeft" align="right" valign="top">__IOM uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structCoreDebug__Type.html#aeb3126abc4c258a858f21f356c0df6ee">DEMCR</a></td></tr>
+<tr class="memdesc:aeb3126abc4c258a858f21f356c0df6ee"><td class="mdescLeft">&#160;</td><td class="mdescRight">Offset: 0x00C (R/W) Debug Exception and Monitor Control Register.  <br /></td></tr>
+<tr class="separator:aeb3126abc4c258a858f21f356c0df6ee"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad63554e4650da91a8e79929cbb63db66"><td class="memItemLeft" align="right" valign="top">__IOM uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structCoreDebug__Type.html#ad63554e4650da91a8e79929cbb63db66">DHCSR</a></td></tr>
+<tr class="memdesc:ad63554e4650da91a8e79929cbb63db66"><td class="mdescLeft">&#160;</td><td class="mdescRight">Offset: 0x000 (R/W) Debug Halting Control and Status Register.  <br /></td></tr>
+<tr class="separator:ad63554e4650da91a8e79929cbb63db66"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a57a4ccafbd0cef0bfd45e2e5d15dedcc"><td class="memItemLeft" align="right" valign="top">__OM uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structCoreDebug__Type.html#a57a4ccafbd0cef0bfd45e2e5d15dedcc">DSCEMCR</a></td></tr>
+<tr class="memdesc:a57a4ccafbd0cef0bfd45e2e5d15dedcc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Offset: 0x010 ( /W) Debug Set Clear Exception and Monitor Control Register (Armv8.1-M only)  <br /></td></tr>
+<tr class="separator:a57a4ccafbd0cef0bfd45e2e5d15dedcc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad9fa5e915e038e20b9be88d54d432fb8"><td class="memItemLeft" align="right" valign="top">__IOM uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structCoreDebug__Type.html#ad9fa5e915e038e20b9be88d54d432fb8">DSCSR</a></td></tr>
+<tr class="memdesc:ad9fa5e915e038e20b9be88d54d432fb8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Offset: 0x018 (R/W) Debug Security Control and Status Register (Armv8-M only)  <br /></td></tr>
+<tr class="separator:ad9fa5e915e038e20b9be88d54d432fb8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Description</h2>
-<div class="textblock"><p>Structure type to access the Debug Control Block Registers (DCB). </p>
+<div class="textblock"><p><b>[Deprecated]</b> Structure type to access the Core Debug Register. </p>
+<p>The <b><a class="el" href="structCoreDebug__Type.html" title="[Deprecated] Structure type to access the Core Debug Register.">CoreDebug_Type</a></b> structure is present to enable backward compatibility for CMSIS 5 based projects. For new projects based on CMSIS 6, the <a class="el" href="structDCB__Type.html" title="Structure type to access the Debug Control Block Registers (DCB).">DCB_Type</a> shall be used instead. </p>
 </div><h2 class="groupheader">Field Documentation</h2>
-<a id="acdf02aeb2b7c1eb26a0cbb8b0d51d1d4" name="acdf02aeb2b7c1eb26a0cbb8b0d51d1d4"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#acdf02aeb2b7c1eb26a0cbb8b0d51d1d4">&#9670;&#160;</a></span>DAUTHCTRL</h2>
+<a id="a1b319a8279b9ff2572ab5391dba5bb88" name="a1b319a8279b9ff2572ab5391dba5bb88"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1b319a8279b9ff2572ab5391dba5bb88">&#9670;&#160;</a></span>DAUTHCTRL</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">__IOM uint32_t DCB_Type::DAUTHCTRL</td>
+          <td class="memname">__IOM uint32_t CoreDebug_Type::DAUTHCTRL</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -176,14 +177,14 @@ Data Fields</h2></td></tr>
 
 </div>
 </div>
-<a id="a91568edfba4a40c3f90196b7cda6f0ab" name="a91568edfba4a40c3f90196b7cda6f0ab"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a91568edfba4a40c3f90196b7cda6f0ab">&#9670;&#160;</a></span>DCRDR</h2>
+<a id="aab3cc92ef07bc1f04b3a3aa6db2c2d55" name="aab3cc92ef07bc1f04b3a3aa6db2c2d55"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aab3cc92ef07bc1f04b3a3aa6db2c2d55">&#9670;&#160;</a></span>DCRDR</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">__IOM uint32_t DCB_Type::DCRDR</td>
+          <td class="memname">__IOM uint32_t CoreDebug_Type::DCRDR</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -192,14 +193,14 @@ Data Fields</h2></td></tr>
 
 </div>
 </div>
-<a id="addab25d3439fda1a7eff9ef21a8c3686" name="addab25d3439fda1a7eff9ef21a8c3686"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#addab25d3439fda1a7eff9ef21a8c3686">&#9670;&#160;</a></span>DCRSR</h2>
+<a id="af907cf64577eaf927dac6787df6dd98b" name="af907cf64577eaf927dac6787df6dd98b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af907cf64577eaf927dac6787df6dd98b">&#9670;&#160;</a></span>DCRSR</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">__OM uint32_t DCB_Type::DCRSR</td>
+          <td class="memname">__OM uint32_t CoreDebug_Type::DCRSR</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -208,14 +209,14 @@ Data Fields</h2></td></tr>
 
 </div>
 </div>
-<a id="a63c69742b24aa1a7d335426811e6e9be" name="a63c69742b24aa1a7d335426811e6e9be"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a63c69742b24aa1a7d335426811e6e9be">&#9670;&#160;</a></span>DEMCR</h2>
+<a id="aeb3126abc4c258a858f21f356c0df6ee" name="aeb3126abc4c258a858f21f356c0df6ee"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aeb3126abc4c258a858f21f356c0df6ee">&#9670;&#160;</a></span>DEMCR</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">__IOM uint32_t DCB_Type::DEMCR</td>
+          <td class="memname">__IOM uint32_t CoreDebug_Type::DEMCR</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -224,14 +225,14 @@ Data Fields</h2></td></tr>
 
 </div>
 </div>
-<a id="a6ed4cd7471c9f3c437a5d2cbaccceda7" name="a6ed4cd7471c9f3c437a5d2cbaccceda7"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a6ed4cd7471c9f3c437a5d2cbaccceda7">&#9670;&#160;</a></span>DHCSR</h2>
+<a id="ad63554e4650da91a8e79929cbb63db66" name="ad63554e4650da91a8e79929cbb63db66"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad63554e4650da91a8e79929cbb63db66">&#9670;&#160;</a></span>DHCSR</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">__IOM uint32_t DCB_Type::DHCSR</td>
+          <td class="memname">__IOM uint32_t CoreDebug_Type::DHCSR</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -240,14 +241,14 @@ Data Fields</h2></td></tr>
 
 </div>
 </div>
-<a id="ab55b3a94d700bb1021a92a36e4381efb" name="ab55b3a94d700bb1021a92a36e4381efb"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab55b3a94d700bb1021a92a36e4381efb">&#9670;&#160;</a></span>DSCEMCR</h2>
+<a id="a57a4ccafbd0cef0bfd45e2e5d15dedcc" name="a57a4ccafbd0cef0bfd45e2e5d15dedcc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a57a4ccafbd0cef0bfd45e2e5d15dedcc">&#9670;&#160;</a></span>DSCEMCR</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">__OM uint32_t DCB_Type::DSCEMCR</td>
+          <td class="memname">__OM uint32_t CoreDebug_Type::DSCEMCR</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -256,14 +257,14 @@ Data Fields</h2></td></tr>
 
 </div>
 </div>
-<a id="a1937b89622a7aa02eef8a182587aa657" name="a1937b89622a7aa02eef8a182587aa657"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a1937b89622a7aa02eef8a182587aa657">&#9670;&#160;</a></span>DSCSR</h2>
+<a id="ad9fa5e915e038e20b9be88d54d432fb8" name="ad9fa5e915e038e20b9be88d54d432fb8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad9fa5e915e038e20b9be88d54d432fb8">&#9670;&#160;</a></span>DSCSR</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">__IOM uint32_t DCB_Type::DSCSR</td>
+          <td class="memname">__IOM uint32_t CoreDebug_Type::DSCSR</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -277,7 +278,7 @@ Data Fields</h2></td></tr>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="structDCB__Type.html">DCB_Type</a></li>
+    <li class="navelem"><a class="el" href="structCoreDebug__Type.html">CoreDebug_Type</a></li>
     <li class="footer">
       <script type="text/javascript">
         <!--

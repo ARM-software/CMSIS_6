@@ -17,5 +17,6 @@ var modules =
     [ "Systick Timer (SYSTICK)", "group__SysTick__gr.html", "group__SysTick__gr" ],
     [ "Debug Access", "group__ITM__Debug__gr.html", "group__ITM__Debug__gr" ],
     [ "TrustZone for Armv8-M/v8.1-M", "group__trustzone__functions.html", "group__trustzone__functions" ],
-    [ "Cache Functions (Level-1)", "group__cache__functions__m7.html", "group__cache__functions__m7" ]
+    [ "Cache Functions (Level-1)", "group__cache__functions__m7.html", "group__cache__functions__m7" ],
+    [ "Deprecated Symbols", "group__deprecated__gr.html", "group__deprecated__gr" ]
 ];
