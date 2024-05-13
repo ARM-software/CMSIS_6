@@ -19,6 +19,8 @@
         - Added support for Cortex-M52
         - Added deprecated CoreDebug symbols for CMSIS 5 compatibility
         - Added define CMSIS_DISABLE_DEPRECATED to hide deprecated symbols
+      CMSIS-Driver: 2.10.0
+        - Updated USB Host Interface API 2.4.0 (deprecated API for OHCI/EHCI Host Controller Interface (HCI))
     </release>
     <release version="5.9.0" date="2022-05-02">
       CMSIS-Core(M): 5.6.0
@@ -524,7 +526,7 @@
         <file category="header" name="CMSIS/Driver/Include/Driver_USBD.h" />
       </files>
     </api>
-    <api Cclass="CMSIS Driver" Cgroup="USB Host" Capiversion="2.3.0" exclusive="0">
+    <api Cclass="CMSIS Driver" Cgroup="USB Host" Capiversion="2.4.0" exclusive="0">
       <description>USB Host Driver API for Cortex-M</description>
       <files>
         <file category="doc" name="CMSIS/Documentation/html/Driver/group__usbh__interface__gr.html" />
@@ -782,7 +784,7 @@
         <file category="sourceC" attr="template" name="CMSIS/Driver/DriverTemplates/Driver_USBD.c" select="USB Device Driver"/>
       </files>
     </component>
-    <component Cclass="CMSIS Driver" Cgroup="USB Host" Csub="Custom" Cversion="1.0.0" Capiversion="2.3.0" custom="1">
+    <component Cclass="CMSIS Driver" Cgroup="USB Host" Csub="Custom" Cversion="1.0.0" Capiversion="2.4.0" custom="1">
       <description>Access to #include Driver_USBH.h file and code template for custom implementation</description>
       <files>
         <file category="header" name="CMSIS/Driver/Include/Driver_USBH.h" />
