@@ -2,9 +2,7 @@
 const versions = {
     "General": {
         "latest": "6.1.0",
-        "v6.1.0-rc1": "6.1.0-rc1",
         "main": "6.1.0-rc1.7",
-        "v6.1.0-rc0": "6.1.0-rc0",
         "v6.0.0": "6.0.0"
     },
     "Core": {
