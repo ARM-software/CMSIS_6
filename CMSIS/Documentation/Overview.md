@@ -16,7 +16,7 @@ Watch the [introduction webinar](https://on-demand.arm.com/flow/arm/devhub/sessi
 
 The following CMSIS-Packs relate to CMSIS v6 and are maintained by Arm.
 
-### CMSIS Components
+### CMSIS Component Packs
 
 - [CMSIS-Compiler](https://www.keil.arm.com/packs/cmsis-compiler-arm): Retarget I/O functions of the standard C run-time library.
 - [CMSIS-DSP](https://www.keil.arm.com/packs/cmsis-dsp-arm/): Optimized compute functions for embedded systems.
@@ -33,7 +33,7 @@ The following CMSIS-Packs relate to CMSIS v6 and are maintained by Arm.
 
 - [MDK-Middleware](https://www.keil.arm.com/packs/mdk-middleware-keil): File system, network, and USB stacks.
 - [CMSIS-mbedTLS](https://github.com/ARM-software/CMSIS-mbedTLS): Mbed TLS framed in a CMSIS-Pack.
-- [SDS-Framework][https://github.com/ARM-software/SDS-Framework]: Synchronous data streaming.
+- [SDS-Framework](https://github.com/ARM-software/SDS-Framework): Synchronous data streaming.
 
 ### Other Software Components
 
