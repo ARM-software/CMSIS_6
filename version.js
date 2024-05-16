@@ -1,8 +1,8 @@
 //--- list of versions ---
 const versions = {
     "General": {
+        "main": "6.1.1-dev1",
         "latest": "6.1.0",
-        "main": "6.1.0-rc1.7",
         "v6.0.0": "6.0.0"
     },
     "Core": {
@@ -15,7 +15,7 @@ const versions = {
     },
     "Driver": {
         "latest": "2.10.0",
-        "v6.1.0-rc1": "2.9.0"
+        "v6.0.0": "2.9.0"
     },
     "RTOS2": {
         "latest": "2.3.0"
