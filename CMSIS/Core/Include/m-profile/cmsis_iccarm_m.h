@@ -184,6 +184,10 @@
   #define __STATIC_FORCEINLINE  __FORCEINLINE __STATIC_INLINE
 #endif
 
+#ifndef   CMSIS_DEPRECATED
+  #define CMSIS_DEPRECATED      __attribute__((deprecated))
+#endif
+
 #ifndef __UNALIGNED_UINT16_READ
 #pragma language=save
 #pragma language=extended
