@@ -106,7 +106,7 @@ uint32_t __SADD8(uint32_t val1, uint32_t val2);
             \li the saturated addition of the third byte of each operand in the third byte of the return value.
             \li the saturated addition of the fourth byte of each operand in the fourth byte of the return value.
         \par
-            The returned results are saturated to the 16-bit signed integer range -2<sup>7</sup> \<= x \<= 2<sup>7</sup> - 1.
+            The returned results are saturated to the 8-bit signed integer range -2<sup>7</sup> \<= x \<= 2<sup>7</sup> - 1.
 
     \par Operation:
         \code
