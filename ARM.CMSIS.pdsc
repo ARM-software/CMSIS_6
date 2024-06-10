@@ -431,6 +431,7 @@
       <description>RTOS Kernel system tick timer interface</description>
       <files>
         <file category="header" name="CMSIS/RTOS2/Include/os_tick.h"/>
+        <file category="doc" name="CMSIS/Documentation/html/RTOS2/group__CMSIS__RTOS.html"/>
       </files>
     </api>
     <!-- CMSIS-RTOS API -->
