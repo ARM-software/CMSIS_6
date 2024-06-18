@@ -1142,6 +1142,9 @@ typedef struct
   __IOM uint32_t COMP3;                  /*!< Offset: 0x050 (R/W)  Comparator Register 3 */
   __IOM uint32_t MASK3;                  /*!< Offset: 0x054 (R/W)  Mask Register 3 */
   __IOM uint32_t FUNCTION3;              /*!< Offset: 0x058 (R/W)  Function Register 3 */
+        uint32_t RESERVED3[981U];
+  __OM  uint32_t LAR;                    /*!< Offset: 0xFB0 (  W)  Lock Access Register */
+  __IM  uint32_t LSR;                    /*!< Offset: 0xFB4 (R  )  Lock Status Register */
 } DWT_Type;
 
 /** \brief DWT Control Register Definitions */
