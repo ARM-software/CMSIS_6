@@ -37,8 +37,13 @@
 #define __set_mode(VALUE)           (__arm_wsr("CPSR_c", (VALUE)))
 
 
-#define __get_FPEXC()       (__arm_rsr("FPEXC"))
-#define __set_FPEXC(VALUE)    (__arm_wsr("FPEXC", VALUE))
+#if (defined (__ARM_FP)      && (__ARM_FP >= 1))
+  #define __get_FPEXC() (__arm_rsr("FPEXC"))
+  #define __set_FPEXC(VALUE) (__arm_wsr("FPEXC", VALUE))
+#else
+  #define __get_FPEXC()             ( 0 )
+  #define __set_FPEXC(VALUE)        ((void)VALUE)
+#endif
 
 #define __get_CP(cp, op1, RT, CRn, CRm, op2) \
   ((RT) = __arm_rsr("p" # cp ":" # op1 ":c" # CRn ":c" # CRm ":" # op2))

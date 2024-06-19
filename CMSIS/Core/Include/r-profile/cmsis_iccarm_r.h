@@ -31,47 +31,19 @@
   #error "This file must not be included directly"
 #endif
 
-#if defined(__CLZ)
-#undef __CLZ
-#endif
-#if defined(__REVSH)
-#undef __REVSH
-#endif
-#if defined(__RBIT)
-#undef __RBIT
-#endif
-#if defined(__SSAT)
-#undef __SSAT
-#endif
-#if defined(__USAT)
-#undef __USAT
-#endif
-
-#include "iccarm_builtin.h"
-
-#define __disable_fault_irq __iar_builtin_disable_fiq
-#define __disable_irq __iar_builtin_disable_interrupt
-#define __enable_fault_irq __iar_builtin_enable_fiq
-#define __enable_irq __iar_builtin_enable_interrupt
-#define __arm_rsr __iar_builtin_rsr
-#define __arm_wsr __iar_builtin_wsr
-
-#if ((defined(__FPU_PRESENT) && (__FPU_PRESENT == 1U)))
-#define __get_FPSCR() (__arm_rsr("FPSCR"))
-#define __set_FPSCR(VALUE) (__arm_wsr("FPSCR", (VALUE)))
-#else
-#define __get_FPSCR() (0)
-#define __set_FPSCR(VALUE) ((void)VALUE)
-#endif
-
 #define __get_CPSR() (__arm_rsr("CPSR"))
 #define __get_mode() (__get_CPSR() & 0x1FU)
 
 #define __set_CPSR(VALUE) (__arm_wsr("CPSR", (VALUE)))
 #define __set_mode(VALUE) (__arm_wsr("CPSR_c", (VALUE)))
 
-#define __get_FPEXC() (__arm_rsr("FPEXC"))
-#define __set_FPEXC(VALUE) (__arm_wsr("FPEXC", VALUE))
+#if (defined (__ARM_FP)      && (__ARM_FP >= 1))
+  #define __get_FPEXC() (__arm_rsr("FPEXC"))
+  #define __set_FPEXC(VALUE) (__arm_wsr("FPEXC", VALUE))
+#else
+  #define __get_FPEXC()             ( 0 )
+  #define __set_FPEXC(VALUE)        ((void)VALUE)
+#endif
 
 #define __get_CP(cp, op1, RT, CRn, CRm, op2)                                   \
   ((RT) = __arm_rsr("p" #cp ":" #op1 ":c" #CRn ":c" #CRm ":" #op2))
@@ -91,75 +63,6 @@
                  : "r"(Rt)                                                     \
                  : "memory")
 
-
-
-#define __RRX __iar_builtin_RRX
-
-#define __SSAT __iar_builtin_SSAT
-#define __USAT __iar_builtin_USAT
-
-#define __SADD8 __iar_builtin_SADD8
-#define __QADD8 __iar_builtin_QADD8
-#define __SHADD8 __iar_builtin_SHADD8
-#define __UADD8 __iar_builtin_UADD8
-#define __UQADD8 __iar_builtin_UQADD8
-#define __UHADD8 __iar_builtin_UHADD8
-#define __SSUB8 __iar_builtin_SSUB8
-#define __QSUB8 __iar_builtin_QSUB8
-#define __SHSUB8 __iar_builtin_SHSUB8
-#define __USUB8 __iar_builtin_USUB8
-#define __UQSUB8 __iar_builtin_UQSUB8
-#define __UHSUB8 __iar_builtin_UHSUB8
-#define __SADD16 __iar_builtin_SADD16
-#define __QADD16 __iar_builtin_QADD16
-#define __SHADD16 __iar_builtin_SHADD16
-#define __UADD16 __iar_builtin_UADD16
-#define __UQADD16 __iar_builtin_UQADD16
-#define __UHADD16 __iar_builtin_UHADD16
-#define __SSUB16 __iar_builtin_SSUB16
-#define __QSUB16 __iar_builtin_QSUB16
-#define __SHSUB16 __iar_builtin_SHSUB16
-#define __USUB16 __iar_builtin_USUB16
-#define __UQSUB16 __iar_builtin_UQSUB16
-#define __UHSUB16 __iar_builtin_UHSUB16
-#define __SASX __iar_builtin_SASX
-#define __QASX __iar_builtin_QASX
-#define __SHASX __iar_builtin_SHASX
-#define __UASX __iar_builtin_UASX
-#define __UQASX __iar_builtin_UQASX
-#define __UHASX __iar_builtin_UHASX
-#define __SSAX __iar_builtin_SSAX
-#define __QSAX __iar_builtin_QSAX
-#define __SHSAX __iar_builtin_SHSAX
-#define __USAX __iar_builtin_USAX
-#define __UQSAX __iar_builtin_UQSAX
-#define __UHSAX __iar_builtin_UHSAX
-#define __USAD8 __iar_builtin_USAD8
-#define __USADA8 __iar_builtin_USADA8
-#define __SSAT16 __iar_builtin_SSAT16
-#define __USAT16 __iar_builtin_USAT16
-#define __UXTB16 __iar_builtin_UXTB16
-#define __UXTAB16 __iar_builtin_UXTAB16
-#define __SXTB16 __iar_builtin_SXTB16
-#define __SXTAB16 __iar_builtin_SXTAB16
-#define __SMUAD __iar_builtin_SMUAD
-#define __SMUADX __iar_builtin_SMUADX
-#define __SMMLA __iar_builtin_SMMLA
-#define __SMLAD __iar_builtin_SMLAD
-#define __SMLADX __iar_builtin_SMLADX
-#define __SMLALD __iar_builtin_SMLALD
-#define __SMLALDX __iar_builtin_SMLALDX
-#define __SMUSD __iar_builtin_SMUSD
-#define __SMUSDX __iar_builtin_SMUSDX
-#define __SMLSD __iar_builtin_SMLSD
-#define __SMLSDX __iar_builtin_SMLSDX
-#define __SMLSLD __iar_builtin_SMLSLD
-#define __SMLSLDX __iar_builtin_SMLSLDX
-#define __SEL __iar_builtin_SEL
-#define __QADD __iar_builtin_QADD
-#define __QSUB __iar_builtin_QSUB
-#define __PKHBT __iar_builtin_PKHBT
-#define __PKHTB __iar_builtin_PKHTB
 
 __IAR_FT uint32_t __get_SP_usr(void) {
   uint32_t cpsr;

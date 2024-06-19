@@ -203,8 +203,6 @@ __IAR_FT void __iar_uint32_write(void const *ptr, uint32_t val)
 #define __RBIT    __iar_builtin_RBIT
 #define __CLZ     __iar_builtin_CLZ
 
-#define __REVSH   (uint16_t)__iar_builtin_REVSH
-
 __IAR_FT int16_t __REVSH(int16_t val)
 {
   return (int16_t) __iar_builtin_REVSH(val);
@@ -441,6 +439,8 @@ __IAR_FT void __STRT(uint32_t value, volatile uint32_t *addr)
 #endif
 
 #if (defined(__ARM_ARCH_ISA_THUMB) && __ARM_ARCH_ISA_THUMB >= 2)
+// This is not really fault_irq on Cortex-not-M. However 
+// there seems to be code that assumes this.
   __IAR_FT void __disable_fault_irq()
   {
     __ASM volatile ("CPSID F" ::: "memory");
