@@ -56,15 +56,7 @@
  * IAR Compiler
  */
 #elif defined ( __ICCARM__ )
-  #if __ARM_ARCH_PROFILE == 'A'
-    #include "a-profile/cmsis_iccarm_a.h"
-  #elif __ARM_ARCH_PROFILE == 'R'
-    #include "r-profile/cmsis_iccarm_r.h"
-  #elif __ARM_ARCH_PROFILE == 'M'
-    #include "m-profile/cmsis_iccarm_m.h"
-  #else
-    #error "Unknown Arm architecture profile"
-  #endif
+  #include "cmsis_iccarm.h"
 
 
 /*
