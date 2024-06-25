@@ -1403,7 +1403,7 @@ typedef struct
 
 /** \brief BPU Comparator Register Definitions */
 #define BPU_COMP_BPADDR_Pos            1U                                      /*!< BPU COMP: BPADDR Position */
-#define BPU_COMP_BPADDR_Msk            (0xFFFFFFFEUL << BPU_COMP_BPADDR_Pos)   /*!< BPU COMP: BPADDR Mask */
+#define BPU_COMP_BPADDR_Msk            (0x7FFFFFFFUL << BPU_COMP_BPADDR_Pos)   /*!< BPU COMP: BPADDR Mask */
 
 #define BPU_COMP_BE_Pos                0U                                      /*!< BPU COMP: BE Position */
 #define BPU_COMP_BE_Msk                (0x1UL << BPU_COMP_BE_Pos)              /*!< BPU COMP: BE Mask */
