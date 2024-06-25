@@ -285,15 +285,18 @@ def qemu_exec(config):
     cmdline += ["-kernel", f"{build_dir(config)}/{output_dir(config)}/Validation.{config.compiler.image_ext}"]
     return cmdline
 
+
 @matrix_filter
 def filter_iar(config):
     return config.compiler == CompilerAxis.IAR
 
+
 @matrix_filter
-def filter_cm52(config):
+def filter_gcc_cm52(config):
     device = config.device.match('CM52*')
-    compiler = config.compiler != CompilerAxis.AC6
+    compiler = config.compiler == CompilerAxis.GCC
     return device and compiler
+
 
 if __name__ == "__main__":
     main()
