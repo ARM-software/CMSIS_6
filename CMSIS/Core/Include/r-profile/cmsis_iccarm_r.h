@@ -1,11 +1,6 @@
-/**************************************************************************//**
- * @file     cmsis_armclang_r.h
- * @brief    CMSIS compiler armclang (Arm Compiler 6) header file
- * @version  V6.0.0
- * @date     04. December 2024
- ******************************************************************************/
 /*
- * Copyright (c) 2009-2023 Arm Limited. All rights reserved.
+ * Copyright (c) 2017-2024 IAR Systems
+ * Copyright (c) 2017-2024 Arm Limited. All rights reserved.
  *
  * SPDX-License-Identifier: Apache-2.0
  *
@@ -20,6 +15,10 @@
  * WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  * See the License for the specific language governing permissions and
  * limitations under the License.
+ */
+
+/*
+ * CMSIS-Core(R) Compiler ICCARM (IAR Compiler for Arm) Header File
  */
 
 #ifndef __CMSIS_ICCARM_R_H
