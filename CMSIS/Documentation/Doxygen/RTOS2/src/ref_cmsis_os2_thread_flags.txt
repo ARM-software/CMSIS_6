@@ -6,7 +6,7 @@
 \brief Synchronize threads using flags.
 \details
 Thread Flags are a more specialized version of the Event Flags. See \ref CMSIS_RTOS_EventFlags.
-While Event Flags can be used to globally signal a number of threads, thread flags are only send to a single specific thread.
+While Event Flags can be used to globally signal a number of threads, thread flags are only sent to a single specific thread.
 Every thread instance can receive thread flags without any additional allocation of a thread flags object.
 
 \note Thread flag management functions cannot be called from \ref CMSIS_RTOS_ISR_Calls "Interrupt Service Routines", except
