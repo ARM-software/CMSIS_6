@@ -150,7 +150,7 @@ Functions</h2></td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Description</h2>
 <p>Synchronize threads using flags. </p>
-<p>Thread Flags are a more specialized version of the Event Flags. See <a class="el" href="group__CMSIS__RTOS__EventFlags.html">Event Flags</a>. While Event Flags can be used to globally signal a number of threads, thread flags are only send to a single specific thread. Every thread instance can receive thread flags without any additional allocation of a thread flags object.</p>
+<p>Thread Flags are a more specialized version of the Event Flags. See <a class="el" href="group__CMSIS__RTOS__EventFlags.html">Event Flags</a>. While Event Flags can be used to globally signal a number of threads, thread flags are only sent to a single specific thread. Every thread instance can receive thread flags without any additional allocation of a thread flags object.</p>
 <dl class="section note"><dt>Note</dt><dd>Thread flag management functions cannot be called from <a class="el" href="usingOS2.html#CMSIS_RTOS_ISR_Calls">Interrupt Service Routines</a>, except for <a class="el" href="group__CMSIS__RTOS__ThreadFlagsMgmt.html#ga6f89ef9caded1d9963c7b12b0f6412c9">osThreadFlagsSet</a>.</dd></dl>
 <p><b>Usage Example</b></p>
 <p>The following (incomplete) code excerpt sketches the usage principals for <b>Thread Flags</b>.</p>
