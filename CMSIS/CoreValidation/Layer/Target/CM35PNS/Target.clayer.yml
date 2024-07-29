@@ -2,11 +2,6 @@ layer:
   type: Target
   description: CM35PNS target components and files
 
-  packs:
-    - pack: ARM::Cortex_DFP
-
-  device: ARMCM35P
-
   processor:
     trustzone: non-secure
 

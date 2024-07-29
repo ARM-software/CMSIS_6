@@ -2,11 +2,6 @@ layer:
   type: Target
   description: CM23NS target components and files
 
-  packs:
-    - pack: ARM::Cortex_DFP
-
-  device: ARMCM23
-
   processor:
     trustzone: non-secure
 
