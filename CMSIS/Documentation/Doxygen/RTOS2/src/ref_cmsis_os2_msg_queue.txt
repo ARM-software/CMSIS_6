@@ -7,7 +7,7 @@
 @details 
 \b Message \b passing is another basic communication model between threads. In the message passing model, one thread sends
 data explicitly, while another thread receives it. The operation is more like some kind of I/O rather than a direct access to
-information to be shared. In CMSIS-RTOS, this mechanism is called s \b message \b queue. The data is passed from one thread
+information to be shared. In CMSIS-RTOS, this mechanism is called a \b message \b queue. The data is passed from one thread
 to another in a FIFO-like operation. Using message queue functions, you can control, send, receive, or wait for messages. The
 data to be passed can be of integer or pointer type:
 
@@ -41,7 +41,7 @@ Specifies the following attributes for the \ref osMessageQueueNew function.
 /** 
 \fn osMessageQueueId_t osMessageQueueNew (uint32_t msg_count, uint32_t msg_size, const osMessageQueueAttr_t *attr)
 \details
-The function \ref osMessageQueueNew creates and initializes a  message queue object.
+The function \ref osMessageQueueNew creates and initializes a message queue object.
 The function returns a message queue object identifier or \token{NULL} in case of an error. 
 
 The function can be called after kernel initialization with \ref osKernelInitialize. It is possible to 
