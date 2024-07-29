@@ -130,6 +130,11 @@ $(document).ready(function(){initNavTree('coreMISRA_Exceptions_pg.html',''); ini
 <div class="textblock"><p><a class="anchor" id="md_src_misra"></a> CMSIS-Core (Cortex-M) uses the common coding rules for CMSIS components that are documented in <a href="../General/index.html">CMSIS Introduction</a>.</p>
 <p>CMSIS-Core (Cortex-M) violates the following MISRA-C:2012 rules:</p>
 <ul>
+<li>Directive 4.2, All usage of assembly language should be documented<ul>
+<li>CMSIS-Core uses assembly statements to access core registers on several places. These locations start with __ASM.</li>
+<li>Inline assembly statements my be opaque to MISRA Checkers and can cause false-positive warnings.</li>
+</ul>
+</li>
 <li>Directive 4.9, function-like macro defined.<ul>
 <li>Violated since function-like macros are used to generate more efficient code.</li>
 </ul>
