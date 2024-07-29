@@ -1,5 +1,5 @@
 solution:
-  created-for: cmsis-toobox@2.1.0
+  created-for: cmsis-toolbox@2.5.0
 
   cdefault:
 
@@ -8,6 +8,12 @@ solution:
       C-CPP:
         - -masm-syntax-unified
         - -Wall
+      Link:
+        - --specs=rdimon.specs
+    - for-compiler: CLANG
+      Link:
+        - -lcrt0-semihost
+        - -lsemihost
 
   packs:
     - pack: ARM::CMSIS
@@ -122,5 +128,4 @@ solution:
 
   output-dirs:
     cprjdir: ./build/$TargetType$/$Compiler$/$BuildType$/$Project$
-    intdir:  ./build/$TargetType$/$Compiler$/$BuildType$/$Project$/intdir
     outdir:  ./build/$TargetType$/$Compiler$/$BuildType$/$Project$/outdir
