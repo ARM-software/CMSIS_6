@@ -133,7 +133,7 @@ set to \token{NULL}, i.e. kernel memory allocation is used for the event control
 \code
 #include "cmsis_os2.h"                          // CMSIS RTOS header file
  
-osEventFlagsId_t evt_id;                        // message queue id
+osEventFlagsId_t evt_id;                        // event flags id
  
 int Init_Events (void) {
  
