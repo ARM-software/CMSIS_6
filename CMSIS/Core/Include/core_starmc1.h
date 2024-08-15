@@ -582,6 +582,7 @@ typedef struct
 typedef struct
 {
   __IOM uint32_t CACR;                   /*!< Offset: 0x0 (R/W)  L1 Cache Control Register */
+        uint32_t RESERVED0[3U];
   __IOM uint32_t ITCMCR;                 /*!< Offset: 0x10 (R/W)  Instruction Tightly-Coupled Memory Control Register */
   __IOM uint32_t DTCMCR;                 /*!< Offset: 0x14 (R/W)  Data Tightly-Coupled Memory Control Registers */
 } EMSS_Type;
