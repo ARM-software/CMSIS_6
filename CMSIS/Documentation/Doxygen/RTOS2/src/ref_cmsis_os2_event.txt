@@ -297,7 +297,7 @@ The function \b osEventFlagsGetName returns the pointer to the name string of th
 \code
 #include "cmsis_os2.h"                          // CMSIS RTOS header file
  
-osEventFlagsId_t evt_id;                        // event flasg id
+osEventFlagsId_t evt_id;                        // event flags id
  
 void EvtFlagsGetName_example (void)  {
   char *name;
