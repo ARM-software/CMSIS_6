@@ -32,5 +32,5 @@ CMSIS-Core (Cortex-M) violates the following MISRA-C:2012 rules:
  - Rule 20.10, '#/##' operators used.
    - Violated since function-like macros are used to generate more efficient code.
 
- - Rule 21.1, reserved to the compiler.
+ - Rules 21.1 and 21.2, reserved to the compiler.
    - Violated since macros with leading underscores are used.
