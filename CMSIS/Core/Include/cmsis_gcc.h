@@ -27,7 +27,9 @@
 
 #pragma GCC system_header   /* treat file as system include file */
 
-#include <arm_acle.h>
+#if defined(__arm__)
+  #include <arm_acle.h>
+#endif
 
 /* Fallback for __has_builtin */
 #ifndef __has_builtin
@@ -999,6 +1001,8 @@ __STATIC_FORCEINLINE void __set_FPSCR(uint32_t fpscr)
   #include "r-profile/cmsis_gcc_r.h"
 #elif __ARM_ARCH_PROFILE == 'M'
   #include "m-profile/cmsis_gcc_m.h"
+#elif !defined(__arm__)
+  // Nothing to do here.
 #else
   #error "Unknown Arm architecture profile"
 #endif
