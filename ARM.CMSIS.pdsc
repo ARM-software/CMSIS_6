@@ -617,6 +617,7 @@
     <condition id="TrustZone">
       <description>TrustZone</description>
       <require Dtz="TZ"/>
+      <deny Dsecure="TZ-disabled"/>
     </condition>
     <condition id="TZ Secure">
       <description>TrustZone (Secure)</description>
