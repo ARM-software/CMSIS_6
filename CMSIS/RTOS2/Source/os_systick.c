@@ -25,7 +25,13 @@
 #include "os_tick.h"
 
 //lint -emacro((923,9078),SCB,SysTick) "cast from unsigned long to pointer"
+
+#if defined(_RTE_)
 #include "RTE_Components.h"
+#elif !defined(CMSIS_device_header)
+#error "CMSIS_device_header must be defined to point to CMSIS device header"
+#endif
+
 #include CMSIS_device_header
 
 #ifdef  SysTick
