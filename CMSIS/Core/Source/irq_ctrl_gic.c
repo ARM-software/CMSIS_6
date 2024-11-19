@@ -24,7 +24,12 @@
 
 #include <stddef.h>
 
+#if defined(_RTE_)
 #include "RTE_Components.h"
+#elif !defined(CMSIS_device_header)
+#error "CMSIS_device_header must be defined to point to CMSIS device header"
+#endif
+
 #include CMSIS_device_header
 
 #include "irq_ctrl.h"
