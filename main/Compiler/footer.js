@@ -1,7 +1,7 @@
 function writeHeader() {
-    document.write('Version 783317a3');
+    document.write('Version 4b7fcfa0');
 };
 
 function writeFooter()  {
-    document.write('Generated on Tue Nov 19 2024 13:44:10 for CMSIS-Compiler 783317a3. Copyright &copy; 2024 Arm Limited (or its affiliates). All rights reserved.');
+    document.write('Generated on Wed Dec  4 2024 16:39:34 for CMSIS-Compiler 4b7fcfa0. Copyright &copy; 2024 Arm Limited (or its affiliates). All rights reserved.');
 };
