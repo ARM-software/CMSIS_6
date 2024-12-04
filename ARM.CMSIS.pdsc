@@ -431,14 +431,14 @@
       <description>RTOS Kernel system tick timer interface</description>
       <files>
         <file category="header" name="CMSIS/RTOS2/Include/os_tick.h"/>
-        <file category="doc" name="CMSIS/Documentation/html/RTOS2/group__CMSIS__RTOS.html"/>
+        <file category="doc" name="CMSIS/Documentation/html/RTOS2/group__CMSIS__RTOS__TickAPI.html"/>
       </files>
     </api>
     <!-- CMSIS-RTOS API -->
     <api Cclass="CMSIS" Cgroup="RTOS2" Capiversion="2.3.0" exclusive="1">
       <description>CMSIS-RTOS API for Cortex-M, SC000, and SC300</description>
       <files>
-        <file category="doc" name="CMSIS/Documentation/html/RTOS2/index.html"/>
+        <file category="doc" name="CMSIS/Documentation/html/RTOS2/group__CMSIS__RTOS.html"/>
         <file category="header" name="CMSIS/RTOS2/Include/cmsis_os2.h"/>
       </files>
     </api>
