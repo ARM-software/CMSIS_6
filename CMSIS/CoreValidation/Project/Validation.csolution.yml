@@ -1,5 +1,5 @@
 solution:
-  created-for: cmsis-toolbox@2.5.0
+  created-for: cmsis-toolbox@2.7.0
 
   cdefault:
 
@@ -146,8 +146,8 @@ solution:
       debug: on
 
   projects:
-    - project: ./Validation.cproject.yml
-    - project: ./Bootloader.cproject.yml
+    - project: ./Validation/Validation.cproject.yml
+    - project: ./Bootloader/Bootloader.cproject.yml
       for-context:
         - +CM23NS
         - +CM33NS

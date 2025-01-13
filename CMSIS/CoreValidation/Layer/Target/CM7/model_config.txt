@@ -14,8 +14,6 @@ armcortexm7ct.semihosting-cwd=""                      # (string, init-time) defa
 armcortexm7ct.DP_FLOAT=1                              # (bool  , init-time) default = '1'      : Support 8-byte floats
 armcortexm7ct.dcache-size=32768                       # (int   , init-time) default = '0x8000' : L1 D-cache size in bytes
 armcortexm7ct.dcache-state_modelled=1                 # (bool  , run-time ) default = '0'      : Set whether D-cache has stateful implementation
-armcortexm7ct.dcache-ways=4                           # (int   , init-time) default = '0x4'    : L1 D-cache ways (sets are implicit from size)
 armcortexm7ct.icache-size=32768                       # (int   , init-time) default = '0x8000' : L1 I-cache size in bytes
 armcortexm7ct.icache-state_modelled=1                 # (bool  , run-time ) default = '0'      : Set whether I-cache has stateful implementation
-armcortexm7ct.icache-ways=2                           # (int   , init-time) default = '0x2'    : L1 I-cache ways (sets are implicit from size)
 #----------------------------------------------------------------------------------------------

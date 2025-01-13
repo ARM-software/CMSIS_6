@@ -7,8 +7,8 @@ static volatile uint32_t b = 2u;
 
 void ror() {
     // CHECK-LABEL: <ror>:
-    // CHECK-THUMB: ror{{s|.w}} {{r[0-9]+}}, {{r[0-9]+}}
-    // CHECK-ARM: ror {{r[0-9]+}}, {{r[0-9]+}}, {{r[0-9]+}}
+    // CHECK-THUMB: ror{{ne|s|.w}} {{r[0-9]+}}, {{r[0-9]+}}
+    // CHECK-ARM: {{ror|rorne}} {{r[0-9]+}}, {{r[0-9]+}}, {{r[0-9]+}}
     volatile uint32_t c = __ROR(a, b);
     // CHECK: {{(bx lr)|(pop {.*pc})}}
 }
