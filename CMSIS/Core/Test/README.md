@@ -71,19 +71,16 @@ Currently, the following build configurations are provided:
 
 ## Prerequisites
 
-The following tools are required to build and run the CoreValidation tests:
+The following tools are required to build and run the Core tests:
 
-- [CMSIS-Toolbox 2.1.0](https://artifacts.keil.arm.com/cmsis-toolbox/2.1.0/)*
-- [CMake 3.25.2](https://cmake.org/download/)*
-- [Ninja 1.10.2](https://github.com/ninja-build/ninja/releases)*
-- [Arm Compiler 6.22](https://artifacts.tools.arm.com/arm-compiler/6.22/45/)*
-- [GCC Compiler 13.2.1](https://artifacts.keil.arm.com/arm-none-eabi-gcc/13.2.1/)*
-- [Clang Compiler 18.1.3](https://github.com/ARM-software/LLVM-embedded-toolchain-for-Arm/releases/tag/release-18.1.3)*
-- [Arm Virtual Hardware for Cortex-M based on FastModels 11.22.39](https://artifacts.keil.arm.com/avh/11.22.39/)*
+- [Arm Compiler 6.23](https://artifacts.tools.arm.com/arm-compiler/6.23/32/)*
+- [GCC Compiler 14.2.1](https://artifacts.keil.arm.com/arm-none-eabi-gcc/14.2.1/)*
+- [Clang Compiler 19.1.5](https://github.com/ARM-software/LLVM-embedded-toolchain-for-Arm/releases/tag/release-19.1.5)*
 - [Python 3.9](https://www.python.org/downloads/)
 - [LLVM FileCheck](https://github.com/llvm/llvm-project/releases/)
   - Ubuntu package `llvm-<version>-tools`
   - MacOS Homebrew formula `llvm`
+    Symlink FileCheck binary `ln -s /opt/homebrew/opt/llvm/bin/FileCheck /opt/homebrew/bin`
 
 The executables need to be present on the `PATH`.
 For tools distributed via vcpkg (*) this can be achieved automatically:
@@ -126,7 +123,7 @@ GCC         Cortex-M3  none        33/33
 
 The summary lists the amount of test cases executed and passed.
 
-## Analyse failing test cases
+## Analyze failing test cases
 
 In case of failing test cases, one can run a single test case with verbose output like this:
 
@@ -146,7 +143,7 @@ Testing Time: 0.10s
   Passed: 1
 ```
 
-The output reveales wich commands are chained and their error output if any.
+The output reveals which commands are chained and their error output if any.
 
 Failing FileCheck requires in detail analysis of the `// CHECK` annotations in the test source file
 against the `llvm-objdump` output of the test compilation.

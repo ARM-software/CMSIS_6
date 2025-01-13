@@ -5,7 +5,7 @@ layer:
   components:
     # [Cvendor::] Cclass [&Cbundle] :Cgroup [:Csub] [&Cvariant] [@[>=]Cversion]
     - component: ARM::CMSIS:CORE
-    - component: Device:Startup
+    - component: Device:Startup&C Startup
     - component: Device:IRQ Controller:GIC
 
   misc:
