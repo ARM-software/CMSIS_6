@@ -2700,7 +2700,7 @@ __STATIC_INLINE int MMU_MemorySection(uint32_t *descriptor_l1, mmu_memory_Type m
         *descriptor_l1 |= 1 << SECTION_TEX1_SHIFT;
         break;
       case WB_NO_WA:
-        *descriptor_l1 |= (1 << SECTION_TEX0_SHIFT) | (1 << SECTION_TEX0_SHIFT);
+        *descriptor_l1 |= (1 << SECTION_TEX1_SHIFT) | (1 << SECTION_TEX0_SHIFT);
         break;
     }
   }
@@ -2768,7 +2768,7 @@ __STATIC_INLINE int MMU_MemoryPage(uint32_t *descriptor_l2, mmu_memory_Type mem,
           *descriptor_l2 |= 1 << PAGE_4K_TEX1_SHIFT;
           break;
         case WB_NO_WA:
-          *descriptor_l2 |= (1 << PAGE_4K_TEX0_SHIFT) | (1 << PAGE_4K_TEX0_SHIFT);
+          *descriptor_l2 |= (1 << PAGE_4K_TEX1_SHIFT) | (1 << PAGE_4K_TEX0_SHIFT);
           break;
       }
     }
