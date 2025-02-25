@@ -11,7 +11,7 @@ The CMSIS-Toolbox provides command-line tools for:
 
 CMSIS-Toolbox is actively maintained in a dedicated GitHub repository and released as a set of binary utilities.
 
- - [**CMSIS-Toolbox User Guide**](https://github.com/Open-CMSIS-Pack/cmsis-toolbox/blob/main/docs/README.md) - provides user documentation for the CMSIS-Toolbox.
+ - [**CMSIS-Toolbox User Guide**](https://open-cmsis-pack.github.io/cmsis-toolbox/) - provides user documentation for the CMSIS-Toolbox.
  - [**CMSIS-Toolbox Artifacts**](https://artifacts.keil.arm.com/cmsis-toolbox/) - pre-built utilities for integration into IDEs and CI workflows.
  - [**CMSIS-Toolbox GitHub Repo**](https://github.com/Open-CMSIS-Pack/cmsis-toolbox) - contains the source code and releases.
 
