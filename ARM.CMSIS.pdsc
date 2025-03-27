@@ -13,15 +13,8 @@
   <url>https://www.keil.com/pack/</url>
 
   <releases>
-    <release version="6.1.0">
+    <release version="6.2.0">
       Active development ...
-      Added Overview.md for display on web index service
-      CMSIS-Core: 6.1.0
-        - Added support for Cortex-M52
-        - Added deprecated CoreDebug symbols for CMSIS 5 compatibility
-        - Added define CMSIS_DISABLE_DEPRECATED to hide deprecated symbols
-      CMSIS-Driver: 2.10.0
-        - Updated USB Host Interface API 2.4.0 (deprecated API for OHCI/EHCI Host Controller Interface (HCI))
     </release>
     <release version="5.9.0" date="2022-05-02">
       CMSIS-Core(M): 5.6.0
