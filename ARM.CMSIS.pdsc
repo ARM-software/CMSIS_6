@@ -13,15 +13,8 @@
   <url>https://www.keil.com/pack/</url>
 
   <releases>
-    <release version="6.1.0">
+    <release version="6.2.0-dev">
       Active development ...
-      Added Overview.md for display on web index service
-      CMSIS-Core: 6.1.0
-        - Added support for Cortex-M52
-        - Added deprecated CoreDebug symbols for CMSIS 5 compatibility
-        - Added define CMSIS_DISABLE_DEPRECATED to hide deprecated symbols
-      CMSIS-Driver: 2.10.0
-        - Updated USB Host Interface API 2.4.0 (deprecated API for OHCI/EHCI Host Controller Interface (HCI))
     </release>
     <release version="5.9.0" date="2022-05-02">
       CMSIS-Core(M): 5.6.0
@@ -444,63 +437,63 @@
     </api>
     <!-- CMSIS Driver API -->
     <api Cclass="CMSIS Driver" Cgroup="USART" Capiversion="2.4.0" exclusive="0">
-      <description>USART Driver API for Cortex-M</description>
+      <description>USART (Universal Synchronous/Asynchronous Receiver/Transmitter) Driver API</description>
       <files>
         <file category="doc" name="CMSIS/Documentation/html/Driver/group__usart__interface__gr.html" />
         <file category="header" name="CMSIS/Driver/Include/Driver_USART.h" />
       </files>
     </api>
     <api Cclass="CMSIS Driver" Cgroup="SPI" Capiversion="2.3.0" exclusive="0">
-      <description>SPI Driver API for Cortex-M</description>
+      <description>SPI (Serial Peripheral Interface) Driver API</description>
       <files>
         <file category="doc" name="CMSIS/Documentation/html/Driver/group__spi__interface__gr.html" />
         <file category="header" name="CMSIS/Driver/Include/Driver_SPI.h" />
       </files>
     </api>
     <api Cclass="CMSIS Driver" Cgroup="SAI" Capiversion="1.2.0" exclusive="0">
-      <description>SAI Driver API for Cortex-M</description>
+      <description>SAI (Serial Audio Interface) Driver API</description>
       <files>
         <file category="doc" name="CMSIS/Documentation/html/Driver/group__sai__interface__gr.html"/>
         <file category="header" name="CMSIS/Driver/Include/Driver_SAI.h" />
       </files>
     </api>
     <api Cclass="CMSIS Driver" Cgroup="I2C" Capiversion="2.4.0" exclusive="0">
-      <description>I2C Driver API for Cortex-M</description>
+      <description>I2C (Inter-Integrated Circuit) Driver API</description>
       <files>
         <file category="doc" name="CMSIS/Documentation/html/Driver/group__i2c__interface__gr.html"/>
         <file category="header" name="CMSIS/Driver/Include/Driver_I2C.h" />
       </files>
     </api>
     <api Cclass="CMSIS Driver" Cgroup="CAN" Capiversion="1.3.0" exclusive="0">
-      <description>CAN Driver API for Cortex-M</description>
+      <description>CAN (Controller Area Network) Driver API</description>
       <files>
         <file category="doc" name="CMSIS/Documentation/html/Driver/group__can__interface__gr.html"/>
         <file category="header" name="CMSIS/Driver/Include/Driver_CAN.h" />
       </files>
     </api>
     <api Cclass="CMSIS Driver" Cgroup="Flash" Capiversion="2.3.0" exclusive="0">
-      <description>Flash Driver API for Cortex-M</description>
+      <description>NOR Flash Driver API</description>
       <files>
         <file category="doc" name="CMSIS/Documentation/html/Driver/group__flash__interface__gr.html" />
         <file category="header" name="CMSIS/Driver/Include/Driver_Flash.h" />
       </files>
     </api>
     <api Cclass="CMSIS Driver" Cgroup="MCI" Capiversion="2.4.0" exclusive="0">
-      <description>MCI Driver API for Cortex-M</description>
+      <description>MCI (Memory Card Interface) Driver API</description>
       <files>
         <file category="doc" name="CMSIS/Documentation/html/Driver/group__mci__interface__gr.html" />
         <file category="header" name="CMSIS/Driver/Include/Driver_MCI.h" />
       </files>
     </api>
     <api Cclass="CMSIS Driver" Cgroup="NAND" Capiversion="2.4.0" exclusive="0">
-      <description>NAND Flash Driver API for Cortex-M</description>
+      <description>NAND Flash Driver API</description>
       <files>
         <file category="doc" name="CMSIS/Documentation/html/Driver/group__nand__interface__gr.html" />
         <file category="header" name="CMSIS/Driver/Include/Driver_NAND.h" />
       </files>
     </api>
     <api Cclass="CMSIS Driver" Cgroup="Ethernet" Capiversion="2.2.0" exclusive="0">
-      <description>Ethernet MAC and PHY Driver API for Cortex-M</description>
+      <description>Ethernet MAC (Media Access Control) and PHY (Physical layer) Driver API</description>
       <files>
         <file category="doc" name="CMSIS/Documentation/html/Driver/group__eth__interface__gr.html" />
         <file category="header" name="CMSIS/Driver/Include/Driver_ETH_MAC.h" />
@@ -508,49 +501,49 @@
       </files>
     </api>
     <api Cclass="CMSIS Driver" Cgroup="Ethernet MAC" Capiversion="2.2.0" exclusive="0">
-      <description>Ethernet MAC Driver API for Cortex-M</description>
+      <description>Ethernet MAC (Media Access Control) Driver API</description>
       <files>
         <file category="doc" name="CMSIS/Documentation/html/Driver/group__eth__mac__interface__gr.html" />
         <file category="header" name="CMSIS/Driver/Include/Driver_ETH_MAC.h" />
       </files>
     </api>
     <api Cclass="CMSIS Driver" Cgroup="Ethernet PHY" Capiversion="2.2.0" exclusive="0">
-      <description>Ethernet PHY Driver API for Cortex-M</description>
+      <description>Ethernet PHY (Physical layer) Driver API</description>
       <files>
         <file category="doc" name="CMSIS/Documentation/html/Driver/group__eth__phy__interface__gr.html" />
         <file category="header" name="CMSIS/Driver/Include/Driver_ETH_PHY.h" />
       </files>
     </api>
     <api Cclass="CMSIS Driver" Cgroup="USB Device" Capiversion="2.3.0" exclusive="0">
-      <description>USB Device Driver API for Cortex-M</description>
+      <description>USB (Universal Serial Bus) Device Driver API</description>
       <files>
         <file category="doc" name="CMSIS/Documentation/html/Driver/group__usbd__interface__gr.html" />
         <file category="header" name="CMSIS/Driver/Include/Driver_USBD.h" />
       </files>
     </api>
     <api Cclass="CMSIS Driver" Cgroup="USB Host" Capiversion="2.4.0" exclusive="0">
-      <description>USB Host Driver API for Cortex-M</description>
+      <description>USB (Universal Serial Bus) Host Driver API</description>
       <files>
         <file category="doc" name="CMSIS/Documentation/html/Driver/group__usbh__interface__gr.html" />
         <file category="header" name="CMSIS/Driver/Include/Driver_USBH.h" />
       </files>
     </api>
     <api Cclass="CMSIS Driver" Cgroup="GPIO" Capiversion="1.0.0" exclusive="0">
-      <description>GPIO Driver API for Cortex-M</description>
+      <description>GPIO (General-Purpose Input/Output) Driver API</description>
       <files>
         <file category="doc" name="CMSIS/Documentation/html/Driver/group__gpio__interface__gr.html" />
         <file category="header" name="CMSIS/Driver/Include/Driver_GPIO.h" />
       </files>
     </api>
     <api Cclass="CMSIS Driver" Cgroup="WiFi" Capiversion="1.1.0" exclusive="0">
-      <description>WiFi driver</description>
+      <description>WiFi (Wireless network) Driver API</description>
       <files>
         <file category="doc" name="CMSIS/Documentation/html/Driver/group__wifi__interface__gr.html" />
         <file category="header" name="CMSIS/Driver/Include/Driver_WiFi.h" />
       </files>
     </api>
     <api Cclass="CMSIS Driver" Cgroup="VIO" Capiversion="1.0.0" exclusive="1">
-      <description>Virtual I/O</description>
+      <description>Virtual I/O abstraction for simple peripherals (i.e. button, LED)</description>
       <files>
         <file category="doc"    name="CMSIS/Documentation/html/Driver/group__vio__interface__gr.html" />
         <file category="header" name="CMSIS/Driver/VIO/Include/cmsis_vio.h" />
