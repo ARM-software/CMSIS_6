@@ -13,7 +13,7 @@
   <url>https://www.keil.com/pack/</url>
 
   <releases>
-    <release version="6.2.0">
+    <release version="6.2.0-dev">
       Active development ...
     </release>
     <release version="5.9.0" date="2022-05-02">
