@@ -342,6 +342,7 @@ typedef struct _ARM_DRIVER_USBH {
 } const ARM_DRIVER_USBH;
 
 
+// \cond
 #ifndef CMSIS_DISABLE_DEPRECATED
 
 // HCI (OHCI/EHCI)
@@ -414,6 +415,7 @@ typedef struct _ARM_DRIVER_USBH_HCI {
 } const ARM_DRIVER_USBH_HCI;
 
 #endif // CMSIS_DISABLE_DEPRECATED
+// \endcond
 
 #ifdef  __cplusplus
 }
