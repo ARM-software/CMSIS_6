@@ -16,6 +16,13 @@ Release history of other CMSIS components and tools can be found in their docume
       <th>Description</th>
     </tr>
     <tr>
+      <td>6.2.0</td>
+      <td>
+       - CMSIS-Driver: 2.11.0
+         - Added vStream Driver API 1.0.0
+      </td>
+    </tr>
+    <tr>
       <td>6.1.0</td>
       <td>
        - CMSIS-Core: 6.1.0
