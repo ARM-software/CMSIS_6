@@ -71,6 +71,7 @@ __NO_RETURN void threadDataProcess (void *argument) {
       // In this example we just print it to STDIO
       for (uint32_t i = 0U; i < SENSOR_DATA_SAMPLES_PER_SLICE; i++) {
         printf("Acc x=%i, y=%i, z=%i\r\n", ptr_acc_sample->x, ptr_acc_sample->y, ptr_acc_sample->z);
+        ptr_acc_sample++;
       }
     }
 
