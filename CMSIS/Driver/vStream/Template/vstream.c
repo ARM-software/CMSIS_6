@@ -154,17 +154,6 @@ static vStreamStatus_t GetStatus (void) {
   return stat;
 }
 
-/**
-  \fn           void EventCallback (uint32_t event_flags)
-  \brief        Callback function for handling Virtual Streaming events.
-  \param[in]    event_flags     bitmask indicating one or more streaming events
-*/
-static void EventCallback (uint32_t event_flags) {
-  (void)event_flags;
-
-  // Add user code here:
-}
-
 
 // Driver structure
 
