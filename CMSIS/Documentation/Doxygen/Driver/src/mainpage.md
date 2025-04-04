@@ -37,6 +37,7 @@ CMSIS-Driver APIs are defined for the following driver interfaces:
  - \ref usb_interface_gr "USB": Interface driver for USB Host and USB Device communication.
  - \ref gpio_interface_gr "GPIO": General-purpose Input/Output driver.
  - \ref vio_interface_gr "VIO": API for virtual I/Os (VIO).
+ - \ref vstream_interface_gr "vStream": API for Virtual streaming interface using fixed-size data blocks.
  - \ref wifi_interface_gr "WiFi": Interface driver for wireless communication.
 
 A list of current CMSIS-Driver implementations is available \ref listOfImplementations "here".

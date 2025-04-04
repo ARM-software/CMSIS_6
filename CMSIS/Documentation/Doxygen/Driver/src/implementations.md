@@ -21,6 +21,7 @@ Some CMSIS-Driver implementations for external MCU-independent peripheral device
 [USB Device]: \ref usbd_interface_gr "USB Device".
 [GPIO]: \ref gpio_interface_gr "GPIO".
 [VIO]: \ref vio_interface_gr "VIO".
+[vStream]: \ref vstream_interface_gr "vStream".
 [WiFi]: \ref wifi_interface_gr "WiFi".
 
 <table class="cmtable" summary="CMSIS-Driver Implementation List">
@@ -42,6 +43,7 @@ Some CMSIS-Driver implementations for external MCU-independent peripheral device
             <th>[USB Device]</th>
             <th>[GPIO]</th>
             <th>[VIO]</th>
+            <th>[vStream]</th>
             <th>[WiFi]</th>
         </tr>
         <tr>
@@ -58,6 +60,7 @@ Some CMSIS-Driver implementations for external MCU-independent peripheral device
             <td></td>
             <td></td>
             <td><center>&radic;</center></td>
+            <td></td>
             <td></td>
             <td></td>
             <td></td>
@@ -83,6 +86,7 @@ Some CMSIS-Driver implementations for external MCU-independent peripheral device
             <td></td>
             <td></td>
             <td></td>
+            <td></td>
         </tr>
         <tr>
             <td></td>
@@ -98,6 +102,7 @@ Some CMSIS-Driver implementations for external MCU-independent peripheral device
             <td></td>
             <td></td>
             <td><center>&radic;</center></td>
+            <td></td>
             <td></td>
             <td></td>
             <td></td>
@@ -123,6 +128,7 @@ Some CMSIS-Driver implementations for external MCU-independent peripheral device
             <td></td>
             <td></td>
             <td></td>
+            <td></td>
         </tr>
         <tr>
             <td></td>
@@ -138,6 +144,7 @@ Some CMSIS-Driver implementations for external MCU-independent peripheral device
             <td><center>&radic;</center></td>
             <td></td>
             <td><center>&radic;</center></td>
+            <td></td>
             <td></td>
             <td></td>
             <td></td>
@@ -163,10 +170,12 @@ Some CMSIS-Driver implementations for external MCU-independent peripheral device
             <td></td>
             <td></td>
             <td></td>
+            <td></td>
         </tr>
         <tr>
             <td>Espressif</td>
             <td>ESP32</td>
+            <td></td>
             <td></td>
             <td></td>
             <td></td>
@@ -187,6 +196,7 @@ Some CMSIS-Driver implementations for external MCU-independent peripheral device
         <tr>
             <td></td>
             <td>ESP8266</td>
+            <td></td>
             <td></td>
             <td></td>
             <td></td>
@@ -223,6 +233,7 @@ Some CMSIS-Driver implementations for external MCU-independent peripheral device
             <td></td>
             <td></td>
             <td></td>
+            <td></td>
         </tr>
         <tr>
             <td>Infineon</td>
@@ -234,6 +245,7 @@ Some CMSIS-Driver implementations for external MCU-independent peripheral device
             <td></td>
             <td></td>
             <td><center>&radic;</center></td>
+            <td></td>
             <td></td>
             <td></td>
             <td></td>
@@ -263,6 +275,7 @@ Some CMSIS-Driver implementations for external MCU-independent peripheral device
             <td></td>
             <td></td>
             <td></td>
+            <td></td>
         </tr>
         <tr>
             <td></td>
@@ -283,10 +296,12 @@ Some CMSIS-Driver implementations for external MCU-independent peripheral device
             <td></td>
             <td></td>
             <td></td>
+            <td></td>
         </tr>
         <tr>
             <td>Inventek</td>
             <td>ISM43362</td>
+            <td></td>
             <td></td>
             <td></td>
             <td></td>
@@ -323,6 +338,7 @@ Some CMSIS-Driver implementations for external MCU-independent peripheral device
             <td></td>
             <td></td>
             <td></td>
+            <td></td>
         </tr>
         <tr>
             <td></td>
@@ -330,6 +346,7 @@ Some CMSIS-Driver implementations for external MCU-independent peripheral device
             <td></td>
             <td></td>
             <td><center>&radic;</center></td>
+            <td></td>
             <td></td>
             <td></td>
             <td></td>
@@ -363,6 +380,7 @@ Some CMSIS-Driver implementations for external MCU-independent peripheral device
             <td></td>
             <td></td>
             <td></td>
+            <td></td>
         </tr>
         <tr>
             <td></td>
@@ -370,6 +388,7 @@ Some CMSIS-Driver implementations for external MCU-independent peripheral device
             <td></td>
             <td></td>
             <td><center>&radic;</center></td>
+            <td></td>
             <td></td>
             <td></td>
             <td></td>
@@ -403,6 +422,7 @@ Some CMSIS-Driver implementations for external MCU-independent peripheral device
             <td></td>
             <td></td>
             <td></td>
+            <td></td>
         </tr>
         <tr>
             <td></td>
@@ -410,6 +430,7 @@ Some CMSIS-Driver implementations for external MCU-independent peripheral device
             <td></td>
             <td></td>
             <td><center>&radic;</center></td>
+            <td></td>
             <td></td>
             <td></td>
             <td></td>
@@ -443,6 +464,7 @@ Some CMSIS-Driver implementations for external MCU-independent peripheral device
             <td></td>
             <td></td>
             <td></td>
+            <td></td>
         </tr>
         <tr>
             <td></td>
@@ -450,6 +472,7 @@ Some CMSIS-Driver implementations for external MCU-independent peripheral device
             <td></td>
             <td><center>&radic;</center></td>
             <td><center>&radic;</center></td>
+            <td></td>
             <td></td>
             <td></td>
             <td></td>
@@ -483,6 +506,7 @@ Some CMSIS-Driver implementations for external MCU-independent peripheral device
             <td></td>
             <td></td>
             <td></td>
+            <td></td>
         </tr>
         <tr>
             <td>Micron</td>
@@ -494,6 +518,7 @@ Some CMSIS-Driver implementations for external MCU-independent peripheral device
             <td></td>
             <td></td>
             <td><center>&radic;</center></td>
+            <td></td>
             <td></td>
             <td></td>
             <td></td>
@@ -523,6 +548,7 @@ Some CMSIS-Driver implementations for external MCU-independent peripheral device
             <td></td>
             <td></td>
             <td></td>
+            <td></td>
         </tr>
         <tr>
             <td>NXP</td>
@@ -540,6 +566,7 @@ Some CMSIS-Driver implementations for external MCU-independent peripheral device
             <td></td>
             <td></td>
             <td><center>&radic;</center></td>
+            <td></td>
             <td></td>
             <td></td>
             <td></td>
@@ -563,6 +590,7 @@ Some CMSIS-Driver implementations for external MCU-independent peripheral device
             <td></td>
             <td></td>
             <td></td>
+            <td></td>
         </tr>
         <tr>
             <td></td>
@@ -580,6 +608,7 @@ Some CMSIS-Driver implementations for external MCU-independent peripheral device
             <td><center>&radic;</center></td>
             <td><center>&radic;</center></td>
             <td><center>&radic;</center></td>
+            <td></td>
             <td></td>
             <td></td>
             <td></td>
@@ -603,6 +632,7 @@ Some CMSIS-Driver implementations for external MCU-independent peripheral device
             <td></td>
             <td></td>
             <td></td>
+            <td></td>
         </tr>
         <tr>
             <td></td>
@@ -620,6 +650,7 @@ Some CMSIS-Driver implementations for external MCU-independent peripheral device
             <td><center>&radic;</center></td>
             <td><center>&radic;</center></td>
             <td><center>&radic;</center></td>
+            <td></td>
             <td></td>
             <td></td>
             <td></td>
@@ -643,6 +674,7 @@ Some CMSIS-Driver implementations for external MCU-independent peripheral device
             <td></td>
             <td></td>
             <td></td>
+            <td></td>
         </tr>
         <tr>
             <td></td>
@@ -660,6 +692,7 @@ Some CMSIS-Driver implementations for external MCU-independent peripheral device
             <td></td>
             <td><center>&radic;</center></td>
             <td><center>&radic;</center></td>
+            <td></td>
             <td></td>
             <td></td>
             <td></td>
@@ -683,6 +716,7 @@ Some CMSIS-Driver implementations for external MCU-independent peripheral device
             <td></td>
             <td><center>&radic;</center></td>
             <td></td>
+            <td></td>
         </tr>
         <tr>
             <td></td>
@@ -698,6 +732,7 @@ Some CMSIS-Driver implementations for external MCU-independent peripheral device
             <td><center>&radic;</center></td>
             <td></td>
             <td><center>&radic;</center></td>
+            <td></td>
             <td></td>
             <td></td>
             <td></td>
@@ -723,6 +758,7 @@ Some CMSIS-Driver implementations for external MCU-independent peripheral device
             <td></td>
             <td></td>
             <td></td>
+            <td></td>
         </tr>
         <tr>
             <td></td>
@@ -738,6 +774,7 @@ Some CMSIS-Driver implementations for external MCU-independent peripheral device
             <td><center>&radic;</center></td>
             <td></td>
             <td><center>&radic;</center></td>
+            <td></td>
             <td></td>
             <td></td>
             <td></td>
@@ -763,6 +800,7 @@ Some CMSIS-Driver implementations for external MCU-independent peripheral device
             <td></td>
             <td></td>
             <td></td>
+            <td></td>
         </tr>
         <tr>
             <td></td>
@@ -778,6 +816,7 @@ Some CMSIS-Driver implementations for external MCU-independent peripheral device
             <td><center>&radic;</center></td>
             <td></td>
             <td><center>&radic;</center></td>
+            <td></td>
             <td></td>
             <td></td>
             <td></td>
@@ -803,6 +842,7 @@ Some CMSIS-Driver implementations for external MCU-independent peripheral device
             <td></td>
             <td></td>
             <td></td>
+            <td></td>
         </tr>
         <tr>
             <td></td>
@@ -818,6 +858,7 @@ Some CMSIS-Driver implementations for external MCU-independent peripheral device
             <td><center>&radic;</center></td>
             <td></td>
             <td><center>&radic;</center></td>
+            <td></td>
             <td></td>
             <td></td>
             <td></td>
@@ -843,6 +884,7 @@ Some CMSIS-Driver implementations for external MCU-independent peripheral device
             <td></td>
             <td></td>
             <td></td>
+            <td></td>
         </tr>
         <tr>
             <td></td>
@@ -858,6 +900,7 @@ Some CMSIS-Driver implementations for external MCU-independent peripheral device
             <td><center>&radic;</center></td>
             <td></td>
             <td><center>&radic;</center></td>
+            <td></td>
             <td></td>
             <td></td>
             <td></td>
@@ -883,6 +926,7 @@ Some CMSIS-Driver implementations for external MCU-independent peripheral device
             <td></td>
             <td></td>
             <td></td>
+            <td></td>
         </tr>
         <tr>
             <td></td>
@@ -898,6 +942,7 @@ Some CMSIS-Driver implementations for external MCU-independent peripheral device
             <td><center>&radic;</center></td>
             <td></td>
             <td><center>&radic;</center></td>
+            <td></td>
             <td></td>
             <td></td>
             <td></td>
@@ -923,6 +968,7 @@ Some CMSIS-Driver implementations for external MCU-independent peripheral device
             <td></td>
             <td></td>
             <td></td>
+            <td></td>
         </tr>
         <tr>
             <td></td>
@@ -938,6 +984,7 @@ Some CMSIS-Driver implementations for external MCU-independent peripheral device
             <td><center>&radic;</center></td>
             <td></td>
             <td><center>&radic;</center></td>
+            <td></td>
             <td></td>
             <td></td>
             <td></td>
@@ -963,6 +1010,7 @@ Some CMSIS-Driver implementations for external MCU-independent peripheral device
             <td></td>
             <td></td>
             <td></td>
+            <td></td>
         </tr>
         <tr>
             <td></td>
@@ -978,6 +1026,7 @@ Some CMSIS-Driver implementations for external MCU-independent peripheral device
             <td><center>&radic;</center></td>
             <td></td>
             <td><center>&radic;</center></td>
+            <td></td>
             <td></td>
             <td></td>
             <td></td>
@@ -1003,6 +1052,7 @@ Some CMSIS-Driver implementations for external MCU-independent peripheral device
             <td></td>
             <td></td>
             <td></td>
+            <td></td>
         </tr>
         <tr>
             <td></td>
@@ -1018,6 +1068,7 @@ Some CMSIS-Driver implementations for external MCU-independent peripheral device
             <td><center>&radic;</center></td>
             <td></td>
             <td><center>&radic;</center></td>
+            <td></td>
             <td></td>
             <td></td>
             <td></td>
@@ -1043,6 +1094,7 @@ Some CMSIS-Driver implementations for external MCU-independent peripheral device
             <td></td>
             <td></td>
             <td></td>
+            <td></td>
         </tr>
         <tr>
             <td></td>
@@ -1058,6 +1110,7 @@ Some CMSIS-Driver implementations for external MCU-independent peripheral device
             <td><center>&radic;</center></td>
             <td></td>
             <td><center>&radic;</center></td>
+            <td></td>
             <td></td>
             <td></td>
             <td></td>
@@ -1083,6 +1136,7 @@ Some CMSIS-Driver implementations for external MCU-independent peripheral device
             <td></td>
             <td></td>
             <td></td>
+            <td></td>
         </tr>
         <tr>
             <td></td>
@@ -1098,6 +1152,7 @@ Some CMSIS-Driver implementations for external MCU-independent peripheral device
             <td><center>&radic;</center></td>
             <td></td>
             <td><center>&radic;</center></td>
+            <td></td>
             <td></td>
             <td></td>
             <td></td>
@@ -1123,6 +1178,7 @@ Some CMSIS-Driver implementations for external MCU-independent peripheral device
             <td></td>
             <td></td>
             <td></td>
+            <td></td>
         </tr>
         <tr>
             <td></td>
@@ -1138,6 +1194,7 @@ Some CMSIS-Driver implementations for external MCU-independent peripheral device
             <td><center>&radic;</center></td>
             <td></td>
             <td><center>&radic;</center></td>
+            <td></td>
             <td></td>
             <td></td>
             <td></td>
@@ -1163,6 +1220,7 @@ Some CMSIS-Driver implementations for external MCU-independent peripheral device
             <td></td>
             <td></td>
             <td></td>
+            <td></td>
         </tr>
         <tr>
             <td></td>
@@ -1178,6 +1236,7 @@ Some CMSIS-Driver implementations for external MCU-independent peripheral device
             <td><center>&radic;</center></td>
             <td></td>
             <td><center>&radic;</center></td>
+            <td></td>
             <td></td>
             <td></td>
             <td></td>
@@ -1203,6 +1262,7 @@ Some CMSIS-Driver implementations for external MCU-independent peripheral device
             <td></td>
             <td></td>
             <td></td>
+            <td></td>
         </tr>
         <tr>
             <td></td>
@@ -1218,6 +1278,7 @@ Some CMSIS-Driver implementations for external MCU-independent peripheral device
             <td><center>&radic;</center></td>
             <td></td>
             <td><center>&radic;</center></td>
+            <td></td>
             <td></td>
             <td></td>
             <td></td>
@@ -1243,6 +1304,7 @@ Some CMSIS-Driver implementations for external MCU-independent peripheral device
             <td></td>
             <td></td>
             <td></td>
+            <td></td>
         </tr>
         <tr>
             <td></td>
@@ -1258,6 +1320,7 @@ Some CMSIS-Driver implementations for external MCU-independent peripheral device
             <td><center>&radic;</center></td>
             <td></td>
             <td><center>&radic;</center></td>
+            <td></td>
             <td></td>
             <td></td>
             <td></td>
@@ -1283,6 +1346,7 @@ Some CMSIS-Driver implementations for external MCU-independent peripheral device
             <td></td>
             <td></td>
             <td></td>
+            <td></td>
         </tr>
         <tr>
             <td></td>
@@ -1298,6 +1362,7 @@ Some CMSIS-Driver implementations for external MCU-independent peripheral device
             <td><center>&radic;</center></td>
             <td></td>
             <td><center>&radic;</center></td>
+            <td></td>
             <td></td>
             <td></td>
             <td></td>
@@ -1323,6 +1388,7 @@ Some CMSIS-Driver implementations for external MCU-independent peripheral device
             <td></td>
             <td></td>
             <td></td>
+            <td></td>
         </tr>
         <tr>
             <td></td>
@@ -1338,6 +1404,7 @@ Some CMSIS-Driver implementations for external MCU-independent peripheral device
             <td><center>&radic;</center></td>
             <td></td>
             <td><center>&radic;</center></td>
+            <td></td>
             <td></td>
             <td></td>
             <td></td>
@@ -1363,6 +1430,7 @@ Some CMSIS-Driver implementations for external MCU-independent peripheral device
             <td></td>
             <td></td>
             <td></td>
+            <td></td>
         </tr>
         <tr>
             <td></td>
@@ -1378,6 +1446,7 @@ Some CMSIS-Driver implementations for external MCU-independent peripheral device
             <td><center>&radic;</center></td>
             <td></td>
             <td><center>&radic;</center></td>
+            <td></td>
             <td></td>
             <td></td>
             <td></td>
@@ -1403,6 +1472,7 @@ Some CMSIS-Driver implementations for external MCU-independent peripheral device
             <td></td>
             <td></td>
             <td></td>
+            <td></td>
         </tr>
         <tr>
             <td></td>
@@ -1418,6 +1488,7 @@ Some CMSIS-Driver implementations for external MCU-independent peripheral device
             <td><center>&radic;</center></td>
             <td></td>
             <td><center>&radic;</center></td>
+            <td></td>
             <td></td>
             <td></td>
             <td></td>
@@ -1443,6 +1514,7 @@ Some CMSIS-Driver implementations for external MCU-independent peripheral device
             <td></td>
             <td></td>
             <td></td>
+            <td></td>
         </tr>
         <tr>
             <td></td>
@@ -1458,6 +1530,7 @@ Some CMSIS-Driver implementations for external MCU-independent peripheral device
             <td><center>&radic;</center></td>
             <td></td>
             <td><center>&radic;</center></td>
+            <td></td>
             <td></td>
             <td></td>
             <td></td>
@@ -1483,6 +1556,7 @@ Some CMSIS-Driver implementations for external MCU-independent peripheral device
             <td></td>
             <td></td>
             <td></td>
+            <td></td>
         </tr>
         <tr>
             <td></td>
@@ -1498,6 +1572,7 @@ Some CMSIS-Driver implementations for external MCU-independent peripheral device
             <td><center>&radic;</center></td>
             <td></td>
             <td><center>&radic;</center></td>
+            <td></td>
             <td></td>
             <td></td>
             <td></td>
@@ -1523,6 +1598,7 @@ Some CMSIS-Driver implementations for external MCU-independent peripheral device
             <td></td>
             <td></td>
             <td></td>
+            <td></td>
         </tr>
         <tr>
             <td></td>
@@ -1538,6 +1614,7 @@ Some CMSIS-Driver implementations for external MCU-independent peripheral device
             <td><center>&radic;</center></td>
             <td></td>
             <td><center>&radic;</center></td>
+            <td></td>
             <td></td>
             <td></td>
             <td></td>
@@ -1563,6 +1640,7 @@ Some CMSIS-Driver implementations for external MCU-independent peripheral device
             <td></td>
             <td></td>
             <td></td>
+            <td></td>
         </tr>
         <tr>
             <td></td>
@@ -1578,6 +1656,7 @@ Some CMSIS-Driver implementations for external MCU-independent peripheral device
             <td><center>&radic;</center></td>
             <td></td>
             <td><center>&radic;</center></td>
+            <td></td>
             <td></td>
             <td></td>
             <td></td>
@@ -1603,6 +1682,7 @@ Some CMSIS-Driver implementations for external MCU-independent peripheral device
             <td></td>
             <td></td>
             <td></td>
+            <td></td>
         </tr>
         <tr>
             <td></td>
@@ -1618,6 +1698,7 @@ Some CMSIS-Driver implementations for external MCU-independent peripheral device
             <td><center>&radic;</center></td>
             <td></td>
             <td><center>&radic;</center></td>
+            <td></td>
             <td></td>
             <td></td>
             <td></td>
@@ -1643,6 +1724,7 @@ Some CMSIS-Driver implementations for external MCU-independent peripheral device
             <td></td>
             <td></td>
             <td></td>
+            <td></td>
         </tr>
         <tr>
             <td></td>
@@ -1658,6 +1740,7 @@ Some CMSIS-Driver implementations for external MCU-independent peripheral device
             <td><center>&radic;</center></td>
             <td></td>
             <td><center>&radic;</center></td>
+            <td></td>
             <td></td>
             <td></td>
             <td></td>
@@ -1683,6 +1766,7 @@ Some CMSIS-Driver implementations for external MCU-independent peripheral device
             <td></td>
             <td></td>
             <td></td>
+            <td></td>
         </tr>
         <tr>
             <td></td>
@@ -1698,6 +1782,7 @@ Some CMSIS-Driver implementations for external MCU-independent peripheral device
             <td><center>&radic;</center></td>
             <td></td>
             <td><center>&radic;</center></td>
+            <td></td>
             <td></td>
             <td></td>
             <td></td>
@@ -1723,6 +1808,7 @@ Some CMSIS-Driver implementations for external MCU-independent peripheral device
             <td></td>
             <td></td>
             <td></td>
+            <td></td>
         </tr>
         <tr>
             <td></td>
@@ -1738,6 +1824,7 @@ Some CMSIS-Driver implementations for external MCU-independent peripheral device
             <td><center>&radic;</center></td>
             <td></td>
             <td><center>&radic;</center></td>
+            <td></td>
             <td></td>
             <td></td>
             <td></td>
@@ -1763,6 +1850,7 @@ Some CMSIS-Driver implementations for external MCU-independent peripheral device
             <td></td>
             <td></td>
             <td></td>
+            <td></td>
         </tr>
         <tr>
             <td></td>
@@ -1778,6 +1866,7 @@ Some CMSIS-Driver implementations for external MCU-independent peripheral device
             <td><center>&radic;</center></td>
             <td></td>
             <td><center>&radic;</center></td>
+            <td></td>
             <td></td>
             <td></td>
             <td></td>
@@ -1803,6 +1892,7 @@ Some CMSIS-Driver implementations for external MCU-independent peripheral device
             <td></td>
             <td></td>
             <td></td>
+            <td></td>
         </tr>
         <tr>
             <td></td>
@@ -1818,6 +1908,7 @@ Some CMSIS-Driver implementations for external MCU-independent peripheral device
             <td><center>&radic;</center></td>
             <td></td>
             <td><center>&radic;</center></td>
+            <td></td>
             <td></td>
             <td></td>
             <td></td>
@@ -1843,6 +1934,7 @@ Some CMSIS-Driver implementations for external MCU-independent peripheral device
             <td></td>
             <td></td>
             <td></td>
+            <td></td>
         </tr>
         <tr>
             <td></td>
@@ -1858,6 +1950,7 @@ Some CMSIS-Driver implementations for external MCU-independent peripheral device
             <td><center>&radic;</center></td>
             <td></td>
             <td><center>&radic;</center></td>
+            <td></td>
             <td></td>
             <td></td>
             <td></td>
@@ -1883,6 +1976,7 @@ Some CMSIS-Driver implementations for external MCU-independent peripheral device
             <td></td>
             <td></td>
             <td></td>
+            <td></td>
         </tr>
         <tr>
             <td></td>
@@ -1898,6 +1992,7 @@ Some CMSIS-Driver implementations for external MCU-independent peripheral device
             <td><center>&radic;</center></td>
             <td></td>
             <td><center>&radic;</center></td>
+            <td></td>
             <td></td>
             <td></td>
             <td></td>
@@ -1923,6 +2018,7 @@ Some CMSIS-Driver implementations for external MCU-independent peripheral device
             <td></td>
             <td></td>
             <td></td>
+            <td></td>
         </tr>
         <tr>
             <td></td>
@@ -1938,6 +2034,7 @@ Some CMSIS-Driver implementations for external MCU-independent peripheral device
             <td><center>&radic;</center></td>
             <td></td>
             <td><center>&radic;</center></td>
+            <td></td>
             <td></td>
             <td></td>
             <td></td>
@@ -1963,6 +2060,7 @@ Some CMSIS-Driver implementations for external MCU-independent peripheral device
             <td></td>
             <td></td>
             <td></td>
+            <td></td>
         </tr>
         <tr>
             <td></td>
@@ -1978,6 +2076,7 @@ Some CMSIS-Driver implementations for external MCU-independent peripheral device
             <td><center>&radic;</center></td>
             <td></td>
             <td><center>&radic;</center></td>
+            <td></td>
             <td></td>
             <td></td>
             <td></td>
@@ -2003,6 +2102,7 @@ Some CMSIS-Driver implementations for external MCU-independent peripheral device
             <td></td>
             <td></td>
             <td></td>
+            <td></td>
         </tr>
         <tr>
             <td></td>
@@ -2018,6 +2118,7 @@ Some CMSIS-Driver implementations for external MCU-independent peripheral device
             <td><center>&radic;</center></td>
             <td></td>
             <td><center>&radic;</center></td>
+            <td></td>
             <td></td>
             <td></td>
             <td></td>
@@ -2043,6 +2144,7 @@ Some CMSIS-Driver implementations for external MCU-independent peripheral device
             <td></td>
             <td></td>
             <td></td>
+            <td></td>
         </tr>
         <tr>
             <td></td>
@@ -2058,6 +2160,7 @@ Some CMSIS-Driver implementations for external MCU-independent peripheral device
             <td><center>&radic;</center></td>
             <td></td>
             <td><center>&radic;</center></td>
+            <td></td>
             <td></td>
             <td></td>
             <td></td>
@@ -2083,6 +2186,7 @@ Some CMSIS-Driver implementations for external MCU-independent peripheral device
             <td></td>
             <td></td>
             <td></td>
+            <td></td>
         </tr>
         <tr>
             <td></td>
@@ -2098,6 +2202,7 @@ Some CMSIS-Driver implementations for external MCU-independent peripheral device
             <td><center>&radic;</center></td>
             <td></td>
             <td><center>&radic;</center></td>
+            <td></td>
             <td></td>
             <td></td>
             <td></td>
@@ -2123,6 +2228,7 @@ Some CMSIS-Driver implementations for external MCU-independent peripheral device
             <td></td>
             <td></td>
             <td></td>
+            <td></td>
         </tr>
         <tr>
             <td></td>
@@ -2138,6 +2244,7 @@ Some CMSIS-Driver implementations for external MCU-independent peripheral device
             <td><center>&radic;</center></td>
             <td></td>
             <td><center>&radic;</center></td>
+            <td></td>
             <td></td>
             <td></td>
             <td></td>
@@ -2163,6 +2270,7 @@ Some CMSIS-Driver implementations for external MCU-independent peripheral device
             <td></td>
             <td></td>
             <td></td>
+            <td></td>
         </tr>
         <tr>
             <td></td>
@@ -2178,6 +2286,7 @@ Some CMSIS-Driver implementations for external MCU-independent peripheral device
             <td><center>&radic;</center></td>
             <td></td>
             <td><center>&radic;</center></td>
+            <td></td>
             <td></td>
             <td></td>
             <td></td>
@@ -2203,6 +2312,7 @@ Some CMSIS-Driver implementations for external MCU-independent peripheral device
             <td></td>
             <td></td>
             <td></td>
+            <td></td>
         </tr>
         <tr>
             <td></td>
@@ -2218,6 +2328,7 @@ Some CMSIS-Driver implementations for external MCU-independent peripheral device
             <td><center>&radic;</center></td>
             <td></td>
             <td><center>&radic;</center></td>
+            <td></td>
             <td></td>
             <td></td>
             <td></td>
@@ -2243,6 +2354,7 @@ Some CMSIS-Driver implementations for external MCU-independent peripheral device
             <td></td>
             <td></td>
             <td></td>
+            <td></td>
         </tr>
         <tr>
             <td></td>
@@ -2258,6 +2370,7 @@ Some CMSIS-Driver implementations for external MCU-independent peripheral device
             <td><center>&radic;</center></td>
             <td></td>
             <td><center>&radic;</center></td>
+            <td></td>
             <td></td>
             <td></td>
             <td></td>
@@ -2283,6 +2396,7 @@ Some CMSIS-Driver implementations for external MCU-independent peripheral device
             <td></td>
             <td></td>
             <td></td>
+            <td></td>
         </tr>
         <tr>
             <td></td>
@@ -2298,6 +2412,7 @@ Some CMSIS-Driver implementations for external MCU-independent peripheral device
             <td><center>&radic;</center></td>
             <td></td>
             <td><center>&radic;</center></td>
+            <td></td>
             <td></td>
             <td></td>
             <td></td>
@@ -2323,6 +2438,7 @@ Some CMSIS-Driver implementations for external MCU-independent peripheral device
             <td></td>
             <td></td>
             <td></td>
+            <td></td>
         </tr>
         <tr>
             <td></td>
@@ -2338,6 +2454,7 @@ Some CMSIS-Driver implementations for external MCU-independent peripheral device
             <td><center>&radic;</center></td>
             <td></td>
             <td><center>&radic;</center></td>
+            <td></td>
             <td></td>
             <td></td>
             <td></td>
@@ -2363,6 +2480,7 @@ Some CMSIS-Driver implementations for external MCU-independent peripheral device
             <td></td>
             <td></td>
             <td></td>
+            <td></td>
         </tr>
         <tr>
             <td></td>
@@ -2378,6 +2496,7 @@ Some CMSIS-Driver implementations for external MCU-independent peripheral device
             <td><center>&radic;</center></td>
             <td></td>
             <td><center>&radic;</center></td>
+            <td></td>
             <td></td>
             <td></td>
             <td></td>
@@ -2403,6 +2522,7 @@ Some CMSIS-Driver implementations for external MCU-independent peripheral device
             <td></td>
             <td></td>
             <td></td>
+            <td></td>
         </tr>
         <tr>
             <td></td>
@@ -2418,6 +2538,7 @@ Some CMSIS-Driver implementations for external MCU-independent peripheral device
             <td><center>&radic;</center></td>
             <td></td>
             <td><center>&radic;</center></td>
+            <td></td>
             <td></td>
             <td></td>
             <td></td>
@@ -2443,6 +2564,7 @@ Some CMSIS-Driver implementations for external MCU-independent peripheral device
             <td></td>
             <td></td>
             <td></td>
+            <td></td>
         </tr>
         <tr>
             <td></td>
@@ -2458,6 +2580,7 @@ Some CMSIS-Driver implementations for external MCU-independent peripheral device
             <td><center>&radic;</center></td>
             <td></td>
             <td><center>&radic;</center></td>
+            <td></td>
             <td></td>
             <td></td>
             <td></td>
@@ -2483,6 +2606,7 @@ Some CMSIS-Driver implementations for external MCU-independent peripheral device
             <td></td>
             <td></td>
             <td></td>
+            <td></td>
         </tr>
         <tr>
             <td></td>
@@ -2498,6 +2622,7 @@ Some CMSIS-Driver implementations for external MCU-independent peripheral device
             <td><center>&radic;</center></td>
             <td></td>
             <td><center>&radic;</center></td>
+            <td></td>
             <td></td>
             <td></td>
             <td></td>
@@ -2523,6 +2648,7 @@ Some CMSIS-Driver implementations for external MCU-independent peripheral device
             <td></td>
             <td></td>
             <td></td>
+            <td></td>
         </tr>
         <tr>
             <td></td>
@@ -2538,6 +2664,7 @@ Some CMSIS-Driver implementations for external MCU-independent peripheral device
             <td><center>&radic;</center></td>
             <td></td>
             <td><center>&radic;</center></td>
+            <td></td>
             <td></td>
             <td></td>
             <td></td>
@@ -2563,6 +2690,7 @@ Some CMSIS-Driver implementations for external MCU-independent peripheral device
             <td></td>
             <td></td>
             <td></td>
+            <td></td>
         </tr>
         <tr>
             <td></td>
@@ -2583,6 +2711,7 @@ Some CMSIS-Driver implementations for external MCU-independent peripheral device
             <td></td>
             <td></td>
             <td></td>
+            <td></td>
         </tr>
         <tr>
             <td></td>
@@ -2598,6 +2727,7 @@ Some CMSIS-Driver implementations for external MCU-independent peripheral device
             <td><center>&radic;</center></td>
             <td></td>
             <td><center>&radic;</center></td>
+            <td></td>
             <td></td>
             <td></td>
             <td></td>
@@ -2623,6 +2753,7 @@ Some CMSIS-Driver implementations for external MCU-independent peripheral device
             <td></td>
             <td></td>
             <td></td>
+            <td></td>
         </tr>
         <tr>
             <td></td>
@@ -2638,6 +2769,7 @@ Some CMSIS-Driver implementations for external MCU-independent peripheral device
             <td><center>&radic;</center></td>
             <td></td>
             <td><center>&radic;</center></td>
+            <td></td>
             <td></td>
             <td></td>
             <td></td>
@@ -2663,6 +2795,7 @@ Some CMSIS-Driver implementations for external MCU-independent peripheral device
             <td></td>
             <td></td>
             <td></td>
+            <td></td>
         </tr>
         <tr>
             <td></td>
@@ -2678,6 +2811,7 @@ Some CMSIS-Driver implementations for external MCU-independent peripheral device
             <td><center>&radic;</center></td>
             <td></td>
             <td><center>&radic;</center></td>
+            <td></td>
             <td></td>
             <td></td>
             <td></td>
@@ -2703,6 +2837,7 @@ Some CMSIS-Driver implementations for external MCU-independent peripheral device
             <td></td>
             <td></td>
             <td></td>
+            <td></td>
         </tr>
         <tr>
             <td></td>
@@ -2718,6 +2853,7 @@ Some CMSIS-Driver implementations for external MCU-independent peripheral device
             <td><center>&radic;</center></td>
             <td></td>
             <td><center>&radic;</center></td>
+            <td></td>
             <td></td>
             <td></td>
             <td></td>
@@ -2743,6 +2879,7 @@ Some CMSIS-Driver implementations for external MCU-independent peripheral device
             <td></td>
             <td></td>
             <td></td>
+            <td></td>
         </tr>
         <tr>
             <td></td>
@@ -2758,6 +2895,7 @@ Some CMSIS-Driver implementations for external MCU-independent peripheral device
             <td><center>&radic;</center></td>
             <td></td>
             <td><center>&radic;</center></td>
+            <td></td>
             <td></td>
             <td></td>
             <td></td>
@@ -2783,6 +2921,7 @@ Some CMSIS-Driver implementations for external MCU-independent peripheral device
             <td></td>
             <td></td>
             <td></td>
+            <td></td>
         </tr>
         <tr>
             <td></td>
@@ -2798,6 +2937,7 @@ Some CMSIS-Driver implementations for external MCU-independent peripheral device
             <td><center>&radic;</center></td>
             <td></td>
             <td><center>&radic;</center></td>
+            <td></td>
             <td></td>
             <td></td>
             <td></td>
@@ -2823,6 +2963,7 @@ Some CMSIS-Driver implementations for external MCU-independent peripheral device
             <td></td>
             <td></td>
             <td></td>
+            <td></td>
         </tr>
         <tr>
             <td></td>
@@ -2838,6 +2979,7 @@ Some CMSIS-Driver implementations for external MCU-independent peripheral device
             <td><center>&radic;</center></td>
             <td></td>
             <td><center>&radic;</center></td>
+            <td></td>
             <td></td>
             <td></td>
             <td></td>
@@ -2863,6 +3005,7 @@ Some CMSIS-Driver implementations for external MCU-independent peripheral device
             <td></td>
             <td></td>
             <td></td>
+            <td></td>
         </tr>
         <tr>
             <td></td>
@@ -2878,6 +3021,7 @@ Some CMSIS-Driver implementations for external MCU-independent peripheral device
             <td><center>&radic;</center></td>
             <td></td>
             <td><center>&radic;</center></td>
+            <td></td>
             <td></td>
             <td></td>
             <td></td>
@@ -2903,6 +3047,7 @@ Some CMSIS-Driver implementations for external MCU-independent peripheral device
             <td></td>
             <td></td>
             <td></td>
+            <td></td>
         </tr>
         <tr>
             <td></td>
@@ -2918,6 +3063,7 @@ Some CMSIS-Driver implementations for external MCU-independent peripheral device
             <td><center>&radic;</center></td>
             <td></td>
             <td><center>&radic;</center></td>
+            <td></td>
             <td></td>
             <td></td>
             <td></td>
@@ -2943,6 +3089,7 @@ Some CMSIS-Driver implementations for external MCU-independent peripheral device
             <td></td>
             <td></td>
             <td></td>
+            <td></td>
         </tr>
         <tr>
             <td></td>
@@ -2958,6 +3105,7 @@ Some CMSIS-Driver implementations for external MCU-independent peripheral device
             <td><center>&radic;</center></td>
             <td></td>
             <td><center>&radic;</center></td>
+            <td></td>
             <td></td>
             <td></td>
             <td></td>
@@ -2983,6 +3131,7 @@ Some CMSIS-Driver implementations for external MCU-independent peripheral device
             <td></td>
             <td></td>
             <td></td>
+            <td></td>
         </tr>
         <tr>
             <td></td>
@@ -2998,6 +3147,7 @@ Some CMSIS-Driver implementations for external MCU-independent peripheral device
             <td><center>&radic;</center></td>
             <td></td>
             <td><center>&radic;</center></td>
+            <td></td>
             <td></td>
             <td></td>
             <td></td>
@@ -3023,6 +3173,7 @@ Some CMSIS-Driver implementations for external MCU-independent peripheral device
             <td></td>
             <td></td>
             <td></td>
+            <td></td>
         </tr>
         <tr>
             <td></td>
@@ -3038,6 +3189,7 @@ Some CMSIS-Driver implementations for external MCU-independent peripheral device
             <td><center>&radic;</center></td>
             <td></td>
             <td><center>&radic;</center></td>
+            <td></td>
             <td></td>
             <td></td>
             <td></td>
@@ -3063,6 +3215,7 @@ Some CMSIS-Driver implementations for external MCU-independent peripheral device
             <td></td>
             <td></td>
             <td></td>
+            <td></td>
         </tr>
         <tr>
             <td></td>
@@ -3078,6 +3231,7 @@ Some CMSIS-Driver implementations for external MCU-independent peripheral device
             <td><center>&radic;</center></td>
             <td></td>
             <td><center>&radic;</center></td>
+            <td></td>
             <td></td>
             <td></td>
             <td></td>
@@ -3103,6 +3257,7 @@ Some CMSIS-Driver implementations for external MCU-independent peripheral device
             <td></td>
             <td></td>
             <td></td>
+            <td></td>
         </tr>
         <tr>
             <td></td>
@@ -3118,6 +3273,7 @@ Some CMSIS-Driver implementations for external MCU-independent peripheral device
             <td><center>&radic;</center></td>
             <td></td>
             <td><center>&radic;</center></td>
+            <td></td>
             <td></td>
             <td></td>
             <td></td>
@@ -3143,6 +3299,7 @@ Some CMSIS-Driver implementations for external MCU-independent peripheral device
             <td></td>
             <td></td>
             <td></td>
+            <td></td>
         </tr>
         <tr>
             <td></td>
@@ -3158,6 +3315,7 @@ Some CMSIS-Driver implementations for external MCU-independent peripheral device
             <td><center>&radic;</center></td>
             <td></td>
             <td><center>&radic;</center></td>
+            <td></td>
             <td></td>
             <td></td>
             <td></td>
@@ -3183,6 +3341,7 @@ Some CMSIS-Driver implementations for external MCU-independent peripheral device
             <td></td>
             <td></td>
             <td></td>
+            <td></td>
         </tr>
         <tr>
             <td></td>
@@ -3198,6 +3357,7 @@ Some CMSIS-Driver implementations for external MCU-independent peripheral device
             <td><center>&radic;</center></td>
             <td></td>
             <td><center>&radic;</center></td>
+            <td></td>
             <td></td>
             <td></td>
             <td></td>
@@ -3223,6 +3383,7 @@ Some CMSIS-Driver implementations for external MCU-independent peripheral device
             <td></td>
             <td></td>
             <td></td>
+            <td></td>
         </tr>
         <tr>
             <td></td>
@@ -3238,6 +3399,7 @@ Some CMSIS-Driver implementations for external MCU-independent peripheral device
             <td><center>&radic;</center></td>
             <td></td>
             <td><center>&radic;</center></td>
+            <td></td>
             <td></td>
             <td></td>
             <td></td>
@@ -3263,6 +3425,7 @@ Some CMSIS-Driver implementations for external MCU-independent peripheral device
             <td></td>
             <td></td>
             <td></td>
+            <td></td>
         </tr>
         <tr>
             <td></td>
@@ -3278,6 +3441,7 @@ Some CMSIS-Driver implementations for external MCU-independent peripheral device
             <td><center>&radic;</center></td>
             <td></td>
             <td><center>&radic;</center></td>
+            <td></td>
             <td></td>
             <td></td>
             <td></td>
@@ -3303,6 +3467,7 @@ Some CMSIS-Driver implementations for external MCU-independent peripheral device
             <td></td>
             <td></td>
             <td></td>
+            <td></td>
         </tr>
         <tr>
             <td></td>
@@ -3318,6 +3483,7 @@ Some CMSIS-Driver implementations for external MCU-independent peripheral device
             <td><center>&radic;</center></td>
             <td></td>
             <td><center>&radic;</center></td>
+            <td></td>
             <td></td>
             <td></td>
             <td></td>
@@ -3343,6 +3509,7 @@ Some CMSIS-Driver implementations for external MCU-independent peripheral device
             <td></td>
             <td></td>
             <td></td>
+            <td></td>
         </tr>
         <tr>
             <td></td>
@@ -3358,6 +3525,7 @@ Some CMSIS-Driver implementations for external MCU-independent peripheral device
             <td><center>&radic;</center></td>
             <td></td>
             <td><center>&radic;</center></td>
+            <td></td>
             <td></td>
             <td></td>
             <td></td>
@@ -3383,6 +3551,7 @@ Some CMSIS-Driver implementations for external MCU-independent peripheral device
             <td></td>
             <td></td>
             <td></td>
+            <td></td>
         </tr>
         <tr>
             <td></td>
@@ -3398,6 +3567,7 @@ Some CMSIS-Driver implementations for external MCU-independent peripheral device
             <td><center>&radic;</center></td>
             <td></td>
             <td><center>&radic;</center></td>
+            <td></td>
             <td></td>
             <td></td>
             <td></td>
@@ -3423,6 +3593,7 @@ Some CMSIS-Driver implementations for external MCU-independent peripheral device
             <td></td>
             <td></td>
             <td></td>
+            <td></td>
         </tr>
         <tr>
             <td></td>
@@ -3438,6 +3609,7 @@ Some CMSIS-Driver implementations for external MCU-independent peripheral device
             <td><center>&radic;</center></td>
             <td></td>
             <td><center>&radic;</center></td>
+            <td></td>
             <td></td>
             <td></td>
             <td></td>
@@ -3463,6 +3635,7 @@ Some CMSIS-Driver implementations for external MCU-independent peripheral device
             <td></td>
             <td></td>
             <td></td>
+            <td></td>
         </tr>
         <tr>
             <td></td>
@@ -3478,6 +3651,7 @@ Some CMSIS-Driver implementations for external MCU-independent peripheral device
             <td><center>&radic;</center></td>
             <td></td>
             <td><center>&radic;</center></td>
+            <td></td>
             <td></td>
             <td></td>
             <td></td>
@@ -3503,6 +3677,7 @@ Some CMSIS-Driver implementations for external MCU-independent peripheral device
             <td></td>
             <td></td>
             <td></td>
+            <td></td>
         </tr>
         <tr>
             <td></td>
@@ -3518,6 +3693,7 @@ Some CMSIS-Driver implementations for external MCU-independent peripheral device
             <td><center>&radic;</center></td>
             <td></td>
             <td><center>&radic;</center></td>
+            <td></td>
             <td></td>
             <td></td>
             <td></td>
@@ -3543,6 +3719,7 @@ Some CMSIS-Driver implementations for external MCU-independent peripheral device
             <td></td>
             <td></td>
             <td></td>
+            <td></td>
         </tr>
         <tr>
             <td></td>
@@ -3558,6 +3735,7 @@ Some CMSIS-Driver implementations for external MCU-independent peripheral device
             <td><center>&radic;</center></td>
             <td></td>
             <td><center>&radic;</center></td>
+            <td></td>
             <td></td>
             <td></td>
             <td></td>
@@ -3583,6 +3761,7 @@ Some CMSIS-Driver implementations for external MCU-independent peripheral device
             <td></td>
             <td></td>
             <td></td>
+            <td></td>
         </tr>
         <tr>
             <td></td>
@@ -3598,6 +3777,7 @@ Some CMSIS-Driver implementations for external MCU-independent peripheral device
             <td><center>&radic;</center></td>
             <td></td>
             <td><center>&radic;</center></td>
+            <td></td>
             <td></td>
             <td></td>
             <td></td>
@@ -3623,6 +3803,7 @@ Some CMSIS-Driver implementations for external MCU-independent peripheral device
             <td></td>
             <td></td>
             <td></td>
+            <td></td>
         </tr>
         <tr>
             <td></td>
@@ -3638,6 +3819,7 @@ Some CMSIS-Driver implementations for external MCU-independent peripheral device
             <td><center>&radic;</center></td>
             <td></td>
             <td><center>&radic;</center></td>
+            <td></td>
             <td></td>
             <td></td>
             <td></td>
@@ -3663,6 +3845,7 @@ Some CMSIS-Driver implementations for external MCU-independent peripheral device
             <td></td>
             <td></td>
             <td></td>
+            <td></td>
         </tr>
         <tr>
             <td></td>
@@ -3683,10 +3866,12 @@ Some CMSIS-Driver implementations for external MCU-independent peripheral device
             <td></td>
             <td><center>&radic;</center></td>
             <td></td>
+            <td></td>
         </tr>
         <tr>
             <td>Qualcomm</td>
             <td>QCA400x</td>
+            <td></td>
             <td></td>
             <td></td>
             <td></td>
@@ -3723,6 +3908,7 @@ Some CMSIS-Driver implementations for external MCU-independent peripheral device
             <td></td>
             <td></td>
             <td></td>
+            <td></td>
         </tr>
         <tr>
             <td></td>
@@ -3743,6 +3929,7 @@ Some CMSIS-Driver implementations for external MCU-independent peripheral device
             <td></td>
             <td></td>
             <td></td>
+            <td></td>
         </tr>
         <tr>
             <td>Renesas</td>
@@ -3754,6 +3941,7 @@ Some CMSIS-Driver implementations for external MCU-independent peripheral device
             <td></td>
             <td></td>
             <td><center>&radic;</center></td>
+            <td></td>
             <td></td>
             <td></td>
             <td></td>
@@ -3783,10 +3971,12 @@ Some CMSIS-Driver implementations for external MCU-independent peripheral device
             <td></td>
             <td></td>
             <td></td>
+            <td></td>
         </tr>
         <tr>
             <td></td>
             <td>DA16200</td>
+            <td></td>
             <td></td>
             <td></td>
             <td></td>
@@ -3823,6 +4013,7 @@ Some CMSIS-Driver implementations for external MCU-independent peripheral device
             <td></td>
             <td><center>&radic;</center></td>
             <td></td>
+            <td></td>
         </tr>
         <tr>
             <td>STMicroelectronics</td>
@@ -3840,6 +4031,7 @@ Some CMSIS-Driver implementations for external MCU-independent peripheral device
             <td><center>&radic;</center></td>
             <td></td>
             <td><center>&radic;</center></td>
+            <td></td>
             <td></td>
             <td></td>
             <td></td>
@@ -3863,6 +4055,7 @@ Some CMSIS-Driver implementations for external MCU-independent peripheral device
             <td></td>
             <td></td>
             <td></td>
+            <td></td>
         </tr>
         <tr>
             <td></td>
@@ -3880,6 +4073,7 @@ Some CMSIS-Driver implementations for external MCU-independent peripheral device
             <td><center>&radic;</center></td>
             <td><center>&radic;</center></td>
             <td><center>&radic;</center></td>
+            <td></td>
             <td></td>
             <td></td>
             <td></td>
@@ -3903,6 +4097,7 @@ Some CMSIS-Driver implementations for external MCU-independent peripheral device
             <td></td>
             <td></td>
             <td></td>
+            <td></td>
         </tr>
         <tr>
             <td></td>
@@ -3920,6 +4115,7 @@ Some CMSIS-Driver implementations for external MCU-independent peripheral device
             <td><center>&radic;</center></td>
             <td><center>&radic;</center></td>
             <td><center>&radic;</center></td>
+            <td></td>
             <td></td>
             <td></td>
             <td></td>
@@ -3943,6 +4139,7 @@ Some CMSIS-Driver implementations for external MCU-independent peripheral device
             <td></td>
             <td><center>&radic;</center></td>
             <td></td>
+            <td></td>
         </tr>
         <tr>
             <td></td>
@@ -3962,6 +4159,7 @@ Some CMSIS-Driver implementations for external MCU-independent peripheral device
             <td></td>
             <td></td>
             <td><center>&radic;</center></td>
+            <td></td>
             <td></td>
         </tr>
         <tr>
@@ -3983,6 +4181,7 @@ Some CMSIS-Driver implementations for external MCU-independent peripheral device
             <td></td>
             <td><center>&radic;</center></td>
             <td></td>
+            <td></td>
         </tr>
         <tr>
             <td></td>
@@ -4003,6 +4202,7 @@ Some CMSIS-Driver implementations for external MCU-independent peripheral device
             <td></td>
             <td><center>&radic;</center></td>
             <td></td>
+            <td></td>
         </tr>
         <tr>
             <td></td>
@@ -4020,6 +4220,7 @@ Some CMSIS-Driver implementations for external MCU-independent peripheral device
             <td><center>&radic;</center></td>
             <td></td>
             <td><center>&radic;</center></td>
+            <td></td>
             <td></td>
             <td></td>
             <td></td>
@@ -4043,6 +4244,7 @@ Some CMSIS-Driver implementations for external MCU-independent peripheral device
             <td></td>
             <td><center>&radic;</center></td>
             <td></td>
+            <td></td>
         </tr>
         <tr>
             <td></td>
@@ -4060,6 +4262,7 @@ Some CMSIS-Driver implementations for external MCU-independent peripheral device
             <td><center>&radic;</center></td>
             <td><center>&radic;</center></td>
             <td><center>&radic;</center></td>
+            <td></td>
             <td></td>
             <td></td>
             <td></td>
@@ -4083,6 +4286,7 @@ Some CMSIS-Driver implementations for external MCU-independent peripheral device
             <td></td>
             <td><center>&radic;</center></td>
             <td></td>
+            <td></td>
         </tr>
         <tr>
             <td></td>
@@ -4103,6 +4307,7 @@ Some CMSIS-Driver implementations for external MCU-independent peripheral device
             <td></td>
             <td><center>&radic;</center></td>
             <td></td>
+            <td></td>
         </tr>
         <tr>
             <td></td>
@@ -4110,6 +4315,7 @@ Some CMSIS-Driver implementations for external MCU-independent peripheral device
             <td></td>
             <td></td>
             <td><center>&radic;</center></td>
+            <td></td>
             <td></td>
             <td></td>
             <td></td>
@@ -4143,10 +4349,12 @@ Some CMSIS-Driver implementations for external MCU-independent peripheral device
             <td></td>
             <td></td>
             <td></td>
+            <td></td>
         </tr>
         <tr>
             <td>WizNet</td>
             <td>WizFi360</td>
+            <td></td>
             <td></td>
             <td></td>
             <td></td>
