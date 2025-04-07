@@ -14,5 +14,6 @@ var modules =
     [ "USB Interface", "group__usb__interface__gr.html", "group__usb__interface__gr" ],
     [ "GPIO Interface", "group__gpio__interface__gr.html", "group__gpio__interface__gr" ],
     [ "VIO", "group__vio__interface__gr.html", "group__vio__interface__gr" ],
+    [ "vStream", "group__vstream__interface__gr.html", "group__vstream__interface__gr" ],
     [ "WiFi Interface", "group__wifi__interface__gr.html", "group__wifi__interface__gr" ]
 ];

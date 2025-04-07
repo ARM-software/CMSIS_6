@@ -1,7 +1,7 @@
 //--- list of versions ---
 const versions = {
     "General": {
-        "main": "6.1.1-dev32",
+        "main": "6.1.1-dev33",
         "latest": "6.1.0",
         "v6.0.0": "6.0.0"
     },
@@ -14,6 +14,7 @@ const versions = {
         "v6.0.0": "6.0.0"
     },
     "Driver": {
+        "main": "2.11.0",
         "latest": "2.10.0",
         "v6.0.0": "2.9.0"
     },
