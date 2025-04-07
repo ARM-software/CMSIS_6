@@ -552,7 +552,7 @@
         <file category="other"  name="CMSIS/Driver/VIO/cmsis_vio.scvd" />
       </files>
     </api>
-    <api Cclass="CMSIS Driver" Cgroup="vStream" Capiversion="1.0.0" exclusive="1">
+    <api Cclass="CMSIS Driver" Cgroup="vStream" Capiversion="1.0.0" exclusive="0">
       <description>Virtual Streaming interface Driver API</description>
       <files>
         <file category="doc"    name="CMSIS/Documentation/html/Driver/group__vstream__interface__gr.html" />
