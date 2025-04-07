@@ -15,6 +15,8 @@
   <releases>
     <release version="6.2.0-dev">
       Active development ...
+      CMSIS-Driver: 2.11.0
+        - Added vStream Driver API 1.0.0
     </release>
     <release version="5.9.0" date="2022-05-02">
       CMSIS-Core(M): 5.6.0
@@ -550,6 +552,13 @@
         <file category="other"  name="CMSIS/Driver/VIO/cmsis_vio.scvd" />
       </files>
     </api>
+    <api Cclass="CMSIS Driver" Cgroup="vStream" Capiversion="1.0.0" exclusive="1">
+      <description>Virtual Streaming interface Driver API</description>
+      <files>
+        <file category="doc"    name="CMSIS/Documentation/html/Driver/group__vstream__interface__gr.html" />
+        <file category="header" name="CMSIS/Driver/vStream/Include/cmsis_vstream.h" />
+      </files>
+    </api>
   </apis>
 
   <!-- conditions are dependency rules that can apply to a component or an individual file -->
@@ -798,6 +807,14 @@
       <description>Virtual I/O implementation using memory only</description>
       <files>
         <file category="sourceC" name="CMSIS/Driver/VIO/Source/vio_memory.c"/>
+      </files>
+    </component>
+
+    <!-- Virtual Streaming custom component -->
+    <component Cclass="CMSIS Driver" Cgroup="vStream" Csub="Custom" Cversion="1.0.0" Capiversion="1.0.0" custom="1">
+      <description>Virtual Streaming interface Driver custom implementation template</description>
+      <files>
+        <file category="sourceC" name="CMSIS/Driver/vStream/Template/vstream.c" attr="template" select="vStream Driver"/>
       </files>
     </component>
 
