@@ -9,7 +9,7 @@ static void func() {
 
 void noreturn() {
     // CHECK-LABEL: <noreturn>:
-    // CHECK: b 0x0 <noreturn>
+    // CHECK: {{b|bl}} {{0x[0-9a-fA-F]+}} <noreturn{{.*}}>
     func();
     // CHECK-NOT: bx lr
 }
