@@ -1,0 +1,7 @@
+function writeHeader() {
+    document.write('Version 6.1.0');
+};
+
+function writeFooter()  {
+    document.write('Generated on Tue Apr 22 2025 09:52:33 for CMSIS-Core (Cortex-A) 6.1.0. Copyright &copy; 2025 Arm Limited (or its affiliates). All rights reserved.');
+};
