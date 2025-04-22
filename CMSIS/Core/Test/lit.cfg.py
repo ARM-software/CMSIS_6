@@ -117,7 +117,7 @@ DEVICES = {
         'triple': 'thumbv7-em',
         'abi': 'eabi',
         'mcpu': 'cortex-m7',
-        'mfpu': 'fpv4-sp-d16',
+        'mfpu': 'fpv5-sp-d16',
         'mpu': True,
         'features': ['thumbv6m', 'thumbv7m', 'dsp', 'thumb-2', 'sat', 'ldrex', 'clz'],
         'header': 'core_cm7.h',
@@ -847,6 +847,54 @@ class Toolchain_Clang(Toolchain):
 
         return ccflags
     
+class Toolchain_IAR(Toolchain):
+    OPTIMIZE = {
+        'none': '-On',
+        'balanced': '-Oh',
+        'speed': '-Ohs',
+        'size': '-Ohz'
+    }
+    FPU = {
+        'none': 'none',
+        'fpv4-sp-d16': 'VFPv4-SP',
+        'fpv5-sp-d16': 'VFPv5-SP',
+        'fpv5-d16': 'VFPv5_D16',
+        'neon-vfpv3': 'VFPv3',
+        'neon-vfpv4': 'VFPv4',
+    }
+    CPU = {
+        'CA5': 'Cortex-A5',
+        'CA5neon': 'Cortex-A5.neon',
+        'CA7': 'Cortex-A7.no_neon',
+        'CA7neon': 'Cortex-A7',
+        'CA9': 'Cortex-A9.no_neon',
+        'CA9neon': 'Cortex-A9',
+    }
+    def __init__(self, **args):
+        super().__init__('IAR', **args)
+
+    def get_cc(self):
+        return os.path.join(self.get_root(), 'iccarm')
+    
+    def cpu(self):
+        if self.device in self.CPU:
+            return self.CPU[self.device]
+        return DEVICES[self.device]["mcpu"]
+
+    def fpu(self):
+        return self.FPU[DEVICES[self.device]["mfpu"]]
+
+    def get_ccflags(self):
+        ccflags = [
+            self.OPTIMIZE[self.optimize], 
+            f'--cpu={self.cpu()}', f'--fpu={self.fpu()}', 
+            '-I', os.path.abspath('../Include'), '-c', '-D', f'CORE_HEADER="{DEVICES[device]["header"]}"']
+        if device.endswith('S') and not device.endswith('NS'):
+            ccflags += ["--cmse"]
+        ccflags += list(sum([('-D', f'{define}={value}') for (define, value) in DEVICES[self.device]['defines'].items()], ()))
+
+        return ccflags
+    
 tc = None
 if toolchain == 'AC6':
     tc = Toolchain_AC6(device=device, optimize=optimize)
@@ -854,6 +902,8 @@ elif toolchain == 'GCC':
     tc = Toolchain_GCC(device=device, optimize=optimize)
 elif toolchain == 'Clang':
     tc = Toolchain_Clang(device=device, optimize=optimize)
+elif toolchain == 'IAR':
+    tc = Toolchain_IAR(device=device, optimize=optimize)
 
 prefixes = ['CHECK']
 if device.endswith('NS'):
@@ -864,6 +914,10 @@ if DEVICES[device]['arch'].startswith('thumb'):
     prefixes += ['CHECK-THUMB']       
 elif DEVICES[device]['arch'].startswith('arm'):
     prefixes += ['CHECK-ARM']
+if toolchain == 'IAR':
+    prefixes += ['CHECK-IAR']
+else:
+    prefixes += ['CHECK-NON-IAR']
 
 if DEVICES[device]["mfpu"] != 'none':
     config.available_features.add('fpu')
