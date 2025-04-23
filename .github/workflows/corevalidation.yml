@@ -21,12 +21,13 @@ jobs:
     strategy:
       fail-fast: true
       matrix:
-        compiler: [AC6, GCC, Clang]
+        compiler: [AC6, GCC, Clang, IAR]
     
     runs-on: ubuntu-22.04
 
     env:
       ARM_UBL_ACTIVATION_CODE: ${{ secrets.ARM_UBL_ACTIVATION_CODE }}
+      IAR_LMS_BEARER_TOKEN: ${{ secrets.IAR_LMS_BEARER_TOKEN }}
 
     steps:
       - run: |
