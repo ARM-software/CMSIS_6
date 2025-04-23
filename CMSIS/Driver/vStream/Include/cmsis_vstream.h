@@ -104,7 +104,7 @@ typedef void (*vStreamEvent_t) (uint32_t event_flags);  ///< Pointer to \ref vSt
 /**
 \brief Access structure of the Virtual Streaming interface Driver.
 */
-typedef struct {
+typedef struct vStreamDriver_s {
   int32_t         (*Initialize)   (vStreamEvent_t event_cb);                              ///< Pointer to \ref vStreamInitialize : Initialize Virtual Streaming interface.
   int32_t         (*Uninitialize) (void);                                                 ///< Pointer to \ref vStreamUninitialize : De-initialize Virtual Streaming interface.
   int32_t         (*SetBuf)       (void *buf, uint32_t buf_size, uint32_t block_size);    ///< Pointer to \ref vStreamSetBuf : Set Virtual Streaming data buffer.
