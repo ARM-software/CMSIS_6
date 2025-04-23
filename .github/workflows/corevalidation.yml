@@ -21,7 +21,7 @@ jobs:
     strategy:
       fail-fast: true
       matrix:
-        compiler: [AC6, GCC, Clang, IAR]
+        compiler: [IAR]
     
     runs-on: ubuntu-22.04
 
@@ -68,7 +68,13 @@ jobs:
         uses: ARM-software/cmsis-actions/vcpkg@v1
         with:
           config: ./CMSIS/CoreValidation/Project/vcpkg-configuration.json
-          
+      
+      - name: Inspect IAR Toolchain
+        run: |
+          iccarm --version
+          ilinkarm --version
+          iarchive --version
+
       - name: Activate Arm tool license
         uses: ARM-software/cmsis-actions/armlm@v1
         with:
