@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2023 ARM Limited. All rights reserved.
+ * Copyright (c) 2023-2025 ARM Limited. All rights reserved.
  *
  * SPDX-License-Identifier: Apache-2.0
  *
@@ -15,7 +15,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  *
- * $Date:        2. March 2023
+ * $Date:        24. April 2025
  * $Revision:    V1.0
  *
  * Project:      GPIO (General-purpose Input/Output) Driver definitions
@@ -137,7 +137,7 @@ typedef void (*ARM_GPIO_SignalEvent_t) (ARM_GPIO_Pin_t pin, uint32_t event);  /*
 /**
 \brief Access structure of the GPIO Driver.
 */
-typedef struct {
+typedef struct _ARM_DRIVER_GPIO {
   int32_t  (*Setup)           (ARM_GPIO_Pin_t pin, ARM_GPIO_SignalEvent_t cb_event); ///< Pointer to \ref ARM_GPIO_Setup : Setup GPIO Interface.
   int32_t  (*SetDirection)    (ARM_GPIO_Pin_t pin, ARM_GPIO_DIRECTION direction);    ///< Pointer to \ref ARM_GPIO_SetDirection : Set GPIO Direction.
   int32_t  (*SetOutputMode)   (ARM_GPIO_Pin_t pin, ARM_GPIO_OUTPUT_MODE mode);       ///< Pointer to \ref ARM_GPIO_SetOutputMode : Set GPIO Output Mode.
