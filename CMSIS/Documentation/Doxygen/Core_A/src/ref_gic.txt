@@ -296,8 +296,9 @@ includes control of the end of interrupt (EOI) behavior.
 
 | Bits    | Name          | Function                                                       |
 | :------ | :------------ | :------------------------------------------------------------- |
-| [31:24] | -             | Reserved.                                                      |
-| [23:0]  | INTID         | The INTID of the signaled interrupt.                           |
+| [31:13] | -             | Reserved.                                                      |
+| [12:10] | CPUID         | On a multiprocessor implementation this identifies the processor that generated the interrupt |
+|  [9:0]  | INTID         | The INTID of the signaled interrupt.                           |
 
 \var  __IM uint32_t GICInterface_Type::IIDR
 \details CPU Interface Identification Register
