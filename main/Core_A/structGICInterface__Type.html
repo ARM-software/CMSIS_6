@@ -394,9 +394,11 @@ Data Fields</h2></td></tr>
 <tr class="markdownTableHead">
 <th class="markdownTableHeadLeft">Bits   </th><th class="markdownTableHeadLeft">Name   </th><th class="markdownTableHeadLeft">Function    </th></tr>
 <tr class="markdownTableRowOdd">
-<td class="markdownTableBodyLeft">[31:24]   </td><td class="markdownTableBodyLeft">-   </td><td class="markdownTableBodyLeft">Reserved.    </td></tr>
+<td class="markdownTableBodyLeft">[31:13]   </td><td class="markdownTableBodyLeft">-   </td><td class="markdownTableBodyLeft">Reserved.    </td></tr>
 <tr class="markdownTableRowEven">
-<td class="markdownTableBodyLeft">[23:0]   </td><td class="markdownTableBodyLeft">INTID   </td><td class="markdownTableBodyLeft">The INTID of the signaled interrupt.   </td></tr>
+<td class="markdownTableBodyLeft">[12:10]   </td><td class="markdownTableBodyLeft">CPUID   </td><td class="markdownTableBodyLeft">On a multiprocessor implementation this identifies the processor that generated the interrupt    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyLeft">[9:0]   </td><td class="markdownTableBodyLeft">INTID   </td><td class="markdownTableBodyLeft">The INTID of the signaled interrupt.   </td></tr>
 </table>
 
 </div>
