@@ -21,12 +21,13 @@ jobs:
     strategy:
       fail-fast: true
       matrix:
-        compiler: [AC6, GCC, Clang]
+        compiler: [IAR]
     
     runs-on: ubuntu-22.04
 
     env:
       ARM_UBL_ACTIVATION_CODE: ${{ secrets.ARM_UBL_ACTIVATION_CODE }}
+      IAR_LMS_BEARER_TOKEN: ${{ secrets.IAR_LMS_BEARER_TOKEN }}
 
     steps:
       - run: |
@@ -67,7 +68,13 @@ jobs:
         uses: ARM-software/cmsis-actions/vcpkg@v1
         with:
           config: ./CMSIS/CoreValidation/Project/vcpkg-configuration.json
-          
+      
+      - name: Inspect IAR Toolchain
+        run: |
+          iccarm --version
+          ilinkarm --version
+          iarchive --version
+
       - name: Activate Arm tool license
         uses: ARM-software/cmsis-actions/armlm@v1
         with:
