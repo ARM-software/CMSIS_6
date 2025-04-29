@@ -1551,7 +1551,7 @@ typedef struct
 #endif
 
 
-#if defined (__ARM_FEATURE_CMSE) && (__ARM_FEATURE_CMSE == 3U)
+#if defined (__ARM_FEATURE_CMSE)
 /**
   \ingroup  CMSIS_core_register
   \defgroup CMSIS_SAU     Security Attribution Unit (SAU)
@@ -1635,7 +1635,7 @@ typedef struct
 #define SAU_SFSR_INVEP_Msk                 (1UL /*<< SAU_SFSR_INVEP_Pos*/)                /*!< SAU SFSR: INVEP Mask */
 
 /*@} end of group CMSIS_SAU */
-#endif /* defined (__ARM_FEATURE_CMSE) && (__ARM_FEATURE_CMSE == 3U) */
+#endif /* defined (__ARM_FEATURE_CMSE) */
 
 
 /**
