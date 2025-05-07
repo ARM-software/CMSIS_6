@@ -287,7 +287,7 @@ void *vStreamGetBlock (void) { return NULL; }
 /**
 \fn void *vStreamGetBlock (void)
 \details
-This function provides access to the current data block used for input or output operations,
+This function provides access to the data block used for input or output operations,
 depending on the streaming direction.
 
 - For input streams (receiving data): returns a pointer to the oldest unread data block.  
@@ -331,12 +331,12 @@ int32_t vStreamReleaseBlock (void) { return VSTREAM_OK; }
 /**
 \fn int32_t vStreamReleaseBlock (void)
 \details
-This function finalizes the use of the current data block returned by \ref vStreamGetBlock.
+This function finalizes the use of the data block returned by \ref vStreamGetBlock.
 
 - For input streams: marks the block as processed, making it available for reuse by the driver.
 - For output streams: commits the block for transmission, indicating that the data is ready to be streamed out.
 
-This function must be called after processing or preparing each data block to maintain proper buffer flow and avoid data loss or stalling.
+This function must be called after processing or preparing the data block returned by \ref vStreamGetBlock to maintain proper buffer flow and avoid data loss or stalling.
 
 <b>Code Example</b>:
 \code
@@ -435,8 +435,8 @@ The following events can be signaled:
   or when a block of outgoing data was streamed out.</td>
 </tr>
 <tr>
-  <td> \ref VSTREAM_EVENT_OVERFLOW </td><td>  1  </td><td> Occurs when a block of data was overwritten because
-  it was not released in time with \ref vStreamReleaseBlock function.</td>
+  <td> \ref VSTREAM_EVENT_OVERFLOW </td><td>  1  </td><td> Occurs when a block of incoming data begins to be overwritten
+  because it was not released in time using the \ref vStreamReleaseBlock function.</td>
 </tr>
 <tr>
   <td> \ref VSTREAM_EVENT_UNDERFLOW</td><td>  2  </td><td> Occurs when a block of outgoing data was not ready
