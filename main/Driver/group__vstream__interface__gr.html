@@ -779,7 +779,7 @@ Functions</h2></td></tr>
 
 <p>Get pointer to Virtual Streaming data block. </p>
 <dl class="section return"><dt>Returns</dt><dd>pointer to data block, returns NULL if no block is available</dd></dl>
-<p>This function provides access to the current data block used for input or output operations, depending on the streaming direction.</p>
+<p>This function provides access to the data block used for input or output operations, depending on the streaming direction.</p>
 <ul>
 <li>For input streams (receiving data): returns a pointer to the oldest unread data block. <br  />
  If no unread block is available, the function returns NULL.</li>
@@ -831,12 +831,12 @@ Functions</h2></td></tr>
 
 <p>Release Virtual Streaming data block. </p>
 <dl class="section return"><dt>Returns</dt><dd><a class="el" href="group__vstream__return__code.html#ga81a583e47587a531668c81e3aec7d54f">VSTREAM_OK</a> on success; otherwise, an <a class="el" href="group__vstream__return__code.html#gada179d5e6babdd84dca07bda5fa6ce0e">VSTREAM_ERROR</a> error code (see <a class="el" href="group__vstream__return__code.html">Return Codes</a>)</dd></dl>
-<p>This function finalizes the use of the current data block returned by <a class="el" href="group__vstream__interface__gr.html#ga3a728ae2b17125d921e7ff282b7e7398">vStreamGetBlock</a>.</p>
+<p>This function finalizes the use of the data block returned by <a class="el" href="group__vstream__interface__gr.html#ga3a728ae2b17125d921e7ff282b7e7398">vStreamGetBlock</a>.</p>
 <ul>
 <li>For input streams: marks the block as processed, making it available for reuse by the driver.</li>
 <li>For output streams: commits the block for transmission, indicating that the data is ready to be streamed out.</li>
 </ul>
-<p>This function must be called after processing or preparing each data block to maintain proper buffer flow and avoid data loss or stalling.</p>
+<p>This function must be called after processing or preparing the data block returned by <a class="el" href="group__vstream__interface__gr.html#ga3a728ae2b17125d921e7ff282b7e7398">vStreamGetBlock</a> to maintain proper buffer flow and avoid data loss or stalling.</p>
 <p><b>Code Example</b>: </p><div class="fragment"><div class="line"><span class="preprocessor">#include &quot;<a class="code" href="cmsis__vstream_8h.html">cmsis_vstream.h</a>&quot;</span></div>
 <div class="line"> </div>
 <div class="line"><span class="comment">// vStream driver</span></div>
@@ -952,7 +952,7 @@ Functions</h2></td></tr>
 <tr>
 <td><a class="el" href="group__vstream__events.html#gae118c9f1ac1cee90ec9a5cabb539e329">VSTREAM_EVENT_DATA</a> </td><td>0 </td><td>Occurs when a new block of incoming data is available or when a block of outgoing data was streamed out.  </td></tr>
 <tr>
-<td><a class="el" href="group__vstream__events.html#ga2ae962956cec90f02f09288d6d3c41b2">VSTREAM_EVENT_OVERFLOW</a> </td><td>1 </td><td>Occurs when a block of data was overwritten because it was not released in time with <a class="el" href="group__vstream__interface__gr.html#ga2cef9bfba7c2c9f6bcffdded3ba115ea">vStreamReleaseBlock</a> function.  </td></tr>
+<td><a class="el" href="group__vstream__events.html#ga2ae962956cec90f02f09288d6d3c41b2">VSTREAM_EVENT_OVERFLOW</a> </td><td>1 </td><td>Occurs when a block of incoming data begins to be overwritten because it was not released in time using the <a class="el" href="group__vstream__interface__gr.html#ga2cef9bfba7c2c9f6bcffdded3ba115ea">vStreamReleaseBlock</a> function.  </td></tr>
 <tr>
 <td><a class="el" href="group__vstream__events.html#ga4ead4271da48d30d14ebc7222e5cf88d">VSTREAM_EVENT_UNDERFLOW</a></td><td>2 </td><td>Occurs when a block of outgoing data was not ready (committed with <a class="el" href="group__vstream__interface__gr.html#ga2cef9bfba7c2c9f6bcffdded3ba115ea">vStreamReleaseBlock</a> function) before streaming out required it.  </td></tr>
 <tr>
