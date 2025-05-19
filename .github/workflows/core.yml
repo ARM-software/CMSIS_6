@@ -20,6 +20,7 @@ jobs:
 
     env:
       ARM_UBL_ACTIVATION_CODE: ${{ secrets.ARM_UBL_ACTIVATION_CODE }}
+      IAR_LMS_BEARER_TOKEN: ${{ secrets.IAR_LMS_BEARER_TOKEN }}
 
     steps:
       - uses: actions/checkout@v4
@@ -56,6 +57,13 @@ jobs:
         working-directory: ./CMSIS/Core/Test
         run: |
           ./build.py lit
+
+      - name: Archive Test Results
+        if: ${{ !cancelled() }}
+        uses: actions/upload-artifact@v4
+        with:
+          name: lit-test-results
+          path: ./CMSIS/Core/Test/*.xunit
 
       - name: Publish Test Results
         if: ${{ !cancelled() }}
