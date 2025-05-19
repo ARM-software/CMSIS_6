@@ -904,6 +904,7 @@ elif toolchain == 'Clang':
     tc = Toolchain_Clang(device=device, optimize=optimize)
 elif toolchain == 'IAR':
     tc = Toolchain_IAR(device=device, optimize=optimize)
+    config.environment['IAR_LMS_BEARER_TOKEN'] = os.environ.get('IAR_LMS_BEARER_TOKEN')
 
 prefixes = ['CHECK']
 if device.endswith('NS'):
