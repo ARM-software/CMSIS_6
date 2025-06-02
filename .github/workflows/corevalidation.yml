@@ -10,19 +10,19 @@ on:
       - CMSIS/CoreValidation/**/*
   push:
     branches: [main]
-  
+
 concurrency:
   group: ${{ github.workflow }}-${{ github.ref }}
   cancel-in-progress: true
 
 jobs:
   build-and-run:
-    
+
     strategy:
       fail-fast: true
       matrix:
         compiler: [IAR]
-    
+
     runs-on: ubuntu-22.04
 
     env:
@@ -50,7 +50,7 @@ jobs:
 
       - uses: actions/setup-python@v5
         with:
-          python-version: '3.10'    
+          python-version: '3.10'
           cache: 'pip'
 
       - name: Python requirements
@@ -63,33 +63,17 @@ jobs:
         run: |
           sudo apt-get update
           sudo apt-get install libtinfo5
-    
-      - name: Install IAR Toolchain
-        if: matrix.compiler == 'IAR'
-        working-directory: /home/runner
-        run: |
-          curl -sLO https://github.com/iarsystems/arm/releases/download/9.70.1/cxarm-9.70.1-linux-x86_64-base.tar.bz2
-          tar -xjf cxarm-9.70.1-linux-x86_64-base.tar.bz2
-          echo "PATH=$PATH:$(pwd)/cxarm-9.70.1/arm/bin" >> $GITHUB_ENV
-          echo "IAR_TOOLCHAIN_9_70_1=$(pwd)/cxarm-9.70.1/arm/bin" >> $GITHUB_ENV
-
 
       - name: Activate vcpkg environment
         uses: ARM-software/cmsis-actions/vcpkg@v1
         with:
           config: ./CMSIS/CoreValidation/Project/vcpkg-configuration.json
-      
-      - name: Inspect IAR Toolchain
-        run: |
-          iccarm --version
-          ilinkarm --version
-          iarchive --version
 
       - name: Activate Arm tool license
         uses: ARM-software/cmsis-actions/armlm@v1
         with:
           code: "${{ env.ARM_UBL_ACTIVATION_CODE }}"
-      
+
       - name: Initialize CodeQL
         if: matrix.compiler == 'GCC'
         uses: github/codeql-action/init@v3
@@ -102,6 +86,7 @@ jobs:
 
       - name: Build
         working-directory: ./CMSIS/CoreValidation/Project
+        shell: bash
         run: |
           echo "Register local Cortex_DFP pack"
           cpackget add /home/runner/Cortex_DFP/ARM.Cortex_DFP.pdsc
@@ -115,7 +100,7 @@ jobs:
 
       - name: Execute
         working-directory: ./CMSIS/CoreValidation/Project
-        run: |     
+        run: |
           echo "Run test projects ..."
           ./build.py --verbose -c ${{ matrix.compiler }} -d "CM*" run || echo "::warning::==== Some configurations failed to run! ==="
 
