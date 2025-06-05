@@ -21,7 +21,7 @@ jobs:
     strategy:
       fail-fast: true
       matrix:
-        compiler: [IAR]
+        compiler: [AC6, GCC, Clang, IAR]
 
     runs-on: ubuntu-22.04
 
