@@ -10,6 +10,19 @@ The table below provides information about the changes delivered with specific v
       <th>Description</th>
     </tr>
     <tr>
+      <td>V6.1.1</td>
+      <td>
+        <p>Minor fixes and enhancements:</p>
+        <ul>
+          <li>Fixed CMSIS_DEPRECATED for IAR</li>
+          <li>Added LAR, LSR register to DWT</li>
+          <li>Add CMSIS-R for IAR</li>
+          <li>Added BPU for Star-MC1</li>
+          <li>Add CPPWR SU10/11 for Cortex-M55/-M85</li>
+        </ul>
+      </td>
+    </tr>
+    <tr>
       <td>V6.1.0</td>
       <td>
         <ul>
