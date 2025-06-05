@@ -133,6 +133,22 @@ $(document).ready(function(){initNavTree('core_revisionHistory.html',''); initRe
 <tr>
 <th>Version </th><th>Description  </th></tr>
 <tr>
+<td>V6.1.1 </td><td><p class="starttd"></p>
+<p class="intertd">Minor fixes and enhancements:</p>
+<ul>
+<li>
+Fixed CMSIS_DEPRECATED for IAR </li>
+<li>
+Added LAR, LSR register to DWT </li>
+<li>
+Add CMSIS-R for IAR </li>
+<li>
+Added BPU for Star-MC1 </li>
+<li>
+Add CPPWR SU10/11 for Cortex-M55/-M85 </li>
+</ul>
+</td></tr>
+<tr>
 <td>V6.1.0 </td><td><ul>
 <li>
 Added support for Cortex-M52 </li>
@@ -571,10 +587,10 @@ Breaking changes in CMSIS-Core 6</h1>
 <li>define names for ITM_TCR_* changed</li>
 <li>define names for ITM_LSR_* changed</li>
 <li>struct TPI_Type renamed to <a class="el" href="structTPIU__Type.html" title="Structure type to access the Trace Port Interface Register (TPI).">TPIU_Type</a></li>
-<li>define names for TPI_* renamed to TPIU_*</li>
+<li>define names for TPI_*renamed to TPIU_*</li>
 <li>define names for FPU_MVFR0/1_* changed (Cortex-M4)</li>
 <li>struct <a class="el" href="structCoreDebug__Type.html" title="[Deprecated] Structure type to access the Core Debug Register.">CoreDebug_Type</a> renamed to <a class="el" href="structDCB__Type.html" title="Structure type to access the Debug Control Block Registers (DCB).">DCB_Type</a></li>
-<li>defines for CoreDebug_* renamed to DCB_*</li>
+<li>defines for CoreDebug_*renamed to DCB_*</li>
 </ul>
 <p><b>Cortex-M7:</b></p>
 <ul>
@@ -593,10 +609,10 @@ Breaking changes in CMSIS-Core 6</h1>
 <li>define names for ITM_TCR_* changed</li>
 <li>define names for ITM_LSR_* changed</li>
 <li>struct TPI_Type renamed to <a class="el" href="structTPIU__Type.html" title="Structure type to access the Trace Port Interface Register (TPI).">TPIU_Type</a></li>
-<li>define names for TPI_* renamed to TPIU_*</li>
+<li>define names for TPI_*renamed to TPIU_*</li>
 <li>define names for FPU_MVFR0/1_* changed</li>
 <li>struct <a class="el" href="structCoreDebug__Type.html" title="[Deprecated] Structure type to access the Core Debug Register.">CoreDebug_Type</a> renamed to <a class="el" href="structDCB__Type.html" title="Structure type to access the Debug Control Block Registers (DCB).">DCB_Type</a></li>
-<li>defines for CoreDebug_* renamed to DCB_*</li>
+<li>defines for CoreDebug_*renamed to DCB_*</li>
 </ul>
 <p><b>Cortex-M23:</b></p>
 <ul>
@@ -606,9 +622,9 @@ Breaking changes in CMSIS-Core 6</h1>
 </ul>
 </li>
 <li>struct TPI_Type renamed to <a class="el" href="structTPIU__Type.html" title="Structure type to access the Trace Port Interface Register (TPI).">TPIU_Type</a></li>
-<li>define names for TPI_* renamed to TPIU_*</li>
+<li>define names for TPI_*renamed to TPIU_*</li>
 <li>struct <a class="el" href="structCoreDebug__Type.html" title="[Deprecated] Structure type to access the Core Debug Register.">CoreDebug_Type</a> removed (struct <a class="el" href="structDCB__Type.html" title="Structure type to access the Debug Control Block Registers (DCB).">DCB_Type</a> already existed)</li>
-<li>defines CoreDebug_* removed (defines DCB_* already existed)</li>
+<li>defines CoreDebug_*removed (defines DCB_* already existed)</li>
 </ul>
 <p><b>Cortex-M33:</b></p>
 <ul>
@@ -618,10 +634,10 @@ Breaking changes in CMSIS-Core 6</h1>
 </ul>
 </li>
 <li>struct TPI_Type renamed to <a class="el" href="structTPIU__Type.html" title="Structure type to access the Trace Port Interface Register (TPI).">TPIU_Type</a></li>
-<li>define names for TPI_* renamed to TPIU_*</li>
+<li>define names for TPI_*renamed to TPIU_*</li>
 <li>define names for FPU_MVFR0/1_* changed</li>
 <li>struct <a class="el" href="structCoreDebug__Type.html" title="[Deprecated] Structure type to access the Core Debug Register.">CoreDebug_Type</a> removed (struct <a class="el" href="structDCB__Type.html" title="Structure type to access the Debug Control Block Registers (DCB).">DCB_Type</a> already existed)</li>
-<li>defines CoreDebug_* removed (defines DCB_* already existed)</li>
+<li>defines CoreDebug_*removed (defines DCB_* already existed)</li>
 </ul>
 <p><b>Cortex-M55, Cortex-M85:</b></p>
 <ul>
@@ -643,18 +659,18 @@ Breaking changes in CMSIS-Core 6</h1>
 <li>members LAR, LSR replaced</li>
 </ul>
 </li>
-<li>define names for TPI_* renamed to TPIU_*</li>
+<li>define names for TPI_*renamed to TPIU_*</li>
 <li>struct <a class="el" href="structPMU__Type.html" title="Structure type to access the Performance Monitoring Unit (PMU).">PMU_Type</a><ul>
 <li>members PIDx and CIDx removed</li>
 </ul>
 </li>
 <li>struct <a class="el" href="structCoreDebug__Type.html" title="[Deprecated] Structure type to access the Core Debug Register.">CoreDebug_Type</a> removed (struct <a class="el" href="structDCB__Type.html" title="Structure type to access the Debug Control Block Registers (DCB).">DCB_Type</a> already existed)</li>
-<li>defines CoreDebug_* removed (defines DCB_* already existed)</li>
+<li>defines CoreDebug_*removed (defines DCB_* already existed)</li>
 <li>struct <a class="el" href="structDIB__Type.html" title="Structure type to access the Debug Identification Block Registers (DIB).">DIB_Type</a><ul>
 <li>members DLAR, DLSR removed (replaced by RESERVED0[2])</li>
 </ul>
 </li>
-<li>defines for DIB_DLAR_* and DIB_DLSR_* removed </li>
+<li>defines for DIB_DLAR_*and DIB_DLSR_* removed </li>
 </ul>
 </div></div><!-- contents -->
 </div><!-- PageDoc -->

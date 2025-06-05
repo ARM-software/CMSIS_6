@@ -1,7 +1,7 @@
 function writeHeader() {
-    document.write('Version 6.1.0');
+    document.write('Version 6.1.1');
 };
 
 function writeFooter()  {
-    document.write('Generated on Wed Jun  4 2025 15:57:58 for CMSIS-Core (Cortex-M) 6.1.0. Copyright &copy; 2025 Arm Limited (or its affiliates). All rights reserved.');
+    document.write('Generated on Thu Jun  5 2025 06:22:22 for CMSIS-Core (Cortex-M) 6.1.1. Copyright &copy; 2025 Arm Limited (or its affiliates). All rights reserved.');
 };
