@@ -14,6 +14,6 @@
         "arm:tools/open-cmsis-pack/cmsis-toolbox": "2.9.0",
         "arm:models/arm/avh-fvp": "11.27.31",
         "arm:tools/ninja-build/ninja": "1.12.0",
-        "arm:compilers/iar/cxarm": "9.60.4"
+        "arm:compilers/iar/cxarm": "9.70.1"
     }
 }
