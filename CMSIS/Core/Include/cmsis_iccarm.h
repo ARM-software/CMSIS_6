@@ -348,21 +348,21 @@ __STATIC_FORCEINLINE uint32_t __USAT(int32_t val, uint32_t sat)
 __IAR_FT uint8_t __LDRBT(volatile uint8_t *addr)
 {
   uint32_t res;
-  __ASM volatile ("LDRBT %0, [%1]" : "=r" (res) : "r" (addr) : "memory");
+  __ASM volatile ("LDRBT %0, [%1]" : "=&r" (res) : "r" (addr) : "memory");
   return ((uint8_t)res);
 }
 
 __IAR_FT uint16_t __LDRHT(volatile uint16_t *addr)
 {
   uint32_t res;
-  __ASM volatile ("LDRHT %0, [%1]" : "=r" (res) : "r" (addr) : "memory");
+  __ASM volatile ("LDRHT %0, [%1]" : "=&r" (res) : "r" (addr) : "memory");
   return ((uint16_t)res);
 }
 
 __IAR_FT uint32_t __LDRT(volatile uint32_t *addr)
 {
   uint32_t res;
-  __ASM volatile ("LDRT %0, [%1]" : "=r" (res) : "r" (addr) : "memory");
+  __ASM volatile ("LDRT %0, [%1]" : "=&r" (res) : "r" (addr) : "memory");
   return res;
 }
 
