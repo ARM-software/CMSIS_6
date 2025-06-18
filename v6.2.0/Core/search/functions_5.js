@@ -1,0 +1,23 @@
+var searchData=
+[
+  ['tz_5fallocmodulecontext_5fs_0',['TZ_AllocModuleContext_S',['../group__context__trustzone__functions.html#gacd016f166bee549a0d3e970132e64a90',1,'ref_trustzone.txt']]],
+  ['tz_5ffreemodulecontext_5fs_1',['TZ_FreeModuleContext_S',['../group__context__trustzone__functions.html#gac84f678fbe974f8b02c683e0b8046524',1,'ref_trustzone.txt']]],
+  ['tz_5finitcontextsystem_5fs_2',['TZ_InitContextSystem_S',['../group__context__trustzone__functions.html#ga926e2ec472535a6d2b8125be1a79e3c0',1,'ref_trustzone.txt']]],
+  ['tz_5floadcontext_5fs_3',['TZ_LoadContext_S',['../group__context__trustzone__functions.html#ga4748f6bcdd5fed279ac5a6cd7eca2689',1,'ref_trustzone.txt']]],
+  ['tz_5fnvic_5fclearpendingirq_5fns_4',['TZ_NVIC_ClearPendingIRQ_NS',['../group__nvic__trustzone__functions.html#ga3b30f8b602b593a806617b671a50731a',1,'ref_trustzone.txt']]],
+  ['tz_5fnvic_5fdisableirq_5fns_5',['TZ_NVIC_DisableIRQ_NS',['../group__nvic__trustzone__functions.html#gabc58593dea7803c1f1e1ed3b098f497c',1,'ref_trustzone.txt']]],
+  ['tz_5fnvic_5fenableirq_5fns_6',['TZ_NVIC_EnableIRQ_NS',['../group__nvic__trustzone__functions.html#gaedea4c16dd4a0b792c7e9d1da4c49295',1,'ref_trustzone.txt']]],
+  ['tz_5fnvic_5fgetactive_5fns_7',['TZ_NVIC_GetActive_NS',['../group__nvic__trustzone__functions.html#ga1bffd79bd6365d83281883b6c4b0f218',1,'ref_trustzone.txt']]],
+  ['tz_5fnvic_5fgetenableirq_5fns_8',['TZ_NVIC_GetEnableIRQ_NS',['../group__nvic__trustzone__functions.html#ga57d2a6736704c4a39421ed1a2e7b689b',1,'ref_trustzone.txt']]],
+  ['tz_5fnvic_5fgetpendingirq_5fns_9',['TZ_NVIC_GetPendingIRQ_NS',['../group__nvic__trustzone__functions.html#gab85bd0d55d746caf0e414be5284afe24',1,'ref_trustzone.txt']]],
+  ['tz_5fnvic_5fgetpriority_5fns_10',['TZ_NVIC_GetPriority_NS',['../group__nvic__trustzone__functions.html#gade6a8784339946fdd50575d7e65a3268',1,'ref_trustzone.txt']]],
+  ['tz_5fnvic_5fgetprioritygrouping_5fns_11',['TZ_NVIC_GetPriorityGrouping_NS',['../group__nvic__trustzone__functions.html#gaf5f578628bc8b7154b29577f6f6a87fd',1,'ref_trustzone.txt']]],
+  ['tz_5fnvic_5fsetpendingirq_5fns_12',['TZ_NVIC_SetPendingIRQ_NS',['../group__nvic__trustzone__functions.html#gaccbc9aa0eacf4d4c3d3046edb9e02edd',1,'ref_trustzone.txt']]],
+  ['tz_5fnvic_5fsetpriority_5fns_13',['TZ_NVIC_SetPriority_NS',['../group__nvic__trustzone__functions.html#ga2caf0df3603378c436c838138e42059a',1,'ref_trustzone.txt']]],
+  ['tz_5fnvic_5fsetprioritygrouping_5fns_14',['TZ_NVIC_SetPriorityGrouping_NS',['../group__nvic__trustzone__functions.html#ga0d3b5db0685bd95cc8bd2f7ad0891d39',1,'ref_trustzone.txt']]],
+  ['tz_5fsau_5fdisable_15',['TZ_SAU_Disable',['../group__sau__trustzone__functions.html#ga42e201cea0a4b09f588a28b751f726fb',1,'ref_trustzone.txt']]],
+  ['tz_5fsau_5fenable_16',['TZ_SAU_Enable',['../group__sau__trustzone__functions.html#ga187377409289e34838225ce801fb102c',1,'ref_trustzone.txt']]],
+  ['tz_5fsau_5fsetup_17',['TZ_SAU_Setup',['../group__sau__trustzone__functions.html#ga6093bc5939ea8924fbcfdffb8f0553f1',1,'ref_trustzone.txt']]],
+  ['tz_5fstorecontext_5fs_18',['TZ_StoreContext_S',['../group__context__trustzone__functions.html#gac106570f4905f82922fd335aeb08a1bf',1,'ref_trustzone.txt']]],
+  ['tz_5fsystick_5fconfig_5fns_19',['TZ_SysTick_Config_NS',['../group__systick__trustzone__functions.html#gad18a1b1a6796c652f2b35e728f2e2670',1,'ref_trustzone.txt']]]
+];
