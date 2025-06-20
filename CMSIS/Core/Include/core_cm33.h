@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2009-2024 Arm Limited. All rights reserved.
+ * Copyright (c) 2009-2025 Arm Limited. All rights reserved.
  *
  * SPDX-License-Identifier: Apache-2.0
  *
@@ -965,6 +965,19 @@ typedef struct
 /** \brief SCnSCB Interrupt Controller Type Register Definitions */
 #define SCnSCB_ICTR_INTLINESNUM_Pos         0U                                         /*!< ICTR: INTLINESNUM Position */
 #define SCnSCB_ICTR_INTLINESNUM_Msk        (0xFUL /*<< SCnSCB_ICTR_INTLINESNUM_Pos*/)  /*!< ICTR: INTLINESNUM Mask */
+
+/** \brief SCnSCB Coprocessor Power Control Register Definitions */
+#define SCnSCB_CPPWR_SUS11_Pos             23U                                         /*!< CPPWR: SUS11 Position */
+#define SCnSCB_CPPWR_SUS11_Msk             (1UL << SCnSCB_CPPWR_SUS11_Pos)             /*!< CPPWR: SUS11 Mask */
+
+#define SCnSCB_CPPWR_SU11_Pos              22U                                         /*!< CPPWR: SU11 Position */
+#define SCnSCB_CPPWR_SU11_Msk              (1UL << SCnSCB_CPPWR_SU11_Pos)              /*!< CPPWR: SU11 Mask */
+
+#define SCnSCB_CPPWR_SUS10_Pos             21U                                         /*!< CPPWR: SUS10 Position */
+#define SCnSCB_CPPWR_SUS10_Msk             (1UL << SCnSCB_CPPWR_SUS10_Pos)             /*!< CPPWR: SUS10 Mask */
+
+#define SCnSCB_CPPWR_SU10_Pos              20U                                         /*!< CPPWR: SU10 Position */
+#define SCnSCB_CPPWR_SU10_Msk              (1UL << SCnSCB_CPPWR_SU10_Pos)              /*!< CPPWR: SU10 Mask */
 
 /*@} end of group CMSIS_SCnotSCB */
 
