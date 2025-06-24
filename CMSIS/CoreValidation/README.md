@@ -20,6 +20,7 @@ Currently, the following build configurations are provided:
    - Arm Compiler 6 (AC6)
    - GNU Compiler (GCC)
    - LLVM/Clang (Clang)
+   - IAR Toolchain (IAR)
 2. Devices
    - Cortex-M0
    - Cortex-M0+
@@ -68,6 +69,7 @@ The following tools are required to build and run the CoreValidation tests:
 - [Arm Compiler 6.20](https://artifacts.keil.arm.com/arm-compiler/6.20/21/)*
 - [GCC Compiler 13.2.1](https://artifacts.keil.arm.com/arm-none-eabi-gcc/13.2.1/)*
 - [Clang Compiler 17.0.1](https://github.com/ARM-software/LLVM-embedded-toolchain-for-Arm/releases/tag/release-17.0.1)*
+- [IAR Toolchain 9.70.1](https://github.com/iarsystems/arm/releases/tag/9.70.1)*
 - [Arm Virtual Hardware for Cortex-M based on FastModels 11.22.39](https://artifacts.keil.arm.com/avh/11.22.39/)*
 - [Python 3.9](https://www.python.org/downloads/)
 
