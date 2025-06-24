@@ -25,6 +25,7 @@ Currently, the following build configurations are provided:
    - Arm Compiler 6 (AC6)
    - GNU Compiler (GCC)
    - LLVM/Clang (Clang)
+   - IAR Toolchain (IAR)
 2. Devices
    - Cortex-M0
    - Cortex-M0+
@@ -76,6 +77,7 @@ The following tools are required to build and run the Core tests:
 - [Arm Compiler 6.23](https://artifacts.tools.arm.com/arm-compiler/6.23/32/)*
 - [GCC Compiler 14.2.1](https://artifacts.keil.arm.com/arm-none-eabi-gcc/14.2.1/)*
 - [Clang Compiler 19.1.5](https://github.com/ARM-software/LLVM-embedded-toolchain-for-Arm/releases/tag/release-19.1.5)*
+- [IAR Toolchain 9.70.1](https://github.com/iarsystems/arm/releases/tag/9.70.1)*
 - [Python 3.9](https://www.python.org/downloads/)
 - [LLVM FileCheck](https://github.com/llvm/llvm-project/releases/)
   - Ubuntu package `llvm-<version>-tools`
