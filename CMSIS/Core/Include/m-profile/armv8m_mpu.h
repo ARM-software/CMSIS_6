@@ -127,7 +127,7 @@
  * Execute-never
  * XN = Execute-never, EX = Executable
  */
-/** \brief Normal memory, Execution only permitted if read permitted */
+/** \brief Normal memory, Execution not permitted */
 #define ARM_MPU_XN (1U)
 
 /** \brief Normal memory, Execution only permitted if read permitted */
