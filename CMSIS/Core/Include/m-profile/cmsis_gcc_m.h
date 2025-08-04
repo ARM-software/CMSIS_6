@@ -29,6 +29,10 @@
 
 #include <arm_acle.h>
 
+#if defined(__PICOLIBC__) && !defined(__PROGRAM_START)
+#define __PROGRAM_START _start
+#endif
+
 /* #########################  Startup and Lowlevel Init  ######################## */
 #ifndef __PROGRAM_START
 
