@@ -206,8 +206,7 @@ __iar_builtin_ISB();
 #define __TZ_set_FAULTMASK_NS(VALUE)(__arm_wsr("FAULTMASK_NS", (VALUE)))
 
 #if (!(defined (__ARM_ARCH_8M_MAIN__ ) && (__ARM_ARCH_8M_MAIN__ == 1)) && \
-     !(defined (__ARM_ARCH_8_1M_MAIN__ ) && (__ARM_ARCH_8_1M_MAIN__ == 1)) && \
-     (!defined (__ARM_FEATURE_CMSE) || (__ARM_FEATURE_CMSE < 3)))
+     !(defined (__ARM_ARCH_8_1M_MAIN__ ) && (__ARM_ARCH_8_1M_MAIN__ == 1)))
   // without main extensions, the non-secure PSPLIM is RAZ/WI
   #define __TZ_get_PSPLIM_NS()      (0U)
   #define __TZ_set_PSPLIM_NS(VALUE) ((void)(VALUE))

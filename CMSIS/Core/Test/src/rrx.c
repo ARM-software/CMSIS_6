@@ -7,7 +7,7 @@ static volatile uint32_t a = 10u;
 
 void rrx() {
     // CHECK-LABEL: <rrx>:
-    // CHECK: rrx {{r[0-9]+}}, {{r[0-9]+}}
+    // CHECK: {{rrx|rrxs}} {{r[0-9]+}}, {{r[0-9]+}}
     volatile uint32_t c = __RRX(a);
     // CHECK: {{(bx lr)|(pop {.*pc})}}
 }
