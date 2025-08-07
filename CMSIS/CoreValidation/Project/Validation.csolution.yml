@@ -12,7 +12,6 @@ solution:
         - --specs=rdimon.specs
     - for-compiler: CLANG
       Link:
-        - -lcrt0-semihost
         - -lsemihost
     - for-compiler: IAR
       Link:

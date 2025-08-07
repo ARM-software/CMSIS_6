@@ -75,7 +75,7 @@ The following tools are required to build and run the Core tests:
 
 - [Arm Compiler 6.23](https://artifacts.tools.arm.com/arm-compiler/6.23/32/)*
 - [GCC Compiler 14.2.1](https://artifacts.keil.arm.com/arm-none-eabi-gcc/14.2.1/)*
-- [Clang Compiler 19.1.5](https://github.com/ARM-software/LLVM-embedded-toolchain-for-Arm/releases/tag/release-19.1.5)*
+- [Clang Compiler 20.1.0](https://github.com/ARM-software/LLVM-embedded-toolchain-for-Arm/releases/tag/release-20.1.0)*
 - [Python 3.9](https://www.python.org/downloads/)
 - [LLVM FileCheck](https://github.com/llvm/llvm-project/releases/)
   - Ubuntu package `llvm-<version>-tools`
