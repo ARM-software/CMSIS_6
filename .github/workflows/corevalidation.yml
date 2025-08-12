@@ -33,7 +33,7 @@ jobs:
           sudo add-apt-repository ppa:deadsnakes/ppa
           sudo apt-get install libpython3.9
 
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
 
       - working-directory: /home/runner
         env:
