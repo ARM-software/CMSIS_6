@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2009-2024 Arm Limited. All rights reserved.
+ * Copyright (c) 2009-2025 Arm Limited. All rights reserved.
  *
  * SPDX-License-Identifier: Apache-2.0
  *
@@ -1734,6 +1734,124 @@ typedef struct
 
 /*@} end of group CMSIS_DCB */
 
+/**
+  \ingroup  CMSIS_core_register
+  \defgroup CMSIS_ERRBNK     Error Banking Registers (IMPLEMENTATION DEFINED)
+  \brief    Type definitions for the Error Banking Registers (ERRBNK)
+  @{
+ */
+
+/**
+  \brief  Structure type to access the Error Banking Registers (ERRBNK).
+ */
+typedef struct {
+  __IOM uint32_t IEBR0;           /*!< Offset: 0x000 (R/W)  Instruction Cache Error Bank Register 0 */
+  __IOM uint32_t IEBR1;           /*!< Offset: 0x004 (R/W)  Instruction Cache Error Bank Register 1 */
+  __IOM uint32_t DEBR0;           /*!< Offset: 0x008 (R/W)  Data Cache Error Bank Register 0 */
+  __IOM uint32_t DEBR1;           /*!< Offset: 0x00C (R/W)  Data Cache Error Bank Register 1 */
+} ErrBnk_Type;
+
+/** \brief IEBR0 bit position and mask definitions */
+#define ERRBNK_IEBR0_USER_Pos              30U                                      /*!< IEBR0: USER Position */
+#define ERRBNK_IEBR0_USER_Msk              (0x3UL   << ERRBNK_IEBR0_USER_Pos)       /*!< IEBR0: USER Mask */
+
+#define ERRBNK_IEBR0_TYPE_Pos              17U                                      /*!< IEBR0: TYPE Position */
+#define ERRBNK_IEBR0_TYPE_Msk              (0x1UL   << ERRBNK_IEBR0_TYPE_Pos)       /*!< IEBR0: TYPE Mask */
+
+#define ERRBNK_IEBR0_RAMBank_Pos           16U                                      /*!< IEBR0: RAMBANK Position */
+#define ERRBNK_IEBR0_RAMBank_Msk           (0x1UL   << ERRBNK_IEBR0_RAMBank_Pos)    /*!< IEBR0: RAMBANK Mask */
+
+#define ERRBNK_IEBR0_WAY_Pos               14U                                      /*!< IEBR0: WAY Position */
+#define ERRBNK_IEBR0_WAY_Msk               (0x1UL   << ERRBNK_IEBR0_WAY_Pos)        /*!< IEBR0: WAY Mask */
+
+#define ERRBNK_IEBR0_INDEX_Pos             4U                                       /*!< IEBR0: INDEX Position */
+#define ERRBNK_IEBR0_INDEX_Msk             (0x3FFUL << ERRBNK_IEBR0_INDEX_Pos)      /*!< IEBR0: INDEX Mask */
+
+#define ERRBNK_IEBR0_LDO_Pos               2U                                       /*!< IEBR0: LDO Position */
+#define ERRBNK_IEBR0_LDO_Msk               (0x3UL   << ERRBNK_IEBR0_LDO_Pos)        /*!< IEBR0: LDO Mask */
+
+#define ERRBNK_IEBR0_LOCK_Pos              1U                                       /*!< IEBR0: LOCK Position */
+#define ERRBNK_IEBR0_LOCK_Msk              (0x1UL   << ERRBNK_IEBR0_LOCK_Pos)       /*!< IEBR0: LOCK Mask */
+
+#define ERRBNK_IEBR0_VALID_Pos             0U                                       /*!< IEBR0: VALID Position */
+#define ERRBNK_IEBR0_VALID_Msk             (0x1UL   << ERRBNK_IEBR0_VALID_Pos)      /*!< IEBR0: VALID Mask */
+
+/** \brief IEBR1 bit position and mask definitions */
+#define ERRBNK_IEBR1_USER_Pos              30U                                      /*!< IEBR1: USER Position */
+#define ERRBNK_IEBR1_USER_Msk              (0x3UL   << ERRBNK_IEBR1_USER_Pos)       /*!< IEBR1: USER Mask */
+
+#define ERRBNK_IEBR1_TYPE_Pos              17U                                      /*!< IEBR1: TYPE Position */
+#define ERRBNK_IEBR1_TYPE_Msk              (0x1UL   << ERRBNK_IEBR1_TYPE_Pos)       /*!< IEBR1: TYPE Mask */
+
+#define ERRBNK_IEBR1_RAMBank_Pos           16U                                      /*!< IEBR1: RAMBANK Position */
+#define ERRBNK_IEBR1_RAMBank_Msk           (0x1UL   << ERRBNK_IEBR1_RAMBank_Pos)    /*!< IEBR1: RAMBANK Mask */
+
+#define ERRBNK_IEBR1_WAY_Pos               14U                                      /*!< IEBR1: WAY Position */
+#define ERRBNK_IEBR1_WAY_Msk               (0x1UL   << ERRBNK_IEBR1_WAY_Pos)        /*!< IEBR1: WAY Mask */
+
+#define ERRBNK_IEBR1_INDEX_Pos             4U                                       /*!< IEBR1: INDEX Position */
+#define ERRBNK_IEBR1_INDEX_Msk             (0x3FFUL << ERRBNK_IEBR1_INDEX_Pos)      /*!< IEBR1: INDEX Mask */
+
+#define ERRBNK_IEBR1_LDO_Pos               2U                                       /*!< IEBR1: LDO Position */
+#define ERRBNK_IEBR1_LDO_Msk               (0x3UL   << ERRBNK_IEBR1_LDO_Pos)        /*!< IEBR1: LDO Mask */
+
+#define ERRBNK_IEBR1_LOCK_Pos              1U                                       /*!< IEBR1: LOCK Position */
+#define ERRBNK_IEBR1_LOCK_Msk              (0x1UL   << ERRBNK_IEBR1_LOCK_Pos)       /*!< IEBR1: LOCK Mask */
+
+#define ERRBNK_IEBR1_VALID_Pos             0U                                       /*!< IEBR1: VALID Position */
+#define ERRBNK_IEBR1_VALID_Msk             (0x1UL   << ERRBNK_IEBR1_VALID_Pos)      /*!< IEBR1: VALID Mask */
+
+/** \brief DEBR0 bit position and mask definitions */
+#define ERRBNK_DEBR0_USER_Pos              30U                                      /*!< DEBR0: USER Position */
+#define ERRBNK_DEBR0_USER_Msk              (0x3UL   << ERRBNK_DEBR0_USER_Pos)       /*!< DEBR0: USER Mask */
+
+#define ERRBNK_DEBR0_TYPE_Pos              17U                                      /*!< DEBR0: TYPE Position */
+#define ERRBNK_DEBR0_TYPE_Msk              (0x1UL   << ERRBNK_DEBR0_TYPE_Pos)       /*!< DEBR0: TYPE Mask */
+
+#define ERRBNK_DEBR0_RAMBank_Pos           16U                                      /*!< DEBR0: RAMBANK Position */
+#define ERRBNK_DEBR0_RAMBank_Msk           (0x1UL   << ERRBNK_DEBR0_RAMBank_Pos)    /*!< DEBR0: RAMBANK Mask */
+
+#define ERRBNK_DEBR0_WAY_Pos               14U                                      /*!< DEBR0: WAY Position */
+#define ERRBNK_DEBR0_WAY_Msk               (0x1UL   << ERRBNK_DEBR0_WAY_Pos)        /*!< DEBR0: WAY Mask */
+
+#define ERRBNK_DEBR0_INDEX_Pos             4U                                       /*!< DEBR0: INDEX Position */
+#define ERRBNK_DEBR0_INDEX_Msk             (0x3FFUL << ERRBNK_DEBR0_INDEX_Pos)      /*!< DEBR0: INDEX Mask */
+
+#define ERRBNK_DEBR0_LDO_Pos               2U                                       /*!< DEBR0: LDO Position */
+#define ERRBNK_DEBR0_LDO_Msk               (0x3UL   << ERRBNK_DEBR0_LDO_Pos)        /*!< DEBR0: LDO Mask */
+
+#define ERRBNK_DEBR0_LOCK_Pos              1U                                       /*!< DEBR0: LOCK Position */
+#define ERRBNK_DEBR0_LOCK_Msk              (0x1UL   << ERRBNK_DEBR0_LOCK_Pos)       /*!< DEBR0: LOCK Mask */
+
+#define ERRBNK_DEBR0_VALID_Pos             0U                                       /*!< DEBR0: VALID Position */
+#define ERRBNK_DEBR0_VALID_Msk             (0x1UL   << ERRBNK_DEBR0_VALID_Pos)      /*!< DEBR0: VALID Mask */
+
+/** \brief DEBR1 bit position and mask definitions */
+#define ERRBNK_DEBR1_USER_Pos              30U                                      /*!< DEBR1: USER Position */
+#define ERRBNK_DEBR1_USER_Msk              (0x3UL   << ERRBNK_DEBR1_USER_Pos)       /*!< DEBR1: USER Mask */
+
+#define ERRBNK_DEBR1_TYPE_Pos              17U                                      /*!< DEBR1: TYPE Position */
+#define ERRBNK_DEBR1_TYPE_Msk              (0x1UL   << ERRBNK_DEBR1_TYPE_Pos)       /*!< DEBR1: TYPE Mask */
+
+#define ERRBNK_DEBR1_RAMBank_Pos           16U                                      /*!< DEBR1: RAMBANK Position */
+#define ERRBNK_DEBR1_RAMBank_Msk           (0x1UL   << ERRBNK_DEBR1_RAMBank_Pos)    /*!< DEBR1: RAMBANK Mask */
+
+#define ERRBNK_DEBR1_WAY_Pos               14U                                      /*!< DEBR1: WAY Position */
+#define ERRBNK_DEBR1_WAY_Msk               (0x1UL   << ERRBNK_DEBR1_WAY_Pos)        /*!< DEBR1: WAY Mask */
+
+#define ERRBNK_DEBR1_INDEX_Pos             4U                                       /*!< DEBR1: INDEX Position */
+#define ERRBNK_DEBR1_INDEX_Msk             (0x3FFUL << ERRBNK_DEBR1_INDEX_Pos)      /*!< DEBR1: INDEX Mask */
+
+#define ERRBNK_DEBR1_LDO_Pos               2U                                       /*!< DEBR1: LDO Position */
+#define ERRBNK_DEBR1_LDO_Msk               (0x3UL   << ERRBNK_DEBR1_LDO_Pos)        /*!< DEBR1: LDO Mask */
+
+#define ERRBNK_DEBR1_LOCK_Pos              1U                                       /*!< DEBR1: LOCK Position */
+#define ERRBNK_DEBR1_LOCK_Msk              (0x1UL   << ERRBNK_DEBR1_LOCK_Pos)       /*!< DEBR1: LOCK Mask */
+
+#define ERRBNK_DEBR1_VALID_Pos             0U                                       /*!< DEBR1: VALID Position */
+#define ERRBNK_DEBR1_VALID_Msk             (0x1UL   << ERRBNK_DEBR1_VALID_Pos)      /*!< DEBR1: VALID Mask */
+
+/*@} end of group CMSIS_ERRBNK */
 
 /**
   \ingroup    CMSIS_core_register
@@ -1777,6 +1895,7 @@ typedef struct
 #define SysTick_BASE        (SCS_BASE +  0x0010UL)                    /*!< SysTick Base Address */
 #define NVIC_BASE           (SCS_BASE +  0x0100UL)                    /*!< NVIC Base Address */
 #define SCB_BASE            (SCS_BASE +  0x0D00UL)                    /*!< System Control Block Base Address */
+#define ERRBNK_BASE         (SCS_BASE +  0x0FB0UL)                    /*!< Error Banking Base Address */
 
 #define SCnSCB              ((SCnSCB_Type    *)     SCS_BASE      )   /*!< System control Register not in SCB */
 #define SCB                 ((SCB_Type       *)     SCB_BASE      )   /*!< SCB configuration struct */
@@ -1786,6 +1905,7 @@ typedef struct
 #define DWT                 ((DWT_Type       *)     DWT_BASE      )   /*!< DWT configuration struct */
 #define TPIU                ((TPIU_Type      *)     TPIU_BASE     )   /*!< TPIU configuration struct */
 #define DCB                 ((DCB_Type       *)     DCB_BASE      )   /*!< DCB configuration struct */
+#define ERRBNK              ((ErrBnk_Type    *)     ERRBNK_BASE   )   /*!< Error Banking configuration struct */
 
 #if defined (__MPU_PRESENT) && (__MPU_PRESENT == 1U)
   #define MPU_BASE          (SCS_BASE +  0x0D90UL)                    /*!< Memory Protection Unit */
