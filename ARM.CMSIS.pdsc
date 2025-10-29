@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<package schemaVersion="1.7.40" xmlns:xs="http://www.w3.org/2001/XMLSchema-instance" xs:noNamespaceSchemaLocation="https://raw.githubusercontent.com/Open-CMSIS-Pack/Open-CMSIS-Pack-Spec/v1.7.40/schema/PACK.xsd">
+<package schemaVersion="1.7.53" xmlns:xs="http://www.w3.org/2001/XMLSchema-instance" xs:noNamespaceSchemaLocation="https://raw.githubusercontent.com/Open-CMSIS-Pack/Open-CMSIS-Pack-Spec/v1.7.53/schema/PACK.xsd">
   <name>CMSIS</name>
   <description overview="./CMSIS/Documentation/Overview.md">CMSIS (Common Microcontroller Software Interface Standard)</description>
   <vendor>ARM</vendor>
@@ -15,6 +15,8 @@
   <releases>
     <release version="6.2.0-dev">
       Active development ...
+      CMSIS-Core: 6.2.0
+        - Support for Arm China STAR-MC3
       CMSIS-Driver: 2.11.0
         - Added vStream Driver API 1.0.0
     </release>
@@ -652,8 +654,8 @@
 
   <components>
     <!-- CMSIS-Core component -->
-    <component Cclass="CMSIS" Cgroup="CORE" Cversion="6.1.1"  condition="ARMv6_7_8-M Device" >
-      <description>CMSIS-CORE for Cortex-M, SC000, SC300, Star-MC1, ARMv8-M, ARMv8.1-M</description>
+    <component Cclass="CMSIS" Cgroup="CORE" Cversion="6.2.0"  condition="ARMv6_7_8-M Device" >
+      <description>CMSIS-CORE for Cortex-M, SC000, SC300, Star-MC, ARMv8-M, ARMv8.1-M</description>
       <files>
         <!-- CPU independent -->
         <file category="doc"     name="CMSIS/Documentation/html/Core/index.html"/>
@@ -665,7 +667,7 @@
       </files>
     </component>
 
-    <component Cclass="CMSIS" Cgroup="CORE" Cversion="6.1.1"  condition="ARMv7-A Device" >
+    <component Cclass="CMSIS" Cgroup="CORE" Cversion="6.2.0"  condition="ARMv7-A Device" >
       <description>CMSIS-CORE for Cortex-A</description>
       <files>
         <!-- CPU independent -->
