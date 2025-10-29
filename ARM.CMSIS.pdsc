@@ -596,6 +596,7 @@
       <accept Dcore="Cortex-M52"/>
       <accept Dcore="Cortex-M55"/>
       <accept Dcore="Cortex-M85"/>
+      <accept Dcore="Star-MC3"/>
     </condition>
     <condition id="ARMv8-M Device">
       <description>Armv8-M architecture based device</description>
