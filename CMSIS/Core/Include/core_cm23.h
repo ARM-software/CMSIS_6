@@ -948,7 +948,7 @@ typedef struct
 #endif
 
 
-#if defined (__ARM_FEATURE_CMSE) && (__ARM_FEATURE_CMSE == 3U)
+#if defined (__ARM_FEATURE_CMSE)
 /**
   \ingroup  CMSIS_core_register
   \defgroup CMSIS_SAU     Security Attribution Unit (SAU)
@@ -1003,7 +1003,7 @@ typedef struct
 #endif /* defined (__SAUREGION_PRESENT) && (__SAUREGION_PRESENT == 1U) */
 
 /*@} end of group CMSIS_SAU */
-#endif /* defined (__ARM_FEATURE_CMSE) && (__ARM_FEATURE_CMSE == 3U) */
+#endif /* defined (__ARM_FEATURE_CMSE) */
 
 
 
