@@ -83,11 +83,6 @@ def run_lit(toolchain, device, optimize):
 
 
 @matrix_filter
-def filter_iar(config):
-    return config.compiler == CompilerAxis.IAR
-
-
-@matrix_filter
 def filter_gcc_cm52(config):
     device = config.device.match('CM52*')
     compiler = config.compiler == CompilerAxis.GCC
