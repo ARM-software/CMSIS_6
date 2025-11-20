@@ -3005,7 +3005,7 @@ __STATIC_INLINE void TZ_SAU_Disable(void)
 /**
   \brief   Set Debug Authentication Control Register
   \details writes to Debug Authentication Control register.
-  \param [in]  value  value to be writen.
+  \param [in]  value  value to be written.
  */
 __STATIC_INLINE void DCB_SetAuthCtrl(uint32_t value)
 {
@@ -3032,7 +3032,7 @@ __STATIC_INLINE uint32_t DCB_GetAuthCtrl(void)
 /**
   \brief   Set Debug Authentication Control Register (non-secure)
   \details writes to non-secure Debug Authentication Control register when in secure state.
-  \param [in]  value  value to be writen
+  \param [in]  value  value to be written
  */
 __STATIC_INLINE void TZ_DCB_SetAuthCtrl_NS(uint32_t value)
 {
