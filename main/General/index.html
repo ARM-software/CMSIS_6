@@ -133,7 +133,7 @@ $(document).ready(function(){initNavTree('index.html',''); initResizable(); });
 <h1><a class="anchor" id="cmsis_components"></a>
 CMSIS Components</h1>
 <div class="image">
-<img src="cmsis_components.png" alt=""/>
+<img src="cmsis_components_630.png" alt=""/>
 <div class="caption">
 CMSIS Components Overview</div></div>
     <h2>CMSIS Base Software Components</h2>
@@ -149,7 +149,8 @@ CMSIS Components Overview</div></div>
 <h2>CMSIS Tools</h2>
 <ul>
 <li>Provide useful utilities for software development workflows with CMSIS-based components.</li>
-<li>Maintained in separate GitHub repositories. <div class="tiles"> <div class="tile" onclick="document.location=&apos;../Toolbox/index.html&apos;"> <span class="tileh h2">CMSIS-Toolbox</span><span class="tiletxt">A set of command-line tools to work with software packs</span><span class="tilelinks"><a href="https://github.com/Open-CMSIS-Pack/cmsis-toolbox/blob/main/README.md">Guide</a> | <a href="https://github.com/Open-CMSIS-Pack/cmsis-toolbox">GitHub</a></span> </div> <div class="tile" onclick="document.location=&apos;../Stream/index.html&apos;"> <span class="tileh h2">CMSIS-Stream</span><span class="tiletxt">Tools and methods for optimizing DSP/ML block data streams</span><span class="tilelinks"><a href="https://github.com/ARM-software/CMSIS-Stream/blob/main/README.md">Guide</a> | <a href="https://github.com/ARM-software/cmsis-stream">GitHub</a></span> </div> <div class="tile" onclick="document.location=&apos;../DAP/index.html&apos;"> <span class="tileh h2">CMSIS-DAP</span><span class="tiletxt">Firmware for debug units interfacing to CoreSight Debug Access Port</span><span class="tilelinks"><a href="https://arm-software.github.io/CMSIS-DAP/latest/">Guide</a> | <a href="https://github.com/ARM-software/CMSIS-DAP">GitHub</a></span> </div> <div class="tile" onclick="document.location=&apos;../Zone/index.html&apos;"> <span class="tileh h2">CMSIS-Zone</span><span class="tiletxt">Defines methods to describe system resources and to partition them</span><span class="tilelinks"><a href="https://arm-software.github.io/CMSIS-Zone/latest/">Guide</a> | <a href="https://github.com/ARM-software/CMSIS-Zone">GitHub</a></span> </div> </div></li>
+<li>Maintained in separate GitHub repositories. <div class="tiles"> <div class="tile" onclick="document.location=&apos;../Toolbox/index.html&apos;"> <span class="tileh h2">CMSIS-Toolbox</span><span class="tiletxt">A set of command-line tools to work with software packs</span><span class="tilelinks"><a href="https://github.com/Open-CMSIS-Pack/cmsis-toolbox/blob/main/README.md">Guide</a> | <a href="https://github.com/Open-CMSIS-Pack/cmsis-toolbox">GitHub</a></span> </div> <div class="tile"> <span class="tileh h2">CMSIS Solution</span><span class="tiletxt">VS Code extension for managing CMSIS solutions</span><span class="tilelinks"><a href="https://mdk-packs.github.io/vscode-cmsis-solution-docs/index.html">Guide</a> | <a href="https://marketplace.visualstudio.com/items?itemName=Arm.cmsis-csolution">Marketplace</a></span> </div> <div class="tile"> <span class="tileh h2">CMSIS Debugger</span><span class="tiletxt">VS Code extension for debugging Arm Cortex-M processor-based devices</span><span class="tilelinks"><a href="https://github.com/Open-CMSIS-Pack/vscode-cmsis-debugger">GitHub</a> | <a href="https://marketplace.visualstudio.com/items?itemName=Arm.vscode-cmsis-debugger">Marketplace</a></span> </div><br  />
+ <div class="tile" onclick="document.location=&apos;../Stream/index.html&apos;"> <span class="tileh h2">CMSIS-Stream</span><span class="tiletxt">Tools and methods for optimizing DSP/ML block data streams</span><span class="tilelinks"><a href="https://github.com/ARM-software/CMSIS-Stream/blob/main/README.md">Guide</a> | <a href="https://github.com/ARM-software/cmsis-stream">GitHub</a></span> </div> <div class="tile" onclick="document.location=&apos;../DAP/index.html&apos;"> <span class="tileh h2">CMSIS-DAP</span><span class="tiletxt">Firmware for debug units interfacing to CoreSight Debug Access Port</span><span class="tilelinks"><a href="https://arm-software.github.io/CMSIS-DAP/latest/">Guide</a> | <a href="https://github.com/ARM-software/CMSIS-DAP">GitHub</a></span> </div> <div class="tile" onclick="document.location=&apos;../Zone/index.html&apos;"> <span class="tileh h2">CMSIS-Zone</span><span class="tiletxt">Defines methods to describe system resources and to partition them</span><span class="tilelinks"><a href="https://arm-software.github.io/CMSIS-Zone/latest/">Guide</a> | <a href="https://github.com/ARM-software/CMSIS-Zone">GitHub</a></span> </div> </div></li>
 </ul>
 <h2>CMSIS Specifications</h2>
 <ul>
@@ -166,7 +167,11 @@ Benefits</h1>
 <li>It enhances program debugging with peripheral information for debuggers and ITM channels for printf-style output.</li>
 <li>CMSIS is delivered in CMSIS-Pack format which enables fast software delivery, simplifies updates, and enables consistent integration into development tools.</li>
 <li>CMSIS-Zone will simplify system resource and partitioning as it manages the configuration of multiple processors, memory areas, and peripherals.</li>
-<li>IDE and Continuous Integration (CI) are important workflows for embedded software developers. The CMSIS-Toolbox provides command-line build tools with CMake backend and integration into IDEs such as VS Code.</li>
+<li>IDE and Continuous Integration (CI) are important workflows for embedded software developers:<ul>
+<li>The CMSIS-Toolbox provides command-line build tools with CMake backend.</li>
+<li>The CMSIS Solution and CMSIS Debugger extensions for VS Code can be used to create an IDE for projects based on <a href="https://open-cmsis-pack.github.io/cmsis-toolbox/YML-Input-Format/">CSolution format</a>.</li>
+</ul>
+</li>
 </ul>
 <h1><a class="anchor" id="development"></a>
 Development</h1>
