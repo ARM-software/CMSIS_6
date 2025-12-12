@@ -20,6 +20,7 @@ jobs:
 
     env:
       ARM_UBL_ACTIVATION_CODE: ${{ secrets.ARM_UBL_ACTIVATION_CODE }}
+      IAR_LMS_BEARER_TOKEN: ${{ secrets.IAR_LMS_BEARER_TOKEN }}
 
     steps:
       - uses: actions/checkout@v6
@@ -39,12 +40,12 @@ jobs:
           sudo apt-get update
           sudo apt-get install libtinfo5 llvm-15-tools
           sudo ln -s /usr/bin/FileCheck-15 /usr/bin/FileCheck
-    
+     
       - name: Activate vcpkg environment
         uses: ARM-software/cmsis-actions/vcpkg@v1
         with:
           config: ./CMSIS/Core/Test/vcpkg-configuration.json
-          
+
       - name: Activate Arm tool license
         uses: ARM-software/cmsis-actions/armlm@v1
         with:
@@ -56,6 +57,13 @@ jobs:
         working-directory: ./CMSIS/Core/Test
         run: |
           ./build.py lit
+
+      - name: Archive Test Results
+        if: ${{ !cancelled() }}
+        uses: actions/upload-artifact@v4
+        with:
+          name: lit-test-results
+          path: ./CMSIS/Core/Test/*.xunit
 
       - name: Publish Test Results
         if: ${{ !cancelled() }}
