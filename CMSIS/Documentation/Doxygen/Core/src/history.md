@@ -4,10 +4,26 @@ CMSIS-Core (M) component is maintained with its own versioning that gets officia
 
 The table below provides information about the changes delivered with specific versions of CMSIS-Core (M).
 
+<!-- markdownlint-disable no-inline-html -->
 <table class="cmtable" summary="Revision History">
     <tr>
       <th>Version</th>
       <th>Description</th>
+    </tr>
+    <tr>
+      <td>V6.2.0</td>
+      <td>
+        <ul>
+          <li>Added support for ArmChina STAR-MC3</li>
+          <li>Added missing CPPWR definitions for Armv8-M Mainline cores</li>
+          <li>Added support for picolibc startup mechanism to GCC compiler</li>
+          <li>Fixed GCC FPSCR intrinsics for AArch64</li>
+          <li>Fixed MPU Normal Memory Attributes for Armv8-M MPU</li>
+          <li>Added ERRBNK definition for Cortex-M7</li>
+          <li>Fixed function prototype warnings for IAR compiler</li>
+          <li>Reworked __NVIC_SystemReset for Armv8.1-M devices</li>
+        </ul>
+      </td>
     </tr>
     <tr>
       <td>V6.1.1</td>
