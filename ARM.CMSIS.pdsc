@@ -11,6 +11,7 @@
     </licenseSet>
   </licenseSets>
   <url>https://www.keil.com/pack/</url>
+  <repository type="git">https://github.com/ARM-software/CMSIS_6.git</repository>
 
   <releases>
     <release version="6.3.0-dev">
