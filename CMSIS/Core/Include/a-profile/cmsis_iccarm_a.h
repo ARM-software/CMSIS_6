@@ -57,8 +57,6 @@
 #define __set_CP64(cp, op1, Rt, CRm) \
   __ASM volatile("MCRR p" # cp ", " # op1 ", %Q0, %R0, c" # CRm  : : "r" (Rt) : "memory" )
 
-#include "cmsis_cp15.h"
-
 __IAR_FT uint32_t __get_SP_usr(void)
 {
   uint32_t cpsr;

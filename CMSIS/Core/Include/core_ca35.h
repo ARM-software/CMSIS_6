@@ -17,11 +17,19 @@
  */
 
 
-#ifndef __CORE_CA_H
-#define __CORE_CA_H
+#ifndef __CORE_CA35_H
+#define __CORE_CA35_H
+
+#define __CORTEX_A           35U    /*!< \brief Cortex-A35 Core */
+
+#if defined __CHECK_DEVICE_DEFINES
+  #ifndef __CA35_REV
+    #define __CA35_REV              0x0000U
+    #warning "__CA35_REV not defined in device header file; using default!"
+  #endif
+#endif
+
+#include "./a-profile/armv8a.h"
 
 
-#include "./a-profile/armv7a.h"
-
-
-#endif /* __CORE_CA_H */
+#endif /* __CORE_CA35_H */
