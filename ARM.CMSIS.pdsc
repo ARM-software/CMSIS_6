@@ -14,10 +14,8 @@
   <repository type="git">https://github.com/ARM-software/CMSIS_6.git</repository>
 
   <releases>
-    <release version="6.3.0-dev">
+    <release version="6.3.1-dev">
       Active development ...
-      CMSIS-Core: 6.2.0
-        - Support for Arm China STAR-MC3
     </release>
     <release version="5.9.0" date="2022-05-02">
       CMSIS-Core(M): 5.6.0
