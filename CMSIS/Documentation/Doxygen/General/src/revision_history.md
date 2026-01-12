@@ -4,9 +4,9 @@ The table on this page provides high-level overview of the CMSIS Base Software r
 
 In addition, each component of the CMSIS Base software has its own release history listed on following pages:
 
- - [**CMSIS-Core Revision History**](../Core/core_revisionHistory.html)
- - [**CMSIS-Driver Revision History**](../Driver/driver_revisionHistory.html)
- - [**CMSIS-RTOS2 Revision History**](../RTOS2/rtos_revisionHistory.html)
+- [**CMSIS-Core Revision History**](../Core/core_revisionHistory.html)
+- [**CMSIS-Driver Revision History**](../Driver/driver_revisionHistory.html)
+- [**CMSIS-RTOS2 Revision History**](../RTOS2/rtos_revisionHistory.html)
 
 Release history of other CMSIS components and tools can be found in their documentation referenced in \ref cmsis_components.
 
@@ -14,6 +14,21 @@ Release history of other CMSIS components and tools can be found in their docume
     <tr>
       <th>Version</th>
       <th>Description</th>
+    </tr>
+    <tr>
+      <td>6.3.0</td>
+      <td>
+       - CMSIS-Core: 6.2.0
+         - Added support for ArmChina STAR-MC3
+         - Minor fixes and enhancements:
+           - Added missing CPPWR definitions for Armv8-M Mainline cores
+           - Added support for picolibc startup mechanism to GCC compiler
+           - Fixed GCC FPSCR intrinsics for AArch64
+           - Fixed MPU Normal Memory Attributes for Armv8-M MPU
+           - Added ERRBNK definition for Cortex-M7
+           - Fixed function prototype warnings for IAR compiler
+           - Reworked __NVIC_SystemReset for Armv8.1-M devices
+      </td>
     </tr>
     <tr>
       <td>6.2.0</td>
@@ -340,7 +355,7 @@ Release history of other CMSIS components and tools can be found in their docume
         - CMSIS-DAP 1.1.0 (unchanged)
       </td>
     </tr>
-	<tr>
+ <tr>
       <td>5.0.0</td>
       <td>
         Added support for: <a href="http://www.arm.com/products/processors/instruction-set-architectures/armv8-m-architecture.php" target="_blank"><b>ARMv8-M architecture</b></a> including TrustZone for ARMv8-M and Cortex-M23, Cortex-M33 processors
