@@ -22,7 +22,7 @@ void set_cpsr() {
 void get_mode() {
     // CHECK-LABEL: <get_mode>:
     // CHECK: mrs [[REG:r[0-9]+]], apsr
-    // CHECK: and [[REG]], [[REG]], #{{31|0x1f}}
+    // CHECK: and{{s?}} [[REG]], [[REG]], #{{31|0x1f}}
     volatile uint32_t result = __get_mode();
     // CHECK: {{(bx lr)|(pop {.*pc})}}
 }
