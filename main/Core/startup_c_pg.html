@@ -135,7 +135,31 @@ $(document).ready(function(){initNavTree('startup_c_pg.html',''); initResizable(
 <li>Exception vectors of the Cortex-M Processor with weak functions that implement default routines.</li>
 <li>Interrupt vectors that are device specific with weak functions that implement default routines.</li>
 </ul>
-<p>To adapt the file to a specific device only the interrupt vector table needs to be extended with the device-specific interrupt handlers. The naming convention for the interrupt handler names is <code>&lt;interrupt_name&gt;_IRQHandler</code>. This table needs to be consistent with <a class="el" href="group__NVIC__gr.html#ga7e1129cd8a196f4284d41db3e82ad5c8">IRQn_Type</a> that defines all the IRQ numbers for each interrupt.</p>
+<p>To adapt the file to a specific device only the interrupt vector table needs to be extended with the device-specific interrupt handlers. The following table shows the mapping of the interrupt names vs. handler names:</p>
+<table class="markdownTable">
+<tr class="markdownTableHead">
+<th class="markdownTableHeadNone">Interrupt name   </th><th class="markdownTableHeadNone">Handler name    </th></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone">NonMaskableInt_IRQn   </td><td class="markdownTableBodyNone">NMI_Handler    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone">HardFault_IRQn   </td><td class="markdownTableBodyNone">HardFault_Handler    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone">MemoryManagement_IRQn   </td><td class="markdownTableBodyNone">MemManage_Handler    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone">BusFault_IRQn   </td><td class="markdownTableBodyNone">BusFault_Handler    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone">UsageFault_IRQn   </td><td class="markdownTableBodyNone">UsageFault_Handler    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone">SecureFault_IRQn   </td><td class="markdownTableBodyNone">SecureFault_Handler    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone">SVCall_IRQn   </td><td class="markdownTableBodyNone">SVC_Handler    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone">DebugMonitor_IRQn   </td><td class="markdownTableBodyNone">DebugMon_Handler    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone">PendSV_IRQn   </td><td class="markdownTableBodyNone">PendSV_Handler    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone">SysTick_IRQn   </td><td class="markdownTableBodyNone">SysTick_Handler   </td></tr>
+</table>
 <p>Additional application-specific adaptations may be required in the startup code and therefore so the startup file shall be located in the application project. <a class="el" href="cmsis_files_dfps.html">Delivery in CMSIS-Packs</a> explains how this can be achieved when device support is provided in <a href="https://open-cmsis-pack.github.io/Open-CMSIS-Pack-Spec/main/html/index.html">CMSIS pack format</a>.</p>
 <p><b>Example:</b></p>
 <p>The following example shows the extension of the interrupt vector table for the LPC1100 device family.</p>
