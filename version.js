@@ -1,7 +1,7 @@
 //--- list of versions ---
 const versions = {
     "General": {
-        "main": "6.3.1-dev2",
+        "main": "6.3.1-dev3",
         "latest": "6.3.0",
         "v6.2.0": "6.2.0",
         "v6.1.0": "6.1.0",
