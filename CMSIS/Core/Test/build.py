@@ -44,6 +44,12 @@ class DeviceAxis(Enum):
     CA5NEON = ('Cortex-A5neon', 'CA5neon')
     CA7NEON = ('Cortex-A7neon', 'CA7neon')
     CA9NEON = ('Cortex-A9neon', 'CA9neon')
+    CR4 = ('Cortex-R4', 'CR4')
+    CR4DP = ('Cortex-R4DP', 'CR4DP')
+    CR5 = ('Cortex-R5', 'CR5')
+    CR5DP = ('Cortex-R5DP', 'CR5DP')
+    CR52 = ('Cortex-R52', 'CR52')
+    CR52NEON = ('Cortex-R52neon', 'CR52neon')
 
 
 @matrix_axis("compiler", "c", "Compiler(s) to be considered.")
@@ -52,6 +58,7 @@ class CompilerAxis(Enum):
     GCC = ('GCC')
     IAR = ('IAR')
     CLANG = ('Clang')
+    CLANG_TI = ('Clang_TI')
 
 
 @matrix_axis("optimize", "o", "Optimization level(s) to be considered.")
