@@ -82,7 +82,7 @@ class CompilerAxis(Enum):
         ext = {
             CompilerAxis.AC6: 'axf',
             CompilerAxis.GCC: 'elf',
-            CompilerAxis.IAR: 'elf',
+            CompilerAxis.IAR: 'out',
             CompilerAxis.CLANG: 'elf',
         }
         return ext[self]
@@ -284,11 +284,6 @@ def qemu_exec(config):
     cmdline += ["-machine", QEMU_MACHINE[config.device]]
     cmdline += ["-kernel", f"{build_dir(config)}/{output_dir(config)}/Validation.{config.compiler.image_ext}"]
     return cmdline
-
-
-@matrix_filter
-def filter_iar(config):
-    return config.compiler == CompilerAxis.IAR
 
 
 @matrix_filter
