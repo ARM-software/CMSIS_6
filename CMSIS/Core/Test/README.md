@@ -83,11 +83,13 @@ Currently, the following build configurations are provided:
 
 The following tools are required to build and run the Core tests:
 
+- [CMSIS-Toolbox 2.1.0](https://artifacts.keil.arm.com/cmsis-toolbox/2.1.0/)*
+- [CMake 3.25.2](https://cmake.org/download/)*
+- [Ninja 1.10.2](https://github.com/ninja-build/ninja/releases)*
 - [Arm Compiler 6.23](https://artifacts.tools.arm.com/arm-compiler/6.23/32/)*
 - [GCC Compiler 14.2.1](https://artifacts.keil.arm.com/arm-none-eabi-gcc/14.2.1/)*
 - [Clang Compiler 20.1.0](https://github.com/arm/arm-toolchain/releases/tag/release-20.1.0-ATfE)*
 - [TI Arm Clang Compiler 5.0.0](https://www.ti.com/tool/download/ARM-CGT-CLANG)
-- [CMSIS Toolbox](https://github.com/Open-CMSIS-Pack/cmsis-toolbox/blob/main/docs/installation.md)
 - [Python 3.9](https://www.python.org/downloads/)
 - [LLVM FileCheck](https://github.com/llvm/llvm-project/releases/)
   - Ubuntu package `llvm-<version>-tools`
@@ -107,7 +109,7 @@ Install the Python packages required by `build.py`:
  ./CMSIS/Core/Test $ pip install -r requirements.txt
 ```
 
-Install CMSIS-Toolbox, set `PATH` as directed, and configure environment variable for `CMSIS_COMPILER_ROOT` and all `<id>_TOOLCHAIN>`'s which will be used in testing.
+Install [CMSIS Toolbox](https://github.com/Open-CMSIS-Pack/cmsis-toolbox/blob/main/docs/installation.md), set `PATH` as directed, and configure environment variable for `CMSIS_COMPILER_ROOT` and all `<id>_TOOLCHAIN>`'s which will be used in testing.
 
 ## Execute LIT tests
 
