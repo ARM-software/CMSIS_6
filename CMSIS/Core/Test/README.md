@@ -25,6 +25,7 @@ Currently, the following build configurations are provided:
    - Arm Compiler 6 (AC6)
    - GNU Compiler (GCC)
    - LLVM/Clang (Clang)
+   - TI Arm Clang (Clang_TI)
 2. Devices
    - Cortex-M0
    - Cortex-M0+
@@ -63,6 +64,15 @@ Currently, the following build configurations are provided:
    - Cortex-A9
      - w/o NEON extensions
      - w NEON extensions
+   - Cortex-R4
+     - w/o FPU
+     - with DP FPU
+   - Cortex-R5
+     - w/o FPU
+     - with DP FPU
+   - Cortex-R52
+     - w/o NEON extensions
+     - w NEON extensions
 3. Optimization Levels
    - none
    - balanced
@@ -75,7 +85,9 @@ The following tools are required to build and run the Core tests:
 
 - [Arm Compiler 6.23](https://artifacts.tools.arm.com/arm-compiler/6.23/32/)*
 - [GCC Compiler 14.2.1](https://artifacts.keil.arm.com/arm-none-eabi-gcc/14.2.1/)*
-- [Clang Compiler 20.1.0](https://github.com/ARM-software/LLVM-embedded-toolchain-for-Arm/releases/tag/release-20.1.0)*
+- [Clang Compiler 20.1.0](https://github.com/arm/arm-toolchain/releases/tag/release-20.1.0-ATfE)*
+- [TI Arm Clang Compiler 5.0.0](https://www.ti.com/tool/download/ARM-CGT-CLANG)
+- [CMSIS Toolbox](https://github.com/Open-CMSIS-Pack/cmsis-toolbox/blob/main/docs/installation.md)
 - [Python 3.9](https://www.python.org/downloads/)
 - [LLVM FileCheck](https://github.com/llvm/llvm-project/releases/)
   - Ubuntu package `llvm-<version>-tools`
@@ -94,6 +106,8 @@ Install the Python packages required by `build.py`:
 ```bash
  ./CMSIS/Core/Test $ pip install -r requirements.txt
 ```
+
+Install CMSIS-Toolbox, set `PATH` as directed, and configure environment variable for `CMSIS_COMPILER_ROOT` and all `<id>_TOOLCHAIN>`'s which will be used in testing.
 
 ## Execute LIT tests
 
