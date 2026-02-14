@@ -109,7 +109,7 @@ Install the Python packages required by `build.py`:
  ./CMSIS/Core/Test $ pip install -r requirements.txt
 ```
 
-Install [CMSIS Toolbox](https://github.com/Open-CMSIS-Pack/cmsis-toolbox/blob/main/docs/installation.md), set `PATH` as directed, and configure environment variable for `CMSIS_COMPILER_ROOT` and all `<id>_TOOLCHAIN>`'s which will be used in testing.
+If manually installing [CMSIS Toolbox](https://github.com/Open-CMSIS-Pack/cmsis-toolbox/blob/main/docs/installation.md), set `PATH` as directed, and configure environment variable for `CMSIS_COMPILER_ROOT` and all `<id>_TOOLCHAIN>`'s which will be used in testing.
 
 ## Execute LIT tests
 
