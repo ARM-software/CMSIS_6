@@ -1032,8 +1032,10 @@ class Toolchain_Clang_TI(Toolchain):
     def get_ccflags(self):
         ccflags = [
             f'-mcpu={DEVICES[self.device]["mcpu"]}', self.OPTIMIZE[self.optimize], 
-            f'-mfpu={DEVICES[self.device]["mfpu"]}', f'-mfloat-abi={DEVICES[self.device]["mfloat-abi"]}',
+            f'-mfloat-abi={DEVICES[self.device]["mfloat-abi"]}',
             '-I', os.path.abspath('../Include'), '-c', '-D', f'CORE_HEADER="{DEVICES[device]["header"]}"']
+        if DEVICES[self.device]["mfloat-abi"] == 'hard':
+            ccflags += [f'-mfpu={DEVICES[self.device]["mfpu"]}']
         if device.endswith('S') and not device.endswith('NS'):
             ccflags += ["-mcmse"]
         ccflags += list(sum([('-D', f'{define}={value}') for (define, value) in DEVICES[self.device]['defines'].items()], ()))

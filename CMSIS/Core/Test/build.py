@@ -101,5 +101,29 @@ def filter_gcc_cm52(config):
     return device and compiler
 
 
+@matrix_filter
+def ti_supported_devices(config):
+    device = not config.device.match('CM0')
+    device &= not config.device.match('CM3')
+    device &= not config.device.match('CM4')
+    device &= not config.device.match('CM4FP')
+    device &= not config.device.match('CM33')
+    device &= not config.device.match('CR4')
+    device &= not config.device.match('CR4DP')
+    device &= not config.device.match('CR5')
+    device &= not config.device.match('CR5DP')
+    device &= not config.device.match('CR52')
+    device &= not config.device.match('CR52DP')
+    compiler = config.compiler.match('Clang_TI')
+    return device and compiler
+
+
+# Temporary removal of Cortex-R devices until Core support is provided.
+@matrix_filter
+def temp_remove_cortex_r(config):
+    device = config.device.match('CR*')
+    return device
+
+
 if __name__ == "__main__":
     main()
