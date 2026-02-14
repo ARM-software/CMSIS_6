@@ -83,9 +83,9 @@ Currently, the following build configurations are provided:
 
 The following tools are required to build and run the Core tests:
 
-- [CMSIS-Toolbox 2.1.0](https://artifacts.keil.arm.com/cmsis-toolbox/2.1.0/)*
-- [CMake 3.25.2](https://cmake.org/download/)*
-- [Ninja 1.10.2](https://github.com/ninja-build/ninja/releases)*
+- [CMSIS-Toolbox 2.10.0](https://artifacts.keil.arm.com/cmsis-toolbox/2.10.0/)*
+- [CMake 3.28.4](https://cmake.org/download/)*
+- [Ninja 1.12.0](https://github.com/ninja-build/ninja/releases)*
 - [Arm Compiler 6.23](https://artifacts.tools.arm.com/arm-compiler/6.23/32/)*
 - [GCC Compiler 14.2.1](https://artifacts.keil.arm.com/arm-none-eabi-gcc/14.2.1/)*
 - [Clang Compiler 20.1.0](https://github.com/arm/arm-toolchain/releases/tag/release-20.1.0-ATfE)*
