@@ -113,16 +113,9 @@ def ti_supported_devices(config):
     device &= not config.device.match('CR5')
     device &= not config.device.match('CR5DP')
     device &= not config.device.match('CR52')
-    device &= not config.device.match('CR52DP')
+    device &= not config.device.match('CR52NEON')
     compiler = config.compiler.match('Clang_TI')
     return device and compiler
-
-
-# Temporary removal of Cortex-R devices until Core support is provided.
-@matrix_filter
-def temp_remove_cortex_r(config):
-    device = config.device.match('CR*')
-    return device
 
 
 if __name__ == "__main__":
