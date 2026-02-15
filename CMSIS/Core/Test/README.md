@@ -64,6 +64,9 @@ Currently, the following build configurations are provided:
    - Cortex-A9
      - w/o NEON extensions
      - w NEON extensions
+   - Cortex-A53
+     - w/o NEON extensions
+     - w NEON extensions
    - Cortex-R4
      - w/o FPU
      - with DP FPU
