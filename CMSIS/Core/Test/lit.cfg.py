@@ -1011,7 +1011,7 @@ class Toolchain_Clang_TI(Toolchain):
         if DEVICES[self.device]["mfpu"] == 'none':
             ccflags += [f'-mfloat-abi=soft']
         else:
-            # Manual override of M33 FPU configuration.  This should be checked when added future devices.
+            # Manual override of M33 FPU configuration.  This should be checked when adding future devices.
             if DEVICES[self.device]["mfpu"] == 'fpv5-d16':
                 ccflags += [f'-mfpu=fpv5-sp-d16']
             else:
