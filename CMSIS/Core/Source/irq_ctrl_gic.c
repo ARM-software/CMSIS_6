@@ -246,7 +246,9 @@ __WEAK uint32_t IRQ_GetMode (IRQn_ID_t irqn) {
     mode |= GIC_GetTarget ((IRQn_Type)irqn) << IRQ_MODE_CPU_Pos;
 
     // Get security group information
-    mode |= !!GIC_GetGroup((IRQn_Type)irqn) * IRQ_MODE_DOMAIN_NONSECURE;
+    if (GIC_GetGroup((IRQn_Type)irqn) != 0U) {
+      mode |= IRQ_MODE_DOMAIN_NONSECURE;
+    }
 
   } else {
     mode = IRQ_MODE_ERROR;
