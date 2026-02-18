@@ -212,9 +212,7 @@ __WEAK int32_t IRQ_SetMode (IRQn_ID_t irqn, uint32_t mode) {
       GIC_SetConfiguration((IRQn_Type)irqn, cfg);
       GIC_SetTarget       ((IRQn_Type)irqn, cpu);
 
-      if (secure != 0U) {
-        GIC_SetGroup ((IRQn_Type)irqn, secure);
-      }
+      GIC_SetGroup ((IRQn_Type)irqn, !secure);
     }
   }
 
@@ -246,6 +244,9 @@ __WEAK uint32_t IRQ_GetMode (IRQn_ID_t irqn) {
     }
     // Get interrupt CPU targets
     mode |= GIC_GetTarget ((IRQn_Type)irqn) << IRQ_MODE_CPU_Pos;
+
+    // Get security group information
+    mode |= !!GIC_GetGroup((IRQn_Type)irqn) * IRQ_MODE_DOMAIN_NONSECURE;
 
   } else {
     mode = IRQ_MODE_ERROR;
