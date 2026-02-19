@@ -86,9 +86,6 @@ Currently, the following build configurations are provided:
 
 The following tools are required to build and run the Core tests:
 
-- [CMSIS-Toolbox 2.10.0](https://artifacts.keil.arm.com/cmsis-toolbox/2.10.0/)*
-- [CMake 3.28.4](https://cmake.org/download/)*
-- [Ninja 1.12.0](https://github.com/ninja-build/ninja/releases)*
 - [Arm Compiler 6.23](https://artifacts.tools.arm.com/arm-compiler/6.23/32/)*
 - [GCC Compiler 14.2.1](https://artifacts.keil.arm.com/arm-none-eabi-gcc/14.2.1/)*
 - [Clang Compiler 20.1.0](https://github.com/arm/arm-toolchain/releases/tag/release-20.1.0-ATfE)*
@@ -112,7 +109,7 @@ Install the Python packages required by `build.py`:
  ./CMSIS/Core/Test $ pip install -r requirements.txt
 ```
 
-If manually installing [CMSIS Toolbox](https://github.com/Open-CMSIS-Pack/cmsis-toolbox/blob/main/docs/installation.md), set `PATH` as directed, and configure environment variable for `CMSIS_COMPILER_ROOT` and all `<id>_TOOLCHAIN>`'s which will be used in testing.
+TI Arm Clang Compiler is not supported through vcpkg and must be manually installed.  After installation, configure the environment variable `CLANG_TI_TOOLCHAIN_<version>` with the format specified by [CMSIS-Toolbox](https://github.com/Open-CMSIS-Pack/cmsis-toolbox/blob/main/docs/installation.md#compiler-registration). 
 
 ## Execute LIT tests
 
