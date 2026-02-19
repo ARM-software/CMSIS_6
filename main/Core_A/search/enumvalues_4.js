@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['legacy_5fnfiq_5firqn_0',['Legacy_nFIQ_IRQn',['../group__irq__ctrl__gr.html#gga7e1129cd8a196f4284d41db3e82ad5c8ac286832ada11ea1575a98149404d8aa7',1,'ref_irq_ctrl.txt']]],
-  ['legacy_5fnirq_5firqn_1',['Legacy_nIRQ_IRQn',['../group__irq__ctrl__gr.html#gga7e1129cd8a196f4284d41db3e82ad5c8a1718b510599bbe8ebe34aee5c5aa3214',1,'ref_irq_ctrl.txt']]]
+  ['virtualmaintenanceinterrupt_5firqn_0',['VirtualMaintenanceInterrupt_IRQn',['../group__irq__ctrl__gr.html#gga7e1129cd8a196f4284d41db3e82ad5c8a1d0271c3b3a369c16a9c05ab4ea72ca5',1,'ref_irq_ctrl.txt']]],
+  ['virtualtimer_5firqn_1',['VirtualTimer_IRQn',['../group__irq__ctrl__gr.html#gga7e1129cd8a196f4284d41db3e82ad5c8a2dde3bb4fc49f71c15bba2c4f0cda2cd',1,'ref_irq_ctrl.txt']]]
 ];

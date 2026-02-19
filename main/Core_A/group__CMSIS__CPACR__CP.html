@@ -124,82 +124,14 @@ $(document).ready(function(){initNavTree('group__CMSIS__CPACR__CP.html',''); ini
 </div>
 
 <div class="header">
-  <div class="summary">
-<a href="#define-members">Macros</a>  </div>
   <div class="headertitle"><div class="title">CPACR CP field values<div class="ingroups"><a class="el" href="group__CMSIS__core__register.html">Core Register Access</a> &raquo; <a class="el" href="group__CMSIS__CPACR.html">Coprocessor Access Control Register (CPACR)</a></div></div></div>
 </div><!--header-->
 <div class="contents">
 
 <p>Valid values for CPACR CP field.  
-<a href="#details">More...</a></p>
-<table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="define-members" name="define-members"></a>
-Macros</h2></td></tr>
-<tr class="memitem:gabd03f590b34b809438eaa3df4af2e7db"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CMSIS__CPACR__CP.html#gabd03f590b34b809438eaa3df4af2e7db">CPACR_CP_NA</a>&#160;&#160;&#160;0U</td></tr>
-<tr class="memdesc:gabd03f590b34b809438eaa3df4af2e7db"><td class="mdescLeft">&#160;</td><td class="mdescRight">CPACR CPn field: Access denied.  <br /></td></tr>
-<tr class="separator:gabd03f590b34b809438eaa3df4af2e7db"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga8602342c0bad80f3a36d3bdee7418a46"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CMSIS__CPACR__CP.html#ga8602342c0bad80f3a36d3bdee7418a46">CPACR_CP_PL1</a>&#160;&#160;&#160;1U</td></tr>
-<tr class="memdesc:ga8602342c0bad80f3a36d3bdee7418a46"><td class="mdescLeft">&#160;</td><td class="mdescRight">CPACR CPn field: Accessible from PL1 only.  <br /></td></tr>
-<tr class="separator:ga8602342c0bad80f3a36d3bdee7418a46"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gaeaa29f06a74fadc7245d6bd183bad11b"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CMSIS__CPACR__CP.html#gaeaa29f06a74fadc7245d6bd183bad11b">CPACR_CP_FA</a>&#160;&#160;&#160;3U</td></tr>
-<tr class="memdesc:gaeaa29f06a74fadc7245d6bd183bad11b"><td class="mdescLeft">&#160;</td><td class="mdescRight">CPACR CPn field: Full access.  <br /></td></tr>
-<tr class="separator:gaeaa29f06a74fadc7245d6bd183bad11b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table>
-<a name="details" id="details"></a><h2 class="groupheader">Description</h2>
+</p>
 <p>Valid values for CPACR CP field. </p>
 <p>Defines the access rights for a coprocessor. </p>
-<h2 class="groupheader">Macro Definition Documentation</h2>
-<a id="gaeaa29f06a74fadc7245d6bd183bad11b" name="gaeaa29f06a74fadc7245d6bd183bad11b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#gaeaa29f06a74fadc7245d6bd183bad11b">&#9670;&#160;</a></span>CPACR_CP_FA</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define CPACR_CP_FA&#160;&#160;&#160;3U</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>CPACR CPn field: Full access. </p>
-<p>The meaning of full access is defined by the appropriate coprocessor. </p>
-
-</div>
-</div>
-<a id="gabd03f590b34b809438eaa3df4af2e7db" name="gabd03f590b34b809438eaa3df4af2e7db"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#gabd03f590b34b809438eaa3df4af2e7db">&#9670;&#160;</a></span>CPACR_CP_NA</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define CPACR_CP_NA&#160;&#160;&#160;0U</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>CPACR CPn field: Access denied. </p>
-<p>Any attempt to access the coprocessor generates an Undefined Instruction exception. </p>
-
-</div>
-</div>
-<a id="ga8602342c0bad80f3a36d3bdee7418a46" name="ga8602342c0bad80f3a36d3bdee7418a46"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga8602342c0bad80f3a36d3bdee7418a46">&#9670;&#160;</a></span>CPACR_CP_PL1</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define CPACR_CP_PL1&#160;&#160;&#160;1U</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>CPACR CPn field: Accessible from PL1 only. </p>
-<p>Any attempt to access the coprocessor from unprivileged software generates an Undefined Instruction exception. </p>
-
-</div>
-</div>
 </div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
