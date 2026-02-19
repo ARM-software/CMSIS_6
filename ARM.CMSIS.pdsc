@@ -615,6 +615,25 @@
       <accept Dcore="Cortex-A7"/>
       <accept Dcore="Cortex-A9"/>
     </condition>
+    <condition id="ARMv8-A Device">
+      <description>Armv8-A architecture based device</description>
+      <accept Dcore="Cortex-A35"/>
+      <accept Dcore="Cortex-A53"/>
+      <accept Dcore="Cortex-A55"/>
+      <accept Dcore="Cortex-A57"/>
+    </condition>
+    <condition id="ARMv7_8-A Device">
+      <description>Armv7-A and Armv8-A architecture based device</description>
+      <accept condition="ARMv7-A Device"/>
+      <accept condition="ARMv8-A Device"/>
+    </condition>
+    <condition id="ARMv7-R Device">
+      <description>Armv7-R architecture based device</description>
+      <accept Dcore="Cortex-R4"/>
+      <accept Dcore="Cortex-R5"/>
+      <accept Dcore="Cortex-R7"/>
+      <accept Dcore="Cortex-R8"/>
+    </condition>
 
     <condition id="TrustZone">
       <description>TrustZone</description>
@@ -664,11 +683,20 @@
       </files>
     </component>
 
-    <component Cclass="CMSIS" Cgroup="CORE" Cversion="6.2.0"  condition="ARMv7-A Device" >
+    <component Cclass="CMSIS" Cgroup="CORE" Cversion="6.2.0"  condition="ARMv7_8-A Device" >
       <description>CMSIS-CORE for Cortex-A</description>
       <files>
         <!-- CPU independent -->
         <file category="doc"     name="CMSIS/Documentation/html/Core_A/index.html"/>
+        <file category="include" name="CMSIS/Core/Include/"/>
+      </files>
+    </component>
+
+    <component Cclass="CMSIS" Cgroup="CORE" Cversion="6.1.0"  condition="ARMv7-R Device" >
+      <description>CMSIS-CORE for Cortex-R</description>
+      <files>
+        <!-- CPU independent -->
+<!--        <file category="doc"     name="CMSIS/Documentation/html/Core_R/index.html"/> -->
         <file category="include" name="CMSIS/Core/Include/"/>
       </files>
     </component>

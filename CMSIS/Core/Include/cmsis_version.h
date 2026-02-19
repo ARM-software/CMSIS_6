@@ -41,4 +41,9 @@
 #define __CA_CMSIS_VERSION       ((__CA_CMSIS_VERSION_MAIN << 16U) | \
                                    __CA_CMSIS_VERSION_SUB          )      /*!< \brief CMSIS-Core(A) version number */
 
+#define __CR_CMSIS_VERSION_MAIN (6U)                                      /*!< \brief [31:16] CMSIS-Core(R) main version   */
+#define __CR_CMSIS_VERSION_SUB  (0U)                                      /*!< \brief [15:0]  CMSIS-Core(R) sub version    */
+#define __CR_CMSIS_VERSION      ((__CR_CMSIS_VERSION_MAIN << 16U) | \
+                                  __CR_CMSIS_VERSION_SUB          )       /*!< \brief CMSIS-Core(R) version number         */
+
 #endif

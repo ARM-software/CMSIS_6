@@ -17,11 +17,19 @@
  */
 
 
-#ifndef __CORE_CA_H
-#define __CORE_CA_H
+#ifndef __CORE_CR4_H
+#define __CORE_CR4_H
+
+#define __CORTEX_R           4U    /*!< \brief Cortex-R5 Core */
+
+#if defined __CHECK_DEVICE_DEFINES
+  #ifndef __CR4_REV
+    #define __CR4_REV              0x0000U
+    #warning "__CR4_REV not defined in device header file; using default!"
+  #endif
+#endif
+
+#include "./r-profile/armv7r.h"
 
 
-#include "./a-profile/armv7a.h"
-
-
-#endif /* __CORE_CA_H */
+#endif /* __CORE_CR4_H */
