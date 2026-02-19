@@ -9,7 +9,21 @@ Specifically, following functionalities are provided in the startup file:
  - Exception vectors of the Cortex-M Processor with weak functions that implement default routines.
  - Interrupt vectors that are device specific with weak functions that implement default routines.
 
-To adapt the file to a specific device only the interrupt vector table needs to be extended with the device-specific interrupt handlers. The naming convention for the interrupt handler names is `<interrupt_name>_IRQHandler`. This table needs to be consistent with \ref IRQn_Type that defines all the IRQ numbers for each interrupt.
+To adapt the file to a specific device only the interrupt vector table needs to be extended with the device-specific
+interrupt handlers. The following table shows the mapping of the interrupt names vs. handler names:
+
+| Interrupt name        | Handler name        |
+| --------------------- | ------------------- |
+| NonMaskableInt_IRQn   | NMI_Handler         |
+| HardFault_IRQn        | HardFault_Handler   |
+| MemoryManagement_IRQn | MemManage_Handler   |
+| BusFault_IRQn         | BusFault_Handler    |
+| UsageFault_IRQn       | UsageFault_Handler  |
+| SecureFault_IRQn      | SecureFault_Handler |
+| SVCall_IRQn           | SVC_Handler         |
+| DebugMonitor_IRQn     | DebugMon_Handler    |
+| PendSV_IRQn           | PendSV_Handler      |
+| SysTick_IRQn          | SysTick_Handler     |
 
 Additional application-specific adaptations may be required in the startup code and therefore so the startup file shall be located in the application project. \ref cmsis_files_dfps explains how this can be achieved when device support is provided in [CMSIS pack format](https://open-cmsis-pack.github.io/Open-CMSIS-Pack-Spec/main/html/index.html).
 
