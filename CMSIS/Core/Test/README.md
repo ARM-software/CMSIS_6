@@ -109,7 +109,7 @@ Install the Python packages required by `build.py`:
  ./CMSIS/Core/Test $ pip install -r requirements.txt
 ```
 
-TI Arm Clang Compiler is not supported through vcpkg and must be manually installed.  After installation, configure the environment variable `CLANG_TI_TOOLCHAIN_<version>` with the format specified by [CMSIS-Toolbox](https://github.com/Open-CMSIS-Pack/cmsis-toolbox/blob/main/docs/installation.md#compiler-registration). 
+TI Arm Clang Compiler is not supported through vcpkg and must be manually installed.  After installation, configure the environment variable `CLANG_TI_TOOLCHAIN_<version>` with the format specified by [CMSIS-Toolbox Installation -> Compiler Registration](https://open-cmsis-pack.github.io/cmsis-toolbox/installation/). 
 
 ## Execute LIT tests
 
