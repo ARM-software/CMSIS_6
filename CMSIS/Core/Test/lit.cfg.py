@@ -8,7 +8,6 @@ import lit.util
 DEVICES = {
     'CM0': {
         'arch': 'thumbv6m',
-        'triple': 'thumbv6m',
         'abi': 'eabi',
         'mcpu': 'cortex-m0',
         'mfpu': 'none',
@@ -23,7 +22,6 @@ DEVICES = {
     },
     'CM0plus': {
         'arch': 'thumbv6m',
-        'triple': 'thumbv6m',
         'abi': 'eabi',
         'mcpu': 'cortex-m0plus',
         'mfpu': 'none',
@@ -40,7 +38,6 @@ DEVICES = {
     },
     'CM3': {
         'arch': 'thumbv7m',
-        'triple': 'thumbv7-m',
         'abi': 'eabi',
         'mcpu': 'cortex-m3',
         'mfpu': 'none',
@@ -57,7 +54,6 @@ DEVICES = {
     },
     'CM4': {
         'arch': 'thumbv7em',
-        'triple': 'thumbv7-em',
         'abi': 'eabi',
         'mcpu': 'cortex-m4',
         'mfpu': 'none',
@@ -75,7 +71,6 @@ DEVICES = {
     },
     'CM4FP': {
         'arch': 'thumbv7em',
-        'triple': 'thumbv7-em',
         'abi': 'eabihf',
         'mcpu': 'cortex-m4',
         'mfpu': 'fpv4-sp-d16',
@@ -93,7 +88,6 @@ DEVICES = {
     },
     'CM7': {
         'arch': 'thumbv7em',
-        'triple': 'thumbv7-em',
         'abi': 'eabi',
         'mcpu': 'cortex-m7',
         'mfpu': 'none',
@@ -114,7 +108,6 @@ DEVICES = {
     },
     'CM7SP': {
         'arch': 'thumbv7em',
-        'triple': 'thumbv7-em',
         'abi': 'eabi',
         'mcpu': 'cortex-m7',
         'mfpu': 'fpv4-sp-d16',
@@ -135,7 +128,6 @@ DEVICES = {
     },
     'CM7DP': {
         'arch': 'thumbv7em',
-        'triple': 'thumbv7-em',
         'abi': 'eabihf',
         'mcpu': 'cortex-m7',
         'mfpu': 'fpv5-d16',
@@ -156,7 +148,6 @@ DEVICES = {
     },
     'CM23': {
         'arch': 'thumbv8m.base',
-        'triple': 'thumbv8m',
         'abi': 'eabi',
         'mcpu': 'cortex-m23',
         'mfpu': 'none',
@@ -175,7 +166,6 @@ DEVICES = {
     },
     'CM23S': {
         'arch': 'thumbv8m.base',
-        'triple': 'thumbv8m',
         'abi': 'eabi',
         'mcpu': 'cortex-m23',
         'mfpu': 'none',
@@ -194,7 +184,6 @@ DEVICES = {
     },
     'CM23NS': {
         'arch': 'thumbv8m.base',
-        'triple': 'thumbv8m',
         'abi': 'eabi',
         'mcpu': 'cortex-m23',
         'mfpu': 'none',
@@ -213,7 +202,6 @@ DEVICES = {
     },
     'CM33': {
         'arch': 'thumbv8m.main',
-        'triple': 'thumbv8m',
         'abi': 'eabihf',
         'mcpu': 'cortex-m33',
         'mfpu': 'fpv5-d16',
@@ -232,7 +220,6 @@ DEVICES = {
     },
     'CM33S': {
         'arch': 'thumbv8m.main',
-        'triple': 'thumbv8m',
         'abi': 'eabihf',
         'mcpu': 'cortex-m33',
         'mfpu': 'fpv5-d16',
@@ -251,7 +238,6 @@ DEVICES = {
     },
     'CM33NS': {
         'arch': 'thumbv8m.main',
-        'triple': 'thumbv8m',
         'abi': 'eabihf',
         'mcpu': 'cortex-m33',
         'mfpu': 'fpv5-d16',
@@ -270,7 +256,6 @@ DEVICES = {
     },
     'CM35P': {
         'arch': 'thumbv8m.main',
-        'triple': 'thumbv8m',
         'abi': 'eabihf',
         'mcpu': 'cortex-m35p',
         'mfpu': 'fpv5-d16',
@@ -289,7 +274,6 @@ DEVICES = {
     },
     'CM35PS': {
         'arch': 'thumbv8m.main',
-        'triple': 'thumbv8m',
         'abi': 'eabihf',
         'mcpu': 'cortex-m35p',
         'mfpu': 'fpv5-d16',
@@ -308,7 +292,6 @@ DEVICES = {
     },
     'CM35PNS': {
         'arch': 'thumbv8m.main',
-        'triple': 'thumbv8m',
         'abi': 'eabihf',
         'mcpu': 'cortex-m35p',
         'mfpu': 'fpv5-d16',
@@ -327,7 +310,6 @@ DEVICES = {
     },
     'CM52': {
         'arch': 'thumbv8.1m.main',
-        'triple': 'thumbv8m',
         'abi': 'eabihf',
         'mcpu': 'cortex-m52',
         'mfpu': 'fpv5-d16',
@@ -353,7 +335,6 @@ DEVICES = {
     },
     'CM52S': {
         'arch': 'thumbv8.1m.main',
-        'triple': 'thumbv8m',
         'abi': 'eabihf',
         'mcpu': 'cortex-m52',
         'mfpu': 'fpv5-d16',
@@ -379,7 +360,6 @@ DEVICES = {
     },
     'CM52NS': {
         'arch': 'thumbv8.1m.main',
-        'triple': 'thumbv8m',
         'abi': 'eabihf',
         'mcpu': 'cortex-m52',
         'mfpu': 'fpv5-d16',
@@ -405,7 +385,6 @@ DEVICES = {
     },    
     'CM55': {
         'arch': 'thumbv8.1m.main',
-        'triple': 'thumbv8m',
         'abi': 'eabihf',
         'mcpu': 'cortex-m55',
         'mfpu': 'fpv5-d16',
@@ -430,7 +409,6 @@ DEVICES = {
     },
     'CM55S': {
         'arch': 'thumbv8.1m.main',
-        'triple': 'thumbv8m',
         'abi': 'eabihf',
         'mcpu': 'cortex-m55',
         'mfpu': 'fpv5-d16',
@@ -455,7 +433,6 @@ DEVICES = {
     },
     'CM55NS': {
         'arch': 'thumbv8.1m.main',
-        'triple': 'thumbv8m',
         'abi': 'eabihf',
         'mcpu': 'cortex-m55',
         'mfpu': 'fpv5-d16',
@@ -480,7 +457,6 @@ DEVICES = {
     },
     'CM85': {
         'arch': 'thumbv8.1m.main',
-        'triple': 'thumbv8m',
         'abi': 'eabihf',
         'mcpu': 'cortex-m85',
         'mfpu': 'fpv5-d16',
@@ -505,7 +481,6 @@ DEVICES = {
     },
     'CM85S': {
         'arch': 'thumbv8.1m.main',
-        'triple': 'thumbv8m',
         'abi': 'eabihf',
         'mcpu': 'cortex-m85',
         'mfpu': 'fpv5-d16',
@@ -530,7 +505,6 @@ DEVICES = {
     },
     'CM85NS': {
         'arch': 'thumbv8.1m.main',
-        'triple': 'thumbv8m',
         'abi': 'eabihf',
         'mcpu': 'cortex-m85',
         'mfpu': 'fpv5-d16',
@@ -555,7 +529,6 @@ DEVICES = {
     },
     'CA5': {
         'arch': 'armv7a',
-        'triple': 'armv7-a',
         'abi': 'eabi',
         'mcpu': 'cortex-a5',
         'mfpu': 'none',
@@ -578,7 +551,6 @@ DEVICES = {
     },
     'CA5neon': {
         'arch': 'armv7a',
-        'triple': 'armv7-a',
         'abi': 'eabihf',
         'mcpu': 'cortex-a5',
         'mfpu': 'neon-vfpv4',
@@ -601,7 +573,6 @@ DEVICES = {
     },
     'CA7': {
         'arch': 'armv7a',
-        'triple': 'armv7-a',
         'abi': 'eabi',
         'mcpu': 'cortex-a7',
         'mfpu': 'none',
@@ -624,7 +595,6 @@ DEVICES = {
     },
     'CA7neon': {
         'arch': 'armv7a',
-        'triple': 'armv7-a',
         'abi': 'eabihf',
         'mcpu': 'cortex-a7',
         'mfpu': 'neon-vfpv4',
@@ -647,7 +617,6 @@ DEVICES = {
     },
     'CA9': {
         'arch': 'armv7a',
-        'triple': 'armv7-a',
         'abi': 'eabi',
         'mcpu': 'cortex-a9',
         'mfpu': 'none',
@@ -670,7 +639,6 @@ DEVICES = {
     },
     'CA9neon': {
         'arch': 'armv7a',
-        'triple': 'armv7-a',
         'abi': 'eabihf',
         'mcpu': 'cortex-a9',
         'mfpu': 'neon-vfpv3',
@@ -689,6 +657,175 @@ DEVICES = {
             'TIMER_BASE': '0x2C000600UL',
             'L2C_310_BASE': '0x2C0F0000UL',
             'IRQn_Type': 'int'
+        }
+    },
+    'CA53': {
+        'arch': 'armv8a',
+        'abi': 'eabi',
+        'mcpu': 'cortex-a53',
+        'mfpu': 'none',
+        'mpu': True,
+        'features': ['armv8a', 'thumb-2', 'sat', 'clz'],
+        'header': 'core_ca.h',
+        'defines': {
+            '__CORTEX_A': '8',
+            '__CA_REV': '0x0000U',
+            '__FPU_PRESENT': '0U',
+            '__GIC_PRESENT': '1U',
+            '__TIM_PRESENT': '1U',
+            '__L2C_PRESENT': '1U',
+            '__PMU_PRESENT': '1U',
+            '__PMU_NUM_EVENTCNT': '6U',
+            'GIC_DISTRIBUTOR_BASE': '0x2C001000UL',
+            'GIC_INTERFACE_BASE': '0x2C000100UL',
+            'TIMER_BASE': '0x2C000600UL',
+            'L2C_310_BASE': '0x2C0F0000UL',
+            'IRQn_Type': 'int'
+        }
+    },
+    'CA53neon': {
+        'arch': 'armv8a',
+        'abi': 'eabihf',
+        'mcpu': 'cortex-a53',
+        'mfpu': 'neon-fp-armv8',
+        'mpu': True,
+        'features': ['armv8a', 'thumb-2', 'sat', 'dsp', 'clz'],
+        'header': 'core_ca.h',
+        'defines': {
+            '__CORTEX_A': '8',
+            '__CA_REV': '0x0000U',
+            '__FPU_PRESENT': '1U',
+            '__GIC_PRESENT': '1U',
+            '__TIM_PRESENT': '1U',
+            '__L2C_PRESENT': '1U',
+            '__PMU_PRESENT': '1U',
+            '__PMU_NUM_EVENTCNT': '6U',
+            'GIC_DISTRIBUTOR_BASE': '0x2C001000UL',
+            'GIC_INTERFACE_BASE': '0x2C000100UL',
+            'TIMER_BASE': '0x2C000600UL',
+            'L2C_310_BASE': '0x2C0F0000UL',
+            'IRQn_Type': 'int'
+        }
+    },
+    'CR4': {
+        'arch': 'armv7r',
+        'abi': 'eabi',
+        'mcpu': 'cortex-r4',
+        'mfpu': 'none',
+        'mpu': True,
+        'features': ['armv7r', 'thumb-2', 'ldrex', 'clz'],
+        'header': 'core_cr4.h',
+        'defines': {
+            '__FPU_PRESENT': '0U',
+            '__FPU_DP': '0U',
+            '__MPU_PRESENT': '1U',
+            '__ICACHE_PRESENT': '1U',
+            '__DCACHE_PRESENT': '1U',
+            '__DTCM_PRESENT': '1U',
+            '__PMU_PRESENT': '1U',
+            '__PMU_NUM_EVENTCNT': '3U',
+            '__Vendor_SysTickConfig': '0U'
+        }
+    },
+    'CR4DP': {
+        'arch': 'armv7r',
+        'abi': 'eabihf',
+        'mcpu': 'cortex-r4',
+        'mfpu': 'vfpv3-d16',
+        'mpu': True,
+        'features': ['armv7r', 'thumb-2', 'sat', 'dsp', 'ldrex', 'clz'],
+        'header': 'core_cr4.h',
+        'defines': {
+            '__FPU_PRESENT': '1U',
+            '__FPU_DP': '1U',
+            '__MPU_PRESENT': '1U',
+            '__ICACHE_PRESENT': '1U',
+            '__DCACHE_PRESENT': '1U',
+            '__DTCM_PRESENT': '1U',
+            '__PMU_PRESENT': '1U',
+            '__PMU_NUM_EVENTCNT': '3U',
+            '__Vendor_SysTickConfig': '0U'
+        }
+    },
+    'CR5': {
+        'arch': 'armv7r',
+        'abi': 'eabi',
+        'mcpu': 'cortex-r5',
+        'mfpu': 'none',
+        'mpu': True,
+        'features': ['armv7r', 'thumb-2', 'ldrex', 'clz'],
+        'header': 'core_cr5.h',
+        'defines': {
+            '__FPU_PRESENT': '0U',
+            '__FPU_DP': '0U',
+            '__MPU_PRESENT': '1U',
+            '__ICACHE_PRESENT': '1U',
+            '__DCACHE_PRESENT': '1U',
+            '__DTCM_PRESENT': '1U',
+            '__PMU_PRESENT': '1U',
+            '__PMU_NUM_EVENTCNT': '3U',
+            '__Vendor_SysTickConfig': '0U'
+        }
+    },
+    'CR5DP': {
+        'arch': 'armv7r',
+        'abi': 'eabihf',
+        'mcpu': 'cortex-r5',
+        'mfpu': 'vfpv3-d16',
+        'mpu': True,
+        'features': ['armv7r', 'thumb-2', 'sat', 'dsp', 'ldrex', 'clz'],
+        'header': 'core_cr5.h',
+        'defines': {
+            '__FPU_PRESENT': '1U',
+            '__FPU_DP': '1U',
+            '__MPU_PRESENT': '1U',
+            '__ICACHE_PRESENT': '1U',
+            '__DCACHE_PRESENT': '1U',
+            '__DTCM_PRESENT': '1U',
+            '__PMU_PRESENT': '1U',
+            '__PMU_NUM_EVENTCNT': '3U',
+            '__Vendor_SysTickConfig': '0U'
+        }
+    },
+    'CR52': {
+        'arch': 'armv8r',
+        'abi': 'eabi',
+        'mcpu': 'cortex-r52',
+        'mfpu': 'none',
+        'mpu': True,
+        'features': ['armv7r', 'thumb-2', 'ldrex', 'clz'],
+        'header': 'core_cr52.h',
+        'defines': {
+            '__FPU_PRESENT': '0U',
+            '__FPU_DP': '0U',
+            '__MPU_PRESENT': '1U',
+            '__ICACHE_PRESENT': '1U',
+            '__DCACHE_PRESENT': '1U',
+            '__DTCM_PRESENT': '1U',
+            '__PMU_PRESENT': '1U',
+            '__PMU_NUM_EVENTCNT': '4U',
+            '__Vendor_SysTickConfig': '0U'
+        }
+    },
+    'CR52neon': {
+        'arch': 'armv8r',
+        'abi': 'eabihf',
+        'mfloat-abi': 'hard',
+        'mcpu': 'cortex-r52',
+        'mfpu': 'neon-fp-armv8',
+        'mpu': True,
+        'features': ['armv8r', 'thumb-2', 'sat', 'dsp', 'ldrex', 'clz'],
+        'header': 'core_cr52.h',
+        'defines': {
+            '__FPU_PRESENT': '1U',
+            '__FPU_DP': '1U',
+            '__MPU_PRESENT': '1U',
+            '__ICACHE_PRESENT': '1U',
+            '__DCACHE_PRESENT': '1U',
+            '__DTCM_PRESENT': '1U',
+            '__PMU_PRESENT': '1U',
+            '__PMU_NUM_EVENTCNT': '4U',
+            '__Vendor_SysTickConfig': '0U'
         }
     }
 }
@@ -711,9 +848,6 @@ config.suffixes = [
 
 # test_source_root: The root path where tests are located.
 config.test_source_root = os.path.dirname(__file__)
-
-
-# clang_path = get_toolchain_from_env('CLANG')
 
 toolchain = lit_config.params.get("toolchain", "AC6")
 device = lit_config.params.get("device", "ARMCM3")
@@ -789,6 +923,7 @@ class Toolchain_GCC(Toolchain):
         ccflags += list(sum([('-D', f'{define}={value}') for (define, value) in DEVICES[self.device]['defines'].items()], ()))
         return ccflags
 
+
 class Toolchain_Clang(Toolchain):
     TARGET = {
         'CM0': 'thumbv6m-none-eabi',
@@ -822,7 +957,15 @@ class Toolchain_Clang(Toolchain):
         'CA7': 'armv7-none-eabi',
         'CA7neon': 'armv7-none-eabihf',
         'CA9': 'armv7-none-eabi',
-        'CA9neon': 'armv7-none-eabihf'
+        'CA9neon': 'armv7-none-eabihf',
+        'CA53': 'armv8a-none-eabi',
+        'CA53neon': 'armv8a-none-eabihf',
+        'CR4': 'armv7r-none-eabi',
+        'CR4DP': 'armv7r-none-eabihf',
+        'CR5': 'armv7r-none-eabi',
+        'CR5DP': 'armv7r-none-eabihf',
+        'CR52': 'armv8r-none-eabi',
+        'CR52neon': 'armv8r-none-eabihf',
     }
     OPTIMIZE = {
         'none': '-O1',
@@ -846,6 +989,41 @@ class Toolchain_Clang(Toolchain):
         ccflags += list(sum([('-D', f'{define}={value}') for (define, value) in DEVICES[self.device]['defines'].items()], ()))
 
         return ccflags
+
+
+class Toolchain_Clang_TI(Toolchain):
+    OPTIMIZE = {
+        'none': '-O1',
+        'balanced': '-O3',
+        'speed': '-Os',
+        'size': '-Oz'
+    }
+    def __init__(self, **args):
+        super().__init__('CLANG_TI', **args)
+
+    def get_cc(self):
+        return os.path.join(self.get_root(), 'tiarmclang')
+
+    def get_ccflags(self):
+        ccflags = [
+            f'-mcpu={DEVICES[self.device]["mcpu"]}', self.OPTIMIZE[self.optimize], 
+            '-I', os.path.abspath('../Include'), '-c', '-D', f'CORE_HEADER="{DEVICES[device]["header"]}"']
+        if DEVICES[self.device]["mfpu"] == 'none':
+            ccflags += [f'-mfloat-abi=soft']
+        else:
+            # Manual override of M33 FPU configuration.  This should be checked when adding future devices.
+            if DEVICES[self.device]["mfpu"] == 'fpv5-d16':
+                ccflags += [f'-mfpu=fpv5-sp-d16']
+            else:
+                ccflags += [f'-mfpu={DEVICES[self.device]["mfpu"]}']
+            ccflags += [f'-mfloat-abi=hard']
+        if device.endswith('S') and not device.endswith('NS'):
+            ccflags += ["-mcmse"]
+        print(ccflags)
+        ccflags += list(sum([('-D', f'{define}={value}') for (define, value) in DEVICES[self.device]['defines'].items()], ()))
+
+        return ccflags
+
     
 tc = None
 if toolchain == 'AC6':
@@ -854,6 +1032,8 @@ elif toolchain == 'GCC':
     tc = Toolchain_GCC(device=device, optimize=optimize)
 elif toolchain == 'Clang':
     tc = Toolchain_Clang(device=device, optimize=optimize)
+elif toolchain == 'Clang_TI':
+    tc = Toolchain_Clang_TI(device=device, optimize=optimize)
 
 prefixes = ['CHECK']
 if device.endswith('NS'):
@@ -870,6 +1050,22 @@ if DEVICES[device]["mfpu"] != 'none':
 for feature in DEVICES[device]['features']:
     config.available_features.add(feature)
 
+if DEVICES[device]["arch"] == 'armv7a':
+    config.available_features.add('armv7ar')
+    config.available_features.add('armv78ar')
+if DEVICES[device]["arch"] == 'armv7r':
+    config.available_features.add('armv7ar')
+    config.available_features.add('armv78ar')
+if DEVICES[device]["arch"] == 'armv8a':
+    config.available_features.add('armv8ar')
+    config.available_features.add('armv78ar')
+if DEVICES[device]["arch"] == 'armv8r':
+    config.available_features.add('armv8ar')
+    config.available_features.add('armv78ar')
+
+print(config.available_features)
+
+
 objdump = os.path.join(Toolchain("CLANG", "none", "none").get_root(), 'llvm-objdump')
 config.substitutions.append(("llvm-objdump", objdump))
 
@@ -877,5 +1073,4 @@ config.substitutions.append(("%ccout%", "-o"))
 config.substitutions.append(("%cc%", tc.get_cc()))
 config.substitutions.append(("%ccflags%", ' '.join(tc.get_ccflags())))
 config.substitutions.append(("%prefixes%", ','.join(prefixes)))
-config.substitutions.append(("%triple%", DEVICES[device]['triple']))
 config.substitutions.append(("%mcpu%", DEVICES[device]['mcpu']))

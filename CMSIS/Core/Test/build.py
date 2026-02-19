@@ -39,11 +39,19 @@ class DeviceAxis(Enum):
     CM85S = ('Cortex-M85S', 'CM85S')
     CM85NS = ('Cortex-M85NS', 'CM85NS')
     CA5 = ('Cortex-A5', 'CA5')
-    CA7 = ('Cortex-A7', 'CA7')
-    CA9 = ('Cortex-A9', 'CA9')
     CA5NEON = ('Cortex-A5neon', 'CA5neon')
+    CA7 = ('Cortex-A7', 'CA7')
     CA7NEON = ('Cortex-A7neon', 'CA7neon')
+    CA9 = ('Cortex-A9', 'CA9')
     CA9NEON = ('Cortex-A9neon', 'CA9neon')
+    CA53 = ('Cortex-A53', 'CA53')
+    CA53NEON = ('Cortex-A53neon', 'CA53neon')
+    CR4 = ('Cortex-R4', 'CR4')
+    CR4DP = ('Cortex-R4DP', 'CR4DP')
+    CR5 = ('Cortex-R5', 'CR5')
+    CR5DP = ('Cortex-R5DP', 'CR5DP')
+    CR52 = ('Cortex-R52', 'CR52')
+    CR52NEON = ('Cortex-R52neon', 'CR52neon')
 
 
 @matrix_axis("compiler", "c", "Compiler(s) to be considered.")
@@ -52,6 +60,7 @@ class CompilerAxis(Enum):
     GCC = ('GCC')
     IAR = ('IAR')
     CLANG = ('Clang')
+    CLANG_TI = ('Clang_TI')
 
 
 @matrix_axis("optimize", "o", "Optimization level(s) to be considered.")
@@ -91,6 +100,27 @@ def filter_iar(config):
 def filter_gcc_cm52(config):
     device = config.device.match('CM52*')
     compiler = config.compiler == CompilerAxis.GCC
+    return device and compiler
+
+
+@matrix_filter
+def filter_clang_ti_supported_devices(config):
+    device = not config.device.match('CM0')
+    device &= not config.device.match('CM3')
+    device &= not config.device.match('CM4')
+    device &= not config.device.match('CM4FP')
+    device &= not config.device.match('CM33')
+    device &= not config.device.match('CM33S')
+    device &= not config.device.match('CM33NS')
+    device &= not config.device.match('CR4')
+    device &= not config.device.match('CR4DP')
+    device &= not config.device.match('CR5')
+    device &= not config.device.match('CR5DP')
+    device &= not config.device.match('CR52')
+    device &= not config.device.match('CR52neon')
+    device &= not config.device.match('CA53')
+    device &= not config.device.match('CA53neon')
+    compiler = config.compiler.match('Clang_TI')
     return device and compiler
 
 
