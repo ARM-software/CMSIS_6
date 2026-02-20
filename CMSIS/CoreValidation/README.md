@@ -20,6 +20,7 @@ Currently, the following build configurations are provided:
    - Arm Compiler 6 (AC6)
    - GNU Compiler (GCC)
    - LLVM/Clang (Clang)
+   - TI Arm Clang (Clang_TI) (CM0/0+/3/4)
 2. Devices
    - Cortex-M0
    - Cortex-M0+
@@ -68,6 +69,7 @@ The following tools are required to build and run the CoreValidation tests:
 - [Arm Compiler 6.20](https://artifacts.keil.arm.com/arm-compiler/6.20/21/)*
 - [GCC Compiler 13.2.1](https://artifacts.keil.arm.com/arm-none-eabi-gcc/13.2.1/)*
 - [Clang Compiler 17.0.1](https://github.com/ARM-software/LLVM-embedded-toolchain-for-Arm/releases/tag/release-17.0.1)*
+- [TI Arm Clang Compiler 5.0.0](https://www.ti.com/tool/download/ARM-CGT-CLANG)
 - [Arm Virtual Hardware for Cortex-M based on FastModels 11.22.39](https://artifacts.keil.arm.com/avh/11.22.39/)*
 - [Python 3.9](https://www.python.org/downloads/)
 
@@ -83,6 +85,8 @@ Install the Python packages required by `build.py`:
 ```bash
  ./CMSIS/CoreValidation/Project $ pip install -r requirements.txt
 ```
+
+TI Arm Clang Compiler is not supported through vcpkg and must be manually installed.  After installation, configure the environment variable `CLANG_TI_TOOLCHAIN_<version>` with the format specified by [CMSIS-Toolbox Installation -> Compiler Registration](https://open-cmsis-pack.github.io/cmsis-toolbox/installation/). 
 
 ## Build and run
 

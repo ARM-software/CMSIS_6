@@ -41,11 +41,17 @@ class DeviceAxis(Enum):
     CM85S = ('Cortex-M85S', 'CM85S')
     CM85NS = ('Cortex-M85NS', 'CM85NS')
     CA5 = ('Cortex-A5', 'CA5')
+    CA5NEON = ('Cortex-A5neon', 'CA5neon')
     CA7 = ('Cortex-A7', 'CA7')
+    CA7NEON = ('Cortex-A7neon', 'CA7neon')
     CA9 = ('Cortex-A9', 'CA9')
-#    CA5NEON = ('Cortex-A5neon', 'CA5neon')
-#    CA7NEON = ('Cortex-A7neon', 'CA7neon')
-#    CA9NEON = ('Cortex-A9neon', 'CA9neon')
+    CA9NEON = ('Cortex-A9neon', 'CA9neon')
+    CA53 = ('Cortex-A53', 'CA53')
+    CA53NEON = ('Cortex-A53neon', 'CA53neon')
+    CR4 = ('Cortex-R4', 'CR4')
+    CR5 = ('Cortex-R5', 'CR5')
+    CR52 = ('Cortex-R52', 'CR52')
+    CR52NEON = ('Cortex-R52neon', 'CR52neon')
 
     def has_bl(self):
         return self in [
@@ -76,6 +82,7 @@ class CompilerAxis(Enum):
     GCC = ('GCC')
     IAR = ('IAR')
     CLANG = ('Clang')
+    CLANG_TI = ('Clang_TI')
 
     @property
     def image_ext(self):
@@ -84,6 +91,7 @@ class CompilerAxis(Enum):
             CompilerAxis.GCC: 'elf',
             CompilerAxis.IAR: 'elf',
             CompilerAxis.CLANG: 'elf',
+            CompilerAxis.CLANG_TI: 'elf',
         }
         return ext[self]
 
@@ -93,7 +101,8 @@ class CompilerAxis(Enum):
             CompilerAxis.AC6: 'AC6',
             CompilerAxis.GCC: 'GCC',
             CompilerAxis.IAR: 'IAR',
-            CompilerAxis.CLANG: 'CLANG'
+            CompilerAxis.CLANG: 'CLANG',
+            CompilerAxis.CLANG_TI: 'CLANG_TI',
         }
         return ext[self]
 
@@ -131,11 +140,17 @@ MODEL_EXECUTABLE = {
     DeviceAxis.CM85S: ("FVP_MPS2_Cortex-M85", []),
     DeviceAxis.CM85NS: ("FVP_MPS2_Cortex-M85", []),
     DeviceAxis.CA5: ("FVP_VE_Cortex-A5x1", []),
+    DeviceAxis.CA5NEON: ("_VE_Cortex-A5x1", []),
     DeviceAxis.CA7: ("FVP_VE_Cortex-A7x1", []),
+    DeviceAxis.CA7NEON: ("_VE_Cortex-A7x1", []),
     DeviceAxis.CA9: ("FVP_VE_Cortex-A9x1", []),
-#    DeviceAxis.CA5NEON: ("_VE_Cortex-A5x1", []),
-#    DeviceAxis.CA7NEON: ("_VE_Cortex-A7x1", []),
-#    DeviceAxis.CA9NEON: ("_VE_Cortex-A9x1", [])
+    DeviceAxis.CA9NEON: ("_VE_Cortex-A9x1", []),
+    DeviceAxis.CA53: ("FVP_VE_Cortex-A53x1", []),
+    DeviceAxis.CA53NEON: ("_VE_Cortex-A53x1", []),
+    DeviceAxis.CR4: ("FVP_MPS2_Cortex-R4", []),
+    DeviceAxis.CR5: ("FVP_MPS2_Cortex-R5", []),
+    DeviceAxis.CR52: ("FVP_MPS2_Cortex-R52", []),
+    DeviceAxis.CR52NEON: ("_VE_MPS2_Cortex-R52", []),
 }
 
 QEMU_MACHINE = {
@@ -296,6 +311,39 @@ def filter_gcc_cm52(config):
     device = config.device.match('CM52*')
     compiler = config.compiler == CompilerAxis.GCC
     return device and compiler
+
+
+@matrix_filter
+def filter_clang_ti_supported_devices(config):
+    device = not config.device.match('CM0')
+    device = not config.device.match('CM0plus')
+    device &= not config.device.match('CM3')
+    device &= not config.device.match('CM4')
+    device &= not config.device.match('CM33')
+    device &= not config.device.match('CM33S')
+    device &= not config.device.match('CM33NS')
+    device &= not config.device.match('CR4')
+    device &= not config.device.match('CR5')
+    device &= not config.device.match('CR52')
+    device &= not config.device.match('CR52neon')
+    device &= not config.device.match('CA53')
+    device &= not config.device.match('CA53neon')
+    compiler = config.compiler.match('Clang_TI')
+    return device and compiler
+
+
+@matrix_filter
+def filter_unsupported_devices(config):
+    device = config.device.match('CA5neon')
+    device |= config.device.match('CA7neon')
+    device |= config.device.match('CA9neon')
+    device |= config.device.match('CA53')
+    device |= config.device.match('CA53neon')
+    device |= config.device.match('CR4')
+    device |= config.device.match('CR5')
+    device |= config.device.match('CR52')
+    device |= config.device.match('CR52neon')
+    return device
 
 
 if __name__ == "__main__":
