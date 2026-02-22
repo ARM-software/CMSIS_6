@@ -21,7 +21,7 @@ jobs:
     strategy:
       fail-fast: true
       matrix:
-        compiler: [AC6, GCC, Clang]
+        compiler: [AC6, GCC, Clang, Clang_TI]
     
     runs-on: ubuntu-22.04
 
