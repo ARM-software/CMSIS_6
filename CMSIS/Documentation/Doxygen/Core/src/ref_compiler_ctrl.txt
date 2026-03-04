@@ -169,7 +169,8 @@ __STATIC_FORCEINLINE uint32_t NVIC_GetVector(IRQn_Type IRQn)
 \brief Inform the compiler that a function does not return.
 \details
 Informs the compiler that the function does not return. The compiler can then perform optimizations by
-removing code that is never reached.
+removing code that is never reached. For maximum portability, this should only be used where the C/C++
+standard allows it.
 
 <b>Code Example:</b>
 \code
