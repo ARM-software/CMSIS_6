@@ -79,8 +79,8 @@ jobs:
           CLANG_TI_BIN="${{ env.CLANG_TI_INSTALL_PATH }}${{ env.CLANG_TI_DIR }}${{ env.CLANG_TI_VERSION }}/bin"
           echo "export PATH=\$PATH:${CLANG_TI_BIN}" >> $GITHUB_ENV
           echo "CLANG_TI_TOOLCHAIN_${{ env.CLANG_TI_VERSION }}=${CLANG_TI_BIN}" >> $GITHUB_ENV
-          echo "PATH: $PATH"
-          ls ${CLANG_TI_BIN}
+          echo "$GITHUB_ENV"
+          ls ${{ env.CLANG_TI_INSTALL_PATH }}
 
       - name: Run LIT
         working-directory: ./CMSIS/Core/Test
