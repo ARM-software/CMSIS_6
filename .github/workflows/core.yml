@@ -75,9 +75,10 @@ jobs:
 
       - name: Set TI Arm Clang Environment Variable
         run: |
-          export PATH=$PATH:${{ env.CLANG_TI_PATH }}/bin
-          export CLANG_TI_TOOLCHAIN_${{ env.CLANG_TI_VERSION }}=${{ env.CLANG_TI_PATH }}/bin
+          echo "export PATH=\$PATH:${{ env.CLANG_TI_PATH }}/bin" >> $GITHUB_ENV
           echo "CLANG_TI_TOOLCHAIN_${{ env.CLANG_TI_VERSION }}=${{ env.CLANG_TI_PATH }}/bin" >> $GITHUB_ENV
+          echo "PATH: $PATH"
+          ls ${{ env.CLANG_TI_PATH }}
 
       - name: Run LIT
         working-directory: ./CMSIS/Core/Test
