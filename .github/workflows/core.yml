@@ -60,7 +60,7 @@ jobs:
         id: cache-ti-arm-clang
         uses: actions/cache@v4
         with:
-          path: ${{ env.CLANG_TI_PATH }}
+          path: ${{ env.CLANG_TI_INSTALL_PATH }}${{ env.CLANG_TI_DIR }}${{ env.CLANG_TI_VERSION }}
           key: ${{ runner.os }}-ti-arm-clang-${{ env.CLANG_TI_VERSION }}
 
       - name: Download and Verify TI Arm Clang Installer
