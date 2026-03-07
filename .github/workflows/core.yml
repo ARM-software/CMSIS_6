@@ -22,7 +22,6 @@ jobs:
       ARM_UBL_ACTIVATION_CODE: ${{ secrets.ARM_UBL_ACTIVATION_CODE }}
       CLANG_TI_VERSION: "5.0.0.STS"
       CLANG_TI_INSTALL_PATH: "~/"
-      CLANG_TI_DIR: "ti-cgt-armllvm_"
       CLANG_TI_SHA256: "7a71570703f93f3682258b95d5a14a620cd6a5fc74dc5233f2d6c56d366c6da2"
 
     steps:
@@ -56,39 +55,44 @@ jobs:
 
       - uses: ammaraskar/gcc-problem-matcher@master
 
-      - name: Cache TI Arm Clang
+      - name: Set TI ARM CLANG Environment Variables and Path
+        run: |
+          echo "CLANG_TI_PATH=${{ env.CLANG_TI_INSTALL_PATH }}ti-cgt-armllvm_${{ env.CLANG_TI_VERSION }}" >> $GITHUB_ENV
+          echo "CLANG_TI_BIN=${{ env.CLANG_TI_INSTALL_PATH }}ti-cgt-armllvm_${{ env.CLANG_TI_VERSION }}/bin" >> $GITHUB_ENV
+          echo "CLANG_TI_TOOLCHAIN_${{ env.CLANG_TI_VERSION }}=${{ env.CLANG_TI_INSTALL_PATH }}ti-cgt-armllvm_${{ env.CLANG_TI_VERSION }}/bin" >> $GITHUB_ENV
+          echo "${{ env.CLANG_TI_INSTALL_PATH }}ti-cgt-armllvm_${{ env.CLANG_TI_VERSION }}/bin" >> $GITHUB_PATH
+
+      - name: Cache TI ARM CLANG
         id: cache-ti-arm-clang
         uses: actions/cache@v4
         with:
-          path: ${{ env.CLANG_TI_INSTALL_PATH }}${{ env.CLANG_TI_DIR }}${{ env.CLANG_TI_VERSION }}
+          path: ${{ env.CLANG_TI_PATH }}
           key: ${{ runner.os }}-ti-arm-clang-${{ env.CLANG_TI_VERSION }}
 
-      - name: Download and Verify TI Arm Clang Installer
+      - name: Download and Verify TI ARM CLANG Installer
         if: steps.cache-ti-arm-clang.outputs.cache-hit != 'true'
         run: |
           FILE="ti_cgt_armllvm_${{ env.CLANG_TI_VERSION }}_linux-x64_installer.bin"
           URL="https://dr-download.ti.com/software-development/ide-configuration-compiler-or-debugger/MD-ayxs93eZNN/${{ env.CLANG_TI_VERSION }}/${FILE}"
-
+    
           curl -L "$URL" -o "$FILE"
           echo "${{ env.CLANG_TI_SHA256 }}  $FILE" | sha256sum --check
           chmod +x "$FILE"
           ./"$FILE" --mode unattended --prefix "${{ env.CLANG_TI_INSTALL_PATH }}"
 
-      - name: Set TI Arm Clang Environment Variable
+      - name: Print TI Arm Clang Environment
+        working-directory: ./CMSIS/Core/Test
         run: |
-          CLANG_TI_BIN="${{ env.CLANG_TI_INSTALL_PATH }}${{ env.CLANG_TI_DIR }}${{ env.CLANG_TI_VERSION }}/bin"
-          echo "${CLANG_TI_BIN}" >> $GITHUB_PATH
-          echo "CLANG_TI_TOOLCHAIN_${{ env.CLANG_TI_VERSION }}=${CLANG_TI_BIN}" >> $GITHUB_ENV
+          ls -l "$CLANG_TI_BIN"
+          echo "GITHUB_PATH:"
+          cat "$GITHUB_PATH"
+          echo "GITHUB_ENV:"
+          cat "$GITHUB_ENV"
+          tiarmclang --version
 
       - name: Run LIT
         working-directory: ./CMSIS/Core/Test
         run: |
-          CLANG_TI_BIN="${{ env.CLANG_TI_INSTALL_PATH }}${{ env.CLANG_TI_DIR }}${{ env.CLANG_TI_VERSION }}/bin"
-          ls ~/
-          ls ~/ti-cgt-armllvm_5.0.0.STS
-          ls ~/ti-cgt-armllvm_5.0.0.STS/bin
-          echo "GITHUB_PATH: $GITHUB_PATH"
-          echo "GITHUB_ENV: $GITHUB_ENV"
           ./build.py lit
 
       - name: Publish Test Results
