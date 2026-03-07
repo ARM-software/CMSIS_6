@@ -534,7 +534,7 @@ DEVICES = {
         'mfpu': 'none',
         'mpu': True,
         'features': ['armv7a', 'thumb-2', 'sat', 'clz'],
-        'header': 'core_ca.h',
+        'header': 'core_ca5.h',
         'defines': {
             '__CORTEX_A': '7',
             '__CA_REV': '0x0000U',
@@ -556,7 +556,7 @@ DEVICES = {
         'mfpu': 'neon-vfpv4',
         'mpu': True,
         'features': ['armv7a', 'thumb-2', 'sat', 'dsp', 'clz'],
-        'header': 'core_ca.h',
+        'header': 'core_ca5.h',
         'defines': {
             '__CORTEX_A': '7',
             '__CA_REV': '0x0000U',
@@ -578,7 +578,7 @@ DEVICES = {
         'mfpu': 'none',
         'mpu': True,
         'features': ['armv7a', 'thumb-2', 'sat', 'clz'],
-        'header': 'core_ca.h',
+        'header': 'core_ca7.h',
         'defines': {
             '__CORTEX_A': '7',
             '__CA_REV': '0x0000U',
@@ -600,7 +600,7 @@ DEVICES = {
         'mfpu': 'neon-vfpv4',
         'mpu': True,
         'features': ['armv7a', 'thumb-2', 'sat', 'dsp', 'clz'],
-        'header': 'core_ca.h',
+        'header': 'core_ca7.h',
         'defines': {
             '__CORTEX_A': '7',
             '__CA_REV': '0x0000U',
@@ -622,7 +622,7 @@ DEVICES = {
         'mfpu': 'none',
         'mpu': True,
         'features': ['armv7a', 'thumb-2', 'sat', 'clz'],
-        'header': 'core_ca.h',
+        'header': 'core_ca9.h',
         'defines': {
             '__CORTEX_A': '7',
             '__CA_REV': '0x0000U',
@@ -644,7 +644,7 @@ DEVICES = {
         'mfpu': 'neon-vfpv3',
         'mpu': True,
         'features': ['armv7a', 'thumb-2', 'sat', 'dsp', 'ldrex', 'clz'],
-        'header': 'core_ca.h',
+        'header': 'core_ca9.h',
         'defines': {
             '__CORTEX_A': '7',
             '__CA_REV': '0x0000U',

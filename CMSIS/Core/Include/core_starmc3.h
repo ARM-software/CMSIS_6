@@ -927,6 +927,31 @@ typedef struct
 #define SCB_RFSR_UET_Pos                    0U                                            /*!< SCB RFSR: UET Position */
 #define SCB_RFSR_UET_Msk                   (3UL /*<< SCB_RFSR_UET_Pos*/)                  /*!< SCB RFSR: UET Mask */
 
+/** \brief SCB Secure Fault Status Register Definitions */
+#define SCB_SFSR_LSERR_Pos                  7U                                            /*!< SCB SFSR: LSERR Position */
+#define SCB_SFSR_LSERR_Msk                 (1UL << SCB_SFSR_LSERR_Pos)                    /*!< SCB SFSR: LSERR Mask */
+
+#define SCB_SFSR_SFARVALID_Pos              6U                                            /*!< SCB SFSR: SFARVALID Position */
+#define SCB_SFSR_SFARVALID_Msk             (1UL << SCB_SFSR_SFARVALID_Pos)                /*!< SCB SFSR: SFARVALID Mask */
+
+#define SCB_SFSR_LSPERR_Pos                 5U                                            /*!< SCB SFSR: LSPERR Position */
+#define SCB_SFSR_LSPERR_Msk                (1UL << SCB_SFSR_LSPERR_Pos)                   /*!< SCB SFSR: LSPERR Mask */
+
+#define SCB_SFSR_INVTRAN_Pos                4U                                            /*!< SCB SFSR: INVTRAN Position */
+#define SCB_SFSR_INVTRAN_Msk               (1UL << SCB_SFSR_INVTRAN_Pos)                  /*!< SCB SFSR: INVTRAN Mask */
+
+#define SCB_SFSR_AUVIOL_Pos                 3U                                            /*!< SCB SFSR: AUVIOL Position */
+#define SCB_SFSR_AUVIOL_Msk                (1UL << SCB_SFSR_AUVIOL_Pos)                   /*!< SCB SFSR: AUVIOL Mask */
+
+#define SCB_SFSR_INVER_Pos                  2U                                            /*!< SCB SFSR: INVER Position */
+#define SCB_SFSR_INVER_Msk                 (1UL << SCB_SFSR_INVER_Pos)                    /*!< SCB SFSR: INVER Mask */
+
+#define SCB_SFSR_INVIS_Pos                  1U                                            /*!< SCB SFSR: INVIS Position */
+#define SCB_SFSR_INVIS_Msk                 (1UL << SCB_SFSR_INVIS_Pos)                    /*!< SCB SFSR: INVIS Mask */
+
+#define SCB_SFSR_INVEP_Pos                  0U                                            /*!< SCB SFSR: INVEP Position */
+#define SCB_SFSR_INVEP_Msk                 (1UL /*<< SCB_SFSR_INVEP_Pos*/)                /*!< SCB SFSR: INVEP Mask */
+
 /*@} end of group CMSIS_SCB */
 
 
@@ -2610,8 +2635,8 @@ typedef struct
 #else
         uint32_t RESERVED0[3];
 #endif
-  __IOM uint32_t SFSR;                   /*!< Offset: 0x014 (R/W)  Secure Fault Status Register */
-  __IOM uint32_t SFAR;                   /*!< Offset: 0x018 (R/W)  Secure Fault Address Register */
+  __IOM uint32_t SFSR;                   /*!< Offset: 0x014 (R/W)  Secure Fault Status Register (deprecated: use SCB->SFSR) */
+  __IOM uint32_t SFAR;                   /*!< Offset: 0x018 (R/W)  Secure Fault Address Register (deprecated: use SCB->SFAR) */
 } SAU_Type;
 
 /** \brief SAU Control Register Definitions */
@@ -2646,7 +2671,8 @@ typedef struct
 
 #endif /* defined (__SAUREGION_PRESENT) && (__SAUREGION_PRESENT == 1U) */
 
-/** \brief SAU Secure Fault Status Register Definitions */
+/** \brief SAU Secure Fault Status Register Definitions
+    \deprecated Use SCB_SFSR_* definitions instead which correctly map to SCB->SFSR */
 #define SAU_SFSR_LSERR_Pos                  7U                                            /*!< SAU SFSR: LSERR Position */
 #define SAU_SFSR_LSERR_Msk                 (1UL << SAU_SFSR_LSERR_Pos)                    /*!< SAU SFSR: LSERR Mask */
 

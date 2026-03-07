@@ -624,7 +624,11 @@ __STATIC_FORCEINLINE void __STL(uint32_t value, volatile uint32_t *ptr)
  */
 __STATIC_FORCEINLINE void __enable_irq(void)
 {
-  __ASM volatile ("cpsie i" : : : "memory");
+  #if defined __aarch64__
+    __ASM volatile ("msr daifclr, #2" : : : "memory");
+  #else
+    __ASM volatile ("cpsie i" : : : "memory");
+  #endif
 }
 
 
@@ -635,7 +639,11 @@ __STATIC_FORCEINLINE void __enable_irq(void)
  */
 __STATIC_FORCEINLINE void __disable_irq(void)
 {
-  __ASM volatile ("cpsid i" : : : "memory");
+  #if defined __aarch64__
+    __ASM volatile ("msr daifset, #2" : : : "memory");
+  #else
+    __ASM volatile ("cpsid i" : : : "memory");
+  #endif
 }
 
 #if (__ARM_ARCH_ISA_THUMB >= 2)
