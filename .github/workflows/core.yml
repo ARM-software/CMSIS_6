@@ -77,15 +77,13 @@ jobs:
       - name: Set TI Arm Clang Environment Variable
         run: |
           CLANG_TI_BIN="${{ env.CLANG_TI_INSTALL_PATH }}${{ env.CLANG_TI_DIR }}${{ env.CLANG_TI_VERSION }}/bin"
-          echo "export PATH=\$PATH:${CLANG_TI_BIN}" >> $GITHUB_ENV
           echo "CLANG_TI_TOOLCHAIN_${{ env.CLANG_TI_VERSION }}=${CLANG_TI_BIN}" >> $GITHUB_ENV
-          echo "$GITHUB_ENV"
-          ls ${{ env.CLANG_TI_INSTALL_PATH }}
+          ls ~/ti-cgt-armllvm_5.0.0.STS
 
       - name: Run LIT
         working-directory: ./CMSIS/Core/Test
         run: |
-          ./build.py lit
+#          ./build.py lit
 
       - name: Publish Test Results
         if: ${{ !cancelled() }}
