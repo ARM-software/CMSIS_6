@@ -82,7 +82,7 @@ jobs:
       - name: Run LIT
         working-directory: ./CMSIS/Core/Test
         run: |
-          ./build.py -c Clang_TI -d CR5 -o none lit
+          ./build.py lit
 
       - name: Publish Test Results
         if: ${{ !cancelled() }}
