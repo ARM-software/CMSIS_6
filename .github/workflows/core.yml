@@ -83,7 +83,7 @@ jobs:
       - name: Print TI Arm Clang Environment
         working-directory: ./CMSIS/Core/Test
         run: |
-          ls -l "$CLANG_TI_BIN"
+          ls -l ~/ti-cgt-armllvm_5.0.0.STS/bin
           echo "GITHUB_PATH:"
           cat "$GITHUB_PATH"
           echo "GITHUB_ENV:"
