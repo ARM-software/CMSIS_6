@@ -22,7 +22,7 @@ jobs:
       ARM_UBL_ACTIVATION_CODE: ${{ secrets.ARM_UBL_ACTIVATION_CODE }}
       CLANG_TI_VERSION: "5.0.0.STS"
       CLANG_TI_INSTALL_PATH: "~/"
-      CLANG_TI_PATH: ${{ env.CLANG_TI_INSTALL_PATH }}ti-cgt-armllvm_${{ env.CLANG_TI_VERSION }}
+      CLANG_TI_DIR: "ti-cgt-armllvm_"
       CLANG_TI_SHA256: "7a71570703f93f3682258b95d5a14a620cd6a5fc74dc5233f2d6c56d366c6da2"
 
     steps:
@@ -76,10 +76,11 @@ jobs:
 
       - name: Set TI Arm Clang Environment Variable
         run: |
-          echo "export PATH=\$PATH:${{ env.CLANG_TI_PATH }}/bin" >> $GITHUB_ENV
-          echo "CLANG_TI_TOOLCHAIN_${{ env.CLANG_TI_VERSION }}=${{ env.CLANG_TI_PATH }}/bin" >> $GITHUB_ENV
+          CLANG_TI_BIN="${{ env.CLANG_TI_INSTALL_PATH }}${{ env.CLANG_TI_DIR }}${{ env.CLANG_TI_VERSION }}/bin"
+          echo "export PATH=\$PATH:${CLANG_TI_BIN}" >> $GITHUB_ENV
+          echo "CLANG_TI_TOOLCHAIN_${{ env.CLANG_TI_VERSION }}=${CLANG_TI_BIN}" >> $GITHUB_ENV
           echo "PATH: $PATH"
-          ls ${{ env.CLANG_TI_PATH }}
+          ls ${CLANG_TI_BIN}
 
       - name: Run LIT
         working-directory: ./CMSIS/Core/Test
