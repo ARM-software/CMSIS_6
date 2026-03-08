@@ -94,7 +94,7 @@ jobs:
       - name: Run LIT
         working-directory: ./CMSIS/Core/Test
         run: |
-          ./build.py lit
+          ./build.py --debug lit
 
       - name: Publish Test Results
         if: ${{ !cancelled() }}
