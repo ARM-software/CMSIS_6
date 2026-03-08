@@ -27,6 +27,10 @@ jobs:
 
     env:
       ARM_UBL_ACTIVATION_CODE: ${{ secrets.ARM_UBL_ACTIVATION_CODE }}
+      CLANG_TI_VERSION: "5.0.0.STS"
+      CLANG_TI_TC_SUFFIX: "5_0_0"
+      CLANG_TI_INSTALL_PATH: "/home/runner/"
+      CLANG_TI_SHA256: "7a71570703f93f3682258b95d5a14a620cd6a5fc74dc5233f2d6c56d366c6da2"
 
     steps:
       - run: |
@@ -82,6 +86,30 @@ jobs:
 
       - uses: ammaraskar/gcc-problem-matcher@master
         if: matrix.compiler == 'Clang' || matrix.compiler == 'GCC'
+
+      - name: Set TI ARM CLANG Environment Variables and Path
+        run: |
+          echo "CLANG_TI_PATH=${{ env.CLANG_TI_INSTALL_PATH }}ti-cgt-armllvm_${{ env.CLANG_TI_VERSION }}" >> $GITHUB_ENV
+          echo "CLANG_TI_TOOLCHAIN_${{ env.CLANG_TI_TC_SUFFIX }}=${{ env.CLANG_TI_INSTALL_PATH }}ti-cgt-armllvm_${{ env.CLANG_TI_VERSION }}/bin" >> $GITHUB_ENV
+
+      - name: Cache TI ARM CLANG
+        id: cache-ti-arm-clang
+        uses: actions/cache@v4
+        with:
+          path: ${{ env.CLANG_TI_PATH }}
+          key: ${{ runner.os }}-ti-arm-clang-${{ env.CLANG_TI_VERSION }}
+
+      - name: Download and Verify TI ARM CLANG Installer
+        working-directory: /home/runner
+        if: steps.cache-ti-arm-clang.outputs.cache-hit != 'true'
+        run: |
+          FILE="ti_cgt_armllvm_${{ env.CLANG_TI_VERSION }}_linux-x64_installer.bin"
+          URL="https://dr-download.ti.com/software-development/ide-configuration-compiler-or-debugger/MD-ayxs93eZNN/${{ env.CLANG_TI_VERSION }}/${FILE}"
+
+          curl -L "$URL" -o "$FILE"
+          echo "${{ env.CLANG_TI_SHA256 }}  $FILE" | sha256sum --check
+          chmod +x "$FILE"
+          ./"$FILE" --mode unattended --prefix "${{ env.CLANG_TI_INSTALL_PATH }}"
 
       - name: Build
         working-directory: ./CMSIS/CoreValidation/Project

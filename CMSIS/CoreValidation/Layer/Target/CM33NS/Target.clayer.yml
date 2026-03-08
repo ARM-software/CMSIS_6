@@ -26,6 +26,7 @@ layer:
       script: RTE/Device/$Dname$/clang_linker_script.ld
       regions: RTE/Device/$Dname$/regions_$Dname$.h
     - for-compiler: CLANG_TI
+      script: RTE/Device/$Dname$/clang_ti_linker_script.ld
       regions: RTE/Device/$Dname$/regions_$Dname$.h
     - for-compiler: IAR
       script: RTE/Device/$Dname$/iar_linker_script.icf
