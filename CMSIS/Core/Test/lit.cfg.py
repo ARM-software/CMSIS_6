@@ -1019,9 +1019,8 @@ class Toolchain_Clang_TI(Toolchain):
             ccflags += [f'-mfloat-abi=hard']
         if device.endswith('S') and not device.endswith('NS'):
             ccflags += ["-mcmse"]
-        print(ccflags)
         ccflags += list(sum([('-D', f'{define}={value}') for (define, value) in DEVICES[self.device]['defines'].items()], ()))
-
+        
         return ccflags
 
     
@@ -1063,9 +1062,6 @@ if DEVICES[device]["arch"] == 'armv8r':
     config.available_features.add('armv8ar')
     config.available_features.add('armv78ar')
 
-print(config.available_features)
-
-
 objdump = os.path.join(Toolchain("CLANG", "none", "none").get_root(), 'llvm-objdump')
 config.substitutions.append(("llvm-objdump", objdump))
 
@@ -1074,3 +1070,5 @@ config.substitutions.append(("%cc%", tc.get_cc()))
 config.substitutions.append(("%ccflags%", ' '.join(tc.get_ccflags())))
 config.substitutions.append(("%prefixes%", ','.join(prefixes)))
 config.substitutions.append(("%mcpu%", DEVICES[device]['mcpu']))
+print(config.available_features)
+print(config.substitutions)
