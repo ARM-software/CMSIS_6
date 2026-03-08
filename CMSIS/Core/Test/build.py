@@ -2,6 +2,7 @@
 # -*- coding: utf-8 -*-
 
 import logging
+import os
 
 from datetime import datetime
 from enum import Enum
@@ -44,12 +45,22 @@ class DeviceAxis(Enum):
     CA7NEON = ('Cortex-A7neon', 'CA7neon')
     CA9 = ('Cortex-A9', 'CA9')
     CA9NEON = ('Cortex-A9neon', 'CA9neon')
+    CA35 = ('Cortex-A35', 'CA35')
+    CA35NEON = ('Cortex-A35neon', 'CA35neon')
     CA53 = ('Cortex-A53', 'CA53')
     CA53NEON = ('Cortex-A53neon', 'CA53neon')
+    CA55 = ('Cortex-A55', 'CA55')
+    CA55NEON = ('Cortex-A55neon', 'CA55neon')
+    CA57 = ('Cortex-A57', 'CA57')
+    CA57NEON = ('Cortex-A57neon', 'CA57neon')
     CR4 = ('Cortex-R4', 'CR4')
     CR4DP = ('Cortex-R4DP', 'CR4DP')
     CR5 = ('Cortex-R5', 'CR5')
     CR5DP = ('Cortex-R5DP', 'CR5DP')
+    CR7 = ('Cortex-R7', 'CR7')
+    CR7DP = ('Cortex-R7DP', 'CR7DP')
+    CR8 = ('Cortex-R8', 'CR8')
+    CR8DP = ('Cortex-R8DP', 'CR8DP')
     CR52 = ('Cortex-R52', 'CR52')
     CR52NEON = ('Cortex-R52neon', 'CR52neon')
 
@@ -75,18 +86,19 @@ def timestamp():
     return datetime.now().strftime('%Y%m%d%H%M%S')
 
 
+def clean_output():
+    os.system("rm -f ./src/Output/*")
+
+
 @matrix_action
 def lit(config, results):
     """Run tests for the selected configurations using llvm's lit."""
+    clean_output()
     yield run_lit(config.compiler[0], config.device[1], config.optimize[0])
     results[0].test_report.write(f"lit-{config.compiler[0]}-{config.optimize[0]}-{config.device[1]}-{timestamp()}.xunit")
 
 
-def timestamp():
-    return datetime.now().strftime('%Y%m%d%H%M%S')
-
-
-@matrix_command(exit_code=[0, 1], test_report=FileReport(f"lit.xml") | JUnitReport())
+@matrix_command(exclusive=True, exit_code=[0, 1], test_report=FileReport(f"lit.xml") | JUnitReport())
 def run_lit(toolchain, device, optimize):
     return ["lit", "--xunit-xml-output", f"lit.xml", "-D", f"toolchain={toolchain}", "-D", f"device={device}", "-D", f"optimize={optimize}", "src" ]
 
@@ -118,8 +130,6 @@ def filter_clang_ti_supported_devices(config):
     device &= not config.device.match('CR5DP')
     device &= not config.device.match('CR52')
     device &= not config.device.match('CR52neon')
-    device &= not config.device.match('CA53')
-    device &= not config.device.match('CA53neon')
     compiler = config.compiler.match('Clang_TI')
     return device and compiler
 
