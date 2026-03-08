@@ -21,6 +21,7 @@ jobs:
     env:
       ARM_UBL_ACTIVATION_CODE: ${{ secrets.ARM_UBL_ACTIVATION_CODE }}
       CLANG_TI_VERSION: "5.0.0.STS"
+      CLANG_TI_TOOLCHAIN_SUFFIX: "5_0_0"
       CLANG_TI_INSTALL_PATH: "~/"
       CLANG_TI_SHA256: "7a71570703f93f3682258b95d5a14a620cd6a5fc74dc5233f2d6c56d366c6da2"
 
@@ -59,7 +60,7 @@ jobs:
         run: |
           echo "CLANG_TI_PATH=${{ env.CLANG_TI_INSTALL_PATH }}ti-cgt-armllvm_${{ env.CLANG_TI_VERSION }}" >> $GITHUB_ENV
           echo "CLANG_TI_BIN=${{ env.CLANG_TI_INSTALL_PATH }}ti-cgt-armllvm_${{ env.CLANG_TI_VERSION }}/bin" >> $GITHUB_ENV
-          echo "CLANG_TI_TOOLCHAIN_${{ env.CLANG_TI_VERSION }}=${{ env.CLANG_TI_INSTALL_PATH }}ti-cgt-armllvm_${{ env.CLANG_TI_VERSION }}/bin" >> $GITHUB_ENV
+          echo "CLANG_TI_TOOLCHAIN_${{ env.CLANG_TI_TOOLCHAIN_SUFFIX }}=${{ env.CLANG_TI_INSTALL_PATH }}ti-cgt-armllvm_${{ env.CLANG_TI_VERSION }}/bin" >> $GITHUB_ENV
           echo "${{ env.CLANG_TI_INSTALL_PATH }}ti-cgt-armllvm_${{ env.CLANG_TI_VERSION }}/bin" >> $GITHUB_PATH
 
       - name: Cache TI ARM CLANG
@@ -83,11 +84,11 @@ jobs:
       - name: Print TI Arm Clang Environment
         working-directory: ./CMSIS/Core/Test
         run: |
-          ls -l ~/ti-cgt-armllvm_5.0.0.STS/bin
+          ls -l ${{ env.CLANG_TI_BIN }}
           echo "GITHUB_PATH:"
-          cat "$GITHUB_PATH"
+          echo "cat $GITHUB_PATH"
           echo "GITHUB_ENV:"
-          cat "$GITHUB_ENV"
+          echo "cat $GITHUB_ENV"
           tiarmclang --version
 
       - name: Run LIT
