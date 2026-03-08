@@ -22,7 +22,7 @@ jobs:
       ARM_UBL_ACTIVATION_CODE: ${{ secrets.ARM_UBL_ACTIVATION_CODE }}
       CLANG_TI_VERSION: "5.0.0.STS"
       CLANG_TI_TC_SUFFIX: "5_0_0"
-      CLANG_TI_INSTALL_PATH: "~/"
+      CLANG_TI_INSTALL_PATH: "/home/runner"
       CLANG_TI_SHA256: "7a71570703f93f3682258b95d5a14a620cd6a5fc74dc5233f2d6c56d366c6da2"
 
     steps:
@@ -71,6 +71,7 @@ jobs:
           key: ${{ runner.os }}-ti-arm-clang-${{ env.CLANG_TI_VERSION }}
 
       - name: Download and Verify TI ARM CLANG Installer
+        working-directory: /home/runner
         if: steps.cache-ti-arm-clang.outputs.cache-hit != 'true'
         run: |
           FILE="ti_cgt_armllvm_${{ env.CLANG_TI_VERSION }}_linux-x64_installer.bin"
@@ -84,7 +85,10 @@ jobs:
       - name: Print TI Arm Clang Environment
         working-directory: ./CMSIS/Core/Test
         run: |
-          ls -l ${{ env.CLANG_TI_BIN }}
+          ls -al .
+          ls -al ..
+          ls -al ../..
+          ls -al ${{ env.CLANG_TI_BIN }}
           echo "CLANG_TI_INSTALL_PATH: ${{ env.CLANG_TI_INSTALL_PATH }}"
           echo "CLANG_TI_PATH: ${{ env.CLANG_TI_PATH }}"
           echo "CLANG_TI_BIN: ${{ env.CLANG_TI_BIN }}"
@@ -94,7 +98,7 @@ jobs:
       - name: Run LIT
         working-directory: ./CMSIS/Core/Test
         run: |
-          ./build.py --debug lit
+          ./build.py --debug -c Clang_TI lit
 
       - name: Publish Test Results
         if: ${{ !cancelled() }}
