@@ -59,9 +59,7 @@ jobs:
       - name: Set TI ARM CLANG Environment Variables and Path
         run: |
           echo "CLANG_TI_PATH=${{ env.CLANG_TI_INSTALL_PATH }}ti-cgt-armllvm_${{ env.CLANG_TI_VERSION }}" >> $GITHUB_ENV
-          echo "CLANG_TI_BIN=${{ env.CLANG_TI_INSTALL_PATH }}ti-cgt-armllvm_${{ env.CLANG_TI_VERSION }}/bin" >> $GITHUB_ENV
           echo "CLANG_TI_TOOLCHAIN_${{ env.CLANG_TI_TC_SUFFIX }}=${{ env.CLANG_TI_INSTALL_PATH }}ti-cgt-armllvm_${{ env.CLANG_TI_VERSION }}/bin" >> $GITHUB_ENV
-          echo "${{ env.CLANG_TI_INSTALL_PATH }}ti-cgt-armllvm_${{ env.CLANG_TI_VERSION }}/bin" >> $GITHUB_PATH
 
       - name: Cache TI ARM CLANG
         id: cache-ti-arm-clang
@@ -82,23 +80,10 @@ jobs:
           chmod +x "$FILE"
           ./"$FILE" --mode unattended --prefix "${{ env.CLANG_TI_INSTALL_PATH }}"
 
-      - name: Print TI Arm Clang Environment
-        working-directory: ./CMSIS/Core/Test
-        run: |
-          ls -al .
-          ls -al ..
-          ls -al ../..
-          ls -al ${{ env.CLANG_TI_BIN }}
-          echo "CLANG_TI_INSTALL_PATH: ${{ env.CLANG_TI_INSTALL_PATH }}"
-          echo "CLANG_TI_PATH: ${{ env.CLANG_TI_PATH }}"
-          echo "CLANG_TI_BIN: ${{ env.CLANG_TI_BIN }}"
-          echo "CLANG_TI_TOOLCHAIN_5_0_0: ${{ env.CLANG_TI_TOOLCHAIN_5_0_0 }}"
-          tiarmclang --version
-
       - name: Run LIT
         working-directory: ./CMSIS/Core/Test
         run: |
-          ./build.py --debug -c Clang_TI lit
+          ./build.py lit
 
       - name: Publish Test Results
         if: ${{ !cancelled() }}
