@@ -196,16 +196,18 @@ __STATIC_FORCEINLINE void SCB_DisableDCache (void)
     __DSB();
 
     /*
-     * For the endless loop issue with no and debug optimization builds.
-     * More details, see https://github.com/ARM-software/CMSIS_5/issues/620
-     * and https://github.com/ARM-software/CMSIS_6/issues/286
+     * Work around an endless loop issue that can occur when local variables
+     * are stored on the stack. More details, see
+     * https://github.com/ARM-software/CMSIS_5/issues/620 and
+     * https://github.com/ARM-software/CMSIS_6/issues/286.
      *
-     * The issue only happens when local variables are in stack. If
-     * local variables are saved in general purpose register, then the function
-     * is OK.
+     * The issue only happens when local variables are in stack memory. If
+     * local variables are kept in general purpose registers only, then the
+     * function is OK.
      *
-     * When local variables are in stack, after disabling the cache, flush the
-     * local variables cache line for data consistency.
+     * When local variables are in stack memory, after disabling the cache,
+     * flush the cache line(s) covering the local variables for data
+     * consistency.
      */
     /* Clean and invalidate the local variable cache. */
     #if defined(__ICCARM__)
