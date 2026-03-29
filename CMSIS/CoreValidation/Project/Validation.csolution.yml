@@ -16,6 +16,9 @@ solution:
     - for-compiler: IAR
       Link:
         - --semihosting
+    - for-compiler: CLANG_TI
+      Link:
+        - -Xlinker --map_file=map.txt
 
   packs:
     - pack: ARM::CMSIS
@@ -145,7 +148,6 @@ solution:
       debug: on
 
   projects:
-    - project: ./Validation/Validation.cproject.yml
     - project: ./Bootloader/Bootloader.cproject.yml
       for-context:
         - +CM23NS
@@ -154,6 +156,7 @@ solution:
         - +CM52NS
         - +CM55NS
         - +CM85NS
+    - project: ./Validation/Validation.cproject.yml
 
   output-dirs:
     cprjdir: ./build/$TargetType$/$Compiler$/$BuildType$/$Project$

@@ -20,7 +20,7 @@ Currently, the following build configurations are provided:
    - Arm Compiler 6 (AC6)
    - GNU Compiler (GCC)
    - LLVM/Clang (Clang)
-   - TI Arm Clang (Clang_TI) (CM0/0+/3/4)
+   - TI Arm Clang (Clang_TI) (CM0/0+/3/4/33/33S)
 2. Devices
    - Cortex-M0
    - Cortex-M0+
@@ -69,7 +69,7 @@ The following tools are required to build and run the CoreValidation tests:
 - [Arm Compiler 6.20](https://artifacts.keil.arm.com/arm-compiler/6.20/21/)*
 - [GCC Compiler 13.2.1](https://artifacts.keil.arm.com/arm-none-eabi-gcc/13.2.1/)*
 - [Clang Compiler 17.0.1](https://github.com/ARM-software/LLVM-embedded-toolchain-for-Arm/releases/tag/release-17.0.1)*
-- [TI Arm Clang Compiler 5.0.0](https://www.ti.com/tool/download/ARM-CGT-CLANG)
+- [TI Arm Clang Compiler 5.1.0](https://www.ti.com/tool/download/ARM-CGT-CLANG)
 - [Arm Virtual Hardware for Cortex-M based on FastModels 11.22.39](https://artifacts.keil.arm.com/avh/11.22.39/)*
 - [Python 3.9](https://www.python.org/downloads/)
 
@@ -105,8 +105,8 @@ For example, build and run the tests using GCC for Cortex-M3 with low optimizati
 [GCC][Cortex-M3][none](build:csolution) csolution succeeded with exit code 0
 [GCC][Cortex-M3][none](build:cbuild) cbuild Validation.GCC_low+CM3/Validation.GCC_low+CM3.cprj
 [GCC][Cortex-M3][none](build:cbuild) cbuild succeeded with exit code 0
-[GCC][Cortex-M3][none](run:model_exec) VHT_MPS2_Cortex-M3 -q --simlimit 100 -f ../Layer/Target/CM3/model_config.txt -a Validation.GCC_low+CM3/Validation.GCC_low+CM3_outdir/Validation.GCC_low+CM3.elf
-[GCC][Cortex-M3][none](run:model_exec) VHT_MPS2_Cortex-M3 succeeded with exit code 0
+[GCC][Cortex-M3][none](run:model_exec) FVP_MPS2_Cortex-M3 -q --simlimit 100 -f ../Layer/Target/CM3/model_config.txt -a Validation.GCC_low+CM3/Validation.GCC_low+CM3_outdir/Validation.GCC_low+CM3.elf
+[GCC][Cortex-M3][none](run:model_exec) FVP_MPS2_Cortex-M3 succeeded with exit code 0
 
 Matrix Summary
 ==============

@@ -7,6 +7,9 @@
 #include "CV_Report.h"
 #include <stdio.h>
 #include <string.h>
+#if defined(__clang__) && defined(__ti__)
+#include "clang_ti_vprintf_semihost.h"
+#endif
 
 TEST_REPORT test_report;
 static AS_STAT     current_assertions;   /* Current test case assertions statistics  */
@@ -380,7 +383,11 @@ static void MsgFlush(void) {
 static void MsgPrint (const char *msg, ...) {
   va_list args;
   va_start(args, msg);
+#if defined(__clang__) && defined(__ti__)
+  clang_ti_vprintf_semihost(msg, args);
+#else
   vprintf(msg, args);
+#endif
   va_end(args);
 }
 #if defined(__ARMCC_VERSION) && (__ARMCC_VERSION >= 6010050)

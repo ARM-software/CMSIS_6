@@ -5,6 +5,12 @@ layer:
   # packs:
   #   - pack: ARM::CMSIS
 
+  misc:
+    - for-compiler: CLANG_TI
+      Link:
+        # Reference TI Arm Clang Compiler ToolUser's Guide, v5.1, Section 6 Cortex-M Security Extensions (CMSE)
+        - -Xlinker --import_cmse_lib_out=implib.o
+
   groups:
     - group: Source Files
       files:

@@ -11,6 +11,7 @@ layer:
   add-path:
     - ../../../Include
     - ../../../Source/Config
+    - ../../../Source/Clang_TI_Semihost
 
   misc:
     - for-compiler: AC6
@@ -69,3 +70,10 @@ layer:
       files:
         - file: ../../../Source/CV_Framework.c
         - file: ../../../Source/CV_Report.c
+
+    - group: TI Arm Clang Compiler Semihost Support
+      for-compiler: CLANG_TI
+      files:
+        - file: ../../../Source/Clang_TI_Semihost/clang_ti_fastmodel_cio.c
+        - file: ../../../Source/Clang_TI_Semihost/clang_ti_semihost.c
+        - file: ../../../Source/Clang_TI_Semihost/clang_ti_vprintf_semihost.c
