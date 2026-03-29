@@ -118,6 +118,7 @@ def filter_gcc_cm52(config):
 @matrix_filter
 def filter_clang_ti_supported_devices(config):
     device = not config.device.match('CM0')
+    device &= not config.device.match('CM0plus')
     device &= not config.device.match('CM3')
     device &= not config.device.match('CM4')
     device &= not config.device.match('CM4FP')
