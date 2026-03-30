@@ -158,7 +158,6 @@ solution:
         - +CM55NS
         - +CM85NS
 
-
   output-dirs:
     cprjdir: ./build/$TargetType$/$Compiler$/$BuildType$/$Project$
     outdir:  ./build/$TargetType$/$Compiler$/$BuildType$/$Project$/outdir

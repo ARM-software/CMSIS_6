@@ -20,7 +20,7 @@ Currently, the following build configurations are provided:
    - Arm Compiler 6 (AC6)
    - GNU Compiler (GCC)
    - LLVM/Clang (Clang)
-   - TI Arm Clang (Clang_TI) (CM0/0+/3/4/33/33S)
+   - TI Arm Clang (Clang_TI) (CM0/0+/3/4/33/33S/33NS)
 2. Devices
    - Cortex-M0
    - Cortex-M0+
