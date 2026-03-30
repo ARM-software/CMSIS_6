@@ -148,6 +148,7 @@ solution:
       debug: on
 
   projects:
+    - project: ./Validation/Validation.cproject.yml
     - project: ./Bootloader/Bootloader.cproject.yml
       for-context:
         - +CM23NS
@@ -156,7 +157,7 @@ solution:
         - +CM52NS
         - +CM55NS
         - +CM85NS
-    - project: ./Validation/Validation.cproject.yml
+
 
   output-dirs:
     cprjdir: ./build/$TargetType$/$Compiler$/$BuildType$/$Project$

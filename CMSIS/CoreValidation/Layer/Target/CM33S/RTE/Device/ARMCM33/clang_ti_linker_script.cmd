@@ -47,6 +47,6 @@ SECTIONS
 #endif
 
 #if defined (__ARM_FEATURE_CMSE) && (__ARM_FEATURE_CMSE == 3U)
-	Veneer$$CMSE: palign=8 {} > ROM1
+	Veneer$$CMSE: palign=8 {} > ROM0
 #endif
 }

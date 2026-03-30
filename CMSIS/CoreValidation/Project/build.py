@@ -184,20 +184,20 @@ def config_suffix(config, timestamp=True):
     return suffix
 
 
-def bl_project_name(config):
-    return f"Bootloader.{config.compiler}_{config.optimize}+{config.device.bl_device}"
-
-
 def project_name(config):
     return f"Validation.{config.compiler}_{config.optimize}+{config.device[1]}"
 
 
-def bl_output_dir(config):
-    return f"Bootloader/outdir"
+def bl_project_name(config):
+    return f"Bootloader.{config.compiler}_{config.optimize}+{config.device.bl_device}"
 
 
 def output_dir(config):
     return f"Validation/outdir"
+
+
+def bl_output_dir(config):
+    return f"Bootloader/outdir"
 
 
 def model_config(config):
@@ -295,11 +295,13 @@ def cbuild(config):
                                                                     f"{result.command.config.device}."
                                                                     f"{title}"))
 def model_exec(config):
-    cmdline = [MODEL_EXECUTABLE[config.device][0], "-q", "--simlimit", 100, "-f", model_config(config)]
+    cmdline = [MODEL_EXECUTABLE[config.device][0], "-q", "--simlimit", 5, "-f", model_config(config)]
     cmdline += MODEL_EXECUTABLE[config.device][1]
-    if config.device.has_bl():
+    if config.device.has_bl() and (config.compiler == CompilerAxis.CLANG_TI):
         cmdline += ["-a", f"{build_dir(config)}/{bl_output_dir(config)}/Bootloader.{config.compiler.image_ext}"]
     cmdline += ["-a", f"{build_dir(config)}/{output_dir(config)}/Validation.{config.compiler.image_ext}"]
+    if config.device.has_bl() and (config.compiler != CompilerAxis.CLANG_TI):
+        cmdline += ["-a", f"{build_dir(config)}/{bl_output_dir(config)}/Bootloader.{config.compiler.image_ext}"]
     return cmdline
 
 
