@@ -3,5 +3,5 @@ function writeHeader() {
 };
 
 function writeFooter()  {
-    document.write('Generated on Tue Mar 31 2026 06:30:51 for CMSIS-Driver 2.11.0. Copyright &copy; 2026 Arm Limited (or its affiliates). All rights reserved.');
+    document.write('Generated on Tue Mar 31 2026 06:48:35 for CMSIS-Driver 2.11.0. Copyright &copy; 2026 Arm Limited (or its affiliates). All rights reserved.');
 };
