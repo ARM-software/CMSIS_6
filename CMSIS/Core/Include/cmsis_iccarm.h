@@ -55,7 +55,9 @@
 #endif
 
 #ifndef   __NO_RETURN
-  #if defined(__cplusplus) && __cplusplus >= 201103L
+  #if defined(__has_attribute) && __has_attribute(__noreturn__)
+    #define __NO_RETURN __attribute__((__noreturn__))
+  #elif defined(__cplusplus) && __cplusplus >= 201103L
     #define __NO_RETURN [[noreturn]]
   #elif defined(__STDC_VERSION__) && __STDC_VERSION__ >= 201112L
     #define __NO_RETURN _Noreturn
