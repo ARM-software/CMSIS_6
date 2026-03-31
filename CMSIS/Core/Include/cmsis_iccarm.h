@@ -55,7 +55,9 @@
 #endif
 
 #ifndef   __NO_RETURN
-  #if defined(__cplusplus) && __cplusplus >= 201103L
+  #if defined(__has_attribute) && __has_attribute(__noreturn__)
+    #define __NO_RETURN __attribute__((__noreturn__))
+  #elif defined(__cplusplus) && __cplusplus >= 201103L
     #define __NO_RETURN [[noreturn]]
   #elif defined(__STDC_VERSION__) && __STDC_VERSION__ >= 201112L
     #define __NO_RETURN _Noreturn
@@ -243,7 +245,7 @@ __IAR_FT int16_t __REVSH(int16_t val)
  * Fixed in EWARM 9.50.i2
  */
 
-__IAR_FT void __CLREX() {
+__IAR_FT void __CLREX(void) {
   __ASM volatile("CLREX" ::: "memory"); 
 }
 
@@ -464,12 +466,12 @@ __IAR_FT void __STRT(uint32_t value, volatile uint32_t *addr)
 #if (defined(__ARM_ARCH_ISA_THUMB) && __ARM_ARCH_ISA_THUMB >= 2)
 // This is not really fault_irq on Cortex-not-M. However 
 // there seems to be code that assumes this.
-  __IAR_FT void __disable_fault_irq()
+  __IAR_FT void __disable_fault_irq(void)
   {
     __ASM volatile ("CPSID F" ::: "memory");
   }
 
-  __IAR_FT void __enable_fault_irq()
+  __IAR_FT void __enable_fault_irq(void)
   {
     __ASM volatile ("CPSIE F" ::: "memory");
   }

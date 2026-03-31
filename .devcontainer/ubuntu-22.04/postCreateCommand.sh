@@ -9,6 +9,6 @@ echo "Bootstrapping vcpkg ..."
 . <(curl -sL https://aka.ms/vcpkg-init.sh)
 grep -q "vcpkg-init" ~/.bashrc || echo -e "\n# Initialize vcpkg\n. ~/.vcpkg/vcpkg-init" >> ~/.bashrc && \
 pushd "$(dirname "$0")" || exit 
-vcpkg x-update-registry --all
-vcpkg activate
+vcpkg-shell x-update-registry --all
+vcpkg-shell activate
 popd || exit 

@@ -65,6 +65,7 @@ CMSIS-Core also supports the following Cortex-M processor variants:
  - [SecurCore SC300](https://developer.arm.com/Processors/SecurCore%20SC300) is designed specifically for smartcard and security applications (Armv7-M architecture).
  - [Cortex-M35P](https://developer.arm.com/Processors/Cortex-M35P) is a tamper resistant Cortex-M processor with optional software isolation using TrustZone for Armv8-M.
  - [STAR-MC1](https://www.armchina.com/mountain?infoId=160) is a variant of Armv8-M with TrustZone designed by Arm China.
+ - [STAR-MC3](https://www.armchina.com/mountain?infoId=240) is a variant of Armv8.1-M with TrustZone and Helium designed by Arm China.
 
 \anchor ARMv8M
 **Armv8-M and Armv8.1-M Architecture**

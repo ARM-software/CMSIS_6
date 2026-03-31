@@ -31,17 +31,22 @@
 #if defined (__ARMCC_VERSION) && (__ARMCC_VERSION >= 6100100)
   #include "cmsis_armclang.h"
 
+
 /*
  * TI Arm Clang Compiler (tiarmclang)
  */
-#elif defined (__ti__)
-  #include "cmsis_tiarmclang.h"
+#elif defined ( __clang__ ) && defined ( __ti__ )
+  #if (__ti_version__ >= 40000)
+    #include "cmsis_clang.h"
+  #else
+    #error "TI Arm Clang Compiler (tiarmclang) version must be 4.00 or greater."
+  #endif
 
 
 /*
  * LLVM/Clang Compiler
  */
-#elif defined ( __clang__ )
+#elif defined ( __clang__ ) && !defined ( __ti__ )
   #include "cmsis_clang.h"
 
 
@@ -58,75 +63,6 @@
 #elif defined ( __ICCARM__ )
   #include "cmsis_iccarm.h"
 
-
-/*
- * TI Arm Compiler (armcl)
- */
-#elif defined ( __TI_ARM__ )
-  #include <cmsis_ccs.h>
-
-  #ifndef   __ASM
-    #define __ASM                                  __asm
-  #endif
-  #ifndef   __INLINE
-    #define __INLINE                               inline
-  #endif
-  #ifndef   __STATIC_INLINE
-    #define __STATIC_INLINE                        static inline
-  #endif
-  #ifndef   __STATIC_FORCEINLINE
-    #define __STATIC_FORCEINLINE                   __STATIC_INLINE
-  #endif
-  #ifndef   __NO_RETURN
-    #define __NO_RETURN                            __attribute__((noreturn))
-  #endif
-  #ifndef   __USED
-    #define __USED                                 __attribute__((used))
-  #endif
-  #ifndef   __WEAK
-    #define __WEAK                                 __attribute__((weak))
-  #endif
-  #ifndef   __PACKED
-    #define __PACKED                               __attribute__((packed))
-  #endif
-  #ifndef   __PACKED_STRUCT
-    #define __PACKED_STRUCT                        struct __attribute__((packed))
-  #endif
-  #ifndef   __PACKED_UNION
-    #define __PACKED_UNION                         union __attribute__((packed))
-  #endif
-  #ifndef   __UNALIGNED_UINT16_WRITE
-    __PACKED_STRUCT T_UINT16_WRITE { uint16_t v; };
-    #define __UNALIGNED_UINT16_WRITE(addr, val)    (void)((((struct T_UINT16_WRITE *)(void*)(addr))->v) = (val))
-  #endif
-  #ifndef   __UNALIGNED_UINT16_READ
-    __PACKED_STRUCT T_UINT16_READ { uint16_t v; };
-    #define __UNALIGNED_UINT16_READ(addr)          (((const struct T_UINT16_READ *)(const void *)(addr))->v)
-  #endif
-  #ifndef   __UNALIGNED_UINT32_WRITE
-    __PACKED_STRUCT T_UINT32_WRITE { uint32_t v; };
-    #define __UNALIGNED_UINT32_WRITE(addr, val)    (void)((((struct T_UINT32_WRITE *)(void *)(addr))->v) = (val))
-  #endif
-  #ifndef   __UNALIGNED_UINT32_READ
-    __PACKED_STRUCT T_UINT32_READ { uint32_t v; };
-    #define __UNALIGNED_UINT32_READ(addr)          (((const struct T_UINT32_READ *)(const void *)(addr))->v)
-  #endif
-  #ifndef   __ALIGNED
-    #define __ALIGNED(x)                           __attribute__((aligned(x)))
-  #endif
-  #ifndef   __RESTRICT
-    #define __RESTRICT                             __restrict
-  #endif
-  #ifndef   __COMPILER_BARRIER
-    #warning No compiler specific solution for __COMPILER_BARRIER. __COMPILER_BARRIER is ignored.
-    #define __COMPILER_BARRIER()                   (void)0
-  #endif
-  #ifndef __NO_INIT
-    #define __NO_INIT                              __attribute__ ((section (".noinit")))
-  #endif
-  #ifndef __ALIAS
-    #define __ALIAS(x)                             __attribute__ ((alias(x)))
-  #endif
 
 /*
  * TASKING Compiler

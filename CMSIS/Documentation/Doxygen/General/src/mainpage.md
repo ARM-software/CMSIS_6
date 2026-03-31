@@ -8,7 +8,7 @@ CMSIS has been created to help the industry in standardization. It enables consi
 
 ## CMSIS Components {#cmsis_components}
 
-![CMSIS Components Overview](./images/cmsis_components.png)
+![CMSIS Components Overview](./images/cmsis_components_630.png)
 
 <h2>CMSIS Base Software Components</h2>
 
@@ -53,6 +53,12 @@ CMSIS has been created to help the industry in standardization. It enables consi
   <div class="tile" onclick="document.location='../Toolbox/index.html'">
     <span class="tileh h2">CMSIS-Toolbox</span><span class="tiletxt">A set of command-line tools to work with software packs</span><span class="tilelinks"><a href="https://github.com/Open-CMSIS-Pack/cmsis-toolbox/blob/main/README.md">Guide</a> | <a href="https://github.com/Open-CMSIS-Pack/cmsis-toolbox">GitHub</a></span>
   </div>
+  <div class="tile">
+    <span class="tileh h2">CMSIS Solution</span><span class="tiletxt">VS Code extension for managing CMSIS solutions</span><span class="tilelinks"><a href="https://mdk-packs.github.io/vscode-cmsis-solution-docs/index.html">Guide</a> | <a href="https://marketplace.visualstudio.com/items?itemName=Arm.cmsis-csolution">Marketplace</a></span>
+  </div>
+  <div class="tile">
+    <span class="tileh h2">CMSIS Debugger</span><span class="tiletxt">VS Code extension for debugging Arm Cortex-M processor-based devices</span><span class="tilelinks"><a href="https://github.com/Open-CMSIS-Pack/vscode-cmsis-debugger">GitHub</a> | <a href="https://marketplace.visualstudio.com/items?itemName=Arm.vscode-cmsis-debugger">Marketplace</a></span>
+  </div><br>
   <div class="tile" onclick="document.location='../Stream/index.html'">
     <span class="tileh h2">CMSIS-Stream</span><span class="tiletxt">Tools and methods for optimizing DSP/ML block data streams</span><span class="tilelinks"><a href="https://github.com/ARM-software/CMSIS-Stream/blob/main/README.md">Guide</a> | <a href="https://github.com/ARM-software/cmsis-stream">GitHub</a></span>
   </div>
@@ -81,14 +87,23 @@ CMSIS has been created to help the industry in standardization. It enables consi
 
 The benefits of the CMSIS are:
 
- - CMSIS reduces the learning curve, development costs, and time-to-market. Developers can write software quicker through a variety of easy-to-use, standardized software interfaces.
- - Consistent software interfaces improve the software portability and re-usability. Generic software libraries and interfaces provide consistent software framework.
- - It provides interfaces for debug connectivity, debug peripheral views, software delivery, and device support to reduce time-to-market for new microcontroller deployment.
- - It allows to use the compiler of your choice, as it is compiler independent and thus supported by mainstream compilers.
- - It enhances program debugging with peripheral information for debuggers and ITM channels for printf-style output.
- - CMSIS is delivered in CMSIS-Pack format which enables fast software delivery, simplifies updates, and enables consistent integration into development tools.
- - CMSIS-Zone will simplify system resource and partitioning as it manages the configuration of multiple processors, memory areas, and peripherals.
- - IDE and Continuous Integration (CI) are important workflows for embedded software developers. The CMSIS-Toolbox provides command-line build tools with CMake backend and integration into IDEs such as VS Code.
+- CMSIS reduces the learning curve, development costs, and time-to-market. Developers can write software quicker
+  through a variety of easy-to-use, standardized software interfaces.
+- Consistent software interfaces improve the software portability and re-usability. Generic software libraries and
+  interfaces provide consistent software framework.
+- It provides interfaces for debug connectivity, debug peripheral views, software delivery, and device support to
+  reduce time-to-market for new microcontroller deployment.
+- It allows to use the compiler of your choice, as it is compiler independent and thus supported by mainstream
+  compilers.
+- It enhances program debugging with peripheral information for debuggers and ITM channels for printf-style output.
+- CMSIS is delivered in CMSIS-Pack format which enables fast software delivery, simplifies updates, and enables
+  consistent integration into development tools.
+- CMSIS-Zone will simplify system resource and partitioning as it manages the configuration of multiple processors,
+  memory areas, and peripherals.
+- IDE and Continuous Integration (CI) are important workflows for embedded software developers:
+    - The CMSIS-Toolbox provides command-line build tools with CMake backend.
+    - The CMSIS Solution and CMSIS Debugger extensions for VS Code can be used to create an IDE for projects based on
+      [CSolution format](https://open-cmsis-pack.github.io/cmsis-toolbox/YML-Input-Format/).
 
 ## Development {#development}
 
