@@ -1,32 +1,20 @@
 /*****************************************************************************/
-/* SEMIHOST.H v##### - Generic C functions for interfacing with simulators   */
-/*                     that support ARM-conformant semihosting               */
-/* Copyright (c) 2024@%%%% Texas Instruments Incorporated                    */
-/*****************************************************************************/
-/*****************************************************************************/
-/* CLANG_TI_SEMIHOST.H - Generic C functions for interfacing with            */
-/*                     simulators that support ARM-conformant semihosting    */
+/* CLANG_TI_SEMIHOST.H - ARM semihosting support for TI Arm Clang compiler  */
+/*                                                                           */
+/* Provides:                                                                 */
+/*   - ARM semihosting operation codes                                       */
+/*   - ARMSemihost_Call(): architecture-correct semihosting trap             */
+/*   - clang_ti_vprintf_semihost(): vprintf routed to the debug console      */
 /*****************************************************************************/
 #ifndef _CLANG_TI_SEMIHOST_H_
 #define _CLANG_TI_SEMIHOST_H_
 
-#include <file.h>
+#include <stdint.h>
+#include <stdarg.h>
 
-// Device I/O routines.
-int   ARMSemihost_open(const char *path, unsigned flags, int llv_fd);
-int   ARMSemihost_close(int dev_fd);
-int   ARMSemihost_write(int dev_fd, const char *buf, unsigned count);
-int   ARMSemihost_read(int dev_fd, char *buf, unsigned count);
-off_t ARMSemihost_lseek(int dev_fd, off_t offset, int origin);
-int   ARMSemihost_unlink(const char *path);
-int   ARMSemihost_rename(const char *old_name, const char *new_name);
-
-// Auxiliary device routines.
-void          ARMSemihost_exit();
-long long     ARMSemihost_time();
-unsigned long ARMSemihost_clock();
-char*         ARMSemihost_getenv(const char*, char*);
-
+/*---------------------------------------------------------------------------*/
+/* ARM semihosting operation codes                                           */
+/*---------------------------------------------------------------------------*/
 #define SYS_CLOCK               (0x10)
 #define SYS_CLOSE               (0x02)
 #define SYS_ELAPSED             (0x30)
@@ -52,10 +40,48 @@ char*         ARMSemihost_getenv(const char*, char*);
 #define SYS_WRITEC              (0x03)
 #define SYS_WRITE0              (0x04)
 
-//----------------------------------------------------------------------------
-// PARSE_CMDLINE - PARSE THE FASTMODELS SIMULATOR COMMAND LINE FOR ARGUMENTS.
-typedef struct { int argc; char *argv[1]; } ARGS;
+/*---------------------------------------------------------------------------*/
+/* ARMSemihost_Call - Issue the architecture-correct semihosting trap.       */
+/*                                                                           */
+/* M-profile: BKPT #0xAB                                                     */
+/* T32 (A/R): SVC  #0xAB                                                     */
+/* A32 (A/R): SVC  #0x123456                                                 */
+/*---------------------------------------------------------------------------*/
+__attribute__((noinline, optnone))
+static inline int ARMSemihost_Call(int command, int32_t arg)
+{
+    int ret;
+    __asm volatile (
+        "mov r0, %[rsn] \n"
+        "mov r1, %[arg] \n"
+#if __ARM_ARCH_PROFILE == 'M'
+        "bkpt #0xab     \n"
+#else
+#ifdef __thumb__
+        "svc #0xab      \n"
+#else
+        "svc #0x123456  \n"
+#endif
+#endif
+        "mov %[val], r0 \n"
+        : [val] "=r" (ret)
+        : [rsn] "r" (command), [arg] "r" (arg)
+        : "r0", "r1", "r2", "r3", "ip", "lr", "memory", "cc"
+    );
+    return ret;
+}
 
-void parse_cmdline(ARGS *pargs, char* buf, char* env);
+/*---------------------------------------------------------------------------*/
+/* clang_ti_vprintf_semihost - vprintf routed to the ARM debug console.      */
+/*---------------------------------------------------------------------------*/
+#ifdef __cplusplus
+extern "C" {
+#endif
+
+int clang_ti_vprintf_semihost(const char *_format, va_list _ap);
+
+#ifdef __cplusplus
+}
+#endif
 
 #endif /* _CLANG_TI_SEMIHOST_H_ */

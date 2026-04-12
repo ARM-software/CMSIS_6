@@ -82,6 +82,7 @@ Program flow:
   -# Main thread is initialized
 */
 void cmsis_cv (void) {
+  
   /* Init test suite */
   if (ts.Init != NULL) {
     ts.Init();                           /* Init hardware                    */

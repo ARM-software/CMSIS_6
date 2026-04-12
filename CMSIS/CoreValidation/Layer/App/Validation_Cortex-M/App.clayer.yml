@@ -74,6 +74,4 @@ layer:
     - group: TI Arm Clang Compiler Semihost Support
       for-compiler: CLANG_TI
       files:
-        - file: ../../../Source/Clang_TI_Semihost/clang_ti_fastmodel_cio.c
         - file: ../../../Source/Clang_TI_Semihost/clang_ti_semihost.c
-        - file: ../../../Source/Clang_TI_Semihost/clang_ti_vprintf_semihost.c

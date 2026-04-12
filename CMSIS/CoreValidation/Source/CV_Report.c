@@ -8,7 +8,7 @@
 #include <stdio.h>
 #include <string.h>
 #if defined(__clang__) && defined(__ti__)
-#include "clang_ti_vprintf_semihost.h"
+#include "clang_ti_semihost.h"
 #endif
 
 TEST_REPORT test_report;
