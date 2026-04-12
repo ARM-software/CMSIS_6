@@ -6,11 +6,6 @@
  *----------------------------------------------------------------------------*/
 #include "CV_Framework.h"
 #include "cmsis_cv.h" 
-#if defined(__clang__) && defined(__ti__)
-#include "clang_ti_semihost.h"
-/* Declare the initialization routine provided in clang_ti_semihost.c */
-extern void _system_post_cinit(void);
-#endif
   
 /* Prototypes */
 void ts_cmsis_cv(void);
@@ -32,9 +27,6 @@ void closeDebug(void);
 Debug session dead end - debug script should close session here.
 */
 void closeDebug(void) {
-#if defined(__clang__) && defined(__ti__)
-  ARMSemihost_exit();
-#endif
   __NOP();
   // Test completed
 }
@@ -90,12 +82,6 @@ Program flow:
   -# Main thread is initialized
 */
 void cmsis_cv (void) {
-  
-#if defined(__clang__) && defined(__ti__)
-  /* Initialize semihosting file descriptors for STDOUT/STDERR */
-  _system_post_cinit();
-#endif
-
   /* Init test suite */
   if (ts.Init != NULL) {
     ts.Init();                           /* Init hardware                    */

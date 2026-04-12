@@ -5,13 +5,19 @@ layer:
   # packs:
   #   - pack: ARM::CMSIS
 
-  misc:
-    - for-compiler: CLANG_TI
-      Link:
-        # Reference TI Arm Clang Compiler ToolUser's Guide, v5.1, Section 6 Cortex-M Security Extensions (CMSE)
-        - -Xlinker --import_cmse_lib_out=implib.o
+  add-path:
+    - ../../../Include
+    - ../../../Source/Config
+    - ../../../Source/Clang_TI_Semihost
 
   groups:
     - group: Source Files
       files:
         - file: ./bootloader.c
+
+    - group: TI Arm Clang Compiler Semihost Support
+      for-compiler: CLANG_TI
+      files:
+        - file: ../../../Source/Clang_TI_Semihost/clang_ti_fastmodel_cio.c
+        - file: ../../../Source/Clang_TI_Semihost/clang_ti_semihost.c
+        - file: ../../../Source/Clang_TI_Semihost/clang_ti_vprintf_semihost.c

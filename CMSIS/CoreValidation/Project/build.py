@@ -297,10 +297,8 @@ def cbuild(config):
 def model_exec(config):
     cmdline = [MODEL_EXECUTABLE[config.device][0], "-q", "--simlimit", 5, "-f", model_config(config)]
     cmdline += MODEL_EXECUTABLE[config.device][1]
-    if config.device.has_bl() and (config.compiler == CompilerAxis.CLANG_TI):
-        cmdline += ["-a", f"{build_dir(config)}/{bl_output_dir(config)}/Bootloader.{config.compiler.image_ext}"]
     cmdline += ["-a", f"{build_dir(config)}/{output_dir(config)}/Validation.{config.compiler.image_ext}"]
-    if config.device.has_bl() and (config.compiler != CompilerAxis.CLANG_TI):
+    if config.device.has_bl():
         cmdline += ["-a", f"{build_dir(config)}/{bl_output_dir(config)}/Bootloader.{config.compiler.image_ext}"]
     return cmdline
 

@@ -1,52 +1,80 @@
 --stack_size=__STACK_SIZE
 --heap_size=__HEAP_SIZE
 --symbol_map=_start=_c_int00
+--entry_point=Reset_Handler
 
+/* Macros for Stack/Seal */
 #if defined (__ARM_FEATURE_CMSE) && (__ARM_FEATURE_CMSE == 3U)
   #define __STACKSEAL_SIZE 8
 #else
   #define __STACKSEAL_SIZE 0
 #endif
 
-__stack = __ROM0_BASE + __ROM0_SIZE - __STACKSEAL_SIZE - 1;
-__stack_seal = __ROM0_BASE + __ROM0_SIZE - __STACKSEAL_SIZE - 1;
-__stack_limit = __ROM0_BASE + __ROM0_SIZE - __STACKSEAL_SIZE - __STACK_SIZE;
-#define __STACK_ADDR (__ROM0_BASE + __ROM0_SIZE - __STACKSEAL_SIZE - 1)
-#define __STACK_LIMIT_ADDR (__ROM0_BASE + __ROM0_SIZE - __STACKSEAL_SIZE - __STACK_SIZE)
-
 MEMORY
 {
-ROM0 : ORIGIN = __ROM0_BASE, LENGTH = __ROM0_SIZE
-
-#if defined (__ROM1_BASE)
-  ROM1 : ORIGIN = __ROM1_BASE, LENGTH = __ROM1_SIZE
-#endif
-
-RAM0 : ORIGIN = __RAM0_BASE, LENGTH = __RAM0_SIZE
-
-#if defined (__RAM1_BASE)
-  RAM1 : ORIGIN = __RAM1_BASE, LENGTH = __RAM1_SIZE
-#endif
+    ROM0 (RX) : ORIGIN = __ROM0_BASE, LENGTH = __ROM0_SIZE
+    RAM0 (RW) : ORIGIN = __RAM0_BASE, LENGTH = __RAM0_SIZE
 }
+
+--retain="*(.vectors)"
+--retain="*(.intvecs)"
 
 SECTIONS
 {
-.vectors: {} > 0x00000000
+    /* 1. Vectors forced to the base of ROM */
+    .intvecs : load = __ROM0_BASE 
+    {
+        *(.vectors)
+        *(.intvecs)
+    }
 
-.text: palign=4 {} > ROM0
-.rodata: palign=4 {} > ROM0
+    /* 2. Code and Read-Only Data */
+    .text :
+    {
+        *(.text.Reset_Handler)
+        *(.text:_c_int00_noargs)
+        *(.text.main)
+        *(.text*)
+    } > ROM0
 
-.noinit: palign=4 {} > RAM0
-.data: palign=4 {} > RAM0
-.sysmem: palign=4 {} > RAM0
-.bss: type=NOINIT, palign=4 {} > RAM0
-
-.stack: run=__STACK_LIMIT_ADDR, type=NOLOAD {} > RAM0
-#if __STACKSEAL_SIZE > 0
-  .stackseal: run=__STACK_ADDR, type=NOLOAD {} > RAM0
+    /* 3. CMSE Veneers */
+#if defined (__ARM_FEATURE_CMSE) && (__ARM_FEATURE_CMSE == 3U)
+    Veneer$$CMSE : {} > ROM0
 #endif
+
+    .rodata     : {} > ROM0
+    .TI.crctab  : {} > ROM0
+
+    /* 4. Runtime Initialization Tables */
+    .binit      : {} > ROM0  
+    .cinit      : {} > ROM0  
+    .pinit      : {} > ROM0  
+    .init_array : {} > ROM0  
+    .fini_array : {} > ROM0  
+    .ovly       : {} > ROM0  
+
+    /* 5. Initialized Data */
+    .data : load = ROM0, run = RAM0, table(BINIT)
+
+    /* 6. Uninitialized Data */
+    .bss : type = NOINIT {} > RAM0
+    .sysmem : type = NOINIT {} > RAM0 
+
+    /* 7. Stack & Security Seal */
+    /* (HIGH) ensures these are placed at the end of RAM0 */
+GROUP : > RAM0 (HIGH) 
+    {
+        .stack : type = NOINIT, palign = 8 {
+            __stack_limit = .;          
+            . += __STACK_SIZE;
+            __stack = . - 1;            
+        } 
 
 #if defined (__ARM_FEATURE_CMSE) && (__ARM_FEATURE_CMSE == 3U)
-	Veneer$$CMSE: palign=8 {} > ROM0
+        .stackseal : type = NOINIT, palign = 8 {
+            __stack_seal = .;           
+            . += __STACKSEAL_SIZE;
+        } 
 #endif
+    }
 }

@@ -16,9 +16,6 @@ solution:
     - for-compiler: IAR
       Link:
         - --semihosting
-    - for-compiler: CLANG_TI
-      Link:
-        - -Xlinker --map_file=map.txt
 
   packs:
     - pack: ARM::CMSIS
