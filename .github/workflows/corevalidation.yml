@@ -132,7 +132,7 @@ jobs:
 
       - name: Archive Test Reports
         if: ${{ !cancelled() }}
-        uses: actions/upload-artifact@v6
+        uses: actions/upload-artifact@v7
         with:
           name: test-results-${{ matrix.compiler }}
           path: ./CMSIS/CoreValidation/Project/build/*.junit
@@ -143,7 +143,7 @@ jobs:
     steps:
       - name: Archive event file
         if: ${{ !cancelled() }}
-        uses: actions/upload-artifact@v6
+        uses: actions/upload-artifact@v7
         with:
           name: EventFile
           path: ${{ github.event_path }}
