@@ -152,7 +152,7 @@ MODEL_EXECUTABLE = {
     DeviceAxis.CA7: ("FVP_VE_Cortex-A7x1", []),
     DeviceAxis.CA7NEON: ("FVP_VE_Cortex-A7x1", []),
     DeviceAxis.CA9: ("FVP_VE_Cortex-A9x1", []),
-    DeviceAxis.CA9NEON: ("_VE_Cortex-A9x1", []),
+    DeviceAxis.CA9NEON: ("FVP_VE_Cortex-A9x1", []),
     DeviceAxis.CA35: ("FVP_Base_Cortex-A35", []),
     DeviceAxis.CA35NEON: ("FVP_Base_Cortex-A35", []),
     DeviceAxis.CA53: ("FVP_Base_Cortex-A53", []),
