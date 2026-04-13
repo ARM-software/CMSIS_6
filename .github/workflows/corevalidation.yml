@@ -85,7 +85,7 @@ jobs:
           queries: security-and-quality
 
       - uses: ammaraskar/gcc-problem-matcher@master
-        if: matrix.compiler == 'Clang' || matrix.compiler == 'GCC'
+        if: matrix.compiler == 'Clang' || matrix.compiler == 'Clang_TI' || matrix.compiler == 'GCC'
 
       - name: Set TI ARM CLANG Environment Variables and Path
         run: |
