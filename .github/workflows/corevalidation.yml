@@ -87,21 +87,23 @@ jobs:
       - uses: ammaraskar/gcc-problem-matcher@master
         if: matrix.compiler == 'Clang' || matrix.compiler == 'Clang_TI' || matrix.compiler == 'GCC'
 
-      - name: Set TI ARM CLANG Environment Variables and Path
+      - name: Set TI Arm Clang Environment Variables and Path
+        if: matrix.compiler == 'Clang_TI'
         run: |
           echo "CLANG_TI_PATH=${{ env.CLANG_TI_INSTALL_PATH }}ti-cgt-armllvm_${{ env.CLANG_TI_VERSION }}" >> $GITHUB_ENV
           echo "CLANG_TI_TOOLCHAIN_${{ env.CLANG_TI_TC_SUFFIX }}=${{ env.CLANG_TI_INSTALL_PATH }}ti-cgt-armllvm_${{ env.CLANG_TI_VERSION }}/bin" >> $GITHUB_ENV
 
-      - name: Cache TI ARM CLANG
+      - name: Cache TI Arm Clang
+        if: matrix.compiler == 'Clang_TI'
         id: cache-ti-arm-clang
         uses: actions/cache@v5
         with:
           path: ${{ env.CLANG_TI_PATH }}
           key: ${{ runner.os }}-ti-arm-clang-${{ env.CLANG_TI_VERSION }}
 
-      - name: Download and Verify TI ARM CLANG Installer
+      - name: Download and Verify TI Arm Clang Installer
+        if: matrix.compiler == 'Clang_TI' && steps.cache-ti-arm-clang.outputs.cache-hit != 'true'
         working-directory: /home/runner
-        if: steps.cache-ti-arm-clang.outputs.cache-hit != 'true'
         run: |
           FILE="ti_cgt_armllvm_${{ env.CLANG_TI_VERSION }}_linux-x64_installer.bin"
           URL="https://dr-download.ti.com/software-development/ide-configuration-compiler-or-debugger/MD-ayxs93eZNN/${{ env.CLANG_TI_VERSION }}/${FILE}"
