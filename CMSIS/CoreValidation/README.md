@@ -105,7 +105,7 @@ For example, build and run the tests using GCC for Cortex-M3 with low optimizati
 [GCC][Cortex-M3][none](build:csolution) csolution succeeded with exit code 0
 [GCC][Cortex-M3][none](build:cbuild) cbuild Validation.GCC_low+CM3/Validation.GCC_low+CM3.cprj
 [GCC][Cortex-M3][none](build:cbuild) cbuild succeeded with exit code 0
-[GCC][Cortex-M3][none](run:model_exec) FVP_MPS2_Cortex-M3 -q --simlimit 100 -f ../Layer/Target/CM3/model_config.txt -a Validation.GCC_low+CM3/Validation.GCC_low+CM3_outdir/Validation.GCC_low+CM3.elf
+[GCC][Cortex-M3][none](run:model_exec) FVP_MPS2_Cortex-M3 -q --simlimit 5 -f ../Layer/Target/CM3/model_config.txt -a Validation.GCC_low+CM3/Validation.GCC_low+CM3_outdir/Validation.GCC_low+CM3.elf
 [GCC][Cortex-M3][none](run:model_exec) FVP_MPS2_Cortex-M3 succeeded with exit code 0
 
 Matrix Summary
