@@ -189,6 +189,11 @@ __STATIC_FORCEINLINE void SCB_DisableDCache (void)
     #endif
     ;
 
+    /* Return if D-cache is not enabled (prevent flushing junk after POR) */
+    if ((SCB->CCR & SCB_CCR_DC_Msk) == 0U) {
+      return;
+    }
+
     SCB->CSSELR = 0U;                       /* select Level 1 data cache */
     __DSB();
 
