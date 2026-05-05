@@ -1,0 +1,4 @@
+name: cmsis_6
+build:
+  cmake-ext: true
+  kconfig-ext: true
