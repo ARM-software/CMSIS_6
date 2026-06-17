@@ -8,9 +8,9 @@ The **CMSIS** (Common Microcontroller Software Interface Standard) is a set of A
 
 ## CMSIS v6 Introduction Webinar
 
-Watch the [introduction webinar](https://on-demand.arm.com/flow/arm/devhub/sessionCatalog/page/pubSessCatalog/session/1705915235972001vEdN) to learn about CMSIS v6 and how to use it.
+Watch the [introduction webinar](https://developer.arm.com/-/media/arm%20developer%20community/videos/tools%20and%20software/cmsis/20240116_cmsis_overview.mp4) to learn about CMSIS v6 and how to use it.
 
-[![CMSIS v6 Introduction Webinar](./images/cmsis6introwebinar.png)](https://on-demand.arm.com/flow/arm/devhub/sessionCatalog/page/pubSessCatalog/session/1705915235972001vEdN)
+[![CMSIS v6 Introduction Webinar](./images/cmsis6introwebinar.png)](https://developer.arm.com/-/media/arm%20developer%20community/videos/tools%20and%20software/cmsis/20240116_cmsis_overview.mp4)
 
 ## Related CMSIS-Packs
 
