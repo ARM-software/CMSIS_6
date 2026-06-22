@@ -26,7 +26,7 @@ jobs:
       CLANG_TI_SHA256: "c758668b78c080be5ec75393cdd09d077742fd1183aa0c181318a0119d58c4d0"
 
     steps:
-      - uses: actions/checkout@v6
+      - uses: actions/checkout@v7
       
       - uses: actions/setup-python@v6
         with:
