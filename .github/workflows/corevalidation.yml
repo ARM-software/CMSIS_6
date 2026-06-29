@@ -96,7 +96,7 @@ jobs:
       - name: Cache TI Arm Clang
         if: matrix.compiler == 'Clang_TI'
         id: cache-ti-arm-clang
-        uses: actions/cache@v5
+        uses: actions/cache@v6
         with:
           path: ${{ env.CLANG_TI_PATH }}
           key: ${{ runner.os }}-ti-arm-clang-${{ env.CLANG_TI_VERSION }}
