@@ -10,6 +10,15 @@ The table below provides information about the changes delivered with specific v
       <th>Description</th>
     </tr>
     <tr>
+      <td>2.12.0</td>
+      <td>
+        - Updated MCI API 2.5.0:
+          - Enhance support for UHS-I devices
+            - Added phased UHS-I signal-voltage switching
+            - Added tuning and re-tuning operations and capabilities
+      </td>
+    </tr>
+    <tr>
       <td>2.11.0</td>
       <td>
         - Added vStream Driver API 1.0.0

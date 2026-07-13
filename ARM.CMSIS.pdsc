@@ -479,7 +479,7 @@
         <file category="header" name="CMSIS/Driver/Include/Driver_Flash.h" />
       </files>
     </api>
-    <api Cclass="CMSIS Driver" Cgroup="MCI" Capiversion="2.4.0" exclusive="0">
+    <api Cclass="CMSIS Driver" Cgroup="MCI" Capiversion="2.5.0" exclusive="0">
       <description>MCI (Memory Card Interface) Driver API</description>
       <files>
         <file category="doc" name="CMSIS/Documentation/html/Driver/group__mci__interface__gr.html" />
@@ -768,7 +768,7 @@
         <file category="sourceC" attr="template" name="CMSIS/Driver/DriverTemplates/Driver_Flash.c" select="Flash Driver"/>
       </files>
     </component>
-    <component Cclass="CMSIS Driver" Cgroup="MCI" Csub="Custom" Cversion="1.0.0" Capiversion="2.4.0" custom="1">
+    <component Cclass="CMSIS Driver" Cgroup="MCI" Csub="Custom" Cversion="1.0.0" Capiversion="2.5.0" custom="1">
       <description>Access to #include Driver_MCI.h file and code template for custom implementation</description>
       <files>
         <file category="sourceC" attr="template" name="CMSIS/Driver/DriverTemplates/Driver_MCI.c" select="MCI Driver"/>

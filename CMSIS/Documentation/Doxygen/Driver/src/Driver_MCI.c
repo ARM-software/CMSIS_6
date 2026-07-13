@@ -115,6 +115,10 @@ The following call back notification events are generated:
 \sa \ref ARM_MCI_SignalEvent
 \def ARM_MCI_EVENT_CCS_TIMEOUT
 \sa \ref ARM_MCI_SignalEvent
+\def ARM_MCI_EVENT_RETUNING_REQUEST
+\sa \ref ARM_MCI_SignalEvent
+\def ARM_MCI_EVENT_TUNING_ERROR
+\sa \ref ARM_MCI_SignalEvent
 @}
 *******************************************************************************************************************/
 
@@ -164,6 +168,37 @@ The following codes are used as values for the parameter \em control of the func
 \def ARM_MCI_CONTROL_READ_WAIT
 \def ARM_MCI_SUSPEND_TRANSFER
 \def ARM_MCI_RESUME_TRANSFER
+\def ARM_MCI_UHS_VOLTAGE_SWITCH
+@}
+*******************************************************************************************************************/
+
+/**
+\defgroup mci_uhs_voltage_switch_ctrls MCI UHS-I Signal Voltage Switch
+\ingroup mci_control_gr
+\brief Host-controller phases of the SD UHS-I signal-voltage switch.
+\details
+@{
+\def ARM_MCI_VOLTAGE_SWITCH_PREPARE
+\def ARM_MCI_VOLTAGE_SWITCH_APPLY
+\def ARM_MCI_VOLTAGE_SWITCH_CLOCK_ON
+\def ARM_MCI_VOLTAGE_SWITCH_VERIFY
+\def ARM_MCI_VOLTAGE_SWITCH_ABORT
+\def ARM_MCI_VOLTAGE_SWITCH_RESET
+@}
+*******************************************************************************************************************/
+
+/**
+\defgroup mci_uhs_tuning_ctrls MCI UHS-I Tuning
+\ingroup mci_control_gr
+\brief Host-controller tuning operations and results.
+\details
+@{
+\def ARM_MCI_UHS_TUNING_ABORT
+\def ARM_MCI_UHS_TUNING_START
+\def ARM_MCI_UHS_RETUNING_START
+\def ARM_MCI_UHS_TUNING_DONE
+\def ARM_MCI_UHS_TUNING_CONTINUE
+\def ARM_MCI_UHS_TUNING_ERROR
 @}
 *******************************************************************************************************************/
 
@@ -182,8 +217,8 @@ as specified with \em arg listed bellow.
 
 The function \ref ARM_MCI_GetCapabilities lists the supported bus speed modes. Initially, all SD cards use a 3.3 volt electrical interface. 
 Some SD cards can switch to 1.8 volt operation. For example, the use of ultra-high-speed (UHS) 
-SD cards requires 1.8 volt operation and a 4-bit bus data width. The data field \em uhs_signaling of the structure ARM_MCI_CAPABILITIES encodes 
-whether the driver supports 1.8 volt UHS signaling.
+SD cards requires 1.8 volt operation and a 4-bit bus data width. The data field \em uhs_signaling of the structure ARM_MCI_CAPABILITIES encodes
+whether the driver supports the UHS-I signal-voltage switch and the mandatory SDR12 and SDR25 baseline.
 
 \sa 
  - \ref mci_driver_strength_ctrls
@@ -613,14 +648,15 @@ Parameter \em control                 | Operation
 \ref ARM_MCI_DRIVER_STRENGTH          | Set driver strength. Predefined values for \em arg are listed in the table <b>Driver Type</b>
 \ref ARM_MCI_CONTROL_RESET            | Control optional RST_n Pin (eMMC). The parameter \em arg can have the values \token{[0:inactive(default); 1:active]}
 \ref ARM_MCI_CONTROL_CLOCK_IDLE       | Control clock generation on CLK Pin when idle. The parameter \em arg  can have the values \token{[0:disabled; 1:enabled]}
-\ref ARM_MCI_UHS_TUNING_OPERATION     | Sampling clock Tuning operation (SD UHS-I). The parameter \em arg  can have the values  \token{[0:reset; 1:execute]}
-\ref ARM_MCI_UHS_TUNING_RESULT        | Sampling clock Tuning result (SD UHS-I). Returns \token{[0:done; 1:in progress; -1:error]}
+\ref ARM_MCI_UHS_TUNING_OPERATION     | Start, restart, or abort host-controller sampling-clock tuning. The parameter \em arg is one of \ref ARM_MCI_UHS_TUNING_ABORT, \ref ARM_MCI_UHS_TUNING_START, or \ref ARM_MCI_UHS_RETUNING_START.
+\ref ARM_MCI_UHS_TUNING_RESULT        | Return \ref ARM_MCI_UHS_TUNING_DONE, \ref ARM_MCI_UHS_TUNING_CONTINUE, or \ref ARM_MCI_UHS_TUNING_ERROR after a protocol tuning-block command.
 \ref ARM_MCI_DATA_TIMEOUT             | Set Data timeout;  The parameter \em arg sets the timeout in bus cycles.
 \ref ARM_MCI_CSS_TIMEOUT              | Set Command Completion Signal (CCS) timeout. The parameter \em arg sets timeout in bus cycles.
 \ref ARM_MCI_MONITOR_SDIO_INTERRUPT   | Monitor SD I/O interrupt. The parameter \em arg  can have the values \token{[0:disabled(default); 1:enabled]}. Monitoring is automatically disabled when an interrupt is recognized.
 \ref ARM_MCI_CONTROL_READ_WAIT        | Control Read/Wait states for SD I/O. The parameter \em arg  can have the values \token{[0:disabled(default); 1:enabled]}.
 \ref ARM_MCI_SUSPEND_TRANSFER         | Suspend Data transfer (SD I/O). Returns the number of remaining bytes to transfer.
 \ref ARM_MCI_RESUME_TRANSFER          | Resume Data transfer (SD I/O).
+\ref ARM_MCI_UHS_VOLTAGE_SWITCH       | Perform a host-controller phase of the UHS-I signal-voltage switch. The parameter \em arg is an \ref mci_uhs_voltage_switch_ctrls value.
  
  
 <b>Bus Speed Mode</b>
@@ -628,7 +664,7 @@ Parameter \em control                 | Operation
 The function \ref ARM_MCI_GetCapabilities lists the supported bus speed modes. Initially, all SD cards use a 3.3 volt electrical interface. 
 Some SD cards can switch to 1.8 volt operation. For example, the use of ultra-high-speed (UHS) 
 SD cards requires 1.8 volt operation and a 4-bit bus data width. The bit field ARM_MCI_CAPABILITIES.uhs_signaling encodes 
-whether the driver supports 1.8 volt UHS signaling.
+whether the driver supports the UHS-I signal-voltage switch and the mandatory SDR12 and SDR25 baseline.
 
 The \em control operation \b ARM_MCI_BUS_SPEED_MODE  sets the bus speed mode using the parameter \em arg.
 
@@ -713,13 +749,7 @@ MCIdrv->Control(ARM_MCI_CONTROL_CLOCK_IDLE, 1);
 // Disable Clock generation on CLK when Idle
 MCIdrv->Control(ARM_MCI_CONTROL_CLOCK_IDLE, 0);
  
-// UHS Tuning
-MCIdrv->Control(ARM_MCI_UHS_TUNING_OPERATION, 1);  // start tuning
-do {
-  status = MCIdrv->Control(ARM_MCI_UHS_TUNING_RESULT, 0/*argument not used*/);
-  if (status == -1) { break; /* tuning failed */ }
-} while (status == 1);
- 
+
 // Set Data Timeout to 12500000 bus cycles (0.5s @25MHz Bus Speed)
 // Default value is hardware specific (typically 2^32-1)
 MCIdrv->Control(ARM_MCI_DATA_TIMEOUT, 12500000);
@@ -769,11 +799,11 @@ The parameter \em event indicates one or more events that occurred during driver
 Each event is encoded in a separate bit and therefore it is possible to signal multiple events within the same call. 
 
 Not every event is necessarily generated by the driver. This depends on the implemented capabilities stored in the 
-data fields of the structure \ref ARM_NAND_CAPABILITIES, which can be retrieved with the function \ref ARM_NAND_GetCapabilities.
+data fields of the structure \ref ARM_MCI_CAPABILITIES, which can be retrieved with the function \ref ARM_MCI_GetCapabilities.
 
 The following events can be generated:
 
-Parameter \em event                        |Bit | Description                                                           | supported when \ref ARM_NAND_CAPABILITIES
+Parameter \em event                        |Bit | Description                                                           | supported when \ref ARM_MCI_CAPABILITIES
 :------------------------------------------|---:|:----------------------------------------------------------------------|:---------------------------------------------
 \ref ARM_MCI_EVENT_CARD_INSERTED           | 0  | Occurs after Memory Card inserted                                     | <i>always supported</i>
 \ref ARM_MCI_EVENT_CARD_REMOVED            | 1  | Occurs after Memory Card removal                                      | <i>always supported</i>
@@ -785,7 +815,9 @@ Parameter \em event                        |Bit | Description                   
 \ref ARM_MCI_EVENT_TRANSFER_ERROR          | 7  | Occurs after data transfer error (CRC failed)                         | <i>always supported</i>
 \ref ARM_MCI_EVENT_SDIO_INTERRUPT          | 8  | Indicates SD I/O Interrupt                                            | data field \em sdio_interrupt = \token{1}
 \ref ARM_MCI_EVENT_CCS                     | 9  | Indicates a Command Completion Signal (CCS)                           | data field \em ccs = \token{1}
-\ref ARM_MCI_EVENT_CCS_TIMEOUT             |10  | Indicates a Command Completion Signal (CCS) Timeout                   | data field \em css_timeout = \token{1}
+\ref ARM_MCI_EVENT_CCS_TIMEOUT             |10  | Indicates a Command Completion Signal (CCS) Timeout                   | data field \em ccs_timeout = \token{1}
+\ref ARM_MCI_EVENT_RETUNING_REQUEST        |11  | Requests execution of the re-tuning loop before a subsequent command  | data field \em uhs_retuning = \token{1}
+\ref ARM_MCI_EVENT_TUNING_ERROR            |12  | Indicates tuned sampling circuit failed during normal operation       | data field \em uhs_tuning = \token{1}
 
 <b>See also:</b>
  - \ref ARM_MCI_SendCommand

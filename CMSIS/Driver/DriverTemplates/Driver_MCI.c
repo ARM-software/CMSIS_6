@@ -57,7 +57,9 @@ static const ARM_MCI_CAPABILITIES DriverCapabilities = {
     0, /* rst_n             */
     0, /* ccs               */
     0, /* ccs_timeout       */
-    0  /* Reserved          */
+    0, /* reserved          */
+    0, /* uhs_tuning_sdr50  */
+    0  /* uhs_retuning      */
 };
 
 //

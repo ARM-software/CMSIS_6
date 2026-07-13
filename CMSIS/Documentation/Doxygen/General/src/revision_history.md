@@ -16,6 +16,13 @@ Release history of other CMSIS components and tools can be found in their docume
       <th>Description</th>
     </tr>
     <tr>
+      <td>6.4.0</td>
+      <td>
+       - CMSIS-Driver: 2.12.0
+         - Updated MCI API to 2.5.0 with UHS-I voltage switching, tuning, and re-tuning support
+      </td>
+    </tr>
+    <tr>
       <td>6.3.0</td>
       <td>
        - CMSIS-Core: 6.2.0

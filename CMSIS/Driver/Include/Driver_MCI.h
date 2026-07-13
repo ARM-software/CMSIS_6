@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2013-2020 ARM Limited. All rights reserved.
+ * Copyright (c) 2013-2026 Arm Limited. All rights reserved.
  *
  * SPDX-License-Identifier: Apache-2.0
  *
@@ -15,13 +15,16 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  *
- * $Date:        31. March 2020
- * $Revision:    V2.4
+ * $Date:        9. July 2026
+ * $Revision:    V2.5
  *
  * Project:      MCI (Memory Card Interface) Driver definitions
  */
 
 /* History:
+ *  Version 2.5
+ *    Added phased UHS-I signal-voltage switching
+ *    Added tuning and re-tuning operations and capabilities
  *  Version 2.4
  *    Removed volatile from ARM_MCI_STATUS
  *  Version 2.3
@@ -71,7 +74,7 @@ extern "C"
 
 #include "Driver_Common.h"
 
-#define ARM_MCI_API_VERSION ARM_DRIVER_VERSION_MAJOR_MINOR(2,4)  /* API version */
+#define ARM_MCI_API_VERSION ARM_DRIVER_VERSION_MAJOR_MINOR(2,5)  /* API version */
 
 
 #define _ARM_Driver_MCI_(n)      Driver_MCI##n
@@ -121,14 +124,15 @@ extern "C"
 #define ARM_MCI_DRIVER_STRENGTH         (0x05UL)    ///< Set SD UHS-I Driver Strength as specified with arg 
 #define ARM_MCI_CONTROL_RESET           (0x06UL)    ///< Control optional RST_n Pin (eMMC); arg: 0=inactive, 1=active 
 #define ARM_MCI_CONTROL_CLOCK_IDLE      (0x07UL)    ///< Control Clock generation on CLK Pin when idle; arg: 0=disabled, 1=enabled
-#define ARM_MCI_UHS_TUNING_OPERATION    (0x08UL)    ///< Sampling clock Tuning operation (SD UHS-I); arg: 0=reset, 1=execute
-#define ARM_MCI_UHS_TUNING_RESULT       (0x09UL)    ///< Sampling clock Tuning result (SD UHS-I); returns: 0=done, 1=in progress, -1=error
+#define ARM_MCI_UHS_TUNING_OPERATION    (0x08UL)    ///< Sampling clock tuning operation (SD UHS-I); arg: ARM_MCI_UHS_TUNING_* or ARM_MCI_UHS_RETUNING_START
+#define ARM_MCI_UHS_TUNING_RESULT       (0x09UL)    ///< Sampling clock tuning result (SD UHS-I); returns: ARM_MCI_UHS_TUNING_*
 #define ARM_MCI_DATA_TIMEOUT            (0x0AUL)    ///< Set Data timeout; arg = timeout in bus cycles
 #define ARM_MCI_CSS_TIMEOUT             (0x0BUL)    ///< Set Command Completion Signal (CCS) timeout; arg = timeout in bus cycles
 #define ARM_MCI_MONITOR_SDIO_INTERRUPT  (0x0CUL)    ///< Monitor SD I/O interrupt: arg: 0=disabled, 1=enabled
 #define ARM_MCI_CONTROL_READ_WAIT       (0x0DUL)    ///< Control Read/Wait for SD I/O; arg: 0=disabled, 1=enabled
 #define ARM_MCI_SUSPEND_TRANSFER        (0x0EUL)    ///< Suspend Data transfer (SD I/O); returns number of remaining bytes to transfer
 #define ARM_MCI_RESUME_TRANSFER         (0x0FUL)    ///< Resume Data transfer (SD I/O)
+#define ARM_MCI_UHS_VOLTAGE_SWITCH      (0x10UL)    ///< UHS-I signal voltage switch; arg: ARM_MCI_VOLTAGE_SWITCH_*
 
 /*----- MCI Bus Speed Mode -----*/
 #define ARM_MCI_BUS_DEFAULT_SPEED       (0x00UL)    ///< SD/MMC: Default Speed mode up to 25/26MHz
@@ -155,6 +159,24 @@ extern "C"
 #define ARM_MCI_DRIVER_TYPE_B           (0x00UL)    ///< SD UHS-I Driver Type B (default)
 #define ARM_MCI_DRIVER_TYPE_C           (0x02UL)    ///< SD UHS-I Driver Type C
 #define ARM_MCI_DRIVER_TYPE_D           (0x03UL)    ///< SD UHS-I Driver Type D
+
+/*----- MCI UHS-I Signal Voltage Switch -----*/
+#define ARM_MCI_VOLTAGE_SWITCH_PREPARE  (0x00UL)    ///< Prepare or arm the host controller before CMD11
+#define ARM_MCI_VOLTAGE_SWITCH_APPLY    (0x01UL)    ///< Stop clock, verify DAT low, and apply 1.8 V signaling after CMD11
+#define ARM_MCI_VOLTAGE_SWITCH_CLOCK_ON (0x02UL)    ///< Verify voltage selection and start or confirm SD clock after the 5 ms delay
+#define ARM_MCI_VOLTAGE_SWITCH_VERIFY   (0x03UL)    ///< Verify DAT high after the subsequent 1 ms delay
+#define ARM_MCI_VOLTAGE_SWITCH_ABORT    (0x04UL)    ///< Abort an incomplete switch and leave the host interface safe
+#define ARM_MCI_VOLTAGE_SWITCH_RESET    (0x05UL)    ///< Restore host signaling state for card power-up at 3.3 V
+
+/*----- MCI UHS-I Tuning Operation -----*/
+#define ARM_MCI_UHS_TUNING_ABORT        (0x00UL)    ///< Abort/reset the tuning state machine
+#define ARM_MCI_UHS_TUNING_START        (0x01UL)    ///< Start initial tuning
+#define ARM_MCI_UHS_RETUNING_START      (0x02UL)    ///< Start re-tuning requested by the host controller
+
+/*----- MCI UHS-I Tuning Result -----*/
+#define ARM_MCI_UHS_TUNING_DONE         (0)         ///< Tuning completed successfully
+#define ARM_MCI_UHS_TUNING_CONTINUE     (1)         ///< Another protocol tuning-block command is required
+#define ARM_MCI_UHS_TUNING_ERROR        (-1)        ///< Tuning failed
 
 
 /****** MCI Card Power *****/
@@ -199,6 +221,8 @@ typedef struct _ARM_MCI_STATUS {
 #define ARM_MCI_EVENT_SDIO_INTERRUPT    (1UL << 8)  ///< SD I/O Interrupt
 #define ARM_MCI_EVENT_CCS               (1UL << 9)  ///< Command Completion Signal (CCS)
 #define ARM_MCI_EVENT_CCS_TIMEOUT       (1UL << 10) ///< Command Completion Signal (CCS) Timeout
+#define ARM_MCI_EVENT_RETUNING_REQUEST  (1UL << 11) ///< Driver requests re-tuning before a subsequent command
+#define ARM_MCI_EVENT_TUNING_ERROR      (1UL << 12) ///< Host controller detected a tuning error
 
 
 // Function documentation
@@ -313,7 +337,7 @@ typedef struct _ARM_MCI_CAPABILITIES {
   uint32_t data_width_4_ddr  : 1;       ///< Supports 4-bit data, DDR (Dual Data Rate) - MMC only
   uint32_t data_width_8_ddr  : 1;       ///< Supports 8-bit data, DDR (Dual Data Rate) - MMC only
   uint32_t high_speed        : 1;       ///< Supports SD/MMC High Speed Mode
-  uint32_t uhs_signaling     : 1;       ///< Supports SD UHS-I (Ultra High Speed) 1.8V signaling 
+  uint32_t uhs_signaling     : 1;       ///< Supports SD UHS-I 1.8 V signaling with SDR12 and SDR25 timing
   uint32_t uhs_tuning        : 1;       ///< Supports SD UHS-I tuning 
   uint32_t uhs_sdr50         : 1;       ///< Supports SD UHS-I SDR50  (Single Data Rate) up to  50MB/s
   uint32_t uhs_sdr104        : 1;       ///< Supports SD UHS-I SDR104 (Single Data Rate) up to 104MB/s
@@ -329,7 +353,9 @@ typedef struct _ARM_MCI_CAPABILITIES {
   uint32_t rst_n             : 1;       ///< Supports RST_n Pin Control (eMMC)
   uint32_t ccs               : 1;       ///< Supports Command Completion Signal (CCS) for CE-ATA
   uint32_t ccs_timeout       : 1;       ///< Supports Command Completion Signal (CCS) timeout for CE-ATA
-  uint32_t reserved          : 3;       ///< Reserved (must be zero)
+  uint32_t reserved          : 1;       ///< Reserved (must be zero)
+  uint32_t uhs_tuning_sdr50  : 1;       ///< UHS-I SDR50 requires host-controller tuning
+  uint32_t uhs_retuning      : 1;       ///< Supports driver-managed re-tuning requests or timers
 } ARM_MCI_CAPABILITIES;
 
 
