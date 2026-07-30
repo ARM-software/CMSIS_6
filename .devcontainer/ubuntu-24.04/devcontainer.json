@@ -1,22 +1,25 @@
 {
     "name": "Ubuntu-24.04",
     "build": {
-      "dockerfile": "Dockerfile"
+      "dockerfile": "Dockerfile",
+      "args": {
+        "USERNAME": "${localEnv:USER}"
+      }
     },
-    "remoteUser": "ubuntu",
+    "remoteUser": "${localEnv:USER}",
     "mounts": [
-      "source=${devcontainerId}-home,target=/home/ubuntu,type=volume",
-      "source=${localEnv:HOME}${localEnv:USERPROFILE}/.ssh,target=/home/ubuntu/.ssh,type=bind,consistency=cached",
-      "source=${localEnv:HOME}${localEnv:USERPROFILE}/.armlm,target=/home/ubuntu/.armlm,type=bind,consistency=cached",
-      "source=${localEnv:HOME}${localEnv:USERPROFILE}/.iarlm,target=/home/ubuntu/.iarlm,type=bind,consistency=cached"
+      "source=${devcontainerId}-home,target=/home/${localEnv:USER},type=volume",
+      "source=${localEnv:HOME}${localEnv:USERPROFILE}/.ssh,target=/home/${localEnv:USER}/.ssh,type=bind,consistency=cached",
+      "source=${localEnv:HOME}${localEnv:USERPROFILE}/.armlm,target=/home/${localEnv:USER}/.armlm,type=bind,consistency=cached",
+      "source=${localEnv:HOME}${localEnv:USERPROFILE}/.iarlm,target=/home/${localEnv:USER}/.iarlm,type=bind,consistency=cached"
     ],
     "postCreateCommand": "/home/postCreateCommand.sh",
     "customizations": {
       "vscode": {
         "extensions": [
-			    "ms-vscode.cpptools",
-			    "ms-vscode.cpptools-extension-pack"
+          "ms-vscode.cpptools",
+          "ms-vscode.cpptools-extension-pack"
         ]
       }
     }
-  }
+}
