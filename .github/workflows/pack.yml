@@ -14,7 +14,7 @@ concurrency:
 jobs:
   pack:
     name: Generate pack
-    runs-on: ubuntu-22.04
+    runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v7
         with:

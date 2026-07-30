@@ -11,7 +11,7 @@ on:
 jobs:
   publish-test-results:
     name: Publish Test Results
-    runs-on: ubuntu-22.04
+    runs-on: ubuntu-latest
     if: github.event.workflow_run.conclusion != 'skipped'
 
     steps:

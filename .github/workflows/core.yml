@@ -16,7 +16,7 @@ concurrency:
 
 jobs:
   lit:
-    runs-on: ubuntu-22.04
+    runs-on: ubuntu-latest
 
     env:
       ARM_UBL_ACTIVATION_CODE: ${{ secrets.ARM_UBL_ACTIVATION_CODE }}
