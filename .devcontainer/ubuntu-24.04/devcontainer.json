@@ -1,0 +1,22 @@
+{
+    "name": "Ubuntu-24.04",
+    "build": {
+      "dockerfile": "Dockerfile"
+    },
+    "remoteUser": "ubuntu",
+    "mounts": [
+      "source=${devcontainerId}-home,target=/home/ubuntu,type=volume",
+      "source=${localEnv:HOME}${localEnv:USERPROFILE}/.ssh,target=/home/ubuntu/.ssh,type=bind,consistency=cached",
+      "source=${localEnv:HOME}${localEnv:USERPROFILE}/.armlm,target=/home/ubuntu/.armlm,type=bind,consistency=cached",
+      "source=${localEnv:HOME}${localEnv:USERPROFILE}/.iarlm,target=/home/ubuntu/.iarlm,type=bind,consistency=cached"
+    ],
+    "postCreateCommand": "/home/postCreateCommand.sh",
+    "customizations": {
+      "vscode": {
+        "extensions": [
+			    "ms-vscode.cpptools",
+			    "ms-vscode.cpptools-extension-pack"
+        ]
+      }
+    }
+  }
