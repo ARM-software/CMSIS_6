@@ -1,11 +1,12 @@
 {
-    "name": "Ubuntu-22.04",
+    "name": "Ubuntu-24.04",
     "build": {
       "dockerfile": "Dockerfile",
       "args": {
         "USERNAME": "${localEnv:USER}"
       }
     },
+    "remoteUser": "${localEnv:USER}",
     "mounts": [
       "source=${devcontainerId}-home,target=/home/${localEnv:USER},type=volume",
       "source=${localEnv:HOME}${localEnv:USERPROFILE}/.ssh,target=/home/${localEnv:USER}/.ssh,type=bind,consistency=cached",
@@ -16,9 +17,9 @@
     "customizations": {
       "vscode": {
         "extensions": [
-			    "ms-vscode.cpptools",
-			    "ms-vscode.cpptools-extension-pack"
+          "ms-vscode.cpptools",
+          "ms-vscode.cpptools-extension-pack"
         ]
       }
     }
-  }
+}
