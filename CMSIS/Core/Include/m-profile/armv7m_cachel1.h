@@ -184,7 +184,7 @@ __STATIC_FORCEINLINE void SCB_DisableDCache (void)
       uint32_t sets;
       uint32_t ways;
     } locals
-    #if ((defined(__GNUC__) || defined(__clang__)) && !defined(__OPTIMIZE__))
+    #if ((defined(__GNUC__) || defined(__clang__))
        __ALIGNED(__SCB_DCACHE_LINE_SIZE)
     #endif
     ;
