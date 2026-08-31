@@ -2,7 +2,7 @@
 
 The **CMSIS** (Common Microcontroller Software Interface Standard) is a set of APIs, software components, tools, and workflows that help to simplify software re-use, reduce the learning curve for microcontroller developers, speed-up project build and debug, and thus reduce the time to market for new applications.
 
-CMSIS started as a vendor-independent hardware abstraction layer Arm&reg; Cortex&reg;-M based processors and was later extended to support entry-level Arm Cortex-A based processors. To simplify access, CMSIS defines generic tool interfaces and enables consistent device support by providing simple software interfaces to the processor and the peripherals.
+CMSIS started as a vendor-independent hardware abstraction layer for Arm&reg; Cortex&reg;-M based processors and was later extended to support entry-level Arm Cortex-A based processors. To simplify access, CMSIS defines generic tool interfaces and enables consistent device support by providing simple software interfaces to the processor and the peripherals.
 
 CMSIS has been created to help the industry in standardization. It enables consistent software layers and device support across a wide range of development tools and microcontrollers. CMSIS is not a huge software layer that introduces overhead and does not define standard peripherals. The silicon industry can therefore support the wide variations of Arm Cortex processor-based devices with this common standard.
 
@@ -160,7 +160,7 @@ The CMSIS source code is checked for MISRA C:2012 conformance. MISRA deviations 
 
 ## Migration from CMSIS v5 {#migration_cmsis5}
 
-The functionality of invidivdual CMSIS v6 software components is kept primarily same as in CMSIS v5.9.0. However, some CMSIS components are now delivered in their standalone CMSIS packs and may also have different naming, structure and dependencies.
+The functionality of individual CMSIS v6 software components is kept primarily same as in CMSIS v5.9.0. However, some CMSIS components are now delivered in their standalone CMSIS packs and may also have different naming, structure and dependencies.
 
 While use of CMSIS-Pack concept greatly helps to abstract many of this changes from users, there are still some simple adaptation required to fully enable CMSIS v6 support in software developed based on CMSIS v5 structure. Following migration guides explain necessary steps for such porting:
 
