@@ -51,7 +51,7 @@ jobs:
           sudo ln -s /usr/bin/FileCheck-18 /usr/bin/FileCheck
     
       - name: Activate vcpkg environment
-        uses: ARM-software/cmsis-actions/vcpkg@v1
+        uses: ARM-software/cmsis-actions/vcpkg@v1.3
         with:
           config: ./CMSIS/Core/Test/vcpkg-configuration.json
           
