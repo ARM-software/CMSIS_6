@@ -175,7 +175,7 @@
 #endif
 
 #include "cmsis_compiler.h"               /* CMSIS compiler specific defines */
-#include "armv8r_cp15.h.h"
+#include "armv8r_cp15.h"
 
 #ifdef __cplusplus
 }
