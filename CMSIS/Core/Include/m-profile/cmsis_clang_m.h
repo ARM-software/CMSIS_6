@@ -43,7 +43,11 @@
 
 /* #########################  Startup and Lowlevel Init  ######################## */
 #ifndef __PROGRAM_START
+#if defined (__ti__)
+#define __PROGRAM_START           _c_int00
+#else
 #define __PROGRAM_START           _start
+#endif
 #endif
 
 #ifndef __INITIAL_SP
