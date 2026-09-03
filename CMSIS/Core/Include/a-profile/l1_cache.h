@@ -37,7 +37,7 @@ __STATIC_FORCEINLINE void L1C_DisableCaches(void) {
   __ISB();
 }
 
-/** \brief  Clean instruction cache line by address.
+/** \brief  Invalidate instruction cache line by address.
 * \param [in] va Pointer to instructions to clear the cache for.
 */
 __STATIC_FORCEINLINE void L1C_InvalidateICacheMVA(void *va) {
