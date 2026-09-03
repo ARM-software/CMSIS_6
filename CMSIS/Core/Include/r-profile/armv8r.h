@@ -384,7 +384,7 @@ typedef union
 #define SCTLR_M_Pos                      0U                                     /*!< \brief SCTLR: M Position */
 #define SCTLR_M_Msk                      (1UL << SCTLR_M_Pos)                   /*!< \brief SCTLR: M Mask */
 
-#include "../a-profile/l1_cache.h"
+#include "l1_cache.h"
 
 #ifdef __cplusplus
 }
