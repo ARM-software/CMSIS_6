@@ -339,6 +339,50 @@ typedef union
 #define CPSR_M_UND                       0x1BU                                  /*!< \brief CPSR: M Undefined mode (PL1) */
 #define CPSR_M_SYS                       0x1FU                                  /*!< \brief CPSR: M System mode (PL1) */
 
+#define SCTLR_TE_Pos                     30U                                    /*!< \brief SCTLR: TE Position */
+#define SCTLR_TE_Msk                     (1UL << SCTLR_TE_Pos)                  /*!< \brief SCTLR: TE Mask */
+
+#define SCTLR_EE_Pos                     25U                                    /*!< \brief SCTLR: EE Position */
+#define SCTLR_EE_Msk                     (1UL << SCTLR_EE_Pos)                  /*!< \brief SCTLR: EE Mask */
+
+#define SCTLR_FI_Pos                     21U                                    /*!< \brief SCTLR: FI Position */
+#define SCTLR_FI_Msk                     (1UL << SCTLR_FI_Pos)                  /*!< \brief SCTLR: FI Mask */
+
+#define SCTLR_UWXN_Pos                   20U                                    /*!< \brief SCTLR: UWXN Position */
+#define SCTLR_UWXN_Msk                   (1UL << SCTLR_UWXN_Pos)                /*!< \brief SCTLR: UWXN Mask */
+
+#define SCTLR_WXN_Pos                    19U                                    /*!< \brief SCTLR: WXN Position */
+#define SCTLR_WXN_Msk                    (1UL << SCTLR_WXN_Pos)                 /*!< \brief SCTLR: WXN Mask */
+
+#define SCTLR_nTWE_Pos                   18U                                    /*!< \brief SCTLR: nTWE Position */
+#define SCTLR_nTWE_Msk                   (1UL << SCTLR_nTWE_Pos)                /*!< \brief SCTLR: nTWE Mask */
+
+#define SCTLR_BR_Pos                     17U                                    /*!< \brief SCTLR: BR Position */
+#define SCTLR_BR_Msk                     (1UL << SCTLR_BR_Pos)                  /*!< \brief SCTLR: BR Mask */
+
+#define SCTLR_nTWI_Pos                   16U                                    /*!< \brief SCTLR: nTWI Position */
+#define SCTLR_nTWI_Msk                   (1UL << SCTLR_nTWI_Pos)                /*!< \brief SCTLR: nTWI Mask */
+
+#define SCTLR_I_Pos                      12U                                    /*!< \brief SCTLR: I Position */
+#define SCTLR_I_Msk                      (1UL << SCTLR_I_Pos)                   /*!< \brief SCTLR: I Mask */
+
+#define SCTLR_SED_Pos                    8U                                     /*!< \brief SCTLR: SED Position */
+#define SCTLR_SED_Msk                    (1UL << SCTLR_SED_Pos)                 /*!< \brief SCTLR: SED Mask */
+
+#define SCTLR_ITD_Pos                    7U                                     /*!< \brief SCTLR: ITD Position */
+#define SCTLR_ITD_Msk                    (1UL << SCTLR_ITD_Pos)                 /*!< \brief SCTLR: ITD Mask */
+
+#define SCTLR_CP15BEN_Pos                5U                                     /*!< \brief SCTLR: CP15BEN Position */
+#define SCTLR_CP15BEN_Msk                (1UL << SCTLR_CP15BEN_Pos)             /*!< \brief SCTLR: CP15BEN Mask */
+
+#define SCTLR_C_Pos                      2U                                     /*!< \brief SCTLR: C Position */
+#define SCTLR_C_Msk                      (1UL << SCTLR_C_Pos)                   /*!< \brief SCTLR: C Mask */
+
+#define SCTLR_A_Pos                      1U                                     /*!< \brief SCTLR: A Position */
+#define SCTLR_A_Msk                      (1UL << SCTLR_A_Pos)                   /*!< \brief SCTLR: A Mask */
+
+#define SCTLR_M_Pos                      0U                                     /*!< \brief SCTLR: M Position */
+#define SCTLR_M_Msk                      (1UL << SCTLR_M_Pos)                   /*!< \brief SCTLR: M Mask */
 
 #ifdef __cplusplus
 }
