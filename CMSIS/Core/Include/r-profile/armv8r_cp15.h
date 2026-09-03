@@ -17,5 +17,9 @@
  */
 
 
-// The gic-interface is located in the profile folder for cortex-a devices
+// The cp15-interface is located in the profile folder for cortex-a devices
+#ifdef __aarch64__
 #include "../a-profile/armv8a_cp15.h"
+#else
+#include "../a-profile/armv7a_cp15.h"
+#endif
