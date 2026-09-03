@@ -460,6 +460,8 @@ typedef union
   #include "gicv2.h"
 #endif /*  (__GIC_PRESENT == 1U) || defined(DOXYGEN) */
 
+#include "../a-profile/l1_cache.h"
+
 #ifdef __cplusplus
  }
 #endif
