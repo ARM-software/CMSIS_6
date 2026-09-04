@@ -384,6 +384,10 @@ typedef union
 #define SCTLR_M_Pos                      0U                                     /*!< \brief SCTLR: M Position */
 #define SCTLR_M_Msk                      (1UL << SCTLR_M_Pos)                   /*!< \brief SCTLR: M Mask */
 
+#ifndef __aarch64__
+#include "l1_cache.h"
+#endif
+
 #ifdef __cplusplus
 }
 #endif
