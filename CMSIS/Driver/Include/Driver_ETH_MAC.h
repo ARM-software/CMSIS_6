@@ -15,13 +15,15 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  *
- * $Date:        24. January 2020
- * $Revision:    V2.2
+ * $Date:        9. September 2026
+ * $Revision:    V2.3
  *
  * Project:      Ethernet MAC (Media Access Control) Driver definitions
  */
 
 /* History:
+ *  Version 2.3
+ *    Added gigabit ethernet support
  *  Version 2.2
  *    Removed volatile from ARM_ETH_LINK_INFO
  *  Version 2.1
@@ -269,13 +271,13 @@ typedef struct _ARM_ETH_MAC_CAPABILITIES {
   uint32_t checksum_offload_tx_udp  : 1;        ///< 1 = UDP payload checksum generated on transmit
   uint32_t checksum_offload_tx_tcp  : 1;        ///< 1 = TCP payload checksum generated on transmit
   uint32_t checksum_offload_tx_icmp : 1;        ///< 1 = ICMP payload checksum generated on transmit
-  uint32_t media_interface          : 2;        ///< Ethernet Media Interface type
+  uint32_t media_interface          : 3;        ///< Ethernet Media Interface type
   uint32_t mac_address              : 1;        ///< 1 = driver provides initial valid MAC address
   uint32_t event_rx_frame           : 1;        ///< 1 = callback event \ref ARM_ETH_MAC_EVENT_RX_FRAME generated
   uint32_t event_tx_frame           : 1;        ///< 1 = callback event \ref ARM_ETH_MAC_EVENT_TX_FRAME generated
   uint32_t event_wakeup             : 1;        ///< 1 = wakeup event \ref ARM_ETH_MAC_EVENT_WAKEUP generated
   uint32_t precision_timer          : 1;        ///< 1 = Precision Timer supported
-  uint32_t reserved                 : 15;       ///< Reserved (must be zero)
+  uint32_t reserved                 : 14;       ///< Reserved (must be zero)
 } ARM_ETH_MAC_CAPABILITIES;
 
 

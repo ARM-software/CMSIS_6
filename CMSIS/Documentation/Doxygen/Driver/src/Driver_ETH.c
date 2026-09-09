@@ -220,5 +220,11 @@ The function \ref ARM_ETH_MAC_GetCapabilities retrieves the media interface type
 \sa ARM_ETH_PHY_SetInterface
 \def ARM_ETH_INTERFACE_SMII
 \sa ARM_ETH_PHY_SetInterface
+\def ARM_ETH_INTERFACE_GMII
+\sa ARM_ETH_PHY_SetInterface
+\def ARM_ETH_INTERFACE_RGMII
+\sa ARM_ETH_PHY_SetInterface
+\def ARM_ETH_INTERFACE_SGMII
+\sa ARM_ETH_PHY_SetInterface
 @}
 */

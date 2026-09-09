@@ -15,13 +15,15 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  *
- * $Date:        24. January 2020
- * $Revision:    V2.2
+ * $Date:        9. September 2026
+ * $Revision:    V2.3
  *
  * Project:      Ethernet PHY and MAC Driver common definitions
  */
 
 /* History:
+ *  Version 2.3
+ *    Added gigabit ethernet support
  *  Version 2.2
  *    Removed volatile from ARM_ETH_LINK_INFO
  *  Version 2.1
@@ -46,6 +48,9 @@
 #define ARM_ETH_INTERFACE_MII           (0U)    ///< Media Independent Interface (MII)
 #define ARM_ETH_INTERFACE_RMII          (1U)    ///< Reduced Media Independent Interface (RMII)
 #define ARM_ETH_INTERFACE_SMII          (2U)    ///< Serial Media Independent Interface (SMII)
+#define ARM_ETH_INTERFACE_GMII          (3U)    ///< Gigabit Media Independent Interface (GMII)
+#define ARM_ETH_INTERFACE_RGMII         (4U)    ///< Reduced Gigabit Media Independent Interface (RGMII)
+#define ARM_ETH_INTERFACE_SGMII         (5U)    ///< Serial Gigabit Media Independent Interface (SGMII)
 
 /**
 \brief Ethernet link speed

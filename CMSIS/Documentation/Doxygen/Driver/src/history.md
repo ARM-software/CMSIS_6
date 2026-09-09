@@ -10,6 +10,12 @@ The table below provides information about the changes delivered with specific v
       <th>Description</th>
     </tr>
     <tr>
+      <td>2.12.0</td>
+      <td>
+        - Added Gigabit Ethernet support to the Ethernet driver API
+      </td>
+    </tr>
+    <tr>
       <td>2.11.0</td>
       <td>
         - Added vStream Driver API 1.0.0
