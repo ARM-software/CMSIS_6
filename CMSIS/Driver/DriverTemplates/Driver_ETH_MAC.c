@@ -131,6 +131,8 @@ static int32_t ARM_ETH_MAC_Control(uint32_t control, uint32_t arg)
             break;
         case ARM_ETH_SPEED_1G:
             break;
+        default:
+            return ARM_DRIVER_ERROR_UNSUPPORTED;
         }
 
         switch (arg & ARM_ETH_MAC_DUPLEX_Msk)
@@ -139,6 +141,8 @@ static int32_t ARM_ETH_MAC_Control(uint32_t control, uint32_t arg)
             break;
         case ARM_ETH_MAC_DUPLEX_HALF:
             break;
+        default:
+            return ARM_DRIVER_ERROR_UNSUPPORTED;
         }
 
         if (arg & ARM_ETH_MAC_LOOPBACK)
@@ -147,10 +151,12 @@ static int32_t ARM_ETH_MAC_Control(uint32_t control, uint32_t arg)
 
         if (arg & ARM_ETH_MAC_CHECKSUM_OFFLOAD_RX)
         {
+            return ARM_DRIVER_ERROR_UNSUPPORTED;
         }
 
         if (arg & ARM_ETH_MAC_CHECKSUM_OFFLOAD_TX)
         {
+            return ARM_DRIVER_ERROR_UNSUPPORTED;
         }
 
         if (arg & ARM_ETH_MAC_ADDRESS_BROADCAST)

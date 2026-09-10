@@ -75,6 +75,8 @@ static int32_t ARM_ETH_PHY_SetInterface(uint32_t interface)
         break;
     case ARM_ETH_INTERFACE_SGMII:
         break;
+    default:
+        return ARM_DRIVER_ERROR_UNSUPPORTED;
     }
     return ARM_DRIVER_OK;
 }
@@ -87,8 +89,10 @@ static int32_t ARM_ETH_PHY_SetMode(uint32_t mode)
         break;
     case ARM_ETH_PHY_SPEED_100M:
         break;
-    case ARM_ETH_SPEED_1G:
+    case ARM_ETH_PHY_SPEED_1G:
         break;
+    default:
+        return ARM_DRIVER_ERROR_UNSUPPORTED;
     }
 
     switch (mode & ARM_ETH_PHY_DUPLEX_Msk)
@@ -97,6 +101,8 @@ static int32_t ARM_ETH_PHY_SetMode(uint32_t mode)
         break;
     case ARM_ETH_PHY_DUPLEX_FULL:
         break;
+    default:
+        return ARM_DRIVER_ERROR_UNSUPPORTED;
     }
 
     if (mode & ARM_ETH_PHY_AUTO_NEGOTIATE)
@@ -110,6 +116,7 @@ static int32_t ARM_ETH_PHY_SetMode(uint32_t mode)
     if (mode & ARM_ETH_PHY_ISOLATE)
     {
     }
+    return ARM_DRIVER_OK;
 }
 
 static ARM_ETH_LINK_STATE ARM_ETH_PHY_GetLinkState(void)
