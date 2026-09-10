@@ -63,7 +63,7 @@ extern "C"
 
 #include "Driver_ETH.h"
 
-#define ARM_ETH_MAC_API_VERSION ARM_DRIVER_VERSION_MAJOR_MINOR(2,2)  /* API version */
+#define ARM_ETH_MAC_API_VERSION ARM_DRIVER_VERSION_MAJOR_MINOR(2,3)  /* API version */
 
 
 #define _ARM_Driver_ETH_MAC_(n)      Driver_ETH_MAC##n

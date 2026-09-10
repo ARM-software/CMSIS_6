@@ -15,7 +15,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  *
- * $Date:        24. January 2020
+ * $Date:        9. September 2026
  * $Revision:    V2.3
  *
  * Project:      Ethernet PHY (Physical Transceiver) Driver definitions
@@ -48,7 +48,7 @@ extern "C"
 
 #include "Driver_ETH.h"
 
-#define ARM_ETH_PHY_API_VERSION ARM_DRIVER_VERSION_MAJOR_MINOR(2,2)  /* API version */
+#define ARM_ETH_PHY_API_VERSION ARM_DRIVER_VERSION_MAJOR_MINOR(2,3)  /* API version */
 
 
 #define _ARM_Driver_ETH_PHY_(n)      Driver_ETH_PHY##n
