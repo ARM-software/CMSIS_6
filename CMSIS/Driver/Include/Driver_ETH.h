@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2013-2020 ARM Limited. All rights reserved.
+ * Copyright (c) 2013-2026 ARM Limited. All rights reserved.
  *
  * SPDX-License-Identifier: Apache-2.0
  *
@@ -23,7 +23,7 @@
 
 /* History:
  *  Version 2.3
- *    Added gigabit ethernet support
+ *    Added Gigabit Ethernet support
  *  Version 2.2
  *    Removed volatile from ARM_ETH_LINK_INFO
  *  Version 2.1
@@ -57,7 +57,7 @@
 */
 #define ARM_ETH_SPEED_10M               (0U)    ///< 10 Mbps link speed
 #define ARM_ETH_SPEED_100M              (1U)    ///< 100 Mbps link speed
-#define ARM_ETH_SPEED_1G                (2U)    ///< 1 Gpbs link speed
+#define ARM_ETH_SPEED_1G                (2U)    ///< 1 Gbps link speed
 
 /**
 \brief Ethernet duplex mode
