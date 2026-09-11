@@ -10,6 +10,14 @@ The table below provides information about the changes delivered with specific v
       <th>Description</th>
     </tr>
     <tr>
+      <td>V6.3.0</td>
+      <td>
+        <ul>
+          <li>Aligned version metadata for CMSIS-Core component to 6.3.0</li>
+        </ul>
+      </td>
+    </tr>
+    <tr>
       <td>V6.1.1</td>
       <td>
         <p>Minor fixes and enhancements:</p>
