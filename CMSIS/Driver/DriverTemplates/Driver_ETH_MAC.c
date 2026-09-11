@@ -127,9 +127,9 @@ static int32_t ARM_ETH_MAC_Control(uint32_t control, uint32_t arg)
         {
         case ARM_ETH_MAC_SPEED_10M:
             break;
-        case ARM_ETH_SPEED_100M:
+        case ARM_ETH_MAC_SPEED_100M:
             break;
-        case ARM_ETH_SPEED_1G:
+        case ARM_ETH_MAC_SPEED_1G:
             break;
         default:
             return ARM_DRIVER_ERROR_UNSUPPORTED;
