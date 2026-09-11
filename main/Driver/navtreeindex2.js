@@ -1,5 +1,8 @@
 var NAVTREEINDEX2 =
 {
+"group__gpio__interface__gr.html#a357c46bfdc11484fd08daaf27255440f":[6,12,2,1],
+"group__gpio__interface__gr.html#aa1e00b5d33fa1f09e96c7b8b1de1deec":[6,12,2,4],
+"group__gpio__interface__gr.html#abeffcbd4e00b34c08cd650605f4965d5":[6,12,2,6],
 "group__gpio__interface__gr.html#ae3f787c2130ea5b9fd0246c08054e28a":[6,12,2,5],
 "group__gpio__interface__gr.html#af5b45e3d2a2399ad693437a4e26ff119":[6,12,2,2],
 "group__gpio__interface__gr.html#ga03c0ab613fa56b461be82777feea1a6d":[6,12,12],
@@ -116,8 +119,8 @@ var NAVTREEINDEX2 =
 "group__mci__interface__gr.html#a02df0162d3a653c36158a7b6a76f6175":[6,4,6,2],
 "group__mci__interface__gr.html#a072a194948489d4dbd2409b94fdca56b":[6,4,6,25],
 "group__mci__interface__gr.html#a084188480d589cdc8d3e164b9f41bea9":[6,4,6,13],
-"group__mci__interface__gr.html#a13c956ba993083f1e59379968e2badbe":[6,4,7,7],
 "group__mci__interface__gr.html#a13c956ba993083f1e59379968e2badbe":[6,4,6,27],
+"group__mci__interface__gr.html#a13c956ba993083f1e59379968e2badbe":[6,4,7,7],
 "group__mci__interface__gr.html#a1896a7548bb6fab285f23cc0d0b23d7d":[6,4,6,6],
 "group__mci__interface__gr.html#a1ee73c19020d5f1bedf7c013d0e5f730":[6,4,6,17],
 "group__mci__interface__gr.html#a21d4bc1a03e161bd33693619039a6afa":[6,4,7,5],
@@ -136,8 +139,8 @@ var NAVTREEINDEX2 =
 "group__mci__interface__gr.html#a5e96d73d3a3c366aba50bf5304edb029":[6,4,5,11],
 "group__mci__interface__gr.html#a607f96af38f877b34a937427ebc675de":[6,4,5,8],
 "group__mci__interface__gr.html#a617bf7fb73b49a20398b90098ecc3ec0":[6,4,6,14],
-"group__mci__interface__gr.html#a61e2a440b27d7d22c866ad4427f4b825":[6,4,7,6],
 "group__mci__interface__gr.html#a61e2a440b27d7d22c866ad4427f4b825":[6,4,6,21],
+"group__mci__interface__gr.html#a61e2a440b27d7d22c866ad4427f4b825":[6,4,7,6],
 "group__mci__interface__gr.html#a639bebbcb9a3a743f4f232fec82e2bfc":[6,4,6,20],
 "group__mci__interface__gr.html#a808703d6c70a501464e156e55f5cabd2":[6,4,6,9],
 "group__mci__interface__gr.html#a83ecf7d4472c55362750ef72d8f8f47d":[6,4,6,12],
@@ -246,8 +249,5 @@ var NAVTREEINDEX2 =
 "group__nand__bus__mode__codes.html#gaeee1853dea5e96cb19d2596cc0e70169":[6,5,3,1,15],
 "group__nand__control__codes.html":[6,5,3,0],
 "group__nand__control__gr.html":[6,5,3],
-"group__nand__data__bus__width__codes.html":[6,5,3,2],
-"group__nand__data__bus__width__codes.html#ga49e0e3a946a4d9f26dbd5b32ccc3b2f3":[6,5,3,2,1],
-"group__nand__data__bus__width__codes.html#ga578051cc193ae0b7125aec8007071d21":[6,5,3,2,0],
-"group__nand__driver__ecc__codes.html":[6,5,4]
+"group__nand__data__bus__width__codes.html":[6,5,3,2]
 };

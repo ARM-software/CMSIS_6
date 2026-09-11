@@ -61,9 +61,12 @@ var NAVTREEINDEX1 =
 "group__eth__interface__gr.html#structARM__ETH__LINK__INFO":[6,2,3],
 "group__eth__interface__gr.html#structARM__ETH__MAC__ADDR":[6,2,4],
 "group__eth__interface__types1.html":[6,2,0],
+"group__eth__interface__types1.html#ga0968dd39e735500b8bea8b8537590210":[6,2,0,4],
 "group__eth__interface__types1.html#ga24047d142be48bbc241e8d6eacb5cf7a":[6,2,0,2],
 "group__eth__interface__types1.html#ga468c848ddf75d7925130171af1ec2ac7":[6,2,0,0],
+"group__eth__interface__types1.html#ga664c21bcfdb1064676cb7edc138cc107":[6,2,0,5],
 "group__eth__interface__types1.html#gac0361b34fbec9c19840ad0349e4c388b":[6,2,0,1],
+"group__eth__interface__types1.html#gae020068b9a47d859b6853b7ac315bd97":[6,2,0,3],
 "group__eth__mac__configuration__ctrls.html":[6,2,1,1,1],
 "group__eth__mac__configuration__ctrls.html#ga1d3ff8c63362b385548fe91730f20588":[6,2,1,1,1,9],
 "group__eth__mac__configuration__ctrls.html#ga281dfed993b5666ed999709b9f28578f":[6,2,1,1,1,6],
@@ -246,8 +249,5 @@ var NAVTREEINDEX1 =
 "group__gpio__execution__status.html#ga173c97677f23796c490b128ba7fff3d7":[6,12,0,0],
 "group__gpio__interface__gr.html":[6,12],
 "group__gpio__interface__gr.html#a1752c368ad90bf9d0f520de9b94b726c":[6,12,2,0],
-"group__gpio__interface__gr.html#a26beab12383d7ec6036da59fc1bb7251":[6,12,2,3],
-"group__gpio__interface__gr.html#a357c46bfdc11484fd08daaf27255440f":[6,12,2,1],
-"group__gpio__interface__gr.html#aa1e00b5d33fa1f09e96c7b8b1de1deec":[6,12,2,4],
-"group__gpio__interface__gr.html#abeffcbd4e00b34c08cd650605f4965d5":[6,12,2,6]
+"group__gpio__interface__gr.html#a26beab12383d7ec6036da59fc1bb7251":[6,12,2,3]
 };

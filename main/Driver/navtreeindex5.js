@@ -1,5 +1,8 @@
 var NAVTREEINDEX5 =
 {
+"group__usbd__interface__gr.html#a4ddee6ccee081be81be53931aa5a8fcc":[6,11,0,2,13],
+"group__usbd__interface__gr.html#a53f95b9ecb7c84197947e7542501c7d3":[6,11,0,3,1],
+"group__usbd__interface__gr.html#a57ac19faf08d94e038ce19c2ccd606ce":[6,11,0,2,9],
 "group__usbd__interface__gr.html#a5ce2b3d7a3a07099bf07d1eb253e92e3":[6,11,0,2,3],
 "group__usbd__interface__gr.html#a6673fc1aa13f62122ecf51e52a605c6e":[6,11,0,3,0],
 "group__usbd__interface__gr.html#a6d0f259733f74c850625d063c1e734fa":[6,11,0,2,14],
@@ -55,8 +58,8 @@ var NAVTREEINDEX5 =
 "group__usbh__interface__gr.html#a37eab684b9a8aa496bfec9fede42fe27":[6,11,1,4,1],
 "group__usbh__interface__gr.html#a4e64f8408f249af857f2dbafd0b93715":[6,11,1,3,7],
 "group__usbh__interface__gr.html#a5ce2b3d7a3a07099bf07d1eb253e92e3":[6,11,1,3,3],
-"group__usbh__interface__gr.html#aa43c4c21b173ada1b6b7568956f0d650":[6,11,1,4,5],
 "group__usbh__interface__gr.html#aa43c4c21b173ada1b6b7568956f0d650":[6,11,1,5,3],
+"group__usbh__interface__gr.html#aa43c4c21b173ada1b6b7568956f0d650":[6,11,1,4,5],
 "group__usbh__interface__gr.html#ab459c9ca3d6dd6969cb410ac965fa1f6":[6,11,1,3,17],
 "group__usbh__interface__gr.html#ab83941051cac8e19807b887354dc42fc":[6,11,1,4,3],
 "group__usbh__interface__gr.html#abf1a0792d6af28877b0abd141d5524ac":[6,11,1,5,0],
@@ -246,8 +249,5 @@ var NAVTREEINDEX5 =
 "group__wifi__interface__gr.html#structARM__DRIVER__WIFI":[6,15,4],
 "group__wifi__management__gr.html":[6,15,1],
 "group__wifi__management__gr.html#a19c52baafe5797c359c5e0f5776499d7":[6,15,1,5,1],
-"group__wifi__management__gr.html#a2047d60666390ea4755ce22603969c4c":[6,15,1,4,6],
-"group__wifi__management__gr.html#a3bef28806edf8f4c8cb82584b7e8c3cb":[6,15,1,4,1],
-"group__wifi__management__gr.html#a587ba0cb07f02913598610049a3bbb79":[6,15,1,4,0],
-"group__wifi__management__gr.html#a5cd97d88131cf38bcc75189f9569f9b7":[6,15,1,5,2]
+"group__wifi__management__gr.html#a2047d60666390ea4755ce22603969c4c":[6,15,1,4,6]
 };

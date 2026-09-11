@@ -1,7 +1,7 @@
 function writeHeader() {
-    document.write('Version 83fede11');
+    document.write('Version 26206e47');
 };
 
 function writeFooter()  {
-    document.write('Generated on Fri Sep 11 2026 08:34:11 for CMSIS-DAP 83fede11. Copyright &copy; 2026 Arm Limited (or its affiliates). All rights reserved.');
+    document.write('Generated on Fri Sep 11 2026 09:19:11 for CMSIS-DAP 26206e47. Copyright &copy; 2026 Arm Limited (or its affiliates). All rights reserved.');
 };

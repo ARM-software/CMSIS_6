@@ -1,5 +1,8 @@
 var NAVTREEINDEX6 =
 {
+"group__wifi__management__gr.html#a3bef28806edf8f4c8cb82584b7e8c3cb":[6,15,1,4,1],
+"group__wifi__management__gr.html#a587ba0cb07f02913598610049a3bbb79":[6,15,1,4,0],
+"group__wifi__management__gr.html#a5cd97d88131cf38bcc75189f9569f9b7":[6,15,1,5,2],
 "group__wifi__management__gr.html#a5cd97d88131cf38bcc75189f9569f9b7":[6,15,1,4,2],
 "group__wifi__management__gr.html#a5cd97d88131cf38bcc75189f9569f9b7":[6,15,1,6,2],
 "group__wifi__management__gr.html#a5e263198499fb98f97d40a9b82579175":[6,15,1,4,5],
