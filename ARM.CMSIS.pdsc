@@ -782,20 +782,20 @@
         <file category="sourceC" attr="template" name="CMSIS/Driver/DriverTemplates/Driver_NAND.c" select="NAND Flash Driver"/>
       </files>
     </component>
-    <component Cclass="CMSIS Driver" Cgroup="Ethernet" Csub="Custom" Cversion="1.0.0" Capiversion="2.3.0" custom="1">
+    <component Cclass="CMSIS Driver" Cgroup="Ethernet" Csub="Custom" Cversion="1.1.0" Capiversion="2.3.0" custom="1">
       <description>Access to #include Driver_ETH_PHY/MAC.h files and code templates for custom implementation</description>
       <files>
         <file category="sourceC" attr="template" name="CMSIS/Driver/DriverTemplates/Driver_ETH_PHY.c" select="Ethernet PHY and MAC Driver"/>
         <file category="sourceC" attr="template" name="CMSIS/Driver/DriverTemplates/Driver_ETH_MAC.c" select="Ethernet PHY and MAC Driver"/>
       </files>
     </component>
-    <component Cclass="CMSIS Driver" Cgroup="Ethernet MAC" Csub="Custom" Cversion="1.0.0" Capiversion="2.3.0" custom="1">
+    <component Cclass="CMSIS Driver" Cgroup="Ethernet MAC" Csub="Custom" Cversion="1.1.0" Capiversion="2.3.0" custom="1">
       <description>Access to #include Driver_ETH_MAC.h file and code template for custom implementation</description>
       <files>
         <file category="sourceC" attr="template" name="CMSIS/Driver/DriverTemplates/Driver_ETH_MAC.c" select="Ethernet MAC Driver"/>
       </files>
     </component>
-    <component Cclass="CMSIS Driver" Cgroup="Ethernet PHY" Csub="Custom" Cversion="1.0.0" Capiversion="2.3.0" custom="1">
+    <component Cclass="CMSIS Driver" Cgroup="Ethernet PHY" Csub="Custom" Cversion="1.1.0" Capiversion="2.3.0" custom="1">
       <description>Access to #include Driver_ETH_PHY.h file and code template for custom implementation</description>
       <files>
         <file category="sourceC" attr="template" name="CMSIS/Driver/DriverTemplates/Driver_ETH_PHY.c" select="Ethernet PHY Driver"/>
