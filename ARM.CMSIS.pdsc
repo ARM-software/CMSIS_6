@@ -16,6 +16,8 @@
   <releases>
     <release version="6.3.1-dev">
       Active development ...
+      - CMSIS-Driver: 2.12.0
+        - Added Gigabit Ethernet support to the Ethernet driver API
     </release>
     <release version="5.9.0" date="2022-05-02">
       CMSIS-Core(M): 5.6.0
@@ -493,7 +495,7 @@
         <file category="header" name="CMSIS/Driver/Include/Driver_NAND.h" />
       </files>
     </api>
-    <api Cclass="CMSIS Driver" Cgroup="Ethernet" Capiversion="2.2.0" exclusive="0">
+    <api Cclass="CMSIS Driver" Cgroup="Ethernet" Capiversion="2.3.0" exclusive="0">
       <description>Ethernet MAC (Media Access Control) and PHY (Physical layer) Driver API</description>
       <files>
         <file category="doc" name="CMSIS/Documentation/html/Driver/group__eth__interface__gr.html" />
@@ -501,14 +503,14 @@
         <file category="header" name="CMSIS/Driver/Include/Driver_ETH_PHY.h" />
       </files>
     </api>
-    <api Cclass="CMSIS Driver" Cgroup="Ethernet MAC" Capiversion="2.2.0" exclusive="0">
+    <api Cclass="CMSIS Driver" Cgroup="Ethernet MAC" Capiversion="2.3.0" exclusive="0">
       <description>Ethernet MAC (Media Access Control) Driver API</description>
       <files>
         <file category="doc" name="CMSIS/Documentation/html/Driver/group__eth__mac__interface__gr.html" />
         <file category="header" name="CMSIS/Driver/Include/Driver_ETH_MAC.h" />
       </files>
     </api>
-    <api Cclass="CMSIS Driver" Cgroup="Ethernet PHY" Capiversion="2.2.0" exclusive="0">
+    <api Cclass="CMSIS Driver" Cgroup="Ethernet PHY" Capiversion="2.3.0" exclusive="0">
       <description>Ethernet PHY (Physical layer) Driver API</description>
       <files>
         <file category="doc" name="CMSIS/Documentation/html/Driver/group__eth__phy__interface__gr.html" />
@@ -780,20 +782,20 @@
         <file category="sourceC" attr="template" name="CMSIS/Driver/DriverTemplates/Driver_NAND.c" select="NAND Flash Driver"/>
       </files>
     </component>
-    <component Cclass="CMSIS Driver" Cgroup="Ethernet" Csub="Custom" Cversion="1.0.0" Capiversion="2.2.0" custom="1">
+    <component Cclass="CMSIS Driver" Cgroup="Ethernet" Csub="Custom" Cversion="1.1.0" Capiversion="2.3.0" custom="1">
       <description>Access to #include Driver_ETH_PHY/MAC.h files and code templates for custom implementation</description>
       <files>
         <file category="sourceC" attr="template" name="CMSIS/Driver/DriverTemplates/Driver_ETH_PHY.c" select="Ethernet PHY and MAC Driver"/>
         <file category="sourceC" attr="template" name="CMSIS/Driver/DriverTemplates/Driver_ETH_MAC.c" select="Ethernet PHY and MAC Driver"/>
       </files>
     </component>
-    <component Cclass="CMSIS Driver" Cgroup="Ethernet MAC" Csub="Custom" Cversion="1.0.0" Capiversion="2.2.0" custom="1">
+    <component Cclass="CMSIS Driver" Cgroup="Ethernet MAC" Csub="Custom" Cversion="1.1.0" Capiversion="2.3.0" custom="1">
       <description>Access to #include Driver_ETH_MAC.h file and code template for custom implementation</description>
       <files>
         <file category="sourceC" attr="template" name="CMSIS/Driver/DriverTemplates/Driver_ETH_MAC.c" select="Ethernet MAC Driver"/>
       </files>
     </component>
-    <component Cclass="CMSIS Driver" Cgroup="Ethernet PHY" Csub="Custom" Cversion="1.0.0" Capiversion="2.2.0" custom="1">
+    <component Cclass="CMSIS Driver" Cgroup="Ethernet PHY" Csub="Custom" Cversion="1.1.0" Capiversion="2.3.0" custom="1">
       <description>Access to #include Driver_ETH_PHY.h file and code template for custom implementation</description>
       <files>
         <file category="sourceC" attr="template" name="CMSIS/Driver/DriverTemplates/Driver_ETH_PHY.c" select="Ethernet PHY Driver"/>

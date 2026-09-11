@@ -160,7 +160,10 @@ Parameter \em interface       | Media Type
 :-----------------------------|:-------------------------
 \ref ARM_ETH_INTERFACE_MII    | Media Independent Interface (MII)
 \ref ARM_ETH_INTERFACE_RMII   | Reduced Media Independent Interface (RMII)
-\ref ARM_ETH_INTERFACE_SMII   | Serial Media Independent Interface (SMII); 
+\ref ARM_ETH_INTERFACE_SMII   | Serial Media Independent Interface (SMII)
+\ref ARM_ETH_INTERFACE_GMII   | Gigabit Media Independent Interface (GMII)
+\ref ARM_ETH_INTERFACE_RGMII  | Reduced Gigabit Media Independent Interface (RGMII)
+\ref ARM_ETH_INTERFACE_SGMII  | Serial Gigabit Media Independent Interface (SGMII)
 
 \note
 Some \em interface values may be unsupported by a driver implementation. For example \ref ARM_ETH_INTERFACE_SMII may return \b ARM_DRIVER_ERROR_UNSUPPORTED.

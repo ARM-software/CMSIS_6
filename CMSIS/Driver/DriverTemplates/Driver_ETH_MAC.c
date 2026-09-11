@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2013-2020 Arm Limited. All rights reserved.
+ * Copyright (c) 2013-2026 Arm Limited. All rights reserved.
  *
  * SPDX-License-Identifier: Apache-2.0
  *
@@ -18,7 +18,7 @@
 
 #include "Driver_ETH_MAC.h"
 
-#define ARM_ETH_MAC_DRV_VERSION    ARM_DRIVER_VERSION_MAJOR_MINOR(1, 0) /* driver version */
+#define ARM_ETH_MAC_DRV_VERSION    ARM_DRIVER_VERSION_MAJOR_MINOR(1, 1) /* driver version */
 
 /* Driver Version */
 static const ARM_DRIVER_VERSION DriverVersion = {
@@ -127,7 +127,9 @@ static int32_t ARM_ETH_MAC_Control(uint32_t control, uint32_t arg)
         {
         case ARM_ETH_MAC_SPEED_10M:
             break;
-        case ARM_ETH_SPEED_100M:
+        case ARM_ETH_MAC_SPEED_100M:
+            break;
+        case ARM_ETH_MAC_SPEED_1G:
             break;
         default:
             return ARM_DRIVER_ERROR_UNSUPPORTED;
@@ -137,19 +139,27 @@ static int32_t ARM_ETH_MAC_Control(uint32_t control, uint32_t arg)
         {
         case ARM_ETH_MAC_DUPLEX_FULL:
             break;
+        case ARM_ETH_MAC_DUPLEX_HALF:
+            break;
+        default:
+            return ARM_DRIVER_ERROR_UNSUPPORTED;
         }
 
         if (arg & ARM_ETH_MAC_LOOPBACK)
         {
         }
 
-        if ((arg & ARM_ETH_MAC_CHECKSUM_OFFLOAD_RX) ||
-            (arg & ARM_ETH_MAC_CHECKSUM_OFFLOAD_TX))
+        if (arg & ARM_ETH_MAC_CHECKSUM_OFFLOAD_RX)
         {
             return ARM_DRIVER_ERROR_UNSUPPORTED;
         }
 
-        if (!(arg & ARM_ETH_MAC_ADDRESS_BROADCAST))
+        if (arg & ARM_ETH_MAC_CHECKSUM_OFFLOAD_TX)
+        {
+            return ARM_DRIVER_ERROR_UNSUPPORTED;
+        }
+
+        if (arg & ARM_ETH_MAC_ADDRESS_BROADCAST)
         {
         }
 
@@ -187,6 +197,7 @@ static int32_t ARM_ETH_MAC_Control(uint32_t control, uint32_t arg)
     default:
         return ARM_DRIVER_ERROR_UNSUPPORTED;
     }
+    return ARM_DRIVER_OK;
 }
 
 static int32_t ARM_ETH_MAC_ControlTimer(uint32_t control, ARM_ETH_MAC_TIME *time)
