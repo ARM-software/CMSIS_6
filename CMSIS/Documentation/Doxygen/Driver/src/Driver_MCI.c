@@ -93,6 +93,8 @@ This section provides the event values for the \ref ARM_MCI_SignalEvent callback
 
 The following call back notification events are generated:
 @{
+*/
+/**
 \def ARM_MCI_EVENT_CARD_INSERTED
 \sa \ref ARM_MCI_SignalEvent
 \def ARM_MCI_EVENT_CARD_REMOVED
@@ -117,9 +119,17 @@ The following call back notification events are generated:
 \sa \ref ARM_MCI_SignalEvent
 \def ARM_MCI_EVENT_RETUNING_REQUEST
 \sa \ref ARM_MCI_SignalEvent
+*/
+
+/**
 \def ARM_MCI_EVENT_TUNING_ERROR
+\details
+Indicates an unrecoverable tuning-circuit error outside the tuning procedure.
+The affected transfer is invalid. Reset the tuning circuit and perform initial tuning before retrying.
 \sa \ref ARM_MCI_SignalEvent
-@}
+*/
+
+/** @} */
 *******************************************************************************************************************/
 
 //open mci_contorl_gr
@@ -183,7 +193,7 @@ Set \em arg to one of the phase codes below.
 
 To perform a voltage switch, MCI controlling software must use this order:
 1. PREPARE.
-2. Send voltage switch command using \ref ARM_MCI_SendCommand.
+2. Send voltage switch command using \ref ARM_MCI_SendCommand and wait for its completion.
 3. APPLY.
 4. Wait at least 5 ms.
 5. CLOCK_ON.
@@ -314,7 +324,7 @@ as specified with \em arg listed bellow.
 The function \ref ARM_MCI_GetCapabilities lists the supported bus speed modes. Initially, all SD cards use a 3.3 volt electrical interface. 
 Some SD cards can switch to 1.8 volt operation. For example, the use of ultra-high-speed (UHS) 
 SD cards requires 1.8 volt operation and a 4-bit bus data width. The data field \em uhs_signaling of the structure ARM_MCI_CAPABILITIES encodes
-whether the driver supports the UHS-I signal-voltage switch and the mandatory SDR12 and SDR25 baseline.
+whether the driver supports the UHS-I signal-voltage switch to 1.8V.
 
 \sa 
  - \ref mci_driver_strength_ctrls
@@ -833,9 +843,9 @@ Parameter \em arg                                             | UHS-I Tuning Ope
 
 Specifies the UHS-I tuning procedure result retrieval.
 
-The \em control operation \b ARM_MCI_UHS_TUNING_RESULT returns the result of the UHS-I tuning procedure using the parameter \em arg.
+The \em control operation \b ARM_MCI_UHS_TUNING_RESULT returns the result of the UHS-I tuning procedure.
 
-Parameter \em arg                                             | UHS-I Tuning Result
+Return value                                                  | UHS-I Tuning Result
 :-------------------------------------------------------------|:------------------------------------------
 \ref ARM_MCI_UHS_TUNING_DONE                                  | UHS-I tuning procedure completed successfully
 \ref ARM_MCI_UHS_TUNING_ERROR                                 | UHS-I tuning procedure failed

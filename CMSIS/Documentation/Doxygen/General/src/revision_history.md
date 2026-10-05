@@ -20,7 +20,7 @@ Release history of other CMSIS components and tools can be found in their docume
       <td>
        - CMSIS-Driver: 2.12.0
          - Updated Ethernet API to 2.3.0 with Gigabit Ethernet support
-         - Updated MCI API to 2.5.0 with UHS-I voltage switching, tuning, and re-tuning support
+         - Updated MCI API to 2.5.0 with UHS-I voltage switching and re-tuning support
       </td>
     </tr>
     <tr>

@@ -15,9 +15,9 @@ The table below provides information about the changes delivered with specific v
         - Updated Ethernet API 2.3.0:
           - Added Gigabit Ethernet support
         - Updated MCI API 2.5.0:
-          - Enhance support for UHS-I devices
+          - Enhanced support for SD UHS-I operations
             - Added phased UHS-I signal-voltage switching
-            - Added tuning and re-tuning operations and capabilities
+            - Added capabilities and re-tuning operation
       </td>
     </tr>
     <tr>

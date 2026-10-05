@@ -15,7 +15,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  *
- * $Date:        9. July 2026
+ * $Date:        5. October 2026
  * $Revision:    V2.5
  *
  * Project:      MCI (Memory Card Interface) Driver definitions
@@ -337,7 +337,7 @@ typedef struct _ARM_MCI_CAPABILITIES {
   uint32_t data_width_4_ddr  : 1;       ///< Supports 4-bit data, DDR (Dual Data Rate) - MMC only
   uint32_t data_width_8_ddr  : 1;       ///< Supports 8-bit data, DDR (Dual Data Rate) - MMC only
   uint32_t high_speed        : 1;       ///< Supports SD/MMC High Speed Mode
-  uint32_t uhs_signaling     : 1;       ///< Supports SD UHS-I 1.8 V signaling with SDR12 and SDR25 timing
+  uint32_t uhs_signaling     : 1;       ///< Supports SD UHS-I (Ultra High Speed) 1.8V signaling
   uint32_t uhs_tuning        : 1;       ///< Supports SD UHS-I tuning 
   uint32_t uhs_sdr50         : 1;       ///< Supports SD UHS-I SDR50  (Single Data Rate) up to  50MB/s
   uint32_t uhs_sdr104        : 1;       ///< Supports SD UHS-I SDR104 (Single Data Rate) up to 104MB/s
