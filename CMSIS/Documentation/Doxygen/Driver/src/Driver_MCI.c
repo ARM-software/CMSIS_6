@@ -129,7 +129,8 @@ The affected transfer is invalid. Reset the tuning circuit and perform initial t
 \sa \ref ARM_MCI_SignalEvent
 */
 
-/** @} */
+/**
+@}
 *******************************************************************************************************************/
 
 //open mci_contorl_gr
@@ -233,7 +234,9 @@ Restore the host pads, voltage selection, and switch state for 3.3 V signaling.
 Call while card power is removed.
 */
 
-/** @} */
+/**
+@}
+*******************************************************************************************************************/
 
 /**
 \defgroup mci_uhs_tuning_ctrls MCI UHS-I Tuning
@@ -257,7 +260,7 @@ Use this order of commands:
 2. Send tuning block
 3. Inspect the result using \ref ARM_MCI_UHS_TUNING_RESULT
 
-Repeat the above steps until the tuning result is \ref ARM_MCI_UHS_TUNING_DONE or an error occurs.
+Repeat steps 2 and 3 until the tuning result is \ref ARM_MCI_UHS_TUNING_DONE or an error occurs.
 
 \note A data CRC error may identify an invalid sampling point and shall be reported through the
       ordinary transfer-error event.
@@ -306,7 +309,9 @@ This return value differs from \ref ARM_MCI_EVENT_TUNING_ERROR.
 That event reports a sampling-circuit failure during normal operation.
 */
 
-/** @} */
+/**
+@}
+*******************************************************************************************************************/
 
 
 /**
