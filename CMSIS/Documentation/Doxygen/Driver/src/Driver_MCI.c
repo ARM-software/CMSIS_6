@@ -902,6 +902,7 @@ MCIdrv->Control(ARM_MCI_CONTROL_CLOCK_IDLE, 0);
  
 // Start tuning operation and check the result
 MCIdrv->Control(ARM_MCI_UHS_TUNING_OPERATION, ARM_MCI_UHS_TUNING_START);
+// Check the tuning result after the tuning transfer completes
 result = MCIdrv->Control(ARM_MCI_UHS_TUNING_RESULT, 0U);
  
 // Set Data Timeout to 12500000 bus cycles (0.5s @25MHz Bus Speed)
