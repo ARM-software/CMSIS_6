@@ -18,6 +18,12 @@ Release history of other CMSIS components and tools can be found in their docume
     <tr>
       <td>6.4.0</td>
       <td>
+       - CMSIS-Core: 6.4.0
+         - Added initial support for Armv8-A, Armv7-R, and Armv8-R profiles
+         - Added TI Arm Clang compiler support
+         - Added SCB Secure Fault Status and Secure Fault Address Register bitfield definitions; deprecated the corresponding SAU definitions
+         - Improved D-Cache disable handling and fixed MPU attribute handling
+         - Fixed TI Arm Clang program start definition
        - CMSIS-Driver: 2.12.0
          - Updated Ethernet API to 2.3.0 with Gigabit Ethernet support
          - Updated MCI API to 2.5.0 with UHS-I voltage switching and re-tuning support
