@@ -229,6 +229,9 @@ void mci_switch_signaling_voltage(void) {
     return;
   }
 
+  // Clear previous events
+  MCI_Events = 0;
+
   // Send voltage switch command
   status = MCIdrv->SendCommand(11, 0U, ARM_MCI_RESPONSE_SHORT|ARM_MCI_RESPONSE_CRC, &r1);
 
@@ -356,6 +359,9 @@ void mci_tune_sampling_clock(void) {
     if (status != ARM_DRIVER_OK) {
       break;
     }
+
+    // Clear previous events
+    MCI_Events = 0;
 
     // Transfer tuning block
     status = MCIdrv->SendCommand(19, 0U, ARM_MCI_RESPONSE_SHORT|ARM_MCI_RESPONSE_CRC|ARM_MCI_TRANSFER_DATA, &r1);
