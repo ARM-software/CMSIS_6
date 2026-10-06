@@ -14,7 +14,7 @@
   <repository type="git">https://github.com/ARM-software/CMSIS_6.git</repository>
 
   <releases>
-    <release version="6.4.0">
+    <release version="6.4.0-rc">
       CMSIS-Core: 6.4.0 (see revision history for details)
         - Added initial support for Armv8-A, Armv7-R, and Armv8-R profiles
         - Added TI Arm Clang compiler support
