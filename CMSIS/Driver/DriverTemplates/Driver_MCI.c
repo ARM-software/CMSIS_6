@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2013-2020 Arm Limited. All rights reserved.
+ * Copyright (c) 2013-2026 Arm Limited. All rights reserved.
  *
  * SPDX-License-Identifier: Apache-2.0
  *
@@ -57,7 +57,9 @@ static const ARM_MCI_CAPABILITIES DriverCapabilities = {
     0, /* rst_n             */
     0, /* ccs               */
     0, /* ccs_timeout       */
-    0  /* Reserved          */
+    0, /* uhs_tuning_sdr50  */
+    0, /* uhs_retuning      */
+    0  /* reserved          */
 };
 
 //

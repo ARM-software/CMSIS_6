@@ -12,7 +12,12 @@ The table below provides information about the changes delivered with specific v
     <tr>
       <td>2.12.0</td>
       <td>
-        - Added Gigabit Ethernet support to the Ethernet driver API
+        - Updated Ethernet API 2.3.0:
+          - Added Gigabit Ethernet support
+        - Updated MCI API 2.5.0:
+          - Enhanced support for SD UHS-I operations
+            - Added phased UHS-I signal-voltage switching
+            - Added capabilities and re-tuning operation
       </td>
     </tr>
     <tr>
