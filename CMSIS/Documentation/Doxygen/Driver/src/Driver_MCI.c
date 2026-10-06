@@ -336,8 +336,8 @@ void MCI_SignalEvent_Callback (uint32_t event) {
   MCI_Events |= event;
 }
 
-// Switch Signaling Voltage
-void mci_switch_signaling_voltage(void) {
+// Tune Sampling Clock
+void mci_tune_sampling_clock(void) {
   int32_t status;
   uint8_t buf[64U];
   uint32_t step = 40U;
