@@ -366,10 +366,10 @@ void mci_tune_sampling_clock(void) {
 
       if (status == ARM_MCI_UHS_TUNING_DONE) {
         // Tuning completed successfully
-        return 0U;
+        return;
       }
       if (status == ARM_MCI_UHS_TUNING_ERROR) {
-        // Tunning error occurred
+        // Tuning error occurred
         break;
       }
     }
