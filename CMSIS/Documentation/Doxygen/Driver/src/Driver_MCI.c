@@ -117,8 +117,17 @@ The following call back notification events are generated:
 \sa \ref ARM_MCI_SignalEvent
 \def ARM_MCI_EVENT_CCS_TIMEOUT
 \sa \ref ARM_MCI_SignalEvent
+*/
+
+/**
 \def ARM_MCI_EVENT_RETUNING_REQUEST
 \sa \ref ARM_MCI_SignalEvent
+\details
+This event does not invalidate transferred data and active transfer may finish normally unless the transfer ends
+with \ref ARM_MCI_EVENT_TRANSFER_ERROR.
+
+After receiving this event, re-tuning should be performed using \ref ARM_MCI_UHS_RETUNING_START before starting
+the next normal command.
 */
 
 /**
@@ -201,6 +210,59 @@ To perform a voltage switch, MCI controlling software must use this order:
 6. Wait at least 1 ms.
 7. VERIFY.
 
+\b Example:
+\code
+volatile uint32_t MCI_Events;
+
+void MCI_SignalEvent_Callback (uint32_t event) {
+  // Save current event
+  MCI_Events |= event;
+}
+
+// Switch Signaling Voltage
+void mci_switch_signaling_voltage(void) {
+  int32_t status;
+  uint32_t r1 = 0U;
+
+  // Prepare host controller for signaling voltage switch
+  MCIdrv->Control(ARM_MCI_UHS_VOLTAGE_SWITCH, ARM_MCI_VOLTAGE_SWITCH_PREPARE);
+
+  // Send voltage switch command
+  status = MCIdrv->SendCommand(11, 0U, ARM_MCI_RESPONSE_SHORT|ARM_MCI_RESPONSE_CRC, &r1);
+
+  if (status == ARM_DRIVER_OK) {
+    // Wait for event
+    while ((MCI_Events & ARM_MCI_EVENT_COMMAND_COMPLETE) == 0U);
+
+    // Change the signaling voltage selection from 3.3V to 1.8V
+    status = MCIdrv->Control(ARM_MCI_UHS_VOLTAGE_SWITCH, ARM_MCI_VOLTAGE_SWITCH_APPLY);
+
+    if (status == ARM_DRIVER_OK) {
+      // Wait for the signaling voltage to stabilize
+      delay_ms(5);
+
+      // Turn on the SD clock after the voltage switch
+      status = MCIdrv->Control(ARM_MCI_UHS_VOLTAGE_SWITCH, ARM_MCI_VOLTAGE_SWITCH_CLOCK_ON);
+
+      if (status == ARM_DRIVER_OK) {
+        // Wait for the card to release the data lines
+        delay_ms(1);
+
+        // Verify the voltage switch after memory card releases data lines
+        status = MCIdrv->Control(ARM_MCI_UHS_VOLTAGE_SWITCH, ARM_MCI_VOLTAGE_SWITCH_VERIFY);
+
+        if (status == ARM_DRIVER_OK) {
+          // Voltage switch successful
+          return;
+        }
+      }
+    }
+  }
+  // Failed to switch signaling voltage, abort procedure
+  MCIdrv->Control(ARM_MCI_UHS_VOLTAGE_SWITCH, ARM_MCI_VOLTAGE_SWITCH_ABORT);
+}
+\endcode
+
 @{
 */
 
@@ -257,13 +319,66 @@ UHS-I tuning is performed iteratively until a valid sampling point is found or a
 Use this order of commands:
 
 1. Start tuning operation using \ref ARM_MCI_UHS_TUNING_OPERATION with \ref ARM_MCI_UHS_TUNING_START
-2. Send tuning block
+2. Transfer tuning block
 3. Inspect the result using \ref ARM_MCI_UHS_TUNING_RESULT
 
 Repeat steps 2 and 3 until the tuning result is \ref ARM_MCI_UHS_TUNING_DONE or an error occurs.
 
-\note A data CRC error may identify an invalid sampling point and shall be reported through the
+\note A data CRC error may identify an invalid sampling point and shall not be reported through the
       ordinary transfer-error event.
+
+\b Example:
+\code
+volatile uint32_t MCI_Events;
+
+void MCI_SignalEvent_Callback (uint32_t event) {
+  // Save current event
+  MCI_Events |= event;
+}
+
+// Switch Signaling Voltage
+void mci_switch_signaling_voltage(void) {
+  int32_t status;
+  uint8_t buf[64U];
+  uint32_t step = 40U;
+  uint32_t r1 = 0U;
+
+  // Start tuning operation
+  if (MCIdrv->Control(ARM_MCI_UHS_TUNING_OPERATION, ARM_MCI_UHS_TUNING_START) != ARM_DRIVER_OK) {
+    return;
+  }
+
+  while(step--) {
+    // Setup transfer
+    status = MCIdrv->SetupTransfer(buf, 1U, 64U, ARM_MCI_TRANSFER_READ|ARM_MCI_TRANSFER_BLOCK);
+    if (status != ARM_DRIVER_OK) {
+      break;
+    }
+
+    // Transfer tuning block
+    status = MCIdrv->SendCommand(19, 0U, ARM_MCI_RESPONSE_SHORT|ARM_MCI_RESPONSE_CRC|ARM_MCI_TRANSFER_DATA, &r1);
+    if (status == ARM_DRIVER_OK) {
+      // Wait for event
+      while ((MCI_Events & ARM_MCI_EVENT_TRANSFER_COMPLETE) == 0U);
+
+      // Check the tuning result
+      status = MCIdrv->Control(ARM_MCI_UHS_TUNING_RESULT, 0U);
+
+      if (status == ARM_MCI_UHS_TUNING_DONE) {
+        // Tuning completed successfully
+        return 0U;
+      }
+      if (status == ARM_MCI_UHS_TUNING_ERROR) {
+        // Tunning error occurred
+        break;
+      }
+    }
+  }
+  // Tuning failed
+  MCIdrv->Control(ARM_MCI_UHS_TUNING_OPERATION, ARM_MCI_UHS_TUNING_ABORT);
+}
+\endcode
+
 @{
 */
 
@@ -900,11 +1015,6 @@ MCIdrv->Control(ARM_MCI_CONTROL_CLOCK_IDLE, 1);
 // Disable Clock generation on CLK when Idle
 MCIdrv->Control(ARM_MCI_CONTROL_CLOCK_IDLE, 0);
  
-// Start tuning operation and check the result
-MCIdrv->Control(ARM_MCI_UHS_TUNING_OPERATION, ARM_MCI_UHS_TUNING_START);
-// Check the tuning result after the tuning transfer completes
-result = MCIdrv->Control(ARM_MCI_UHS_TUNING_RESULT, 0U);
- 
 // Set Data Timeout to 12500000 bus cycles (0.5s @25MHz Bus Speed)
 // Default value is hardware specific (typically 2^32-1)
 MCIdrv->Control(ARM_MCI_DATA_TIMEOUT, 12500000);
@@ -930,16 +1040,6 @@ MCIdrv->Control(ARM_MCI_SUSPEND_TRANSFER, 0/*argument not used*/);
  
 // Resume Data transfer (SD I/O)
 MCIdrv->Control(ARM_MCI_RESUME_TRANSFER, 0/*argument not used*/);
- 
-// Switch Signaling Voltage
-// Prepare host controller for signaling voltage switch
-MCIdrv->Control(ARM_MCI_UHS_VOLTAGE_SWITCH, ARM_MCI_VOLTAGE_SWITCH_PREPARE);
-// Change the signaling voltage selection from 3.3V to 1.8V
-MCIdrv->Control(ARM_MCI_UHS_VOLTAGE_SWITCH, ARM_MCI_VOLTAGE_SWITCH_APPLY);
-// Turn on the SD clock after the voltage switch and after the signaling rail settles
-MCIdrv->Control(ARM_MCI_UHS_VOLTAGE_SWITCH, ARM_MCI_VOLTAGE_SWITCH_CLOCK_ON);
-// Verify the voltage switch after memory card releases data lines
-MCIdrv->Control(ARM_MCI_UHS_VOLTAGE_SWITCH, ARM_MCI_VOLTAGE_SWITCH_VERIFY);
 \endcode
 *******************************************************************************************************************/
 
