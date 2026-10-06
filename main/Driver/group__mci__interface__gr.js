@@ -50,6 +50,8 @@ var group__mci__interface__gr =
       [ "rst_n", "group__mci__interface__gr.html#a2e8bd27f2c5c3093c4fec557890b97d4", null ],
       [ "ccs", "group__mci__interface__gr.html#a13c956ba993083f1e59379968e2badbe", null ],
       [ "ccs_timeout", "group__mci__interface__gr.html#a9739c230a13b46482feb5475d257e482", null ],
+      [ "uhs_tuning_sdr50", "group__mci__interface__gr.html#a57b5c13ad42524e7b78df12f6247e08f", null ],
+      [ "uhs_retuning", "group__mci__interface__gr.html#a22b155bfc543c50c995dd9989268d061", null ],
       [ "reserved", "group__mci__interface__gr.html#aa43c4c21b173ada1b6b7568956f0d650", null ]
     ] ],
     [ "ARM_MCI_STATUS", "group__mci__interface__gr.html#structARM__MCI__STATUS", [

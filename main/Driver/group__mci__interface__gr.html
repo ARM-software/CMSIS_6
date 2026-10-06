@@ -531,23 +531,23 @@ SD memory connected via 4-bit SD Bus Mode</div></div>
 <div class="ttc" id="agroup__mci__event__gr_html_gae2cf8ef238c092e94e96a01602f3a23c"><div class="ttname"><a href="group__mci__event__gr.html#gae2cf8ef238c092e94e96a01602f3a23c">ARM_MCI_EVENT_CARD_INSERTED</a></div><div class="ttdeci">#define ARM_MCI_EVENT_CARD_INSERTED</div><div class="ttdoc">Memory Card inserted.</div></div>
 <div class="ttc" id="agroup__mci__event__gr_html_gae69356c75d55103d93ef91ac1bc02b49"><div class="ttname"><a href="group__mci__event__gr.html#gae69356c75d55103d93ef91ac1bc02b49">ARM_MCI_EVENT_COMMAND_COMPLETE</a></div><div class="ttdeci">#define ARM_MCI_EVENT_COMMAND_COMPLETE</div><div class="ttdoc">Command completed.</div></div>
 <div class="ttc" id="agroup__mci__event__gr_html_gafa8cbcd597a05c64901eeb777cc0b74f"><div class="ttname"><a href="group__mci__event__gr.html#gafa8cbcd597a05c64901eeb777cc0b74f">ARM_MCI_EVENT_CCS_TIMEOUT</a></div><div class="ttdeci">#define ARM_MCI_EVENT_CCS_TIMEOUT</div><div class="ttdoc">Command Completion Signal (CCS) Timeout.</div></div>
-<div class="ttc" id="agroup__mci__interface__gr_html_a21d4bc1a03e161bd33693619039a6afa"><div class="ttname"><a href="group__mci__interface__gr.html#a21d4bc1a03e161bd33693619039a6afa">ARM_MCI_STATUS::transfer_error</a></div><div class="ttdeci">uint32_t transfer_error</div><div class="ttdoc">Transfer error flag (cleared on start of next command)</div><div class="ttdef"><b>Definition:</b> Driver_MCI.h:183</div></div>
-<div class="ttc" id="agroup__mci__interface__gr_html_a24ebae5c6011631f76027f9a16eaf5ce"><div class="ttname"><a href="group__mci__interface__gr.html#a24ebae5c6011631f76027f9a16eaf5ce">ARM_DRIVER_MCI::PowerControl</a></div><div class="ttdeci">int32_t(* PowerControl)(ARM_POWER_STATE state)</div><div class="ttdoc">Pointer to ARM_MCI_PowerControl : Control MCI Interface Power.</div><div class="ttdef"><b>Definition:</b> Driver_MCI.h:344</div></div>
-<div class="ttc" id="agroup__mci__interface__gr_html_a2655d3422b720097b091a28e8bbcea8f"><div class="ttname"><a href="group__mci__interface__gr.html#a2655d3422b720097b091a28e8bbcea8f">ARM_MCI_STATUS::transfer_active</a></div><div class="ttdeci">uint32_t transfer_active</div><div class="ttdoc">Transfer active flag.</div><div class="ttdef"><b>Definition:</b> Driver_MCI.h:181</div></div>
-<div class="ttc" id="agroup__mci__interface__gr_html_a414baec222a72be862e262f02b821dce"><div class="ttname"><a href="group__mci__interface__gr.html#a414baec222a72be862e262f02b821dce">ARM_MCI_CAPABILITIES::vdd</a></div><div class="ttdeci">uint32_t vdd</div><div class="ttdoc">Supports VDD Card Power Supply Control.</div><div class="ttdef"><b>Definition:</b> Driver_MCI.h:306</div></div>
-<div class="ttc" id="agroup__mci__interface__gr_html_a598ae4a196316d6dcb97d07fd337ecdd"><div class="ttname"><a href="group__mci__interface__gr.html#a598ae4a196316d6dcb97d07fd337ecdd">ARM_MCI_STATUS::transfer_timeout</a></div><div class="ttdeci">uint32_t transfer_timeout</div><div class="ttdoc">Transfer timeout flag (cleared on start of next command)</div><div class="ttdef"><b>Definition:</b> Driver_MCI.h:182</div></div>
-<div class="ttc" id="agroup__mci__interface__gr_html_a5ce2b3d7a3a07099bf07d1eb253e92e3"><div class="ttname"><a href="group__mci__interface__gr.html#a5ce2b3d7a3a07099bf07d1eb253e92e3">ARM_DRIVER_MCI::Uninitialize</a></div><div class="ttdeci">int32_t(* Uninitialize)(void)</div><div class="ttdoc">Pointer to ARM_MCI_Uninitialize : De-initialize MCI Interface.</div><div class="ttdef"><b>Definition:</b> Driver_MCI.h:343</div></div>
-<div class="ttc" id="agroup__mci__interface__gr_html_a607f96af38f877b34a937427ebc675de"><div class="ttname"><a href="group__mci__interface__gr.html#a607f96af38f877b34a937427ebc675de">ARM_DRIVER_MCI::SendCommand</a></div><div class="ttdeci">int32_t(* SendCommand)(uint32_t cmd, uint32_t arg, uint32_t flags, uint32_t *response)</div><div class="ttdoc">Pointer to ARM_MCI_SendCommand : Send Command to card and get the response.</div><div class="ttdef"><b>Definition:</b> Driver_MCI.h:348</div></div>
-<div class="ttc" id="agroup__mci__interface__gr_html_a85b30bcbe4c9747c19cce2000d5684d3"><div class="ttname"><a href="group__mci__interface__gr.html#a85b30bcbe4c9747c19cce2000d5684d3">ARM_DRIVER_MCI::Initialize</a></div><div class="ttdeci">int32_t(* Initialize)(ARM_MCI_SignalEvent_t cb_event)</div><div class="ttdoc">Pointer to ARM_MCI_Initialize : Initialize MCI Interface.</div><div class="ttdef"><b>Definition:</b> Driver_MCI.h:342</div></div>
-<div class="ttc" id="agroup__mci__interface__gr_html_a8e6e71480a5ec1575b6471ce3d32117d"><div class="ttname"><a href="group__mci__interface__gr.html#a8e6e71480a5ec1575b6471ce3d32117d">ARM_DRIVER_MCI::GetStatus</a></div><div class="ttdeci">ARM_MCI_STATUS(* GetStatus)(void)</div><div class="ttdoc">Pointer to ARM_MCI_GetStatus : Get MCI status.</div><div class="ttdef"><b>Definition:</b> Driver_MCI.h:358</div></div>
-<div class="ttc" id="agroup__mci__interface__gr_html_a941fb6d191be477582c21d1f6757ab1f"><div class="ttname"><a href="group__mci__interface__gr.html#a941fb6d191be477582c21d1f6757ab1f">ARM_DRIVER_MCI::AbortTransfer</a></div><div class="ttdeci">int32_t(* AbortTransfer)(void)</div><div class="ttdoc">Pointer to ARM_MCI_AbortTransfer : Abort current data transfer.</div><div class="ttdef"><b>Definition:</b> Driver_MCI.h:356</div></div>
-<div class="ttc" id="agroup__mci__interface__gr_html_ab023e8ec9252d65026c21ee84b573890"><div class="ttname"><a href="group__mci__interface__gr.html#ab023e8ec9252d65026c21ee84b573890">ARM_DRIVER_MCI::ReadWP</a></div><div class="ttdeci">int32_t(* ReadWP)(void)</div><div class="ttdoc">Pointer to ARM_MCI_ReadWP : Read Write Protect (WP) state.</div><div class="ttdef"><b>Definition:</b> Driver_MCI.h:347</div></div>
-<div class="ttc" id="agroup__mci__interface__gr_html_ac28f754289ae6d3783e7c18a965ee3f8"><div class="ttname"><a href="group__mci__interface__gr.html#ac28f754289ae6d3783e7c18a965ee3f8">ARM_DRIVER_MCI::SetupTransfer</a></div><div class="ttdeci">int32_t(* SetupTransfer)(uint8_t *data, uint32_t block_count, uint32_t block_size, uint32_t mode)</div><div class="ttdoc">Pointer to ARM_MCI_SetupTransfer : Setup data transfer operation.</div><div class="ttdef"><b>Definition:</b> Driver_MCI.h:352</div></div>
-<div class="ttc" id="agroup__mci__interface__gr_html_ac5f226aab1d575a4d6c4eca71cdd4a5b"><div class="ttname"><a href="group__mci__interface__gr.html#ac5f226aab1d575a4d6c4eca71cdd4a5b">ARM_DRIVER_MCI::CardPower</a></div><div class="ttdeci">int32_t(* CardPower)(uint32_t voltage)</div><div class="ttdoc">Pointer to ARM_MCI_CardPower : Set card power supply voltage.</div><div class="ttdef"><b>Definition:</b> Driver_MCI.h:345</div></div>
-<div class="ttc" id="agroup__mci__interface__gr_html_ae00aa7cf8f0c0c7e2225b3048cbded13"><div class="ttname"><a href="group__mci__interface__gr.html#ae00aa7cf8f0c0c7e2225b3048cbded13">ARM_DRIVER_MCI::ReadCD</a></div><div class="ttdeci">int32_t(* ReadCD)(void)</div><div class="ttdoc">Pointer to ARM_MCI_ReadCD : Read Card Detect (CD) state.</div><div class="ttdef"><b>Definition:</b> Driver_MCI.h:346</div></div>
-<div class="ttc" id="agroup__mci__interface__gr_html_structARM__DRIVER__MCI"><div class="ttname"><a href="group__mci__interface__gr.html#structARM__DRIVER__MCI">ARM_DRIVER_MCI</a></div><div class="ttdoc">Access structure of the MCI Driver.</div><div class="ttdef"><b>Definition:</b> Driver_MCI.h:339</div></div>
-<div class="ttc" id="agroup__mci__interface__gr_html_structARM__MCI__CAPABILITIES"><div class="ttname"><a href="group__mci__interface__gr.html#structARM__MCI__CAPABILITIES">ARM_MCI_CAPABILITIES</a></div><div class="ttdoc">MCI Driver Capabilities.</div><div class="ttdef"><b>Definition:</b> Driver_MCI.h:302</div></div>
-<div class="ttc" id="agroup__mci__interface__gr_html_structARM__MCI__STATUS"><div class="ttname"><a href="group__mci__interface__gr.html#structARM__MCI__STATUS">ARM_MCI_STATUS</a></div><div class="ttdoc">MCI Status.</div><div class="ttdef"><b>Definition:</b> Driver_MCI.h:177</div></div>
+<div class="ttc" id="agroup__mci__interface__gr_html_a21d4bc1a03e161bd33693619039a6afa"><div class="ttname"><a href="group__mci__interface__gr.html#a21d4bc1a03e161bd33693619039a6afa">ARM_MCI_STATUS::transfer_error</a></div><div class="ttdeci">uint32_t transfer_error</div><div class="ttdoc">Transfer error flag (cleared on start of next command)</div><div class="ttdef"><b>Definition:</b> Driver_MCI.h:205</div></div>
+<div class="ttc" id="agroup__mci__interface__gr_html_a24ebae5c6011631f76027f9a16eaf5ce"><div class="ttname"><a href="group__mci__interface__gr.html#a24ebae5c6011631f76027f9a16eaf5ce">ARM_DRIVER_MCI::PowerControl</a></div><div class="ttdeci">int32_t(* PowerControl)(ARM_POWER_STATE state)</div><div class="ttdoc">Pointer to ARM_MCI_PowerControl : Control MCI Interface Power.</div><div class="ttdef"><b>Definition:</b> Driver_MCI.h:370</div></div>
+<div class="ttc" id="agroup__mci__interface__gr_html_a2655d3422b720097b091a28e8bbcea8f"><div class="ttname"><a href="group__mci__interface__gr.html#a2655d3422b720097b091a28e8bbcea8f">ARM_MCI_STATUS::transfer_active</a></div><div class="ttdeci">uint32_t transfer_active</div><div class="ttdoc">Transfer active flag.</div><div class="ttdef"><b>Definition:</b> Driver_MCI.h:203</div></div>
+<div class="ttc" id="agroup__mci__interface__gr_html_a414baec222a72be862e262f02b821dce"><div class="ttname"><a href="group__mci__interface__gr.html#a414baec222a72be862e262f02b821dce">ARM_MCI_CAPABILITIES::vdd</a></div><div class="ttdeci">uint32_t vdd</div><div class="ttdoc">Supports VDD Card Power Supply Control.</div><div class="ttdef"><b>Definition:</b> Driver_MCI.h:330</div></div>
+<div class="ttc" id="agroup__mci__interface__gr_html_a598ae4a196316d6dcb97d07fd337ecdd"><div class="ttname"><a href="group__mci__interface__gr.html#a598ae4a196316d6dcb97d07fd337ecdd">ARM_MCI_STATUS::transfer_timeout</a></div><div class="ttdeci">uint32_t transfer_timeout</div><div class="ttdoc">Transfer timeout flag (cleared on start of next command)</div><div class="ttdef"><b>Definition:</b> Driver_MCI.h:204</div></div>
+<div class="ttc" id="agroup__mci__interface__gr_html_a5ce2b3d7a3a07099bf07d1eb253e92e3"><div class="ttname"><a href="group__mci__interface__gr.html#a5ce2b3d7a3a07099bf07d1eb253e92e3">ARM_DRIVER_MCI::Uninitialize</a></div><div class="ttdeci">int32_t(* Uninitialize)(void)</div><div class="ttdoc">Pointer to ARM_MCI_Uninitialize : De-initialize MCI Interface.</div><div class="ttdef"><b>Definition:</b> Driver_MCI.h:369</div></div>
+<div class="ttc" id="agroup__mci__interface__gr_html_a607f96af38f877b34a937427ebc675de"><div class="ttname"><a href="group__mci__interface__gr.html#a607f96af38f877b34a937427ebc675de">ARM_DRIVER_MCI::SendCommand</a></div><div class="ttdeci">int32_t(* SendCommand)(uint32_t cmd, uint32_t arg, uint32_t flags, uint32_t *response)</div><div class="ttdoc">Pointer to ARM_MCI_SendCommand : Send Command to card and get the response.</div><div class="ttdef"><b>Definition:</b> Driver_MCI.h:374</div></div>
+<div class="ttc" id="agroup__mci__interface__gr_html_a85b30bcbe4c9747c19cce2000d5684d3"><div class="ttname"><a href="group__mci__interface__gr.html#a85b30bcbe4c9747c19cce2000d5684d3">ARM_DRIVER_MCI::Initialize</a></div><div class="ttdeci">int32_t(* Initialize)(ARM_MCI_SignalEvent_t cb_event)</div><div class="ttdoc">Pointer to ARM_MCI_Initialize : Initialize MCI Interface.</div><div class="ttdef"><b>Definition:</b> Driver_MCI.h:368</div></div>
+<div class="ttc" id="agroup__mci__interface__gr_html_a8e6e71480a5ec1575b6471ce3d32117d"><div class="ttname"><a href="group__mci__interface__gr.html#a8e6e71480a5ec1575b6471ce3d32117d">ARM_DRIVER_MCI::GetStatus</a></div><div class="ttdeci">ARM_MCI_STATUS(* GetStatus)(void)</div><div class="ttdoc">Pointer to ARM_MCI_GetStatus : Get MCI status.</div><div class="ttdef"><b>Definition:</b> Driver_MCI.h:384</div></div>
+<div class="ttc" id="agroup__mci__interface__gr_html_a941fb6d191be477582c21d1f6757ab1f"><div class="ttname"><a href="group__mci__interface__gr.html#a941fb6d191be477582c21d1f6757ab1f">ARM_DRIVER_MCI::AbortTransfer</a></div><div class="ttdeci">int32_t(* AbortTransfer)(void)</div><div class="ttdoc">Pointer to ARM_MCI_AbortTransfer : Abort current data transfer.</div><div class="ttdef"><b>Definition:</b> Driver_MCI.h:382</div></div>
+<div class="ttc" id="agroup__mci__interface__gr_html_ab023e8ec9252d65026c21ee84b573890"><div class="ttname"><a href="group__mci__interface__gr.html#ab023e8ec9252d65026c21ee84b573890">ARM_DRIVER_MCI::ReadWP</a></div><div class="ttdeci">int32_t(* ReadWP)(void)</div><div class="ttdoc">Pointer to ARM_MCI_ReadWP : Read Write Protect (WP) state.</div><div class="ttdef"><b>Definition:</b> Driver_MCI.h:373</div></div>
+<div class="ttc" id="agroup__mci__interface__gr_html_ac28f754289ae6d3783e7c18a965ee3f8"><div class="ttname"><a href="group__mci__interface__gr.html#ac28f754289ae6d3783e7c18a965ee3f8">ARM_DRIVER_MCI::SetupTransfer</a></div><div class="ttdeci">int32_t(* SetupTransfer)(uint8_t *data, uint32_t block_count, uint32_t block_size, uint32_t mode)</div><div class="ttdoc">Pointer to ARM_MCI_SetupTransfer : Setup data transfer operation.</div><div class="ttdef"><b>Definition:</b> Driver_MCI.h:378</div></div>
+<div class="ttc" id="agroup__mci__interface__gr_html_ac5f226aab1d575a4d6c4eca71cdd4a5b"><div class="ttname"><a href="group__mci__interface__gr.html#ac5f226aab1d575a4d6c4eca71cdd4a5b">ARM_DRIVER_MCI::CardPower</a></div><div class="ttdeci">int32_t(* CardPower)(uint32_t voltage)</div><div class="ttdoc">Pointer to ARM_MCI_CardPower : Set card power supply voltage.</div><div class="ttdef"><b>Definition:</b> Driver_MCI.h:371</div></div>
+<div class="ttc" id="agroup__mci__interface__gr_html_ae00aa7cf8f0c0c7e2225b3048cbded13"><div class="ttname"><a href="group__mci__interface__gr.html#ae00aa7cf8f0c0c7e2225b3048cbded13">ARM_DRIVER_MCI::ReadCD</a></div><div class="ttdeci">int32_t(* ReadCD)(void)</div><div class="ttdoc">Pointer to ARM_MCI_ReadCD : Read Card Detect (CD) state.</div><div class="ttdef"><b>Definition:</b> Driver_MCI.h:372</div></div>
+<div class="ttc" id="agroup__mci__interface__gr_html_structARM__DRIVER__MCI"><div class="ttname"><a href="group__mci__interface__gr.html#structARM__DRIVER__MCI">ARM_DRIVER_MCI</a></div><div class="ttdoc">Access structure of the MCI Driver.</div><div class="ttdef"><b>Definition:</b> Driver_MCI.h:365</div></div>
+<div class="ttc" id="agroup__mci__interface__gr_html_structARM__MCI__CAPABILITIES"><div class="ttname"><a href="group__mci__interface__gr.html#structARM__MCI__CAPABILITIES">ARM_MCI_CAPABILITIES</a></div><div class="ttdoc">MCI Driver Capabilities.</div><div class="ttdef"><b>Definition:</b> Driver_MCI.h:326</div></div>
+<div class="ttc" id="agroup__mci__interface__gr_html_structARM__MCI__STATUS"><div class="ttname"><a href="group__mci__interface__gr.html#structARM__MCI__STATUS">ARM_MCI_STATUS</a></div><div class="ttdoc">MCI Status.</div><div class="ttdef"><b>Definition:</b> Driver_MCI.h:199</div></div>
 <div class="ttc" id="agroup__mci__send__command__flags__ctrls_html_ga6ab3f4c1a2bf0fdb81fbcf7a5698f2de"><div class="ttname"><a href="group__mci__send__command__flags__ctrls.html#ga6ab3f4c1a2bf0fdb81fbcf7a5698f2de">ARM_MCI_RESPONSE_CRC</a></div><div class="ttdeci">#define ARM_MCI_RESPONSE_CRC</div><div class="ttdoc">Check CRC in response.</div></div>
 <div class="ttc" id="agroup__mci__send__command__flags__ctrls_html_ga70934cef80884e8c75fb4eebf8452118"><div class="ttname"><a href="group__mci__send__command__flags__ctrls.html#ga70934cef80884e8c75fb4eebf8452118">ARM_MCI_RESPONSE_NONE</a></div><div class="ttdeci">#define ARM_MCI_RESPONSE_NONE</div><div class="ttdoc">No response expected (default)</div></div>
 <div class="ttc" id="agroup__mci__send__command__flags__ctrls_html_ga81606bd94ce782e2c3764b913f929f60"><div class="ttname"><a href="group__mci__send__command__flags__ctrls.html#ga81606bd94ce782e2c3764b913f929f60">ARM_MCI_CARD_INITIALIZE</a></div><div class="ttdeci">#define ARM_MCI_CARD_INITIALIZE</div><div class="ttdoc">Execute Memory Card initialization sequence.</div></div>
@@ -1022,9 +1022,21 @@ ccs_timeout: 1</td>
 <td class="fielddoc">
 Supports Command Completion Signal (CCS) timeout for CE-ATA. </td></tr>
 <tr><td class="fieldtype">
+<a id="a57b5c13ad42524e7b78df12f6247e08f" name="a57b5c13ad42524e7b78df12f6247e08f"></a>uint32_t</td>
+<td class="fieldname">
+uhs_tuning_sdr50: 1</td>
+<td class="fielddoc">
+UHS-I SDR50 requires host-controller tuning. </td></tr>
+<tr><td class="fieldtype">
+<a id="a22b155bfc543c50c995dd9989268d061" name="a22b155bfc543c50c995dd9989268d061"></a>uint32_t</td>
+<td class="fieldname">
+uhs_retuning: 1</td>
+<td class="fielddoc">
+Supports driver-managed re-tuning requests or timers. </td></tr>
+<tr><td class="fieldtype">
 <a id="aa43c4c21b173ada1b6b7568956f0d650" name="aa43c4c21b173ada1b6b7568956f0d650"></a>uint32_t</td>
 <td class="fieldname">
-reserved: 3</td>
+reserved: 1</td>
 <td class="fielddoc">
 Reserved (must be zero) </td></tr>
 </table>
@@ -1166,7 +1178,7 @@ reserved: 24</td>
 <div class="line">}</div>
 <div class="ttc" id="agroup__common__drv__gr_html_ad180da20fbde1d3dafc074af87c19540"><div class="ttname"><a href="group__common__drv__gr.html#ad180da20fbde1d3dafc074af87c19540">ARM_DRIVER_VERSION::api</a></div><div class="ttdeci">uint16_t api</div><div class="ttdoc">API version.</div><div class="ttdef"><b>Definition:</b> Driver_Common.h:47</div></div>
 <div class="ttc" id="agroup__common__drv__gr_html_structARM__DRIVER__VERSION"><div class="ttname"><a href="group__common__drv__gr.html#structARM__DRIVER__VERSION">ARM_DRIVER_VERSION</a></div><div class="ttdoc">Driver Version.</div><div class="ttdef"><b>Definition:</b> Driver_Common.h:46</div></div>
-<div class="ttc" id="agroup__mci__interface__gr_html_a30afd9cb3113c037b5f1926f5ef93b59"><div class="ttname"><a href="group__mci__interface__gr.html#a30afd9cb3113c037b5f1926f5ef93b59">ARM_DRIVER_MCI::GetVersion</a></div><div class="ttdeci">ARM_DRIVER_VERSION(* GetVersion)(void)</div><div class="ttdoc">Pointer to ARM_MCI_GetVersion : Get driver version.</div><div class="ttdef"><b>Definition:</b> Driver_MCI.h:340</div></div>
+<div class="ttc" id="agroup__mci__interface__gr_html_a30afd9cb3113c037b5f1926f5ef93b59"><div class="ttname"><a href="group__mci__interface__gr.html#a30afd9cb3113c037b5f1926f5ef93b59">ARM_DRIVER_MCI::GetVersion</a></div><div class="ttdeci">ARM_DRIVER_VERSION(* GetVersion)(void)</div><div class="ttdoc">Pointer to ARM_MCI_GetVersion : Get driver version.</div><div class="ttdef"><b>Definition:</b> Driver_MCI.h:366</div></div>
 </div><!-- fragment --> 
 </div>
 </div>
@@ -1200,7 +1212,7 @@ reserved: 24</td>
 <div class="line">  <span class="comment">// interrogate capabilities</span></div>
 <div class="line"> </div>
 <div class="line">}</div>
-<div class="ttc" id="agroup__mci__interface__gr_html_afa1d379bd4972549e60e99b129284c43"><div class="ttname"><a href="group__mci__interface__gr.html#afa1d379bd4972549e60e99b129284c43">ARM_DRIVER_MCI::GetCapabilities</a></div><div class="ttdeci">ARM_MCI_CAPABILITIES(* GetCapabilities)(void)</div><div class="ttdoc">Pointer to ARM_MCI_GetCapabilities : Get driver capabilities.</div><div class="ttdef"><b>Definition:</b> Driver_MCI.h:341</div></div>
+<div class="ttc" id="agroup__mci__interface__gr_html_afa1d379bd4972549e60e99b129284c43"><div class="ttname"><a href="group__mci__interface__gr.html#afa1d379bd4972549e60e99b129284c43">ARM_DRIVER_MCI::GetCapabilities</a></div><div class="ttdeci">ARM_MCI_CAPABILITIES(* GetCapabilities)(void)</div><div class="ttdoc">Pointer to ARM_MCI_GetCapabilities : Get driver capabilities.</div><div class="ttdef"><b>Definition:</b> Driver_MCI.h:367</div></div>
 </div><!-- fragment --> 
 </div>
 </div>
@@ -1645,9 +1657,9 @@ The parameter <em>arg</em> provides, depending on the operation, additional info
 <tr class="markdownTableRowOdd">
 <td class="markdownTableBodyLeft"><a class="el" href="group__mci__mode__ctrls.html#ga889473fbfbdcb89aab4d53cc8a13f615">ARM_MCI_CONTROL_CLOCK_IDLE</a>   </td><td class="markdownTableBodyLeft">Control clock generation on CLK Pin when idle. The parameter <em>arg</em> can have the values <span class="XML-Token">[0:disabled; 1:enabled]</span>    </td></tr>
 <tr class="markdownTableRowEven">
-<td class="markdownTableBodyLeft"><a class="el" href="group__mci__mode__ctrls.html#ga98853f60bdc085aeeccd66f7bdf22d3d">ARM_MCI_UHS_TUNING_OPERATION</a>   </td><td class="markdownTableBodyLeft">Sampling clock Tuning operation (SD UHS-I). The parameter <em>arg</em> can have the values <span class="XML-Token">[0:reset; 1:execute]</span>    </td></tr>
+<td class="markdownTableBodyLeft"><a class="el" href="group__mci__mode__ctrls.html#ga98853f60bdc085aeeccd66f7bdf22d3d">ARM_MCI_UHS_TUNING_OPERATION</a>   </td><td class="markdownTableBodyLeft">Start, restart, or abort host-controller sampling-clock tuning. The parameter <em>arg</em> is one of <a class="el" href="group__mci__uhs__tuning__ctrls.html#ga56d1baa66ecf470e0e4948e3ff7b14d5">ARM_MCI_UHS_TUNING_ABORT</a>, <a class="el" href="group__mci__uhs__tuning__ctrls.html#gaa00807aaee5b0d2df3af400ff2825c96">ARM_MCI_UHS_TUNING_START</a>, or <a class="el" href="group__mci__uhs__tuning__ctrls.html#ga15dd678174d2c6b76198296011f7dcbf">ARM_MCI_UHS_RETUNING_START</a>.    </td></tr>
 <tr class="markdownTableRowOdd">
-<td class="markdownTableBodyLeft"><a class="el" href="group__mci__mode__ctrls.html#gabd3af448e26da5657c1c5a03330476b7">ARM_MCI_UHS_TUNING_RESULT</a>   </td><td class="markdownTableBodyLeft">Sampling clock Tuning result (SD UHS-I). Returns <span class="XML-Token">[0:done; 1:in progress; -1:error]</span>    </td></tr>
+<td class="markdownTableBodyLeft"><a class="el" href="group__mci__mode__ctrls.html#gabd3af448e26da5657c1c5a03330476b7">ARM_MCI_UHS_TUNING_RESULT</a>   </td><td class="markdownTableBodyLeft">Return <a class="el" href="group__mci__uhs__tuning__ctrls.html#ga48547a003e7a6b6df3df0c39fe124984">ARM_MCI_UHS_TUNING_DONE</a>, <a class="el" href="group__mci__uhs__tuning__ctrls.html#gaa95849804c348d60a0ef59a2f88a9452">ARM_MCI_UHS_TUNING_CONTINUE</a>, or <a class="el" href="group__mci__uhs__tuning__ctrls.html#ga51fb9421eff4636991acdb76fbd2b64b">ARM_MCI_UHS_TUNING_ERROR</a> after a protocol tuning-block command.    </td></tr>
 <tr class="markdownTableRowEven">
 <td class="markdownTableBodyLeft"><a class="el" href="group__mci__mode__ctrls.html#ga09a58821e42595f0c2e55f8cc2d32ceb">ARM_MCI_DATA_TIMEOUT</a>   </td><td class="markdownTableBodyLeft">Set Data timeout; The parameter <em>arg</em> sets the timeout in bus cycles.    </td></tr>
 <tr class="markdownTableRowOdd">
@@ -1659,10 +1671,12 @@ The parameter <em>arg</em> provides, depending on the operation, additional info
 <tr class="markdownTableRowEven">
 <td class="markdownTableBodyLeft"><a class="el" href="group__mci__mode__ctrls.html#ga04cf174b0ef13240f26225bf8e45a4a0">ARM_MCI_SUSPEND_TRANSFER</a>   </td><td class="markdownTableBodyLeft">Suspend Data transfer (SD I/O). Returns the number of remaining bytes to transfer.    </td></tr>
 <tr class="markdownTableRowOdd">
-<td class="markdownTableBodyLeft"><a class="el" href="group__mci__mode__ctrls.html#gac4907319499072fddf61f2f83b0dd966">ARM_MCI_RESUME_TRANSFER</a>   </td><td class="markdownTableBodyLeft">Resume Data transfer (SD I/O).   </td></tr>
+<td class="markdownTableBodyLeft"><a class="el" href="group__mci__mode__ctrls.html#gac4907319499072fddf61f2f83b0dd966">ARM_MCI_RESUME_TRANSFER</a>   </td><td class="markdownTableBodyLeft">Resume Data transfer (SD I/O).    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyLeft"><a class="el" href="group__mci__mode__ctrls.html#ga5a40d1f631503183bcbccc5b49cbb09e">ARM_MCI_UHS_VOLTAGE_SWITCH</a>   </td><td class="markdownTableBodyLeft">Perform a host-controller phase of the UHS-I signal-voltage switch. The parameter <em>arg</em> is an <a class="el" href="group__mci__uhs__voltage__switch__ctrls.html">MCI UHS-I Signal Voltage Switch</a> value.   </td></tr>
 </table>
 <p><b>Bus Speed Mode</b></p>
-<p>The function <a class="el" href="group__mci__interface__gr.html#ga7e5a78b6e6409189833a0b72a0a3c48a">ARM_MCI_GetCapabilities</a> lists the supported bus speed modes. Initially, all SD cards use a 3.3 volt electrical interface. Some SD cards can switch to 1.8 volt operation. For example, the use of ultra-high-speed (UHS) SD cards requires 1.8 volt operation and a 4-bit bus data width. The bit field <a class="el" href="group__mci__interface__gr.html#a084188480d589cdc8d3e164b9f41bea9" title="Supports SD UHS-I (Ultra High Speed) 1.8V signaling.">ARM_MCI_CAPABILITIES.uhs_signaling</a> encodes whether the driver supports 1.8 volt UHS signaling.</p>
+<p>The function <a class="el" href="group__mci__interface__gr.html#ga7e5a78b6e6409189833a0b72a0a3c48a">ARM_MCI_GetCapabilities</a> lists the supported bus speed modes. Initially, all SD cards use a 3.3 volt electrical interface. Some SD cards can switch to 1.8 volt operation. For example, the use of ultra-high-speed (UHS) SD cards requires 1.8 volt operation and a 4-bit bus data width. The bit field <a class="el" href="group__mci__interface__gr.html#a084188480d589cdc8d3e164b9f41bea9" title="Supports SD UHS-I (Ultra High Speed) 1.8V signaling.">ARM_MCI_CAPABILITIES.uhs_signaling</a> encodes whether the driver supports the UHS-I signal-voltage switch and the mandatory SDR12 and SDR25 baseline.</p>
 <p>The <em>control</em> operation <b>ARM_MCI_BUS_SPEED_MODE</b> sets the bus speed mode using the parameter <em>arg</em>.</p>
 <table class="markdownTable">
 <tr class="markdownTableHead">
@@ -1725,6 +1739,51 @@ The parameter <em>arg</em> provides, depending on the operation, additional info
 <tr class="markdownTableRowEven">
 <td class="markdownTableBodyLeft"><a class="el" href="group__mci__driver__strength__ctrls.html#ga8185f82b1d8857a3f0eb461d664f2b3d">ARM_MCI_DRIVER_TYPE_D</a>   </td><td class="markdownTableBodyLeft">Set the interface to SD UHS-I Driver Type D   </td></tr>
 </table>
+<p><b>UHS-I Tuning Operation</b></p>
+<p>Specifies the UHS-I tuning operation.</p>
+<p>The <em>control</em> operation <b>ARM_MCI_UHS_TUNING_OPERATION</b> triggers a phase in the sampling-clock tuning procedure using the parameter <em>arg</em>.</p>
+<table class="markdownTable">
+<tr class="markdownTableHead">
+<th class="markdownTableHeadLeft">Parameter <em>arg</em>   </th><th class="markdownTableHeadLeft">UHS-I Tuning Operation    </th></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyLeft"><a class="el" href="group__mci__uhs__tuning__ctrls.html#ga56d1baa66ecf470e0e4948e3ff7b14d5">ARM_MCI_UHS_TUNING_ABORT</a>   </td><td class="markdownTableBodyLeft">Abort the UHS-I tuning procedure    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyLeft"><a class="el" href="group__mci__uhs__tuning__ctrls.html#gaa00807aaee5b0d2df3af400ff2825c96">ARM_MCI_UHS_TUNING_START</a>   </td><td class="markdownTableBodyLeft">Start the UHS-I tuning procedure    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyLeft"><a class="el" href="group__mci__uhs__tuning__ctrls.html#ga15dd678174d2c6b76198296011f7dcbf">ARM_MCI_UHS_RETUNING_START</a>   </td><td class="markdownTableBodyLeft">Start the UHS-I re-tuning procedure   </td></tr>
+</table>
+<p><b>UHS-I Tuning Result</b></p>
+<p>Specifies the UHS-I tuning procedure result retrieval.</p>
+<p>The <em>control</em> operation <b>ARM_MCI_UHS_TUNING_RESULT</b> returns the result of the UHS-I tuning procedure.</p>
+<table class="markdownTable">
+<tr class="markdownTableHead">
+<th class="markdownTableHeadLeft">Return value   </th><th class="markdownTableHeadLeft">UHS-I Tuning Result    </th></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyLeft"><a class="el" href="group__mci__uhs__tuning__ctrls.html#ga48547a003e7a6b6df3df0c39fe124984">ARM_MCI_UHS_TUNING_DONE</a>   </td><td class="markdownTableBodyLeft">UHS-I tuning procedure completed successfully    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyLeft"><a class="el" href="group__mci__uhs__tuning__ctrls.html#ga51fb9421eff4636991acdb76fbd2b64b">ARM_MCI_UHS_TUNING_ERROR</a>   </td><td class="markdownTableBodyLeft">UHS-I tuning procedure failed    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyLeft"><a class="el" href="group__mci__uhs__tuning__ctrls.html#gaa95849804c348d60a0ef59a2f88a9452">ARM_MCI_UHS_TUNING_CONTINUE</a>   </td><td class="markdownTableBodyLeft">UHS-I tuning procedure should continue   </td></tr>
+</table>
+<p><b>UHS-I Signaling Voltage Switch</b></p>
+<p>Specifies the UHS-I signaling voltage switch operation.</p>
+<p>The <em>control</em> operation <b>ARM_MCI_UHS_VOLTAGE_SWITCH</b> triggers a phase in the UHS-I signaling voltage switch procedure using the parameter <em>arg</em>.</p>
+<table class="markdownTable">
+<tr class="markdownTableHead">
+<th class="markdownTableHeadLeft">Parameter <em>arg</em>   </th><th class="markdownTableHeadLeft">UHS-I Signaling Voltage Switch Phase    </th></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyLeft"><a class="el" href="group__mci__uhs__voltage__switch__ctrls.html#gae80c0a539904f6135768a99c28722268">ARM_MCI_VOLTAGE_SWITCH_PREPARE</a>   </td><td class="markdownTableBodyLeft">Prepare the host-controller for signaling voltage switch    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyLeft"><a class="el" href="group__mci__uhs__voltage__switch__ctrls.html#ga4706aa9b49f3831e85883e77c63ed841">ARM_MCI_VOLTAGE_SWITCH_APPLY</a>   </td><td class="markdownTableBodyLeft">Change the voltage selection from 3.3V to 1.8V    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyLeft"><a class="el" href="group__mci__uhs__voltage__switch__ctrls.html#gaf7dc76fe011b596e2f2181923dba2564">ARM_MCI_VOLTAGE_SWITCH_CLOCK_ON</a>   </td><td class="markdownTableBodyLeft">Start or confirm the bus clock after the signaling voltage has stabilized    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyLeft"><a class="el" href="group__mci__uhs__voltage__switch__ctrls.html#ga3fe2e3020445be01e3caeb582def2935">ARM_MCI_VOLTAGE_SWITCH_VERIFY</a>   </td><td class="markdownTableBodyLeft">Verify the voltage switch after memory card releases data lines    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyLeft"><a class="el" href="group__mci__uhs__voltage__switch__ctrls.html#gac31057dd2027b5370c30a4565083ed3b">ARM_MCI_VOLTAGE_SWITCH_ABORT</a>   </td><td class="markdownTableBodyLeft">Abort an incomplete switch and leave the host interface safe    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyLeft"><a class="el" href="group__mci__uhs__voltage__switch__ctrls.html#gad430329b8fe70865e5fbe8c8f7047054">ARM_MCI_VOLTAGE_SWITCH_RESET</a>   </td><td class="markdownTableBodyLeft">Restore host signaling state for memory card power-up at 3.3 V   </td></tr>
+</table>
 <p><b>Examples:</b> </p><div class="fragment"><div class="line"><span class="comment">// Set Bus Speed to 25MHz</span></div>
 <div class="line">MCIdrv-&gt;Control(<a class="code hl_define" href="group__mci__mode__ctrls.html#ga7f982d2e5aec768307d35a83c65fb3ef">ARM_MCI_BUS_SPEED</a>, 25000000);</div>
 <div class="line"> </div>
@@ -1752,17 +1811,10 @@ The parameter <em>arg</em> provides, depending on the operation, additional info
 <div class="line"><span class="comment">// Disable Clock generation on CLK when Idle</span></div>
 <div class="line">MCIdrv-&gt;Control(<a class="code hl_define" href="group__mci__mode__ctrls.html#ga889473fbfbdcb89aab4d53cc8a13f615">ARM_MCI_CONTROL_CLOCK_IDLE</a>, 0);</div>
 <div class="line"> </div>
-<div class="line"><span class="comment">// UHS Tuning</span></div>
-<div class="line">MCIdrv-&gt;Control(<a class="code hl_define" href="group__mci__mode__ctrls.html#ga98853f60bdc085aeeccd66f7bdf22d3d">ARM_MCI_UHS_TUNING_OPERATION</a>, 1);  <span class="comment">// start tuning</span></div>
-<div class="line"><span class="keywordflow">do</span> {</div>
-<div class="line">  status = MCIdrv-&gt;Control(<a class="code hl_define" href="group__mci__mode__ctrls.html#gabd3af448e26da5657c1c5a03330476b7">ARM_MCI_UHS_TUNING_RESULT</a>, 0<span class="comment">/*argument not used*/</span>);</div>
-<div class="line">  <span class="keywordflow">if</span> (status == -1) { <span class="keywordflow">break</span>; <span class="comment">/* tuning failed */</span> }</div>
-<div class="line">} <span class="keywordflow">while</span> (status == 1);</div>
-<div class="line"> </div>
 <div class="line"><span class="comment">// Set Data Timeout to 12500000 bus cycles (0.5s @25MHz Bus Speed)</span></div>
 <div class="line"><span class="comment">// Default value is hardware specific (typically 2^32-1)</span></div>
 <div class="line">MCIdrv-&gt;Control(<a class="code hl_define" href="group__mci__mode__ctrls.html#ga09a58821e42595f0c2e55f8cc2d32ceb">ARM_MCI_DATA_TIMEOUT</a>, 12500000);</div>
-<div class="line">  </div>
+<div class="line"> </div>
 <div class="line"><span class="comment">// Set CSS Timeout to 1000000 bus cycles</span></div>
 <div class="line"><span class="comment">// Default value is hardware specific</span></div>
 <div class="line">MCIdrv-&gt;Control(<a class="code hl_define" href="group__mci__mode__ctrls.html#gae97b1a819a5d326b1f1009b0d6d48b5a">ARM_MCI_CSS_TIMEOUT</a>, 1000000);</div>
@@ -1797,9 +1849,7 @@ The parameter <em>arg</em> provides, depending on the operation, additional info
 <div class="ttc" id="agroup__mci__mode__ctrls_html_ga876d964d0eeacdb16e93f7558a544587"><div class="ttname"><a href="group__mci__mode__ctrls.html#ga876d964d0eeacdb16e93f7558a544587">ARM_MCI_BUS_DATA_WIDTH</a></div><div class="ttdeci">#define ARM_MCI_BUS_DATA_WIDTH</div><div class="ttdoc">Set Bus Data Width as specified with arg.</div></div>
 <div class="ttc" id="agroup__mci__mode__ctrls_html_ga889473fbfbdcb89aab4d53cc8a13f615"><div class="ttname"><a href="group__mci__mode__ctrls.html#ga889473fbfbdcb89aab4d53cc8a13f615">ARM_MCI_CONTROL_CLOCK_IDLE</a></div><div class="ttdeci">#define ARM_MCI_CONTROL_CLOCK_IDLE</div><div class="ttdoc">Control Clock generation on CLK Pin when idle; arg: 0=disabled, 1=enabled.</div></div>
 <div class="ttc" id="agroup__mci__mode__ctrls_html_ga8b7571e37520c07d8ef4f697f3886715"><div class="ttname"><a href="group__mci__mode__ctrls.html#ga8b7571e37520c07d8ef4f697f3886715">ARM_MCI_BUS_CMD_MODE</a></div><div class="ttdeci">#define ARM_MCI_BUS_CMD_MODE</div><div class="ttdoc">Set CMD Line Mode as specified with arg.</div></div>
-<div class="ttc" id="agroup__mci__mode__ctrls_html_ga98853f60bdc085aeeccd66f7bdf22d3d"><div class="ttname"><a href="group__mci__mode__ctrls.html#ga98853f60bdc085aeeccd66f7bdf22d3d">ARM_MCI_UHS_TUNING_OPERATION</a></div><div class="ttdeci">#define ARM_MCI_UHS_TUNING_OPERATION</div><div class="ttdoc">Sampling clock Tuning operation (SD UHS-I); arg: 0=reset, 1=execute.</div></div>
 <div class="ttc" id="agroup__mci__mode__ctrls_html_gaaa10c5aa7a8108aa59c3734b3eec2e3a"><div class="ttname"><a href="group__mci__mode__ctrls.html#gaaa10c5aa7a8108aa59c3734b3eec2e3a">ARM_MCI_CONTROL_READ_WAIT</a></div><div class="ttdeci">#define ARM_MCI_CONTROL_READ_WAIT</div><div class="ttdoc">Control Read/Wait for SD I/O; arg: 0=disabled, 1=enabled.</div></div>
-<div class="ttc" id="agroup__mci__mode__ctrls_html_gabd3af448e26da5657c1c5a03330476b7"><div class="ttname"><a href="group__mci__mode__ctrls.html#gabd3af448e26da5657c1c5a03330476b7">ARM_MCI_UHS_TUNING_RESULT</a></div><div class="ttdeci">#define ARM_MCI_UHS_TUNING_RESULT</div><div class="ttdoc">Sampling clock Tuning result (SD UHS-I); returns: 0=done, 1=in progress, -1=error.</div></div>
 <div class="ttc" id="agroup__mci__mode__ctrls_html_gac4907319499072fddf61f2f83b0dd966"><div class="ttname"><a href="group__mci__mode__ctrls.html#gac4907319499072fddf61f2f83b0dd966">ARM_MCI_RESUME_TRANSFER</a></div><div class="ttdeci">#define ARM_MCI_RESUME_TRANSFER</div><div class="ttdoc">Resume Data transfer (SD I/O)</div></div>
 <div class="ttc" id="agroup__mci__mode__ctrls_html_gae97b1a819a5d326b1f1009b0d6d48b5a"><div class="ttname"><a href="group__mci__mode__ctrls.html#gae97b1a819a5d326b1f1009b0d6d48b5a">ARM_MCI_CSS_TIMEOUT</a></div><div class="ttdeci">#define ARM_MCI_CSS_TIMEOUT</div><div class="ttdoc">Set Command Completion Signal (CCS) timeout; arg = timeout in bus cycles.</div></div>
 <div class="ttc" id="agroup__mci__mode__ctrls_html_gaf7ede525eabc618fbbb9f7a294c8ed96"><div class="ttname"><a href="group__mci__mode__ctrls.html#gaf7ede525eabc618fbbb9f7a294c8ed96">ARM_MCI_BUS_SPEED_MODE</a></div><div class="ttdeci">#define ARM_MCI_BUS_SPEED_MODE</div><div class="ttdoc">Set Bus Speed Mode as specified with arg.</div></div>
@@ -1853,11 +1903,11 @@ The parameter <em>arg</em> provides, depending on the operation, additional info
 </dl>
 <p>The function <b>ARM_MCI_SignalEvent</b> is a callback function registered by the function <a class="el" href="group__mci__interface__gr.html#ga6f34d4ab362e596ddaf23aac093268cf">ARM_MCI_Initialize</a>.</p>
 <p>The parameter <em>event</em> indicates one or more events that occurred during driver operation. Each event is encoded in a separate bit and therefore it is possible to signal multiple events within the same call.</p>
-<p>Not every event is necessarily generated by the driver. This depends on the implemented capabilities stored in the data fields of the structure <a class="el" href="group__nand__interface__gr.html#structARM__NAND__CAPABILITIES">ARM_NAND_CAPABILITIES</a>, which can be retrieved with the function <a class="el" href="group__nand__interface__gr.html#ga9f2609975c2008d21b9ae28f15daf147">ARM_NAND_GetCapabilities</a>.</p>
+<p>Not every event is necessarily generated by the driver. This depends on the implemented capabilities stored in the data fields of the structure <a class="el" href="group__mci__interface__gr.html#structARM__MCI__CAPABILITIES">ARM_MCI_CAPABILITIES</a>, which can be retrieved with the function <a class="el" href="group__mci__interface__gr.html#ga7e5a78b6e6409189833a0b72a0a3c48a">ARM_MCI_GetCapabilities</a>.</p>
 <p>The following events can be generated:</p>
 <table class="markdownTable">
 <tr class="markdownTableHead">
-<th class="markdownTableHeadLeft">Parameter <em>event</em>   </th><th class="markdownTableHeadRight">Bit   </th><th class="markdownTableHeadLeft">Description   </th><th class="markdownTableHeadLeft">supported when <a class="el" href="group__nand__interface__gr.html#structARM__NAND__CAPABILITIES">ARM_NAND_CAPABILITIES</a>    </th></tr>
+<th class="markdownTableHeadLeft">Parameter <em>event</em>   </th><th class="markdownTableHeadRight">Bit   </th><th class="markdownTableHeadLeft">Description   </th><th class="markdownTableHeadLeft">supported when <a class="el" href="group__mci__interface__gr.html#structARM__MCI__CAPABILITIES">ARM_MCI_CAPABILITIES</a>    </th></tr>
 <tr class="markdownTableRowOdd">
 <td class="markdownTableBodyLeft"><a class="el" href="group__mci__event__gr.html#gae2cf8ef238c092e94e96a01602f3a23c">ARM_MCI_EVENT_CARD_INSERTED</a>   </td><td class="markdownTableBodyRight">0   </td><td class="markdownTableBodyLeft">Occurs after Memory Card inserted   </td><td class="markdownTableBodyLeft"><em>always supported</em>    </td></tr>
 <tr class="markdownTableRowEven">
@@ -1879,7 +1929,11 @@ The parameter <em>arg</em> provides, depending on the operation, additional info
 <tr class="markdownTableRowEven">
 <td class="markdownTableBodyLeft"><a class="el" href="group__mci__event__gr.html#ga8161f3960ddf2a3cdc3c4c83148c6099">ARM_MCI_EVENT_CCS</a>   </td><td class="markdownTableBodyRight">9   </td><td class="markdownTableBodyLeft">Indicates a Command Completion Signal (CCS)   </td><td class="markdownTableBodyLeft">data field <em>ccs</em> = <span class="XML-Token">1</span>    </td></tr>
 <tr class="markdownTableRowOdd">
-<td class="markdownTableBodyLeft"><a class="el" href="group__mci__event__gr.html#gafa8cbcd597a05c64901eeb777cc0b74f">ARM_MCI_EVENT_CCS_TIMEOUT</a>   </td><td class="markdownTableBodyRight">10   </td><td class="markdownTableBodyLeft">Indicates a Command Completion Signal (CCS) Timeout   </td><td class="markdownTableBodyLeft">data field <em>css_timeout</em> = <span class="XML-Token">1</span>   </td></tr>
+<td class="markdownTableBodyLeft"><a class="el" href="group__mci__event__gr.html#gafa8cbcd597a05c64901eeb777cc0b74f">ARM_MCI_EVENT_CCS_TIMEOUT</a>   </td><td class="markdownTableBodyRight">10   </td><td class="markdownTableBodyLeft">Indicates a Command Completion Signal (CCS) Timeout   </td><td class="markdownTableBodyLeft">data field <em>ccs_timeout</em> = <span class="XML-Token">1</span>    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyLeft"><a class="el" href="group__mci__event__gr.html#ga762cb64d313548975770a15b839eab88">ARM_MCI_EVENT_RETUNING_REQUEST</a>   </td><td class="markdownTableBodyRight">11   </td><td class="markdownTableBodyLeft">Requests execution of the re-tuning loop before a subsequent command   </td><td class="markdownTableBodyLeft">data field <em>uhs_retuning</em> = <span class="XML-Token">1</span>    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyLeft"><a class="el" href="group__mci__event__gr.html#gadb7b013048bd5865f4aa9342c540e466">ARM_MCI_EVENT_TUNING_ERROR</a>   </td><td class="markdownTableBodyRight">12   </td><td class="markdownTableBodyLeft">Indicates tuned sampling circuit failed during normal operation   </td><td class="markdownTableBodyLeft">data field <em>uhs_tuning</em> = <span class="XML-Token">1</span>   </td></tr>
 </table>
 <p><b>See also:</b></p><ul>
 <li><a class="el" href="group__mci__interface__gr.html#ga5a431da89feabc2b4bc0c27943dff6f2">ARM_MCI_SendCommand</a> </li>

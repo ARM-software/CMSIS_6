@@ -146,7 +146,7 @@ Data Structures</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="define-members" name="define-members"></a>
 Macros</h2></td></tr>
-<tr class="memitem:ac1863acc4889811dc5f45ec0e059d892"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Driver__MCI_8h.html#ac1863acc4889811dc5f45ec0e059d892">ARM_MCI_API_VERSION</a>&#160;&#160;&#160;<a class="el" href="Driver__Common_8h.html#a43c7ca1eb0786d818624246c09932a74">ARM_DRIVER_VERSION_MAJOR_MINOR</a>(2,4)  /* API version */</td></tr>
+<tr class="memitem:ac1863acc4889811dc5f45ec0e059d892"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Driver__MCI_8h.html#ac1863acc4889811dc5f45ec0e059d892">ARM_MCI_API_VERSION</a>&#160;&#160;&#160;<a class="el" href="Driver__Common_8h.html#a43c7ca1eb0786d818624246c09932a74">ARM_DRIVER_VERSION_MAJOR_MINOR</a>(2,5)  /* API version */</td></tr>
 <tr class="separator:ac1863acc4889811dc5f45ec0e059d892"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac4493ea1f4dab98b5a99d58f3ea63665"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Driver__MCI_8h.html#ac4493ea1f4dab98b5a99d58f3ea63665">_ARM_Driver_MCI_</a>(n)&#160;&#160;&#160;Driver_MCI##n</td></tr>
 <tr class="separator:ac4493ea1f4dab98b5a99d58f3ea63665"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -238,10 +238,10 @@ Macros</h2></td></tr>
 <tr class="memdesc:ga889473fbfbdcb89aab4d53cc8a13f615"><td class="mdescLeft">&#160;</td><td class="mdescRight">Control Clock generation on CLK Pin when idle; arg: 0=disabled, 1=enabled.  <br /></td></tr>
 <tr class="separator:ga889473fbfbdcb89aab4d53cc8a13f615"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga98853f60bdc085aeeccd66f7bdf22d3d"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__mci__mode__ctrls.html#ga98853f60bdc085aeeccd66f7bdf22d3d">ARM_MCI_UHS_TUNING_OPERATION</a>&#160;&#160;&#160;(0x08UL)</td></tr>
-<tr class="memdesc:ga98853f60bdc085aeeccd66f7bdf22d3d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sampling clock Tuning operation (SD UHS-I); arg: 0=reset, 1=execute.  <br /></td></tr>
+<tr class="memdesc:ga98853f60bdc085aeeccd66f7bdf22d3d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sampling clock tuning operation (SD UHS-I); arg specifies ARM_MCI_UHS_TUNING_* operation.  <br /></td></tr>
 <tr class="separator:ga98853f60bdc085aeeccd66f7bdf22d3d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:gabd3af448e26da5657c1c5a03330476b7"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__mci__mode__ctrls.html#gabd3af448e26da5657c1c5a03330476b7">ARM_MCI_UHS_TUNING_RESULT</a>&#160;&#160;&#160;(0x09UL)</td></tr>
-<tr class="memdesc:gabd3af448e26da5657c1c5a03330476b7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sampling clock Tuning result (SD UHS-I); returns: 0=done, 1=in progress, -1=error.  <br /></td></tr>
+<tr class="memdesc:gabd3af448e26da5657c1c5a03330476b7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sampling clock tuning result (SD UHS-I); returns ARM_MCI_UHS_TUNING_* result.  <br /></td></tr>
 <tr class="separator:gabd3af448e26da5657c1c5a03330476b7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga09a58821e42595f0c2e55f8cc2d32ceb"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__mci__mode__ctrls.html#ga09a58821e42595f0c2e55f8cc2d32ceb">ARM_MCI_DATA_TIMEOUT</a>&#160;&#160;&#160;(0x0AUL)</td></tr>
 <tr class="memdesc:ga09a58821e42595f0c2e55f8cc2d32ceb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set Data timeout; arg = timeout in bus cycles.  <br /></td></tr>
@@ -261,6 +261,9 @@ Macros</h2></td></tr>
 <tr class="memitem:gac4907319499072fddf61f2f83b0dd966"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__mci__mode__ctrls.html#gac4907319499072fddf61f2f83b0dd966">ARM_MCI_RESUME_TRANSFER</a>&#160;&#160;&#160;(0x0FUL)</td></tr>
 <tr class="memdesc:gac4907319499072fddf61f2f83b0dd966"><td class="mdescLeft">&#160;</td><td class="mdescRight">Resume Data transfer (SD I/O)  <br /></td></tr>
 <tr class="separator:gac4907319499072fddf61f2f83b0dd966"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga5a40d1f631503183bcbccc5b49cbb09e"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__mci__mode__ctrls.html#ga5a40d1f631503183bcbccc5b49cbb09e">ARM_MCI_UHS_VOLTAGE_SWITCH</a>&#160;&#160;&#160;(0x10UL)</td></tr>
+<tr class="memdesc:ga5a40d1f631503183bcbccc5b49cbb09e"><td class="mdescLeft">&#160;</td><td class="mdescRight">UHS-I signal voltage switch; arg: ARM_MCI_VOLTAGE_SWITCH_*.  <br /></td></tr>
+<tr class="separator:ga5a40d1f631503183bcbccc5b49cbb09e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga601fa8b27ab2e5f6d90c93d54c8f412d"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__mci__bus__speed__ctrls.html#ga601fa8b27ab2e5f6d90c93d54c8f412d">ARM_MCI_BUS_DEFAULT_SPEED</a>&#160;&#160;&#160;(0x00UL)</td></tr>
 <tr class="memdesc:ga601fa8b27ab2e5f6d90c93d54c8f412d"><td class="mdescLeft">&#160;</td><td class="mdescRight">SD/MMC: Default Speed mode up to 25/26MHz.  <br /></td></tr>
 <tr class="separator:ga601fa8b27ab2e5f6d90c93d54c8f412d"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -315,6 +318,42 @@ Macros</h2></td></tr>
 <tr class="memitem:ga8185f82b1d8857a3f0eb461d664f2b3d"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__mci__driver__strength__ctrls.html#ga8185f82b1d8857a3f0eb461d664f2b3d">ARM_MCI_DRIVER_TYPE_D</a>&#160;&#160;&#160;(0x03UL)</td></tr>
 <tr class="memdesc:ga8185f82b1d8857a3f0eb461d664f2b3d"><td class="mdescLeft">&#160;</td><td class="mdescRight">SD UHS-I Driver Type D.  <br /></td></tr>
 <tr class="separator:ga8185f82b1d8857a3f0eb461d664f2b3d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gae80c0a539904f6135768a99c28722268"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__mci__uhs__voltage__switch__ctrls.html#gae80c0a539904f6135768a99c28722268">ARM_MCI_VOLTAGE_SWITCH_PREPARE</a>&#160;&#160;&#160;(0x00UL)</td></tr>
+<tr class="memdesc:gae80c0a539904f6135768a99c28722268"><td class="mdescLeft">&#160;</td><td class="mdescRight">Prepare the host before voltage switch command.  <br /></td></tr>
+<tr class="separator:gae80c0a539904f6135768a99c28722268"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga4706aa9b49f3831e85883e77c63ed841"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__mci__uhs__voltage__switch__ctrls.html#ga4706aa9b49f3831e85883e77c63ed841">ARM_MCI_VOLTAGE_SWITCH_APPLY</a>&#160;&#160;&#160;(0x01UL)</td></tr>
+<tr class="memdesc:ga4706aa9b49f3831e85883e77c63ed841"><td class="mdescLeft">&#160;</td><td class="mdescRight">Apply 1.8 V signaling after the voltage switch command.  <br /></td></tr>
+<tr class="separator:ga4706aa9b49f3831e85883e77c63ed841"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaf7dc76fe011b596e2f2181923dba2564"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__mci__uhs__voltage__switch__ctrls.html#gaf7dc76fe011b596e2f2181923dba2564">ARM_MCI_VOLTAGE_SWITCH_CLOCK_ON</a>&#160;&#160;&#160;(0x02UL)</td></tr>
+<tr class="memdesc:gaf7dc76fe011b596e2f2181923dba2564"><td class="mdescLeft">&#160;</td><td class="mdescRight">Start or confirm SD card bus clock.  <br /></td></tr>
+<tr class="separator:gaf7dc76fe011b596e2f2181923dba2564"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga3fe2e3020445be01e3caeb582def2935"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__mci__uhs__voltage__switch__ctrls.html#ga3fe2e3020445be01e3caeb582def2935">ARM_MCI_VOLTAGE_SWITCH_VERIFY</a>&#160;&#160;&#160;(0x03UL)</td></tr>
+<tr class="memdesc:ga3fe2e3020445be01e3caeb582def2935"><td class="mdescLeft">&#160;</td><td class="mdescRight">Verify completion of the voltage switch.  <br /></td></tr>
+<tr class="separator:ga3fe2e3020445be01e3caeb582def2935"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gac31057dd2027b5370c30a4565083ed3b"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__mci__uhs__voltage__switch__ctrls.html#gac31057dd2027b5370c30a4565083ed3b">ARM_MCI_VOLTAGE_SWITCH_ABORT</a>&#160;&#160;&#160;(0x04UL)</td></tr>
+<tr class="memdesc:gac31057dd2027b5370c30a4565083ed3b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Abort a prepared or incomplete voltage switch.  <br /></td></tr>
+<tr class="separator:gac31057dd2027b5370c30a4565083ed3b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gad430329b8fe70865e5fbe8c8f7047054"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__mci__uhs__voltage__switch__ctrls.html#gad430329b8fe70865e5fbe8c8f7047054">ARM_MCI_VOLTAGE_SWITCH_RESET</a>&#160;&#160;&#160;(0x05UL)</td></tr>
+<tr class="memdesc:gad430329b8fe70865e5fbe8c8f7047054"><td class="mdescLeft">&#160;</td><td class="mdescRight">Restore the host signaling path for card power-up.  <br /></td></tr>
+<tr class="separator:gad430329b8fe70865e5fbe8c8f7047054"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga56d1baa66ecf470e0e4948e3ff7b14d5"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__mci__uhs__tuning__ctrls.html#ga56d1baa66ecf470e0e4948e3ff7b14d5">ARM_MCI_UHS_TUNING_ABORT</a>&#160;&#160;&#160;(0x00UL)</td></tr>
+<tr class="memdesc:ga56d1baa66ecf470e0e4948e3ff7b14d5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Abort or reset the sampling-clock tuning operation.  <br /></td></tr>
+<tr class="separator:ga56d1baa66ecf470e0e4948e3ff7b14d5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaa00807aaee5b0d2df3af400ff2825c96"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__mci__uhs__tuning__ctrls.html#gaa00807aaee5b0d2df3af400ff2825c96">ARM_MCI_UHS_TUNING_START</a>&#160;&#160;&#160;(0x01UL)</td></tr>
+<tr class="memdesc:gaa00807aaee5b0d2df3af400ff2825c96"><td class="mdescLeft">&#160;</td><td class="mdescRight">Start initial sampling-clock tuning operation.  <br /></td></tr>
+<tr class="separator:gaa00807aaee5b0d2df3af400ff2825c96"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga15dd678174d2c6b76198296011f7dcbf"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__mci__uhs__tuning__ctrls.html#ga15dd678174d2c6b76198296011f7dcbf">ARM_MCI_UHS_RETUNING_START</a>&#160;&#160;&#160;(0x02UL)</td></tr>
+<tr class="memdesc:ga15dd678174d2c6b76198296011f7dcbf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Start sampling-clock re-tuning during normal operation.  <br /></td></tr>
+<tr class="separator:ga15dd678174d2c6b76198296011f7dcbf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga48547a003e7a6b6df3df0c39fe124984"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__mci__uhs__tuning__ctrls.html#ga48547a003e7a6b6df3df0c39fe124984">ARM_MCI_UHS_TUNING_DONE</a>&#160;&#160;&#160;(0)</td></tr>
+<tr class="memdesc:ga48547a003e7a6b6df3df0c39fe124984"><td class="mdescLeft">&#160;</td><td class="mdescRight">Tuning completed successfully.  <br /></td></tr>
+<tr class="separator:ga48547a003e7a6b6df3df0c39fe124984"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaa95849804c348d60a0ef59a2f88a9452"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__mci__uhs__tuning__ctrls.html#gaa95849804c348d60a0ef59a2f88a9452">ARM_MCI_UHS_TUNING_CONTINUE</a>&#160;&#160;&#160;(1)</td></tr>
+<tr class="memdesc:gaa95849804c348d60a0ef59a2f88a9452"><td class="mdescLeft">&#160;</td><td class="mdescRight">Another tuning-block is required.  <br /></td></tr>
+<tr class="separator:gaa95849804c348d60a0ef59a2f88a9452"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga51fb9421eff4636991acdb76fbd2b64b"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__mci__uhs__tuning__ctrls.html#ga51fb9421eff4636991acdb76fbd2b64b">ARM_MCI_UHS_TUNING_ERROR</a>&#160;&#160;&#160;(-1)</td></tr>
+<tr class="memdesc:ga51fb9421eff4636991acdb76fbd2b64b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Tuning failed.  <br /></td></tr>
+<tr class="separator:ga51fb9421eff4636991acdb76fbd2b64b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8de1e84f879b741ed1e13a0aac93a246"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Driver__MCI_8h.html#a8de1e84f879b741ed1e13a0aac93a246">ARM_MCI_POWER_VDD_Pos</a>&#160;&#160;&#160;0</td></tr>
 <tr class="separator:a8de1e84f879b741ed1e13a0aac93a246"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a58913d82ea4abd60dee50cec024de4a0"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Driver__MCI_8h.html#a58913d82ea4abd60dee50cec024de4a0">ARM_MCI_POWER_VDD_Msk</a>&#160;&#160;&#160;(0x0FUL &lt;&lt; <a class="el" href="Driver__MCI_8h.html#a8de1e84f879b741ed1e13a0aac93a246">ARM_MCI_POWER_VDD_Pos</a>)</td></tr>
@@ -377,6 +416,12 @@ Macros</h2></td></tr>
 <tr class="memitem:gafa8cbcd597a05c64901eeb777cc0b74f"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__mci__event__gr.html#gafa8cbcd597a05c64901eeb777cc0b74f">ARM_MCI_EVENT_CCS_TIMEOUT</a>&#160;&#160;&#160;(1UL &lt;&lt; 10)</td></tr>
 <tr class="memdesc:gafa8cbcd597a05c64901eeb777cc0b74f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Command Completion Signal (CCS) Timeout.  <br /></td></tr>
 <tr class="separator:gafa8cbcd597a05c64901eeb777cc0b74f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga762cb64d313548975770a15b839eab88"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__mci__event__gr.html#ga762cb64d313548975770a15b839eab88">ARM_MCI_EVENT_RETUNING_REQUEST</a>&#160;&#160;&#160;(1UL &lt;&lt; 11)</td></tr>
+<tr class="memdesc:ga762cb64d313548975770a15b839eab88"><td class="mdescLeft">&#160;</td><td class="mdescRight">Driver requests re-tuning before a subsequent command.  <br /></td></tr>
+<tr class="separator:ga762cb64d313548975770a15b839eab88"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gadb7b013048bd5865f4aa9342c540e466"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__mci__event__gr.html#gadb7b013048bd5865f4aa9342c540e466">ARM_MCI_EVENT_TUNING_ERROR</a>&#160;&#160;&#160;(1UL &lt;&lt; 12)</td></tr>
+<tr class="memdesc:gadb7b013048bd5865f4aa9342c540e466"><td class="mdescLeft">&#160;</td><td class="mdescRight">Host controller detected a tuning error.  <br /></td></tr>
+<tr class="separator:gadb7b013048bd5865f4aa9342c540e466"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="typedef-members" name="typedef-members"></a>
 Typedefs</h2></td></tr>
@@ -392,7 +437,7 @@ Typedefs</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define ARM_MCI_API_VERSION&#160;&#160;&#160;<a class="el" href="Driver__Common_8h.html#a43c7ca1eb0786d818624246c09932a74">ARM_DRIVER_VERSION_MAJOR_MINOR</a>(2,4)  /* API version */</td>
+          <td class="memname">#define ARM_MCI_API_VERSION&#160;&#160;&#160;<a class="el" href="Driver__Common_8h.html#a43c7ca1eb0786d818624246c09932a74">ARM_DRIVER_VERSION_MAJOR_MINOR</a>(2,5)  /* API version */</td>
         </tr>
       </table>
 </div><div class="memdoc">

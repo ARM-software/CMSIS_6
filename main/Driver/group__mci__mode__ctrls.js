@@ -14,5 +14,6 @@ var group__mci__mode__ctrls =
     [ "ARM_MCI_MONITOR_SDIO_INTERRUPT", "group__mci__mode__ctrls.html#ga19fd7d3b74ac48ca74a2e138b3ee9963", null ],
     [ "ARM_MCI_CONTROL_READ_WAIT", "group__mci__mode__ctrls.html#gaaa10c5aa7a8108aa59c3734b3eec2e3a", null ],
     [ "ARM_MCI_SUSPEND_TRANSFER", "group__mci__mode__ctrls.html#ga04cf174b0ef13240f26225bf8e45a4a0", null ],
-    [ "ARM_MCI_RESUME_TRANSFER", "group__mci__mode__ctrls.html#gac4907319499072fddf61f2f83b0dd966", null ]
+    [ "ARM_MCI_RESUME_TRANSFER", "group__mci__mode__ctrls.html#gac4907319499072fddf61f2f83b0dd966", null ],
+    [ "ARM_MCI_UHS_VOLTAGE_SWITCH", "group__mci__mode__ctrls.html#ga5a40d1f631503183bcbccc5b49cbb09e", null ]
 ];

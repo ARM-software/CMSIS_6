@@ -168,6 +168,12 @@ Macros</h2></td></tr>
 <tr class="memitem:gafa8cbcd597a05c64901eeb777cc0b74f"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__mci__event__gr.html#gafa8cbcd597a05c64901eeb777cc0b74f">ARM_MCI_EVENT_CCS_TIMEOUT</a>&#160;&#160;&#160;(1UL &lt;&lt; 10)</td></tr>
 <tr class="memdesc:gafa8cbcd597a05c64901eeb777cc0b74f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Command Completion Signal (CCS) Timeout.  <br /></td></tr>
 <tr class="separator:gafa8cbcd597a05c64901eeb777cc0b74f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga762cb64d313548975770a15b839eab88"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__mci__event__gr.html#ga762cb64d313548975770a15b839eab88">ARM_MCI_EVENT_RETUNING_REQUEST</a>&#160;&#160;&#160;(1UL &lt;&lt; 11)</td></tr>
+<tr class="memdesc:ga762cb64d313548975770a15b839eab88"><td class="mdescLeft">&#160;</td><td class="mdescRight">Driver requests re-tuning before a subsequent command.  <br /></td></tr>
+<tr class="separator:ga762cb64d313548975770a15b839eab88"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gadb7b013048bd5865f4aa9342c540e466"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__mci__event__gr.html#gadb7b013048bd5865f4aa9342c540e466">ARM_MCI_EVENT_TUNING_ERROR</a>&#160;&#160;&#160;(1UL &lt;&lt; 12)</td></tr>
+<tr class="memdesc:gadb7b013048bd5865f4aa9342c540e466"><td class="mdescLeft">&#160;</td><td class="mdescRight">Host controller detected a tuning error.  <br /></td></tr>
+<tr class="separator:gadb7b013048bd5865f4aa9342c540e466"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Description</h2>
 <p>The MCI driver generates call back events that are notified via the function <a class="el" href="group__mci__interface__gr.html#gaac2dbd1c1a98436938c5d0d6248cb700">ARM_MCI_SignalEvent</a>. </p>
@@ -358,6 +364,42 @@ Macros</h2></td></tr>
 
 <p>Command Completion Signal (CCS) Timeout. </p>
 <dl class="section see"><dt>See also</dt><dd><a class="el" href="group__mci__interface__gr.html#gaac2dbd1c1a98436938c5d0d6248cb700">ARM_MCI_SignalEvent</a> </dd></dl>
+
+</div>
+</div>
+<a id="ga762cb64d313548975770a15b839eab88" name="ga762cb64d313548975770a15b839eab88"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga762cb64d313548975770a15b839eab88">&#9670;&#160;</a></span>ARM_MCI_EVENT_RETUNING_REQUEST</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define ARM_MCI_EVENT_RETUNING_REQUEST&#160;&#160;&#160;(1UL &lt;&lt; 11)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Driver requests re-tuning before a subsequent command. </p>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="group__mci__interface__gr.html#gaac2dbd1c1a98436938c5d0d6248cb700">ARM_MCI_SignalEvent</a></dd></dl>
+<p>This event does not invalidate transferred data and active transfer may finish normally unless the transfer ends with <a class="el" href="group__mci__event__gr.html#ga5d2cee5ba6d0e40ad505983155706c29">ARM_MCI_EVENT_TRANSFER_ERROR</a>.</p>
+<p>After receiving this event, re-tuning should be performed using <a class="el" href="group__mci__uhs__tuning__ctrls.html#ga15dd678174d2c6b76198296011f7dcbf">ARM_MCI_UHS_RETUNING_START</a> before starting the next normal command. </p>
+
+</div>
+</div>
+<a id="gadb7b013048bd5865f4aa9342c540e466" name="gadb7b013048bd5865f4aa9342c540e466"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gadb7b013048bd5865f4aa9342c540e466">&#9670;&#160;</a></span>ARM_MCI_EVENT_TUNING_ERROR</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define ARM_MCI_EVENT_TUNING_ERROR&#160;&#160;&#160;(1UL &lt;&lt; 12)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Host controller detected a tuning error. </p>
+<p>Indicates an unrecoverable tuning-circuit error outside the tuning procedure. The affected transfer is invalid. Reset the tuning circuit and perform initial tuning before retrying. </p><dl class="section see"><dt>See also</dt><dd><a class="el" href="group__mci__interface__gr.html#gaac2dbd1c1a98436938c5d0d6248cb700">ARM_MCI_SignalEvent</a> </dd></dl>
 
 </div>
 </div>

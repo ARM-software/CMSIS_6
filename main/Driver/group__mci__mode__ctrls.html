@@ -157,10 +157,10 @@ Macros</h2></td></tr>
 <tr class="memdesc:ga889473fbfbdcb89aab4d53cc8a13f615"><td class="mdescLeft">&#160;</td><td class="mdescRight">Control Clock generation on CLK Pin when idle; arg: 0=disabled, 1=enabled.  <br /></td></tr>
 <tr class="separator:ga889473fbfbdcb89aab4d53cc8a13f615"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga98853f60bdc085aeeccd66f7bdf22d3d"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__mci__mode__ctrls.html#ga98853f60bdc085aeeccd66f7bdf22d3d">ARM_MCI_UHS_TUNING_OPERATION</a>&#160;&#160;&#160;(0x08UL)</td></tr>
-<tr class="memdesc:ga98853f60bdc085aeeccd66f7bdf22d3d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sampling clock Tuning operation (SD UHS-I); arg: 0=reset, 1=execute.  <br /></td></tr>
+<tr class="memdesc:ga98853f60bdc085aeeccd66f7bdf22d3d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sampling clock tuning operation (SD UHS-I); arg specifies ARM_MCI_UHS_TUNING_* operation.  <br /></td></tr>
 <tr class="separator:ga98853f60bdc085aeeccd66f7bdf22d3d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:gabd3af448e26da5657c1c5a03330476b7"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__mci__mode__ctrls.html#gabd3af448e26da5657c1c5a03330476b7">ARM_MCI_UHS_TUNING_RESULT</a>&#160;&#160;&#160;(0x09UL)</td></tr>
-<tr class="memdesc:gabd3af448e26da5657c1c5a03330476b7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sampling clock Tuning result (SD UHS-I); returns: 0=done, 1=in progress, -1=error.  <br /></td></tr>
+<tr class="memdesc:gabd3af448e26da5657c1c5a03330476b7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sampling clock tuning result (SD UHS-I); returns ARM_MCI_UHS_TUNING_* result.  <br /></td></tr>
 <tr class="separator:gabd3af448e26da5657c1c5a03330476b7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga09a58821e42595f0c2e55f8cc2d32ceb"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__mci__mode__ctrls.html#ga09a58821e42595f0c2e55f8cc2d32ceb">ARM_MCI_DATA_TIMEOUT</a>&#160;&#160;&#160;(0x0AUL)</td></tr>
 <tr class="memdesc:ga09a58821e42595f0c2e55f8cc2d32ceb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set Data timeout; arg = timeout in bus cycles.  <br /></td></tr>
@@ -180,6 +180,9 @@ Macros</h2></td></tr>
 <tr class="memitem:gac4907319499072fddf61f2f83b0dd966"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__mci__mode__ctrls.html#gac4907319499072fddf61f2f83b0dd966">ARM_MCI_RESUME_TRANSFER</a>&#160;&#160;&#160;(0x0FUL)</td></tr>
 <tr class="memdesc:gac4907319499072fddf61f2f83b0dd966"><td class="mdescLeft">&#160;</td><td class="mdescRight">Resume Data transfer (SD I/O)  <br /></td></tr>
 <tr class="separator:gac4907319499072fddf61f2f83b0dd966"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga5a40d1f631503183bcbccc5b49cbb09e"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__mci__mode__ctrls.html#ga5a40d1f631503183bcbccc5b49cbb09e">ARM_MCI_UHS_VOLTAGE_SWITCH</a>&#160;&#160;&#160;(0x10UL)</td></tr>
+<tr class="memdesc:ga5a40d1f631503183bcbccc5b49cbb09e"><td class="mdescLeft">&#160;</td><td class="mdescRight">UHS-I signal voltage switch; arg: ARM_MCI_VOLTAGE_SWITCH_*.  <br /></td></tr>
+<tr class="separator:ga5a40d1f631503183bcbccc5b49cbb09e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Description</h2>
 <p>Configure and control the MCI interface. </p>
@@ -309,7 +312,7 @@ Macros</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Sampling clock Tuning operation (SD UHS-I); arg: 0=reset, 1=execute. </p>
+<p>Sampling clock tuning operation (SD UHS-I); arg specifies ARM_MCI_UHS_TUNING_* operation. </p>
 
 </div>
 </div>
@@ -325,7 +328,7 @@ Macros</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Sampling clock Tuning result (SD UHS-I); returns: 0=done, 1=in progress, -1=error. </p>
+<p>Sampling clock tuning result (SD UHS-I); returns ARM_MCI_UHS_TUNING_* result. </p>
 
 </div>
 </div>
@@ -422,6 +425,22 @@ Macros</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Resume Data transfer (SD I/O) </p>
+
+</div>
+</div>
+<a id="ga5a40d1f631503183bcbccc5b49cbb09e" name="ga5a40d1f631503183bcbccc5b49cbb09e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga5a40d1f631503183bcbccc5b49cbb09e">&#9670;&#160;</a></span>ARM_MCI_UHS_VOLTAGE_SWITCH</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define ARM_MCI_UHS_VOLTAGE_SWITCH&#160;&#160;&#160;(0x10UL)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>UHS-I signal voltage switch; arg: ARM_MCI_VOLTAGE_SWITCH_*. </p>
 
 </div>
 </div>

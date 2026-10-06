@@ -11,5 +11,7 @@ var searchData=
   ['mci_20interface_8',['MCI Interface',['../group__mci__interface__gr.html',1,'']]],
   ['mci_20send_20command_20flags_9',['MCI Send Command Flags',['../group__mci__send__command__flags__ctrls.html',1,'']]],
   ['mci_20transfer_20controls_10',['MCI Transfer Controls',['../group__mci__transfer__ctrls.html',1,'']]],
-  ['media_20interface_20types_11',['Media Interface Types',['../group__eth__interface__types1.html',1,'']]]
+  ['mci_20uhs_2di_20signal_20voltage_20switch_11',['MCI UHS-I Signal Voltage Switch',['../group__mci__uhs__voltage__switch__ctrls.html',1,'']]],
+  ['mci_20uhs_2di_20tuning_12',['MCI UHS-I Tuning',['../group__mci__uhs__tuning__ctrls.html',1,'']]],
+  ['media_20interface_20types_13',['Media Interface Types',['../group__eth__interface__types1.html',1,'']]]
 ];
