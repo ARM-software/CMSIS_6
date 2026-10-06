@@ -225,7 +225,9 @@ void mci_switch_signaling_voltage(void) {
   uint32_t r1 = 0U;
 
   // Prepare host controller for signaling voltage switch
-  MCIdrv->Control(ARM_MCI_UHS_VOLTAGE_SWITCH, ARM_MCI_VOLTAGE_SWITCH_PREPARE);
+  if (MCIdrv->Control(ARM_MCI_UHS_VOLTAGE_SWITCH, ARM_MCI_VOLTAGE_SWITCH_PREPARE) != ARM_DRIVER_OK) {
+    return;
+  }
 
   // Send voltage switch command
   status = MCIdrv->SendCommand(11, 0U, ARM_MCI_RESPONSE_SHORT|ARM_MCI_RESPONSE_CRC, &r1);
@@ -981,10 +983,10 @@ Parameter \em arg                                             | UHS-I Signaling 
 :-------------------------------------------------------------|:------------------------------------------
 \ref ARM_MCI_VOLTAGE_SWITCH_PREPARE                           | Prepare the host-controller for signaling voltage switch
 \ref ARM_MCI_VOLTAGE_SWITCH_APPLY                             | Change the voltage selection from 3.3V to 1.8V
-\ref ARM_MCI_VOLTAGE_SWITCH_CLOCK_ON                          | Turn on the bus clock after the voltage switch after the signaling rail settles
+\ref ARM_MCI_VOLTAGE_SWITCH_CLOCK_ON                          | Start or confirm the bus clock after the signaling voltage has stabilized
 \ref ARM_MCI_VOLTAGE_SWITCH_VERIFY                            | Verify the voltage switch after memory card releases data lines
-\ref ARM_MCI_VOLTAGE_SWITCH_ABORT                             | Abort an incomplete switch and leave the host interface safe.
-\ref ARM_MCI_VOLTAGE_SWITCH_RESET                             | Restore host signaling state for memory card power-up at 3.3 V.
+\ref ARM_MCI_VOLTAGE_SWITCH_ABORT                             | Abort an incomplete switch and leave the host interface safe
+\ref ARM_MCI_VOLTAGE_SWITCH_RESET                             | Restore host signaling state for memory card power-up at 3.3 V
 
 \b Examples:
 \code
