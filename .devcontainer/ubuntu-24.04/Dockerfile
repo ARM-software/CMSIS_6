@@ -22,6 +22,7 @@ RUN apt-get update && \
         llvm-18-tools \
         locales \
         nano \
+        qemu-system-arm \
         software-properties-common \
         sudo \
         unzip && \
@@ -39,6 +40,7 @@ RUN apt-get update && \
 ENV LANG=en_US.UTF-8
 ENV LC_ALL=en_US.UTF-8
 ENV VIRTUAL_ENV=/opt/cmsis-python
+ENV VCPKG_DOWNLOADS=/var/cache/vcpkg
 ENV PATH="${VIRTUAL_ENV}/bin:${PATH}"
 
 RUN python3.14 -m venv "${VIRTUAL_ENV}" && \
@@ -60,8 +62,8 @@ RUN userdel --remove ubuntu && \
     echo "${USERNAME} ALL=(root) NOPASSWD:ALL" > "/etc/sudoers.d/${USERNAME}" && \
     chmod 0440 "/etc/sudoers.d/${USERNAME}"
 
-RUN mkdir -p /workspaces && \
-    chown "${USERNAME}:${USERNAME}" /workspaces
+RUN mkdir -p /workspaces "${VCPKG_DOWNLOADS}" && \
+    chown "${USERNAME}:${USERNAME}" /workspaces "${VCPKG_DOWNLOADS}"
 
 COPY vcpkg-configuration.json /home/
 COPY postCreateCommand.sh /home/

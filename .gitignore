@@ -22,3 +22,4 @@ output
 linkchecker-out.csv
 .DS_STORE
 *.tmp
+.qlty
