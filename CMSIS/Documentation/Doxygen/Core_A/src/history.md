@@ -10,6 +10,17 @@ The table below provides information about the changes delivered with specific v
       <th>Description</th>
     </tr>
     <tr>
+      <td>V6.4.0</td>
+      <td>
+        <ul>
+          <li>Added initial support for Armv8-A, Armv7-R, and Armv8-R profiles</li>
+          <li>Added TI Arm Clang compiler support and fixed its program start definition</li>
+          <li>Added SCB Secure Fault Status and Secure Fault Address Register bitfield definitions; deprecated the corresponding SAU definitions</li>
+          <li>Improved D-Cache disable handling and fixed MPU attribute handling</li>
+        </ul>
+      </td>
+    </tr>
+    <tr>
       <td>V6.3.0</td>
       <td>
         <ul>
