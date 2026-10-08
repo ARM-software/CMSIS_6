@@ -15,8 +15,16 @@ concurrency:
   group: ${{ github.workflow }}-${{ github.ref }}
   cancel-in-progress: true
 
+permissions: {}
+
 jobs:
   build-and-run:
+
+    permissions:
+      actions: read
+      contents: read
+      packages: read
+      security-events: write
     
     strategy:
       fail-fast: true
@@ -35,6 +43,8 @@ jobs:
     steps:
 
       - uses: actions/checkout@v7
+        with:
+          persist-credentials: false
 
       - working-directory: /home/runner
         env:
@@ -71,12 +81,12 @@ jobs:
           sudo apt-get install libtinfo6
     
       - name: Activate vcpkg environment
-        uses: ARM-software/cmsis-actions/vcpkg@v1
+        uses: ARM-software/cmsis-actions/vcpkg@8a50b77681a484568e08f31fb7c2285c4735f682 # v1
         with:
           config: ./CMSIS/CoreValidation/Project/vcpkg-configuration.json
           
       - name: Activate Arm tool license
-        uses: ARM-software/cmsis-actions/armlm@v1
+        uses: ARM-software/cmsis-actions/armlm@8a50b77681a484568e08f31fb7c2285c4735f682 # v1
         with:
           code: "${{ env.ARM_UBL_ACTIVATION_CODE }}"
       
@@ -87,7 +97,7 @@ jobs:
           languages: cpp
           queries: security-and-quality
 
-      - uses: ammaraskar/gcc-problem-matcher@master
+      - uses: ammaraskar/gcc-problem-matcher@cb2e3f949c41b7818628f35f8484a9b0acf90cf9 # master
         if: matrix.compiler == 'Clang' || matrix.compiler == 'Clang_TI' || matrix.compiler == 'GCC'
 
       - name: Set TI Arm Clang Environment Variables and Path
@@ -145,6 +155,7 @@ jobs:
   event-file:
     needs: [build-and-run]
     runs-on: ubuntu-latest
+    permissions: {}
     steps:
       - name: Archive event file
         if: ${{ !cancelled() }}
