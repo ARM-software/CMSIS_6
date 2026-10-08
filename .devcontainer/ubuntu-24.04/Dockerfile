@@ -22,6 +22,7 @@ RUN apt-get update && \
         llvm-18-tools \
         locales \
         nano \
+        qemu-system-arm \
         software-properties-common \
         sudo \
         unzip && \

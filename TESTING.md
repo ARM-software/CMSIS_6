@@ -5,7 +5,7 @@ The repository has two complementary CMSIS-Core test suites:
 - `CMSIS/Core/Test`: compile and disassembly checks driven by LLVM LIT and
   FileCheck.
 - `CMSIS/CoreValidation`: projects that are built with CMSIS-Toolbox and run on
-  Arm Fixed Virtual Platforms (FVPs).
+  Arm Fixed Virtual Platforms (FVPs) or selected QEMU targets.
 
 Run both suites in the configured Ubuntu 24.04 dev container. The test matrix
 is large, so select only the cores, compilers, and optimization levels relevant
@@ -16,7 +16,7 @@ to a change unless the complete matrix is explicitly required.
 In VS Code, install the Dev Containers extension, open the repository, and run
 **Dev Containers: Reopen in Container**. The configuration in
 `.devcontainer/ubuntu-24.04` installs CMSIS-Toolbox, CMake, Ninja, LIT,
-FileCheck, FVPs, and the AC6, GCC, and LLVM/Clang toolchains.
+FileCheck, FVPs, QEMU, and the AC6, GCC, and LLVM/Clang toolchains.
 
 TI Arm Clang is installed separately in CI and is not part of this dev
 container.
@@ -182,6 +182,15 @@ Build and run a single configuration:
 ```bash
 ./build.py -c GCC -d CM3 -o none build run
 ```
+
+The `CA9QEMU` target runs on QEMU's `vexpress-a9` machine instead of an FVP:
+
+```bash
+./build.py -c GCC -d CA9QEMU -o none build run
+```
+
+QEMU TCG does not model dirty cache-line data, so this target excludes
+`TC_CAL1Cache_InvalidateDCacheAll`; the remaining Cortex-A9 tests run normally.
 
 Examples of limited selections:
 
