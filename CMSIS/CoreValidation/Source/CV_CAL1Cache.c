@@ -78,6 +78,18 @@ void TC_CAL1Cache_log2_up(void) {
   log2 = __log2_up(4U);
   ASSERT_TRUE(log2 == 2U);
 
+  log2 = __log2_up(5U);
+  ASSERT_TRUE(log2 == 3U);
+
+  log2 = __log2_up(6U);
+  ASSERT_TRUE(log2 == 3U);
+
+  log2 = __log2_up(8U);
+  ASSERT_TRUE(log2 == 3U);
+
+  log2 = __log2_up(10U);
+  ASSERT_TRUE(log2 == 4U);
+
   log2 = __log2_up(0x80000000U);
   ASSERT_TRUE(log2 == 31U);
 
