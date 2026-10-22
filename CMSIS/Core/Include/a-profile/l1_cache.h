@@ -125,6 +125,8 @@ __STATIC_FORCEINLINE void __L1C_MaintainDCacheSetWay(uint32_t level, uint32_t ma
   Dummy = level << 1U;
   /* set csselr, select ccsidr register */
   __set_CSSELR(Dummy);
+  /* Synchronize cache selection before reading CCSIDR. */
+  __ISB();
   /* get current ccsidr register */
   ccsidr = __get_CCSIDR();
   num_sets = ((ccsidr & 0x0FFFE000U) >> 13U) + 1U;
