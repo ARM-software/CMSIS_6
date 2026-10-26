@@ -934,7 +934,7 @@ __STATIC_FORCEINLINE uint8_t __log2_up(uint32_t n)
     log++;
     t >>= 1U;
   }
-  if (n & 1U) { log++; }
+  if ((n & (n - 1U)) != 0U) { log++; }
   return log;
 }
 
