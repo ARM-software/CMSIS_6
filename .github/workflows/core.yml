@@ -18,6 +18,12 @@ jobs:
   lit:
     runs-on: ubuntu-24.04
 
+    permissions:
+      checks: write
+      contents: read
+      issues: read
+      pull-requests: write
+
     env:
       ARM_UBL_ACTIVATION_CODE: ${{ secrets.ARM_UBL_ACTIVATION_CODE }}
       CLANG_TI_VERSION: "5.1.0.LTS"
@@ -27,6 +33,8 @@ jobs:
 
     steps:
       - uses: actions/checkout@v7
+        with:
+          persist-credentials: false
       
       - uses: actions/setup-python@v7
         with:
@@ -51,16 +59,16 @@ jobs:
           sudo ln -s /usr/bin/FileCheck-18 /usr/bin/FileCheck
     
       - name: Activate vcpkg environment
-        uses: ARM-software/cmsis-actions/vcpkg@v1
+        uses: ARM-software/cmsis-actions/vcpkg@8a50b77681a484568e08f31fb7c2285c4735f682 # v1
         with:
           config: ./CMSIS/Core/Test/vcpkg-configuration.json
           
       - name: Activate Arm tool license
-        uses: ARM-software/cmsis-actions/armlm@v1
+        uses: ARM-software/cmsis-actions/armlm@8a50b77681a484568e08f31fb7c2285c4735f682 # v1
         with:
           code: "${{ env.ARM_UBL_ACTIVATION_CODE }}"
 
-      - uses: ammaraskar/gcc-problem-matcher@master
+      - uses: ammaraskar/gcc-problem-matcher@cb2e3f949c41b7818628f35f8484a9b0acf90cf9 # master
 
       - name: Set TI ARM CLANG Environment Variables and Path
         run: |
@@ -93,7 +101,7 @@ jobs:
 
       - name: Publish Test Results
         if: ${{ !cancelled() }}
-        uses: EnricoMi/publish-unit-test-result-action@v2
+        uses: EnricoMi/publish-unit-test-result-action@d0a4676d0e0b938bc201470d88276b7c74c712b3 # v2
         with:
           report_individual_runs: true
           files: ./CMSIS/Core/Test/*.xunit
