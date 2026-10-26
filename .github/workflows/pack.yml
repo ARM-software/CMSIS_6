@@ -15,8 +15,12 @@ jobs:
   pack:
     name: Generate pack
     runs-on: ubuntu-24.04
+    permissions:
+      actions: write
+      contents: write
     steps:
-      - uses: actions/checkout@v7
+      # The pack action needs the checkout credential to update release tags.
+      - uses: actions/checkout@v7 # zizmor: ignore[artipacked]
         with:
           fetch-depth: 0
 
@@ -25,7 +29,7 @@ jobs:
         run: |
           git fetch --tags --force
 
-      - uses: Open-CMSIS-Pack/gen-pack-action@main
+      - uses: Open-CMSIS-Pack/gen-pack-action@9cab2ab138e909e93a3f051ab9a4675b52843a25 # main
         with:
           doxygen-version: 1.9.6
           packchk-version: 1.4.1
