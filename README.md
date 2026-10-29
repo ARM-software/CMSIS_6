@@ -8,6 +8,7 @@
 
 - [**Documentation of latest release**](https://arm-software.github.io/CMSIS_6/) -  access to the CMSIS user's manual.
 - [**CMSIS Components**](https://arm-software.github.io/CMSIS_6/latest/General/index.html#cmsis_components) - overview of software, tools, and specification.
+- [**Running tests**](./TESTING.md) - use the configured dev container and select a relevant Core test matrix.
 - [**Raise Issues**](https://github.com/ARM-software/CMSIS_6#issues-and-labels) - to provide feedback or report problems.
 - [**Documentation of main branch**](https://arm-software.github.io/CMSIS_6/main/General/index.html) - updated from time to time (use [Generate CMSIS Pack for Release](https://github.com/ARM-software/CMSIS_6#generate-cmsis-pack-for-release) for local generation).
 

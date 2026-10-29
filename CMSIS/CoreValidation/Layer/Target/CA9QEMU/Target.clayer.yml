@@ -1,0 +1,39 @@
+layer:
+  type: Target
+  description: Cortex-A9 target for QEMU vexpress-a9
+
+  components:
+    - component: ARM::CMSIS:CORE
+    - component: Device:IRQ Controller:GIC
+
+  add-path:
+    - ./Config
+    - ./Include
+    - ../CA9/RTE/Device/ARMCA9
+
+  # QEMU TCG does not model dirty cache-line data that can be discarded.
+  define:
+    - TC_CAL1CACHE_INVALIDATEDCACHEALL: 0
+
+  linker:
+    - script: ../CA9/RTE/Device/ARMCA9/ARMCA9_ac6.sct
+      for-compiler:
+        - AC6
+    - script: ../CA9/RTE/Device/ARMCA9/ARMCA9_gcc.ld
+      for-compiler:
+        - GCC
+    - script: ../CA9/RTE/Device/ARMCA9/ARMCA9_clang.ld
+      for-compiler:
+        - CLANG
+    - regions: Config/mem_ARMCA9.h
+      for-compiler:
+        - AC6
+        - GCC
+        - CLANG
+
+  groups:
+    - group: QEMU vexpress-a9 Startup
+      files:
+        - file: ../CA9/RTE/Device/ARMCA9/startup_ARMCA9.c
+        - file: ../CA9/RTE/Device/ARMCA9/system_ARMCA9.c
+        - file: ./Source/mmu_ARMCA9.c

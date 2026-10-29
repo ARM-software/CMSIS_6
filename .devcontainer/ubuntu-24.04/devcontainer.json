@@ -9,6 +9,7 @@
     "remoteUser": "${localEnv:USER}",
     "mounts": [
       "source=${devcontainerId}-home,target=/home/${localEnv:USER},type=volume",
+      "source=cmsis-6-vcpkg-cache,target=/var/cache/vcpkg,type=volume",
       "source=${localEnv:HOME}${localEnv:USERPROFILE}/.ssh,target=/home/${localEnv:USER}/.ssh,type=bind,consistency=cached",
       "source=${localEnv:HOME}${localEnv:USERPROFILE}/.armlm,target=/home/${localEnv:USER}/.armlm,type=bind,consistency=cached",
       "source=${localEnv:HOME}${localEnv:USERPROFILE}/.iarlm,target=/home/${localEnv:USER}/.iarlm,type=bind,consistency=cached"

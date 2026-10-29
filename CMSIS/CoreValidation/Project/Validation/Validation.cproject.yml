@@ -33,6 +33,7 @@ project:
         - +CA5
         - +CA7
         - +CA9
+        - +CA9QEMU
 
     #Target: CM0
     - layer: ../../Layer/Target/CM0/Target.clayer.yml
@@ -163,3 +164,8 @@ project:
     - layer: ../../Layer/Target/CA9/Target.clayer.yml
       for-context:
         - +CA9
+
+    #Target: CA9 on QEMU vexpress-a9
+    - layer: ../../Layer/Target/CA9QEMU/Target.clayer.yml
+      for-context:
+        - +CA9QEMU
