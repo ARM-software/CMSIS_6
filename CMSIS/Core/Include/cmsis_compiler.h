@@ -51,6 +51,16 @@
 
 
 /*
+ * GHS Compiler above 2025.1
+ */
+#elif defined ( __ghs__ )
+  #if defined (__GNUC__)
+    #error "GNU options enabled, demote to warning or remove options"
+  #endif
+  #include "cmsis_ghs_ext.h"
+
+
+/*
  * GNU Compiler
  */
 #elif defined ( __GNUC__ )
