@@ -56,35 +56,49 @@
 /** \brief Device memory type Gathering, Re-ordering, Early Write Acknowledgement */
 #define ARM_MPU_ATTR_DEVICE_GRE    (3U)
 
-/** \brief Normal memory outer-cacheable and inner-cacheable attributes
-* WT = Write Through, WB = Write Back, TR = Transient, RA = Read-Allocate, WA = Write Allocate
+/** \brief Normal memory attribute bits (4-bit MAIR attribute)
+* WA = Write Allocate, RA = Read-Allocate, WB = Write Back, NT = Non-Transient
 */
-#define MPU_ATTR_NORMAL_OUTER_NON_CACHEABLE (0b0100)
-#define MPU_ATTR_NORMAL_OUTER_WT_TR_RA      (0b0010)
-#define MPU_ATTR_NORMAL_OUTER_WT_TR_WA      (0b0001)
-#define MPU_ATTR_NORMAL_OUTER_WT_TR_RA_WA   (0b0011)
-#define MPU_ATTR_NORMAL_OUTER_WT_RA         (0b1010)
-#define MPU_ATTR_NORMAL_OUTER_WT_WA         (0b1001)
-#define MPU_ATTR_NORMAL_OUTER_WT_RA_WA      (0b1011)
-#define MPU_ATTR_NORMAL_OUTER_WB_TR_RA      (0b0110)
-#define MPU_ATTR_NORMAL_OUTER_WB_TR_WA      (0b0101)
-#define MPU_ATTR_NORMAL_OUTER_WB_TR_RA_WA   (0b0111)
-#define MPU_ATTR_NORMAL_OUTER_WB_RA         (0b1110)
-#define MPU_ATTR_NORMAL_OUTER_WB_WA         (0b1101)
-#define MPU_ATTR_NORMAL_OUTER_WB_RA_WA      (0b1111)
-#define MPU_ATTR_NORMAL_INNER_NON_CACHEABLE (0b0100)
-#define MPU_ATTR_NORMAL_INNER_WT_TR_RA      (0b0010)
-#define MPU_ATTR_NORMAL_INNER_WT_TR_WA      (0b0001)
-#define MPU_ATTR_NORMAL_INNER_WT_TR_RA_WA   (0b0011)
-#define MPU_ATTR_NORMAL_INNER_WT_RA         (0b1010)
-#define MPU_ATTR_NORMAL_INNER_WT_WA         (0b1001)
-#define MPU_ATTR_NORMAL_INNER_WT_RA_WA      (0b1011)
-#define MPU_ATTR_NORMAL_INNER_WB_TR_RA      (0b0110)
-#define MPU_ATTR_NORMAL_INNER_WB_TR_WA      (0b0101)
-#define MPU_ATTR_NORMAL_INNER_WB_TR_RA_WA   (0b0111)
-#define MPU_ATTR_NORMAL_INNER_WB_RA         (0b1110)
-#define MPU_ATTR_NORMAL_INNER_WB_WA         (0b1101)
-#define MPU_ATTR_NORMAL_INNER_WB_RA_WA      (0b1111)
+#define MPU_ATTR_WA (1U << 0)
+#define MPU_ATTR_RA (1U << 1)
+#define MPU_ATTR_WB (1U << 2)
+#define MPU_ATTR_NT (1U << 3)
+
+/** \brief Normal memory outer-cacheable and inner-cacheable attributes
+* WT = Write Through, TR = Transient
+*/
+#define MPU_ATTR_NORMAL_OUTER_NON_CACHEABLE ARM_MPU_ATTR_NON_CACHEABLE
+#define MPU_ATTR_NORMAL_OUTER_WT_TR_RA      (MPU_ATTR_RA)
+#define MPU_ATTR_NORMAL_OUTER_WT_TR_WA      (MPU_ATTR_WA)
+#define MPU_ATTR_NORMAL_OUTER_WT_TR_RA_WA   (MPU_ATTR_RA | MPU_ATTR_WA)
+#define MPU_ATTR_NORMAL_OUTER_WT_RA         (MPU_ATTR_NT | MPU_ATTR_RA)
+#define MPU_ATTR_NORMAL_OUTER_WT_WA         (MPU_ATTR_NT | MPU_ATTR_WA)
+#define MPU_ATTR_NORMAL_OUTER_WT_RA_WA \
+  (MPU_ATTR_NT | MPU_ATTR_RA | MPU_ATTR_WA)
+#define MPU_ATTR_NORMAL_OUTER_WB_TR_RA      (MPU_ATTR_WB | MPU_ATTR_RA)
+#define MPU_ATTR_NORMAL_OUTER_WB_TR_WA      (MPU_ATTR_WB | MPU_ATTR_WA)
+#define MPU_ATTR_NORMAL_OUTER_WB_TR_RA_WA \
+  (MPU_ATTR_WB | MPU_ATTR_RA | MPU_ATTR_WA)
+#define MPU_ATTR_NORMAL_OUTER_WB_RA (MPU_ATTR_NT | MPU_ATTR_WB | MPU_ATTR_RA)
+#define MPU_ATTR_NORMAL_OUTER_WB_WA (MPU_ATTR_NT | MPU_ATTR_WB | MPU_ATTR_WA)
+#define MPU_ATTR_NORMAL_OUTER_WB_RA_WA \
+  (MPU_ATTR_NT | MPU_ATTR_WB | MPU_ATTR_RA | MPU_ATTR_WA)
+#define MPU_ATTR_NORMAL_INNER_NON_CACHEABLE ARM_MPU_ATTR_NON_CACHEABLE
+#define MPU_ATTR_NORMAL_INNER_WT_TR_RA      (MPU_ATTR_RA)
+#define MPU_ATTR_NORMAL_INNER_WT_TR_WA      (MPU_ATTR_WA)
+#define MPU_ATTR_NORMAL_INNER_WT_TR_RA_WA   (MPU_ATTR_RA | MPU_ATTR_WA)
+#define MPU_ATTR_NORMAL_INNER_WT_RA         (MPU_ATTR_NT | MPU_ATTR_RA)
+#define MPU_ATTR_NORMAL_INNER_WT_WA         (MPU_ATTR_NT | MPU_ATTR_WA)
+#define MPU_ATTR_NORMAL_INNER_WT_RA_WA \
+  (MPU_ATTR_NT | MPU_ATTR_RA | MPU_ATTR_WA)
+#define MPU_ATTR_NORMAL_INNER_WB_TR_RA      (MPU_ATTR_WB | MPU_ATTR_RA)
+#define MPU_ATTR_NORMAL_INNER_WB_TR_WA      (MPU_ATTR_WB | MPU_ATTR_WA)
+#define MPU_ATTR_NORMAL_INNER_WB_TR_RA_WA \
+  (MPU_ATTR_WB | MPU_ATTR_RA | MPU_ATTR_WA)
+#define MPU_ATTR_NORMAL_INNER_WB_RA (MPU_ATTR_NT | MPU_ATTR_WB | MPU_ATTR_RA)
+#define MPU_ATTR_NORMAL_INNER_WB_WA (MPU_ATTR_NT | MPU_ATTR_WB | MPU_ATTR_WA)
+#define MPU_ATTR_NORMAL_INNER_WB_RA_WA \
+  (MPU_ATTR_NT | MPU_ATTR_WB | MPU_ATTR_RA | MPU_ATTR_WA)
 
 /** \brief Memory Attribute
 * \param O Outer memory attributes
