@@ -127,6 +127,10 @@ solution:
     - type: CA9
       device: ARMCA9
 
+    #Target: CA9 on QEMU vexpress-a9
+    - type: CA9QEMU
+      device: ARMCA9
+
   build-types:
     - type: none
       optimize: none

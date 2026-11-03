@@ -107,7 +107,9 @@
 // <q0> TC_CAL1Cache_log2_up
 #define TC_CAL1CACHE_LOG2_UP                  1
 // <q0> TC_CAL1Cache_InvalidateDCacheAll
+#ifndef TC_CAL1CACHE_INVALIDATEDCACHEALL
 #define TC_CAL1CACHE_INVALIDATEDCACHEALL      1
+#endif
 // <q0> TC_CAL1Cache_CleanDCacheAll
 #define TC_CAL1CACHE_CLEANDCACHEALL           1
 // <q0> TC_CAL1Cache_CleanInvalidateDCacheAll
@@ -115,4 +117,3 @@
 // </h>
 
 #endif /* __CV_CONFIG_H */
-

@@ -45,6 +45,7 @@ class DeviceAxis(Enum):
     CA7 = ('Cortex-A7', 'CA7')
     CA7NEON = ('Cortex-A7neon', 'CA7neon')
     CA9 = ('Cortex-A9', 'CA9')
+    CA9QEMU = ('Cortex-A9 QEMU vexpress-a9', 'CA9QEMU')
     CA9NEON = ('Cortex-A9neon', 'CA9neon')
     CA35 = ('Cortex-A35', 'CA35')
     CA35NEON = ('Cortex-A35neon', 'CA35neon')
@@ -170,12 +171,22 @@ MODEL_EXECUTABLE = {
 }
 
 QEMU_MACHINE = {
-    DeviceAxis.CM3: ("mps2-an385"),
-    DeviceAxis.CM4: ("mps2-an386"),
-    DeviceAxis.CM7: ("mps2-an500"),
-    DeviceAxis.CM33: ("mps2-an505"),
-    DeviceAxis.CM55: ("mps3-an547")
+    DeviceAxis.CM3: ("mps2-an385", []),
+    DeviceAxis.CM4: ("mps2-an386", []),
+    DeviceAxis.CM7: ("mps2-an500", []),
+    DeviceAxis.CM33: ("mps2-an505", []),
+    DeviceAxis.CM55: ("mps3-an547", []),
+    DeviceAxis.CA9QEMU: ("vexpress-a9", [
+        "-cpu", "cortex-a9",
+        "-smp", "1",
+        "-m", "128M",
+        "-audiodev", "none,id=audio0",
+        "-global", "pl041.audiodev=audio0",
+    ]),
 }
+
+QEMU_ONLY_DEVICES = [DeviceAxis.CA9QEMU]
+
 
 def config_suffix(config, timestamp=True):
     suffix = f"{config.compiler[0]}-{config.optimize[0]}-{config.device[1]}"
@@ -243,8 +254,12 @@ def extract(config):
 @matrix_action
 def run(config, results):
     """Run the selected configurations."""
-    logging.info("Running Core Validation on Arm model ...")
-    yield model_exec(config)
+    if config.device in QEMU_ONLY_DEVICES:
+        logging.info("Running Core Validation on Qemu ...")
+        yield qemu_exec(config)
+    else:
+        logging.info("Running Core Validation on Arm model ...")
+        yield model_exec(config)
 
     try:
         results[0].test_report.write(f"build/CoreValidation-{config_suffix(config)}.junit")
@@ -258,11 +273,19 @@ def run(config, results):
 @matrix_action
 def qemu(config, results):
     """Run the selected configurations."""
-    if not config.device in QEMU_MACHINE:
+    if config.device not in QEMU_MACHINE:
         logging.error("Qemu doesn't support target device '%s'!", config.device)
         return
     logging.info("Running Core Validation on Qemu ...")
     yield qemu_exec(config)
+
+    try:
+        results[0].test_report.write(f"build/CoreValidation-{config_suffix(config)}.junit")
+    except RuntimeError as ex:
+        if isinstance(ex.__cause__, XMLSyntaxError):
+            logging.error("No valid test report found in model output!")
+        else:
+            logging.exception(ex)
 
 
 @matrix_command()
@@ -311,8 +334,17 @@ def model_exec(config):
                                                                     f"{result.command.config.device}."
                                                                     f"{title}"))
 def qemu_exec(config):
-    cmdline = ["qemu-system-arm", "-semihosting-config", "enable=on", "-monitor", "none", "-serial", "none", "-nographic"]
-    cmdline += ["-machine", QEMU_MACHINE[config.device]]
+    machine, machine_args = QEMU_MACHINE[config.device]
+    cmdline = [
+        "qemu-system-arm",
+        "-semihosting-config", "enable=on,target=native",
+        "-monitor", "none",
+        "-serial", "none",
+        "-nographic",
+        "-no-reboot",
+    ]
+    cmdline += ["-machine", machine]
+    cmdline += machine_args
     cmdline += ["-kernel", f"{build_dir(config)}/{output_dir(config)}/Validation.{config.compiler.image_ext}"]
     return cmdline
 
