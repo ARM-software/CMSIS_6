@@ -11,6 +11,10 @@ The table below provides information about the changes delivered with specific v
       <th>Description</th>
     </tr>
     <tr>
+      <td>Unreleased</td>
+      <td>Added Cortex-M42 support based on STAR-MC3.</td>
+    </tr>
+    <tr>
       <td>V6.4.0</td>
       <td>
         <ul>

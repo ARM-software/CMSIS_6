@@ -54,7 +54,8 @@ Following Cortex-M Device Generic User Guides contain the programmers model and 
  - [Cortex-M7 Devices Generic User Guide (Armv7-M architecture)](https://developer.arm.com/documentation/dui0646/latest/)
  - [Cortex-M23 Devices Generic User Guide (Armv8-M architecture)](https://developer.arm.com/documentation/dui1095/latest/)
  - [Cortex-M33 Devices Generic User Guide (Armv8-M architecture)](https://developer.arm.com/documentation/100235/latest/)
- - [Cortex-M52 Devices Generic User Guide (Armv8.1-M architecture)](https://developer.arm.com/documentation/102776/latest/)
+- [Cortex-M42 Devices Generic User Guide (Armv8.1-M architecture)](https://developer.arm.com/documentation/)
+- [Cortex-M52 Devices Generic User Guide (Armv8.1-M architecture)](https://developer.arm.com/documentation/102776/latest/)
  - [Cortex-M55 Devices Generic User Guide (Armv8.1-M architecture)](https://developer.arm.com/documentation/101273/latest/)
  - [Cortex-M85 Devices Generic User Guide (Armv8.1-M architecture)](https://developer.arm.com/documentation/101928/latest/)
 

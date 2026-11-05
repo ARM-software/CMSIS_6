@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 
+
 import logging
 import os
 
@@ -30,6 +31,9 @@ class DeviceAxis(Enum):
     CM35P = ('Cortex-M35P', 'CM35P')
     CM35PS = ('Cortex-M35PS', 'CM35PS')
     CM35PNS = ('Cortex-M35PNS', 'CM35PNS')
+    CM42 = ('Cortex-M42', 'CM42')
+    CM42S = ('Cortex-M42S', 'CM42S')
+    CM42NS = ('Cortex-M42NS', 'CM42NS')
     CM52 = ('Cortex-M52', 'CM52')
     CM52S = ('Cortex-M52S', 'CM52S')
     CM52NS = ('Cortex-M52NS', 'CM52NS')
@@ -106,13 +110,6 @@ def run_lit(toolchain, device, optimize):
 @matrix_filter
 def filter_iar(config):
     return config.compiler == CompilerAxis.IAR
-
-
-@matrix_filter
-def filter_gcc_cm52(config):
-    device = config.device.match('CM52*')
-    compiler = config.compiler == CompilerAxis.GCC
-    return device and compiler
 
 
 @matrix_filter
