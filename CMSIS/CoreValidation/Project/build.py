@@ -355,13 +355,6 @@ def filter_iar(config):
 
 
 @matrix_filter
-def filter_gcc_cm52(config):
-    device = config.device.match('CM52*')
-    compiler = config.compiler == CompilerAxis.GCC
-    return device and compiler
-
-
-@matrix_filter
 def filter_clang_ti_supported_devices(config):
     device = not config.device.match('CM0')
     device &= not config.device.match('CM0plus')

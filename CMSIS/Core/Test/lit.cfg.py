@@ -1,5 +1,6 @@
 # -*- Python -*-
 
+
 import os
 
 import lit.formats
@@ -304,6 +305,84 @@ DEVICES = {
             '__MPU_PRESENT': '1U',
             '__SAUREGION_PRESENT': '8U',
             '__VTOR_PRESENT': '1U',
+            '__NVIC_PRIO_BITS': '3U',
+            '__Vendor_SysTickConfig': '0U'
+        }
+    },
+    'CM42': {
+        'arch': 'thumbv8.1m.main',
+        'abi': 'eabihf',
+        'mcpu': 'star-mc3',
+        'mcpu_fallbacks': {'GCC': 'cortex-m52', 'AC6': 'cortex-m52'},
+        'mfpu': 'fpv5-d16',
+        'mpu': True,
+        'features': ['cm42', 'thumbv6m', 'thumbv7m', 'thumbv8m.base', 'thumbv8m.main', 'thumbv8.1m.main', 'thumb-2', 'clz', 'ldrex', 'sat', 'dsp'],
+        'header': 'core_cm42.h',
+        'defines': {
+            '__CM42_REV': '0x0000U',
+            '__FPU_PRESENT': '1U',
+            '__FPU_DP': '1U',
+            '__MPU_PRESENT': '1U',
+            '__ICACHE_PRESENT': '1U',
+            '__DCACHE_PRESENT': '1U',
+            '__UCACHE_PRESENT': '1U',
+            '__SAUREGION_PRESENT': '8U',
+            '__DSP_PRESENT': '1U',
+            '__VTOR_PRESENT': '1U',
+            '__PMU_PRESENT': '1U',
+            '__PMU_NUM_EVENTCNT': '8U',
+            '__NVIC_PRIO_BITS': '3U',
+            '__Vendor_SysTickConfig': '0U'
+        }
+    },
+    'CM42S': {
+        'arch': 'thumbv8.1m.main',
+        'abi': 'eabihf',
+        'mcpu': 'star-mc3',
+        'mcpu_fallbacks': {'GCC': 'cortex-m52', 'AC6': 'cortex-m52'},
+        'mfpu': 'fpv5-d16',
+        'mpu': True,
+        'features': ['cm42', 'thumbv6m', 'thumbv7m', 'thumbv8m.base', 'thumbv8m.main', 'thumbv8.1m.main', 'thumb-2', 'clz', 'ldrex', 'sat', 'dsp'],
+        'header': 'core_cm42.h',
+        'defines': {
+            '__CM42_REV': '0x0000U',
+            '__FPU_PRESENT': '1U',
+            '__FPU_DP': '1U',
+            '__MPU_PRESENT': '1U',
+            '__ICACHE_PRESENT': '1U',
+            '__DCACHE_PRESENT': '1U',
+            '__UCACHE_PRESENT': '1U',
+            '__SAUREGION_PRESENT': '8U',
+            '__DSP_PRESENT': '1U',
+            '__VTOR_PRESENT': '1U',
+            '__PMU_PRESENT': '1U',
+            '__PMU_NUM_EVENTCNT': '8U',
+            '__NVIC_PRIO_BITS': '3U',
+            '__Vendor_SysTickConfig': '0U'
+        }
+    },
+    'CM42NS': {
+        'arch': 'thumbv8.1m.main',
+        'abi': 'eabihf',
+        'mcpu': 'star-mc3',
+        'mcpu_fallbacks': {'GCC': 'cortex-m52', 'AC6': 'cortex-m52'},
+        'mfpu': 'fpv5-d16',
+        'mpu': True,
+        'features': ['cm42', 'thumbv6m', 'thumbv7m', 'thumbv8m.base', 'thumbv8m.main', 'thumbv8.1m.main', 'thumb-2', 'clz', 'ldrex', 'sat', 'dsp'],
+        'header': 'core_cm42.h',
+        'defines': {
+            '__CM42_REV': '0x0000U',
+            '__FPU_PRESENT': '1U',
+            '__FPU_DP': '1U',
+            '__MPU_PRESENT': '1U',
+            '__ICACHE_PRESENT': '1U',
+            '__DCACHE_PRESENT': '1U',
+            '__UCACHE_PRESENT': '1U',
+            '__SAUREGION_PRESENT': '8U',
+            '__DSP_PRESENT': '1U',
+            '__VTOR_PRESENT': '1U',
+            '__PMU_PRESENT': '1U',
+            '__PMU_NUM_EVENTCNT': '8U',
             '__NVIC_PRIO_BITS': '3U',
             '__Vendor_SysTickConfig': '0U'
         }
@@ -1155,6 +1234,11 @@ class Toolchain:
     def get_root(self):
         return self.get_root_from_env()
 
+    def get_mcpu(self):
+        # Match buildmgr's STAR-MC3 compatibility mappings for CM42.
+        device = DEVICES[self.device]
+        return device.get('mcpu_fallbacks', {}).get(self._toolchain, device['mcpu'])
+
 
 class Toolchain_AC6(Toolchain):
     OPTIMIZE = {
@@ -1172,7 +1256,7 @@ class Toolchain_AC6(Toolchain):
 
     def get_ccflags(self):
         ccflags = [
-            '--target=arm-arm-none-eabi', f'-mcpu={DEVICES[self.device]["mcpu"]}', f'-mfpu={DEVICES[self.device]["mfpu"]}', 
+            '--target=arm-arm-none-eabi', f'-mcpu={self.get_mcpu()}', f'-mfpu={DEVICES[self.device]["mfpu"]}',
             self.OPTIMIZE[self.optimize], '-I', os.path.abspath('../Include'), '-c', '-D', f'CORE_HEADER="{DEVICES[device]["header"]}"']
         if device.endswith('S') and not device.endswith('NS'):
             ccflags += ["-mcmse"]
@@ -1199,7 +1283,7 @@ class Toolchain_GCC(Toolchain):
         if DEVICES[self.device]["mfpu"] != 'none':
             floatabi='hard'
         ccflags = [
-            f'-mcpu={DEVICES[self.device]["mcpu"]}', f'-mfloat-abi={floatabi}', 
+            f'-mcpu={self.get_mcpu()}', f'-mfloat-abi={floatabi}',
             self.OPTIMIZE[self.optimize], '-I', os.path.abspath('../Include'), 
             '-D', f'CORE_HEADER="{DEVICES[device]["header"]}"', '-c']
         if DEVICES[self.device]["mfpu"] != "none":
@@ -1229,6 +1313,9 @@ class Toolchain_Clang(Toolchain):
         'CM35P': 'thumbv8m.main-none-eabihf',
         'CM35PS': 'thumbv8m.main-none-eabihf',
         'CM35PNS': 'thumbv8m.main-none-eabihf',
+        'CM42': 'thumbv8.1m.main-none-eabihf',
+        'CM42S': 'thumbv8.1m.main-none-eabihf',
+        'CM42NS': 'thumbv8.1m.main-none-eabihf',
         'CM52': 'thumbv8.1m.main-none-eabihf',
         'CM52S': 'thumbv8.1m.main-none-eabihf',
         'CM52NS': 'thumbv8.1m.main-none-eabihf',
@@ -1278,7 +1365,7 @@ class Toolchain_Clang(Toolchain):
     def get_ccflags(self):
         ccflags = [
             f'--target={self.TARGET[self.device]}', self.OPTIMIZE[self.optimize], 
-            f'-mcpu={DEVICES[self.device]["mcpu"]}', f'-mfpu={DEVICES[self.device]["mfpu"]}', 
+            f'-mcpu={self.get_mcpu()}', f'-mfpu={DEVICES[self.device]["mfpu"]}',
             '-I', os.path.abspath('../Include'), '-c', '-D', f'CORE_HEADER="{DEVICES[device]["header"]}"']
         if device.endswith('S') and not device.endswith('NS'):
             ccflags += ["-mcmse"]
@@ -1302,7 +1389,7 @@ class Toolchain_Clang_TI(Toolchain):
 
     def get_ccflags(self):
         ccflags = [
-            f'-mcpu={DEVICES[self.device]["mcpu"]}', self.OPTIMIZE[self.optimize], 
+            f'-mcpu={self.get_mcpu()}', self.OPTIMIZE[self.optimize],
             '-I', os.path.abspath('../Include'), '-c', '-D', f'CORE_HEADER="{DEVICES[device]["header"]}"']
         if DEVICES[self.device]["mfpu"] == 'none':
             ccflags += [f'-mfloat-abi=soft']
