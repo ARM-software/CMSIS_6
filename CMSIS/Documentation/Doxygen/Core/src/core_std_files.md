@@ -39,6 +39,7 @@ Header File            | Target Processor Core
  ┣ 📄 core_cm23.h      | Cortex-M23 processor
  ┣ 📄 core_cm33.h      | Cortex-M33 processor
  ┣ 📄 core_cm35p.h     | Cortex-M35P processor
+ ┣ 📄 core_cm42.h      | Cortex-M42 processor
  ┣ 📄 core_cm52.h      | Cortex-M52 processor
  ┣ 📄 core_cm55.h      | Cortex-M55 processor
  ┣ 📄 core_cm85.h      | Cortex-M85 processor
