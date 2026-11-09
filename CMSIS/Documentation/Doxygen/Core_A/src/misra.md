@@ -11,6 +11,9 @@ CMSIS-Core (Cortex-A) violates the following MISRA-C:2012 rules:
  - Rule 11.4, A conversion should not be performed between a pointer to object and an integer type.<br>
    - Violated because core register access converts between pointer and integer types, including casts from unsigned long to pointers.
    
+ - Rule 11.6, A cast shall not be performed between pointer to void and an arithmetic type.<br>
+   - Violated by cache-maintenance code that converts a void pointer to uint32_t to address instruction-cache lines.
+
  - Rule 13.5, side effects on right hand side of logical operator.<br>
    - Violated because of shift operand is used in macros and functions. 
    
