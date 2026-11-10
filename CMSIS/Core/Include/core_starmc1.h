@@ -992,13 +992,13 @@ typedef struct
 
 /** \brief L1 Cache Control Register Definitions */
 #define SCB_CACR_DCCLEAN_Pos                16U                                            /*!< SCB CACR: DCCLEAN Position */
-#define SCB_CACR_DCCLEAN_Msk               (1UL << SCB_CACR_FORCEWT_Pos)                  /*!< SCB CACR: DCCLEAN Mask */
+#define SCB_CACR_DCCLEAN_Msk               (1UL << SCB_CACR_DCCLEAN_Pos)                  /*!< SCB CACR: DCCLEAN Mask */
 
 #define SCB_CACR_ICACTIVE_Pos                13U                                            /*!< SCB CACR: ICACTIVE Position */
-#define SCB_CACR_ICACTIVE_Msk               (1UL << SCB_CACR_FORCEWT_Pos)                  /*!< SCB CACR: ICACTIVE Mask */
+#define SCB_CACR_ICACTIVE_Msk               (1UL << SCB_CACR_ICACTIVE_Pos)                  /*!< SCB CACR: ICACTIVE Mask */
 
 #define SCB_CACR_DCACTIVE_Pos                12U                                            /*!< SCB CACR: DCACTIVE Position */
-#define SCB_CACR_DCACTIVE_Msk               (1UL << SCB_CACR_FORCEWT_Pos)                  /*!< SCB CACR: DCACTIVE Mask */
+#define SCB_CACR_DCACTIVE_Msk               (1UL << SCB_CACR_DCACTIVE_Pos)                  /*!< SCB CACR: DCACTIVE Mask */
 
 #define SCB_CACR_FORCEWT_Pos                2U                                            /*!< SCB CACR: FORCEWT Position */
 #define SCB_CACR_FORCEWT_Msk               (1UL << SCB_CACR_FORCEWT_Pos)                  /*!< SCB CACR: FORCEWT Mask */
@@ -1541,7 +1541,7 @@ typedef struct
 #define TPIU_ITFTTD0_ATB_IF1_bytecount_Msk (0x3UL << TPIU_ITFTTD0_ATB_IF1_bytecount_Pos) /*!< TPIU ITFTTD0: ATB Interface 1 byte countt Mask */
 
 #define TPIU_ITFTTD0_ATB_IF1_data2_Pos     16U                                         /*!< TPIU ITFTTD0: ATB Interface 1 data2 Position */
-#define TPIU_ITFTTD0_ATB_IF1_data2_Msk     (0xFFUL << TPIU_ITFTTD0_ATB_IF1_data1_Pos)  /*!< TPIU ITFTTD0: ATB Interface 1 data2 Mask */
+#define TPIU_ITFTTD0_ATB_IF1_data2_Msk     (0xFFUL << TPIU_ITFTTD0_ATB_IF1_data2_Pos)  /*!< TPIU ITFTTD0: ATB Interface 1 data2 Mask */
 
 #define TPIU_ITFTTD0_ATB_IF1_data1_Pos      8U                                         /*!< TPIU ITFTTD0: ATB Interface 1 data1 Position */
 #define TPIU_ITFTTD0_ATB_IF1_data1_Msk     (0xFFUL << TPIU_ITFTTD0_ATB_IF1_data1_Pos)  /*!< TPIU ITFTTD0: ATB Interface 1 data1 Mask */
@@ -1576,7 +1576,7 @@ typedef struct
 #define TPIU_ITFTTD1_ATB_IF1_bytecount_Msk (0x3UL << TPIU_ITFTTD1_ATB_IF1_bytecount_Pos) /*!< TPIU ITFTTD1: ATB Interface 1 byte countt Mask */
 
 #define TPIU_ITFTTD1_ATB_IF2_data2_Pos     16U                                         /*!< TPIU ITFTTD1: ATB Interface 2 data2 Position */
-#define TPIU_ITFTTD1_ATB_IF2_data2_Msk     (0xFFUL << TPIU_ITFTTD1_ATB_IF2_data1_Pos)  /*!< TPIU ITFTTD1: ATB Interface 2 data2 Mask */
+#define TPIU_ITFTTD1_ATB_IF2_data2_Msk     (0xFFUL << TPIU_ITFTTD1_ATB_IF2_data2_Pos)  /*!< TPIU ITFTTD1: ATB Interface 2 data2 Mask */
 
 #define TPIU_ITFTTD1_ATB_IF2_data1_Pos      8U                                         /*!< TPIU ITFTTD1: ATB Interface 2 data1 Position */
 #define TPIU_ITFTTD1_ATB_IF2_data1_Msk     (0xFFUL << TPIU_ITFTTD1_ATB_IF2_data1_Pos)  /*!< TPIU ITFTTD1: ATB Interface 2 data1 Mask */

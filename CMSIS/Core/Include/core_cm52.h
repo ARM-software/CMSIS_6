@@ -2085,7 +2085,7 @@ typedef struct
 #define TPIU_ITFTTD0_ATB_IF1_bytecount_Msk (0x3UL << TPIU_ITFTTD0_ATB_IF1_bytecount_Pos) /*!< TPIU ITFTTD0: ATB Interface 1 byte countt Mask */
 
 #define TPIU_ITFTTD0_ATB_IF1_data2_Pos     16U                                         /*!< TPIU ITFTTD0: ATB Interface 1 data2 Position */
-#define TPIU_ITFTTD0_ATB_IF1_data2_Msk     (0xFFUL << TPIU_ITFTTD0_ATB_IF1_data1_Pos)  /*!< TPIU ITFTTD0: ATB Interface 1 data2 Mask */
+#define TPIU_ITFTTD0_ATB_IF1_data2_Msk     (0xFFUL << TPIU_ITFTTD0_ATB_IF1_data2_Pos)  /*!< TPIU ITFTTD0: ATB Interface 1 data2 Mask */
 
 #define TPIU_ITFTTD0_ATB_IF1_data1_Pos      8U                                         /*!< TPIU ITFTTD0: ATB Interface 1 data1 Position */
 #define TPIU_ITFTTD0_ATB_IF1_data1_Msk     (0xFFUL << TPIU_ITFTTD0_ATB_IF1_data1_Pos)  /*!< TPIU ITFTTD0: ATB Interface 1 data1 Mask */
@@ -2120,7 +2120,7 @@ typedef struct
 #define TPIU_ITFTTD1_ATB_IF1_bytecount_Msk (0x3UL << TPIU_ITFTTD1_ATB_IF1_bytecount_Pos) /*!< TPIU ITFTTD1: ATB Interface 1 byte countt Mask */
 
 #define TPIU_ITFTTD1_ATB_IF2_data2_Pos     16U                                         /*!< TPIU ITFTTD1: ATB Interface 2 data2 Position */
-#define TPIU_ITFTTD1_ATB_IF2_data2_Msk     (0xFFUL << TPIU_ITFTTD1_ATB_IF2_data1_Pos)  /*!< TPIU ITFTTD1: ATB Interface 2 data2 Mask */
+#define TPIU_ITFTTD1_ATB_IF2_data2_Msk     (0xFFUL << TPIU_ITFTTD1_ATB_IF2_data2_Pos)  /*!< TPIU ITFTTD1: ATB Interface 2 data2 Mask */
 
 #define TPIU_ITFTTD1_ATB_IF2_data1_Pos      8U                                         /*!< TPIU ITFTTD1: ATB Interface 2 data1 Position */
 #define TPIU_ITFTTD1_ATB_IF2_data1_Msk     (0xFFUL << TPIU_ITFTTD1_ATB_IF2_data1_Pos)  /*!< TPIU ITFTTD1: ATB Interface 2 data1 Mask */
@@ -2925,10 +2925,10 @@ typedef struct
 #define PMU_CTRL_CYCCNT_DISABLE_Msk          (1UL << PMU_CTRL_CYCCNT_DISABLE_Pos)          /*!< PMU CTRL: Disable Cycle Counter Mask */
 
 #define PMU_CTRL_FRZ_ON_OV_Pos                9U                                           /*!< PMU CTRL: Freeze-on-overflow Position */
-#define PMU_CTRL_FRZ_ON_OV_Msk               (1UL << PMU_CTRL_FRZ_ON_OVERFLOW_Pos)         /*!< PMU CTRL: Freeze-on-overflow Mask */
+#define PMU_CTRL_FRZ_ON_OV_Msk               (1UL << PMU_CTRL_FRZ_ON_OV_Pos)               /*!< PMU CTRL: Freeze-on-overflow Mask */
 
 #define PMU_CTRL_TRACE_ON_OV_Pos              11U                                          /*!< PMU CTRL: Trace-on-overflow Position */
-#define PMU_CTRL_TRACE_ON_OV_Msk             (1UL << PMU_CTRL_TRACE_ON_OVERFLOW_Pos)       /*!< PMU CTRL: Trace-on-overflow Mask */
+#define PMU_CTRL_TRACE_ON_OV_Msk             (1UL << PMU_CTRL_TRACE_ON_OV_Pos)             /*!< PMU CTRL: Trace-on-overflow Mask */
 
 /** \brief PMU Type Register Definitions */
 #define PMU_TYPE_NUM_CNTS_Pos                 0U                                           /*!< PMU TYPE: Number of Counters Position */
@@ -2944,7 +2944,7 @@ typedef struct
 #define PMU_TYPE_FRZ_OV_SUPPORT_Msk          (1UL << PMU_TYPE_FRZ_OV_SUPPORT_Pos)          /*!< PMU TYPE: Freeze-on-overflow Support Mask */
 
 #define PMU_TYPE_TRACE_ON_OV_SUPPORT_Pos      23U                                          /*!< PMU TYPE: Trace-on-overflow Support Position */
-#define PMU_TYPE_TRACE_ON_OV_SUPPORT_Msk     (1UL << PMU_TYPE_FRZ_OV_SUPPORT_Pos)          /*!< PMU TYPE: Trace-on-overflow Support Mask */
+#define PMU_TYPE_TRACE_ON_OV_SUPPORT_Msk     (1UL << PMU_TYPE_TRACE_ON_OV_SUPPORT_Pos)     /*!< PMU TYPE: Trace-on-overflow Support Mask */
 
 /** \brief PMU Authentication Status Register Definitions */
 #define PMU_AUTHSTATUS_NSID_Pos               0U                                           /*!< PMU AUTHSTATUS: Non-secure Invasive Debug Position */

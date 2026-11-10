@@ -525,8 +525,8 @@ typedef union
 #define CPACR_D32DIS_Pos                 30U                                    /*!< \brief CPACR: D32DIS Position */
 #define CPACR_D32DIS_Msk                 (1UL << CPACR_D32DIS_Pos)              /*!< \brief CPACR: D32DIS Mask */
 
-#define CPACR_TRCDIS_Pos                 28U                                    /*!< \brief CPACR: D32DIS Position */
-#define CPACR_TRCDIS_Msk                 (1UL << CPACR_D32DIS_Pos)              /*!< \brief CPACR: D32DIS Mask */
+#define CPACR_TRCDIS_Pos                 28U                                    /*!< \brief CPACR: TRCDIS Position */
+#define CPACR_TRCDIS_Msk                 (1UL << CPACR_TRCDIS_Pos)              /*!< \brief CPACR: TRCDIS Mask */
 
 #define CPACR_CP_Pos_(n)                 (n*2U)                                 /*!< \brief CPACR: CPn Position */
 #define CPACR_CP_Msk_(n)                 (3UL << CPACR_CP_Pos_(n))              /*!< \brief CPACR: CPn Mask */
