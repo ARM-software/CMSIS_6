@@ -2113,12 +2113,12 @@ __STATIC_INLINE void __FPU_Enable(void)
 {
   // Permit access to VFP/NEON, registers by modifying CPACR
   const uint32_t cpacr = __get_CPACR();
-  __set_CPACR(cpacr | 0x00F00000ul);
+  __set_CPACR(cpacr | 0x00F00000u);
   __ISB();
 
   // Enable VFP/NEON
   const uint32_t fpexc = __get_FPEXC();
-  __set_FPEXC(fpexc | 0x40000000ul);
+  __set_FPEXC(fpexc | 0x40000000u);
 
   __ASM volatile(
     // Initialise VFP/NEON registers to 0
