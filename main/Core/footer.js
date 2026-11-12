@@ -3,5 +3,5 @@ function writeHeader() {
 };
 
 function writeFooter()  {
-    document.write('Generated on Tue Nov 10 2026 08:14:26 for CMSIS-Core (Cortex-M) 6.4.0. Copyright &copy; 2026 Arm Limited (or its affiliates). All rights reserved.');
+    document.write('Generated on Thu Nov 12 2026 11:19:14 for CMSIS-Core (Cortex-M) 6.4.0. Copyright &copy; 2026 Arm Limited (or its affiliates). All rights reserved.');
 };
