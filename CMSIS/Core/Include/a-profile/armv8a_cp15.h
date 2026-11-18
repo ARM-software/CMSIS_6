@@ -102,7 +102,7 @@
   }
 
   /** \brief  Set SCTLR EL3
-      \param [in]    vbar  SCTLR value to set
+      \param [in]   sctlr  SCTLR value to set
    */
   __STATIC_FORCEINLINE void __set_SCTLR_EL3(uint64_t sctlr)
   {

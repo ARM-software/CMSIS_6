@@ -180,7 +180,7 @@
 */
 typedef struct {
   uint32_t RBAR; //!< The region base address register value (RBAR)
-  uint32_t RASR; //!< The region attribute and size register value (RASR) \ref MPU_RASR
+  uint32_t RASR; //!< The region attribute and size register value (RASR), see \ref ARM_MPU_RASR.
 } ARM_MPU_Region_t;
 
 /** Enable the MPU.
