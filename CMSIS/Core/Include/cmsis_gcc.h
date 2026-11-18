@@ -342,7 +342,7 @@ __STATIC_FORCEINLINE uint8_t __CLZ(uint32_t value)
 /**
   \brief   Signed Saturate
   \details Saturates a signed value.
-  \param [in]  value  Value to be saturated
+  \param [in]    val  Value to be saturated
   \param [in]    sat  Bit position to saturate to (1..32)
   \return             Saturated value
  */
@@ -368,7 +368,7 @@ __STATIC_FORCEINLINE int32_t __SSAT(int32_t val, uint32_t sat)
 /**
   \brief   Unsigned Saturate
   \details Saturates an unsigned value.
-  \param [in]  value  Value to be saturated
+  \param [in]    val  Value to be saturated
   \param [in]    sat  Bit position to saturate to (0..31)
   \return             Saturated value
  */
@@ -405,8 +405,8 @@ __STATIC_FORCEINLINE void __CLREX(void)
 /**
   \brief   LDR Exclusive (8 bit)
   \details Executes a exclusive LDR instruction for 8 bit value.
-  \param [in]    ptr  Pointer to data
-  \return             value of type uint8_t at (*ptr)
+  \param [in]   addr  Pointer to data
+  \return             value of type uint8_t at (*addr)
  */
 __STATIC_FORCEINLINE uint8_t __LDREXB(volatile uint8_t *addr)
 {
@@ -421,7 +421,7 @@ __STATIC_FORCEINLINE uint8_t __LDREXB(volatile uint8_t *addr)
   \brief   STR Exclusive (8 bit)
   \details Executes a exclusive STR instruction for 8 bit values.
   \param [in]  value  Value to store
-  \param [in]    ptr  Pointer to location
+  \param [in]   addr  Pointer to location
   \return          0  Function succeeded
   \return          1  Function failed
  */
@@ -439,8 +439,8 @@ __STATIC_FORCEINLINE uint32_t __STREXB(uint8_t value, volatile uint8_t *addr)
 /**
   \brief   LDR Exclusive (16 bit)
   \details Executes a exclusive LDR instruction for 16 bit values.
-  \param [in]    ptr  Pointer to data
-  \return        value of type uint16_t at (*ptr)
+  \param [in]   addr  Pointer to data
+  \return        value of type uint16_t at (*addr)
  */
 __STATIC_FORCEINLINE uint16_t __LDREXH(volatile uint16_t *addr)
 {
@@ -455,7 +455,7 @@ __STATIC_FORCEINLINE uint16_t __LDREXH(volatile uint16_t *addr)
   \brief   STR Exclusive (16 bit)
   \details Executes a exclusive STR instruction for 16 bit values.
   \param [in]  value  Value to store
-  \param [in]    ptr  Pointer to location
+  \param [in]   addr  Pointer to location
   \return          0  Function succeeded
   \return          1  Function failed
  */
@@ -473,8 +473,8 @@ __STATIC_FORCEINLINE uint32_t __STREXH(uint16_t value, volatile uint16_t *addr)
 /**
   \brief   LDR Exclusive (32 bit)
   \details Executes a exclusive LDR instruction for 32 bit values.
-  \param [in]    ptr  Pointer to data
-  \return        value of type uint32_t at (*ptr)
+  \param [in]   addr  Pointer to data
+  \return        value of type uint32_t at (*addr)
  */
 __STATIC_FORCEINLINE uint32_t __LDREXW(volatile uint32_t *addr)
 {
@@ -489,7 +489,7 @@ __STATIC_FORCEINLINE uint32_t __LDREXW(volatile uint32_t *addr)
   \brief   STR Exclusive (32 bit)
   \details Executes a exclusive STR instruction for 32 bit values.
   \param [in]  value  Value to store
-  \param [in]    ptr  Pointer to location
+  \param [in]   addr  Pointer to location
   \return          0  Function succeeded
   \return          1  Function failed
  */
