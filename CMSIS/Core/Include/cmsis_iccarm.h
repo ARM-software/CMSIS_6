@@ -460,7 +460,7 @@ __IAR_FT void __STRT(uint32_t value, volatile uint32_t *addr)
   #define __set_FPSCR(VALUE)        (__arm_wsr("FPSCR", (VALUE)))
 #else
   #define __get_FPSCR()             ( 0 )
-  #define __set_FPSCR(VALUE)        ((void)VALUE)
+  #define __set_FPSCR(VALUE)        ((void)(VALUE))
 #endif
 
 #if (defined(__ARM_ARCH_ISA_THUMB) && __ARM_ARCH_ISA_THUMB >= 2)
