@@ -1,7 +1,7 @@
 function writeHeader() {
-    document.write('Version 272b2925');
+    document.write('Version e30b5485');
 };
 
 function writeFooter()  {
-    document.write('Generated on Wed Nov 18 2026 16:58:33 for CMSIS-View 272b2925. Copyright &copy; 2026 Arm Limited (or its affiliates). All rights reserved.');
+    document.write('Generated on Thu Nov 26 2026 13:25:41 for CMSIS-View e30b5485. Copyright &copy; 2026 Arm Limited (or its affiliates). All rights reserved.');
 };
