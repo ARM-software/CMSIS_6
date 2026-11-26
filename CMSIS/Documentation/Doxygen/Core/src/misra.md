@@ -21,7 +21,9 @@ CMSIS-Core (Cortex-M) violates the following MISRA-C:2012 rules:
    - Violated because of shift operand is used in macros and functions.
 
  - Rule 14.4, The controlling expression of an if statement and the controlling expression of an iteration-statement shall have an essentially Boolean type.
-   - Violated since macros with several instructions are used.
+   - Violated where register bitmask results are used directly as controlling expressions.
+     A zero result means the tested bits are clear; a nonzero result means at least one tested bit is set.
+     This follows standard C semantics and keeps register checks concise.
 
  - Rule 15.5, return statement before end of function.
    - Violated to simplify code logic.
